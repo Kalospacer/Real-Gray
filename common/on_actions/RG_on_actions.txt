@@ -1,0 +1,168 @@
+on_custom_diplomacy = {
+	events = {
+		graygoo.505
+		
+		rg_graygoo.500
+		rg_graygoo.501
+		rg_graygoo.502
+		rg_graygoo.503
+		rg_graygoo.504
+		rg_graygoo.505
+	}
+}
+
+# Triggers when ground combat starts
+# This = planet
+# From = country attacking
+on_ground_combat_started = {
+	events = { # Tempest Incoming trait effect
+	}
+}
+
+#An army has been killed in ground combat
+# This = owner
+# From = army
+# FromFrom = opponent
+# FromFromFrom = planet
+on_army_killed_in_combat = {
+	events = {
+		rg_skill.8 # Tempest Incoming trait effect
+	}
+}
+
+on_game_start_country = {
+	events = {
+		rg_cluster.8
+		rg.1
+	}
+}
+
+# This = country
+on_monthly_pulse_country = {
+	events = {
+		rg.8
+		rg.16
+		# rg_skill.9
+	}
+}
+
+on_yearly_pulse_country = {
+	events = {
+		rg.17
+		rg.18
+		rg.20
+	}
+}
+
+on_mid_game_pulse_country = {
+    events = {
+        # rg.18
+    }
+}
+
+# Triggers country_event for the attacker upon victory
+# (Before controller is switched)
+# This = country, leader attacker
+# From = country, planet owner
+# FromFrom = planet
+# IDENTITIES: attacker is the side that "IsHostile" to
+# the planet controller; e.g. spawned monster armies
+# are attackers, but if they win and the player attempts
+# to retake the planet, the player is the attacker
+on_planet_attackers_win = {
+	events = {
+		rg.16
+		# rg_skill.9
+	}
+}
+
+# Triggers country_event for the attacker upon defeat
+# This = country, attack leader
+# From = country, planet owner
+# FromFrom = planet
+on_planet_attackers_lose = {
+	events = {
+		rg.16
+		# rg_skill.9
+	}
+}
+
+# on_entering_battle = {
+# 	events = {
+# 		rg_skill.1
+# 	}
+# }
+# 
+# on_space_battle_won = {
+# 	events = {
+# 		rg_skill.2
+# 	}
+# }
+# this = country
+on_destroy_planet_with_RG_PLANET_KILLER = {
+	events = {
+		RG_planet_killer.1
+		RG_planet_killer.2
+		origin.3245
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_queued = {
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_unqueued = {
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_SP = {
+	events = {
+		RG_planet_killer.3
+		rg_story.6
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_SP_queued = {
+	
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_SP_unqueued = {
+}
+
+
+#舰船建造完成
+# Root = Ship
+# From = Planet
+on_ship_built = {
+	events = {
+		rg_skill.3 #科研舰在无主权星系中被建造出来
+	}
+}
+
+#进入星系
+# Scope = Ship
+# From = System
+# FromFrom = Country
+on_entering_system = {
+	events = {
+		rg_skill.3
+	}
+}
+
+#舰船完成星系探测
+# Scope = ship
+# From = system
+on_system_survey_ship = {
+	events = {
+		rg_skill.3
+	}
+}
+
+# This = owner of ship 1 (combatant)
+# From = owner of ship 2 (destroyed)
+# FromFrom = ship 1
+# FromFromFrom = ship 2
+on_ship_destroyed_perp = {
+	events = {
+		rg_skill.11
+		rg_story.10
+	}
+}

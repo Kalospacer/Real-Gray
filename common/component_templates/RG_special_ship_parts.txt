@@ -1,0 +1,64 @@
+#歼星武器
+weapon_component_template = {
+	key = "RG_PLANET_KILLER_SP"
+	size = planet_killer
+	type = planet_killer
+
+	icon = GFX_ship_part_divine_enforcer
+	icon_frame = 1
+
+	projectile_gfx = "gatebuilder_planet_weapon_ex"
+	planet_destruction_gfx = "neutron_planet_gfx"
+	total_fire_time = 60 	#开火时间
+	firing_arc = 25.0
+ 
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 2000
+			nanites = 50
+		}
+	}
+
+	power = -1000
+	damage = { min = 35 max = 350 }		#伤害
+	windup = { min = 32 max = 64 }	#冷却
+	size_damage_factor = 10.0
+	hull_damage = 10.0                      #船体伤害
+	shield_damage = 10.0                    #护盾伤害
+	armor_damage = 10.0                     #装甲伤害
+	shield_penetration = 10.0               #护盾穿透
+	armor_penetration = 10.0                #装甲穿透                  
+	tracking = 1.00                        #追踪
+	range = 800.00                         #范围
+	accuracy = 1.00                       #命中
+
+	tags = { weapon_type_rg_main weapon_type_energy }
+	size_restriction = { RG_graygoo_capitalship RG_graygoo_mothership }
+	component_set = "RG_PLANET_KILLER"
+	hidden = yes
+	ship_limit = 1
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+# 重组仪
+utility_component_template = {
+	key = "RG_revive_component"
+	size = aux
+	icon = "GFX_ship_part_aura_inspiring_presence"
+	icon_frame = 1
+	power = 0
+	component_set = "RG_REVIVE_COMPONENT"
+	custom_tooltip = "RG_REVIVE_COMPONENT_tooltip"
+	hidden = yes
+	modifier = {
+		ship_emergency_ftl_mult = 10		#舰船紧急超光速受损风险+1000%
+	}
+	ship_limit = 1
+	ai_weight = {
+		weight = 0
+	}
+}

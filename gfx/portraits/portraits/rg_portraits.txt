@@ -1,0 +1,5 @@
+portraits = {
+	Gray	=	{texturefile = "gfx/models/portraits/Gray.png"  }
+	Gray01	=	{texturefile = "gfx/models/portraits/Gray01.png"  }
+	Gray02	=	{texturefile = "gfx/models/portraits/Gray02.png"  }
+}	

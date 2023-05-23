@@ -1,0 +1,27 @@
+#星球无法自动建造
+#scope (planet)
+RG_planet_can_auto_build = {
+	OR = {
+		AND = {
+			has_deposit_for = shipclass_mining_station
+			has_mining_station = no
+		}
+		AND = {
+			has_deposit_for = shipclass_research_station
+			has_research_station = no
+		}
+	}
+	NOR = {
+		has_deposit = d_trade_value_1
+		has_deposit = d_trade_value_2
+		has_deposit = d_trade_value_3
+		has_deposit = d_trade_value_4
+		has_deposit = d_trade_value_5
+		has_deposit = d_trade_value_6
+		has_deposit = d_trade_value_7
+		has_deposit = d_trade_value_8
+		has_deposit = d_trade_value_9
+		has_deposit = d_trade_value_10
+		has_planet_flag = RG_work_bees_built
+	}
+}

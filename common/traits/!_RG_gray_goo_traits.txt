@@ -1,0 +1,358 @@
+###################
+# Governor Traits #
+###################
+
+RG_leader_trait_governor_gray = {	#总督特质
+	cost = 0
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = governor
+		ICON = "GFX_leader_trait_psionic_chosen_one"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	immortal_leaders = yes
+	self_modifier = {
+		species_leader_exp_gain = 1
+	}
+	modifier = {
+		planet_buildings_cost_mult = -0.4
+		planet_building_build_speed_mult = 0.8
+		deposit_blockers_cost_mult = -0.4
+		planet_clear_blocker_time_mult = -0.8
+		planet_jobs_alloys_produces_mult = 0.25
+		planet_jobs_engineering_research_produces_mult = 0.25
+		starbase_shipyard_build_cost_mult = -0.25
+		starbase_shipyard_build_speed_mult = -0.30
+	}
+
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+
+RG_leader_trait_ruler_gray = {	#天选化身
+	cost = 0
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = governor
+		ICON = "GFX_leader_trait_legendary_spiritualist_two"
+		RARITY = paragon
+		COUNCIL = yes
+		TIER = none
+	}
+	councilor_trait = yes
+	triggered_self_modifier = {
+		potential = {
+			is_councilor = yes
+			owner = {
+				check_variable = {
+					which = rg_gray_level
+					value <= 5
+				}
+			}
+		}
+		leader_skill_levels = 1
+		leaders_upkeep_mult = 2
+		mult = owner.rg_gray_level
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_councilor = yes
+			owner = {
+				check_variable = {
+					which = rg_gray_level
+					value >= 5
+				}
+				check_variable = {
+					which = rg_gray_level
+					value <= 10
+				}
+			}
+		}
+		leader_skill_levels = 1
+		leaders_upkeep_mult = 3
+		mult = owner.rg_gray_level
+	}
+	triggered_self_modifier = {
+		potential = {
+			is_councilor = yes
+			owner = {
+				check_variable = {
+					which = rg_gray_level
+					value > 10
+				}
+			}
+		}
+		leader_skill_levels = 1
+		leaders_upkeep_mult = 4
+		mult = owner.rg_gray_level
+	}
+	triggered_modifier = {
+		potential = {
+			is_councilor = yes
+			owner = {
+				check_variable = {
+					which = rg_gray_level
+					value <= 5
+				}
+			}
+		}
+		country_energy_produces_mult = -0.02
+		planet_stability_add = -2
+		mult = owner.rg_gray_level
+	}
+	triggered_modifier = {
+		potential = {
+			is_councilor = yes
+			owner = {
+				check_variable = {
+					which = rg_gray_level
+					value >= 5
+				}
+				check_variable = {
+					which = rg_gray_level
+					value <= 10
+				}
+			}
+		}
+		country_energy_produces_mult = -0.03
+		planet_stability_add = -3.5
+		mult = owner.rg_gray_level
+	}
+	triggered_modifier = {
+		potential = {
+			is_councilor = yes
+			owner = {
+				check_variable = {
+					which = rg_gray_level
+					value > 10
+				}
+			}
+		}
+		country_energy_produces_mult = -0.04
+		planet_stability_add = -5
+		mult = owner.rg_gray_level
+	}
+	triggered_modifier = {
+		potential = {
+			always = yes
+		}
+		country_produces_mult = 0.1
+		country_engineering_research_produces_mult = 0.1
+		planet_jobs_upkeep_mult = -0.05
+		planet_buildings_upkeep_mult = -0.05
+		planet_building_build_speed_mult = 0.1
+		starbase_shipyard_build_speed_mult = 0.1
+		megastructure_build_speed_mult = 0.1
+		country_unity_produces_mult = 0.05
+		country_base_influence_produces_add = 1
+		mult = owner.rg_gray_level
+	}
+
+	leader_class = { governor }
+	initial = no
+	randomized = no
+}
+
+RG_leader_trait_admiral_gray_1 = {	#1级舰长
+	cost = 0
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = admiral
+		ICON = "GFX_leader_trait_psionic_chosen_one"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	self_modifier = {
+		species_leader_exp_gain = 1
+	}
+	immortal_leaders = yes
+	modifier = {
+		ship_armor_mult = 1.0
+		ship_hull_mult = 1.0
+		ships_upkeep_mult = -0.4
+		ship_hull_regen_add_perc = 1
+		ship_armor_regen_add_perc = 1
+	}
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
+
+RG_leader_trait_admiral_gray_2 = {	#2级舰长
+	cost = 0
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = admiral
+		ICON = "GFX_leader_trait_psionic_chosen_one"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	self_modifier = {
+		species_leader_exp_gain = 1
+	}
+	immortal_leaders = yes
+	modifier = {
+		ship_armor_mult = 2.0
+		ship_hull_mult = 2.0
+		ships_upkeep_mult = -0.4
+		ship_hull_regen_add_perc = 2
+		ship_armor_regen_add_perc = 2
+	}
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
+
+RG_leader_trait_admiral_gray = {	#3级舰长（默认
+	cost = 0
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = admiral
+		ICON = "GFX_leader_trait_psionic_chosen_one"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	self_modifier = {
+		species_leader_exp_gain = 1
+	}
+	immortal_leaders = yes
+	modifier = {
+		ship_armor_mult = 3.5
+		ship_hull_mult = 3.5
+		ships_upkeep_mult = -0.4
+		ship_hull_regen_add_perc = 5
+		ship_armor_regen_add_perc = 5
+	}
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
+
+RG_leader_trait_scientist_gray = {	#科学家特质
+	cost = 0
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = scientist
+		ICON = "GFX_leader_trait_psionic_chosen_one"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	self_modifier = {
+		species_leader_exp_gain = 1
+	}
+	immortal_leaders = yes
+	modifier = {
+		
+		all_technology_research_speed = 0.5
+		ship_archaeological_site_excavation_speed_mult = 0.5
+		science_ship_survey_speed = 1.0
+		ship_windup_mult = -1.0
+		ship_speed_mult = 0.5
+		ship_anomaly_generation_chance_mult = -1.0
+	}
+	leader_class = { scientist }
+	initial = no
+	randomized = no
+}
+
+RG_leader_trait_general_gray = {	#将军特质
+	cost = 0
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = general
+		ICON = "GFX_leader_trait_psionic_chosen_one"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	self_modifier = {
+		species_leader_exp_gain = 1
+	}
+	immortal_leaders = yes
+	modifier = {
+		army_collateral_damage_mult = 0.15
+		army_disengage_chance_mult = 0.50
+		army_health = 0.35
+	}
+	leader_class = { general }
+	initial = no
+	randomized = no
+}
+
+RG_leader_trait_general_gray_skill = {
+	destiny_trait = yes
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = general
+		ICON = "GFX_leader_trait_supreme_warrior"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	custom_tooltip_with_modifiers = RG_leader_trait_tempest_incoming_effect
+	triggered_modifier = {
+		potential = {
+			always = yes
+		}
+		army_damage_mult = 0.05
+		army_health = 0.05
+		mult = owner.rg_general_skill_combat_daypassed_variable
+	}
+	leader_class = { general }
+	initial = no
+	randomized = no
+	destiny_background_icon = "GFX_leader_background_destiny_1"
+}
+
+RG_leader_trait_admiral_fake_dragon = {
+	cost = 0
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = admiral
+		ICON = "GFX_leader_trait_adaptable"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	modifier = {
+		ship_armor_mult = 0.3
+		ship_hull_mult = 0.2
+		ship_weapon_damage = 0.2
+	}
+	
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
+
+RG_leader_trait_admiral_timed_life = {
+	cost = 0
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = admiral
+		ICON = "GFX_leader_trait_ethereal"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	triggered_modifier = {
+		potential = {
+			always = yes
+		}
+		ship_armor_mult = 0.05
+		ship_hull_mult = 0.05
+		ship_weapon_damage = 0.05
+		mult = owner.rg_fake_dragon_timedlife_counter
+	}
+	
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}

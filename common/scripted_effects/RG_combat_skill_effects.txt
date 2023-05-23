@@ -1,0 +1,270 @@
+RG_leader_trait_tempest_incoming_random_kill_effect = {
+	if = {
+		limit = {
+			# Check if the general on side A has the supreme warrior trait
+			any_ground_combat_$SIDE_A$ = {
+				exists = leader
+				leader = {
+					has_trait = RG_leader_trait_general_gray_skill
+				}
+			}
+		}
+
+		if = {
+			limit = {
+				check_variable = {
+					which = rg_general_skill_combat_killed_variable
+					value > 100
+				}
+			}
+			random_ground_combat_$SIDE_B$ = {
+				limit = {
+					is_in_frontline = yes
+				}
+				remove_army = yes
+			}
+		}
+		else = {
+			if = {
+				limit = {
+					check_variable = {
+						which = rg_general_skill_combat_killed_variable
+						value <= 5
+					}
+				}
+				random_list = {
+					# NOTE: Update custom loc for effect when changing probablity
+					95 = {}
+					5 = {
+						random_ground_combat_$SIDE_B$ = {
+							limit = {
+								is_in_frontline = yes
+							}
+							remove_army = yes
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = rg_general_skill_combat_killed_variable
+						value <= 10
+					}
+				}
+				random_list = {
+					# NOTE: Update custom loc for effect when changing probablity
+					90 = {}
+					10 = {
+						random_ground_combat_$SIDE_B$ = {
+							limit = {
+								is_in_frontline = yes
+							}
+							remove_army = yes
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = rg_general_skill_combat_killed_variable
+						value <= 20
+					}
+				}
+				random_list = {
+					# NOTE: Update custom loc for effect when changing probablity
+					80 = {}
+					20 = {
+						random_ground_combat_$SIDE_B$ = {
+							limit = {
+								is_in_frontline = yes
+							}
+							remove_army = yes
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = rg_general_skill_combat_killed_variable
+						value <= 30
+					}
+				}
+				random_list = {
+					# NOTE: Update custom loc for effect when changing probablity
+					70 = {}
+					30 = {
+						random_ground_combat_$SIDE_B$ = {
+							limit = {
+								is_in_frontline = yes
+							}
+							remove_army = yes
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = rg_general_skill_combat_killed_variable
+						value <= 40
+					}
+				}
+				random_list = {
+					# NOTE: Update custom loc for effect when changing probablity
+					60 = {}
+					40 = {
+						random_ground_combat_$SIDE_B$ = {
+							limit = {
+								is_in_frontline = yes
+							}
+							remove_army = yes
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = rg_general_skill_combat_killed_variable
+						value <= 40
+					}
+				}
+				random_list = {
+					# NOTE: Update custom loc for effect when changing probablity
+					60 = {}
+					40 = {
+						random_ground_combat_$SIDE_B$ = {
+							limit = {
+								is_in_frontline = yes
+							}
+							remove_army = yes
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = rg_general_skill_combat_killed_variable
+						value <= 50
+					}
+				}
+				random_list = {
+					# NOTE: Update custom loc for effect when changing probablity
+					50 = {}
+					50 = {
+						random_ground_combat_$SIDE_B$ = {
+							limit = {
+								is_in_frontline = yes
+							}
+							remove_army = yes
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = rg_general_skill_combat_killed_variable
+						value <= 60
+					}
+				}
+				random_list = {
+					# NOTE: Update custom loc for effect when changing probablity
+					40 = {}
+					60 = {
+						random_ground_combat_$SIDE_B$ = {
+							limit = {
+								is_in_frontline = yes
+							}
+							remove_army = yes
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = rg_general_skill_combat_killed_variable
+						value <= 70
+					}
+				}
+				random_list = {
+					# NOTE: Update custom loc for effect when changing probablity
+					30 = {}
+					70 = {
+						random_ground_combat_$SIDE_B$ = {
+							limit = {
+								is_in_frontline = yes
+							}
+							remove_army = yes
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = rg_general_skill_combat_killed_variable
+						value <= 80
+					}
+				}
+				random_list = {
+					# NOTE: Update custom loc for effect when changing probablity
+					20 = {}
+					80 = {
+						random_ground_combat_$SIDE_B$ = {
+							limit = {
+								is_in_frontline = yes
+							}
+							remove_army = yes
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = rg_general_skill_combat_killed_variable
+						value <= 90
+					}
+				}
+				random_list = {
+					# NOTE: Update custom loc for effect when changing probablity
+					10 = {}
+					90 = {
+						random_ground_combat_$SIDE_B$ = {
+							limit = {
+								is_in_frontline = yes
+							}
+							remove_army = yes
+						}
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					check_variable = {
+						which = rg_general_skill_combat_killed_variable
+						value >= 90
+					}
+				}
+				random_list = {
+					# NOTE: Update custom loc for effect when changing probablity
+					5 = {}
+					95 = {
+						random_ground_combat_$SIDE_B$ = {
+							limit = {
+								is_in_frontline = yes
+							}
+							remove_army = yes
+						}
+					}
+				}
+			}
+		}
+	}
+}

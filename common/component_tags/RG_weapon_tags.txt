@@ -1,0 +1,12 @@
+weapon_type_rg_sp
+weapon_type_rg_jumpdrive
+weapon_type_rg_clocking_comp
+weapon_type_rg_thruster
+weapon_type_rg_sensor
+weapon_type_rg_halo
+weapon_type_rg_aux
+weapon_type_rg_computer
+weapon_type_rg_secondary
+weapon_type_rg_torpedoe
+weapon_type_rg_main
+weapon_type_rg_armor

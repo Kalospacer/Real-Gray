@@ -1,0 +1,309 @@
+rg_gray_govener_init = {
+    create_leader = {
+        class = governor
+        species = root
+        name = "NAME_Gray"
+        gender = female
+        immortal = yes
+        event_leader = yes
+        skip_background_generation = yes
+        custom_catch_phrase = gray_catch_phrase
+        custom_description = gray_backstory
+        background_ethic = ethic_gestalt_consciousness
+        hide_age = yes
+        skill = 10
+        set_age = 18
+        traits = {
+            trait = rg_leader_trait_governor_gray
+            trait = RG_leader_trait_ruler_gray
+        }
+        effect = {
+            save_global_event_target_as = gray_governor
+            set_leader_flag = gray_governor
+            set_leader_flag = legendary_leader
+            set_leader_flag = immune_to_negative_traits
+
+            set_leader_flag = rg_gray_leader
+
+            if = {
+                limit = { has_global_flag = kdc_event_mod_active }
+                set_leader_flag = "gray_leader"
+                add_trait = leader_trait_governor_gray
+                add_trait = RG_leader_trait_ruler_gray
+                add_trait = subclass_governor_economist
+                add_trait = leader_trait_urbanist_3
+                add_trait = leader_trait_scrapper_2
+            }
+            else_if = {
+                limit = {
+                    AND = {
+                        has_global_flag = kdc_event_mod_active
+                        has_country_flag = origin_gray_country
+                    }
+                }
+                set_leader_flag = "gray_leader"
+                add_trait = leader_trait_governor_gray
+                add_trait = RG_leader_trait_ruler_gray
+            }
+            else = {
+                add_trait = RG_leader_trait_governor_gray
+                add_trait = RG_leader_trait_ruler_gray
+                add_trait = subclass_governor_economis
+                add_trait = leader_trait_urbanist_3
+                add_trait = leader_trait_scrapper_2
+            }
+        }
+    }
+    last_created_leader = {
+        set_leader_flag = has_gained_level_trait
+    }
+    random_owned_leader = {
+        limit = { has_leader_flag = gray_governor }
+        if = {
+            limit = { has_global_flag = kdc_event_mod_active }
+            if = {
+                limit = { owner = { has_country_flag = gray_encountered_the_loop }}
+                add_trait = leader_trait_governor_wg_the_loop
+            }
+            set_gray_portrait = yes
+            add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = governor MARRIED_FLAG = married_gray }
+        }
+        else_if = {
+            limit = {
+                has_global_flag = has_wsg_mod
+                NOT = {
+                    has_global_flag = kdc_event_mod_active
+                }
+            }
+            if = {
+                limit = { owner = { has_country_flag = gray_encountered_the_loop }}
+                add_trait = leader_trait_governor_wg_the_loop
+            }
+            set_gray_portrait = yes
+            add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = governor MARRIED_FLAG = married_gray }
+        }
+        else = {
+            rg_set_gray_portrait = yes
+        }
+    }
+}
+
+rg_gray_admiral_init = {
+    create_leader = {
+        class = admiral
+        species = root
+        name = "NAME_Gray"
+        immortal = yes
+        event_leader = yes
+        skip_background_generation = yes
+        custom_catch_phrase = gray_catch_phrase
+        custom_description = gray_backstory
+        background_ethic = ethic_gestalt_consciousness
+        hide_age = yes
+        gender = female
+        skill = 10
+        set_age = 18
+        traits = {
+            trait = RG_leader_trait_admiral_gray
+        }
+        effect = {
+            save_global_event_target_as = gray_leader_admiral
+            set_leader_flag = gray_admiral
+            set_leader_flag = legendary_leader
+            set_leader_flag = immune_to_negative_traits
+
+            set_leader_flag = rg_gray_leader
+
+            if = {
+                limit = { has_global_flag = kdc_event_mod_active }
+                set_leader_flag = "gray_leader"
+                add_trait = gray_admiral
+            }
+            else = {
+                add_trait = leader_trait_artillerist_2
+                add_trait = leader_trait_juryrigger_2
+            }
+            add_trait = RG_leader_trait_admiral_gray
+            add_trait = subclass_admiral_aggressor
+            add_trait = leader_trait_carrier_specialization
+        }
+    }
+    last_created_leader = {
+        set_leader_flag = has_gained_level_trait
+    }
+    random_owned_leader = {
+        limit = { has_leader_flag = gray_admiral }
+        if = {
+            limit = {
+                has_global_flag = kdc_event_mod_active
+            }
+            if = {
+                limit = { owner = { has_country_flag = gray_encountered_the_loop }}
+                add_trait = leader_trait_admiral_wg_the_loop
+            }
+            set_gray_portrait = yes
+            add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = admiral MARRIED_FLAG = married_gray }
+            if = {
+                limit = { owner = {
+                    has_country_flag = origin_gray_country
+                    has_country_flag = origin_gray_weaken
+                }}
+                remove_trait = gray_admiral
+                add_trait = leader_trait_admiral_gray_weak
+            }
+        }
+        else_if = {
+            limit = {
+                has_global_flag = has_wsg_mod
+                NOT = {
+                    has_global_flag = kdc_event_mod_active
+                }
+                if = {
+                    limit = { owner = { has_country_flag = gray_encountered_the_loop }}
+                    add_trait_no_notify = leader_trait_admiral_wg_the_loop
+                }
+            }
+            set_gray_portrait = yes
+            add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = admiral MARRIED_FLAG = married_gray }
+        }
+        else = {
+            rg_set_gray_portrait = yes
+        }
+    }
+}
+
+rg_gray_general_init = {
+    create_leader = {
+        class = general
+        species = root
+        name = "NAME_Gray"
+        immortal = yes
+        event_leader = yes
+        skip_background_generation = yes
+        custom_catch_phrase = gray_catch_phrase
+        custom_description = gray_backstory
+        background_ethic = ethic_gestalt_consciousness
+        hide_age = yes
+        gender = female
+        skill = 10
+        set_age = 18
+        traits = {
+            trait = RG_leader_trait_general_gray
+            trait = RG_leader_trait_general_gray_skill
+            trait = subclass_general_marshall
+            trait = leader_trait_heavy_hitter_2
+            trait = leader_trait_reinforcer_2
+        }
+        effect = {
+            save_global_event_target_as = gray_leader_general
+            set_leader_flag = rg_gray_leader
+            set_leader_flag = gray_general
+            set_leader_flag = legendary_leader
+            set_leader_flag = immune_to_negative_traits
+        }
+    }
+    last_created_leader = {
+        set_leader_flag = has_gained_level_trait
+    }
+    random_owned_leader = {
+        limit = { has_leader_flag = gray_general }
+        if = {
+            limit = { has_global_flag = kdc_event_mod_active }
+            set_gray_portrait = yes
+            if = {
+                limit = { owner = { has_country_flag = gray_encountered_the_loop }}
+                add_trait = leader_trait_governor_wg_the_loop
+            }
+            #add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = governor MARRIED_FLAG = married_gray }
+        }
+        else_if = {
+            limit = {
+                has_global_flag = has_wsg_mod
+                NOT = {
+                    has_global_flag = kdc_event_mod_active
+                }
+            }
+            if = {
+                limit = { owner = { has_country_flag = gray_encountered_the_loop }}
+                add_trait = leader_trait_governor_wg_the_loop
+            }
+            set_gray_portrait = yes
+            #add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = governor MARRIED_FLAG = married_gray }
+        }
+        else = {
+            add_trait = RG_leader_trait_general_gray_skill
+            rg_set_gray_portrait = yes
+        }
+    }
+    set_variable = {
+        which = rg_general_skill_combat_daypassed_variable
+        value = 1
+    }
+    set_variable = {
+        which = rg_general_skill_combat_killed_variable
+        value = 0
+    }
+}
+
+rg_gray_scientist_init = {
+    create_leader = {
+        class = scientist
+        species = root
+        name = "NAME_Gray"
+        immortal = yes
+        event_leader = yes
+        skip_background_generation = yes
+        custom_catch_phrase = gray_catch_phrase
+        custom_description = gray_backstory
+        background_ethic = ethic_gestalt_consciousness
+        hide_age = yes
+        gender = female
+        skill = 10
+        set_age = 18
+        traits = {
+            trait = RG_leader_trait_scientist_gray
+            trait = subclass_scientist_explorer
+            trait = leader_trait_engineering_focus_2
+            trait = leader_trait_salvager_3
+        }
+        effect = {
+            save_global_event_target_as = gray_leader_scientist
+            set_leader_flag = rg_gray_leader
+            set_leader_flag = gray_scientist
+            set_leader_flag = legendary_leader
+            set_leader_flag = immune_to_negative_traits
+        }
+    }
+    last_created_leader = {
+        set_leader_flag = has_gained_level_trait
+    }
+    random_owned_leader = {
+        limit = { has_leader_flag = gray_scientist }
+        if = {
+            limit = { has_global_flag = kdc_event_mod_active }
+            if = {
+                limit = { owner = { has_country_flag = gray_encountered_the_loop }}
+                add_trait = leader_trait_governor_wg_the_loop
+            }
+            set_gray_portrait = yes
+            # add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = governor MARRIED_FLAG = married_gray }
+        }
+        else_if = {
+            limit = {
+                has_global_flag = has_wsg_mod
+                NOT = {
+                    has_global_flag = kdc_event_mod_active
+                }
+            }
+            if = {
+                limit = { owner = { has_country_flag = gray_encountered_the_loop }}
+                add_trait = leader_trait_governor_wg_the_loop
+            }
+            set_gray_portrait = yes
+            # add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = governor MARRIED_FLAG = married_gray }
+        }
+        else = {
+            rg_set_gray_portrait = yes
+        }
+    }
+}

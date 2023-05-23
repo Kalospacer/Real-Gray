@@ -1,0 +1,32 @@
+rg_ap_nantiematter = {
+	on_enabled = {
+		custom_tooltip = "rg_ap_nantiematter_tooltip"
+    	add_research_option = tech_gray_weapon_lance_1
+	}
+
+	possible = {
+		OR = {
+			has_country_flag = origin_rg_gray
+			has_country_flag = gray_owner
+			has_technology = tech_lgate_activation
+			can_research_technology = tech_lgate_activation
+		}
+		NOT = {
+			has_ascension_perk = rg_nantiematter
+		}
+	}
+
+	potential = {
+		OR = {
+			has_country_flag = origin_rg_gray
+			has_country_flag = gray_owner
+			has_event_chain = l_cluster_chain
+			has_technology = tech_lgate_activation
+		}
+		is_ai = no
+	}
+
+	ai_weight = {
+		factor = 0
+	}
+}

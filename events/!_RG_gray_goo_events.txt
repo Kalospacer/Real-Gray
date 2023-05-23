@@ -1,0 +1,2198 @@
+############################
+#
+# Gray Goo Events
+#
+# Written by Henrik Thyrwall
+#
+############################
+
+namespace = graygoo
+# Entering Empty Cluster
+ship_event = {
+	id = graygoo.550
+	title = "graygoo.550.name"
+	desc = "graygoo.550.desc"
+	picture = GFX_evt_ruined_system
+	show_sound = event_radio_chatter
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			has_global_flag = gray_goo_crisis_set
+			has_global_flag = dragon_season
+			has_global_flag = gray_goo_empire_set
+			has_global_flag = rg_l_cluster
+		}
+		from = { has_star_flag = lcluster1 }
+		owner = { NOT = { has_country_flag = origin_gray_country }}
+	}
+
+	option = {
+		name = graygoo.550.a
+	}
+}
+
+# Invasion begins
+country_event = {
+	id = graygoo.1
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_update_modifiers_batch = begin
+		awaken_guardians_of_the_galaxy = yes
+		set_global_flag = gray_goo_crisis_active
+		every_megastructure = {
+			limit = {
+				is_megastructure_type = lgate_base
+			}
+			activate_gateway = this
+			set_megastructure_flag = lgate_activated
+		}
+		event_target:graygoo_factory_system = {
+			random_system_planet = {
+				limit = { has_planet_flag = main_star }
+				save_event_target_as = main_star
+			}
+			create_country = {
+				name = "NAME_Gray_Goo"
+				type = "gray_goo"
+				name_list = "graygoo"
+				flag = {
+					icon= {
+						category = "special"
+						file = "gray_goo.dds"
+					}
+					background= {
+						category = "backgrounds"
+						file = "sinus.dds"
+					}
+					colors={
+						"grey"
+						"dark_grey"
+						"null"
+						"null"
+					}
+				}
+				effect = {
+					save_event_target_as = graygoo_country
+					create_ship_design = {
+						design = "NAME_RG_armed_transport_ship"
+					}
+					add_ship_design = last_created_design
+					create_ship_design = {
+						design = "NAME_RG_GRAY_scienceship"
+					}
+					add_ship_design = last_created_design
+					create_ship_design = {
+						design = "NAME_RG_GRAY_constructor"
+					}
+					add_ship_design = last_created_design
+					create_ship_design = {
+						design = "NAME_Gatebuilder_Starbase"
+					}
+					add_ship_design = last_created_design
+				}
+			}
+			create_fleet = {
+				effect = {
+					set_owner = event_target:graygoo_country
+					create_ship = {
+						name = random
+						design = "NAME_Nanite_Factory"
+						graphical_culture = "pirate_01"
+					}
+					set_location = {
+						target = event_target:main_star
+						distance = 55
+						angle = 270
+					}
+					save_event_target_as = nanite_factory
+				}
+			}
+			every_country = { establish_communications_no_message = event_target:graygoo_country }
+			create_fleet = {
+				name = "NAME_Tempest_Fleet"
+				effect = {
+					set_owner = event_target:graygoo_country
+					rg_create_graygoo_ships_1 = yes
+					set_formation_scale = 2
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 250
+					set_location = {
+						target = event_target:nanite_factory
+						distance = 80
+						angle = 0
+					}
+				}
+				settings = {
+					garrison = yes
+				}
+			}
+			create_fleet = {
+				name = "NAME_Tempest_Fleet"
+				effect = {
+					set_owner = event_target:graygoo_country
+					rg_create_graygoo_ships_1 = yes
+					set_formation_scale = 2
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 250
+					set_location = {
+						target = event_target:nanite_factory
+						distance = 80
+						angle = 90
+					}
+				}
+				settings = {
+					garrison = yes
+				}
+			}
+			create_fleet = {
+				name = "NAME_Tempest_Fleet"
+				effect = {
+					set_owner = event_target:graygoo_country
+					rg_create_graygoo_ships_1 = yes
+					set_formation_scale = 2
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 250
+					set_location = {
+						target = event_target:nanite_factory
+						distance = 80
+						angle = 180
+					}
+				}
+				settings = {
+					garrison = yes
+				}
+			}
+			create_fleet = {
+				name = "NAME_Tempest_Fleet"
+				effect = {
+					set_owner = event_target:graygoo_country
+					rg_create_graygoo_ships_1 = yes
+					set_formation_scale = 2
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 250
+					set_location = {
+						target = event_target:nanite_factory
+						distance = 80
+						angle = 270
+					}
+				}
+				settings = {
+					garrison = yes
+				}
+			}
+			every_system = {
+				limit = { has_star_flag = lcluster }
+				every_system_planet = {
+					limit = { is_planet_class = pc_gray_goo }
+					create_fleet = {
+						name = "NAME_Tempest_Fleet"
+						effect = {
+							set_owner = event_target:graygoo_country
+							rg_create_graygoo_ships_1 = yes
+							set_formation_scale = 2
+							set_fleet_stance = aggressive
+							set_aggro_range_measure_from = self
+							set_aggro_range = 250
+							set_location = {
+								target = prev
+								distance = 15
+								angle = random
+							}
+						}
+						settings = {
+							garrison = yes
+						}
+					}
+				}
+			}
+			event_target:lcluster1 = {
+				random_system_planet = {
+					limit = { is_planet_class = pc_gray_goo }
+					save_event_target_as = start_1
+				}
+			}
+			event_target:lcluster2 = {
+				random_system_planet = {
+					limit = { is_planet_class = pc_gray_goo }
+					save_event_target_as = start_2
+				}
+			}
+			event_target:lcluster3 = {
+				random_system_planet = {
+					limit = { is_planet_class = pc_gray_goo }
+					save_event_target_as = start_3
+				}
+			}
+			event_target:lcluster4 = {
+				random_system_planet = {
+					limit = { is_planet_class = pc_gray_goo }
+					save_event_target_as = start_4
+				}
+			}
+			event_target:lcluster5 = {
+				random_system_planet = {
+					limit = { is_planet_class = pc_gray_goo }
+					save_event_target_as = start_5
+				}
+			}
+			event_target:lcluster1b = {
+				random_system_planet = {
+					limit = { is_planet_class = pc_gray_goo }
+					save_event_target_as = start_6
+				}
+			}
+			rg_create_graygoo_roamers_1 = yes
+			rg_create_graygoo_roamers_2 = yes
+			rg_create_graygoo_roamers_3 = yes
+			rg_create_graygoo_roamers_4 = yes
+			rg_create_graygoo_roamers_5 = yes
+			rg_create_graygoo_roamers_6 = yes
+			rg_create_graygoo_roamers_7 = yes
+		}
+		event_target:graygoo_country = {
+			country_event = { id = graygoo.3 days = 3600 }
+		}
+		every_megastructure = {
+			limit = {
+				is_megastructure_type = lgate_base
+				solar_system = {
+					NOR = {
+						has_star_flag = lcluster_lgate
+						has_star_flag = lgate_originating_system
+					}
+				}
+			}
+			create_fleet = {
+				name = "NAME_Tempest_Fleet"
+				effect = {
+					set_owner = event_target:graygoo_country
+					rg_create_graygoo_ships_1 = yes
+					set_formation_scale = 2
+					set_fleet_stance = aggressive
+					set_aggro_range_measure_from = self
+					set_aggro_range = 250
+					set_location = {
+						target = prev
+						distance = 0
+						angle = 0
+					}
+				}
+			}
+		}
+		set_update_modifiers_batch = end
+		country_event = { id = graygoo.10 }
+		every_playable_country = {
+			limit = {
+				NOR = {
+					has_event_chain = l_cluster_chain
+					has_special_project = RG_LCLUSTER_PROJECT
+					is_same_value = root
+				}
+			}
+			country_event = { id = graygoo.13 }
+		}
+		every_playable_country = {
+			limit = {
+				OR = {
+					has_event_chain = l_cluster_chain
+					has_special_project = RG_LCLUSTER_PROJECT
+				}
+				NOT = { is_same_value = root }
+			}
+			country_event = { id = graygoo.11 }
+		}
+		observer_event = { id = observer.64 }
+	}
+}
+
+# The Dessanu Consonance
+country_event = {
+	id = graygoo.110
+	title = "distar.10951.name"
+	desc = "graygoo.110.desc"
+	picture = GFX_evt_l-gateway
+	show_sound = event_radio_chatter
+
+	is_triggered_only = yes
+
+	after = {
+		hidden_effect = {
+			every_playable_country = {
+				limit = {
+					OR = {
+						has_special_project = RG_LCLUSTER_PROJECT
+						has_event_chain = l_cluster_chain
+					}
+					NOT = { is_same_value = root }
+				}
+				country_event = { id = graygoo.111 }
+			}
+			every_playable_country = {
+				limit = {
+					NOR = {
+						has_event_chain = l_cluster_chain
+						has_special_project = RG_LCLUSTER_PROJECT
+						is_same_value = root
+					}
+				}
+				country_event = { id = graygoo.112 }
+			}
+		}
+	}
+
+	option = {
+		name = graygoo.10.a
+		hidden_effect = {
+			country_event = { id = graygoo.115 }
+		}
+	}
+}
+
+# Reinforcements 1
+country_event = {
+	id = graygoo.3
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		event_target:graygoo_factory_system = {
+			any_fleet_in_system = { is_ship_size = graygoo_factory }
+		}
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				any_system = {
+					has_star_flag = lcluster
+					any_fleet_in_system = {
+						owner = {
+							NOT = { is_same_value = root }
+						}
+					}
+				}
+			}
+			# Reinforce at factory if someone else is in the cluster...
+			country_event = { id = graygoo.4 }
+			# Else spawn reinforcements...
+		}
+		else = {
+			every_megastructure = {
+				limit = {
+					is_megastructure_type = lgate_base
+					solar_system = {
+						NOR = {
+							has_star_flag = lcluster_lgate
+							has_star_flag = lgate_originating_system
+						}
+					}
+				}
+				create_ambient_object = {
+					type = "horror_spawn_object"
+					location = THIS
+					use_3d_location = yes
+					duration = 10
+				}
+				create_fleet = {
+					name = "NAME_Tempest_Fleet"
+					effect = {
+						set_owner = event_target:graygoo_country
+						rg_create_graygoo_roamers_1 = yes
+						set_formation_scale = 2
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 250
+						set_location = {
+							target = prev
+							distance = 0
+							angle = 0
+						}
+					}
+				}
+				create_fleet = {
+					name = "NAME_Tempest_Fleet"
+					effect = {
+						set_owner = event_target:graygoo_country
+						rg_create_graygoo_roamers_2 = yes
+						set_formation_scale = 2
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 250
+						set_location = {
+							target = prev
+							distance = 0
+							angle = 0
+						}
+					}
+				}
+				create_fleet = {
+					name = "NAME_Tempest_Fleet"
+					effect = {
+						set_owner = event_target:graygoo_country
+						rg_create_graygoo_roamers_3 = yes
+						set_formation_scale = 2
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 250
+						set_location = {
+							target = prev
+							distance = 0
+							angle = 0
+						}
+					}
+				}
+				create_fleet = {
+					name = "NAME_Tempest_Fleet"
+					effect = {
+						set_owner = event_target:graygoo_country
+						rg_create_graygoo_roamers_4 = yes
+						set_formation_scale = 2
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 250
+						set_location = {
+							target = prev
+							distance = 0
+							angle = 0
+						}
+					}
+				}
+				create_fleet = {
+					name = "NAME_Tempest_Fleet"
+					effect = {
+						set_owner = event_target:graygoo_country
+						rg_create_graygoo_roamers_5 = yes
+						set_formation_scale = 2
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 250
+						set_location = {
+							target = prev
+							distance = 0
+							angle = 0
+						}
+					}
+				}
+				create_fleet = {
+					name = "NAME_Tempest_Fleet"
+					effect = {
+						set_owner = event_target:graygoo_country
+						rg_create_graygoo_roamers_6 = yes
+						set_formation_scale = 2
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 250
+						set_location = {
+							target = prev
+							distance = 0
+							angle = 0
+						}
+					}
+				}
+				create_fleet = {
+					name = "NAME_Tempest_Fleet"
+					effect = {
+						set_owner = event_target:graygoo_country
+						rg_create_graygoo_roamers_7 = yes
+						set_formation_scale = 2
+						set_fleet_stance = aggressive
+						set_aggro_range_measure_from = self
+						set_aggro_range = 250
+						set_location = {
+							target = prev
+							distance = 0
+							angle = 0
+						}
+					}
+				}
+			}
+			country_event = { id = graygoo.3 days = 3600 }
+		}
+	}
+}
+
+# Reinforcements 2
+country_event = {
+	id = graygoo.4
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		random_owned_ship = {
+			limit = { is_ship_size = graygoo_factory }
+			save_event_target_as = graygoo_factory
+		}
+		create_fleet = {
+			name = "NAME_Tempest_Fleet"
+			effect = {
+				set_owner = event_target:graygoo_country
+				rg_create_graygoo_roamers_1 = yes
+				set_formation_scale = 2
+				set_fleet_stance = aggressive
+				set_aggro_range_measure_from = self
+				set_aggro_range = 250
+				set_location = {
+					target = event_target:graygoo_factory
+					distance = 0
+					angle = 0
+				}
+			}
+		}
+		create_fleet = {
+			name = "NAME_Tempest_Fleet"
+			effect = {
+				set_owner = event_target:graygoo_country
+				rg_create_graygoo_roamers_2 = yes
+				set_formation_scale = 2
+				set_fleet_stance = aggressive
+				set_aggro_range_measure_from = self
+				set_aggro_range = 250
+				set_location = {
+					target = event_target:graygoo_factory
+					distance = 0
+					angle = 0
+				}
+			}
+		}
+		create_fleet = {
+			name = "NAME_Tempest_Fleet"
+			effect = {
+				set_owner = event_target:graygoo_country
+				rg_create_graygoo_roamers_3 = yes
+				set_formation_scale = 2
+				set_fleet_stance = aggressive
+				set_aggro_range_measure_from = self
+				set_aggro_range = 250
+				set_location = {
+					target = event_target:graygoo_factory
+					distance = 0
+					angle = 0
+				}
+			}
+		}
+		create_fleet = {
+			name = "NAME_Tempest_Fleet"
+			effect = {
+				set_owner = event_target:graygoo_country
+				rg_create_graygoo_roamers_4 = yes
+				set_formation_scale = 2
+				set_fleet_stance = aggressive
+				set_aggro_range_measure_from = self
+				set_aggro_range = 250
+				set_location = {
+					target = event_target:graygoo_factory
+					distance = 0
+					angle = 0
+				}
+			}
+		}
+		create_fleet = {
+			name = "NAME_Tempest_Fleet"
+			effect = {
+				set_owner = event_target:graygoo_country
+				rg_create_graygoo_roamers_5 = yes
+				set_formation_scale = 2
+				set_fleet_stance = aggressive
+				set_aggro_range_measure_from = self
+				set_aggro_range = 250
+				set_location = {
+					target = event_target:graygoo_factory
+					distance = 0
+					angle = 0
+				}
+			}
+		}
+		create_fleet = {
+			name = "NAME_Tempest_Fleet"
+			effect = {
+				set_owner = event_target:graygoo_country
+				rg_create_graygoo_roamers_6 = yes
+				set_formation_scale = 2
+				set_fleet_stance = aggressive
+				set_aggro_range_measure_from = self
+				set_aggro_range = 250
+				set_location = {
+					target = event_target:graygoo_factory
+					distance = 0
+					angle = 0
+				}
+			}
+		}
+		create_fleet = {
+			name = "NAME_Tempest_Fleet"
+			effect = {
+				set_owner = event_target:graygoo_country
+				rg_create_graygoo_roamers_7 = yes
+				set_formation_scale = 2
+				set_fleet_stance = aggressive
+				set_aggro_range_measure_from = self
+				set_aggro_range = 250
+				set_location = {
+					target = event_target:graygoo_factory
+					distance = 0
+					angle = 0
+				}
+			}
+		}
+		country_event = { id = graygoo.3 days = 3600 }
+	}
+}
+
+# Factory Destroyed
+country_event = {
+	id = graygoo.6
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = gray_goo
+		fromfrom = { is_ship_size = graygoo_factory }
+	}
+
+	immediate = {
+		remove_global_flag = active_gray_goo
+		remove_global_flag = gray_goo_crisis_active
+		fromfromfrom = { save_event_target_as = goo_slayer_ship }
+		from = {
+			save_event_target_as = goo_slayer
+			country_event = { id = graygoo.15 }
+			country_event = { id = rg.200 days = 80 random = 120}
+		}
+		every_playable_country = {
+			limit = {
+				is_ai = no
+				NOT = { is_same_value = event_target:goo_slayer }
+			}
+			country_event = { id = graygoo.16 }
+		}
+		observer_event = { id = observer.65 }
+		every_galaxy_planet = {
+			limit = { is_planet_class = pc_gray_goo }
+			add_modifier = {
+				modifier = "terraforming_candidate"
+				days = -1
+			}
+		}
+		every_owned_fleet = { destroy_fleet = this }
+		destroy_country = yes
+	}
+}
+
+# Factory Destroyed (Dessanu)
+country_event = {
+	id = graygoo.180
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_country_type = gate_builders
+		fromfrom = { is_ship_size = graygoo_factory }
+	}
+
+	immediate = {
+		fromfromfrom = { save_event_target_as = goo_slayer_ship }
+		from = {
+			save_event_target_as = goo_slayer
+			country_event = { id = graygoo.181 }
+			country_event = { id = rg.200 days = 80 random = 120}
+		}
+		every_playable_country = {
+			limit = {
+				is_ai = no
+				NOT = { is_same_value = event_target:goo_slayer }
+			}
+			country_event = { id = graygoo.182 }
+		}
+		observer_event = { id = observer.67 }
+		every_owned_planet = {
+			limit = { is_planet_class = pc_gaia }
+			change_pc = pc_gray_goo
+			reroll_planet = yes
+			destroy_colony = yes
+			add_modifier = {
+				modifier = "terraforming_candidate"
+				days = -1
+			}
+		}
+		every_owned_fleet = { destroy_fleet = this }
+		destroy_country = yes
+	}
+}
+
+# Encountered Gray
+ship_event = {
+	id = graygoo.400
+	title = "graygoo.400.name"
+
+	trigger = {
+		NOT = {
+			any_playable_country = {
+				has_country_flag = gray_owner
+			}
+		}
+	}
+	
+	desc = {
+		trigger = {
+			owner = { is_synthetic_empire = no }
+		}
+		text = "graygoo.400.a.desc"
+	}
+	desc = {
+		trigger = { 
+			owner = { is_synthetic_empire = yes } 
+		}
+		text = "graygoo.400.b.desc"
+	}
+	picture = GFX_evt_ship_in_orbit_2
+	show_sound = event_radio_chatter
+
+	is_triggered_only = yes
+
+	immediate = {
+		from = { save_event_target_as = gray_homeworld }
+	}
+
+	option = {
+		name = graygoo.400.a
+		hidden_effect = {
+			owner = {
+				country_event = { id = graygoo.401 }
+			}
+		}
+	}
+}
+
+# Gray 1
+country_event = {
+	id = graygoo.401
+	title = "TRANSMISSION"
+	desc = {
+		trigger = { NOT = { has_authority = auth_machine_intelligence } }
+		text = "graygoo.401.a.desc"
+	}
+	desc = {
+		trigger = { has_authority = auth_machine_intelligence }
+		text = "graygoo.401.b.desc"
+	}
+
+	is_triggered_only = yes
+	
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gray_species
+		room = "ethic_spaceship_room"
+	}
+
+	immediate = {
+		hidden_effect = {
+			rg_create_gray_species = yes
+		}
+	}
+
+	option = {
+		name = graygoo.401.a
+		trigger = {
+			NOR = {
+				has_authority = auth_machine_intelligence
+				has_authority = auth_hive_mind
+			}
+		}
+		hidden_effect = {
+			country_event = { id = graygoo.402 }
+		}
+	}
+	option = {
+		name = graygoo.401.b
+		trigger = {
+			has_authority = auth_machine_intelligence
+		}
+		hidden_effect = {
+			country_event = { id = graygoo.402 }
+		}
+	}
+	option = {
+		name = graygoo.401.c
+		trigger = {
+			has_authority = auth_hive_mind
+		}
+		hidden_effect = {
+			country_event = { id = graygoo.402 }
+		}
+	}
+	
+}
+
+# Gray 2
+country_event = {
+	id = graygoo.402
+	title = "TRANSMISSION"
+	desc = {
+		trigger = { NOT = { has_authority = auth_machine_intelligence } }
+		text = "graygoo.402.a.desc"
+	}
+	desc = {
+		trigger = { has_authority = auth_machine_intelligence }
+		text = "graygoo.402.b.desc"
+	}
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gray_species
+		room = "ethic_spaceship_room"
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = graygoo.402.a
+		hidden_effect = {
+			country_event = { id = graygoo.403 }
+		}
+	}
+}
+
+# Gray 3
+country_event = {
+	id = graygoo.403
+	title = "TRANSMISSION"
+	desc = "graygoo.403.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gray_species
+		room = "ethic_spaceship_room"
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = graygoo.403.a
+		hidden_effect = {
+			country_event = { id = graygoo.404 }
+		}
+	}
+}
+
+# Gray 4
+country_event = {
+	id = graygoo.404
+	title = "TRANSMISSION"
+	desc = "graygoo.404.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gray_species
+		room = "ethic_spaceship_room"
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = graygoo.404.a
+		hidden_effect = {
+			country_event = { id = graygoo.405 }
+		}
+	}
+}
+
+# Gray 5
+country_event = {
+	id = graygoo.405
+	title = "TRANSMISSION"
+	desc = "graygoo.405.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gray_species
+		room = "ethic_spaceship_room"
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = graygoo.405.a
+		hidden_effect = {
+			rg_gray_govener_init = yes
+			owner = {
+				country_event = { id = graygoo.406 }
+			}
+		}
+	}
+	option = {
+		name = graygoo.405.b
+		response_text = graygoo.405.b.response
+		hidden_effect = {
+			event_target:gray_governor = {
+				kill_leader = { show_notification = no }
+			}
+		}
+	}
+}
+
+# Gray 6
+country_event = {
+	id = graygoo.406
+	title = "TRANSMISSION"
+	desc = "graygoo.406.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gray_governor
+		room = "ethic_spaceship_room"
+	}
+
+	event_window_type = leader_recruit
+	is_triggered_only = yes
+
+	option = {
+		name = graygoo.406.a
+		response_text = graygoo.406.a.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = graygoo.406.b
+		response_text = graygoo.406.b.response
+		is_dialog_only = yes
+	}
+	option = {
+		name = graygoo.405.b
+		tag = dismiss_leader
+		response_text = graygoo.405.b.response
+		hidden_effect = {
+			event_target:gray_governor = {
+				kill_leader = { show_notification = no }
+			}
+		}
+	}
+	option = {
+		name = graygoo.406.c
+		response_text = graygoo.406.c.response
+		default_hide_option = yes
+		tag = hire_leader
+		hidden_effect = {
+			country_event = { id = graygoo.499 }
+		}
+	}
+}
+
+# Create Gray
+country_event = {
+	id = graygoo.499
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = { exists = event_target:gray_owner }
+		is_ai = no
+	}
+
+	immediate = {
+		create_country = {
+			name = "NAME_Gray"
+			type = gray
+			flag = {
+				icon= {
+					category = "special"
+					file = "gray_goo.dds"
+				}
+				background= {
+					category = "backgrounds"
+					file = "sinus.dds"
+				}
+				colors={
+					"grey"
+					"dark_grey"
+					"null"
+					"null"
+				}
+			}
+			effect = {
+				rg_create_gray_species = yes
+				# 灰风国家用于领袖切换时暂存领袖
+				set_country_flag = can_have_wg_affection_country_flag
+			}
+		}
+		last_created_country = {
+			establish_communications_no_message = root
+			save_global_event_target_as = rg_gray_country
+		}
+		# 送灰风母舰初始科技
+		give_technology = {
+			tech = tech_object_gray_5
+			message = no 
+		}
+		save_global_event_target_as = gray_owner
+		set_country_flag = gray_owner
+		#初始化好感度和衣柜
+		set_variable = { which = gray_affection value = 1 }
+		set_variable = { which = gray_affection_level value = 1 }
+		set_variable = { which = wg_gray_cloth value = 6 }
+
+		# 否则事件会自动移除好感度特质(回娘家时保留特质）
+		set_country_flag = can_have_wg_affection_country_flag
+		# 默认关闭自动建造中继器
+		# set_country_flag = rg_can_const_hyper_relay
+		# 初始化小灰领袖等级
+		if = {
+			limit = { 
+				OR = {
+					has_country_flag = origin_rg_gray #遥远约定
+					has_country_flag = origin_gray_country #远星之歌
+				}
+			}
+			set_variable = { which = rg_gray_level value = 1 }
+		} else = {
+			set_variable = { which = rg_gray_level value = 10 }
+		}
+		rg_storyline_trigger = yes
+	}
+}
+
+# Main Menu (Initial)
+country_event = {
+	id = graygoo.500
+	title = "graygoo.500.title"
+	desc = "graygoo.500.a.desc"
+	desc = "graygoo.500.b.desc"
+	desc = "graygoo.500.c.desc"
+	desc = "graygoo.500.d.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gray_species
+		room = "ethic_spaceship_room"
+	}
+
+	is_triggered_only = yes
+	
+	immediate = {
+		set_country_flag = gray_diplomacy_engaged
+	}
+
+	after = {
+		hidden_effect = { 
+			remove_country_flag = gray_diplomacy_engaged
+			#初始化衣柜
+			reset_gray_cloth = yes
+		}
+	}
+
+	trigger = {
+		NOR = {
+			has_global_flag = has_wsg_mod
+			has_global_flag = kdc_event_mod_active
+		}
+		from = { OR = {
+			is_country_type = gray 
+			is_same_value = ROOT
+		}}
+		is_same_value = event_target:gray_owner
+		NOR = {
+			has_country_flag = gray_constship_active
+			has_country_flag = gray_governor_active
+			has_country_flag = gray_warship_active
+			has_country_flag = gray_army_active
+			has_country_flag = gray_reforming
+
+			has_country_flag = gray_diplomacy_engaged
+		}
+	}
+
+	option = { # Governor
+		name = graygoo.500.a
+		response_text = graygoo.500.a.response
+		trigger = {
+			NOT = { has_country_flag = gray_governor_active }
+		}
+		hidden_effect = {
+			rg_create_gray_governor = yes
+		}
+	}
+	option = { # Warship
+		name = graygoo.500.b
+		response_text = graygoo.500.b.response
+		trigger = {
+			NOT = { has_country_flag = gray_warship_active }
+		}
+		hidden_effect = {
+			rg_create_gray_warship = yes
+		}
+	}
+	option = { # Army
+		name = graygoo.500.c
+		response_text = graygoo.500.c.response
+		trigger = {
+			NOT = { has_country_flag = gray_army_active }
+		}
+		hidden_effect = {
+			rg_create_gray_army = yes
+		}
+	}
+	option = { # const
+		name = rg_const
+		response_text = rg_const.500.response
+		trigger = {
+			NOT = { has_country_flag = gray_const_active }
+		}
+		hidden_effect = {
+			rg_create_gray_const = yes
+		}
+	}
+	option = { # help
+		name = rg_help
+		hidden_effect = {
+			country_event = {
+				id = rg.4
+			}
+		}
+	}
+	
+	option = {
+		name = graygoo.500.d
+		default_hide_option = yes
+	}
+}
+
+# Main Menu (Governor)
+country_event = {
+	id = graygoo.501
+	title = "graygoo.500.title"
+	desc = "graygoo.501.a.desc"
+	desc = "graygoo.501.b.desc"
+	desc = "graygoo.501.c.desc"
+	desc = "graygoo.501.d.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gray_species
+		planet_background = event_target:gray_governor_planet
+		room = ethic_spaceship_room
+	}
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			has_global_flag = has_wsg_mod
+			has_global_flag = kdc_event_mod_active
+		}
+		from = { OR = {
+			is_country_type = gray 
+			is_same_value = ROOT
+		}}
+		is_same_value = event_target:gray_owner
+		has_country_flag = gray_governor_active
+		NOR = { 
+			has_country_flag = gray_reforming 
+			has_country_flag = gray_diplomacy_engaged
+		}
+		exists = event_target:gray_governor
+	}
+
+	immediate = {
+		set_country_flag = gray_diplomacy_engaged
+		if = {
+			limit = {
+				any_owned_planet = {
+					exists = sector.leader
+					sector.leader = { is_same_value = event_target:gray_governor }
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					exists = sector.leader
+					sector.leader = { is_same_value = event_target:gray_governor }
+				}
+				save_event_target_as = gray_governor_planet
+			}
+		}
+		else = {
+			capital_scope = { save_event_target_as = gray_governor_planet }
+		}
+	}
+
+	after = {
+		hidden_effect = { 
+			remove_country_flag = gray_diplomacy_engaged 
+			reset_gray_cloth = yes
+		}
+	}
+
+	option = { # Warship
+		name = graygoo.500.b
+		response_text = graygoo.501.b.response
+		allow = {
+			hidden_trigger = { exists = event_target:gray_governor } # To prevent exploit
+		}
+		hidden_effect = {
+			rg_create_gray_warship = yes
+		}
+	}
+	option = { # const
+		name = rg_const
+		response_text = rg_const.501.response
+		allow = {
+			hidden_trigger = { exists = event_target:gray_governor }
+		}
+		hidden_effect = {
+			rg_create_gray_const = yes
+		}
+	}
+	option = { # Army
+		name = graygoo.500.c
+		response_text = graygoo.501.c.response
+		allow = {
+			hidden_trigger = { exists = event_target:gray_governor }
+		}
+		hidden_effect = {
+			rg_create_gray_army = yes
+		}
+	}
+	option = { # help
+		name = rg_help
+		hidden_effect = {
+			country_event = {
+				id = rg.4
+			}
+		}
+	}
+
+	option = {
+		name = graygoo.500.d
+		default_hide_option = yes
+	}
+}
+
+# Main Menu (Warship)
+country_event = {
+	id = graygoo.502
+	title = "graygoo.500.title"
+	desc = "graygoo.502.a.desc"
+	desc = "graygoo.502.b.desc"
+	desc = "graygoo.502.c.desc"
+	desc = "graygoo.502.d.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gray_species
+		room = "ethic_spaceship_room"
+	}
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			has_global_flag = has_wsg_mod
+			has_global_flag = kdc_event_mod_active
+		}
+		from = { OR = {
+			is_country_type = gray 
+			is_same_value = ROOT
+		}}
+		is_same_value = event_target:gray_owner
+		has_country_flag = gray_warship_active
+		NOR = { 
+			has_country_flag = gray_reforming 
+			has_country_flag = gray_diplomacy_engaged
+		}
+		exists = event_target:gray_warship
+		any_owned_fleet = { is_same_value = event_target:gray_warship }
+		event_target:gray_warship = { num_ships > 0 }
+	}
+
+	immediate = {
+		set_country_flag = gray_diplomacy_engaged
+		capital_scope = { solar_system = { starbase = { save_event_target_as = gray_owner_capital_starbase }}}
+	}
+
+	after = {
+		hidden_effect = { 
+			remove_country_flag = gray_diplomacy_engaged 
+			reset_gray_cloth = yes
+		}
+	}
+
+	option = { # Governor
+		name = graygoo.500.a
+		response_text = graygoo.502.a.response
+		allow = {
+			hidden_trigger = { # To prevent exploit
+				event_target:gray_warship = { num_ships > 0 }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				event_target:gray_warship = { is_in_combat = no }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.b
+				event_target:gray_warship = { NOT = { has_hp_percentage < 0.97 } }
+			}
+		}
+		hidden_effect = {
+			rg_create_gray_governor = yes
+		}
+	}
+	option = { # const
+		name = rg_const
+		response_text = rg_const.502.response
+		allow = {
+			hidden_trigger = {
+				event_target:gray_warship = { num_ships > 0 }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				event_target:gray_warship = { is_in_combat = no }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.b
+				event_target:gray_warship = { NOT = { has_hp_percentage < 0.97 } }
+			}
+		}
+		hidden_effect = {
+			rg_create_gray_const = yes
+		}
+	}
+	option = { # Army
+		name = graygoo.500.c
+		response_text = graygoo.502.c.response
+		allow = {
+			hidden_trigger = {
+				event_target:gray_warship = { num_ships > 0 }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				event_target:gray_warship = { is_in_combat = no }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.b
+				event_target:gray_warship = { NOT = { has_hp_percentage < 0.97 } }
+			}
+		}
+		hidden_effect = {
+			rg_create_gray_army = yes
+		}
+	}
+
+	option = { # Juggernaut
+		name = RG_graygoo.500.d
+		response_text = RG_graygoo.502.d.response
+		trigger = {
+			has_country_flag = rg_juggernaut_fired
+			NOT = { has_country_flag = gray_warship_is_juggernaut }
+		}
+		allow = {
+			hidden_trigger = {
+				event_target:gray_warship = { num_ships > 0 }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				event_target:gray_warship = { is_in_combat = no }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.b
+				event_target:gray_warship = { NOT = { has_hp_percentage < 0.97 } }
+			}
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			set_country_flag = gray_warship_is_juggernaut
+		}
+	}
+
+	option = { # Warship
+		name = RG_graygoo.500.e
+		response_text = RG_graygoo.502.e.response
+		trigger = {
+			has_country_flag = rg_juggernaut_fired
+			has_country_flag = gray_warship_is_juggernaut
+		}
+		allow = {
+			hidden_trigger = {
+				event_target:gray_warship = { num_ships > 0 }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				event_target:gray_warship = { is_in_combat = no }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.b
+				event_target:gray_warship = { NOT = { has_hp_percentage < 0.97 } }
+			}
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			remove_country_flag = gray_warship_is_juggernaut
+		}
+	}
+
+	option = { #升级-2
+		name = rg_levelup_2
+		trigger = {
+			event_target:gray_leader_admiral = { has_skill >= 10 }
+			NOR = { 
+				has_country_flag = rg_gray_level_2
+				has_country_flag = rg_gray_level_3
+				has_special_project = RG_GRAY_MOD1
+			}
+		}
+		allow = {
+			hidden_trigger = {
+				event_target:gray_warship = { num_ships > 0 }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				event_target:gray_warship = { is_in_combat = no }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.b
+				event_target:gray_warship = { NOT = { has_hp_percentage < 0.97 } }
+			}
+
+			custom_tooltip = {
+				fail_text = requires_rg_graylevel_higherthan_25
+				event_target:gray_leader_admiral = { has_skill >= 10 }
+			}
+			resource_stockpile_compare = { resource = energy value >= 40000 }
+			resource_stockpile_compare = { resource = alloys value >= 40000 }
+		}
+		custom_tooltip = rg_levelup_2.tooltip
+		enable_special_project = {
+			name = RG_GRAY_MOD1
+			location = event_target:gray_owner_capital_starbase
+			owner = root
+		}
+		add_resource = {
+			energy = -40000
+			alloys = -40000
+		}
+	}
+
+	option = { #升级-3
+		name = rg_levelup_3
+		trigger = {
+			AND = {
+				event_target:gray_leader_admiral = { has_skill >= 10 }
+				has_country_flag = rg_gray_level_2
+			}
+			NOR = { 
+				has_country_flag = rg_gray_level_3
+				has_special_project = RG_GRAY_MOD2
+			}
+		}
+		allow = {
+			hidden_trigger = { # To prevent exploit
+				event_target:gray_warship = { num_ships > 0 }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				event_target:gray_warship = { is_in_combat = no }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.b
+				event_target:gray_warship = { NOT = { has_hp_percentage < 0.97 } }
+			}
+		
+			custom_tooltip = {
+				fail_text = requires_rg_graylevel_higherthan_50
+				has_technology = tech_juggernaut
+			}
+			resource_stockpile_compare = { resource = energy value >= 150000 }
+			resource_stockpile_compare = { resource = alloys value >= 150000 }
+		}
+		custom_tooltip = rg_levelup_2.tooltip
+		enable_special_project = {
+			name = RG_GRAY_MOD2
+			location = event_target:gray_owner_capital_starbase
+			owner = root
+		}
+		add_resource = {
+			energy = -150000
+			alloys = -150000
+		}
+	}
+
+	option = { # 购买主宰
+		name = rg.4.d
+		trigger = {
+			NOR = {
+				has_country_flag = gray_reforming
+				has_country_flag = rg_juggernaut_fired
+			}
+			has_country_flag = rg_gray_level_3
+		}
+
+		allow = {
+			resource_stockpile_compare = { resource = energy value >= 150000 }
+			resource_stockpile_compare = { resource = alloys value >= 150000 }
+			has_technology = tech_juggernaut
+		}
+		custom_tooltip = rg_levelup_2.tooltip
+		enable_special_project = {
+			name = RG_GRAY_MOD3
+			location = event_target:gray_owner_capital_starbase
+			owner = root
+		}
+	    add_resource = {
+			energy = -150000
+			alloys = -150000
+	    }
+	}
+
+	option = { # 开启隐形
+		name = rg.4.e
+		trigger = {
+			any_owned_fleet = {
+				AND = {
+					is_ship_size = RG_gray_juggernaut
+					is_cloaked = no
+				}
+			}
+		}
+
+		hidden_effect = {
+			every_owned_fleet = {
+				limit = {
+					any_owned_ship = {
+						is_ship_size = RG_gray_juggernaut
+					}
+				}
+				set_cloaking_active = yes
+			}
+		}
+
+	}
+
+	option = { # 关闭隐形
+		name = rg.4.f
+		trigger = {
+			any_owned_fleet = {
+				AND = {
+					is_ship_size = RG_gray_juggernaut
+					is_cloaked = yes
+				}
+			}
+		}
+
+		hidden_effect = {
+			every_owned_fleet = {
+				limit = {
+					any_owned_ship = {
+						is_ship_size = RG_gray_juggernaut
+					}
+				}
+				set_cloaking_active = no
+			}
+		}
+
+	}
+
+	option = { # help
+		name = rg_help
+		hidden_effect = {
+			country_event = {
+				id = rg.4
+			}
+		}
+	}
+	
+	option = {
+		name = graygoo.500.d
+		default_hide_option = yes
+	}
+}
+
+# Main Menu (Army)
+country_event = {
+	id = graygoo.503
+	title = "graygoo.500.title"
+	desc = "graygoo.503.a.desc"
+	desc = "graygoo.503.b.desc"
+	desc = "graygoo.503.c.desc"
+	desc = "graygoo.503.d.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gray_species
+		room = "ethic_spaceship_room"
+	}
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			has_global_flag = has_wsg_mod
+			has_global_flag = kdc_event_mod_active
+		}
+		from = { OR = {
+			is_country_type = gray 
+			is_same_value = ROOT
+		}}
+		has_country_flag = gray_army_active
+		NOR = { 
+			has_country_flag = gray_reforming 
+			has_country_flag = gray_diplomacy_engaged 
+
+		}
+		is_same_value = event_target:gray_owner
+		any_owned_army = {
+			army_type = gray_army
+			OR = {
+				exists = planet
+				AND = {
+					exists = fleet
+					fleet = { num_ships > 0 }
+				}
+			}
+		}
+	}
+
+	immediate = {
+		set_country_flag = gray_diplomacy_engaged
+	}
+
+	after = {
+		hidden_effect = { 
+			remove_country_flag = gray_diplomacy_engaged 
+			reset_gray_cloth = yes
+		}
+	}
+
+	option = { # Governor
+		name = graygoo.500.a
+		response_text = graygoo.503.a.response
+		allow = {
+			hidden_trigger = {  # To prevent exploit
+				any_owned_army = {
+					army_type = gray_army
+					OR = {
+						exists = planet
+						AND = {
+							exists = fleet
+							fleet = { num_ships > 0 }
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				any_owned_army = {
+					army_type = gray_army
+					if = {
+						limit = { exists = planet }
+						planet = { has_ground_combat = no }
+					}
+				}
+			}
+		}
+		allow = {
+			hidden_trigger = {
+				any_owned_army = {
+					army_type = gray_army
+					OR = {
+						exists = planet
+						AND = {
+							exists = fleet
+							fleet = { num_ships > 0 }
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				any_owned_army = {
+					army_type = gray_army
+					if = {
+						limit = { exists = fleet }
+						fleet = { is_in_combat = no }
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			rg_create_gray_governor = yes
+		}
+	}
+	option = { # Warship
+		name = graygoo.500.b
+		response_text = graygoo.503.b.response
+		allow = {
+			hidden_trigger = {
+				any_owned_army = {
+					army_type = gray_army
+					OR = {
+						exists = planet
+						AND = {
+							exists = fleet
+							fleet = { num_ships > 0 }
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				any_owned_army = {
+					army_type = gray_army
+					if = {
+						limit = { exists = planet }
+						planet = { has_ground_combat = no }
+					}
+				}
+			}
+		}
+		allow = {
+			hidden_trigger = {
+				any_owned_army = {
+					army_type = gray_army
+					OR = {
+						exists = planet
+						AND = {
+							exists = fleet
+							fleet = { num_ships > 0 }
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				any_owned_army = {
+					army_type = gray_army
+					if = {
+						limit = { exists = fleet }
+						fleet = { is_in_combat = no }
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			rg_create_gray_warship = yes
+		}
+	}
+	option = { # const
+		name = rg_const
+		response_text = rg_const.503.response
+		allow = {
+			hidden_trigger = {
+				any_owned_army = {
+					army_type = gray_army
+					OR = {
+						exists = planet
+						AND = {
+							exists = fleet
+							fleet = { num_ships > 0 }
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				any_owned_army = {
+					army_type = gray_army
+					if = {
+						limit = { exists = planet }
+						planet = { has_ground_combat = no }
+					}
+				}
+			}
+		}
+		allow = {
+			hidden_trigger = {
+				any_owned_army = {
+					army_type = gray_army
+					OR = {
+						exists = planet
+						AND = {
+							exists = fleet
+							fleet = { num_ships > 0 }
+						}
+					}
+				}
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				any_owned_army = {
+					army_type = gray_army
+					if = {
+						limit = { exists = fleet }
+						fleet = { is_in_combat = no }
+					}
+				}
+			}
+		}
+		hidden_effect = {
+			rg_create_gray_const = yes
+		}
+	}
+
+	option = { # 开启隐形
+		name = rg.4.e
+		trigger = {
+			any_owned_fleet = {
+				AND = {
+					is_ship_size = RG_armed_transport_ship
+					is_cloaked = no
+				}
+			}
+		}
+
+		hidden_effect = {
+			every_owned_fleet = {
+				limit = {
+					any_owned_ship = {
+						is_ship_size = RG_armed_transport_ship
+					}
+				}
+				set_cloaking_active = yes
+			}
+		}
+
+	}
+
+	option = { # 关闭隐形
+		name = rg.4.f
+		trigger = {
+			any_owned_fleet = {
+				AND = {
+					is_ship_size = RG_armed_transport_ship
+					is_cloaked = yes
+				}
+			}
+		}
+
+		hidden_effect = {
+			every_owned_fleet = {
+				limit = {
+					any_owned_ship = {
+						is_ship_size = RG_armed_transport_ship
+					}
+				}
+				set_cloaking_active = no
+			}
+		}
+
+	}
+
+	option = { # help
+		name = rg_help
+		hidden_effect = {
+			country_event = {
+				id = rg.4
+			}
+		}
+	}
+
+	option = {
+		name = graygoo.500.d
+		default_hide_option = yes
+	}
+}
+
+# Main Menu (Gray Reforming)
+country_event = {
+	id = graygoo.504
+	title = "graygoo.500.title"
+	desc = "graygoo.504.desc"
+
+	diplomatic = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			has_global_flag = has_wsg_mod
+			has_global_flag = kdc_event_mod_active
+		}
+		from = { OR = {
+			is_country_type = gray 
+			is_same_value = ROOT
+		}}
+		is_same_value = event_target:gray_owner
+		has_country_flag = gray_reforming
+	}
+
+	option = {
+		name = OK
+	}
+
+	option = {
+		name = rg_graygoo.504.a
+		allow = {
+			has_country_flag = gray_reforming
+			resource_stockpile_compare = { resource = nanites value >= 1000 }
+			resource_stockpile_compare = { resource = alloys value >= 50000 }
+		}
+		add_resource = {
+			nanites = -1000
+			alloys = -50000
+		}
+		remove_country_flag = gray_reforming
+	}
+}
+
+# Main Menu (const)
+country_event = {
+	id = graygoo.505
+	title = "graygoo.500.title"
+	desc = "graygoo.505.a.desc"
+	desc = "graygoo.505.b.desc"
+	desc = "graygoo.505.c.desc"
+	desc = "graygoo.505.d.desc"
+
+	diplomatic = yes
+
+	picture_event_data = {
+		portrait = event_target:gray_species
+		room = "ethic_spaceship_room"
+	}
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			has_global_flag = has_wsg_mod
+			has_global_flag = kdc_event_mod_active
+		}
+		from = { OR = {
+			is_country_type = gray 
+			is_same_value = ROOT
+		}}
+		is_same_value = event_target:gray_owner
+		has_country_flag = gray_constship_active
+		NOR = { 
+			has_country_flag = gray_reforming 
+			has_country_flag = gray_diplomacy_engaged
+
+		}
+		exists = event_target:global_gray_constship
+		any_owned_fleet = { is_same_value = event_target:global_gray_constship }
+		event_target:global_gray_constship = { num_ships > 0 }
+	}
+
+	immediate = {
+		set_country_flag = gray_diplomacy_engaged
+	}
+
+	after = {
+		hidden_effect = { 
+			remove_country_flag = gray_diplomacy_engaged 
+		}
+	}
+
+	option = { # Governor
+		name = graygoo.500.a
+		response_text = graygoo.505.a.response
+		allow = {
+			hidden_trigger = { # To prevent exploit
+				event_target:global_gray_constship = { num_ships > 0 }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				event_target:global_gray_constship = { is_in_combat = no }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.b
+				event_target:global_gray_constship = { NOT = { has_hp_percentage < 0.97 } }
+			}
+			custom_tooltip = {
+				fail_text = gray_become_ruler
+				NOT = { ruler = { has_leader_flag = "gray_leader" }}
+			}
+		}
+		hidden_effect = {
+			rg_create_gray_governor = yes
+		}
+	}
+	option = { # Warship
+		name = graygoo.500.b
+		response_text = graygoo.505.b.response
+		allow = {
+			hidden_trigger = { # To prevent exploit
+				event_target:global_gray_constship = { num_ships > 0 }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				event_target:global_gray_constship = { is_in_combat = no }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.b
+				event_target:global_gray_constship = { NOT = { has_hp_percentage < 0.97 } }
+			}
+		}
+		hidden_effect = {
+			rg_create_gray_warship = yes
+		}
+	}
+	option = { # Army
+		name = graygoo.500.c
+		response_text = graygoo.505.c.response
+		allow = {
+			hidden_trigger = { # To prevent exploit
+				event_target:global_gray_constship = { num_ships > 0 }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				event_target:global_gray_constship = { is_in_combat = no }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.b
+				event_target:global_gray_constship = { NOT = { has_hp_percentage < 0.97 } }
+			}
+		}
+		hidden_effect = {
+			rg_create_gray_army = yes
+		}
+	}
+	option = { # help
+		name = rg_help
+		hidden_effect = {
+			country_event = {
+				id = rg.4
+			}
+		}
+	}
+
+#	option = { # 开启建造中继器
+#		name = rg.5.e
+#		trigger = {
+#			has_country_flag = rg_can_const_hyper_relay
+#		}
+#
+#		hidden_effect = {
+#			remove_country_flag = rg_can_const_hyper_relay
+#		}
+#
+#	}
+#
+#	option = { # 关闭建造中继器
+#		name = rg.5.f
+#		trigger = {
+#			NOT = {
+#				has_country_flag = rg_can_const_hyper_relay
+#			}
+#		}
+#
+#		hidden_effect = {
+#			hidden_effect = {
+#				set_country_flag = rg_can_const_hyper_relay
+#			}
+#		}
+#
+#	}
+
+	option = {
+		name = graygoo.500.d
+		default_hide_option = yes
+	}
+}
+
+# Gray destroyed or disbanded
+event = {
+	id = graygoo.510
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		any_country = { is_country_type = gray }
+		exists = event_target:gray_owner
+		event_target:gray_owner = {
+			OR = {
+				AND = {
+					has_country_flag = gray_army_active
+					NOT = {
+						any_owned_army = { army_type = gray_army }
+					}
+				}
+				AND = {
+					has_country_flag = gray_warship_active
+					NOT = { exists = event_target:gray_warship }
+				}
+				AND = {
+					has_country_flag = gray_governor_active
+					NOT = { exists = event_target:gray_governor }
+				}
+				AND = {
+					has_country_flag = gray_constship_active
+					NOT = { exists = event_target:global_gray_constship }
+				}
+			}
+		}
+	}
+
+	immediate = {
+		event_target:gray_owner = {
+			remove_country_flag = gray_governor_active #总督
+			remove_country_flag = gray_warship_active #旗舰
+			remove_country_flag = gray_army_active #陆军
+			remove_country_flag = gray_constship_active #科舰
+			set_country_flag = gray_reforming
+			add_modifier = {
+				modifier = "gray_scattered"
+				days = 3600
+			}
+			country_event = { id = graygoo.511 }
+			country_event = { id = graygoo.512 days = 3600 }
+		}
+	}
+}
+
+# Gray regenerating
+country_event = {
+	id = graygoo.511
+	title = "graygoo.511.name"
+	desc = "graygoo.511.desc"
+	picture = GFX_evt_circuitry_modification
+	show_sound = event_radio_chatter
+
+	is_triggered_only = yes
+
+	option = {
+		name = graygoo.511.a
+	}
+}
+
+# Gray Returns
+country_event = {
+	id = graygoo.512
+	title = "graygoo.500.title"
+	desc = "graygoo.512.a.desc"
+	desc = "graygoo.512.b.desc"
+	desc = "graygoo.512.c.desc"
+
+	diplomatic = yes
+
+
+	is_triggered_only = yes
+	
+
+	immediate = {
+		remove_country_flag = gray_reforming
+	}
+
+	option = {
+		name = graygoo.512.a
+	}
+}

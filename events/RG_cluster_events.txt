@@ -1,0 +1,618 @@
+namespace = rg_cluster
+
+# Spawn L-Cluster
+country_event = {
+	id = rg_cluster.8
+	hide_window = yes
+
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	trigger = {
+		AND = {
+			has_origin = origin_rg_gray
+			NOT = { has_global_flag = rg_origin_l_cluster }
+		}
+	}
+
+	immediate = {
+		set_global_flag = rg_origin_l_cluster
+		set_spawn_system_batch = begin
+		no_scope = {
+			# makes system positions originate from galactic core
+			spawn_system = {
+				min_distance >= 550
+				max_distance <= 560
+				min_orientation_angle = 44
+				max_orientation_angle = 46
+				initializer = rg_cluster_init_01
+				hyperlane = no
+			}
+			random_system = {
+				limit = { has_star_flag = lcluster1 }
+				save_global_event_target_as = lcluster1
+				spawn_system = {
+					min_distance >= 29
+					max_distance <= 31
+					min_orientation_angle = 24
+					max_orientation_angle = 66
+					initializer = rg_cluster_init_02
+				}
+				spawn_system = {
+					min_distance >= 29
+					max_distance <= 31
+					min_orientation_angle = 114
+					max_orientation_angle = 156
+					initializer = rg_cluster_init_03
+				}
+				spawn_system = {
+					min_distance >= 30
+					max_distance <= 60
+					min_orientation_angle = 340
+					max_orientation_angle = 20
+					initializer = rg_cluster_init_01b
+				}
+			}
+			random_system = {
+				limit = { has_star_flag = lcluster2 }
+				save_global_event_target_as = lcluster2
+				spawn_system = {
+					min_distance >= 30
+					max_distance <= 60
+					min_orientation_angle = 0
+					max_orientation_angle = 40
+					initializer = rg_cluster_init_02b
+				}
+			}
+			random_system = {
+				limit = { has_star_flag = lcluster3 }
+				save_global_event_target_as = lcluster3
+				spawn_system = {
+					min_distance >= 20
+					max_distance <= 30
+					min_orientation_angle = 24
+					max_orientation_angle = 66
+					initializer = rg_cluster_init_04
+				}
+				spawn_system = {
+					min_distance >= 10
+					max_distance <= 50
+					min_orientation_angle = 250
+					max_orientation_angle = 290
+					initializer = rg_cluster_init_03b
+				}
+			}
+			random_system = {
+				limit = { has_star_flag = lcluster4 }
+				save_global_event_target_as = lcluster4
+				spawn_system = {
+					min_distance >= 5
+					max_distance <= 10
+					min_orientation_angle = 250
+					max_orientation_angle = 290
+					initializer = rg_cluster_init_05
+				}
+				spawn_system = {
+					min_distance >= 30
+					max_distance <= 60
+					min_orientation_angle = 20
+					max_orientation_angle = 160
+					initializer = rg_cluster_init_04b
+				}
+			}
+		}
+
+		random_system = {
+			limit = { has_star_flag = lcluster5 }
+			save_global_event_target_as = lcluster5
+		}
+		random_system = {
+			limit = { has_star_flag = lcluster1b }
+			save_global_event_target_as = lcluster1b
+		}
+		random_system = {
+			limit = { has_star_flag = lcluster2b }
+			save_global_event_target_as = lcluster2b
+		}
+		random_system = {
+			limit = { has_star_flag = lcluster3b }
+			save_global_event_target_as = lcluster3b
+		}
+		random_system = {
+			limit = { has_star_flag = lcluster4b }
+			save_global_event_target_as = lcluster4b
+		}
+
+		# clear all hyperlanes to and within the cluster
+		every_system = {
+			limit = { has_star_flag = lcluster }
+			isolate_system = yes
+		}
+
+		# add hyperlanes
+		event_target:lcluster5 = {
+			add_hyperlane = {
+				from = event_target:lcluster5
+				to = event_target:lcluster4
+			}
+		}
+		event_target:lcluster4 = {
+			add_hyperlane = {
+				from = event_target:lcluster4
+				to = event_target:lcluster3
+			}
+			add_hyperlane = {
+				from = event_target:lcluster4
+				to = event_target:lcluster2
+			}
+			add_hyperlane = {
+				from = event_target:lcluster4
+				to = event_target:lcluster4b
+			}
+		}
+		event_target:lcluster3 = {
+			add_hyperlane = {
+				from = event_target:lcluster3
+				to = event_target:lcluster1
+			}
+			add_hyperlane = {
+				from = event_target:lcluster3
+				to = event_target:lcluster3b
+			}
+		}
+		event_target:lcluster2 = {
+			add_hyperlane = {
+				from = event_target:lcluster2
+				to = event_target:lcluster1
+			}
+			add_hyperlane = {
+				from = event_target:lcluster2
+				to = event_target:lcluster3
+			}
+			add_hyperlane = {
+				from = event_target:lcluster2
+				to = event_target:lcluster2b
+			}
+		}
+
+		event_target:lcluster1 = {
+			add_hyperlane = {
+				from = event_target:lcluster1
+				to = event_target:lcluster1b
+			}
+		}
+		event_target:lcluster1b = {
+			add_hyperlane = {
+				from = event_target:lcluster1b
+				to = event_target:lcluster2b
+			}
+		}
+		set_spawn_system_batch = end
+		country_event = { id = rg_cluster.9 days = -1 }
+	}
+}
+
+# Move home system
+country_event = {
+	id = rg_cluster.9
+	hide_window = yes
+	is_triggered_only = yes
+	fire_only_once = yes
+	
+	immediate = {
+		random_system = {
+			limit = {				
+				has_star_flag = lcluster4
+			}
+			save_event_target_as = rg_cluster_home_system
+			
+			random_system_planet = {
+				limit = {
+					has_planet_flag = start_rg_cluster_gatebuilders
+				}
+				save_event_target_as = rg_cluster_home_planet
+			}
+			random_system_planet = {
+				limit = {
+					has_planet_flag = start_gatebuilders_mining_station1
+				}
+				save_event_target_as = start_gatebuilders_mining_station_target1
+			}
+		}
+
+		capital_scope = {
+			save_event_target_as = rg_cluster_previous_home_planet
+			solar_system = {
+				save_event_target_as = rg_cluster_previous_home_system
+				spawn_megastructure = {
+					type = lgate_base
+					orbit_angle = 225
+					orbit_distance = 30
+				}
+			}
+			if = {
+				limit = { exists = sector }
+				sector = {
+					leader = {
+						unassign_leader = this
+						save_event_target_as = rg_cluster_sector_gov
+					}
+				}
+			}
+			else = {
+				root = {
+					random_owned_leader = {
+						limit = { leader_class = governor }
+						save_event_target_as = rg_cluster_sector_gov
+					}
+				}
+			}
+		}
+		
+		# Spaceport setup
+		if = {
+			limit = {
+				is_gestalt = yes
+			}
+			event_target:rg_cluster_home_system = {
+				create_starbase = {
+					size = "starbase_starport"
+					module = "shipyard"
+					module = "solar_panel_network"
+					building = "crew_quarters"
+					owner = root
+				}
+			}
+		}
+		else = {
+			event_target:rg_cluster_home_system = {
+				create_starbase = {
+					size = "starbase_starport"
+					module = "shipyard"
+					module = "trading_hub"
+					building = "crew_quarters"
+					owner = root
+				}
+			}
+		}
+		
+		event_target:start_gatebuilders_mining_station_target1 = {
+			create_mining_station = {
+				owner = root
+			}
+		}
+
+		# Planet setup
+		event_target:rg_cluster_home_planet = {
+			set_owner = root
+			set_controller = root
+			set_capital = yes
+			set_sector_capital = yes
+			sector = { assign_leader = event_target:rg_cluster_sector_gov }
+			
+			set_name = random
+			
+			generate_start_buildings_and_districts = yes
+		}
+		
+		if = {
+			limit = {
+				owner = { is_machine_empire = no }
+			}
+			every_owned_pop = {
+				modify_species = {
+					species = this
+					ideal_planet_class = pc_nuked
+				}
+				species = { save_event_target_as = target_species }
+			}
+			root = {
+				change_dominant_species = { species = event_target:target_species change_all = yes }
+			}
+		}
+		
+		event_target:rg_cluster_home_system = {
+			random_system_planet = {
+				limit = {
+					is_star = yes
+				}
+				save_event_target_as = rg_cluster_home_system_loc
+			}
+		}
+		
+		every_owned_fleet = {
+			limit = {
+				any_owned_ship = {
+					OR = {
+						is_ship_size = corvette
+						is_ship_size = constructor
+						is_ship_size = science
+					}
+				}
+			}
+			set_location = event_target:rg_cluster_home_system_loc
+		}
+		
+		event_target:rg_cluster_previous_home_planet = {
+			# move pops
+			every_owned_pop = {
+				resettle_pop = {
+					pop = this
+					planet = event_target:rg_cluster_home_planet
+				}
+				unemploy_pop = yes
+			}
+			remove_planet = yes
+		}
+		event_target:rg_cluster_home_planet = {
+			every_owned_pop = {
+				unemploy_pop = yes
+				clear_pop_category = yes
+			}
+			check_planet_employment = yes
+		}
+
+		event_target:rg_cluster_previous_home_system = {
+			set_name = random
+			random_system_planet = {
+				limit = {
+					is_star = yes
+				}
+				set_name = solar_system
+			}
+			
+			remove_star_flag = sol
+			remove_star_flag = deneb_system
+		}
+
+		event_target:rg_cluster_previous_home_system = {
+			every_fleet_in_system = {
+				delete_fleet = this
+			}
+		}
+
+		owner_species = { 
+			set_species_homeworld = event_target:rg_cluster_home_planet
+		}
+		every_owned_pop_species = {
+            set_species_homeworld = event_target:rg_cluster_home_planet
+        }
+
+		country_event = { id = rg_cluster.3 days = -1 }
+	}
+}
+
+# Allow all nanite worlds to be terraformed
+country_event = {
+    id = rg_cluster.3
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        every_galaxy_planet = {
+			limit = { is_planet_class = pc_gray_goo }
+			add_modifier = {
+				modifier = "terraforming_candidate"
+				days = -1
+			}
+		}
+    }
+}
+
+# Special project completed (overwrite)
+country_event = {
+	id = rg_cluster.2
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = l_cluster_origin # l-cluster plus
+					has_global_flag = rg_origin_l_cluster # 遥远约定
+					has_global_flag = gray_origin_activate # 远星之歌
+				}
+			}
+			set_global_flag = l_cluster_opened
+			
+			# Activate Terminal Egress L-Gate
+			event_target:lcluster1 = {
+				random_system_megastructure = {
+					activate_gateway = this
+					set_megastructure_flag = lgate_activated
+				}
+			}
+			every_megastructure = {
+				limit = {
+					is_megastructure_type = lgate_base
+				}
+				activate_gateway = this
+			}
+			set_global_flag = lgates_activated_globally
+			
+			every_playable_country = {
+				if = {
+					limit = { is_researching_technology = tech_lgate_activation }
+					give_technology = {
+						tech = tech_lgate_activation
+						message = no
+					}
+				}
+			}
+
+			every_playable_country = {
+				if = {
+					limit = { has_modifier = rg_distant_stars_modifier }
+					remove_modifier = rg_distant_stars_modifier
+					every_owned_ship = {
+						limit = { has_modifier = rg_distant_stars_modifier }
+						remove_modifier = rg_distant_stars_modifier
+					}
+				}
+			}
+			country_event = { id = rg_cluster.10 }
+		}
+		else = {
+			country_event = { id = distar.10950 }
+		}
+	}
+}
+
+# L-Cluster Opened
+country_event = {
+	id = rg_cluster.10
+	is_triggered_only = yes
+	title = "rg_cluster.10.name"
+	desc = {
+		text = "rg_cluster.10.desc.a"
+		trigger = {
+			NOR = {
+				has_origin = origin_rg_gray
+			}
+		}
+	}
+	desc = {
+		text = "rg_cluster.10.desc.b"
+		trigger = {
+			OR = {
+				has_origin = origin_rg_gray
+			}
+		}
+	}
+	picture = GFX_evt_l-gateway
+	show_sound = event_mystic_reveal
+	location = event_target:candidate_gateway
+	
+	immediate = {
+		every_playable_country = {
+			limit = {
+				OR = {
+					has_origin = origin_rg_gray
+				}
+				NOT = { is_same_value = root }
+			}
+			country_event = { id = rg_cluster.11 }
+		}
+		every_playable_country = {
+			limit = {
+				has_special_project = RG_LCLUSTER_PROJECT
+				NOT = { is_same_value = root }
+			}
+			country_event = { id = rg_cluster.12 }
+		}
+		every_playable_country = {
+			limit = {
+				NOR = {
+					has_event_chain = l_cluster_chain
+					has_special_project = RG_LCLUSTER_PROJECT
+					is_same_value = root
+				}
+			}
+			country_event = { id = rg_cluster.13}
+		}
+		every_playable_country = {
+			limit = {
+				NOR = {
+					has_special_project = RG_LCLUSTER_PROJECT
+					is_same_value = root
+				}
+				has_event_chain = l_cluster_chain
+			}
+			country_event = { id = rg_cluster.12 }
+		}
+		observer_event = { id = observer.62 }
+	}
+
+	option = {
+		trigger = {
+			NOR = {
+				has_origin = origin_rg_gray
+			}
+		}
+		name = "rg_cluster.10.a"
+	}
+	option = {
+		trigger = {
+			OR = {
+				has_origin = origin_rg_gray
+			}
+		}
+		name = "rg_cluster.10.b"
+	}
+}
+
+# Inform the Gatebuilders of the L-Cluster being open
+country_event = {
+	id = rg_cluster.11
+	is_triggered_only = yes
+	title = "rg_cluster.11.name"
+	desc = "rg_cluster.11.desc"
+	picture = GFX_evt_l-gateway
+	show_sound = event_mystic_reveal
+	
+	immediate = {
+		if = {
+			limit = {
+				has_special_project = RG_LCLUSTER_PROJECT
+			}
+			abort_special_project = { type = RG_LCLUSTER_PROJECT }
+		}
+		else_if = {
+			limit = {
+				has_event_chain = l_cluster_chain
+			}
+			liquidate_clues = yes
+			end_event_chain = "l_cluster_chain"
+		}
+	}
+
+	option = {
+		name = "rg_cluster.11.a"
+	}
+}
+
+# Inform other empires of the L-Cluster being open (has project or event chain)
+country_event = {
+	id = rg_cluster.12
+	is_triggered_only = yes
+	title = "rg_cluster.11.name"
+	desc = "rg_cluster.12.desc"
+	picture = GFX_evt_l-gateway
+	show_sound = event_mystic_reveal
+	
+	immediate = {
+		if = {
+			limit = {
+				has_special_project = RG_LCLUSTER_PROJECT
+			}
+			abort_special_project = { type = RG_LCLUSTER_PROJECT }
+		}
+		else_if = {
+			limit = {
+				has_event_chain = l_cluster_chain
+			}
+			liquidate_clues = yes
+			end_event_chain = "l_cluster_chain"
+		}
+	}
+
+	option = {
+		name = "rg_cluster.12.a"
+	}
+}
+
+# Inform other empires of the L-Cluster being open (has nothing)
+country_event = {
+	id = rg_cluster.13
+	is_triggered_only = yes
+	title = "rg_cluster.11.name"
+	desc = "rg_cluster.13.desc"
+	picture = GFX_evt_l-gateway
+	show_sound = event_mystic_reveal
+
+	option = {
+		name = "rg_cluster.13.a"
+	}
+}

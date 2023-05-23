@@ -1,0 +1,71 @@
+#################################################
+#####										#####
+#####				Arthropoid				#####
+#####										#####
+#################################################
+
+entity = {
+	name = "grey_tempesttw_tank_entity"
+	pdxmesh = "gatebuilder_01_mothership_mesh"
+	scale = 1
+}
+
+entity = {
+	name = "grey_tempesttw_thinktank_part1_entity"
+	locator = { name = "behindb"	position = { 0	0 0 }		rotation = { 0 0 180 } }
+	attach = { "behindb" = "grey_tempesttw_starbase_starfortress_section_entity" }
+	scale = 2.25
+}
+
+entity = {
+	name = "grey_tempesttw_thinktank_part2_entity"
+	locator = { name = "behind"		position = { 10	0 10 }		rotation = { 0 0 0 } }
+	locator = { name = "behindu"	position = { -10	0 10 }	rotation = { 0 0 0 } }
+	locator = { name = "behinda"	position = { 10	0 -10 }		rotation = { 0 0 180 } }
+	locator = { name = "behindb"	position = { -10	0 -10 }	rotation = { 0 0 180 } }
+	attach = { "behind" = "grey_tempesttw_tank_entity" }
+	attach = { "behindu" = "grey_tempesttw_tank_entity" }
+	attach = { "behinda" = "grey_tempesttw_tank_entity" }
+	attach = { "behindb" = "grey_tempesttw_tank_entity" }
+	scale = 1.25
+}
+
+entity = {
+	name = "grey_tempesttw_thinktank_part3_entity"
+}
+
+entity = {
+	name = "grey_tempesttw_thinktank_phase_01_entity"
+	locator = { name = "root"	position = { 0 0 0 } }
+	attach = { "root" = "grey_tempesttw_thinktank_part1_entity" }
+	state = { name = "construction"
+		start_event = { trigger_once = yes sound = { soundeffect = "ringworld_construction_ambient" } }
+	}
+	cull_radius = 500
+}
+
+entity = {
+	name = "grey_tempesttw_thinktank_phase_02_entity"
+	locator = { name = "root"	position = { 0 0 0 } }
+	attach = { "root" = "grey_tempesttw_thinktank_part1_entity" }
+	attach = { "root" = "grey_tempesttw_thinktank_part2_entity" }
+	state = { name = "construction"
+		start_event = { trigger_once = yes sound = { soundeffect = "ringworld_construction_ambient" } }
+	}
+	cull_radius = 500
+}
+
+entity = {
+	name = "grey_tempesttw_thinktank_phase_03_entity"
+	locator = { name = "root"	position = { 0 0 0 } }
+	locator = { name = "roote"	position = { 0	10 -50 }	rotation = { 0 0 0 } }
+	locator = { name = "roota"	position = { 0 10 50 }		rotation = { 180 0 0 } }
+	attach = { "root" = "grey_tempesttw_thinktank_part1_entity" }
+	attach = { "roote" = "grey_tempesttw_thinktank_part2_entity" }
+	attach = { "roota" = "grey_tempesttw_thinktank_part2_entity" }
+	state = { name = "construction"
+		start_event = { trigger_once = yes sound = { soundeffect = "ringworld_construction_ambient" } }
+	}
+	scale = 1.5
+	cull_radius = 500
+}

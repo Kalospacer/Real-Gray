@@ -1,0 +1,2047 @@
+#混合装甲
+utility_component_template = {
+	key = "LARGE_GRAY_MIX_ARMOR"
+	size = large
+	
+	component_set = "LARGE_GRAY_MIX_ARMOR"
+	icon = "GFX_ship_part_gray_armor"
+	icon_frame = 1
+	power = 0
+	power = -180
+	modifier = {
+		ship_armor_add = 3840
+		ship_armor_regen_add_perc = 0.2
+		ship_hull_add = 1960
+		ship_hull_regen_add_perc = 0.2
+		ship_shield_add = 980
+		ship_shield_regen_add_perc = 0.1		
+	}
+
+	size_restriction = { RG_graygoo_interdictor RG_graygoo_Buff RG_graygoo_Arsenal RG_graygoo_mothership }
+	prerequisites = { "tech_gray_matter_remix_2" }
+	tags = { weapon_type_rg_armor }
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 35
+			nanites = 16
+		}		
+		upkeep = {
+			energy = 1.2
+			alloys = 2
+		}
+	}
+	
+}
+
+#超限聚合装甲
+utility_component_template = {
+	key = "HUGE_GRAY_MIX_ARMOR"
+	size = large
+	
+	component_set = "HUGE_GRAY_MIX_ARMOR"
+	icon = "GFX_ship_part_gray_armor"
+	icon_frame = 1
+	power = 0
+	power = -180
+	modifier = {
+		ship_armor_add = 13840
+		ship_armor_regen_add_perc = 0.2
+		ship_hull_add = 11960
+		ship_hull_regen_add_perc = 0.2
+		ship_shield_add = 4560
+		ship_shield_regen_add_perc = 0.1		
+	}
+
+	size_restriction = { RG_graygoo_capitalship }
+	prerequisites = { "tech_gray_matter_remix_2" }
+	tags = { weapon_type_rg_armor }
+	
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 35
+			nanites = 16
+		}		
+		upkeep = {
+			energy = 1.2
+			alloys = 2
+		}
+	}
+	
+}
+
+#L槽光矛
+weapon_component_template = {
+	key = "LARGE_GRAY_WEAPON_LANCE"
+	size = large
+	entity = "invisible_turret_entity"
+	type = instant
+	
+	icon = "GFX_ship_part_gray_laser_1"
+	icon_frame = 1
+	
+	damage = { min = 120 max = 1200 }
+	windup = { min = 1 max = 5 }
+	total_fire_time = 45
+	range = 150.0
+	accuracy = 0.85
+	tracking = 0.40
+	power = -120
+
+	component_set = "LARGE_GRAY_WEAPON_LANCE"
+	prerequisites = { "tech_gray_weapon_lance_1" }
+	tags = { weapon_type_rg_secondary }
+
+	shield_damage = 1.2
+	armor_damage = 1.2
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 135
+			nanites = 2
+		}		
+		upkeep = {
+			energy = 1.2
+			alloys = 1
+		}
+	}
+	
+	projectile_gfx = "gatebuilder_lance_weapon"
+	tags = { weapon_type_energy }
+	
+}
+
+#S槽光矛Mini
+weapon_component_template = {
+	key = "SMALL_GRAY_WEAPON_LANCE"
+	size = small
+	entity = "invisible_turret_entity"
+	type = instant
+	
+	icon = "GFX_ship_part_gray_laser_1"
+	icon_frame = 1
+	
+	damage = { min = 20 max = 200 }
+	windup = { min = 1 max = 5 }
+	total_fire_time = 45
+	range = 100.0
+	accuracy = 0.85
+	tracking = 0.40
+	power = -30
+
+	component_set = "SMALL_GRAY_WEAPON_LANCE"
+	prerequisites = { "tech_minilaser_gray_1" }
+	tags = { weapon_type_rg_secondary }
+
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 25
+		}		
+		upkeep = {
+			energy = 1.2
+			alloys = 1
+		}
+	}
+	
+	projectile_gfx = "gatebuilder_lance_weapon"
+	tags = { weapon_type_energy }
+	
+}
+
+#X槽光矛Mini
+weapon_component_template = {
+	key = "GRAY_BEAM_STATIC_MX"
+	size = extra_large
+	entity = "invisible_turret_entity"
+	type = instant
+	
+	icon = "GFX_ship_part_gray_lance_2"
+	icon_frame = 1
+	
+	firing_arc = 25.0
+	use_ship_kill_target = no
+
+	damage = { min = 200 max = 2000 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 100
+	range = 200.0
+	accuracy = 1.0
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	tracking = 0.4
+	power = -600
+
+	component_set = "GRAY_BEAM_STATIC_MX"
+	prerequisites = { "tech_minilaser_gray_1" }
+	upgrades_to = "GRAY_BEAM_STATIC_X"
+	tags = { weapon_type_rg_main }
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 135
+		}		
+		upkeep = {
+			energy = 3.6
+			alloys = 4
+		}
+	}
+		
+	tags = { weapon_type_energy }
+	projectile_gfx = "gatebuilder_lance_weapon"
+	
+}
+
+
+#X槽光矛
+weapon_component_template = {
+	key = "GRAY_BEAM_STATIC_X"
+	size = extra_large
+	entity = "invisible_turret_entity"
+	type = instant
+	
+	icon = "GFX_ship_part_gray_lance_2"
+	icon_frame = 1
+	
+	firing_arc = 25.0
+	use_ship_kill_target = no
+
+	damage = { min = 1000 max = 10000 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 100
+	range = 250.0
+	accuracy = 1.0
+	shield_damage = 1.5
+	armor_damage = 1.5
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	tracking = 0.4
+	power = -600
+
+	component_set = "GRAY_BEAM_STATIC_X"
+	prerequisites = { "tech_gray_weapon_lance_1" }
+	tags = { weapon_type_rg_main }
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 435
+			nanites = 8
+		}		
+		upkeep = {
+			energy = 3.6
+			alloys = 4
+		}
+	}
+		
+	tags = { weapon_type_energy }
+	projectile_gfx = "gatebuilder_lance_weapon"
+	
+}
+
+#歼星武器
+weapon_component_template = {
+	key = "RG_PLANET_KILLER"
+	size = planet_killer
+	type = planet_killer
+
+	icon = GFX_ship_part_devolution_beam
+	icon_frame = 1
+
+	projectile_gfx = "gatebuilder_planet_weapon_ex"
+	planet_destruction_gfx = "neutron_planet_gfx"
+	total_fire_time = 60 	#开火时间
+	firing_arc = 25.0
+ 
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 2000
+			nanites = 50
+		}
+	}
+
+	power = -1000
+	damage = { min = 35000 max = 350000 }		#伤害
+	windup = { min = 32 max = 64 }	#冷却
+	size_damage_factor = 10.0
+	hull_damage = 10.0                      #船体伤害
+	shield_damage = 10.0                    #护盾伤害
+	armor_damage = 10.0                     #装甲伤害
+	shield_penetration = 10.0               #护盾穿透
+	armor_penetration = 10.0                #装甲穿透                  
+	tracking = 1.00                        #追踪
+	range = 800.00                         #范围
+	accuracy = 1.00                       #命中
+
+	ship_modifier = {
+		custom_tooltip = RG_PLANET_KILLER_tool_tip
+	}
+
+	tags = { weapon_type_rg_main weapon_type_energy }
+	size_restriction = { RG_graygoo_capitalship RG_graygoo_mothership }
+	component_set = "RG_PLANET_KILLER"
+	prerequisites = { "tech_object_gray_6"}
+	hidden = yes
+	ship_limit = 1
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#T槽光矛
+weapon_component_template = {
+	key = "GRAY_BEAM_STATIC_EX"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	
+	icon = "GFX_ship_part_archaeo_titan_beam"
+	icon_frame = 1
+
+	firing_arc = 25.0
+	use_ship_kill_target = no
+
+	damage = { min = 5000 max = 50000 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 200
+	range = 400.0
+	accuracy = 1.0
+	shield_damage = 1.5
+	armor_damage = 1.5
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	tracking = 0.4
+	power = -600
+
+	component_set = "GRAY_BEAM_STATIC_EX"
+	prerequisites = { "tech_gray_weapon_lance_1" }
+	tags = { weapon_type_rg_main }
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 835
+			nanites = 16
+		}		
+		upkeep = {
+			energy = 1.2
+			alloys = 2
+		}
+	}
+		
+	tags = { weapon_type_energy }
+	projectile_gfx = "gatebuilder_titan_weapon_ex"
+	
+}
+
+#点防
+weapon_component_template = {
+	type = point_defence
+	key = "RG_FLAK_BATTERY"
+	size = point_defence
+	
+	icon = "GFX_ship_part_flak_batteries_4"
+	icon_frame = 1
+
+	damage = { min = 8 max = 35 }
+	windup = { min = 1 max = 6 }
+	total_fire_time = 4
+	range = 110
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	accuracy = 1.0
+	tracking = 0.8
+	power = -5
+
+	prerequisites = { "tech_gray_weapon_lance_1" }
+	component_set = "RG_FLAK_BATTERY"
+	projectile_gfx = "RG_flak_pd_3"
+	tags = { weapon_type_point_defense weapon_type_energy }
+	ai_tags = { weapon_role_point_defense }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 13
+			nanites = 0.5
+		}
+		upkeep = {
+			energy = 0.13
+			alloys = 0.013
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+	point_defence_targets = { "missile" "strike_craft" }
+}
+
+#点防-不死鸟
+weapon_component_template = {
+	type = point_defence
+	key = "RG_FLAK_PHOENIX"
+	size = point_defence
+	
+	icon = GFX_ship_part_deluge
+	icon_frame = 1
+
+	damage = { min = 10200 max = 20400 }
+	windup = { min = 999 max = 999 }
+	total_fire_time = 1
+	range = 1
+	shield_damage = 2080.0
+	armor_damage = 2080.0
+	hull_damage = 1080.0
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	accuracy = 1.0
+	tracking = 0.8
+	power = -5
+
+	component_set = "RG_FLAK_PHOENIX"
+	projectile_gfx = "RG_flak_pd_3"
+	tags = { weapon_type_rg_sp }
+	size_restriction = { RG_graygoo_capitalship RG_graygoo_icebreaker_interdictor }
+	prerequisites = { "tech_gray_buffnut_6" }
+
+	ship_modifier = {
+		custom_tooltip = RG_FLAK_PHOENIX_tool_tip
+	}
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 13
+			nanites = 0.5
+		}
+		upkeep = {
+			energy = 0.13
+			alloys = 0.013
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#一次性动能炮
+weapon_component_template = {
+	key = "LARGE_GRAY_WEAPON_KIN"
+	size = large
+	entity = "invisible_turret_entity"
+	type = instant
+
+	use_ship_kill_target = no
+	
+	component_set = "LARGE_GRAY_WEAPON_KIN"
+	icon = "GFX_ship_part_autocannon_4"
+	icon_frame = 1
+	
+	damage = { min = 2000 max = 2500 }
+	windup = { min = 1 max = 32 }
+	total_fire_time = 900.0	
+	range = 300.0
+	accuracy = 0.85
+	tracking = 0.40
+	power = 0
+
+	prerequisites = { "tech_gray_matter_spray_5" }
+	size_restriction = { RG_graygoo_Arsenal RG_graygoo_mothership }
+	tags = { weapon_type_rg_secondary }
+
+	shield_damage = 1.2
+	shield_penetration = 1.0
+	armor_penetration = 0.5
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 35
+		}		
+		upkeep = {
+			energy = 0
+			alloys = 0
+		}
+	}
+	
+	projectile_gfx = "adv_kinetic_artillery"
+	tags = { weapon_type_kinetic }
+	
+}
+
+#一次性动能炮-聚合
+weapon_component_template = {
+	key = "HUGE_GRAY_WEAPON_KIN"
+	size = large
+	entity = "invisible_turret_entity"
+	type = instant
+
+	use_ship_kill_target = no
+	
+	component_set = "HUGE_GRAY_WEAPON_KIN"
+	icon = "GFX_ship_part_autocannon_4"
+	icon_frame = 1
+	
+	damage = { min = 20000 max = 25000 }
+	windup = { min = 1 max = 32 }
+	total_fire_time = 900.0	
+	range = 300.0
+	accuracy = 0.85
+	tracking = 0.40
+	power = 0
+
+	prerequisites = { "tech_gray_matter_spray_5" }
+	size_restriction = { RG_graygoo_capitalship }
+	tags = { weapon_type_rg_secondary }
+
+	shield_damage = 1.2
+	shield_penetration = 1.0
+	armor_penetration = 0.5
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 35
+		}		
+		upkeep = {
+			energy = 0
+			alloys = 0
+		}
+	}
+	
+	projectile_gfx = "adv_kinetic_artillery"
+	tags = { weapon_type_kinetic }
+	
+}
+
+#无制导
+weapon_component_template = {
+	key = "RG_ENERGY_MISSILE_KIN"
+	size = torpedo
+	entity = "invisible_turret_entity"
+	type = instant
+
+	use_ship_kill_target = no
+	
+	component_set = "RG_ENERGY_MISSILE_KIN"
+	icon = "GFX_ship_part_graymine"
+	icon_frame = 1
+	
+	damage = { min = 150 max = 1500 }
+	windup = { min = 2 max = 20 }
+	total_fire_time = 100
+	range = 200.0
+	accuracy = 1.0
+	tracking = 0.5
+	power = -180
+
+	tags = { weapon_type_energy }
+	projectile_gfx = "rg_gatebuilder_torpedo_ballistic"
+	prerequisites = { "tech_gray_nano_boost_3" }
+	tags = { weapon_type_rg_torpedoe }
+
+	size_damage_factor = 1.0
+	shield_damage = 1.2
+	armor_damage = 1.2
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 135
+			nanites = 2
+		}		
+		upkeep = {
+			energy = 0
+			alloys = 0
+		}
+	}	
+}
+
+#鱼雷
+weapon_component_template = {
+	key = "RG_ENERGY_MISSILE"
+	size = torpedo
+	type = missile
+
+	component_set = "RG_ENERGY_MISSILE"
+	icon = "GFX_ship_part_graymine"
+	icon_frame = 1
+
+	damage = { min = 2500 max = 2500}
+	windup = { min = 2 max = 20 }
+	total_fire_time = 100
+	range = 200.0
+	accuracy = 1.0
+	tracking = 0.5
+	power = -180
+
+	tags = { weapon_type_energy }
+	projectile_gfx = "gatebuilder_torpedo"
+	prerequisites = { "tech_gray_nano_boost_3" }
+
+	missile_speed = 150
+	missile_evasion = 0.35
+	missile_shield = 500
+	missile_armor = 500
+	missile_health = 1000
+	missile_retarget_range = 100
+
+	size_damage_factor = 1.0
+	shield_damage = 1.2
+	armor_damage = 1.2
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 135
+			nanites = 2
+		}		
+		upkeep = {
+			energy = 0
+			alloys = 0
+		}
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+
+}
+
+#航母雷达
+weapon_component_template = {
+	key = "RG_CARRIER_RADAR"
+	size = point_defence
+	entity = "turret_point_defence_entity"
+	type = instant
+	icon = "GFX_ship_part_sensor_1"
+    icon_frame = 1
+   
+    damage = { min = 0 max = 0 }
+	windup = { min = 20 max = 40 }
+	
+	total_fire_time = 1
+	range = 1000.0
+	accuracy = 0.0
+	tracking = 0.0
+
+	prerequisites = { "tech_gray_interdictor_4" }
+
+	hull_damage = 0.0
+	shield_penetration = 0.0
+	shield_damage = 0.0
+	armor_penetration = 0.0
+	armor_damage = 0.0
+
+	power = -100
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}
+	}
+
+	ship_modifier = {
+		custom_tooltip = RG_CARRIER_RADAR_tool_tip
+	}
+
+	class_restriction = { shipclass_military }
+
+	component_set = "RG_CARRIER_RADAR"
+	projectile_gfx = "RG_invisible_radar"
+
+	ai_weight = {
+		weight = 0
+	}			
+}
+
+#攻击机
+strike_craft_component_template = {
+	key = "RG_BOMBER_HANGAR_ATTACK_ROCKET"
+	size = LARGE
+	entity = "gatebuilder_01_strikecraft_entity"
+	power = -60
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 80
+			nanites = 8
+		}
+		upkeep = {
+			energy = 0.2
+			alloys = 0.2
+		}
+	}
+
+	size_restriction = { RG_graygoo_interdictor RG_graygoo_mothership }
+	prerequisites = { "tech_gray_nano_boost_3" }
+		
+	count = 15
+	regeneration_per_day = 1.0
+	launch_time = 1
+	
+	damage = { min = 42.5 max = 425 }
+	cooldown = 10
+	# windup = { min = 1 max = 10 }
+	range = 1000
+	engagement_range = 1000
+	accuracy = 0.85
+	tracking = 0.15
+	
+	health = 80
+	armor = 40
+	shield = 40
+	evasion = 0.40
+	
+	speed = 425
+	rotation_speed = 0.25
+	acceleration = 0.6
+	
+	shield_damage = 1.2
+	armor_damage = 1.2
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	
+	weapon_type = instant
+	projectile_gfx = "gatebuilder_titan_weapon_ex"
+	ship_behavior = "rg_bombers_behavior"
+	icon = "GFX_ship_part_strike_craft_skrand"
+	icon_frame = 1
+	component_set = "RG_BOMBER_HANGAR_ATTACK_ROCKET"
+	tags = { weapon_type_strike_craft weapon_type_energy }
+	ai_tags = { weapon_role_anti_armor }
+
+	ai_weight = {
+		weight = 0
+	}
+}
+#鱼雷机
+strike_craft_component_template = {
+	key = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO"
+	size = LARGE
+	entity = "gatebuilder_01_strikecraft_entity"
+	power = -60
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 80
+			nanites = 8
+		}
+		upkeep = {
+			energy = 0.2
+			alloys = 0.2
+		}
+	}
+
+	size_restriction = { RG_graygoo_interdictor RG_graygoo_mothership }
+	prerequisites = { "tech_gray_nano_boost_3" }
+		
+	count = 15
+	regeneration_per_day = 1.0
+	launch_time = 1
+	
+	damage = { min = 82.5 max = 825 }
+	# 247dpd
+	cooldown = 10
+	# windup = { min = 1 max = 10 }
+	# total_fire_time = 200
+	range = 100
+	engagement_range = 1000
+	accuracy = 0.85
+	tracking = 0.15
+	
+	health = 180
+	armor = 110
+	shield = 40
+	evasion = 0.40
+	
+	speed = 225
+	rotation_speed = 0.25
+	acceleration = 0.6
+
+	size_damage_factor = 1.0
+	shield_damage = 1.2
+	armor_damage = 1.2
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	
+	weapon_type = instant
+	projectile_gfx = "gatebuilder_torpedo"
+	ship_behavior = "rg_bombers_behavior"
+	icon = "GFX_ship_part_strike_craft_skrand"
+	icon_frame = 1
+	component_set = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO"
+	tags = { weapon_type_strike_craft weapon_type_energy }
+	ai_tags = { weapon_role_anti_armor }
+
+	ai_weight = {
+		weight = 0
+	}
+}
+#舰爆
+strike_craft_component_template = {
+	key = "RG_BOMBER_HANGAR_AP_BOMB"
+	size = LARGE
+	entity = "gatebuilder_01_strikecraft_entity"
+	power = -60
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 80
+			nanites = 16
+		}
+		upkeep = {
+			energy = 0.2
+			alloys = 0.2
+		}
+	}
+
+	size_restriction = { RG_graygoo_interdictor RG_graygoo_mothership }
+	prerequisites = { "tech_gray_nano_boost_3" }
+		
+	count = 15
+	regeneration_per_day = 1.0
+	launch_time = 1
+	
+	damage = { min = 125 max = 1250 }
+	# 375dpd
+	cooldown = 10
+	# windup = { min = 1 max = 10 }
+	range = 10
+	engagement_range = 1000
+	accuracy = 0.85
+	tracking = 0.15
+	
+	health = 180
+	armor = 110
+	shield = 40
+	evasion = 0.40
+	
+	speed = 225
+	rotation_speed = 0.25
+	acceleration = 0.6
+	
+	size_damage_factor = 1.0
+	shield_damage = 1.2
+	armor_damage = 1.2
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	
+	weapon_type = instant
+	projectile_gfx = "proton_torpedoes"
+	ship_behavior = "rg_bombers_behavior"
+	icon = "GFX_ship_part_strike_craft_skrand"
+	icon_frame = 1
+	component_set = "RG_BOMBER_HANGAR_AP_BOMB"
+	tags = { weapon_type_strike_craft weapon_type_energy }
+	ai_tags = { weapon_role_anti_armor }
+
+	ai_weight = {
+		weight = 0
+	}
+}
+#战斗机
+strike_craft_component_template = {
+	key = "RG_FIGHTER_HANGAR_BEAM"
+	size = LARGE
+	entity = "gatebuilder_01_strikecraft_entity"
+	
+	weapon_type = point_defence
+	projectile_gfx = "gatebuilder_lance_weapon"
+	power = -60
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 80
+			nanites = 8
+		}
+		upkeep = {
+			energy = 0.2
+			alloys = 0.2
+		}
+	}
+
+	size_restriction = { RG_graygoo_interdictor RG_graygoo_mothership }
+	prerequisites = { "tech_gray_nano_boost_3" }
+
+	count = 30
+	regeneration_per_day = 2.0
+	launch_time = 1
+	
+	damage = { min = 12 max = 120 }
+	# 144dpd
+	cooldown = 5
+	range = 150
+	engagement_range = 1000
+	accuracy = 0.90
+	tracking = 0.10
+	
+	health = 60
+	armor = 20
+	shield = 40
+	evasion = 0.50
+	
+	speed = 625
+	rotation_speed = 0.25
+	acceleration = 0.6
+	
+	shield_damage = 1.2
+	armor_damage = 1.2
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	
+	ship_behavior = "rg_bombers_behavior"
+	icon = "GFX_ship_part_strike_craft_skrand"
+	icon_frame = 1
+	component_set = "RG_FIGHTER_HANGAR_BEAM"
+	tags = { weapon_type_strike_craft weapon_type_energy}
+	ai_tags = { weapon_role_point_defense }
+	
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#自由飞控
+utility_component_template = {
+	key = "RG_COMBAT_COMPUTER_COLOSSUS"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 0
+		}
+	}
+	ship_behavior = "RG_colossus"
+
+	size_restriction = { RG_graygoo_interdictor RG_graygoo_Buff RG_graygoo_Arsenal RG_graygoo_mothership RG_graygoo_icebreaker_interdictor }
+	prerequisites = { "tech_gray_interdictor_4" }
+	tags = { weapon_type_rg_computer }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.25
+		ship_weapon_range_mult = 0.25
+		ship_tracking_add = 10
+	}
+	
+	component_set = "combat_computers"
+
+	ai_weight = {
+		weight = 0
+	}
+}
+#航母飞控
+utility_component_template = {
+	key = "RG_COMBAT_COMPUTER_CARRIER"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 0
+		}
+	}
+	ship_behavior = "rg_carrier_behavior"
+
+	size_restriction = { RG_graygoo_interdictor RG_graygoo_Arsenal RG_graygoo_mothership }
+	prerequisites = { "tech_gray_interdictor_4" }
+	tags = { weapon_type_rg_computer }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.25
+		ship_weapon_range_mult = 0.25
+		ship_tracking_add = 10
+	}
+	
+	component_set = "combat_computers"
+
+	ai_weight = {
+		weight = 0
+	}
+}
+#冲锋飞控
+utility_component_template = {
+	key = "RG_COMBAT_COMPUTER_CHARGE"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 0
+		}
+	}
+	ship_behavior = "RG_line"
+
+	size_restriction = { RG_graygoo_interdictor RG_graygoo_Arsenal RG_graygoo_mothership }
+	prerequisites = { "tech_gray_interdictor_4" }
+	tags = { weapon_type_rg_computer }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.25
+		ship_weapon_range_mult = 0.25
+		ship_tracking_add = 10
+	}
+	
+	component_set = "combat_computers"
+
+	ai_weight = {
+		weight = 0
+	}
+}
+#火炮飞控
+utility_component_template = {
+	key = "RG_COMBAT_COMPUTER_artillery"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 0
+		}
+	}
+	ship_behavior = "RG_artillery"
+
+	size_restriction = { RG_graygoo_interdictor RG_graygoo_Arsenal RG_graygoo_mothership }
+	prerequisites = { "tech_gray_interdictor_4" }
+	tags = { weapon_type_rg_computer }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.25
+		ship_weapon_range_mult = 0.25
+		ship_tracking_add = 10
+	}
+	
+	component_set = "combat_computers"
+
+	ai_weight = {
+		weight = 0
+	}
+}
+#灰风飞控
+utility_component_template = {
+	key = "RG_COMBAT_COMPUTER_MotherShip"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 0
+		}
+	}
+	ship_behavior = "RG_GrayMotherShip"
+
+	prerequisites = { "tech_object_gray_5" }
+	size_restriction = { RG_graygoo_mothership }
+	tags = { weapon_type_rg_computer }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.25
+		ship_weapon_range_mult = 0.25
+		ship_tracking_add = 10
+	}
+	
+	component_set = "combat_computers"
+
+	ai_weight = {
+		weight = 0
+	}
+}
+#光环舰飞控
+utility_component_template = {
+	key = "RG_COMBAT_COMPUTER_aura"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 0
+		}
+	}
+	ship_behavior = "rg_aura_behavior"
+
+	size_restriction = { RG_graygoo_interdictor RG_graygoo_Buff RG_graygoo_Arsenal RG_graygoo_mothership }
+	prerequisites = { "tech_gray_interdictor_4" }
+	tags = { weapon_type_rg_computer }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.25
+		ship_weapon_range_mult = 0.25
+		ship_tracking_add = 10
+	}
+	
+	component_set = "combat_computers"
+
+	ai_weight = {
+		weight = 0
+	}
+}
+#战列飞控
+utility_component_template = {
+	key = "RG_COMBAT_COMPUTER_battle"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 0
+		}
+	}
+	ship_behavior = "RG_battle"
+
+	size_restriction = { RG_graygoo_interdictor RG_graygoo_Arsenal RG_graygoo_mothership }
+	prerequisites = { "tech_gray_interdictor_4" }
+	tags = { weapon_type_rg_computer }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.25
+		ship_weapon_range_mult = 0.25
+		ship_tracking_add = 10
+	}
+	
+	component_set = "combat_computers"
+
+	ai_weight = {
+		weight = 0
+	}
+}
+#雷击舰飞控
+utility_component_template = {
+	key = "RG_COMBAT_COMPUTER_torpedo"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 0
+		}
+	}
+	ship_behavior = "RG_torpedo"
+
+	size_restriction = { RG_graygoo_interdictor RG_graygoo_Arsenal RG_graygoo_mothership }
+	prerequisites = { "tech_gray_interdictor_4" }
+	tags = { weapon_type_rg_computer }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.25
+		ship_weapon_range_mult = 0.25
+		ship_tracking_add = 10
+	}
+	
+	component_set = "combat_computers"
+
+	ai_weight = {
+		weight = 0
+	}
+}
+#防空飞控
+utility_component_template = {
+	key = "RG_COMBAT_COMPUTER_AA"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 0
+		}
+	}
+	ship_behavior = "RG_AA"
+
+	size_restriction = { RG_graygoo_interdictor RG_graygoo_Arsenal RG_graygoo_mothership }
+	prerequisites = { "tech_gray_interdictor_4" }
+	tags = { weapon_type_rg_computer }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.25
+		ship_weapon_range_mult = 0.25
+		ship_tracking_add = 10
+	}
+	
+	component_set = "combat_computers"
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#破冰飞控
+utility_component_template = {
+	key = "RG_COMBAT_COMPUTER_icebreak"
+	size = small
+	icon = "GFX_ship_part_computer_artillery_sapient"
+	icon_frame = 1
+
+	power = 0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 0
+		}
+	}
+	ship_behavior = "RG_icebreak"
+
+	size_restriction = { RG_graygoo_interdictor RG_graygoo_Arsenal RG_graygoo_mothership RG_graygoo_icebreaker_interdictor }
+	prerequisites = { "tech_gray_interdictor_4" }
+	tags = { weapon_type_rg_computer }
+
+	ship_modifier = {
+		ship_fire_rate_mult = 0.25
+		ship_weapon_range_mult = 0.25
+		ship_tracking_add = 10
+	}
+	
+	component_set = "combat_computers"
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#纳米修复云
+utility_component_template = {
+	key = "RG_SHIP_AURA_NANOBOT_CLOUD"
+	size = medium
+	icon = "GFX_ship_part_aura_nanobot"
+	icon_frame = 1
+	power = 0
+
+	size_restriction = { titan RG_graygoo_Buff RG_graygoo_mothership }
+	component_set = "ship_aura_components"
+	prerequisites = { "tech_gray_repair_system_1" }
+	tags = { weapon_type_rg_halo }
+	
+	friendly_aura = {
+		name = "RG_aura_nanobot_cloud"
+		radius = @shipAuraRange
+		apply_on = ships
+		
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = friendly_rg_nanobot_cloud
+			priority = 20
+		}
+		
+		modifier = {
+			ship_hull_regen_add_perc = 3
+			ship_armor_regen_add_perc = 3
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_positive_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 135
+			nanites = 4
+		}		
+		upkeep = {
+			energy = 0
+			alloys = 0
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+utility_component_template = {
+	key = "RG_AUTOCONST_HANGER"
+	size = medium
+	icon = "GFX_ship_part_aura_nanobot"
+	icon_frame = 1
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 500
+		}
+		upkeep = {
+			minerals = 10
+			alloys = 5
+			influence = 1
+		}
+	}
+	power = -100
+	modifier = {
+		ship_hull_regen_add_perc = 0.1
+		ship_shield_regen_add_perc = 0.1
+		ship_armor_regen_add_perc = 0.1
+	}
+	ship_modifier = {
+		custom_tooltip = RG_AUTOCONST_HANGER_tool_tip
+	}
+	size_restriction = { RG_armed_science_ship }
+	component_set = "ship_aura_components"
+	tags = { weapon_type_rg_aux }
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#纳米损管
+utility_component_template = {
+	key = "RG_AUTO_REPAIR"
+	size = aux
+	icon = "GFX_ship_part_ship_part_nanite_repair_system"
+	icon_frame = 1
+	power = 0
+
+	prerequisites = { "tech_gray_repair_system_1" }
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost0
+			nanites = 4
+		}
+	}
+
+	modifier = {
+		ship_hull_regen_add_static = 4000
+		ship_armor_regen_add_static = 2000
+	}
+	
+	component_set = "RG_AUTO_REPAIR"
+	tags = { weapon_type_rg_aux }
+	
+	ai_weight = {
+		weight = 5	
+	}
+}
+
+#神秘调度器
+utility_component_template = {
+	key = "RG_ENIGMATIC_SCHEDULER"
+	size = aux
+	icon = "GFX_ship_part_enigmatic_encoder"
+	icon_frame = 1
+
+	hidden = yes
+
+	power = @cost0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost0
+			nanites = 4
+		}
+	}
+	
+	component_set = "RG_ENIGMATIC_SCHEDULER"
+	tags = { weapon_type_rg_aux }
+
+	modifier = {
+		ship_accuracy_add = 40
+		ship_evasion_add = 40
+	}
+	
+	ai_weight = {
+		weight = 0
+		}
+	}
+
+#质能对抗装置
+utility_component_template = {
+	key = "RG_ARMOR_BOOSTER"
+	size = aux
+	icon = "GFX_ship_part_rg_armor_hardener"
+	icon_frame = 1
+
+	hidden = yes
+
+	power = -1000
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost0
+			nanites = 4
+		}
+	}
+	
+	component_set = "RG_ARMOR_BOOSTER"
+	tags = { weapon_type_rg_aux }
+
+	modifier = {
+		ship_armor_mult = 0.5
+		ship_shield_mult = 0.5
+	}
+	ship_modifier = {
+		ship_shield_hardening_add = 1
+		ship_armor_hardening_add = 1
+	}
+	
+	ai_weight = {
+		weight = 0
+		}
+	}
+
+#引擎增压
+utility_component_template = {
+	key = "RG_ENGINE_BOOSTER"
+	size = aux
+	icon = "GFX_ship_part_instrument_covenant_aux"
+	icon_frame = 1
+	hidden = yes
+	power = @cost0
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = @cost0
+			nanites = 4
+		}
+	}
+	
+	component_set = "ENIGMATIC_ENCODER"
+	tags = { weapon_type_rg_aux }
+
+	modifier = {
+		ship_speed_mult = 0.55
+		ship_evasion_mult = 0.45
+	}
+	
+	ai_weight = {
+		weight = 0
+		}
+	}
+
+#weapon_component_template = { # Nanobot Assimilation
+	#key = "PLANET_KILLER_NANOBOTS"
+	#size = planet_killer
+	#type = planet_killer
+	#use_ship_kill_target = no
+
+	#prerequisites = { "tech_pk_nanobots" }
+
+	#icon = GFX_ship_part_nanobot_diffuser
+	#icon_frame = 1
+
+	#component_set = "PLANET_KILLER_NANOBOTS"
+
+	#planet_destruction_gfx = "assimilation_nanobots_gfx"
+#}
+
+#特别武器
+weapon_component_template = {
+	key = "RG_SP_CANNON_INSTANT"
+	size = titanic
+	entity = "invisible_turret_entity"
+	type = instant
+	
+	hidden = yes
+	icon = "GFX_ship_part_space_whale_weapon_1"
+	icon_frame = 1
+
+	use_ship_kill_target = no
+	
+	firing_arc = 15.0
+	min_range = 30.0
+	firing_arc = 25.0
+	
+	damage = { min = 100 max = 10000 }
+	windup = { min = 30 max = 45 }
+	total_fire_time = 155
+	range = 270.0
+	accuracy = 0.7
+	shield_damage = 1.2
+	armor_damage = 1.2
+	shield_penetration = 1.0
+	armor_penetration = 1.0
+	tracking = 0.3
+	power = -800
+	
+	component_set = "RG_SP_CANNON_INSTANT"
+	projectile_gfx = "gatebuilder_titan_weapon_ex"
+	tags = { weapon_type_energy weapon_type_rg_sp }
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 350
+		}		
+		upkeep = {
+			energy = 10
+		}
+	}
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+#绝对领域
+utility_component_template = {
+	key = "RG_ABSLUTEFIELD"
+	size = medium
+	icon = "GFX_ship_part_aura_quantum_destabilizer"
+	icon_frame = 1
+	power = 0
+
+	size_restriction = { RG_graygoo_Buff }
+	component_set = "ship_aura_components"
+	tags = { weapon_type_rg_halo }
+	
+	hostile_aura = {
+		name = "RG_ABSLUTEFIELD"
+		radius = @shipAuraRange
+		apply_on = ships
+		
+		stack_info = {
+			id = hostile_RG_ABSLUTEFIELD
+			priority = 233
+		}
+
+		modifier = {
+		ship_hull_add = 2147483647
+		ship_hull_mult = 2147483647
+		ship_hull_regen_add_perc = 2147483647
+		}
+
+		damage_per_day = {
+			accuracy = 1
+			damage = { min = 2147483647 max = 2147483647 }
+			
+			shield_penetration = 100.0
+			armor_penetration = 100.0
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+
+	friendly_aura = {
+		name = "RG_ABSLUTEFIELD_F"
+		radius = @shipAuraRange
+		apply_on = ships
+		
+		stack_info = {
+			id = friendly_RG_ABSLUTEFIELD
+			priority = 233
+		}
+		
+		modifier = {
+		ship_hull_add = 32767
+		ship_hull_mult = 327.67
+		ship_hull_regen_add_perc = 327.67
+		}
+	
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#敌对笨蛋光环
+utility_component_template = {
+	key = "RG_BAKAHALO"
+	size = medium
+	icon = "GFX_ship_part_aura_quantum_destabilizer"
+	icon_frame = 1
+	power = 0
+
+	hidden = yes
+
+	size_restriction = { RG_graygoo_Buff }
+	component_set = "ship_aura_components"
+	tags = { weapon_type_rg_halo }
+	
+	hostile_aura = {
+		name = "RG_BAKAHALO"
+		radius = @shipAuraRange
+		apply_on = ships
+		
+		stack_info = {
+			id = hostile_BAKAHALO
+			priority = 233
+		}
+		
+		modifier = {
+		ship_shield_mult = -0.1
+		ship_speed_mult = -0.1
+		ship_armor_mult = -0.1
+		ship_hull_mult = -0.1
+		ship_shield_hardening_add = -1.0
+		ship_armor_hardening_add = -1.0
+		ship_shield_penetration_mult = -1.0
+		ship_armor_penetration_mult = -1.0
+		ship_weapon_range_mult = -0.1
+		ship_tracking_add = -10
+		ship_engagement_range_mult = -0.1
+		ship_disengage_chance_mult = -0.1
+		ship_ftl_jumpdrive_range_mult = -0.1
+		ship_windup_mult = 1.0
+		ship_jumpdrive_cooldown_mult = 1.0
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#笨蛋光环
+utility_component_template = {
+	key = "RG_ANTIBAKAHALO"
+	size = medium
+	icon = "GFX_ship_part_aura_quantum_destabilizer"
+	icon_frame = 1
+	power = 0
+
+	hidden = yes
+
+	size_restriction = { RG_graygoo_Buff }
+	component_set = "ship_aura_components"
+	tags = { weapon_type_rg_halo }
+	
+	friendly_aura = {
+		name = "RG_ANTIBAKAHALO"
+		radius = @shipAuraRange
+		apply_on = ships
+		
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = friendly_BAKAHALO
+			priority = 233
+		}
+
+		damage_per_day = {
+			accuracy = 0.5
+			damage = { min = 48 max = 96 }
+			
+			shield_penetration = 1.0
+			armor_penetration = 1.0
+		}
+		
+		modifier = {
+			ship_shield_mult = -0.1
+			ship_speed_mult = -0.1
+			ship_armor_mult = -0.1
+			ship_hull_mult = -0.1
+			ship_shield_hardening_add = 1.0
+			ship_armor_hardening_add = 1.0
+			ship_shield_penetration_mult = 1.0
+			ship_armor_penetration_mult = 1.0
+			ship_weapon_range_mult = -0.1
+			ship_tracking_add = -10
+			ship_engagement_range_mult = -0.1
+			ship_disengage_chance_mult = -0.1
+			ship_ftl_jumpdrive_range_mult = -0.1
+			ship_windup_mult = 0.1
+			ship_jumpdrive_cooldown_mult = 0.1
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_positive_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+	
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#笨蛋雷达
+weapon_component_template = {
+	key = "RG_ANTIBAKAHALO_RADAR"
+	size = point_defence
+	entity = "invisible_turret_entity"
+	type = instant
+	icon = "GFX_ship_part_sensor_1"
+    icon_frame = 1
+   
+    damage = { min = 0 max = 0 }
+	windup = { min = 20 max = 40 }
+	
+	total_fire_time = 1
+	range = 350.0
+	accuracy = 0.0
+	tracking = 0.0
+
+	size_restriction = { RG_graygoo_Buff }
+	prerequisites = { "tech_gray_buffnut_6" }
+	tags = { weapon_type_rg_halo }
+
+	friendly_aura = {
+		name = "RG_ANTIBAKAHALO"
+		radius = @shipAuraRange
+		apply_on = ships
+		
+		stack_info = {			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = friendly_BAKAHALO
+			priority = 233
+		}
+		
+		modifier = {
+			ship_shield_mult = -0.1
+			ship_speed_mult = -0.1
+			ship_armor_mult = -0.1
+			ship_hull_mult = -0.1
+			ship_shield_hardening_add = 1.0
+			ship_armor_hardening_add = 1.0
+			ship_shield_penetration_mult = 1.0
+			ship_armor_penetration_mult = 1.0
+			ship_weapon_range_mult = -0.1
+			ship_tracking_add = -10
+			ship_engagement_range_mult = -0.1
+			ship_disengage_chance_mult = -0.1
+			ship_ftl_jumpdrive_range_mult = -0.1
+			ship_windup_mult = 0.1
+			ship_jumpdrive_cooldown_mult = 0.1
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_positive_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+
+	hull_damage = 0.0
+	shield_penetration = 0.0
+	shield_damage = 0.0
+	armor_penetration = 0.0
+	armor_damage = 0.0
+
+	power = -100
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}
+	}
+
+	component_set = "RG_ANTIBAKAHALO_RADAR"
+	projectile_gfx = "RG_invisible_radar"
+
+	ai_weight = {
+		weight = 0
+	}			
+}
+
+weapon_component_template = {
+	key = "RG_BAKAHALO_RADAR"
+	size = point_defence
+	entity = "invisible_turret_entity"
+	type = instant
+	icon = "GFX_ship_part_sensor_2"
+    icon_frame = 1
+   
+    damage = { min = 0 max = 0 }
+	windup = { min = 20 max = 40 }
+	
+	total_fire_time = 1
+	range = 350.0
+	accuracy = 0.0
+	tracking = 0.0
+
+	size_restriction = { RG_graygoo_Buff }
+	prerequisites = { "tech_gray_buffnut_6" }
+	tags = { weapon_type_rg_halo }
+
+	hostile_aura = {
+		name = "RG_BAKAHALO"
+		radius = @shipAuraRange
+		apply_on = ships
+		
+		stack_info = {
+			id = hostile_BAKAHALO
+			priority = 233
+		}
+		
+		modifier = {
+		ship_shield_mult = -0.1
+		ship_speed_mult = -0.1
+		ship_armor_mult = -0.1
+		ship_hull_mult = -0.1
+		ship_shield_hardening_add = -1.0
+		ship_armor_hardening_add = -1.0
+		ship_shield_penetration_mult = -1.0
+		ship_armor_penetration_mult = -1.0
+		ship_weapon_range_mult = -0.1
+		ship_tracking_add = -10
+		ship_engagement_range_mult = -0.1
+		ship_disengage_chance_mult = -0.1
+		ship_ftl_jumpdrive_range_mult = -0.1
+		ship_windup_mult = 1.0
+		ship_jumpdrive_cooldown_mult = 1.0
+		}
+
+		damage_per_day = {
+			accuracy = 0.5
+			damage = { min = 96 max = 192 }
+			
+			shield_penetration = 1.0
+			armor_penetration = 1.0
+		}
+		
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+
+	hull_damage = 0.0
+	shield_penetration = 0.0
+	shield_damage = 0.0
+	armor_penetration = 0.0
+	armor_damage = 0.0
+
+	power = -100
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 20
+		}
+	}
+
+	component_set = "RG_BAKAHALO_RADAR"
+	projectile_gfx = "RG_invisible_radar"
+
+	ai_weight = {
+		weight = 0
+	}			
+}
+
+#跃迁引擎
+utility_component_template = {
+	key = "RG_gatebuilder_jump"
+	size = small
+	icon = "GFX_ship_part_warp_drive_3"
+	icon_frame = 1
+	power = -50
+
+	hidden = yes
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 300
+		}
+	}
+
+	#prerequisites = { "tech_gray_interdictor_4" }
+
+	ftl = yes
+	jumpdrive = yes
+	ship_modifier = {
+		ship_windup_mult = -1.0
+		ship_ftl_jumpdrive_range_mult = 1.0
+		ship_jumpdrive_cooldown_mult = -1.0
+	}
+
+	tags = { weapon_type_rg_jumpdrive }
+	
+	ai_weight = {
+		weight = 100
+	}
+
+	class_restriction = { shipclass_military }
+	component_set = "ftl_components"
+}
+
+#传感器
+utility_component_template = {
+	key = "RG_gatebuilder_sensor"
+	size = medium
+	icon = "GFX_ship_part_sensor_4"
+	icon_frame = 1
+	power = -20
+
+	hidden = yes
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 100
+		}
+	}
+	sensor_range = 15
+	hyperlane_range = 20
+
+	#prerequisites = { "tech_gray_interdictor_4" }
+	
+	ship_modifier = {
+		ship_tracking_add = 20
+	}
+
+	component_set = "sensor_components"
+	tags = { weapon_type_rg_sensor }
+	
+	ai_weight = {
+		weight = 100
+	}	
+}
+
+#推进器
+utility_component_template = {
+	key = "RG_gatebuilder_thruster"
+	size = small
+	icon = "GFX_ship_part_thruster_4"
+	icon_frame = 1
+	power = -50
+
+	hidden = yes
+
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 200
+		}
+	}
+
+	#prerequisites = { "tech_gray_interdictor_4" }
+
+	modifier = {
+		ship_speed_mult = 1.25
+		ship_evasion_add = 10
+	}
+
+	component_set = "thruster_components"
+	class_restriction = { shipclass_military }
+	tags = { weapon_type_rg_thruster }
+	
+	ai_weight = {
+		weight = 100
+	}
+}
+
+# Elite Cloaking Device
+utility_component_template = {
+	key = "RG_CORVETTE_CLOAKING_3"
+	size = aux
+	icon = "GFX_ship_part_cloak_dark_matter"
+	icon_frame = 1
+	power = -200
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 200
+		}
+	}
+
+	modifier = {
+		ship_cloaking_strength_add = 5
+		ship_cloaking_detection_add = 5
+	}
+
+	triggered_ship_modifier = {
+		potential = {
+			is_cloaked = yes
+		}
+		modifier = {
+			ship_shield_reduction = 0.1
+		}
+	}
+	custom_tooltip = "RG_CLOAKING_3_TOOLTIP"
+
+	tags = { weapon_type_rg_clocking_comp }
+
+	size_restriction = {RG_gray_juggernaut RG_graygoo_Buff RG_graygoo_icebreaker_interdictor RG_armed_science_ship RG_armed_constructor_ship RG_graygoo_capitalship RG_graygoo_mothership}
+	prerequisites = { "tech_cloaking_3" }
+
+	ship_limit = 1
+	hidden = yes
+	component_set = "science_cloaking_components"
+}

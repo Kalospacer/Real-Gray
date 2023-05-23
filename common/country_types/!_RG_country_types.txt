@@ -1,0 +1,28 @@
+RG_gray_friendly = {
+	show_in_contacts_list = no
+	minimalist_contacts_list_profile = yes
+	share_communications = yes
+	default_ships = no
+	government = no
+	uses_origins = no
+	share_survey_data = yes
+	needs_survey = no
+	observable = yes
+	ai = {
+		enabled = no
+	}
+	faction = {
+		hostile = no
+		needs_border_access = no
+		generate_borders = no
+		needs_colony = no
+		auto_delete = no
+	}
+	custom_diplomacy = yes
+	modules = {
+		basic_technology_module = {}
+		exclusive_diplomacy_module = {
+			contact_rule = on_action_only
+		}
+	}
+}

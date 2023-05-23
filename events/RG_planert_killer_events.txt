@@ -1,0 +1,122 @@
+namespace = RG_planet_killer
+
+# Destroyed a star.
+planet_event = {
+	id = RG_planet_killer.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = { is_star = yes }
+
+	immediate = {
+		set_update_modifiers_batch = begin
+
+		solar_system = { RG_destroy_star_system = yes }
+
+		every_country = {
+			create_message = {
+				type = "STAR_DESTROYED"
+				localization = "message_RG_planet_killer_killed_star_desc"
+				days = 30
+				target = root
+				variable = {
+					type = name
+					localization = "RG_target_planet"
+					scope = root
+				}
+				variable = {
+					type = name
+					localization = "RG_target_system"
+					scope = root.solar_system
+				}
+				variable = {
+					type = name
+					localization = "RG_attacker"
+					scope = from.owner
+				}
+				variable = {
+					type = name
+					localization = "RG_attacker_ship"
+					scope = from
+				}
+			}
+		}
+		set_update_modifiers_batch = end
+	}
+}
+
+# Cracked
+planet_event = {
+	id = RG_planet_killer.2
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = { is_star = no }
+
+	immediate = {
+		set_update_modifiers_batch = begin
+		RG_destroy_planet_effect = yes
+		every_country = {
+			create_message = {
+				type = "PLANET_DESTROYED"
+				localization = "message_RG_planet_killer_killed_planet_desc"
+				days = 30
+				target = root
+				variable = {
+					type = name
+					localization = "RG_target_planet"
+					scope = root
+				}
+				variable = {
+					type = name
+					localization = "RG_attacker"
+					scope = from.owner
+				}
+				variable = {
+					type = name
+					localization = "RG_attacker_ship"
+					scope = from
+				}
+			}
+		}
+		set_update_modifiers_batch = end
+	}
+}
+
+# SP_Cracked
+planet_event = {
+	id = RG_planet_killer.3
+	is_triggered_only = yes
+	hide_window = yes
+
+	trigger = { is_star = no }
+
+	immediate = {
+		set_update_modifiers_batch = begin
+		RG_destroy_planet_effect = yes
+		every_country = {
+			create_message = {
+				type = "PLANET_DESTROYED"
+				localization = "message_RG_planet_killer_killed_planet_sp_desc"
+				days = 30
+				target = root
+				variable = {
+					type = name
+					localization = "RG_target_planet"
+					scope = root
+				}
+				variable = {
+					type = name
+					localization = "RG_attacker"
+					scope = from.owner
+				}
+				variable = {
+					type = name
+					localization = "RG_attacker_ship"
+					scope = from
+				}
+			}
+		}
+		set_update_modifiers_batch = end
+	}
+}

@@ -1,0 +1,196 @@
+# 星海试验船
+ship_design = {
+    name = "RG_COLOSSUS_interdictor_SP"
+    ship_size = RG_graygoo_interdictor
+    is_event_design = yes
+    section = {
+        template = "RG_COLOSSUS_interdictor_key"
+        slot = "mid"
+
+        component = {
+            slot = "PLANET_KILLER_GUN_01"
+            template = "RG_PLANET_KILLER_SP"
+        }
+
+        component = {
+            slot = "LARGE_UTILITY_1"
+            template = ""
+        }
+        component = {
+            slot = "LARGE_UTILITY_2"
+            template = ""
+        }
+        component = {
+            slot = "LARGE_UTILITY_3"
+            template = ""
+        }
+        component = {
+            slot = "LARGE_UTILITY_4"
+            template = ""
+        }
+        component = {
+            slot = "LARGE_UTILITY_5"
+            template = ""
+        }
+        component = {
+            slot = "LARGE_UTILITY_6"
+            template = ""
+        }
+
+        component = {
+            slot = "AUX_UTILITY_1"
+            template = ""
+        }
+
+    }
+	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "HYPER_DRIVE_3"
+	required_component = "SENSOR_4"
+	required_component = "RG_gatebuilder_thruster"
+	required_component = "RG_COMBAT_COMPUTER_MotherShip"
+}
+
+# 星海纸船
+ship_design = {
+	name = "RG_Buff_interdictor_SP"
+	ship_size = RG_graygoo_interdictor
+	is_event_design = yes
+	section = {
+		template = "RG_Buff_interdictor_key"
+		slot = "mid"
+
+		component = {
+			slot = "PD_01"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_02"
+			template = "RG_FLAK_BATTERY"
+		}
+		
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = ""
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = ""
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = ""
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = ""
+		}
+
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "RG_revive_component"
+		}
+
+	}
+	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "HYPER_DRIVE_3"
+	required_component = "SENSOR_4"
+	required_component = "RG_gatebuilder_thruster"
+	required_component = "RG_COMBAT_COMPUTER_MotherShip"
+	required_component = ""
+	required_component = ""
+}
+
+
+# Nanite Dragon
+ship_design = {
+	name = "NAME_RG_FAKE_Dragon"
+	ship_size = nanite_space_dragon_baby
+	is_event_design = yes
+
+	section = {
+		template = "nanite_space_dragon_baby_key"
+		slot = "mid"
+
+		component = {
+			slot = "PRIMARY_GUN_01"
+			template = "GRAY_BEAM_STATIC_X"
+		}
+		component = {
+			slot = "SECONDARY_GUN_01"
+			template = "SMALL_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "SECONDARY_GUN_02"
+			template = "SMALL_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "SECONDARY_GUN_03"
+			template = "SMALL_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "SECONDARY_GUN_04"
+			template = "SMALL_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "SECONDARY_GUN_05"
+			template = "SMALL_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "SECONDARY_GUN_06"
+			template = "SMALL_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "SECONDARY_GUN_07"
+			template = "SMALL_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "SECONDARY_GUN_08"
+			template = "SMALL_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "TERTIARY_GUN_01"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "TERTIARY_GUN_02"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "TERTIARY_GUN_03"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "TERTIARY_GUN_04"
+			template = "RG_FLAK_BATTERY"
+		}
+
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "RG_AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "RG_ARMOR_BOOSTER"
+		}
+	}
+	required_component="GUARDIAN_DRIVE"
+	required_component="RG_COMBAT_COMPUTER_battle"
+	required_component="GUARDIAN_PROPULSION"
+	required_component="GUARDIAN_SENSORS"
+}

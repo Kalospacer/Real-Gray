@@ -1,0 +1,1973 @@
+@gray_portrait = Gray
+
+rg_set_gray_portrait = {
+	change_leader_portrait = @gray_portrait
+}
+
+rg_create_gray_species = {
+	if = {
+		limit = {
+			NOT = { exists = event_target:gray_species }
+		}
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = has_wsg_mod
+					has_global_flag = kdc_event_mod_active
+				}
+			}
+			create_species = {
+				name = GRAY_SPECIES
+				plural = GRAY_SPECIES
+				class = ART
+				portrait = GrayTempest06
+				namelist = ART1
+				effect = {
+					save_global_event_target_as = gray_species
+				}
+			}
+		}
+		else = {
+			create_species = {
+				name = GRAY_SPECIES
+				plural = GRAY_SPECIES
+				class = ART
+				portrait = @gray_portrait
+				namelist = ART1
+				effect = {
+					save_global_event_target_as = gray_species
+				}
+			}
+		}
+	}
+}
+
+rg_create_gray_warship_1 = {
+	create_fleet = {
+		name = "NAME_Gray"
+		settings = {
+			can_disband = yes
+			can_upgrade = yes 
+			can_change_composition = yes 
+			can_change_leader = yes 
+			uses_naval_capacity = yes
+			spawn_debris = yes					
+		}
+		effect = {
+			set_owner = root
+			create_ship = {
+				name = "NAME_Gray"
+				design = "NAME_Gray_Warship"
+				upgradable = yes
+				effect = { set_ship_flag = rg_mothership }					
+			}
+			set_location = {
+				target = root.capital_scope
+				distance = 0
+				angle = random
+			}
+		}
+	}
+}
+
+rg_create_gray_juggernautship_1 = {
+	create_fleet = {
+		name = "NAME_Gray"
+		settings = {
+			can_disband = yes
+			can_upgrade = yes 
+			can_change_composition = yes 
+			can_change_leader = yes 
+			uses_naval_capacity = yes
+			spawn_debris = yes					
+		}
+		effect = {
+			set_owner = root
+			create_ship = {
+				name = "NAME_Gray"
+				design = "NAME_gray_juggernautship"
+				upgradable = yes			
+			}
+			set_location = {
+				target = root.capital_scope
+				distance = 0
+				angle = random
+			}
+		}
+	}
+}
+
+rg_create_gray_constship_1 = {
+	create_fleet = {
+		name = "NAME_Gray"
+		settings = {
+			can_disband = yes
+			can_upgrade = yes 
+			can_change_composition = yes 
+			can_change_leader = yes 
+			uses_naval_capacity = yes
+			spawn_debris = yes					
+		}
+		effect = {
+			set_owner = root
+			create_ship = {
+				name = "NAME_Gray"
+				design = "NAME_RG_GRAY_constructor"
+				prefix = no
+				upgradable = yes					
+			}
+			set_location = {
+				target = root.capital_scope
+				distance = 0
+				angle = random
+			}
+		}
+	}
+}
+
+rg_create_graygoo_ships_1 = {
+	create_ship = {
+		name = random
+		design = "NAME_Nanite_Mothership"
+		graphical_culture = "pirate_01"
+		effect = { set_ship_flag = rg_nanite_mothership }
+	}
+	create_ship = {
+		name = random
+		design = "RG_Buff_interdictor"
+		graphical_culture = "pirate_01"
+	}
+	while = {
+		count = 8
+		create_ship = {
+			name = random
+			design = "RG_aircruiser_Interdictor"
+			graphical_culture = "pirate_01"
+		}
+	}
+}
+
+rg_create_graygoo_ships_2 = {
+	create_ship = {
+		name = random
+		design = "NAME_Nanite_Mothership"
+		graphical_culture = "pirate_01"
+		effect = { set_ship_flag = rg_nanite_mothership }
+	}
+	create_ship = {
+		name = random
+		design = "NAME_Nanite_Mothership"
+		graphical_culture = "pirate_01"
+	}
+	create_ship = {
+		name = random
+		design = "RG_Buff_interdictor"
+		graphical_culture = "pirate_01"
+	}
+	while = {
+		count = 16
+		create_ship = {
+			name = random
+			design = "RG_line_interdictor"
+			graphical_culture = "pirate_01"
+		}
+	}
+}
+
+rg_create_graygoo_ships_3 = {
+	create_ship = {
+		name = random
+		design = "NAME_Nanite_Mothership"
+		graphical_culture = "pirate_01"
+		effect = { set_ship_flag = rg_nanite_mothership }
+	}
+	create_ship = {
+		name = random
+		design = "RG_Buff_interdictor"
+		graphical_culture = "pirate_01"
+	}
+	while = {
+		count = 12
+		create_ship = {
+			name = random
+			design = "RG_carrier_Interdictor"
+			graphical_culture = "pirate_01"
+		}
+	}
+}
+
+rg_create_graygoo_ships_4 = {
+	create_ship = {
+		name = random
+		design = "NAME_Nanite_Mothership_Carrier"
+		graphical_culture = "pirate_01"
+		effect = { set_ship_flag = rg_nanite_mothership }
+	}
+	create_ship = {
+		name = random
+		design = "RG_Buff_interdictor"
+		graphical_culture = "pirate_01"
+	}
+	while = {
+		count = 16
+		create_ship = {
+			name = random
+			design = "RG_Arsenal_Interdictor"
+			graphical_culture = "pirate_01"
+		}
+	}
+}
+
+rg_create_graygoo_roamers_1 = {
+	create_fleet = {
+		name = "NAME_Tempest_Fleet"
+		effect = {
+			set_owner = event_target:graygoo_country
+			create_ship = {
+				name = random
+				design = "NAME_Nanite_Mothership_Carrier"
+				graphical_culture = "pirate_01"
+				effect = { set_ship_flag = rg_nanite_mothership }
+			}
+			create_ship = {
+				name = random
+				design = "RG_Buff_interdictor"
+				graphical_culture = "pirate_01"
+			}
+			while = {
+				count = 8
+				create_ship = {
+					name = random
+					design = "RG_carrier_Interdictor"
+					graphical_culture = "pirate_01"
+				}
+			}
+			set_location = event_target:nanite_factory
+			set_formation_scale = 2
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 500
+
+			queue_actions = {
+				repeat = {
+					find_random_system = {
+						trigger = {
+							id = "graygoo_roamers_1.trigger.1"
+							has_star_flag = lcluster
+						}
+						found_system = {
+							move_to = THIS
+						}	
+					}
+					find_closest_planet = {
+						trigger = {
+							id = "graygoo_roamers_1.trigger.2"
+							is_planet_class = "pc_gray_goo"
+						}
+						found_planet = {
+							orbit_planet = THIS
+							wait = {
+								duration = 50
+								random = 25
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+rg_create_graygoo_roamers_2 = {
+	create_fleet = {
+		name = "NAME_Tempest_Fleet"
+		effect = {
+			set_owner = event_target:graygoo_country
+			create_ship = {
+				name = random
+				design = "NAME_Nanite_Mothership_titan"
+				graphical_culture = "pirate_01"
+				effect = { set_ship_flag = rg_nanite_mothership }
+			}
+			create_ship = {
+				name = random
+				design = "RG_Buff_interdictor"
+				graphical_culture = "pirate_01"
+			}
+			while = {
+				count = 4
+				create_ship = {
+					name = random
+					design = "RG_titan_interdictor"
+					graphical_culture = "pirate_01"
+				}
+			}
+			set_location = event_target:start_1
+			set_formation_scale = 2
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 500
+
+			queue_actions = {
+				repeat = {
+					find_random_system = {
+						trigger = {
+							id = "graygoo_roamers_2.trigger.1"
+							has_star_flag = lcluster
+						}
+						found_system = {
+							move_to = THIS
+						}	
+					}
+					find_closest_planet = {
+						trigger = {
+							id = "graygoo_roamers_2.trigger.2"
+							is_planet_class = "pc_gray_goo"
+						}
+						found_planet = {
+							orbit_planet = THIS
+							wait = {
+								duration = 50
+								random = 25
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+rg_create_graygoo_roamers_3 = {
+	create_fleet = {
+		name = "NAME_Tempest_Fleet"
+		effect = {
+			set_owner = event_target:graygoo_country
+			create_ship = {
+				name = random
+				design = "NAME_Nanite_Mothership"
+				graphical_culture = "pirate_01"
+				effect = { set_ship_flag = rg_nanite_mothership }
+			}
+			create_ship = {
+				name = random
+				design = "RG_Buff_interdictor"
+				graphical_culture = "pirate_01"
+			}
+			while = {
+				count = 8
+				create_ship = {
+					name = random
+					design = "RG_aircruiser_Interdictor"
+					graphical_culture = "pirate_01"
+				}
+			}
+			set_location = event_target:start_2
+			set_formation_scale = 2
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 500
+
+			queue_actions = {
+				repeat = {
+					find_random_system = {
+						trigger = {
+							id = "graygoo_roamers_3.trigger.1"
+							has_star_flag = lcluster
+						}
+						found_system = {
+							move_to = THIS
+						}	
+					}
+					find_closest_planet = {
+						trigger = {
+							id = "graygoo_roamers_3.trigger.2"
+							is_planet_class = "pc_gray_goo"
+						}
+						found_planet = {
+							orbit_planet = THIS
+							wait = {
+								duration = 50
+								random = 25
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+rg_create_graygoo_roamers_4 = {
+	create_fleet = {
+		name = "NAME_Tempest_Fleet"
+		effect = {
+			set_owner = event_target:graygoo_country
+			create_ship = {
+				name = random
+				design = "NAME_Nanite_Mothership"
+				graphical_culture = "pirate_01"
+				effect = { set_ship_flag = rg_nanite_mothership }
+			}
+			create_ship = {
+				name = random
+				design = "RG_Buff_interdictor"
+				graphical_culture = "pirate_01"
+			}
+			while = {
+				count = 16
+				create_ship = {
+					name = random
+					design = "RG_Arsenal_Interdictor"
+					graphical_culture = "pirate_01"
+				}
+			}
+			set_location = event_target:start_3
+			set_formation_scale = 2
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 500
+
+			queue_actions = {
+				repeat = {
+					find_random_system = {
+						trigger = {
+							id = "graygoo_roamers_4.trigger.1"
+							has_star_flag = lcluster
+						}
+						found_system = {
+							move_to = THIS
+						}	
+					}
+					find_closest_planet = {
+						trigger = {
+							id = "graygoo_roamers_4.trigger.2"
+							is_planet_class = "pc_gray_goo"
+						}
+						found_planet = {
+							orbit_planet = THIS
+							wait = {
+								duration = 50
+								random = 25
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+rg_create_graygoo_roamers_5 = {
+	create_fleet = {
+		name = "NAME_Tempest_Fleet"
+		effect = {
+			set_owner = event_target:graygoo_country
+			create_ship = {
+				name = random
+				design = "NAME_Nanite_Mothership"
+				graphical_culture = "pirate_01"
+				effect = { set_ship_flag = rg_nanite_mothership }
+			}
+			create_ship = {
+				name = random
+				design = "RG_Buff_interdictor"
+				graphical_culture = "pirate_01"
+			}
+			while = {
+				count = 8
+				create_ship = {
+					name = random
+					design = "RG_battleship_Interdictor"
+					graphical_culture = "pirate_01"
+				}
+			}
+			set_location = event_target:start_4
+			set_formation_scale = 2
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 500
+
+			queue_actions = {
+				repeat = {
+					find_random_system = {
+						trigger = {
+							id = "graygoo_roamers_5.trigger.1"
+							has_star_flag = lcluster
+						}
+						found_system = {
+							move_to = THIS
+						}	
+					}
+					find_closest_planet = {
+						trigger = {
+							id = "graygoo_roamers_5.trigger.2"
+							is_planet_class = "pc_gray_goo"
+						}
+						found_planet = {
+							orbit_planet = THIS
+							wait = {
+								duration = 50
+								random = 25
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+rg_create_graygoo_roamers_6 = {
+	create_fleet = {
+		name = "NAME_Tempest_Fleet"
+		effect = {
+			set_owner = event_target:graygoo_country
+			create_ship = {
+				name = random
+				design = "NAME_Nanite_Mothership_Carrier"
+				graphical_culture = "pirate_01"
+				effect = { set_ship_flag = rg_nanite_mothership }
+			}
+			create_ship = {
+				name = random
+				design = "RG_Buff_interdictor"
+				graphical_culture = "pirate_01"
+			}
+			while = {
+				count = 16
+				create_ship = {
+					name = random
+					design = "RG_carrier_Interdictor"
+					graphical_culture = "pirate_01"
+				}
+			}
+			set_location = event_target:start_5
+			set_formation_scale = 2
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 500
+
+			queue_actions = {
+				repeat = {
+					find_random_system = {
+						trigger = {
+							id = "graygoo_roamers_6.trigger.1"
+							has_star_flag = lcluster
+						}
+						found_system = {
+							move_to = THIS
+						}	
+					}
+					find_closest_planet = {
+						trigger = {
+							id = "graygoo_roamers_6.trigger.2"
+							is_planet_class = "pc_gray_goo"
+						}
+						found_planet = {
+							orbit_planet = THIS
+							wait = {
+								duration = 50
+								random = 25
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+
+rg_create_graygoo_roamers_7 = {
+	create_fleet = {
+		name = "NAME_Tempest_Fleet"
+		effect = {
+			set_owner = event_target:graygoo_country
+			create_ship = {
+				name = random
+				design = "NAME_Nanite_Mothership"
+				graphical_culture = "pirate_01"
+				effect = { set_ship_flag = rg_nanite_mothership }
+			}
+			create_ship = {
+				name = random
+				design = "RG_Buff_interdictor"
+				graphical_culture = "pirate_01"
+			}
+			while = {
+				count = 12
+				create_ship = {
+					name = random
+					design = "RG_torpedo_interdictor"
+					graphical_culture = "pirate_01"
+				}
+			}
+			set_location = event_target:start_6
+			set_formation_scale = 2
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 500
+
+			queue_actions = {
+				repeat = {
+					find_random_system = {
+						trigger = {
+							id = "graygoo_roamers_7.trigger.1"
+							has_star_flag = lcluster
+						}
+						found_system = {
+							move_to = THIS
+						}	
+					}
+					find_closest_planet = {
+						trigger = {
+							id = "graygoo_roamers_7.trigger.2"
+							is_planet_class = "pc_gray_goo"
+						}
+						found_planet = {
+							orbit_planet = THIS
+							wait = {
+								duration = 50
+								random = 25
+							}
+						}
+					}
+				}
+			}
+		}
+	}
+}
+### Create Dessanu ships
+rg_create_dessanu_roamers_1 = {
+	event_target:graygoo_country = {
+		create_leader = {
+			class = admiral
+			species = owner_main_species
+			name = random
+			skill = 3
+			leader_age_min = 25
+			leader_age_max = 45
+			traits = {
+				trait = random_trait
+			}
+		}
+	}
+	create_fleet = {
+		name = "NAME_Dessanu_Fleet_2"
+		effect = {
+			set_owner = event_target:graygoo_country
+			create_ship = {
+				name = random
+				design = "NAME_Dessanu_Mothership"
+				effect = { set_ship_flag = rg_nanite_mothership }
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = random
+					design = "NAME_Dessanu_Interdictor"
+				}
+			}
+			set_location = event_target:nanite_factory
+			set_formation_scale = 2
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 500
+			assign_leader = last_created_leader
+
+			queue_actions = {
+				repeat = {
+					find_random_system = {
+						trigger = {
+							id = "dessanu_roamers_1.trigger.1"
+							has_star_flag = lcluster
+						}
+						found_system = {
+							move_to = THIS
+						}	
+					}
+					find_closest_planet = {
+						trigger = {
+							id = "dessanu_roamers_1.trigger.2"
+							is_planet_class = "pc_gray_goo"
+						}
+						found_planet = {
+							orbit_planet = THIS
+							wait = {
+								duration = 50
+								random = 25
+							}
+						}
+					}
+				}
+			}
+		}
+		settings = {
+			uses_naval_capacity = no
+		}
+	}
+}
+
+rg_create_dessanu_roamers_2 = {
+	event_target:graygoo_country = {
+		create_leader = {
+			class = admiral
+			species = owner_main_species
+			name = random
+			skill = 3
+			leader_age_min = 25
+			leader_age_max = 45
+			traits = {
+				trait = random_trait
+			}
+		}
+	}
+	create_fleet = {
+		name = "NAME_Dessanu_Fleet_2"
+		effect = {
+			set_owner = event_target:graygoo_country
+			create_ship = {
+				name = random
+				design = "NAME_Dessanu_Mothership"
+				effect = { set_ship_flag = rg_nanite_mothership }
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = random
+					design = "NAME_Dessanu_Interdictor"
+				}
+			}
+			set_location = event_target:start_1
+			set_formation_scale = 2
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 500
+			assign_leader = last_created_leader
+
+			queue_actions = {
+				repeat = {
+					find_random_system = {
+						trigger = {
+							id = "dessanu_roamers_2.trigger.1"
+							has_star_flag = lcluster
+						}
+						found_system = {
+							move_to = THIS
+						}	
+					}
+					find_closest_planet = {
+						trigger = {
+							id = "dessanu_roamers_2.trigger.2"
+							is_planet_class = "pc_gray_goo"
+						}
+						found_planet = {
+							orbit_planet = THIS
+							wait = {
+								duration = 50
+								random = 25
+							}
+						}
+					}
+				}
+			}
+		}
+		settings = {
+			uses_naval_capacity = no
+		}
+	}
+}
+
+rg_create_dessanu_roamers_3 = {
+	event_target:graygoo_country = {
+		create_leader = {
+			class = admiral
+			species = owner_main_species
+			name = random
+			skill = 3
+			leader_age_min = 25
+			leader_age_max = 45
+			traits = {
+				trait = random_trait
+			}
+		}
+	}
+	create_fleet = {
+		name = "NAME_Dessanu_Fleet_2"
+		effect = {
+			set_owner = event_target:graygoo_country
+			create_ship = {
+				name = random
+				design = "NAME_Dessanu_Mothership"
+				effect = { set_ship_flag = rg_nanite_mothership }
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = random
+					design = "NAME_Dessanu_Interdictor"
+				}
+			}
+			set_location = event_target:start_2
+			set_formation_scale = 2
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 500
+			assign_leader = last_created_leader
+
+			queue_actions = {
+				repeat = {
+					find_random_system = {
+						trigger = {
+							id = "dessanu_roamers_3.trigger.1"
+							has_star_flag = lcluster
+						}
+						found_system = {
+							move_to = THIS
+						}	
+					}
+					find_closest_planet = {
+						trigger = {
+							id = "dessanu_roamers_3.trigger.2"
+							is_planet_class = "pc_gray_goo"
+						}
+						found_planet = {
+							orbit_planet = THIS
+							wait = {
+								duration = 50
+								random = 25
+							}
+						}
+					}
+				}
+			}
+		}
+		settings = {
+			uses_naval_capacity = no
+		}
+	}
+}
+
+rg_create_dessanu_roamers_4 = {
+	event_target:graygoo_country = {
+		create_leader = {
+			class = admiral
+			species = owner_main_species
+			name = random
+			skill = 3
+			leader_age_min = 25
+			leader_age_max = 45
+			traits = {
+				trait = random_trait
+			}
+		}
+	}
+	create_fleet = {
+		name = "NAME_Dessanu_Fleet_2"
+		effect = {
+			set_owner = event_target:graygoo_country
+			create_ship = {
+				name = random
+				design = "NAME_Dessanu_Mothership"
+				effect = { set_ship_flag = rg_nanite_mothership }
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = random
+					design = "NAME_Dessanu_Interdictor"
+				}
+			}
+			set_location = event_target:start_3
+			set_formation_scale = 2
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 500
+			assign_leader = last_created_leader
+
+			queue_actions = {
+				repeat = {
+					find_random_system = {
+						trigger = {
+							id = "dessanu_roamers_4.trigger.1"
+							has_star_flag = lcluster
+						}
+						found_system = {
+							move_to = THIS
+						}	
+					}
+					find_closest_planet = {
+						trigger = {
+							id = "dessanu_roamers_4.trigger.2"
+							is_planet_class = "pc_gray_goo"
+						}
+						found_planet = {
+							orbit_planet = THIS
+							wait = {
+								duration = 50
+								random = 25
+							}
+						}
+					}
+				}
+			}
+		}
+		settings = {
+			uses_naval_capacity = no
+		}
+	}
+}
+
+rg_create_dessanu_roamers_5 = {
+	event_target:graygoo_country = {
+		create_leader = {
+			class = admiral
+			species = owner_main_species
+			name = random
+			skill = 3
+			leader_age_min = 25
+			leader_age_max = 45
+			traits = {
+				trait = random_trait
+			}
+		}
+	}
+	create_fleet = {
+		name = "NAME_Dessanu_Fleet_2"
+		effect = {
+			set_owner = event_target:graygoo_country
+			create_ship = {
+				name = random
+				design = "NAME_Dessanu_Mothership"
+				effect = { set_ship_flag = rg_nanite_mothership }
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = random
+					design = "NAME_Dessanu_Interdictor"
+				}
+			}
+			set_location = event_target:start_4
+			set_formation_scale = 2
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 500
+			assign_leader = last_created_leader
+
+			queue_actions = {
+				repeat = {
+					find_random_system = {
+						trigger = {
+							id = "dessanu_roamers_5.trigger.1"
+							has_star_flag = lcluster
+						}
+						found_system = {
+							move_to = THIS
+						}	
+					}
+					find_closest_planet = {
+						trigger = {
+							id = "dessanu_roamers_5.trigger.2"
+							is_planet_class = "pc_gray_goo"
+						}
+						found_planet = {
+							orbit_planet = THIS
+							wait = {
+								duration = 50
+								random = 25
+							}
+						}
+					}
+				}
+			}
+		}
+		settings = {
+			uses_naval_capacity = no
+		}
+	}
+}
+
+rg_create_dessanu_roamers_6 = {
+	event_target:graygoo_country = {
+		create_leader = {
+			class = admiral
+			species = owner_main_species
+			name = random
+			skill = 3
+			leader_age_min = 25
+			leader_age_max = 45
+			traits = {
+				trait = random_trait
+			}
+		}
+	}
+	create_fleet = {
+		name = "NAME_Dessanu_Fleet_2"
+		effect = {
+			set_owner = event_target:graygoo_country
+			create_ship = {
+				name = random
+				design = "NAME_Dessanu_Mothership"
+				effect = { set_ship_flag = rg_nanite_mothership }
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = random
+					design = "NAME_Dessanu_Interdictor"
+				}
+			}
+			set_location = event_target:start_5
+			set_formation_scale = 2
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 500
+			assign_leader = last_created_leader
+
+			queue_actions = {
+				repeat = {
+					find_random_system = {
+						trigger = {
+							id = "dessanu_roamers_6.trigger.1"
+							has_star_flag = lcluster
+						}
+						found_system = {
+							move_to = THIS
+						}	
+					}
+					find_closest_planet = {
+						trigger = {
+							id = "dessanu_roamers_6.trigger.2"
+							is_planet_class = "pc_gray_goo"
+						}
+						found_planet = {
+							orbit_planet = THIS
+							wait = {
+								duration = 50
+								random = 25
+							}
+						}
+					}
+				}
+			}
+		}
+		settings = {
+			uses_naval_capacity = no
+		}
+	}
+}
+
+rg_create_dessanu_roamers_7 = {
+	event_target:graygoo_country = {
+		create_leader = {
+			class = admiral
+			species = owner_main_species
+			name = random
+			skill = 3
+			leader_age_min = 25
+			leader_age_max = 45
+			traits = {
+				trait = random_trait
+			}
+		}
+	}
+	create_fleet = {
+		name = "NAME_Dessanu_Fleet_2"
+		effect = {
+			set_owner = event_target:graygoo_country
+			create_ship = {
+				name = random
+				design = "NAME_Dessanu_Mothership"
+				effect = { set_ship_flag = rg_nanite_mothership }
+			}
+			while = {
+				count = 5
+				create_ship = {
+					name = random
+					design = "NAME_Dessanu_Interdictor"
+				}
+			}
+			set_location = event_target:start_6
+			set_formation_scale = 2
+			set_fleet_stance = aggressive
+			set_aggro_range_measure_from = self
+			set_aggro_range = 500
+			assign_leader = last_created_leader
+
+			queue_actions = {
+				repeat = {
+					find_random_system = {
+						trigger = {
+							id = "dessanu_roamers_7.trigger.1"
+							has_star_flag = lcluster
+						}
+						found_system = {
+							move_to = THIS
+						}	
+					}
+					find_closest_planet = {
+						trigger = {
+							id = "dessanu_roamers_7.trigger.2"
+							is_planet_class = "pc_gray_goo"
+						}
+						found_planet = {
+							orbit_planet = THIS
+							wait = {
+								duration = 50
+								random = 25
+							}
+						}
+					}
+				}
+			}
+		}
+		settings = {
+			uses_naval_capacity = no
+		}
+	}
+}
+
+rg_create_dessanu_ships_1 = {
+	create_ship = {
+		name = random
+		design = "NAME_Dessanu_Mothership"
+		effect = { set_ship_flag = rg_nanite_mothership }
+	}
+	while = {
+		count = 5
+		create_ship = {
+			name = random
+			design = "NAME_Dessanu_Interdictor"
+		}
+	}
+}
+
+#工蜂机库
+#scope (ship)
+RG_const_auto_build_effect = {
+	create_fleet = {
+		name = RG_armed_constructor_ship
+		effect = {
+			set_owner = root.controller
+			while = {
+				count = $count$
+				create_ship = {
+					name = RG_armed_constructor_ship
+					prefix = no
+					design = "NAME_RG_GRAY_constructor"
+					effect = {
+						set_cloaking_active = yes
+					}
+				}
+			}
+			set_location = root
+			set_owner = event_target:RG_const_country
+			queue_actions = {
+				repeat = {
+					#前往哨站
+					find_closest_system = {
+						trigger = {
+                            id = RG_work_bees_trigger.1
+							is_same_value = prev.solar_system
+							NOT = { exists = space_owner }
+						}
+						found_system = {
+							move_to = this			
+						}
+					}
+					find_closest_planet = {
+						trigger = {
+                            id = RG_work_bees_trigger.2
+							is_star = yes
+							solar_system = {
+								NOT = { exists = space_owner }
+							}
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+							wait = {
+								duration = $starbase_time$
+							}
+							effect = {
+								id = RG_work_bees_effect.1
+								solar_system = {
+									create_starbase = {
+										size = starbase_outpost
+										owner = prevprevprev.controller
+									}
+								}
+							}
+						}
+					}
+					#建造中继器
+					find_closest_planet = {
+						trigger = {
+							id = RG_work_bees_trigger.3
+							is_star = yes
+							solar_system = {
+								NOT = { has_megastructure = hyper_relay }
+							}
+						}
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+							wait = {
+								duration = 360
+							}
+							effect = {
+								id = RG_work_bees_effect.2
+								solar_system = {
+									spawn_megastructure = {
+										type = hyper_relay
+										owner = prevprevprev.controller
+										orbit_angle = 220
+										orbit_distance = 220
+									}
+								}
+							}
+						}
+					}
+					#建造空间站
+					find_closest_planet = {
+						trigger = {
+                            id = RG_work_bees_trigger.1
+							RG_planet_can_auto_build = yes
+						}					
+						found_planet = {
+							move_to = this
+							orbit_planet = this
+							wait = {
+								duration = $station_time$
+							}
+							effect = {
+								id = RG_work_bees_effect.2
+								#若星系属于母国，则自动建造
+								if = {
+									limit = { 
+										solar_system = {
+											is_owned_by = prevprevprev.controller
+										}
+									}
+									RG_build_stations = {
+										owner = prevprev.controller
+									}
+									set_timed_planet_flag = {
+										flag = RG_work_bees_built
+										days = 30
+									}
+								}
+								#若星系有主但不属于母国，则工蜂自毁
+								else_if = {
+									limit = { 
+										solar_system = {
+											has_owner = yes
+											NOT = {
+												is_owned_by = root.controller
+											}
+										}
+									}
+									delete_fleet = prev
+								}
+							}
+						}
+						#若找不到可建造星球，则工蜂自毁
+						failed = {
+							effect = {
+                                id = RG_work_bees_failed.1
+								delete_fleet = this
+							}
+						}
+					}	
+				}
+			}
+		}
+	}
+}
+
+#自动建造采矿站
+#scope (planet)
+RG_build_stations = {
+	switch = {
+		trigger = has_deposit_for
+		shipclass_mining_station = { 
+			create_mining_station = {
+				owner = $owner$
+			}
+		}
+		shipclass_research_station = { 
+			create_research_station = {
+				owner = $owner$
+			}
+		}
+	}
+}
+
+RG_destroy_planet_effect = {
+	#Dismantle observation post
+	if = {
+		limit = {
+			has_observation_outpost = yes
+		}
+		observation_outpost_owner = {
+			country_event = { id = planet_destruction.1000 days = 1 }
+		}
+	}
+
+	# Contingency Machine World
+	if = {
+		limit = {
+			is_planet_class = pc_ai
+			NOT = { has_planet_flag = machine_lair }
+		}
+		set_planet_flag = destroyed_by_colossus
+		set_planet_flag = planet_cracked
+		planet_event = { id = crisis.2040 }
+	}
+
+	# Contingency Final Machine World
+	if = {
+		limit = {
+			is_planet_class = pc_ai
+			has_planet_flag = machine_lair
+		}
+		set_planet_flag = destroyed_by_colossus
+		set_planet_flag = planet_cracked
+		from.owner = { save_event_target_as = final_machine_world_destroyer }
+		stop_crisis_sound = yes
+		planet_event = { id = crisis.2046 }
+	}
+
+	# Swarm Situation Log counter
+	if = {
+		limit = {
+			exists = owner
+			owner = { is_country_type = swarm }
+		}
+		every_country = {
+			limit = { has_event_chain = "prethoryn_scourge_chain" }
+			add_event_chain_counter = {
+				event_chain = "prethoryn_scourge_chain"
+				counter = "infested_worlds"
+				amount = -1
+			}
+			add_event_chain_counter = {
+				event_chain = "prethoryn_scourge_chain"
+				counter = "infested_worlds_cleansed"
+				amount = 1
+			}
+		}
+	}
+
+	if = {
+		limit = {
+			OR = {
+				is_active_resolution = "resolution_rulesofwar_reverence_for_life"
+				is_active_resolution = "resolution_rulesofwar_independent_tribunals"
+				is_active_resolution = "resolution_rulesofwar_last_resort_doctrine"
+				is_active_resolution = "resolution_rulesofwar_demobilization_initiative"
+			}
+		}
+		from.owner = {
+			set_timed_country_flag = { flag = resolution_breached_fired_cracker days = 3600 }
+		}
+	}
+
+	# Exterminatus Achievement
+	if = {
+		limit = { is_capital = yes }
+		from.owner = { set_country_flag = exterminatus }
+	}
+	if = {
+		limit = {
+			exists = owner
+			owner = {
+				NOT = { is_same_value = from.owner }
+				OR = {
+					is_country_type = default
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+			}
+		}
+		# Generate threat
+		if = {
+			limit = {
+				is_colony = yes
+			}
+			add_threat = { who = from.owner amount = 3 }
+			# modifier for allies + those upset by genocide
+			every_country = {
+				limit = {
+					NOR = {
+						is_same_value = from.owner
+						is_same_value = root.owner
+						AND = {
+							has_federation = yes
+							is_in_federation_with = from.owner
+						}
+					}
+					OR = {
+						has_communications = from.owner
+						has_communications = root.owner
+					}
+					OR = {
+						AND = {
+							has_federation = yes
+							is_in_federation_with = root.owner
+						}
+						has_ai_personality = awakened_fallen_empire_xenophile
+						AND = {
+							is_country_type = default
+							OR = {
+								is_egalitarian = yes
+								is_xenophile = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = { root = { is_colony = no } }
+					add_opinion_modifier = {
+						modifier = opinion_cracked_an_uninhabited_world
+						who = from.owner
+					}
+				}
+				else = {
+					add_opinion_modifier = {
+						modifier = opinion_cracked_a_world
+						who = from.owner
+					}
+				}
+			}
+		}
+		else = {
+			add_threat = { who = from.owner amount = 1 }
+		}
+		# modifiers for victim
+		owner = {
+			if = {
+				limit = { root = { is_colony = no } }
+				add_opinion_modifier = {
+					modifier = opinion_cracked_my_uninhabited_world
+					who = from.owner
+				}
+			}
+			else = {
+				add_opinion_modifier = {
+					modifier = opinion_cracked_my_world
+					who = from.owner
+				}
+			}
+			if = {
+				limit = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+				add_modifier = {
+					modifier = colossus_victim
+					days = 10800 # 30 years
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = owner
+				owner = { is_country_type = primitive }
+			}
+			# modifier for allies + those upset by genocide
+			every_country = {
+				limit = {
+					NOT = { is_same_value = from.owner }
+					OR = {
+						has_communications = from.owner
+						has_communications = root.owner
+					}
+					OR = {
+						has_ai_personality = awakened_fallen_empire_xenophile
+						AND = {
+							is_country_type = default
+							NOR = {
+								is_xenophobe = yes
+								is_homicidal = yes
+								is_xenophile = yes
+							}
+						}
+					}
+				}
+				add_opinion_modifier = {
+					modifier = opinion_cracked_a_primitive_world
+					who = from.owner
+				}
+			}
+			every_country = {
+				limit = {
+					NOT = { is_same_value = from.owner }
+					OR = {
+						has_communications = from.owner
+						has_communications = root.owner
+					}
+					OR = {
+						has_ai_personality = awakened_fallen_empire_xenophile
+						AND = {
+							is_country_type = default
+							is_xenophile = yes
+						}
+					}
+				}
+				add_opinion_modifier = {
+					modifier = opinion_cracked_a_primitive_world_phile
+					who = from.owner
+				}
+			}
+		}
+	}
+	# Add war exhaustion to planet owner
+	if = {
+		limit = {
+			exists = owner
+		}
+		owner = {
+			if = {
+				limit = { #isn't the case when the crisis bombards planets, for instance
+					is_at_war_with = from.fleet.owner
+				}
+				add_static_war_exhaustion = {
+					attacker = from.fleet.owner
+					location = root
+					value_for_planet_destruction = 1.0
+				}
+			}
+		}
+	}
+	if = {
+		limit = { is_planet_class = pc_habitat } # uncolonized
+		spawn_habitat_cracker_effect = yes
+		change_pc = pc_gray_goo
+	}
+
+	if = {
+		limit = { is_colony = yes }
+		if = {
+			limit = {
+				exists = owner
+				owner = { is_same_value = event_target:gray_owner }
+			}
+			# already owned
+		}
+		else = {
+			set_owner = event_target:gray_owner
+		}
+		every_owned_pop = {
+			modify_species = {
+				species = event_target:gray_owner.owner_species
+				add_trait = trait_cybernetic
+				add_traits_at_start_of_list = yes
+				change_scoped_species = yes
+			}
+		}
+		every_owned_pop = {
+			limit = {
+				has_modifier = pop_recently_conquered
+			}
+			remove_modifier = pop_recently_conquered
+		}
+		every_owned_pop = {
+			set_citizenship_type = {
+				type = citizenship_full_machine
+				cooldown = yes
+			}
+		}
+		# Special graphics for Habitats and Ring Worlds
+		if = {
+			limit = {
+				is_planet_class = pc_habitat
+			}
+			spawn_habitat_nanobot_effect = yes
+		}
+		else_if = {
+			limit = {
+				is_planet_class = pc_ringworld_habitable
+			}
+			spawn_ringworld_nanobot_effect = yes
+		}
+		if = {
+			limit = {
+				OR = {
+					is_planet_class = pc_habitat
+					is_planet_class = pc_ringworld_habitable
+				}
+			}
+			# nothing
+		}
+		else = {
+			change_pc = this
+		}
+	}
+	else_if = {
+		limit = { is_ringworld = yes }
+		spawn_ringworld_nanobot_effect = yes
+	}
+	else_if = {
+		limit = { is_planet_class = pc_ringworld_tech }
+		spawn_ringworld_nanobot_effect = yes
+	}
+	else_if = {
+		limit = { is_planet_class = pc_ringworld_seam }
+		spawn_ringworld_nanobot_effect = yes
+	}
+	else = {
+		change_pc = pc_gray_goo
+		add_modifier = {
+			modifier = "terraforming_candidate"
+			days = -1
+		}
+	}
+}
+
+RG_destroy_star_system = {
+	every_system_ambient_object = {
+		limit = {
+			# Preserve Unbidden crisis effects
+			NOR = {
+				has_ambient_object_flag = extradimensional_system_effect
+				has_ambient_object_flag = extradimensional_system_effect_2
+			}
+		}
+		destroy_ambient_object = this
+	}
+	every_system_planet = {
+		limit = { is_star = yes }
+		create_ambient_object = {
+			type = "star_explosion"
+			play_animation_once = yes
+			location = this
+		}
+		last_created_ambient_object = {
+			set_location = {
+				target = prev
+				distance = 0
+				angle = random
+			}
+		}
+		change_pc = pc_black_hole
+		solar_system = { set_star_class = sc_black_hole }
+		if = { limit = { planet_size > 29 } set_planet_size = 15 }
+		else_if = { limit = { planet_size > 19 } set_planet_size = 10 }
+		else_if = { limit = { always = yes } set_planet_size = 7 }
+		prevent_anomaly = yes
+		clear_deposits = yes
+	}
+	# Handle Contingency Machine Worlds
+	every_system_planet = {
+		limit = {
+			is_planet_class = pc_ai
+			NOT = { has_planet_flag = machine_lair }
+		}
+		destroy_machine_world = yes
+	}
+	random_system_planet = {
+		limit = {
+			is_planet_class = pc_ai
+			has_planet_flag = machine_lair
+		}
+		from.owner = { save_event_target_as = final_machine_world_destroyer }
+		stop_crisis_sound = yes
+		planet_event = { id = crisis.2046 }
+	}
+	every_system_planet = {
+		limit = {
+			is_star = no
+			is_asteroid = no
+			NOR = {
+				is_planet_class = pc_ringworld_habitable_damaged
+				is_planet_class = pc_ringworld_tech_damaged
+				is_planet_class = pc_ringworld_seam_damaged
+			}
+		}
+
+		if = {
+			limit = { is_planet_class = pc_habitat } # uncolonized
+			spawn_habitat_cracker_effect = yes
+			change_pc = pc_gray_goo
+		}
+		
+		if = {
+			limit = { is_colony = yes }
+			if = {
+				limit = {
+					exists = owner
+					owner = { is_same_value = event_target:gray_owner }
+				}
+				# already owned
+			}
+			else = {
+				set_owner = event_target:gray_owner
+			}
+			every_owned_pop = {
+				modify_species = {
+					species = event_target:gray_owner.owner_species
+					add_trait = trait_cybernetic
+					add_traits_at_start_of_list = yes
+					change_scoped_species = yes
+				}
+			}
+			every_owned_pop = {
+				limit = {
+					has_modifier = pop_recently_conquered
+				}
+				remove_modifier = pop_recently_conquered
+			}
+			every_owned_pop = {
+				set_citizenship_type = {
+					type = citizenship_full_machine
+					cooldown = yes
+				}
+			}
+			# Special graphics for Habitats and Ring Worlds
+			if = {
+				limit = {
+					is_planet_class = pc_habitat
+				}
+				spawn_habitat_nanobot_effect = yes
+			}
+			else_if = {
+				limit = {
+					is_planet_class = pc_ringworld_habitable
+				}
+				spawn_ringworld_nanobot_effect = yes
+			}
+			if = {
+				limit = {
+					OR = {
+						is_planet_class = pc_habitat
+						is_planet_class = pc_ringworld_habitable
+					}
+				}
+				# nothing
+			}
+			else = {
+				change_pc = this
+			}
+		}
+		else_if = {
+			limit = { is_ringworld = yes }
+			spawn_ringworld_nanobot_effect = yes
+		}
+		else_if = {
+			limit = { is_planet_class = pc_ringworld_tech }
+			spawn_ringworld_nanobot_effect = yes
+		}
+		else_if = {
+			limit = { is_planet_class = pc_ringworld_seam }
+			spawn_ringworld_nanobot_effect = yes
+		}
+		else = {
+			change_pc = pc_gray_goo
+			add_modifier = {
+				modifier = "terraforming_candidate"
+				days = -1
+			}
+		}
+	}
+	every_system_planet = {
+		limit = {
+			exists = orbital_station
+		}
+		orbital_station = { dismantle = yes }
+	}
+	every_system_planet = {
+		limit = { is_asteroid = yes }
+		clear_deposits = yes
+	}
+	every_fleet_in_system = {
+		limit = {
+			NOR = {
+				is_same_value = from
+				# except Extradimensionals
+				AND = {
+					exists = owner
+					owner = {
+						OR = {
+							is_country_type = portal_holder
+							is_country_type = extradimensional
+							is_country_type = extradimensional_2
+							is_country_type = extradimensional_3
+						}
+					}
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = event_target:gray_owner #i.e. not final destruction of all matter
+				is_mobile = yes
+			}
+			set_mia = yes
+		}
+		else = {
+			destroy_fleet = this
+		}
+	}
+	every_system_megastructure = {
+		set_ruined_megastructure = yes
+	}
+	star = {
+		create_ambient_object = {
+			type = "destroyed_system"
+			location = this
+		}
+		last_created_ambient_object = {
+			set_ambient_object_flag = destroyed_system_effect
+			set_location = {
+				target = prev
+				distance = 0
+				angle = random
+			}
+		}
+	}
+}
+
+rg_emergency_fleet_defence = {
+	while = {
+		count = 3
+			create_ship = {
+			name = random
+			design = "NAME_Nanite_Mothership_titan"
+			graphical_culture = "pirate_01"
+		}
+	}
+	while = {
+		count = 22
+		create_ship = {
+			name = random
+			design = "RG_Arsenal_Interdictor"
+			graphical_culture = "pirate_01"
+		}
+	}
+}
+
+rg_create_graygoo_fleet_random = {
+	random_list = {
+		1 = {
+			create_ship = {
+				name = random
+				design = "NAME_gray_capitalship"
+				graphical_culture = "pirate_01"
+				upgradable = no
+			}
+		}
+		33 = {
+			create_ship = {
+				name = random
+				design = "NAME_Nanite_Mothership"
+				graphical_culture = "pirate_01"
+				upgradable = no
+			}
+		}
+		33 = {
+			create_ship = {
+				name = random
+				design = "NAME_Nanite_Mothership_Carrier"
+				graphical_culture = "pirate_01"
+				upgradable = no
+			}
+		}
+		33 = {
+			create_ship = {
+				name = random
+				design = "NAME_Nanite_Mothership_titan"
+				graphical_culture = "pirate_01"
+				upgradable = no
+			}
+		}
+	}
+	create_ship = {
+		name = random
+		design = "RG_Buff_interdictor"
+		graphical_culture = "pirate_01"
+	}
+	while = {
+		count = 8
+		random_list = {
+			10 = { #1_航战
+				create_ship = {
+					name = random
+					design = "RG_aircruiser_Interdictor"
+					graphical_culture = "pirate_01"
+					upgradable = yes
+				}
+			}
+			10 = { #2_航母
+				create_ship = {
+					name = random
+					design = "RG_carrier_Interdictor"
+					graphical_culture = "pirate_01"
+					upgradable = yes
+				}
+			}
+			10 = { #3_战列
+				create_ship = {
+					name = random
+					design = "RG_battleship_Interdictor"
+					graphical_culture = "pirate_01"
+					upgradable = yes
+				}
+			}
+			10 = { #4_泰坦
+				create_ship = {
+					name = random
+					design = "RG_titan_interdictor"
+					graphical_culture = "pirate_01"
+					upgradable = yes
+				}
+			}
+			10 = { #5_雷击
+				create_ship = {
+					name = random
+					design = "RG_torpedo_interdictor"
+					graphical_culture = "pirate_01"
+					upgradable = yes
+				}
+			}
+			10 = { #6_近防
+				create_ship = {
+					name = random
+					design = "RG_AA_interdictor"
+					graphical_culture = "pirate_01"
+					upgradable = yes
+				}
+			}
+			10 = { #7_武库
+				create_ship = { 
+					name = random
+					design = "RG_Arsenal_Interdictor"
+					graphical_culture = "pirate_01"
+					upgradable = yes
+				}
+			}
+			10 = { #8_雷巡
+				create_ship = {
+					name = random
+					design = "RG_torpedocruiser_interdictor"
+					graphical_culture = "pirate_01"
+					upgradable = yes
+				}
+			}
+			10 = { #9_破冰
+				create_ship = {
+					name = random
+					design = "RG_icebreaker_interdictor"
+					graphical_culture = "pirate_01"
+					upgradable = yes
+				}
+			}
+			10 = { #10_线列
+				create_ship = {
+					name = random
+					design = "RG_line_interdictor"
+					graphical_culture = "pirate_01"
+					upgradable = yes
+				}
+			}
+		}
+	}
+}

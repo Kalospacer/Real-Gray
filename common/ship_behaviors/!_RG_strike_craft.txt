@@ -1,0 +1,213 @@
+#this file ( and all files in this folder ) is reloadable with console command "reload behavior"
+#filewatcher is enabled for all files in this folder
+
+@engagement_range = 300
+@return_range = 500
+
+ship_behavior = {
+	name = "rg_fighters_behavior"
+	preferred_attack_range = 12
+	formation_distance = @engagement_range
+	return_to_formation_distance = @return_range
+
+	attack_move_pattern = orbit
+	passive_move_pattern = charge
+    
+	# targeting = {
+    #     component_target_weight_mult = 0        
+    #     keep_previous_target_bonus = 100        
+    #     damage_value = 5            
+    #     low_health_bonus = 5000        
+    #     shield_focus_value = 5            
+    #     armor_focus_value = 5            
+    #     already_incoming_damage_penalty = 200        
+    #     distance_to_fleet_penalty = 0        
+    #     size_difference_penalty = 0            
+    #     transport_target_penalty = 50000        
+    #     civilian_target_penalty = 100000    
+    # }
+
+}
+
+ship_behavior = {
+	name = "rg_bombers_behavior"
+	preferred_attack_range = max
+	formation_distance = @engagement_range
+	return_to_formation_distance = @return_range
+	
+	attack_move_pattern = charge #orbit
+	passive_move_pattern = charge
+}
+
+ship_behavior = {
+	name = "RG_GrayMotherShip"
+
+	preferred_attack_range = 100
+	formation_distance = 100
+	return_to_formation_distance = 110
+	
+	collision_awareness = 0.2
+	collision_radius = 1.0							#collision_radius is a multiplier on the radius specified in the ship size
+	collision_strafe = 2.5
+
+	attack_move_pattern = stay_at_range
+	passive_move_pattern = charge
+
+	ignore_combat_movement = yes
+	
+	desc = "RG_GrayMotherShip_BEHAVIOR_DESC"
+}
+
+ship_behavior = {
+    name = "rg_carrier_behavior"
+	preferred_attack_range = max
+	formation_distance = 400
+	return_to_formation_distance = 390
+	
+	collision_awareness = 1
+	collision_radius = 20
+	collision_strafe = 10
+	attack_move_pattern = follow #stationary
+	passive_move_pattern = stay_at_range #follow #charge
+
+	desc = "rg_carrier_BEHAVIOR_DESC"
+}
+
+ship_behavior = {
+    name = "rg_aura_behavior"
+	preferred_attack_range = max
+	formation_distance = 600
+	return_to_formation_distance = 590
+	
+	collision_awareness = 1
+	collision_radius = 20
+	collision_strafe = 10
+	attack_move_pattern = follow #stationary
+	passive_move_pattern = stay_at_range #follow #charge
+
+
+	desc = "rg_aura_BEHAVIOR_DESC"
+}
+
+ship_behavior = {
+	name = "RG_artillery"
+	preferred_attack_range = 390
+	formation_distance = 390
+	return_to_formation_distance = 400
+
+	combat_target_anchor = root
+
+	collision_awareness = 0.2
+	collision_radius = 1.0							#collision_radius is a multiplier on the radius specified in the ship size
+	collision_strafe = 2.5							#collision_strafe allows the ship to move in any direction while colliding with another
+	attack_move_pattern = stay_at_range
+	passive_move_pattern = charge
+	
+	desc = "RG_artillery_BEHAVIOR_DESC"
+}
+
+ship_behavior = {
+	name = "RG_battle"
+	preferred_attack_range = 100
+	formation_distance = 100
+	return_to_formation_distance = 110
+
+	combat_target_anchor = root
+
+	collision_awareness = 0.2
+	collision_radius = 1.0							#collision_radius is a multiplier on the radius specified in the ship size
+	collision_strafe = 2.5							#collision_strafe allows the ship to move in any direction while colliding with another
+	attack_move_pattern = stay_at_range
+	passive_move_pattern = charge
+
+	
+	desc = "RG_battle_BEHAVIOR_DESC"
+}
+
+ship_behavior = {
+	name = "RG_torpedo"
+	preferred_attack_range = 170
+	formation_distance = 170
+	return_to_formation_distance = 180
+
+	combat_target_anchor = root
+
+	collision_awareness = 0.2
+	collision_radius = 1.0							#collision_radius is a multiplier on the radius specified in the ship size
+	collision_strafe = 2.5							#collision_strafe allows the ship to move in any direction while colliding with another
+	attack_move_pattern = stay_at_range
+	passive_move_pattern = charge
+
+	
+	desc = "RG_torpedo_BEHAVIOR_DESC"
+}
+
+ship_behavior = {
+	name = "RG_line"
+	preferred_attack_range = 50		#max/min/median/12/412..	#this is the distance to target the ship wants to keep when attacking
+	formation_distance = 50				#when orbing/following ship will try to keep this distance to assigned position	
+	return_to_formation_distance = 60	#when attacking the ship will switch to passive mode if distance to assigned position is greater that this
+
+	collision_awareness = 0.75			
+	collision_radius = 1.0				
+	collision_strafe = 2.5				#collision_strafe allows the ship to move in any direction while colliding with another
+	
+	attack_move_pattern = follow			#stationary/charge/follow/stationary/none
+	passive_move_pattern = charge
+
+	
+	desc = "RG_line_BEHAVIOR_DESC"
+}
+
+ship_behavior = {
+	name = "RG_AA"
+	preferred_attack_range = 150		#max/min/median/12/412..	#this is the distance to target the ship wants to keep when attacking
+	formation_distance = 150				#when orbing/following ship will try to keep this distance to assigned position	
+	return_to_formation_distance = 160	#when attacking the ship will switch to passive mode if distance to assigned position is greater that this
+
+	collision_awareness = 0.75			
+	collision_radius = 1.0				
+	collision_strafe = 2.5				#collision_strafe allows the ship to move in any direction while colliding with another
+	
+	attack_move_pattern = follow			#stationary/charge/follow/stationary/none
+	passive_move_pattern = charge
+
+	
+	desc = "RG_AA_BEHAVIOR_DESC"
+}
+
+ship_behavior = {
+	name = "RG_colossus"
+
+	preferred_attack_range = 0
+	formation_distance = 0
+	return_to_formation_distance = 0
+	
+	collision_awareness = 0
+	collision_strafe = 0
+	collision_radius = 0
+
+	attack_move_pattern = none
+	passive_move_pattern = none
+
+	ignore_combat_movement = yes
+	
+	desc = "RG_COLOSSUS_BEHAVIOR_DESC"
+}
+
+ship_behavior = {
+	name = "RG_icebreak"
+	preferred_attack_range = 1		#max/min/median/12/412..	#this is the distance to target the ship wants to keep when attacking
+	formation_distance = 1				#when orbing/following ship will try to keep this distance to assigned position	
+	return_to_formation_distance = 5	#when attacking the ship will switch to passive mode if distance to assigned position is greater that this
+
+	collision_awareness = 0.75			
+	collision_radius = 1.0				
+	collision_strafe = 2.5				#collision_strafe allows the ship to move in any direction while colliding with another
+	
+	attack_move_pattern = stay_at_range			#stationary/charge/follow/stationary/none
+	passive_move_pattern = charge
+
+	
+	desc = "RG_icebreak_BEHAVIOR_DESC"
+}

@@ -1,0 +1,33 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_ship_part_gray_armor"
+		textureFile = "gfx/interface/icons/ship_parts/ship_part_gray_armor.dds"
+		noOfFrames = 1
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_gray_lance_2"
+		textureFile = "gfx/interface/icons/ship_parts/ship_part_gray_lance_2.dds"
+		noOfFrames = 1
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_gray_laser_1"
+		textureFile = "gfx/interface/icons/ship_parts/ship_part_gray_laser_1.dds"
+		noOfFrames = 1
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_graymine"
+		textureFile = "gfx/interface/icons/ship_parts/ship_part_graymine.dds"
+		noOfFrames = 1
+	}
+
+	spriteType = {
+		name = "GFX_ship_part_rg_armor_hardener"
+		textureFile = "gfx/interface/icons/ship_parts/ship_part_rg_armor_hardener.dds"
+		noOfFrames = 1
+	}
+
+}

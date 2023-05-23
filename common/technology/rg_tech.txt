@@ -1,0 +1,270 @@
+tech_gray_weapon_lance_1 = {
+	area = physics
+	cost = 5000
+	tier = 5
+	is_rare = yes
+	is_reverse_engineerable = no
+	category = { particles }
+	ai_update_type = military
+	prerequisites = { 
+		"tech_object_gray_5" 
+		"tech_zero_point_power"
+	}
+	weight = @tier2weight3
+
+	ai_weight = {
+		factor = 0		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+}
+
+tech_gray_matter_remix_2 = {
+	area = engineering
+	cost = 5000
+	tier = 5
+	is_rare = yes
+	category = { materials }
+	ai_update_type = military
+	weight = @tier2weight3
+	prerequisites = {
+		"tech_gray_weapon_lance_1" 
+		"tech_ship_armor_5"
+	}
+
+	ai_weight = {
+		factor = 0		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+}
+
+tech_gray_nano_boost_3 = {
+	area = engineering
+	cost = 5000
+	tier = 5
+	is_rare = yes
+	category = { propulsion }
+	ai_update_type = military
+	weight = @tier2weight3
+	prerequisites = {
+		"tech_gray_matter_remix_2"
+		"tech_thrusters_4"
+	}
+
+	ai_weight = {
+		factor = 0		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+}
+
+tech_gray_interdictor_4 = {
+	area = engineering
+	cost = 5000
+	tier = 5
+	is_rare = yes
+	category = { voidcraft }
+	ai_update_type = military
+	weight = @tier2weight3
+	prerequisites = {
+		"tech_gray_nano_boost_3" 
+		"tech_battleships"
+	}
+
+	ai_weight = {
+		factor = 0		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+}
+
+tech_gray_matter_spray_5 = {
+	area = engineering
+	cost = 5000
+	tier = 5
+	is_rare = yes
+	category = { propulsion }
+	ai_update_type = military
+	weight = @tier2weight3
+	prerequisites = {
+		"tech_gray_interdictor_4"
+		"tech_kinetic_artillery_2"
+	}
+
+	ai_weight = {
+		factor = 0		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+}
+
+tech_gray_buffnut_6 = {
+	area = engineering
+	cost = 5000
+	tier = 5
+	is_rare = yes
+	category = { voidcraft }
+	ai_update_type = military
+	weight = @tier2weight3
+	prerequisites = {
+		"tech_gray_interdictor_4"
+		"tech_juggernaut"
+	}
+
+	ai_weight = {
+		factor = 0		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+}
+
+tech_gray_army_7 = {
+	area = society
+	cost = 5000
+	tier = 5
+	is_rare = yes
+	category = { military_theory }
+	ai_update_type = military
+	weight = @tier2weight3
+	prerequisites = {
+		"tech_gray_matter_remix_2"
+		"tech_self_aware_logic"
+	}
+
+	ai_weight = {
+		factor = 0		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+}
+
+tech_gray_repair_system_1 = {
+	area = engineering
+	cost = 5000
+	tier = 5
+	is_rare = yes
+	category = { voidcraft }
+	is_reverse_engineerable = yes
+	ai_update_type = military
+	weight = 0
+
+	ai_weight = {
+		factor = 0		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+}
+
+# UNLOCKED BY PROJECT
+tech_object_gray_5 = {
+	cost = 5000
+	area = engineering
+	tier = 5
+	is_rare = yes
+	is_reverse_engineerable = no
+	category = { voidcraft }
+	weight = 0
+
+	## unlock 
+
+	ai_weight = {
+		factor = 1
+	}
+}
+
+tech_minilaser_gray_1 = {
+	cost = 2000
+	area = physics
+	tier = 5
+	is_rare = yes
+	is_reverse_engineerable = no
+	category = { particles }
+	weight = 0
+
+	## unlock 
+
+	ai_weight = {
+		factor = 1
+	}
+}
+
+tech_object_gray_6 = {
+	cost = 2000
+	area = physics
+	tier = 5
+	is_rare = yes
+	is_reverse_engineerable = no
+	category = { particles }
+	weight = 0
+
+	## unlock 
+
+	ai_weight = {
+		factor = 0
+	}
+}
+
+tech_gray_noway = {
+	cost = 2000
+	area = physics
+	tier = 5
+	is_rare = yes
+	is_reverse_engineerable = no
+	category = { particles }
+	weight = 0
+
+	## unlock 
+
+	ai_weight = {
+		factor = 0
+	}
+}

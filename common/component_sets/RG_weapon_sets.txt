@@ -1,0 +1,188 @@
+component_set = {
+	key = "RG_SP_CANNON_INSTANT"
+	
+	icon = "GFX_ship_part_space_whale_weapon_1"
+	icon_frame = 1	
+}
+
+component_set = {
+	key = "LARGE_GRAY_WEAPON_LANCE"
+
+	icon = "GFX_ship_part_gray_laser_1"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "SMALL_GRAY_WEAPON_LANCE"
+
+	icon = "GFX_ship_part_gray_laser_1"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "GRAY_BEAM_STATIC_X"
+
+	icon = "GFX_ship_part_gray_lance_2"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "GRAY_BEAM_STATIC_MX"
+
+	icon = "GFX_ship_part_gray_lance_2"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "GRAY_BEAM_STATIC_EX"
+
+	icon = "GFX_ship_part_archaeo_titan_beam"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "LARGE_GRAY_WEAPON_KIN"
+
+	icon = "GFX_ship_part_autocannon_4"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "HUGE_GRAY_WEAPON_KIN"
+
+	icon = "GFX_ship_part_autocannon_4"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "RG_FLAK_BATTERY"
+
+	icon = "GFX_ship_part_flak_batteries_4"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "RG_FLAK_PHOENIX"
+
+	icon = "GFX_ship_part_flak_batteries_3"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "RG_ENERGY_MISSILE"
+
+	icon = "GFX_ship_part_graymine"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "RG_ENERGY_MISSILE_KIN"
+
+	icon = "GFX_ship_part_graymine"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "RG_CARRIER_RADAR"
+
+	icon = "GFX_ship_part_sensor_1"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "LARGE_GRAY_MIX_ARMOR"
+
+	icon = "GFX_ship_part_gray_armor"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "HUGE_GRAY_MIX_ARMOR"
+
+	icon = "GFX_ship_part_gray_armor"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "RG_BOMBER_HANGAR_ATTACK_ROCKET"
+
+	icon = "STRIKE_CRAFT_HANGAR_3"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO"
+
+	icon = "GFX_ship_part_strike_craft_bomber_3"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "RG_BOMBER_HANGAR_AP_BOMB"
+
+	icon = "GFX_ship_part_strike_craft_bomber_3"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "RG_FIGHTER_HANGAR_BEAM"
+
+	icon = "GFX_ship_part_strike_craft_bomber_3"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "RG_ANTIBAKAHALO_RADAR"
+
+	icon = "GFX_ship_part_sensor_1"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "RG_BAKAHALO_RADAR"
+
+	icon = "GFX_ship_part_sensor_2"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "RG_AUTO_REPAIR"
+
+	icon = "GFX_ship_part_ship_part_nanite_repair_system"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "RG_ENIGMATIC_SCHEDULER"
+
+	icon = "GFX_ship_part_enigmatic_encoder"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "RG_ARMOR_BOOSTER"
+
+	icon = "GFX_ship_part_rg_armor_hardener"
+	icon_frame = 1
+}
+
+component_set = { # Nanobot Assimilation
+	key = "RG_PLANET_KILLER"
+
+	icon = "GFX_ship_part_devolution_beam"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "RG_CLOAKING_3"
+
+	icon = "GFX_ship_part_cloak_3"
+	icon_frame = 1
+}
+
+component_set = {
+	key = "RG_REVIVE_COMPONENT"
+
+	icon = "GFX_ship_part_aura_inspiring_presence"
+	icon_frame = 1
+}

@@ -1,0 +1,46 @@
+rg_distant_stars_modifier = {
+	ship_ftl_jumpdrive_range_mult = -2.0
+	catapult_range_mult = -2.0
+}
+
+###################################
+gray_affection_warship_lv2 = {
+	ship_accuracy_add = 5
+	ship_tracking_add = 5
+	ship_evasion_add = 5
+	ship_hull_regen_add_static = 5
+	ship_armor_regen_add_static = 5
+	ship_shield_regen_add_static = 5
+}
+gray_affection_warship_lv3 = {
+	ship_accuracy_add = 10
+	ship_tracking_add = 10
+	ship_evasion_add = 10
+	ship_hull_regen_add_static = 10
+	ship_armor_regen_add_static = 10
+	ship_shield_regen_add_static = 10
+}
+gray_affection_warship_lv4 = {
+	ship_accuracy_add = 20
+	ship_tracking_add = 20
+	ship_evasion_add = 20
+	ship_hull_regen_add_static = 20
+	ship_armor_regen_add_static = 20
+	ship_shield_regen_add_static = 20
+}
+gray_affection_warship_lv5 = {
+	ship_accuracy_add = 30
+	ship_tracking_add = 30
+	ship_evasion_add = 30
+	ship_accuracy_mult = 0.3
+	ship_tracking_mult = 0.3
+	ship_evasion_mult = 0.3
+	ship_hull_regen_add_static = 30
+	ship_armor_regen_add_static = 30
+	ship_shield_regen_add_static = 30
+	ship_windup_mult = -0.5
+	ship_winddown_mult = -0.5
+	ship_jumpdrive_cooldown_mult = -0.5
+	ship_ftl_jumpdrive_range_mult = 0.5
+	force_disparity_fire_rate_mult = 3.0
+}

@@ -1,0 +1,49 @@
+entity = {
+	name = "grey_tempesttw_colossus_entity"
+	pdxmesh = "fallen_empire_01_colossus_frame_mesh"
+
+	default_state = "idle"
+	state = { name = "idle" animation = "idle" }
+
+	locator = { name = "boop"	position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "boopa"	position = { 0 0 0 } rotation = { 0 0 45 }}
+	locator = { name = "boopb"	position = { 0 0 0 } rotation = { 0 0 -45 }}
+	locator = { name = "boope"	position = { 0 -10 0 } rotation = { 0 -90 0 }}
+
+	attach = { boop = "grey_tempesttw_colossusee_ship_entity" }
+	attach = { boope = "grey_tempesttw_ion_cannon_section_entity" }
+
+	scale = 1.5
+}
+
+entity = {
+	name = "grey_tempesttw_colossus_ship_entity"
+	#pdxmesh = "fallen_machine_empire_01_colossus_mesh"
+	locator = { name = "energy_source"	position = { 0 0 0 } rotation = { 0 0 0 } }
+
+	default_state = "idle"
+	# Actual idle state when being in idle/moving.
+	state = { name = "idle" looping = no next_state = "idle" animation_blend_time = 5 }
+	# TODO check
+	locator = { name = "planet_killer_gun_01"	position = { 0 0 0 } rotation = { 0 0 0 } }
+
+	attach = { energy_source = "fallen_machine_empire_01_colossus_energy_entity" }
+}
+
+entity = {
+	name = "grey_tempesttw_colossusee_ship_entity"
+
+	default_state = "idle"
+	state = {
+		name = "idle"
+		animation = "idle" # TODO check
+	}
+
+	locator = { name = "boop"	position = { 0 0 0 } rotation = { 0 0 0 } }
+	locator = { name = "boopa"	position = { 0 0 0 } rotation = { 0 0 45 }}
+	locator = { name = "boopb"	position = { 0 0 0 } rotation = { 0 0 -45 }}
+
+	attach = { boop = "grey_tempesttw_starbase_starfortress_section_entity" }
+	attach = { boopa = "grey_tempesttw_starbase_starfortress_section_entity" }
+	attach = { boopb = "grey_tempesttw_starbase_starfortress_section_entity" }
+}
