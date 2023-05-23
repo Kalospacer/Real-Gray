@@ -1,21 +1,25 @@
 rg_storyline_trigger = {
-	# 初始化故事事件触发
-	if = {
-		limit = {
-			OR = {
-				has_global_flag = has_wsg_mod
-				has_global_flag = kdc_event_mod_active
-			}
-			country_event = { id = rg_wsg_story.2 days = 3600 random = 12800 }
-			country_event = { id = rg_wsg_story.8 days = 3600 random = 12800 }
-			country_event = { id = rg_wsg_story.13 days = 3600 random = 12800 }
-		}
-	}
-	else = {
-		country_event = { id = rg_story.2 days = 3600 random = 12800 }
-		country_event = { id = rg_story.8 days = 3600 random = 12800 }
-		country_event = { id = rg_story.13 days = 3600 random = 12800 }
-	}
+ # 初始化故事事件触发
+ # if = {
+ # 	limit = {
+ # 		OR = {
+ # 			has_global_flag = has_wsg_mod
+ # 			has_global_flag = kdc_event_mod_active
+ # 		}
+ # 		country_event = { id = rg_wsg_story.2 days = 3600 random = 12800 }
+ # 		country_event = { id = rg_wsg_story.8 days = 3600 random = 12800 }
+ # 		country_event = { id = rg_wsg_story.13 days = 3600 random = 12800 }
+ # 	}
+ # }
+ # else = {
+ # 	country_event = { id = rg_story.2 days = 3600 random = 12800 }
+ # 	country_event = { id = rg_story.8 days = 3600 random = 12800 }
+ # 	country_event = { id = rg_story.13 days = 3600 random = 12800 }
+ # }
+
+	country_event = { id = rg_story.2 days = 3600 random = 12800 }
+	country_event = { id = rg_story.8 days = 3600 random = 12800 }
+	country_event = { id = rg_story.13 days = 3600 random = 12800 }
 }
 
 rg_create_gray_planetkiller_testship_1 = {

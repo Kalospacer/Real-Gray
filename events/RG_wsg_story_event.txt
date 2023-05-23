@@ -171,73 +171,6 @@ country_event = {
     }
 }
 
-planet_event = {
-    id = rg_wsg_story.6
-    title = "rg_story.6.title"
-    is_triggered_only = yes
-    fire_only_once = yes
-
-    trigger = {
-        OR = {
-            has_global_flag = has_wsg_mod
-            has_global_flag = kdc_event_mod_active
-        }
-    }
-
-	picture = GFX_evt_failed_observation
-	show_sound = evn_fc_observation
-
-    immediate = {
-        every_country = {
-            every_owned_fleet = {
-                limit = {
-                    any_owned_ship = {
-                        has_ship_flag = rg_test_ship
-                    }
-                }
-                delete_fleet = this
-            }
-        }
-    }
-
-    desc = {
-        text = "rg_story.6.desc"
-    }
-
-    option = {
-        name = rg_story.6.a
-        hidden_effect = {
-            country_event = { id = rg_wsg_story.7 }
-        }
-        default_hide_option = yes
-    }
-}
-
-country_event = {
-    id = rg_wsg_story.7
-    is_triggered_only = yes
-    hide_window = yes
-
-    trigger = {
-        OR = {
-            has_global_flag = has_wsg_mod
-            has_global_flag = kdc_event_mod_active
-        }
-    }
-
-    immediate = {
-        every_owned_fleet = {
-            limit = {
-                has_fleet_flag = rg_test_ship_fleet
-            }
-            delete_fleet = this
-        }
-        event_target:rg_test_ship_global_event_target = {
-            delete_ship = this
-        }
-    }
-}
-
 country_event = {
     id = rg_wsg_story.8
     title = "graygoo.500.title"
@@ -311,40 +244,6 @@ country_event = {
             rg_create_gray_paperwork_testship_1 = yes
         }
         default_hide_option = yes
-    }
-}
-
-country_event = {
-    id = rg_wsg_story.10
-    title = "rg_story.10.title"
-    is_triggered_only = yes
-    fire_only_once = yes
-
-    trigger = {
-        OR = {
-            has_global_flag = has_wsg_mod
-            has_global_flag = kdc_event_mod_active
-        }
-        any_owned_fleet = {
-            any_owned_ship = {
-                has_component = RG_revive_component
-            }
-		}
-    }
-
-    picture = GFX_evt_ship_in_orbit
-	show_sound = event_radio_chatter
-
-    desc = {
-        text = "rg_story.10.desc"
-    }
-
-    option = {
-        name = rg_story.10.a
-        default_hide_option = yes
-    }
-    option = {
-        name = rg_story.10.b
     }
 }
 
