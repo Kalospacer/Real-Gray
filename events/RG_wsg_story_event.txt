@@ -1,0 +1,694 @@
+namespace = rg_wsg_story
+
+country_event = {
+    id = rg_wsg_story.2
+    title = "graygoo.500.title"
+    is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            has_global_flag = has_wsg_mod
+            has_global_flag = kdc_event_mod_active
+        }
+    }
+
+    diplomatic = yes
+    custom_gui = gray_dialogue_window
+    custom_gui_option = wg_dialogue_button
+
+    desc = {
+        text = "rg_story.2.desc"
+    }
+
+
+    option = {
+        name = rg_story.2.a
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.3}
+        }
+    }
+    option = {
+        name = rg_story.2.b
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.3 }
+        }
+    }
+    option = {
+        name = rg_story.2.c
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.3 }
+        }
+    }
+    option = {
+		name = ""
+		custom_gui = wg_hiding_button
+		hidden_effect = { country_event = { id = rg_wsg_story.5 }}
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+    id = rg_wsg_story.3
+    title = "graygoo.500.title"
+    is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            has_global_flag = has_wsg_mod
+            has_global_flag = kdc_event_mod_active
+        }
+    }
+
+    diplomatic = yes
+    custom_gui = gray_dialogue_window
+    custom_gui_option = wg_dialogue_button
+
+    desc = {
+        text = "rg_story.3.desc"
+    }
+
+
+    option = {
+        name = rg_story.3.a
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.4 }
+        }
+    }
+    option = {
+        name = rg_story.3.b
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.4 }
+        }
+    }
+    option = {
+        name = rg_story.3.c
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.4 }
+        }
+    }
+    option = {
+		name = ""
+		custom_gui = wg_hiding_button
+		hidden_effect = { country_event = { id = rg_wsg_story.5 }}
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+    id = rg_wsg_story.4
+    title = "graygoo.500.title"
+    is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            has_global_flag = has_wsg_mod
+            has_global_flag = kdc_event_mod_active
+        }
+    }
+
+    diplomatic = yes
+    custom_gui = gray_dialogue_window
+    custom_gui_option = wg_dialogue_button
+
+    desc = {
+        text = "rg_story.4.desc"
+    }
+
+
+    option = {
+        name = rg_story.4.a
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.5 }
+        }
+    }
+    option = {
+        name = rg_story.4.b
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.5 }
+        }
+    }
+    option = {
+        name = rg_story.4.c
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.5 }
+        }
+    }
+    option = {
+		name = ""
+		custom_gui = wg_hiding_button
+		hidden_effect = { country_event = { id = rg_wsg_story.5 }}
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+    id = rg_wsg_story.5
+    title = "graygoo.500.title"
+    is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            has_global_flag = has_wsg_mod
+            has_global_flag = kdc_event_mod_active
+        }
+    }
+
+    diplomatic = yes
+    custom_gui = gray_dialogue_window
+    custom_gui_option = wg_dialogue_button
+
+    desc = {
+        text = "rg_story.5.desc"
+    }
+
+
+    option = {
+        name = rg_story.5.a
+        hidden_effect = {
+            rg_create_gray_planetkiller_testship_1 = yes
+        }
+        default_hide_option = yes
+    }
+}
+
+planet_event = {
+    id = rg_wsg_story.6
+    title = "rg_story.6.title"
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    trigger = {
+        OR = {
+            has_global_flag = has_wsg_mod
+            has_global_flag = kdc_event_mod_active
+        }
+    }
+
+	picture = GFX_evt_failed_observation
+	show_sound = evn_fc_observation
+
+    immediate = {
+        every_country = {
+            every_owned_fleet = {
+                limit = {
+                    any_owned_ship = {
+                        has_ship_flag = rg_test_ship
+                    }
+                }
+                delete_fleet = this
+            }
+        }
+    }
+
+    desc = {
+        text = "rg_story.6.desc"
+    }
+
+    option = {
+        name = rg_story.6.a
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.7 }
+        }
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = rg_wsg_story.7
+    is_triggered_only = yes
+    hide_window = yes
+
+    trigger = {
+        OR = {
+            has_global_flag = has_wsg_mod
+            has_global_flag = kdc_event_mod_active
+        }
+    }
+
+    immediate = {
+        every_owned_fleet = {
+            limit = {
+                has_fleet_flag = rg_test_ship_fleet
+            }
+            delete_fleet = this
+        }
+        event_target:rg_test_ship_global_event_target = {
+            delete_ship = this
+        }
+    }
+}
+
+country_event = {
+    id = rg_wsg_story.8
+    title = "graygoo.500.title"
+    is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            has_global_flag = has_wsg_mod
+            has_global_flag = kdc_event_mod_active
+        }
+    }
+
+    diplomatic = yes
+    custom_gui = gray_dialogue_window
+    custom_gui_option = wg_dialogue_button
+
+    desc = {
+        text = "rg_story.8.desc"
+    }
+
+
+    option = {
+        name = rg_story.8.a
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.9 }
+        }
+    }
+    option = {
+        name = rg_story.8.b
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.9 }
+        }
+    }
+    option = {
+        name = rg_story.8.c
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.9 }
+        }
+    }
+    option = {
+		name = ""
+		custom_gui = wg_hiding_button
+		hidden_effect = { country_event = { id = rg_wsg_story.9 }}
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+    id = rg_wsg_story.9
+    title = "graygoo.500.title"
+    is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            has_global_flag = has_wsg_mod
+            has_global_flag = kdc_event_mod_active
+        }
+    }
+
+    diplomatic = yes
+    custom_gui = gray_dialogue_window
+    custom_gui_option = wg_dialogue_button
+
+    desc = {
+        text = "rg_story.9.desc"
+    }
+
+    option = {
+        name = rg_story.9.a
+        hidden_effect = {
+            rg_create_gray_paperwork_testship_1 = yes
+        }
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = rg_wsg_story.10
+    title = "rg_story.10.title"
+    is_triggered_only = yes
+    fire_only_once = yes
+
+    trigger = {
+        OR = {
+            has_global_flag = has_wsg_mod
+            has_global_flag = kdc_event_mod_active
+        }
+        any_owned_fleet = {
+            any_owned_ship = {
+                has_component = RG_revive_component
+            }
+		}
+    }
+
+    picture = GFX_evt_ship_in_orbit
+	show_sound = event_radio_chatter
+
+    desc = {
+        text = "rg_story.10.desc"
+    }
+
+    option = {
+        name = rg_story.10.a
+        default_hide_option = yes
+    }
+    option = {
+        name = rg_story.10.b
+    }
+}
+
+country_event = {
+    id = rg_wsg_story.11
+    title = "graygoo.500.title"
+    is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            has_global_flag = has_wsg_mod
+            has_global_flag = kdc_event_mod_active
+        }
+        exists = event_target:guardian_dragon_country
+    }
+
+    diplomatic = yes
+    custom_gui = gray_dialogue_window
+    custom_gui_option = wg_dialogue_button
+
+    desc = {
+        text = "rg_story.11.desc"
+    }
+
+
+    option = {
+        name = rg_story.11.a
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.12 }
+        }
+    }
+    option = {
+        name = rg_story.11.b
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.12 }
+        }
+    }
+    option = {
+        name = rg_story.11.c
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.12 }
+        }
+    }
+    option = {
+		name = ""
+		custom_gui = wg_hiding_button
+		hidden_effect = { country_event = { id = rg_wsg_story.12 }}
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+    id = rg_wsg_story.12
+    title = "graygoo.500.title"
+    is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            has_global_flag = has_wsg_mod
+            has_global_flag = kdc_event_mod_active
+        }
+    }
+
+    diplomatic = yes
+    custom_gui = gray_dialogue_window
+    custom_gui_option = wg_dialogue_button
+
+    desc = {
+        text = "rg_story.12.desc"
+    }
+
+    immediate = {
+        event_target:guardian_dragon_country = {
+            random_owned_fleet = {
+                limit = {
+                    has_fleet_flag = dragon_fleet
+                }
+                save_event_target_as = dragon_fleet_target
+            }
+        }
+    }
+
+    option = {
+        name = rg_wsg_story.12.a
+        allow = {
+            exists = event_target:guardian_dragon_country
+            event_target:guardian_dragon_country = {
+                any_owned_fleet = {
+                    has_fleet_flag = dragon_fleet
+                }
+            }
+        }
+        hidden_effect = {
+            enable_special_project = {
+                name = RG_FAKE_DRAGON_SCAN_PROJECT
+                location = event_target:dragon_fleet_target
+                owner = root
+            }
+        }
+        default_hide_option = yes
+    }
+    option = {
+        name = rg_wsg_story.12.b
+    }
+    option = {
+        name = rg_wsg_story.12.c
+    }
+}
+
+country_event = {
+    id = rg_wsg_story.13
+    title = "rg_story.13.title"
+    is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            has_global_flag = has_wsg_mod
+            has_global_flag = kdc_event_mod_active
+        }
+    }
+
+	picture = GFX_evt_space_dragon
+	show_sound = evn_fc_observation
+
+    desc = {
+        text = "rg_story.13.desc"
+    }
+
+
+    option = {
+        name = rg_story.13.a
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = rg_wsg_story.14
+    title = "rg_story.14.title"
+    is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            has_global_flag = has_wsg_mod
+            has_global_flag = kdc_event_mod_active
+        }
+    }
+
+	picture = GFX_evt_space_dragon
+	show_sound = evn_fc_observation
+
+    desc = {
+        text = "rg_story.14.desc"
+    }
+
+
+    option = {
+        name = rg_story.14.a
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = rg_wsg_story.15
+    title = "rg_story.15.title"
+    is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            has_global_flag = has_wsg_mod
+            has_global_flag = kdc_event_mod_active
+        }
+    }
+
+	picture = GFX_evt_space_dragon
+	show_sound = evn_fc_observation
+
+    desc = {
+        text = "rg_story.15.desc"
+    }
+
+
+    option = {
+        name = rg_story.15.a
+        hidden_effect = {
+            country_event = { id = rg_story.16 }
+        }
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = rg_wsg_story.16
+    title = "graygoo.500.title"
+    is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            has_global_flag = has_wsg_mod
+            has_global_flag = kdc_event_mod_active
+        }
+    }
+
+    diplomatic = yes
+    custom_gui = gray_dialogue_window
+    custom_gui_option = wg_dialogue_button
+
+    desc = {
+        text = "rg_story.16.desc"
+    }
+
+
+    option = {
+        name = rg_story.16.a
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.17 days= 360 random = 640 }
+        }
+        default_hide_option = yes
+    }
+}
+
+country_event = {
+    id = rg_wsg_story.17
+    title = "graygoo.500.title"
+    is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            has_global_flag = has_wsg_mod
+            has_global_flag = kdc_event_mod_active
+        }
+    }
+
+    diplomatic = yes
+    custom_gui = gray_dialogue_window
+    custom_gui_option = wg_dialogue_button
+
+    desc = {
+        text = "rg_story.17.desc"
+    }
+
+    option = {
+        name = rg_story.17.a
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.18 }
+        }
+    }
+    option = {
+        name = rg_story.17.b
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.18  }
+        }
+    }
+    option = {
+        name = rg_story.17.c
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.18  }
+        }
+    }
+    option = {
+		name = ""
+		custom_gui = wg_hiding_button
+		hidden_effect = { country_event = { id = rg_wsg_story.19 }}
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+    id = rg_wsg_story.18
+    title = "simulasion_dragon_name"
+    is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            has_global_flag = has_wsg_mod
+            has_global_flag = kdc_event_mod_active
+        }
+    }
+
+    diplomatic = yes
+	custom_gui = gray_dialogue_window
+	custom_gui_option = wg_dialogue_button
+
+    desc = {
+        text = "rg_story.18.desc"
+    }
+
+    option = {
+        name = rg_story.18.a
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.19 }
+        }
+    }
+    option = {
+        name = rg_story.18.b
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.19 }
+        }
+    }
+    option = {
+        name = rg_story.18.c
+        hidden_effect = {
+            country_event = { id = rg_wsg_story.19 }
+        }
+    }
+    option = {
+		name = ""
+		custom_gui = wg_hiding_button
+		hidden_effect = { country_event = { id = rg_wsg_story.19 }}
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+    id = rg_wsg_story.19
+    title = "graygoo.500.title"
+    is_triggered_only = yes
+
+    trigger = {
+        OR = {
+            has_global_flag = has_wsg_mod
+            has_global_flag = kdc_event_mod_active
+        }
+    }
+
+    diplomatic = yes
+    custom_gui = gray_dialogue_window
+    custom_gui_option = wg_dialogue_button
+
+    immediate = {
+        rg_create_fake_dragon = yes
+    }
+
+    desc = {
+        text = "rg_story.19.desc"
+    }
+
+    option = {
+        name = rg_wsg_story.19.a
+        default_hide_option = yes
+    }
+    option = {
+        name = rg_wsg_story.19.b
+    }
+    option = {
+        name = rg_wsg_story.19.c
+    }
+}
