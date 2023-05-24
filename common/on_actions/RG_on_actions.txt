@@ -170,5 +170,6 @@ on_ship_destroyed_perp = {
 	events = {
 		rg_skill.11
 		rg_story.10
+		rg_story.22
 	}
 }

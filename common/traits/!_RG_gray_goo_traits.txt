@@ -321,6 +321,9 @@ RG_leader_trait_admiral_fake_dragon = {
 		COUNCIL = no
 		TIER = none
 	}
+	self_modifier = { # 不知道什么时候专属特质加100%经验率已经变成国际公约力
+		species_leader_exp_gain = 1
+	}
 	modifier = {
 		ship_armor_mult = 0.3
 		ship_hull_mult = 0.2

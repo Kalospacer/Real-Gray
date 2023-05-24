@@ -693,6 +693,7 @@ event = {
             set_age = 0
 		}
         event_target:rg_fake_dragon_owner = {
+            set_country_flag = rg_fake_dragon_reborn_country
             set_variable = {
                 which = rg_fake_dragon_timedlife_counter
                 value = 0
@@ -725,4 +726,34 @@ country_event = {
         name = rg_story.21.a
         default_hide_option = yes
     }
+}
+
+# 龙噶了把所有卡住的的模拟龙扫描事件中止
+country_event = {
+	id = rg_story.22
+    hidden_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		from = {
+			is_country_type = guardian_dragon
+			NOR = {
+				has_country_flag = rubricator_dragon_country
+				has_country_flag = here_be_the_dragon
+			}
+		}
+		#fromfromfrom = {
+		#	has_fleet_flag = dragon_fleet
+		#}
+	}
+
+	immediate = {
+		every_country = {
+			limit = {
+				has_special_project = RG_FAKE_DRAGON_SCAN_PROJECT
+			}
+			abort_special_project = { RG_FAKE_DRAGON_SCAN_PROJECT } 
+		}
+	}
+
 }
