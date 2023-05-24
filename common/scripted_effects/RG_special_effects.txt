@@ -83,7 +83,7 @@ rg_create_gray_paperwork_testship_1 = {
 	}
 }
 
-rg_create_fake_dragon = {
+rg_create_fake_dragon_species = {
 	create_species = {
 		name = RG_SIMULATION_DRAGON_SPECIES
 		plural = RG_SIMULATION_DRAGON_SPECIES
@@ -94,57 +94,69 @@ rg_create_fake_dragon = {
 			save_global_event_target_as = RG_sim_dragon_species
 		}
 	}
-	create_leader = {
-		class = admiral
-		species = event_target:RG_sim_dragon_species
-		name = "Name_rg_fake_dragon"
-		event_leader = yes
-		gender = female
-		custom_description = rg_fake_dragon_desc
-		skill = 1
-		set_age = 0
-		traits = {
-			trait = RG_leader_trait_admiral_fake_dragon
-			trait = RG_leader_trait_admiral_timed_life
-		}
-		effect = {
-			change_leader_portrait = wg_dragon
-			set_leader_flag = has_gained_level_trait
-			set_leader_flag = has_gained_trait
-			set_leader_flag = legendary_leader
-			set_leader_flag = rg_fake_dragon
-			save_global_event_target_as = rg_fake_dragon_admiral
-		}
-	}
-	set_variable = {
-		which = rg_fake_dragon_timedlife_counter
-		value = 0
-	}
-	create_fleet = {
-		name = "NAME_RG_Nanite_Dragon"
-		settings = {
-			can_disband = yes
-			can_upgrade = no 
-			can_change_composition = no 
-			can_change_leader = no 
-			uses_naval_capacity = no
-			spawn_debris = no					
-		}
-		effect = {
-			set_owner = root
-			create_ship = {
-				name = "NAME_RG_Nanite_Dragon"
-				design = "NAME_RG_FAKE_Dragon"
-				prefix = no
-				upgradable = no
+}
+
+rg_create_fake_dragon = {
+	rg_create_fake_dragon_species = yes
+	if = {
+		limit = {
+			NOT = {
+				has_country_flag = rg_fake_dragon_reborn_country
 			}
-			set_location = {
-				target = root.capital_scope
-				distance = 0
-				angle = random
+		}
+		create_leader = {
+			class = admiral
+			species = event_target:RG_sim_dragon_species
+			name = "Name_rg_fake_dragon"
+			event_leader = yes
+			gender = female
+			custom_description = rg_fake_dragon_desc
+			skill = 1
+			set_age = 0
+			traits = {
+				trait = RG_leader_trait_admiral_fake_dragon
+				trait = RG_leader_trait_admiral_timed_life
 			}
-			set_fleet_flag = rg_fake_dragon_fleet
-			assign_leader = last_created_leader
+			effect = {
+				change_leader_portrait = wg_dragon
+				set_leader_flag = has_gained_level_trait
+				set_leader_flag = has_gained_trait
+				set_leader_flag = legendary_leader
+				set_leader_flag = rg_fake_dragon
+				save_global_event_target_as = rg_fake_dragon_admiral
+			}
+		}
+		set_variable = {
+			which = rg_fake_dragon_timedlife_counter
+			value = 0
+		}
+		set_global_event_target_as = rg_fake_dragon_owner
+		create_fleet = {
+			name = "NAME_RG_Nanite_Dragon"
+			settings = {
+				can_disband = yes
+				can_upgrade = no 
+				can_change_composition = no 
+				can_change_leader = no 
+				uses_naval_capacity = no
+				spawn_debris = no					
+			}
+			effect = {
+				set_owner = root
+				create_ship = {
+					name = "NAME_RG_Nanite_Dragon"
+					design = "NAME_RG_FAKE_Dragon"
+					prefix = no
+					upgradable = no
+				}
+				set_location = {
+					target = root.capital_scope
+					distance = 0
+					angle = random
+				}
+				set_fleet_flag = rg_fake_dragon_fleet
+				assign_leader = last_created_leader
+			}
 		}
 	}
 }

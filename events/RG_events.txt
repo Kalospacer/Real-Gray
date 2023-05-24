@@ -951,10 +951,27 @@ country_event = {
 		}
 	}
 	immediate = {
-		change_variable = {
-			which = rg_fake_dragon_timedlife_counter
-			value = 12
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = rg_fake_dragon_reborn_country
+				}
+			}
+			change_variable = {
+				which = rg_fake_dragon_timedlife_counter
+				value = 12
+			}
 		}
+		else_if = {
+			limit = {
+				has_country_flag = rg_fake_dragon_reborn_country
+			}
+			change_variable = {
+				which = rg_fake_dragon_timedlife_counter
+				value = 1
+			}
+		}
+
 		#等级导入，把存储的领袖等级赋予到领袖身上
 		random_owned_leader = {
 			limit = { has_leader_flag = rg_fake_dragon }
@@ -963,6 +980,18 @@ country_event = {
 		event_target:rg_fake_dragon_admiral = {
 			change_leader_portrait = wg_dragon
 			set_age = owner.rg_fake_dragon_timedlife_counter
+		}
+		random_owned_fleet = {
+			limit = {
+				NOT = { has_fleet_flag = rg_fake_dragon_fleet }
+				leader = {
+					has_leader_flag = rg_fake_dragon
+					NOT = {
+						has_leader_flag = rg_fake_dragon_reborn
+					}
+				}
+			}
+			unassign_leader = this
 		}
 	}
 }

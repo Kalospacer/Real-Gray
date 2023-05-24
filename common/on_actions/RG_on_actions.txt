@@ -54,6 +54,12 @@ on_yearly_pulse_country = {
 	}
 }
 
+on_yearly_pulse = {
+	events = {
+		rg_story.20
+	}
+}
+
 on_mid_game_pulse_country = {
     events = {
         # rg.18

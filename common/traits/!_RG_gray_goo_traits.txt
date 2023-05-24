@@ -344,12 +344,76 @@ RG_leader_trait_admiral_timed_life = {
 	}
 	triggered_modifier = {
 		potential = {
-			always = yes
+			owner = {
+				check_variable = {
+					which = rg_fake_dragon_timedlife_counter
+					value <= 1000
+				}
+			}
 		}
-		ship_armor_mult = 0.05
-		ship_hull_mult = 0.05
-		ship_weapon_damage = 0.05
+		ship_armor_mult = 0.01
+		ship_hull_mult = 0.01
+		ship_weapon_damage = 0.01
 		mult = owner.rg_fake_dragon_timedlife_counter
+	}
+	triggered_modifier = {
+		potential = {
+			owner = {
+				check_variable = {
+					which = rg_fake_dragon_timedlife_counter
+					value > 1000
+				}
+			}
+		}
+		ship_armor_mult = 10.0
+		ship_hull_mult = 10.0
+		ship_weapon_damage = 10.0
+		custom_tooltip_with_modifiers = rg_timed_life_millennium
+	}
+	
+	leader_class = { admiral }
+	initial = no
+	randomized = no
+}
+
+RG_leader_trait_admiral_born_tobe_dragon = {
+	cost = 0
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = admiral
+		ICON = "GFX_leader_trait_ethereal"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	immortal_leaders = yes
+	triggered_modifier = {
+		potential = {
+			owner = {
+				check_variable = {
+					which = rg_fake_dragon_timedlife_counter
+					value <= 1000
+				}
+			}
+		}
+		ship_armor_mult = 0.01
+		ship_hull_mult = 0.01
+		ship_weapon_damage = 0.01
+		mult = owner.rg_fake_dragon_timedlife_counter
+	}
+	triggered_modifier = {
+		potential = {
+			owner = {
+				check_variable = {
+					which = rg_fake_dragon_timedlife_counter
+					value > 1000
+				}
+			}
+		}
+		ship_armor_mult = 0.01
+		ship_hull_mult = 0.01
+		ship_weapon_damage = 0.01
+		custom_tooltip_with_modifiers = rg_timed_life_millennium_reborn
 	}
 	
 	leader_class = { admiral }

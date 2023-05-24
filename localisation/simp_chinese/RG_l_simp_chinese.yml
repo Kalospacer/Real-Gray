@@ -309,8 +309,13 @@
  RG_leader_trait_admiral_fake_dragon:0 "§Y龙的灵魂§!"
  RG_leader_trait_admiral_fake_dragon_desc:0 "迷途的灵魂虽然不是龙，却想要化身为龙。你也是龙，也好。"
  RG_leader_trait_admiral_timed_life:0 "§Y计时的生命§!"
- RG_leader_trait_admiral_timed_life_desc:0 "\n§G模拟龙的属性会随着年龄增长。\n$t$§Y每增长一岁提供§!：\n$tt$§G  额外舰船武器伤害 +5%§!\n§G  额外装甲生命值 +5%§!\n§G  额外船体生命值 +5%§!$t$\n当前§!§R[owner.rg_fake_dragon_timedlife_counter]§!§G岁§!\n她是从一次实验中诞生的模拟生命。时间每流逝一个月，她就老去一岁。倘若无法找到永生的方法，脆弱的灵魂就将落叶归根。"
+ RG_leader_trait_admiral_timed_life_desc:0 "\n§G模拟龙的属性会随着年龄增长。\n$t$§Y每增长一岁提供§!：\n$tt$§G  额外舰船武器伤害 +1%§!\n§G  额外装甲生命值 +1%§!\n§G  额外船体生命值 +1%§!$t$\n当前§!§R[owner.rg_fake_dragon_timedlife_counter]§!§G岁§!\n她是从一次实验中诞生的模拟生命。时间每流逝一个月，她就老去一岁。倘若无法找到永生的方法，脆弱的灵魂就将落叶归根。"
+
+ RG_leader_trait_admiral_born_tobe_dragon:0 "§Y羽化成龙§!"
+ RG_leader_trait_admiral_born_tobe_dragon_desc:0 "\n§G模拟龙的属性会随着年龄增长。\n$t$§Y每增长一岁提供§!：\n$tt$§G  额外舰船武器伤害 +1%§!\n§G  额外装甲生命值 +1%§!\n§G  额外船体生命值 +1%§!$t$\n当前§!§R[owner.rg_fake_dragon_timedlife_counter]§!§G岁§!\n梦想中的龙终于变成了梦想中的样子。传说她一拳打开了壳化身为龙。"
 
  rg_fake_dragon_desc:0 "模拟龙是在小灰的神秘实验中诞生的模拟生命。虽然由纳米机器组成但却无法自主控制这些纳米机器。随着纳米机器失去维护能力，模拟龙的未来也变得愈加扑朔迷离。"
-
+ rg_timed_life_millennium:0 "§R千年魂环§!：模拟龙已经一千岁了~恭喜你。然而什么都没有发生！"
+ rg_timed_life_millennium_reborn:0 "§Y发光的§!§R千年魂环§!：模拟龙已经一千岁了~§R你是怎么做到的？难道一千年真的如此短暂吗？§!\n你获得了§R废物认证§!~"
  RG_sim_dragon_species:0 "伪装的龙"
+ RG_SIMULATION_DRAGON_SPECIES:0 "伪装的龙"
