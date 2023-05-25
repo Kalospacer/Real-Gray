@@ -1,3 +1,14 @@
+on_game_start = {
+	events = {
+		rg.19
+	}
+}
+on_single_player_save_game_load = {
+	events = {
+		rg.19
+	}
+}
+
 on_custom_diplomacy = {
 	events = {
 		graygoo.505
