@@ -130,7 +130,7 @@ rg_create_fake_dragon = {
 			which = rg_fake_dragon_timedlife_counter
 			value = 0
 		}
-		set_global_event_target_as = rg_fake_dragon_owner
+		save_global_event_target_as = rg_fake_dragon_owner
 		create_fleet = {
 			name = "NAME_RG_Nanite_Dragon"
 			settings = {
@@ -156,6 +156,7 @@ rg_create_fake_dragon = {
 				}
 				set_fleet_flag = rg_fake_dragon_fleet
 				assign_leader = last_created_leader
+				save_global_event_target_as = rg_fake_dragon_fleet
 			}
 		}
 	}
