@@ -19,7 +19,7 @@ rg_storyline_trigger = {
 
 	country_event = { id = rg_story.2 days = 3600 random = 12800 }
 	country_event = { id = rg_story.8 days = 3600 random = 12800 }
-	country_event = { id = rg_story.13 days = 3600 random = 12800 }
+	country_event = { id = rg_story.11 days = 3600 random = 12800 }
 }
 
 rg_create_gray_planetkiller_testship_1 = {
