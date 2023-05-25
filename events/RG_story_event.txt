@@ -673,16 +673,24 @@ event = {
 
 	trigger = {
 		exists = event_target:rg_fake_dragon_owner
-		event_target:rg_fake_dragon_owner = {
-            any_owned_leader = {
-                has_leader_flag = rg_fake_dragon
+        OR = {
+            AND = {
+                NOT  = {
+                    exists = event_target:rg_fake_dragon_fleet
+                }
+                exists = event_target:rg_fake_dragon_admiral 
             }
-            NOT = {
-                any_owned_fleet = {
-                    has_fleet_flag = rg_fake_dragon
+            event_target:rg_fake_dragon_fleet = {
+                leader = {
+                    OR = {
+                        exists = NO
+                        NOT = {
+                            has_leader_flag = rg_fake_dragon
+                        }
+                    }
                 }
             }
-		}
+        }
 	}
 
 	immediate = {
