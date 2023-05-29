@@ -208,10 +208,17 @@ country_event = {
 
 	is_triggered_only = yes
 
+	immediate = {
+		rg_gray_country_init = yes #创建国家
+		rg_gray_govener_init = yes
+		event_target:gray_governor = {
+			set_owner = event_target:rg_gray_country
+		}
+	}
+
 	option = {
 		name = graygoo.405.a
 		hidden_effect = {
-			rg_gray_govener_init = yes
 			owner = {
 				country_event = { id = graygoo.406 }
 			}
@@ -271,6 +278,17 @@ country_event = {
 		default_hide_option = yes
 		tag = hire_leader
 		hidden_effect = {
+			create_message = {
+				type = MESSAGE_RECRUITED_LEADER
+				localization =  MESSAGE_RECRUITED_LEADER_DESC
+				days = @toast_message_days
+				target = event_target:gray_governor
+				variable = {
+					type = name
+					localization = LEADER
+					scope = event_target:gray_governor
+				}
+			}
 			country_event = { id = graygoo.499 }
 		}
 	}
@@ -289,64 +307,13 @@ country_event = {
 	}
 
 	immediate = {
-		create_country = {
-			name = "NAME_Gray"
-			type = gray
-			flag = {
-				icon= {
-					category = "special"
-					file = "gray_goo.dds"
-				}
-				background= {
-					category = "backgrounds"
-					file = "sinus.dds"
-				}
-				colors={
-					"grey"
-					"dark_grey"
-					"null"
-					"null"
-				}
-			}
-			effect = {
-				rg_create_gray_species = yes
-				# 灰风国家用于领袖切换时暂存领袖
-				set_country_flag = can_have_wg_affection_country_flag
-			}
-		}
-		last_created_country = {
+		rg_gray_country_after_init = yes
+		event_target:rg_gray_country = {
 			establish_communications_no_message = root
-			save_global_event_target_as = rg_gray_country
 		}
-		# 送灰风母舰初始科技
-		give_technology = {
-			tech = tech_object_gray_5
-			message = no 
+		event_target:gray_governor = {
+			set_owner = root
 		}
-		save_global_event_target_as = gray_owner
-		set_country_flag = gray_owner
-		#初始化好感度和衣柜
-		set_variable = { which = gray_affection value = 1 }
-		set_variable = { which = gray_affection_level value = 1 }
-		set_variable = { which = wg_gray_cloth value = 6 }
-
-		# 否则事件会自动移除好感度特质(回娘家时保留特质）
-		set_country_flag = can_have_wg_affection_country_flag
-		# 默认关闭自动建造中继器
-		# set_country_flag = rg_can_const_hyper_relay
-		# 初始化小灰领袖等级
-		if = {
-			limit = { 
-				OR = {
-					has_country_flag = origin_rg_gray #遥远约定
-					has_country_flag = origin_gray_country #远星之歌
-				}
-			}
-			set_variable = { which = rg_gray_level value = 1 }
-		} else = {
-			set_variable = { which = rg_gray_level value = 10 }
-		}
-		rg_storyline_trigger = yes
 	}
 }
 
@@ -377,22 +344,6 @@ country_event = {
 	}
 
 	immediate = {
-		if = { # 检查是否存在任何形式的小灰
-			limit = {
-				any_owned_leader = {
-					NOR = {
-						has_leader_flag = rg_gray_leader
-						OR = {
-							has_leader_flag = gray_governor
-							has_leader_flag = gray_admiral
-							has_leader_flag = gray_general
-							has_leader_flag = gray_scientist
-						}
-					}
-				}
-			}
-			rg_gray_govener_init = yes #创建一个衣架子
-		}
 		country_event = { id = rg_grayleader.500 } #放行。
 	}
 }
@@ -422,22 +373,6 @@ country_event = {
 	}
 
 	immediate = {
-		if = { # 检查是否存在任何形式的小灰
-			limit = {
-				any_owned_leader = {
-					NOR = {
-						has_leader_flag = rg_gray_leader
-						OR = {
-							has_leader_flag = gray_governor
-							has_leader_flag = gray_admiral
-							has_leader_flag = gray_general
-							has_leader_flag = gray_scientist
-						}
-					}
-				}
-			}
-			rg_gray_govener_init = yes #创建一个衣架子
-		}
 		country_event = { id = rg_grayleader.501 } #放行。
 	}
 }
@@ -469,22 +404,6 @@ country_event = {
 	}
 
 	immediate = {
-		if = { # 检查是否存在任何形式的小灰
-			limit = {
-				any_owned_leader = {
-					NOR = {
-						has_leader_flag = rg_gray_leader
-						OR = {
-							has_leader_flag = gray_governor
-							has_leader_flag = gray_admiral
-							has_leader_flag = gray_general
-							has_leader_flag = gray_scientist
-						}
-					}
-				}
-			}
-			rg_gray_admiral_init = yes #创建一个衣架子
-		}
 		country_event = { id = rg_grayleader.502 } #放行。
 	}
 }
@@ -524,22 +443,6 @@ country_event = {
 	}
 
 	immediate = {
-		if = { # 检查是否存在任何形式的小灰
-			limit = {
-				any_owned_leader = {
-					NOR = {
-						has_leader_flag = rg_gray_leader
-						OR = {
-							has_leader_flag = gray_governor
-							has_leader_flag = gray_admiral
-							has_leader_flag = gray_general
-							has_leader_flag = gray_scientist
-						}
-					}
-				}
-			}
-			rg_gray_general_init = yes #创建一个衣架子
-		}
 		country_event = { id = rg_grayleader.503 } #放行。
 	}
 }
@@ -615,22 +518,6 @@ country_event = {
 	}
 
 	immediate = {
-		if = { # 检查是否存在任何形式的小灰
-			limit = {
-				any_owned_leader = {
-					NOR = {
-						has_leader_flag = rg_gray_leader
-						OR = {
-							has_leader_flag = gray_governor
-							has_leader_flag = gray_admiral
-							has_leader_flag = gray_general
-							has_leader_flag = gray_scientist
-						}
-					}
-				}
-			}
-			rg_gray_scientist_init = yes #创建一个衣架子
-		}
 		country_event = { id = rg_grayleader.505 } #放行。
 	}
 }
