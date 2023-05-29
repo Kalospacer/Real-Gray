@@ -11,10 +11,6 @@ country_event = {
 			has_global_flag = has_wsg_mod
 			has_global_flag = kdc_event_mod_active
 		}
-		from = { OR = {
-			is_country_type = gray 
-			is_same_value = ROOT
-		}}
 		is_same_value = event_target:gray_owner
 		NOR = {
 			has_country_flag = gray_reforming
@@ -28,10 +24,6 @@ country_event = {
 					has_global_flag = has_wsg_mod
 					has_global_flag = kdc_event_mod_active
 				}
-				from = { OR = {
-					is_country_type = gray 
-					is_same_value = ROOT
-				}}
 				is_same_value = event_target:gray_owner
 				NOR = {
 					has_country_flag = gray_constship_active
@@ -50,10 +42,6 @@ country_event = {
 					has_global_flag = has_wsg_mod
 					has_global_flag = kdc_event_mod_active
 				}
-				from = { OR = {
-					is_country_type = gray 
-					is_same_value = ROOT
-				}}
 				is_same_value = event_target:gray_owner
 				has_country_flag = gray_governor_active
 				exists = event_target:gray_governor
@@ -70,10 +58,6 @@ country_event = {
 					has_global_flag = has_wsg_mod
 					has_global_flag = kdc_event_mod_active
 				}
-				from = { OR = {
-					is_country_type = gray 
-					is_same_value = ROOT
-				}}
 				is_same_value = event_target:gray_owner
 				has_country_flag = gray_warship_active
 				exists = event_target:gray_warship
@@ -92,10 +76,6 @@ country_event = {
 					has_global_flag = has_wsg_mod
 					has_global_flag = kdc_event_mod_active
 				}
-				from = { OR = {
-					is_country_type = gray 
-					is_same_value = ROOT
-				}}
 				has_country_flag = gray_army_active
 				is_same_value = event_target:gray_owner
 				any_owned_army = {
@@ -121,10 +101,6 @@ country_event = {
 					has_global_flag = has_wsg_mod
 					has_global_flag = kdc_event_mod_active
 				}
-				from = { OR = {
-					is_country_type = gray 
-					is_same_value = ROOT
-				}}
 				is_same_value = event_target:gray_owner
 				has_country_flag = gray_constship_active
 				exists = event_target:global_gray_constship
@@ -676,7 +652,7 @@ country_event = {
 
 	option = { # 开启隐形
 		name = rg.4.e
-		response_text = rg_cloak.response
+		response_text = rg_cloak.a.response
 		is_dialog_only = yes
 		trigger = {
 			any_owned_fleet = {
@@ -702,7 +678,7 @@ country_event = {
 
 	option = { # 关闭隐形
 		name = rg.4.f
-		response_text = rg_cloak_off.response
+		response_text = rg_cloak_off.a.response
 		is_dialog_only = yes
 		trigger = {
 			any_owned_fleet = {
@@ -724,15 +700,6 @@ country_event = {
 			}
 		}
 
-	}
-
-	option = { # help
-		name = rg_help
-		hidden_effect = {
-			country_event = {
-				id = rg_grayleader.4
-			}
-		}
 	}
 	
 	option = {
@@ -981,7 +948,7 @@ country_event = {
 
 	option = { # 开启隐形
 		name = rg.4.e
-		response_text = rg_cloak.response
+		response_text = rg_cloak.a.response
 		is_dialog_only = yes
 		trigger = {
 			any_owned_fleet = {
@@ -1007,7 +974,7 @@ country_event = {
 
 	option = { # 关闭隐形
 		name = rg.4.f
-		response_text = rg_cloak_off.response
+		response_text = rg_cloak_off.a.response
 		is_dialog_only = yes
 		trigger = {
 			any_owned_fleet = {
@@ -1029,15 +996,6 @@ country_event = {
 			}
 		}
 
-	}
-
-	option = { # help
-		name = rg_help
-		hidden_effect = {
-			country_event = {
-				id = rg_grayleader.4
-			}
-		}
 	}
 
 	option = {
@@ -1174,14 +1132,6 @@ country_event = {
 			rg_create_gray_army = yes
 		}
 	}
-	option = { # help
-		name = rg_help
-		hidden_effect = {
-			country_event = {
-				id = rg_grayleader.4
-			}
-		}
-	}
 
 #	option = { # 开启建造中继器
 #		name = rg.5.e
@@ -1234,16 +1184,14 @@ country_event = {
 	title = "graygoo.500.title"
 	desc = "rg.4.a.desc"
 
-	diplomatic = yes
 	event_window_type = leader_recruit
 
 	picture_event_data = {
-		portrait = event_target:gray_species
+		portrait = event_target:gray_governor
 		room = "ethic_spaceship_room"
 	}
 
 	is_triggered_only = yes
-	
 	
 	immediate = {
 		set_country_flag = gray_diplomacy_engaged
@@ -1356,11 +1304,10 @@ country_event = {
 	desc = "rg.5.b.desc"
 	desc = "rg.5.c.desc"
 
-	diplomatic = yes
 	event_window_type = leader_recruit
 
 	picture_event_data = {
-		portrait = event_target:gray_species
+		portrait = event_target:gray_governor
 		room = "ethic_spaceship_room"
 	}
 
@@ -1411,22 +1358,20 @@ country_event = {
 }
 
 country_event = {
-	id = rg.6
+	id = rg_grayleader.6
 	title = "graygoo.500.title"
 	desc = "rg.6.a.desc"
 	desc = "rg.6.b.desc"
 
-	diplomatic = yes
-	event_window_type = leader_story
+	event_window_type = leader_recruit
 
 	picture_event_data = {
-		portrait = event_target:gray_species
+		portrait = event_target:gray_governor
 		room = "ethic_spaceship_room"
 	}
 
 	is_triggered_only = yes
-	
-	
+
 	immediate = {
 		set_country_flag = gray_diplomacy_engaged
 	}
@@ -1439,7 +1384,20 @@ country_event = {
 
 	option = { # 诶嘿
 		name = rg.6.a
-	  	default_hide_option = yes	
 	}
-	
+
+	option = {
+		name = graygoo.500.d
+		tag = hire_leader
+		default_hide_option = yes
+	}
+	option = {
+		name = graygoo.500.prepage
+		tag = dismiss_leader
+		hidden_effect = {
+			country_event = {
+				id = rg_grayleader.1
+			}
+		}
+	}
 }
