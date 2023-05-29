@@ -28,7 +28,7 @@ country_event = {
 		text = "rg.2.desc"
 	}
 
-	diplomatic = yes
+	hide_window = yes
 
 	picture_event_data = {
 		portrait = root.species
@@ -41,16 +41,28 @@ country_event = {
 		hidden_effect = {
 			rg_create_gray_species = yes
 			rg_gray_govener_init = yes
+			country_event = { id = graygoo.499 }
+			create_message = {
+				type = MESSAGE_RECRUITED_LEADER
+				localization = "rg.2.desc"
+				days = @toast_message_days
+				target = root
+				variable = {
+					type = name
+					localization = LEADER
+					scope = event_target:gray_governor
+				}
+			}
 		}
 	}
 
-	option = {
-		name = rg.2.a
-		hidden_effect = {
-			country_event = { id = graygoo.499 }
-		}
-		default_hide_option = yes
-	}
+	# option = {
+	# 	name = rg.2.a
+	# 	hidden_effect = {
+	# 		country_event = { id = graygoo.499 }
+	# 	}
+	# 	default_hide_option = yes
+	# }
 }
 
 country_event = {
@@ -322,196 +334,6 @@ country_event = {
 			}
 		}
 	}
-}
-
-# help Menu (Initial)
-country_event = {
-	id = rg.4
-	title = "graygoo.500.title"
-	desc = "rg.4.a.desc"
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = event_target:gray_species
-		room = "ethic_spaceship_room"
-	}
-
-	is_triggered_only = yes
-	
-	
-	immediate = {
-		set_country_flag = gray_diplomacy_engaged
-	}
-
-	after = {
-		hidden_effect = { 
-			remove_country_flag = gray_diplomacy_engaged 
-		}
-	}
-
-	option = { # 购买灰风母舰
-		name = rg.4.a
-		trigger = {
-			NOT = { has_country_flag = gray_reforming }
-		}
-
-		allow = {
-			NOR = {
-				has_country_flag = rg_gray_level_1
-			}
-			resource_stockpile_compare = { resource = energy value >= 40000 }
-			resource_stockpile_compare = { resource = alloys value >= 40000 }
-		}
-
-		if = {
-			limit = {
-				has_country_flag = gray_begging
-			}
-			remove_country_flag = gray_begging
-		}
-		else = {
-			add_resource = {
-				energy = -40000
-				alloys = -40000	
-			}
-		}
-
-		hidden_effect = {
-			rg_create_gray_warship_1 = yes
-		}
-	}
-	option = { # 购买工程船
-		name = rg.4.b
-		trigger = {
-			NOT = { has_country_flag = gray_reforming }
-		}
-
-		allow = {
-			resource_stockpile_compare = { resource = energy value >= 2000 }
-			resource_stockpile_compare = { resource = alloys value >= 2000 }
-		}
-
-	    add_resource = {
-			energy = -2000
-			alloys = -2000
-	    }
-
-		hidden_effect = {
-			rg_create_gray_constship_1 = yes
-		}
-
-	}
-
-	option = { # 没钱了，救救
-		name = rg.4.c
-		trigger = {
-			NOT = { has_country_flag = gray_reforming }
-		}
-
-		hidden_effect = {
-			if = {
-				limit = {
-					has_country_flag = gray_alreadybegged
-				}
-				country_event = {
-					id = rg.6
-				}
-			}
-			else = {
-				country_event = {
-					id = rg.5
-				}
-			}
-		}
-	}
-	
-	option = {
-		name = graygoo.500.d
-		default_hide_option = yes
-	}
-}
-
-country_event = {
-	id = rg.5
-	title = "graygoo.500.title"
-	desc = "rg.5.a.desc"
-	desc = "rg.5.b.desc"
-	desc = "rg.5.c.desc"
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = event_target:gray_species
-		room = "ethic_spaceship_room"
-	}
-
-	is_triggered_only = yes
-	
-	
-	immediate = {
-		set_country_flag = gray_diplomacy_engaged
-	}
-
-	after = {
-		hidden_effect = { 
-			remove_country_flag = gray_diplomacy_engaged 
-		}
-	}
-
-	option = { # 没钱了，救救
-		name = rg.5.a
-		hidden_effect = {
-			set_country_flag = gray_begging
-			set_timed_country_flag = { flag = gray_alreadybegged days = 3600 }
-			tooltip = {
-				add_resource = {
-					energy = 200
-					alloys = 200
-					consumer_goods = 200
-					mult = value:years_passed
-	    		}
-			}
-		}		
-	}
-
-	option = {
-		name = graygoo.500.d
-		default_hide_option = yes
-	}
-}
-
-country_event = {
-	id = rg.6
-	title = "graygoo.500.title"
-	desc = "rg.6.a.desc"
-	desc = "rg.6.b.desc"
-
-	diplomatic = yes
-
-	picture_event_data = {
-		portrait = event_target:gray_species
-		room = "ethic_spaceship_room"
-	}
-
-	is_triggered_only = yes
-	
-	
-	immediate = {
-		set_country_flag = gray_diplomacy_engaged
-	}
-
-	after = {
-		hidden_effect = { 
-			remove_country_flag = gray_diplomacy_engaged 
-		}
-	}
-
-	option = { # 诶嘿
-		name = rg.6.a
-	  	default_hide_option = yes	
-	}
-	
 }
 
 country_event = {
