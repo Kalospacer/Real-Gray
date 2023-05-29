@@ -308,11 +308,8 @@ country_event = {
 
 	immediate = {
 		rg_gray_country_after_init = yes
-		event_target:rg_gray_country = {
-			establish_communications_no_message = root
-		}
 		event_target:gray_governor = {
-			set_owner = root
+			set_owner = event_target:gray_owner
 		}
 	}
 }

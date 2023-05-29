@@ -16,10 +16,22 @@ rg_storyline_trigger = {
  # 	country_event = { id = rg_story.8 days = 3600 random = 12800 }
  # 	country_event = { id = rg_story.13 days = 3600 random = 12800 }
  # }
+	random_list = {
+		50 = {
+			country_event = { id = rg_story.2 days = 3600 random = 12800 }
+		}
+		50 = {
+			country_event = { id = rg_story.8 days = 3600 random = 12800 }
+		}
+	}
 
-	country_event = { id = rg_story.2 days = 3600 random = 12800 }
-	country_event = { id = rg_story.8 days = 3600 random = 12800 }
-	country_event = { id = rg_story.11 days = 3600 random = 12800 }
+	if = {
+		limit= {
+			exists = event_target:guardian_dragon_country
+		}
+		country_event = { id = rg_story.11 days = 3600 random = 12800 }
+	}
+	
 }
 
 rg_create_gray_planetkiller_testship_1 = {

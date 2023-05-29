@@ -2003,7 +2003,7 @@ rg_gray_country_after_init = {
 	}
 	rg_storyline_trigger = yes
 	event_target:rg_gray_country = {
-		establish_communications_no_message = root
+		establish_communications_no_message = event_target:gray_owner
 	}
 }
 

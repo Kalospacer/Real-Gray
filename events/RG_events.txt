@@ -40,8 +40,9 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			rg_create_gray_species = yes
+			rg_gray_country_init = yes
+			rg_gray_country_after_init = rg_gray_country_after_init
 			rg_gray_govener_init = yes
-			country_event = { id = graygoo.499 }
 			create_message = {
 				type = MESSAGE_RECRUITED_LEADER
 				localization = "rg.2.desc"
@@ -191,7 +192,7 @@ country_event = {
 				trigger = has_country_flag
 				RG_realgray = {
 					custom_tooltip = "RG_realgray"
-					country_event = { id = graygoo.499 days = 30 }
+					country_event = { id = rg.2 days = 30 }
 					give_technology = { 
 						tech = tech_minilaser_gray_1
 						message = no 
