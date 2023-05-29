@@ -241,7 +241,7 @@ country_event = {
 		name = rg_help
 		hidden_effect = {
 			country_event = {
-				id = rg.4
+				id = rg_grayleader.4
 			}
 		}
 	}
@@ -367,7 +367,7 @@ country_event = {
 		name = rg_help
 		hidden_effect = {
 			country_event = {
-				id = rg.4
+				id = rg_grayleader.4
 			}
 		}
 	}
@@ -676,6 +676,7 @@ country_event = {
 
 	option = { # 开启隐形
 		name = rg.4.e
+		response_text = rg_cloak.response
 		is_dialog_only = yes
 		trigger = {
 			any_owned_fleet = {
@@ -701,6 +702,7 @@ country_event = {
 
 	option = { # 关闭隐形
 		name = rg.4.f
+		response_text = rg_cloak_off.response
 		is_dialog_only = yes
 		trigger = {
 			any_owned_fleet = {
@@ -728,7 +730,7 @@ country_event = {
 		name = rg_help
 		hidden_effect = {
 			country_event = {
-				id = rg.4
+				id = rg_grayleader.4
 			}
 		}
 	}
@@ -979,6 +981,7 @@ country_event = {
 
 	option = { # 开启隐形
 		name = rg.4.e
+		response_text = rg_cloak.response
 		is_dialog_only = yes
 		trigger = {
 			any_owned_fleet = {
@@ -1004,6 +1007,7 @@ country_event = {
 
 	option = { # 关闭隐形
 		name = rg.4.f
+		response_text = rg_cloak_off.response
 		is_dialog_only = yes
 		trigger = {
 			any_owned_fleet = {
@@ -1031,7 +1035,7 @@ country_event = {
 		name = rg_help
 		hidden_effect = {
 			country_event = {
-				id = rg.4
+				id = rg_grayleader.4
 			}
 		}
 	}
@@ -1174,7 +1178,7 @@ country_event = {
 		name = rg_help
 		hidden_effect = {
 			country_event = {
-				id = rg.4
+				id = rg_grayleader.4
 			}
 		}
 	}
@@ -1224,11 +1228,9 @@ country_event = {
 	}
 }
 
-namespace = rg
-
 # help Menu (Initial)
 country_event = {
-	id = rg.4
+	id = rg_grayleader.4
 	title = "graygoo.500.title"
 	desc = "rg.4.a.desc"
 
@@ -1320,12 +1322,12 @@ country_event = {
 					has_country_flag = gray_alreadybegged
 				}
 				country_event = {
-					id = rg.6
+					id = rg_grayleader.6
 				}
 			}
 			else = {
 				country_event = {
-					id = rg.5
+					id = rg_grayleader.5
 				}
 			}
 		}
@@ -1348,7 +1350,7 @@ country_event = {
 }
 
 country_event = {
-	id = rg.5
+	id = rg_grayleader.5
 	title = "graygoo.500.title"
 	desc = "rg.5.a.desc"
 	desc = "rg.5.b.desc"

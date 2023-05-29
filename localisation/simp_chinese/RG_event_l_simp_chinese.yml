@@ -54,6 +54,11 @@
  rg_const.501.response:0 "一次悲惨的阶级转变，我还能回来吗？"
  rg_const.502.response:0 "其实我真的不会做题，真的要这样吗？"
  rg_const.503.response:0 "也许偶尔出去旅行也很不错。"
+ rg_cloak.a.response:0 "拟似力场稳定中。外部扫描无异常。"
+ rg_cloak.b.response:0 "设置偏转滤波器，手动调控能量输出中。"
+
+ rg_cloak_off.a.response:0 "切换手动控制，拟似力场输出功率降低至无输出。唔姆"
+ rg_cloak_off.b.response:0 "切断电源！嗯，应该不会爆炸吧。"
 
  RG_realgray.desc:0 "好久不见，继续我们的冒险吧？我们的约定还有很长时间要走呢！"
  RG_realgray:0 "真棒"
