@@ -31,7 +31,6 @@ country_event = {
 					has_country_flag = gray_warship_active
 					has_country_flag = gray_army_active
 					has_country_flag = gray_reforming
-					has_country_flag = gray_diplomacy_engaged
 				}
 			}
 			country_event = { id = graygoo.500 }
@@ -47,7 +46,6 @@ country_event = {
 				exists = event_target:gray_governor
 				NOR = {
 					has_country_flag = gray_reforming
-					has_country_flag = gray_diplomacy_engaged
 				}
 			}
 			country_event = { id = graygoo.501 }
@@ -65,7 +63,6 @@ country_event = {
 				event_target:gray_warship = { num_ships > 0 }
 				NOR = {
 					has_country_flag = gray_reforming
-					has_country_flag = gray_diplomacy_engaged
 				}
 			}
 			country_event = { id = graygoo.502 }
@@ -90,7 +87,6 @@ country_event = {
 				}
 				NOR = {
 					has_country_flag = gray_reforming
-					has_country_flag = gray_diplomacy_engaged
 				}
 			}
 			country_event = { id = graygoo.503 }
@@ -108,7 +104,6 @@ country_event = {
 				event_target:global_gray_constship = { num_ships > 0 }
 				NOR = {
 					has_country_flag = gray_reforming
-					has_country_flag = gray_diplomacy_engaged
 				}
 			}
 			country_event = { id = graygoo.505 }
