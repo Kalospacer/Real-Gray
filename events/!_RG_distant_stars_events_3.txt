@@ -55,6 +55,9 @@ country_event = {
 		trigger = {
 			OR = {
 				has_origin = origin_rg_gray
+				has_origin = origin_gray
+				has_origin = origin_lclusterplus_gatebuilders
+				has_origin = origin_lclusterplus_gatebuilders_advanced
 			}
 		}
 	}

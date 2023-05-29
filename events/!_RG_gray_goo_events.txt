@@ -794,6 +794,7 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:gray_species
+		planet_background = event_target:gray_homeworld
 		room = "ethic_spaceship_room"
 	}
 
@@ -853,6 +854,7 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:gray_species
+		planet_background = event_target:gray_homeworld
 		room = "ethic_spaceship_room"
 	}
 
@@ -876,6 +878,7 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:gray_species
+		planet_background = event_target:gray_homeworld
 		room = "ethic_spaceship_room"
 	}
 
@@ -899,6 +902,7 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:gray_species
+		planet_background = event_target:gray_homeworld
 		room = "ethic_spaceship_room"
 	}
 
@@ -922,6 +926,7 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:gray_species
+		planet_background = event_target:gray_homeworld
 		room = "ethic_spaceship_room"
 	}
 
@@ -957,7 +962,8 @@ country_event = {
 
 	picture_event_data = {
 		portrait = event_target:gray_governor
-		room = "ethic_spaceship_room"
+		planet_background = event_target:gray_homeworld
+		room = ship_room
 	}
 
 	event_window_type = leader_recruit
@@ -1080,7 +1086,8 @@ country_event = {
 	diplomatic = yes
 
 	picture_event_data = {
-		portrait = event_target:gray_species
+		portrait = event_target:gray_governor
+		planet_background = root.capital_scope
 		room = "ethic_spaceship_room"
 	}
 
@@ -1186,9 +1193,9 @@ country_event = {
 	diplomatic = yes
 
 	picture_event_data = {
-		portrait = event_target:gray_species
+		portrait = event_target:gray_governor
 		planet_background = event_target:gray_governor_planet
-		room = ethic_spaceship_room
+		room = root
 	}
 
 	is_triggered_only = yes
@@ -1297,7 +1304,7 @@ country_event = {
 	diplomatic = yes
 
 	picture_event_data = {
-		portrait = event_target:gray_species
+		portrait = event_target:gray_leader_admiral
 		room = "ethic_spaceship_room"
 	}
 
@@ -1636,7 +1643,7 @@ country_event = {
 	diplomatic = yes
 
 	picture_event_data = {
-		portrait = event_target:gray_species
+		portrait = event_target:gray_leader_general
 		room = "ethic_spaceship_room"
 	}
 
@@ -1949,6 +1956,7 @@ country_event = {
 			alloys = -50000
 		}
 		remove_country_flag = gray_reforming
+		remove_modifier = "gray_scattered"
 	}
 }
 
@@ -1964,7 +1972,7 @@ country_event = {
 	diplomatic = yes
 
 	picture_event_data = {
-		portrait = event_target:gray_species
+		portrait = event_target:gray_leader_scientist
 		room = "ethic_spaceship_room"
 	}
 

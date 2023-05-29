@@ -40,6 +40,7 @@ country_event = {
 	immediate = {
 		hidden_effect = {
 			rg_create_gray_species = yes
+			rg_gray_govener_init = yes
 		}
 	}
 
