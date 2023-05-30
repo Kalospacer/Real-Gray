@@ -321,10 +321,6 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOR = {
-			has_global_flag = has_wsg_mod
-			has_global_flag = kdc_event_mod_active
-		}
 		from = { OR = {
 			is_country_type = gray 
 			is_same_value = ROOT
@@ -341,7 +337,16 @@ country_event = {
 	}
 
 	immediate = {
-		country_event = { id = rg_grayleader.500 } #放行。
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = has_wsg_mod
+					has_global_flag = kdc_event_mod_active
+				}
+			}
+			country_event = { id = rg_graygoo.500 }
+		}
+		else = {country_event = { id = rg_grayleader.500 } }
 	}
 }
 
@@ -352,10 +357,6 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOR = {
-			has_global_flag = has_wsg_mod
-			has_global_flag = kdc_event_mod_active
-		}
 		from = { OR = {
 			is_country_type = gray 
 			is_same_value = ROOT
@@ -370,7 +371,16 @@ country_event = {
 	}
 
 	immediate = {
-		country_event = { id = rg_grayleader.501 } #放行。
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = has_wsg_mod
+					has_global_flag = kdc_event_mod_active
+				}
+			}
+			country_event = { id = rg_graygoo.501 }
+		}
+		else = {country_event = { id = rg_grayleader.501 } }
 	}
 }
 
@@ -381,10 +391,6 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOR = {
-			has_global_flag = has_wsg_mod
-			has_global_flag = kdc_event_mod_active
-		}
 		from = { OR = {
 			is_country_type = gray 
 			is_same_value = ROOT
@@ -401,7 +407,16 @@ country_event = {
 	}
 
 	immediate = {
-		country_event = { id = rg_grayleader.502 } #放行。
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = has_wsg_mod
+					has_global_flag = kdc_event_mod_active
+				}
+			}
+			country_event = { id = rg_graygoo.502 }
+		}
+		else = {country_event = { id = rg_grayleader.502 } }
 	}
 }
 
@@ -412,10 +427,6 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOR = {
-			has_global_flag = has_wsg_mod
-			has_global_flag = kdc_event_mod_active
-		}
 		from = { OR = {
 			is_country_type = gray 
 			is_same_value = ROOT
@@ -440,25 +451,26 @@ country_event = {
 	}
 
 	immediate = {
-		country_event = { id = rg_grayleader.503 } #放行。
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = has_wsg_mod
+					has_global_flag = kdc_event_mod_active
+				}
+			}
+			country_event = { id = rg_graygoo.503 }
+		}
+		else = {country_event = { id = rg_grayleader.503 } }
 	}
 }
 
 # Main Menu (Gray Reforming)
 country_event = {
 	id = graygoo.504
-	title = "graygoo.500.title"
-	desc = "graygoo.504.desc"
-
-	diplomatic = yes
-
+	hide_window = yes
 	is_triggered_only = yes
 
 	trigger = {
-		NOR = {
-			has_global_flag = has_wsg_mod
-			has_global_flag = kdc_event_mod_active
-		}
 		from = { OR = {
 			is_country_type = gray 
 			is_same_value = ROOT
@@ -467,23 +479,17 @@ country_event = {
 		has_country_flag = gray_reforming
 	}
 
-	option = {
-		name = OK
-	}
-
-	option = {
-		name = rg_graygoo.504.a
-		allow = {
-			has_country_flag = gray_reforming
-			resource_stockpile_compare = { resource = nanites value >= 1000 }
-			resource_stockpile_compare = { resource = alloys value >= 50000 }
+	immediate = {
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = has_wsg_mod
+					has_global_flag = kdc_event_mod_active
+				}
+			}
+			country_event = { id = rg_graygoo.504 }
 		}
-		add_resource = {
-			nanites = -1000
-			alloys = -50000
-		}
-		remove_country_flag = gray_reforming
-		remove_modifier = "gray_scattered"
+		else = {country_event = { id = rg_grayleader.504 } }
 	}
 }
 
@@ -494,10 +500,6 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		NOR = {
-			has_global_flag = has_wsg_mod
-			has_global_flag = kdc_event_mod_active
-		}
 		from = { OR = {
 			is_country_type = gray 
 			is_same_value = ROOT
@@ -515,7 +517,16 @@ country_event = {
 	}
 
 	immediate = {
-		country_event = { id = rg_grayleader.505 } #放行。
+		if = {
+			limit = {
+				OR = {
+					has_global_flag = has_wsg_mod
+					has_global_flag = kdc_event_mod_active
+				}
+			}
+			country_event = { id = rg_graygoo.505 }
+		}
+		else = {country_event = { id = rg_grayleader.505 } }
 	}
 }
 

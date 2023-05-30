@@ -12,13 +12,6 @@ on_single_player_save_game_load = {
 on_custom_diplomacy = {
 	events = {
 		graygoo.505
-		
-		rg_graygoo.500
-		rg_graygoo.501
-		rg_graygoo.502
-		rg_graygoo.503
-		rg_graygoo.504
-		rg_graygoo.505
 	}
 }
 

@@ -11,29 +11,35 @@ country_event = {
 			has_global_flag = has_wsg_mod
 			has_global_flag = kdc_event_mod_active
 		}
+		fromfrom = { OR = {
+			is_country_type = gray 
+			is_same_value = ROOT
+		}}
 		is_same_value = event_target:gray_owner
-		NOR = {
-			has_country_flag = gray_reforming
-		}
 	}
 
 	immediate = {
 		if = {
 			limit = { #500.initial
-				NOR = {
-					has_global_flag = has_wsg_mod
-					has_global_flag = kdc_event_mod_active
-				}
-				is_same_value = event_target:gray_owner
-				NOR = {
-					has_country_flag = gray_constship_active
-					has_country_flag = gray_governor_active
-					has_country_flag = gray_warship_active
-					has_country_flag = gray_army_active
-					has_country_flag = gray_reforming
-				}
+			NOR = {
+				has_global_flag = has_wsg_mod
+				has_global_flag = kdc_event_mod_active
 			}
-			country_event = { id = graygoo.500 }
+			fromfrom = { OR = {
+				is_country_type = gray 
+				is_same_value = ROOT
+			}}
+			is_same_value = event_target:gray_owner
+			NOR = {
+				has_country_flag = gray_constship_active
+				has_country_flag = gray_governor_active
+				has_country_flag = gray_warship_active
+				has_country_flag = gray_army_active
+				has_country_flag = gray_reforming
+				has_country_flag = gray_diplomacy_engaged
+			}
+			}
+			country_event = { id = rg_grayleader.500 }
 		}
 		else_if = { #501.governor
 			limit = {
@@ -41,14 +47,19 @@ country_event = {
 					has_global_flag = has_wsg_mod
 					has_global_flag = kdc_event_mod_active
 				}
+				fromfrom = { OR = {
+					is_country_type = gray 
+					is_same_value = ROOT
+				}}
 				is_same_value = event_target:gray_owner
 				has_country_flag = gray_governor_active
-				exists = event_target:gray_governor
-				NOR = {
-					has_country_flag = gray_reforming
+				NOR = { 
+					has_country_flag = gray_reforming 
+					has_country_flag = gray_diplomacy_engaged
 				}
+				exists = event_target:gray_governor
 			}
-			country_event = { id = graygoo.501 }
+			country_event = { id = rg_grayleader.501 }
 		}
 		else_if = { #502.warship
 			limit = {
@@ -56,16 +67,21 @@ country_event = {
 					has_global_flag = has_wsg_mod
 					has_global_flag = kdc_event_mod_active
 				}
+				fromfrom = { OR = {
+					is_country_type = gray 
+					is_same_value = ROOT
+				}}
 				is_same_value = event_target:gray_owner
 				has_country_flag = gray_warship_active
+				NOR = { 
+					has_country_flag = gray_reforming 
+					has_country_flag = gray_diplomacy_engaged
+				}
 				exists = event_target:gray_warship
 				any_owned_fleet = { is_same_value = event_target:gray_warship }
 				event_target:gray_warship = { num_ships > 0 }
-				NOR = {
-					has_country_flag = gray_reforming
-				}
 			}
-			country_event = { id = graygoo.502 }
+			country_event = { id = rg_grayleader.502 }
 		}
 		else_if = { #503.army
 			limit = {
@@ -73,7 +89,16 @@ country_event = {
 					has_global_flag = has_wsg_mod
 					has_global_flag = kdc_event_mod_active
 				}
+				fromfrom = { OR = {
+					is_country_type = gray 
+					is_same_value = ROOT
+				}}
 				has_country_flag = gray_army_active
+				NOR = { 
+					has_country_flag = gray_reforming 
+					has_country_flag = gray_diplomacy_engaged 
+		
+				}
 				is_same_value = event_target:gray_owner
 				any_owned_army = {
 					army_type = gray_army
@@ -85,11 +110,8 @@ country_event = {
 						}
 					}
 				}
-				NOR = {
-					has_country_flag = gray_reforming
-				}
 			}
-			country_event = { id = graygoo.503 }
+			country_event = { id = rg_grayleader.503 }
 		}
 		else_if = { #505.scienceship
 			limit = {
@@ -97,17 +119,38 @@ country_event = {
 					has_global_flag = has_wsg_mod
 					has_global_flag = kdc_event_mod_active
 				}
+				fromfrom = { OR = {
+					is_country_type = gray 
+					is_same_value = ROOT
+				}}
 				is_same_value = event_target:gray_owner
 				has_country_flag = gray_constship_active
+				NOR = { 
+					has_country_flag = gray_reforming 
+					has_country_flag = gray_diplomacy_engaged
+		
+				}
 				exists = event_target:global_gray_constship
 				any_owned_fleet = { is_same_value = event_target:global_gray_constship }
 				event_target:global_gray_constship = { num_ships > 0 }
-				NOR = {
-					has_country_flag = gray_reforming
-				}
 			}
-			country_event = { id = graygoo.505 }
+			country_event = { id = rg_grayleader.505 }
 		}
+		else_if = { #504.gale
+		limit = {
+			NOR = {
+				has_global_flag = has_wsg_mod
+				has_global_flag = kdc_event_mod_active
+			}
+			fromfrom = { OR = {
+				is_country_type = gray 
+				is_same_value = ROOT
+			}}
+			is_same_value = event_target:gray_owner
+			has_country_flag = gray_reforming
+		}
+		country_event = { id = graygoo.504 }
+	}
 	}
 
 }
@@ -149,7 +192,7 @@ country_event = {
 			has_global_flag = has_wsg_mod
 			has_global_flag = kdc_event_mod_active
 		}
-		from = { OR = {
+		fromfrom = { OR = {
 			is_country_type = gray 
 			is_same_value = ROOT
 		}}
@@ -259,7 +302,7 @@ country_event = {
 			has_global_flag = has_wsg_mod
 			has_global_flag = kdc_event_mod_active
 		}
-		from = { OR = {
+		fromfrom = { OR = {
 			is_country_type = gray 
 			is_same_value = ROOT
 		}}
@@ -384,7 +427,7 @@ country_event = {
 			has_global_flag = has_wsg_mod
 			has_global_flag = kdc_event_mod_active
 		}
-		from = { OR = {
+		fromfrom = { OR = {
 			is_country_type = gray 
 			is_same_value = ROOT
 		}}
@@ -738,7 +781,7 @@ country_event = {
 			has_global_flag = has_wsg_mod
 			has_global_flag = kdc_event_mod_active
 		}
-		from = { OR = {
+		fromfrom = { OR = {
 			is_country_type = gray 
 			is_same_value = ROOT
 		}}
@@ -1010,6 +1053,49 @@ country_event = {
 	}
 }
 
+# Main Menu (Gray Reforming)
+country_event = {
+	id = rg_grayleader.504
+	title = "graygoo.500.title"
+	desc = "graygoo.504.desc"
+
+	diplomatic = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			has_global_flag = has_wsg_mod
+			has_global_flag = kdc_event_mod_active
+		}
+		from = { OR = {
+			is_country_type = gray 
+			is_same_value = ROOT
+		}}
+		is_same_value = event_target:gray_owner
+		has_country_flag = gray_reforming
+	}
+
+	option = {
+		name = OK
+	}
+
+	option = {
+		name = rg_graygoo.504.a
+		allow = {
+			has_country_flag = gray_reforming
+			resource_stockpile_compare = { resource = nanites value >= 1000 }
+			resource_stockpile_compare = { resource = alloys value >= 50000 }
+		}
+		add_resource = {
+			nanites = -1000
+			alloys = -50000
+		}
+		remove_country_flag = gray_reforming
+		remove_modifier = "gray_scattered"
+	}
+}
+
 # Main Menu (const)
 country_event = {
 	id = rg_grayleader.505
@@ -1034,7 +1120,7 @@ country_event = {
 			has_global_flag = has_wsg_mod
 			has_global_flag = kdc_event_mod_active
 		}
-		from = { OR = {
+		fromfrom = { OR = {
 			is_country_type = gray 
 			is_same_value = ROOT
 		}}

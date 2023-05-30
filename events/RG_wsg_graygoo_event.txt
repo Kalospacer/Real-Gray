@@ -35,7 +35,7 @@ country_event = {
 			has_global_flag = kdc_event_mod_active
 		}
 
-		from = { OR = {
+		fromfrom = { OR = {
 			is_country_type = gray 
 			is_same_value = ROOT
 		}}
@@ -196,7 +196,7 @@ country_event = {
 			has_global_flag = kdc_event_mod_active
 		}
 		
-		from = { OR = {
+		fromfrom = { OR = {
 			is_country_type = gray 
 			is_same_value = ROOT
 		}}
@@ -354,7 +354,7 @@ country_event = {
 			has_global_flag = kdc_event_mod_active
 		}
 
-		from = { OR = {
+		fromfrom = { OR = {
 			is_country_type = gray 
 			is_same_value = ROOT
 		}}
@@ -750,7 +750,7 @@ country_event = {
 			has_global_flag = kdc_event_mod_active
 		}
 
-		from = { OR = {
+		fromfrom = { OR = {
 			is_country_type = gray 
 			is_same_value = ROOT
 		}}
@@ -1064,7 +1064,7 @@ country_event = {
 	trigger = {
 		has_global_flag = has_wsg_mod
 
-		from = { OR = {
+		fromfrom = { OR = {
 			is_country_type = gray 
 			is_same_value = ROOT
 		}}
@@ -1133,7 +1133,7 @@ country_event = {
 			has_global_flag = kdc_event_mod_active
 		}
 
-		from = { OR = {
+		fromfrom = { OR = {
 			is_country_type = gray 
 			is_same_value = ROOT
 		}}
