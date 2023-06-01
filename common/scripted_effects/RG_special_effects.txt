@@ -26,7 +26,7 @@ rg_storyline_trigger = {
 	}
 
 	if = {
-		limit= {
+		limit = {
 			exists = event_target:guardian_dragon_country
 		}
 		country_event = { id = rg_story.11 days = 3600 random = 12800 }

@@ -675,15 +675,6 @@ country_event = {
 
 	}
 
-	option = { # help
-		name = rg_help
-		hidden_effect = {
-			country_event = {
-				id = rg_graygoo.4
-			}
-		}
-	}
-
 	option = {
 		name = marry_gray
 		trigger = {
@@ -998,14 +989,6 @@ country_event = {
 
 	}
 
-	option = { # help
-		name = rg_help
-		hidden_effect = {
-			country_event = {
-				id = rg_graygoo.4
-			}
-		}
-	}
 	option = {
 		name = marry_gray
 		trigger = {
@@ -1108,6 +1091,7 @@ country_event = {
 			alloys = -50000
 		}
 		remove_country_flag = gray_reforming
+		remove_modifier = "gray_scattered"
 	}
 }
 
@@ -1235,14 +1219,6 @@ country_event = {
 			rg_create_gray_army = yes
 		}
 	}
-	option = { # help
-		name = rg_help
-		hidden_effect = {
-			country_event = {
-				id = rg_graygoo.4
-			}
-		}
-	}
 
 	option = {
 		name = marry_gray
@@ -1317,26 +1293,18 @@ country_event = {
 		}
 
 		allow = {
-			OR = {
-				AND = {
-					NOT = { has_country_flag = gray_begging }
-					resource_stockpile_compare = { resource = energy value >= 40000 }
-					resource_stockpile_compare = { resource = alloys value >= 40000 }
-				}
-				AND = {
-					has_country_flag = gray_begging
-				}
+			NOR = {
+				has_country_flag = rg_gray_level_1
 			}
+			resource_stockpile_compare = { resource = energy value >= 40000 }
+			resource_stockpile_compare = { resource = alloys value >= 40000 }
 		}
 
 		if = {
 			limit = {
 				has_country_flag = gray_begging
 			}
-			add_resource = {
-				energy = 0
-				alloys = 0
-			}
+			remove_country_flag = gray_begging
 		}
 		else = {
 			add_resource = {
@@ -1347,9 +1315,9 @@ country_event = {
 
 		hidden_effect = {
 			rg_create_gray_warship_1 = yes
-			remove_country_flag = gray_begging
 		}
 	}
+
 	option = { # 购买工程船
 		name = rg_graygoo.4.b
 		trigger = {
@@ -1433,9 +1401,10 @@ country_event = {
 			set_timed_country_flag = { flag = gray_alreadybegged days = 3600 }
 			tooltip = {
 				add_resource = {
-					energy = 20000
-					alloys = 20000
-					consumer_goods = 20000
+					energy = 400
+					alloys = 200
+					consumer_goods = 200
+					mult = owner.rg_gray_level
 	    		}
 			}
 		}		

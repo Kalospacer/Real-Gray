@@ -1316,6 +1316,7 @@ country_event = {
 			rg_create_gray_warship_1 = yes
 		}
 	}
+	
 	option = { # 购买工程船
 		name = rg.4.b
 		is_dialog_only = yes
@@ -1413,10 +1414,10 @@ country_event = {
 			set_timed_country_flag = { flag = gray_alreadybegged days = 3600 }
 			tooltip = {
 				add_resource = {
-					energy = 200
+					energy = 400
 					alloys = 200
 					consumer_goods = 200
-					mult = value:years_passed
+					mult = owner.rg_gray_level
 	    		}
 			}
 		}		
