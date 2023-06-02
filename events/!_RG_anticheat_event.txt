@@ -36,6 +36,7 @@ country_event = {
     id = rg_kac_event.2
     title = "rg_kac_event.2.title"
     is_triggered_only = yes
+	fire_only_once = yes
 
     trigger = {
 		is_same_value = event_target:gray_owner
@@ -65,6 +66,7 @@ country_event = {
     id = rg_kac_event.3
     title = "rg_kac_event.2.title"
     is_triggered_only = yes
+	fire_only_once = yes
 
     trigger = {
 		is_same_value = event_target:gray_owner
