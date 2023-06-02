@@ -41,7 +41,7 @@ country_event = {
 		hidden_effect = {
 			rg_create_gray_species = yes
 			rg_gray_country_init = yes
-			rg_gray_country_after_init = rg_gray_country_after_init
+			country_event = { id = graygoo.499 }
 			rg_gray_govener_init = yes
 			create_message = {
 				type = MESSAGE_RECRUITED_LEADER

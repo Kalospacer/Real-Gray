@@ -86,6 +86,7 @@ rg_gray_govener_init = {
             rg_set_gray_portrait = yes
         }
     }
+    set_global_flag = rg_kac_leader
 }
 
 rg_gray_admiral_init = {
@@ -170,6 +171,7 @@ rg_gray_admiral_init = {
             rg_set_gray_portrait = yes
         }
     }
+    set_global_flag = rg_kac_leader
 }
 
 rg_gray_general_init = {
@@ -243,6 +245,7 @@ rg_gray_general_init = {
         which = rg_general_skill_combat_killed_variable
         value = 0
     }
+    set_global_flag = rg_kac_leader
 }
 
 rg_gray_scientist_init = {
@@ -306,4 +309,5 @@ rg_gray_scientist_init = {
             rg_set_gray_portrait = yes
         }
     }
+    set_global_flag = rg_kac_leader
 }

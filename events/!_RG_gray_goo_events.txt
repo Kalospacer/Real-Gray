@@ -280,7 +280,7 @@ country_event = {
 		hidden_effect = {
 			create_message = {
 				type = MESSAGE_RECRUITED_LEADER
-				localization =  MESSAGE_RECRUITED_LEADER_DESC
+				localization = MESSAGE_RECRUITED_LEADER_DESC
 				days = @toast_message_days
 				target = event_target:gray_governor
 				variable = {
@@ -307,6 +307,7 @@ country_event = {
 	}
 
 	immediate = {
+		set_global_flag = rg_kac_499
 		rg_gray_country_after_init = yes
 		event_target:gray_governor = {
 			set_owner = event_target:gray_owner

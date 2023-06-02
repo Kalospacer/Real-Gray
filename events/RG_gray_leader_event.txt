@@ -210,7 +210,7 @@ country_event = {
 	option = { # Governor
 		name = graygoo.500.a
 		response_text = graygoo.500.a.response
-		is_dialog_only = yes
+		
 		trigger = {
 			NOT = { has_country_flag = gray_governor_active }
 		}
@@ -221,7 +221,7 @@ country_event = {
 	option = { # Warship
 		name = graygoo.500.b
 		response_text = graygoo.500.b.response
-		is_dialog_only = yes
+		
 		trigger = {
 			NOT = { has_country_flag = gray_warship_active }
 		}
@@ -232,7 +232,7 @@ country_event = {
 	option = { # Army
 		name = graygoo.500.c
 		response_text = graygoo.500.c.response
-		is_dialog_only = yes
+		
 		trigger = {
 			NOT = { has_country_flag = gray_army_active }
 		}
@@ -243,7 +243,7 @@ country_event = {
 	option = { # const
 		name = rg_const
 		response_text = rg_const.500.response
-		is_dialog_only = yes
+		
 		trigger = {
 			NOT = { has_country_flag = gray_const_active }
 		}
@@ -347,7 +347,7 @@ country_event = {
 	option = { # Warship
 		name = graygoo.500.b
 		response_text = graygoo.501.b.response
-		is_dialog_only = yes
+		
 		allow = {
 			hidden_trigger = { exists = event_target:gray_governor } # To prevent exploit
 		}
@@ -358,7 +358,7 @@ country_event = {
 	option = { # const
 		name = rg_const
 		response_text = rg_const.501.response
-		is_dialog_only = yes
+		
 		allow = {
 			hidden_trigger = { exists = event_target:gray_governor }
 		}
@@ -369,7 +369,7 @@ country_event = {
 	option = { # Army
 		name = graygoo.500.c
 		response_text = graygoo.501.c.response
-		is_dialog_only = yes
+		
 		allow = {
 			hidden_trigger = { exists = event_target:gray_governor }
 		}
@@ -457,7 +457,7 @@ country_event = {
 	option = { # Governor
 		name = graygoo.500.a
 		response_text = graygoo.502.a.response
-		is_dialog_only = yes
+		
 		allow = {
 			hidden_trigger = { # To prevent exploit
 				event_target:gray_warship = { num_ships > 0 }
@@ -478,7 +478,7 @@ country_event = {
 	option = { # const
 		name = rg_const
 		response_text = rg_const.502.response
-		is_dialog_only = yes
+		
 		allow = {
 			hidden_trigger = {
 				event_target:gray_warship = { num_ships > 0 }
@@ -499,7 +499,7 @@ country_event = {
 	option = { # Army
 		name = graygoo.500.c
 		response_text = graygoo.502.c.response
-		is_dialog_only = yes
+		
 		allow = {
 			hidden_trigger = {
 				event_target:gray_warship = { num_ships > 0 }
@@ -521,7 +521,7 @@ country_event = {
 	option = { # Juggernaut
 		name = RG_graygoo.500.d
 		response_text = RG_graygoo.502.d.response
-		is_dialog_only = yes
+		
 		trigger = {
 			has_country_flag = rg_juggernaut_fired
 			NOT = { has_country_flag = gray_warship_is_juggernaut }
@@ -548,7 +548,7 @@ country_event = {
 	option = { # Warship
 		name = RG_graygoo.500.e
 		response_text = RG_graygoo.502.e.response
-		is_dialog_only = yes
+		
 		trigger = {
 			has_country_flag = rg_juggernaut_fired
 			has_country_flag = gray_warship_is_juggernaut
@@ -574,7 +574,7 @@ country_event = {
 
 	option = { #升级-2
 		name = rg_levelup_2
-		is_dialog_only = yes
+		
 		trigger = {
 			event_target:gray_leader_admiral = { has_skill >= 10 }
 			NOR = { 
@@ -617,7 +617,7 @@ country_event = {
 
 	option = { #升级-3
 		name = rg_levelup_3
-		is_dialog_only = yes
+		
 		trigger = {
 			AND = {
 				event_target:gray_leader_admiral = { has_skill >= 10 }
@@ -662,7 +662,7 @@ country_event = {
 
 	option = { # 购买主宰
 		name = rg.4.d
-		is_dialog_only = yes
+		
 		trigger = {
 			NOR = {
 				has_country_flag = gray_reforming
@@ -691,7 +691,7 @@ country_event = {
 	option = { # 开启隐形
 		name = rg.4.e
 		response_text = rg_cloak.a.response
-		is_dialog_only = yes
+		
 		trigger = {
 			any_owned_fleet = {
 				AND = {
@@ -717,7 +717,7 @@ country_event = {
 	option = { # 关闭隐形
 		name = rg.4.f
 		response_text = rg_cloak_off.a.response
-		is_dialog_only = yes
+		
 		trigger = {
 			any_owned_fleet = {
 				AND = {
@@ -818,7 +818,7 @@ country_event = {
 	option = { # Governor
 		name = graygoo.500.a
 		response_text = graygoo.503.a.response
-		is_dialog_only = yes
+		
 		allow = {
 			hidden_trigger = {  # To prevent exploit
 				any_owned_army = {
@@ -874,7 +874,7 @@ country_event = {
 	option = { # Warship
 		name = graygoo.500.b
 		response_text = graygoo.503.b.response
-		is_dialog_only = yes
+		
 		allow = {
 			hidden_trigger = {
 				any_owned_army = {
@@ -930,7 +930,7 @@ country_event = {
 	option = { # const
 		name = rg_const
 		response_text = rg_const.503.response
-		is_dialog_only = yes
+		
 		allow = {
 			hidden_trigger = {
 				any_owned_army = {
@@ -987,7 +987,7 @@ country_event = {
 	option = { # 开启隐形
 		name = rg.4.e
 		response_text = rg_cloak.a.response
-		is_dialog_only = yes
+		
 		trigger = {
 			any_owned_fleet = {
 				AND = {
@@ -1013,7 +1013,7 @@ country_event = {
 	option = { # 关闭隐形
 		name = rg.4.f
 		response_text = rg_cloak_off.a.response
-		is_dialog_only = yes
+		
 		trigger = {
 			any_owned_fleet = {
 				AND = {
@@ -1149,7 +1149,7 @@ country_event = {
 	option = { # Governor
 		name = graygoo.500.a
 		response_text = graygoo.505.a.response
-		is_dialog_only = yes
+		
 		allow = {
 			hidden_trigger = { # To prevent exploit
 				event_target:global_gray_constship = { num_ships > 0 }
@@ -1174,7 +1174,7 @@ country_event = {
 	option = { # Warship
 		name = graygoo.500.b
 		response_text = graygoo.505.b.response
-		is_dialog_only = yes
+		
 		allow = {
 			hidden_trigger = { # To prevent exploit
 				event_target:global_gray_constship = { num_ships > 0 }
@@ -1195,7 +1195,7 @@ country_event = {
 	option = { # Army
 		name = graygoo.500.c
 		response_text = graygoo.505.c.response
-		is_dialog_only = yes
+		
 		allow = {
 			hidden_trigger = { # To prevent exploit
 				event_target:global_gray_constship = { num_ships > 0 }
@@ -1286,7 +1286,7 @@ country_event = {
 
 	option = { # 购买灰风母舰
 		name = rg.4.a
-		is_dialog_only = yes
+		
 		trigger = {
 			NOT = { has_country_flag = gray_reforming }
 		}
@@ -1319,7 +1319,7 @@ country_event = {
 	
 	option = { # 购买工程船
 		name = rg.4.b
-		is_dialog_only = yes
+		
 		trigger = {
 			NOT = { has_country_flag = gray_reforming }
 		}
@@ -1408,7 +1408,7 @@ country_event = {
 
 	option = { # 没钱了，救救
 		name = rg.5.a
-		is_dialog_only = yes
+		
 		hidden_effect = {
 			set_country_flag = gray_begging
 			set_timed_country_flag = { flag = gray_alreadybegged days = 3600 }

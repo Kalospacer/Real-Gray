@@ -1,4 +1,4 @@
-@gray_portrait = Gray
+@gray_portrait = Gray02
 
 rg_set_gray_portrait = {
 	change_leader_portrait = @gray_portrait

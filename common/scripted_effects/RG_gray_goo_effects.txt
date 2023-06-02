@@ -82,6 +82,7 @@ rg_create_gray_governor = {
 	set_country_flag = gray_governor_active
 	#更新灰风形态
 	remove_country_flag = gray_warship_active
+	remove_country_flag = rg_kac_grayfleet_active
 	remove_country_flag = gray_constship_active
 	remove_country_flag = gray_army_active
 	#等级导入，把存储的领袖等级赋予到领袖身上
@@ -369,6 +370,16 @@ rg_create_gray_warship = {
 			}
 		}
 	}
+	last_created_fleet = {
+		if = {
+			limit = {
+				NOT = {
+					has_country_flag = rg_kac_grayfleet_active
+				}
+			}
+			set_fleet_flag = rg_kac_gray_fleet
+		}
+	}
 
 	every_owned_army = {
 		limit = { army_type = gray_army }
@@ -396,6 +407,8 @@ rg_create_gray_warship = {
 		limit = { has_leader_flag = gray_admiral }
 		set_skill = owner.rg_gray_level
 	}
+
+	set_country_flag = rg_kac_grayfleet_active
 }
 #创造灰风地面单位
 rg_create_gray_army = {
@@ -554,6 +567,7 @@ rg_create_gray_army = {
 	}
 
 	remove_country_flag = gray_warship_active
+	remove_country_flag = rg_kac_grayfleet_active
 	remove_country_flag = gray_governor_active
 	remove_country_flag = gray_constship_active
 	
@@ -735,6 +749,7 @@ rg_create_gray_const = {
 
 	remove_country_flag = gray_army_active
 	remove_country_flag = gray_warship_active
+	remove_country_flag = rg_kac_grayfleet_active
 	remove_country_flag = gray_governor_active
 
 	random_owned_leader = {
