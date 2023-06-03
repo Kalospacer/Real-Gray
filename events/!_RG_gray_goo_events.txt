@@ -306,9 +306,6 @@ country_event = {
 			rg_gray_country_init = yes #创建国家
 		}
 		rg_gray_country_after_init = yes
-		event_target:gray_governor = {
-			set_owner = event_target:gray_owner
-		}
 	}
 }
 

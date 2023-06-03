@@ -33,68 +33,73 @@
 # 	}
 # }
 ################################
-# scripted_effects_override.txt 采样时间戳：2023/6/1 8：17
+
 rg_gray_govener_init = {
-    create_leader = {
-        class = governor
-        species = root
-        name = "NAME_Gray"
-        gender = female
-        immortal = yes
-        event_leader = yes
-        skip_background_generation = yes
-        custom_catch_phrase = gray_catch_phrase
-        custom_description = gray_backstory
-        background_ethic = ethic_gestalt_consciousness
-        hide_age = yes
-        skill = 10
-        set_age = 18
-        traits = {
-        }
-        effect = {
-            save_global_event_target_as = gray_governor
-            set_leader_flag = gray_governor
-            set_leader_flag = legendary_leader
-            set_leader_flag = immune_to_negative_traits
-
-            set_leader_flag = rg_gray_leader
-
-            if = {
-                limit = { has_global_flag = has_wsg_mod }
-                set_leader_flag = not_has_wg_affection_normal
+    event_target:rg_gray_country = {
+        create_leader = {
+            class = governor
+            species = root
+            name = "NAME_Gray"
+            gender = female
+            immortal = yes
+            event_leader = yes
+            skip_background_generation = yes
+            custom_catch_phrase = gray_catch_phrase
+            custom_description = gray_backstory
+            background_ethic = ethic_gestalt_consciousness
+            hide_age = yes
+            skill = 10
+            set_age = 18
+            traits = {
             }
-
-            if = {
-                limit = {
-                    owner = {
-                        OR = {
-                            has_global_flag = has_wsg_mod
-                            has_global_flag = kdc_event_mod_active
-                        }  
+            effect = {
+                save_global_event_target_as = gray_governor
+                set_leader_flag = gray_governor
+                set_leader_flag = legendary_leader
+                set_leader_flag = immune_to_negative_traits
+    
+                set_leader_flag = rg_gray_leader
+    
+                if = {
+                    limit = { has_global_flag = has_wsg_mod }
+                    set_leader_flag = not_has_wg_affection_normal
+                }
+    
+                if = {
+                    limit = {
+                        owner = {
+                            OR = {
+                                has_global_flag = has_wsg_mod
+                                has_global_flag = kdc_event_mod_active
+                            }  
+                        }
+                    }
+                    set_leader_flag = "gray_leader"
+                    add_trait_no_notify = leader_trait_governor_gray
+                    add_trait_no_notify = RG_leader_trait_ruler_gray
+                    add_trait_no_notify = subclass_governor_economist
+                    add_trait_no_notify = leader_trait_urbanist_3
+                    add_trait_no_notify = leader_trait_scrapper_2
+                    if = {
+                        limit = { owner = {
+                            has_country_flag = origin_gray_weaken
+                            has_country_flag = origin_gray_country
+                        }}
+                        remove_trait = leader_trait_governor_gray
+                        add_trait_no_notify = leader_trait_governor_gray_weak
                     }
                 }
-                set_leader_flag = "gray_leader"
-                add_trait_no_notify = leader_trait_governor_gray
-                add_trait_no_notify = RG_leader_trait_ruler_gray
-                add_trait_no_notify = subclass_governor_economist
-                add_trait_no_notify = leader_trait_urbanist_3
-                add_trait_no_notify = leader_trait_scrapper_2
-                if = {
-                    limit = { owner = {
-                        has_country_flag = origin_gray_weaken
-                        has_country_flag = origin_gray_country
-                    }}
-                    remove_trait = leader_trait_governor_gray
-                    add_trait_no_notify = leader_trait_governor_gray_weak
+                else = {
+                    add_trait_no_notify = RG_leader_trait_governor_gray
+                    add_trait_no_notify = RG_leader_trait_ruler_gray
+                    add_trait_no_notify = subclass_governor_economis
+                    add_trait_no_notify = leader_trait_urbanist_3
+                    add_trait_no_notify = leader_trait_scrapper_2
                 }
             }
-            else = {
-                add_trait_no_notify = RG_leader_trait_governor_gray
-                add_trait_no_notify = RG_leader_trait_ruler_gray
-                add_trait_no_notify = subclass_governor_economis
-                add_trait_no_notify = leader_trait_urbanist_3
-                add_trait_no_notify = leader_trait_scrapper_2
-            }
+        }
+        last_created_leader = {
+            set_owner = event_target:gray_owner
         }
     }
     last_created_leader = {
@@ -129,56 +134,61 @@ rg_gray_govener_init = {
 }
 
 rg_gray_admiral_init = {
-    create_leader = {
-        class = admiral
-        species = root
-        name = "NAME_Gray"
-        immortal = yes
-        event_leader = yes
-        skip_background_generation = yes
-        custom_catch_phrase = gray_catch_phrase
-        custom_description = gray_backstory
-        background_ethic = ethic_gestalt_consciousness
-        hide_age = yes
-        gender = female
-        skill = 10
-        set_age = 18
-        traits = {
-            trait = RG_leader_trait_admiral_gray
-        }
-        effect = {
-            save_global_event_target_as = gray_leader_admiral
-            set_leader_flag = gray_admiral
-            set_leader_flag = legendary_leader
-            set_leader_flag = immune_to_negative_traits
-            if = {
-                limit = {
-                    owner = {
-                        OR = {
-                            has_global_flag = has_wsg_mod
-                            has_global_flag = kdc_event_mod_active
-                        }  
+    event_target:rg_gray_country = {
+        create_leader = {
+            class = admiral
+            species = root
+            name = "NAME_Gray"
+            immortal = yes
+            event_leader = yes
+            skip_background_generation = yes
+            custom_catch_phrase = gray_catch_phrase
+            custom_description = gray_backstory
+            background_ethic = ethic_gestalt_consciousness
+            hide_age = yes
+            gender = female
+            skill = 10
+            set_age = 18
+            traits = {
+                trait = RG_leader_trait_admiral_gray
+            }
+            effect = {
+                save_global_event_target_as = gray_leader_admiral
+                set_leader_flag = gray_admiral
+                set_leader_flag = legendary_leader
+                set_leader_flag = immune_to_negative_traits
+                if = {
+                    limit = {
+                        owner = {
+                            OR = {
+                                has_global_flag = has_wsg_mod
+                                has_global_flag = kdc_event_mod_active
+                            }  
+                        }
+                    }
+                    set_leader_flag = "gray_leader" # "gray_leader"==rg_gray_leader
+                    add_trait_no_notify = gray_admiral
+                    if = {
+                        limit = { owner = {
+                            has_country_flag = origin_gray_weaken
+                            has_country_flag = origin_gray_country
+                        }}
+                        remove_trait = gray_admiral
+                        add_trait_no_notify = leader_trait_admiral_gray_weak
+                        # 缺少特质leader_trait_admiral_gray_weak将导致KDC故事包远星之歌起源研究纳米星球特殊项目无法完成
                     }
                 }
-                set_leader_flag = "gray_leader" # "gray_leader"==rg_gray_leader
-                add_trait_no_notify = gray_admiral
-                if = {
-                    limit = { owner = {
-                        has_country_flag = origin_gray_weaken
-                        has_country_flag = origin_gray_country
-                    }}
-                    remove_trait = gray_admiral
-                    add_trait_no_notify = leader_trait_admiral_gray_weak
-                    # 缺少特质leader_trait_admiral_gray_weak将导致KDC故事包远星之歌起源研究纳米星球特殊项目无法完成
-                }
+                set_leader_flag = rg_gray_leader
+                add_trait_no_notify = RG_leader_trait_admiral_gray
+                # 缺少特质RG_leader_trait_admiral_gray将导致小灰改造项目无法完成
+                add_trait_no_notify = subclass_admiral_aggressor
+                add_trait_no_notify = leader_trait_carrier_specialization
+                add_trait_no_notify = leader_trait_artillerist_2
+                add_trait_no_notify = leader_trait_juryrigger_2
             }
-            set_leader_flag = rg_gray_leader
-            add_trait_no_notify = RG_leader_trait_admiral_gray
-            # 缺少特质RG_leader_trait_admiral_gray将导致小灰改造项目无法完成
-            add_trait_no_notify = subclass_admiral_aggressor
-            add_trait_no_notify = leader_trait_carrier_specialization
-            add_trait_no_notify = leader_trait_artillerist_2
-            add_trait_no_notify = leader_trait_juryrigger_2
+        }
+        last_created_leader = {
+            set_owner = event_target:gray_owner
         }
     }
     last_created_leader = {
@@ -214,44 +224,49 @@ rg_gray_admiral_init = {
 }
 
 rg_gray_general_init = {
-    create_leader = {
-        class = general
-        species = root
-        name = "NAME_Gray"
-        immortal = yes
-        event_leader = yes
-        skip_background_generation = yes
-        custom_catch_phrase = gray_catch_phrase
-        custom_description = gray_backstory
-        background_ethic = ethic_gestalt_consciousness
-        hide_age = yes
-        gender = female
-        skill = 10
-        set_age = 18
-        traits = {
-            trait = RG_leader_trait_general_gray
-            trait = RG_leader_trait_general_gray_skill
-            trait = subclass_general_marshall
-            trait = leader_trait_heavy_hitter_2
-            trait = leader_trait_reinforcer_2
-        }
-        effect = {
-            save_global_event_target_as = gray_leader_general
-            set_leader_flag = rg_gray_leader
-            set_leader_flag = gray_general
-            set_leader_flag = legendary_leader
-            set_leader_flag = immune_to_negative_traits
-            if = {
-                limit = {
-                    owner = {
-                        OR = {
-                            has_global_flag = has_wsg_mod
-                            has_global_flag = kdc_event_mod_active
-                        }  
-                    }
-                }
-                set_leader_flag = "gray_leader" # "gray_leader"==rg_gray_leader
+    event_target:rg_gray_country = {
+        create_leader = {
+            class = general
+            species = root
+            name = "NAME_Gray"
+            immortal = yes
+            event_leader = yes
+            skip_background_generation = yes
+            custom_catch_phrase = gray_catch_phrase
+            custom_description = gray_backstory
+            background_ethic = ethic_gestalt_consciousness
+            hide_age = yes
+            gender = female
+            skill = 10
+            set_age = 18
+            traits = {
+                trait = RG_leader_trait_general_gray
+                trait = RG_leader_trait_general_gray_skill
+                trait = subclass_general_marshall
+                trait = leader_trait_heavy_hitter_2
+                trait = leader_trait_reinforcer_2
             }
+            effect = {
+                save_global_event_target_as = gray_leader_general
+                set_leader_flag = rg_gray_leader
+                set_leader_flag = gray_general
+                set_leader_flag = legendary_leader
+                set_leader_flag = immune_to_negative_traits
+                if = {
+                    limit = {
+                        owner = {
+                            OR = {
+                                has_global_flag = has_wsg_mod
+                                has_global_flag = kdc_event_mod_active
+                            }  
+                        }
+                    }
+                    set_leader_flag = "gray_leader" # "gray_leader"==rg_gray_leader
+                }
+            }
+        }
+        last_created_leader = {
+            set_owner = event_target:gray_owner
         }
     }
     last_created_leader = {
@@ -295,43 +310,48 @@ rg_gray_general_init = {
 }
 
 rg_gray_scientist_init = {
-    create_leader = {
-        class = scientist
-        species = root
-        name = "NAME_Gray"
-        immortal = yes
-        event_leader = yes
-        skip_background_generation = yes
-        custom_catch_phrase = gray_catch_phrase
-        custom_description = gray_backstory
-        background_ethic = ethic_gestalt_consciousness
-        hide_age = yes
-        gender = female
-        skill = 10
-        set_age = 18
-        traits = {
-            trait = RG_leader_trait_scientist_gray
-            trait = subclass_scientist_explorer
-            trait = leader_trait_engineering_focus_2
-            trait = leader_trait_salvager_3
-        }
-        effect = {
-            save_global_event_target_as = gray_leader_scientist
-            set_leader_flag = rg_gray_leader
-            set_leader_flag = gray_scientist
-            set_leader_flag = legendary_leader
-            set_leader_flag = immune_to_negative_traits
-            if = {
-                limit = {
-                    owner = {
-                        OR = {
-                            has_global_flag = has_wsg_mod
-                            has_global_flag = kdc_event_mod_active
-                        }  
-                    }
-                }
-                set_leader_flag = "gray_leader" # "gray_leader"==rg_gray_leader
+    event_target:rg_gray_country = {
+        create_leader = {
+            class = scientist
+            species = root
+            name = "NAME_Gray"
+            immortal = yes
+            event_leader = yes
+            skip_background_generation = yes
+            custom_catch_phrase = gray_catch_phrase
+            custom_description = gray_backstory
+            background_ethic = ethic_gestalt_consciousness
+            hide_age = yes
+            gender = female
+            skill = 10
+            set_age = 18
+            traits = {
+                trait = RG_leader_trait_scientist_gray
+                trait = subclass_scientist_explorer
+                trait = leader_trait_engineering_focus_2
+                trait = leader_trait_salvager_3
             }
+            effect = {
+                save_global_event_target_as = gray_leader_scientist
+                set_leader_flag = rg_gray_leader
+                set_leader_flag = gray_scientist
+                set_leader_flag = legendary_leader
+                set_leader_flag = immune_to_negative_traits
+                if = {
+                    limit = {
+                        owner = {
+                            OR = {
+                                has_global_flag = has_wsg_mod
+                                has_global_flag = kdc_event_mod_active
+                            }  
+                        }
+                    }
+                    set_leader_flag = "gray_leader" # "gray_leader"==rg_gray_leader
+                }
+            }
+        }
+        last_created_leader = {
+            set_owner = event_target:gray_owner
         }
     }
     last_created_leader = {
@@ -386,8 +406,8 @@ rg_gray_country_leader_init = {
 			trait = RG_leader_trait_ruler_gray
 		}
         effect = {
-            save_global_event_target_as = gray_governor
-            set_leader_flag = gray_governor
+            save_global_event_target_as = rg_gray_country_leader
+            set_leader_flag = rg_gray_country_governor
             set_leader_flag = legendary_leader
             set_leader_flag = immune_to_negative_traits
 
