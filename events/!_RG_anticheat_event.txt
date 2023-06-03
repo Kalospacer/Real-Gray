@@ -44,7 +44,7 @@ country_event = {
 
     diplomatic = yes
     picture_event_data = {
-        portrait = root.species
+        portrait = event_target:rg_gray_country_leader
         room = "ethic_spaceship_room"
     }
 	show_sound = event_red_alert
@@ -74,7 +74,7 @@ country_event = {
 
     diplomatic = yes
     picture_event_data = {
-        portrait = root.species
+        portrait = event_target:rg_gray_country_leader
         room = "ethic_spaceship_room"
     }
 	show_sound = event_red_alert
@@ -119,7 +119,7 @@ country_event = {
 
     diplomatic = yes
     picture_event_data = {
-        portrait = root.species
+        portrait = event_target:rg_gray_country_leader
         room = "ethic_spaceship_room"
     }
 	show_sound = event_red_alert
