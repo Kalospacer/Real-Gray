@@ -62,7 +62,7 @@ rg_create_gray_warship_1 = {
 				effect = { set_ship_flag = rg_mothership }					
 			}
 			set_location = {
-				target = root.capital_scope
+				target = event_target:global_gray_location
 				distance = 0
 				angle = random
 			}
@@ -89,7 +89,7 @@ rg_create_gray_juggernautship_1 = {
 				upgradable = yes			
 			}
 			set_location = {
-				target = root.capital_scope
+				target = event_target:global_gray_location
 				distance = 0
 				angle = random
 			}
@@ -117,7 +117,7 @@ rg_create_gray_constship_1 = {
 				upgradable = yes					
 			}
 			set_location = {
-				target = root.capital_scope
+				target = event_target:global_gray_location
 				distance = 0
 				angle = random
 			}

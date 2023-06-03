@@ -23,18 +23,8 @@ country_event = {
 
 country_event = {
 	id = rg.2
-	title = "graygoo.500.title"
-	desc = {
-		text = "rg.2.desc"
-	}
 
 	hide_window = yes
-
-	picture_event_data = {
-		portrait = root.species
-		room = "ethic_spaceship_room"
-	}
-
 	is_triggered_only = yes
 
 	immediate = {
@@ -109,7 +99,7 @@ country_event = {
 	diplomatic = yes
 
 	picture_event_data = {
-		portrait = root.species
+		portrait = event_target:rg_gray_country_leader
 		room = "ethic_spaceship_room"
 	}
 

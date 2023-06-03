@@ -1287,7 +1287,7 @@ country_event = {
 	}
 
 	option = { # 购买灰风母舰
-		name = rg_graygoo.4.a
+		name = rg.4.a
 		trigger = {
 			NOT = { has_country_flag = gray_reforming }
 		}
@@ -1319,7 +1319,7 @@ country_event = {
 	}
 
 	option = { # 购买工程船
-		name = rg_graygoo.4.b
+		name = rg.4.b
 		trigger = {
 			NOT = { has_country_flag = gray_reforming }
 		}
@@ -1340,8 +1340,31 @@ country_event = {
 
 	}
 
+	option = { # 购买殖民船
+		name = rg.4.g
+
+		trigger = {
+			NOT = { has_country_flag = gray_reforming }
+		}
+
+		allow = {
+			resource_stockpile_compare = { resource = food value >= 2000 }
+			resource_stockpile_compare = { resource = energy value >= 2000 }
+		}
+
+		add_resource = {
+			food = -2000
+			energy = -2000
+		}
+
+		hidden_effect = {
+			rg_create_gray_colony_1 = yes
+		}
+
+	}
+
 	option = { # 没钱了，救救
-		name = rg_graygoo.4.c
+		name = rg.4.c
 		trigger = {
 			NOT = { has_country_flag = gray_reforming }
 		}

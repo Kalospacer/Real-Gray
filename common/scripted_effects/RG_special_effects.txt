@@ -178,10 +178,43 @@ rg_create_gray_constship_1 = {
 				upgradable = yes					
 			}
 			set_location = {
-				target = root.capital_scope
+				target = event_target:global_gray_location
 				distance = 0
 				angle = random
 			}
 		}
 	}
+}
+
+rg_create_gray_colony_1 = {
+	create_ship_design = {
+		design = "NAME_RG_armed_colony_ship"
+	}
+	add_ship_design = last_created_design
+	create_fleet = {
+		name = "NAME_Gray"
+		settings = {
+			can_disband = yes
+			can_upgrade = yes 
+			can_change_composition = yes 
+			can_change_leader = yes 
+			uses_naval_capacity = yes
+			spawn_debris = yes					
+		}
+		effect = {
+			set_owner = root
+			create_ship = {
+				name = "NAME_Gray"
+				design = "NAME_RG_armed_colony_ship"
+				prefix = no
+				upgradable = yes					
+			}
+			set_location = {
+				target = event_target:global_gray_location
+				distance = 0
+				angle = random
+			}
+		}
+	}
+	remove_ship_design = last_created_design
 }

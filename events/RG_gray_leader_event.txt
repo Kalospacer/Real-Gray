@@ -1395,6 +1395,29 @@ country_event = {
 
 	}
 
+	option = { # 购买殖民船
+		name = rg.4.g
+
+		trigger = {
+			NOT = { has_country_flag = gray_reforming }
+		}
+
+		allow = {
+			resource_stockpile_compare = { resource = food value >= 2000 }
+			resource_stockpile_compare = { resource = energy value >= 2000 }
+		}
+
+		add_resource = {
+			food = -2000
+			energy = -2000
+		}
+
+		hidden_effect = {
+			rg_create_gray_colony_1 = yes
+		}
+
+	}
+
 	option = { # 没钱了，救救
 		name = rg.4.c
 		trigger = {
