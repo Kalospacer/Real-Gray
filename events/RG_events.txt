@@ -713,28 +713,38 @@ country_event = {
 		}
 	}
 	immediate = {
-		every_system_within_border = {
+		give_technology = tech_lgate_activation
+		if = {
 			limit = {
-				OR = {
-					has_star_flag = lcluster_lgate
-					has_star_flag = lgate_originating_system
-				}
-				any_system_megastructure = { 
-					is_megastructure_type = l_gate_base
+				any_system_within_border = {
+					OR = {
+						has_star_flag = lcluster_lgate
+						has_star_flag = lgate_originating_system
+					}
+					any_system_megastructure = { 
+						is_megastructure_type = l_gate_base
+					}
 				}
 			}
-			save_event_target_as = candidate_gateway
+			every_system_within_border = {
+				limit = {
+					OR = {
+						has_star_flag = lcluster_lgate
+						has_star_flag = lgate_originating_system
+					}
+					any_system_megastructure = { 
+						is_megastructure_type = l_gate_base
+					}
+				}
+				save_event_target_as = candidate_gateway
+			}
+			country_event = { id = distar.10905 } # enable project
 		}
-
-		abort_special_project = {
-			type = LCLUSTER_PROJECT
+		else = {
+			country_event = {
+				id = rg.21 days = 120
+			}
 		}
-
-		enable_special_project = {
-			name = RG_LCLUSTER_PROJECT
-			location = event_target:candidate_gateway
-		}
-
 	}
 }
 
@@ -806,6 +816,42 @@ country_event = {
 				}
 			}
 			unassign_leader = this
+		}
+	}
+}
+
+# looping check for owning gateway, once every two months
+country_event = {
+	id = rg.21
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		NOR = {
+			has_global_flag = l_cluster_opened
+			has_special_project = RG_LCLUSTER_PROJECT
+		}	
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				any_owned_megastructure = {
+					is_megastructure_type = lgate_base
+				}
+				has_technology = tech_lgate_activation
+			}
+			random_owned_megastructure = {
+				limit = {
+					is_megastructure_type = lgate_base
+				}
+				save_event_target_as = candidate_gateway
+			}
+			country_event = { id = distar.10905 } # enable project
+		}
+		else = {
+			country_event = { id = rg.21 days = 120 } # *THIS* looping check
 		}
 	}
 }
