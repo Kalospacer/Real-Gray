@@ -5,7 +5,7 @@ country_event = {
 	title = "TRANSMISSION"
 	desc = "graygoo.405.b.response"
 
-	event_window_type = leader_story
+	diplomatic = yes
 
 	picture_event_data = {
 		portrait = event_target:rg_gray_country_leader
