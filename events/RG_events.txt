@@ -18,6 +18,7 @@ country_event = {
 		add_modifier = {
 			modifier = rg_distant_stars_modifier
 		}
+		
 	}
 }
 
@@ -28,20 +29,7 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		hidden_effect = {
-			country_event = { id = graygoo.499 }
-			create_message = {
-				type = MESSAGE_RECRUITED_LEADER
-				localization = "rg.2.desc"
-				days = @toast_message_days
-				target = event_target:rg_gray_country_leader
-				variable = {
-					type = name
-					localization = LEADER
-					scope = event_target:rg_gray_country_leader
-				}
-			}
-		}
+		country_event = { id = graygoo.499 }
 	}
 
 	# option = {
@@ -103,6 +91,7 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
+		rg_gray_country_init = yes
 		random_list = {
 			# Real Gray!
 			100 = {

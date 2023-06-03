@@ -306,6 +306,17 @@ country_event = {
 			rg_gray_country_init = yes #创建国家
 		}
 		rg_gray_country_after_init = yes
+		create_message = {
+			type = MESSAGE_RECRUITED_LEADER
+			localization = "rg.2.desc"
+			days = @toast_message_days
+			target = event_target:rg_gray_country_leader
+			variable = {
+				type = name
+				localization = LEADER
+				scope = event_target:rg_gray_country_leader
+			}
+		}
 	}
 }
 
