@@ -154,7 +154,7 @@ kac_ads.7 = {
 	}
 }
 
-kac_ads.7 = {
+kac_ads.9 = {
 	name="L-Cluster Plus"
 	supported_version="3.7.*"
 	remote_file_id="2293169684"
@@ -182,12 +182,16 @@ kac_ads.8 = {
 	
 	compact_file = {
 		z_cm_ships_overwrite.txt
+		*
 	}
 	overwritten_id = {
 	}
+	active_flag = {
+		exist = z_cm_installed
+	}
 	desc = {
 		# 描述：灰蛊事件冲突，舰船设计覆盖，并且小伞已经不管这个mod了
-		# 处理方法：弹出提醒
+		# 处理方法：弹窗提醒
 		# 判断结果：可能会出问题，不过可能没人会开一个2.8的mod。
 	}
 }
