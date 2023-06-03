@@ -1,6 +1,7 @@
 namespace = rg_grayleader
 
 # Check list (Initial)
+# 快速返回首页的按钮。
 country_event = {
 	id = rg_grayleader.1
 	hide_window = yes

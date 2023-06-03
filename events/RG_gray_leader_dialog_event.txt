@@ -1,3 +1,6 @@
+# 这页事件用来解决蠢驴leader_recruit窗口按钮点击后不显示responsetext的问题。
+# 它们除了显示文字以外不具备任何effect触发。
+
 namespace = rg_grayleader_dialog
 
 country_event = {

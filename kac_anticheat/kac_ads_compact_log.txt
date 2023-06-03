@@ -1,0 +1,193 @@
+# © kac ads 主动防御系统。
+# 主动兼容性筛查只能在我所订阅的mod范围内进行。有漏网之鱼很正常。
+# 主动兼容性筛查只标记我认为不应该被覆盖的文件。
+# 唔姆。
+
+kac_ads.1 = {
+	name="碧蓝航线"
+	supported_version="3.*.*"
+	remote_file_id="2020164764"
+	remote_file_link="https://steamcommunity.com/sharedfiles/filedetails/?id=2020164764"
+	
+	compact_file = {
+		!!azur_R_ships_designs.txt
+		azur_R_graygoo_sizes.txt
+		adt_ship_designs_distars.txt
+		gray_goo.txt
+	}
+	overwritten_id = {
+		ship_design = "NAME_Gray_Warship"
+	}
+	active_flag = {
+		exist = have_azur_R_fallen
+	}
+	desc = {
+		# 描述：小灰战舰设计会被魔怔人强覆盖。
+		# 处理方法：弹窗提醒
+		# 判断结果：小灰舰船设计被该mod覆盖，但大体上不影响游玩
+	}
+}
+
+kac_ads.2 = {
+	name="Warship Girls R And MIST Species"
+	supported_version="3.8.*"
+	remote_file_id="1747099270"
+	remote_file_link="https://steamcommunity.com/sharedfiles/filedetails/?id=1747099270"
+	
+	compact_file = {
+		00_wg_event_ship_designs_distant_stars.txt
+		scripted_effects_override.txt
+		00_wg_gray_goo_events.txt
+	}
+	overwritten_id = {
+	}
+	active_flag = {
+		exist = has_wsg_mod
+	}
+	desc = {
+		# 描述：小灰事件和设计重复。
+		# 处理方法：已经主动兼容
+		# 判断结果：会被本mod覆盖，不影响游玩。
+	}
+}
+
+kac_ads.3 = {
+	name="A Deadly Tempest [3.8.☠]"
+	supported_version="3.8.*"
+	remote_file_id="2028826064"
+	remote_file_link="https://steamcommunity.com/sharedfiles/filedetails/?id=2028826064"
+	
+	compact_file = {
+		adt_ship_designs_distars.txt
+		gray_goo_effects_override.txt
+		3_gray_goo_events.txt
+		01_lcluster_+_event_override.txt
+		01_gray_goo_events_override.txt
+		# ~gray_goo_country_type.txt
+		z_graygoo_ships.txt
+		*
+	}
+	overwritten_id = {
+	}
+	active_flag = {
+		exist = a_deadly_tempest_mod_active
+	}
+	desc = {
+		# 描述：小灰事件和设计重复。大量事件重复。
+		# 处理方法：弹窗提醒
+		# 判断结果：太多了查不过来，可能会出问题。
+	}
+}
+
+kac_ads.4 = {
+	name="( Twinks Dessanu )"
+	supported_version="3.0.*"
+	remote_file_id="2285039543"
+	remote_file_link="https://steamcommunity.com/sharedfiles/filedetails/?id=2285039543"
+	
+	compact_file = {
+		000_nanite_ship_designs.txt
+		gray_goo_nanite_effects.txt
+	}
+	overwritten_id = {
+	}
+	desc = {
+		# 描述：小灰战舰设计，小灰生成函数重复，并且原作者噶了。
+		# 处理方法：不做处理
+		# 判断结果：会被本mod覆盖，不影响游玩。
+	}
+}
+
+kac_ads.5 = {
+	name="KDC Story Pack"
+	supported_version="3.7.*"
+	remote_file_id="2737603165"
+	remote_file_link="https://steamcommunity.com/sharedfiles/filedetails/?id=2737603165"
+	
+	compact_file = {
+		00_wg_event_ship_designs_distant_stars.txt
+		z_kdc_scripted_effects_override.txt
+	}
+	overwritten_id = {
+	}
+	desc = {
+		# 描述：小灰战舰设计，小灰生成函数重复。
+		# 处理方法：已经主动兼容
+		# 判断结果：会被本mod覆盖，不影响游玩。
+	}
+}
+
+kac_ads.6 = {
+	name="Gray  with animated portrait"
+	supported_version="3.8.3"
+	remote_file_id="2976454692"
+	remote_file_link="https://steamcommunity.com/sharedfiles/filedetails/?id=2976454692"
+	
+	compact_file = {
+		gray_goo_effects.txt
+		gray_goo_events.txt
+	}
+	overwritten_id = {
+	}
+	desc = {
+		# 描述：小灰事件，小灰生成函数重复。该mod的Gray.dds瞎猫碰上死耗子一样替换了本mod的默认立绘。
+		# 处理方法：不做处理
+		# 判断结果：会被本mod覆盖，不影响游玩。
+	}
+}
+
+kac_ads.7 = {
+	name="BRC United Fleet"
+	supported_version="3.6.*"
+	remote_file_id="2923867738"
+	remote_file_link="https://steamcommunity.com/sharedfiles/filedetails/?id=2923867738"
+	
+	compact_file = {
+		00_wg_gray_goo_events.txt
+	}
+	overwritten_id = {
+	}
+	desc = {
+		# 描述：小灰事件重复。
+		# 处理方法：不做处理
+		# 判断结果：会被本mod覆盖，不影响游玩。
+	}
+}
+
+kac_ads.7 = {
+	name="L-Cluster Plus"
+	supported_version="3.7.*"
+	remote_file_id="2293169684"
+	remote_file_link="https://steamcommunity.com/sharedfiles/filedetails/?id=2293169684"
+	
+	compact_file = {
+		01_l_cluster_plus_distar_overwrite_events.txt
+		01_l_cluster_plus_graygoo_overwrite_events.txt
+		000_nanite_ship_designs.txt
+	}
+	overwritten_id = {
+	}
+	desc = {
+		# 描述：L星团事件重复。
+		# 处理方法：不做处理
+		# 判断结果：会被本mod覆盖，不影响游玩。
+	}
+}
+
+kac_ads.8 = {
+	name="!CM伞の天灾之主(旧)!"
+	supported_version="2.8.*"
+	remote_file_id="2411774658"
+	remote_file_link="https://steamcommunity.com/sharedfiles/filedetails/?id=2411774658"
+	
+	compact_file = {
+		z_cm_ships_overwrite.txt
+	}
+	overwritten_id = {
+	}
+	desc = {
+		# 描述：灰蛊事件冲突，舰船设计覆盖，并且小伞已经不管这个mod了
+		# 处理方法：弹出提醒
+		# 判断结果：可能会出问题，不过可能没人会开一个2.8的mod。
+	}
+}

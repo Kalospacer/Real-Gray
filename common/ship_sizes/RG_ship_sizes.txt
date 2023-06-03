@@ -525,7 +525,7 @@ RG_gray_juggernaut = {
 
 }
 
-# armed Transport
+# Armed Transport
 RG_armed_transport_ship = {
 	max_speed = 150
 	acceleration = 0.1
@@ -558,6 +558,47 @@ RG_armed_transport_ship = {
 	required_component_set = "thruster_components"
 	required_component_set = "combat_computers"
 	required_component_set = "science_cloaking_components"
+
+	components_add_to_cost = no
+	resources = {
+		category = ships
+		cost = {
+			food = @salvagecostmedium
+    	}
+	}
+}
+
+# Armed Colonizer
+RG_armed_colony_ship = {
+	max_speed = 150
+	acceleration = 0.1
+	rotation_speed = 0.2
+	max_hitpoints = 20000
+	entity = "grey_tempesttw_colonizer_entity"
+	modifier = {
+		ship_evasion_add = 10
+		ship_armor_add = 12800
+		ship_shield_add = 12800
+	}
+	ship_modifier = {
+		ship_hyperlane_range_add = 3
+		ship_piracy_suppression_add = 100
+		ships_upkeep_mult = -1.0
+		ship_shield_hardening_add = 1
+		ship_armor_hardening_add = 1
+	}
+	size_multiplier = 1
+	fleet_slot_size = 1
+	section_slots = { "mid" = { locator = "part1" } }
+	num_target_locators = 2
+	is_space_station = no
+	icon = ship_size_colonizer
+	is_civilian = yes
+	is_designable = no
+	class = shipclass_colonizer
+	required_component_set = "ftl_components"
+	required_component_set = "sensor_components"
+	required_component_set = "thruster_components"
 
 	components_add_to_cost = no
 	resources = {

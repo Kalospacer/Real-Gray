@@ -157,3 +157,31 @@ rg_create_fake_dragon = {
 		}
 	}
 }
+
+rg_create_gray_constship_1 = {
+	create_fleet = {
+		name = "NAME_Gray"
+		settings = {
+			can_disband = yes
+			can_upgrade = yes 
+			can_change_composition = yes 
+			can_change_leader = yes 
+			uses_naval_capacity = yes
+			spawn_debris = yes					
+		}
+		effect = {
+			set_owner = root
+			create_ship = {
+				name = "NAME_Gray"
+				design = "NAME_RG_GRAY_constructor"
+				prefix = no
+				upgradable = yes					
+			}
+			set_location = {
+				target = root.capital_scope
+				distance = 0
+				angle = random
+			}
+		}
+	}
+}
