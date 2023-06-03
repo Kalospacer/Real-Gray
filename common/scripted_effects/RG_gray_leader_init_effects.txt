@@ -74,7 +74,8 @@ rg_gray_govener_init = {
                             }  
                         }
                     }
-                    set_leader_flag = "gray_leader"
+                    set_leader_flag = "gray_leader" #某个mod新旧flag混用，我不说是谁。嗯嘿嘿
+                    set_leader_flag = gray_leader
                     add_trait_no_notify = leader_trait_governor_gray
                     add_trait_no_notify = RG_leader_trait_ruler_gray
                     add_trait_no_notify = subclass_governor_economist
@@ -167,6 +168,7 @@ rg_gray_admiral_init = {
                         }
                     }
                     set_leader_flag = "gray_leader" # "gray_leader"==rg_gray_leader
+                    set_leader_flag = gray_leader
                     add_trait_no_notify = gray_admiral
                     if = {
                         limit = { owner = {
@@ -262,6 +264,7 @@ rg_gray_general_init = {
                         }
                     }
                     set_leader_flag = "gray_leader" # "gray_leader"==rg_gray_leader
+                    set_leader_flag = gray_leader
                 }
             }
         }
@@ -347,6 +350,7 @@ rg_gray_scientist_init = {
                         }
                     }
                     set_leader_flag = "gray_leader" # "gray_leader"==rg_gray_leader
+                    set_leader_flag = gray_leader
                 }
             }
         }
@@ -387,7 +391,7 @@ rg_gray_scientist_init = {
 }
 
 rg_gray_country_leader_init = {
-	create_leader = {	#只用作看板娘
+	create_leader = {	# 只用作看板娘
 		class = governor
 		species = root
 		name = "NAME_Gray"
@@ -424,7 +428,8 @@ rg_gray_country_leader_init = {
                     }
                 }
                 # 暂时和小灰网络断开连接
-                #set_leader_flag = "gray_leader"
+                # set_leader_flag = "gray_leader"
+                # set_leader_flag = gray_leader
                 add_trait_no_notify = leader_trait_governor_gray
                 add_trait_no_notify = RG_leader_trait_ruler_gray
                 add_trait_no_notify = subclass_governor_economist
