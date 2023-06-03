@@ -216,6 +216,9 @@ country_event = {
 		}
 		hidden_effect = {
 			rg_create_gray_governor = yes
+			country_event = {
+				id = rg_grayleader_dialog.5001
+			}
 		}
 	}
 	option = { # Warship
@@ -227,6 +230,9 @@ country_event = {
 		}
 		hidden_effect = {
 			rg_create_gray_warship = yes
+			country_event = {
+				id = rg_grayleader_dialog.5002
+			}
 		}
 	}
 	option = { # Army
@@ -238,6 +244,9 @@ country_event = {
 		}
 		hidden_effect = {
 			rg_create_gray_army = yes
+			country_event = {
+				id = rg_grayleader_dialog.5003
+			}
 		}
 	}
 	option = { # const
@@ -249,6 +258,9 @@ country_event = {
 		}
 		hidden_effect = {
 			rg_create_gray_const = yes
+			country_event = {
+				id = rg_grayleader_dialog.5004
+			}
 		}
 	}
 	option = { # help
@@ -353,17 +365,9 @@ country_event = {
 		}
 		hidden_effect = {
 			rg_create_gray_warship = yes
-		}
-	}
-	option = { # const
-		name = rg_const
-		response_text = rg_const.501.response
-		
-		allow = {
-			hidden_trigger = { exists = event_target:gray_governor }
-		}
-		hidden_effect = {
-			rg_create_gray_const = yes
+			country_event = {
+				id = rg_grayleader_dialog.5011
+			}
 		}
 	}
 	option = { # Army
@@ -375,6 +379,23 @@ country_event = {
 		}
 		hidden_effect = {
 			rg_create_gray_army = yes
+			country_event = {
+				id = rg_grayleader_dialog.5012
+			}
+		}
+	}
+	option = { # const
+		name = rg_const
+		response_text = rg_const.501.response
+		
+		allow = {
+			hidden_trigger = { exists = event_target:gray_governor }
+		}
+		hidden_effect = {
+			rg_create_gray_const = yes
+			country_event = {
+				id = rg_grayleader_dialog.5013
+			}
 		}
 	}
 	option = { # help
@@ -473,27 +494,9 @@ country_event = {
 		}
 		hidden_effect = {
 			rg_create_gray_governor = yes
-		}
-	}
-	option = { # const
-		name = rg_const
-		response_text = rg_const.502.response
-		
-		allow = {
-			hidden_trigger = {
-				event_target:gray_warship = { num_ships > 0 }
+			country_event = {
+				id = rg_grayleader_dialog.5021
 			}
-			custom_tooltip = {
-				fail_text = graygoo.500.allow.a
-				event_target:gray_warship = { is_in_combat = no }
-			}
-			custom_tooltip = {
-				fail_text = graygoo.500.allow.b
-				event_target:gray_warship = { NOT = { has_hp_percentage < 0.97 } }
-			}
-		}
-		hidden_effect = {
-			rg_create_gray_const = yes
 		}
 	}
 	option = { # Army
@@ -515,6 +518,9 @@ country_event = {
 		}
 		hidden_effect = {
 			rg_create_gray_army = yes
+			country_event = {
+				id = rg_grayleader_dialog.5022
+			}
 		}
 	}
 
@@ -542,6 +548,9 @@ country_event = {
 		custom_tooltip = rg_need_manual_toggle
 		hidden_effect = {
 			set_country_flag = gray_warship_is_juggernaut
+			country_event = {
+				id = rg_grayleader_dialog.5023
+			}
 		}
 	}
 
@@ -569,6 +578,33 @@ country_event = {
 		custom_tooltip = rg_need_manual_toggle
 		hidden_effect = {
 			remove_country_flag = gray_warship_is_juggernaut
+			country_event = {
+				id = rg_grayleader_dialog.5024
+			}
+		}
+	}
+	option = { # const
+		name = rg_const
+		response_text = rg_const.502.response
+		
+		allow = {
+			hidden_trigger = {
+				event_target:gray_warship = { num_ships > 0 }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.a
+				event_target:gray_warship = { is_in_combat = no }
+			}
+			custom_tooltip = {
+				fail_text = graygoo.500.allow.b
+				event_target:gray_warship = { NOT = { has_hp_percentage < 0.97 } }
+			}
+		}
+		hidden_effect = {
+			rg_create_gray_const = yes
+			country_event = {
+				id = rg_grayleader_dialog.5025
+			}
 		}
 	}
 
@@ -869,6 +905,9 @@ country_event = {
 		}
 		hidden_effect = {
 			rg_create_gray_governor = yes
+			country_event = {
+				id = rg_grayleader_dialog.5031
+			}
 		}
 	}
 	option = { # Warship
@@ -925,6 +964,9 @@ country_event = {
 		}
 		hidden_effect = {
 			rg_create_gray_warship = yes
+			country_event = {
+				id = rg_grayleader_dialog.5032
+			}
 		}
 	}
 	option = { # const
@@ -981,6 +1023,9 @@ country_event = {
 		}
 		hidden_effect = {
 			rg_create_gray_const = yes
+			country_event = {
+				id = rg_grayleader_dialog.5033
+			}
 		}
 	}
 
@@ -1169,6 +1214,9 @@ country_event = {
 		}
 		hidden_effect = {
 			rg_create_gray_governor = yes
+			country_event = {
+				id = rg_grayleader_dialog.5051
+			}
 		}
 	}
 	option = { # Warship
@@ -1190,6 +1238,9 @@ country_event = {
 		}
 		hidden_effect = {
 			rg_create_gray_warship = yes
+			country_event = {
+				id = rg_grayleader_dialog.5052
+			}
 		}
 	}
 	option = { # Army
@@ -1211,6 +1262,9 @@ country_event = {
 		}
 		hidden_effect = {
 			rg_create_gray_army = yes
+			country_event = {
+				id = rg_grayleader_dialog.5053
+			}
 		}
 	}
 
