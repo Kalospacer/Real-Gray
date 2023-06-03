@@ -169,7 +169,7 @@ country_event = {
 	event_window_type = leader_recruit
 
 	picture_event_data = {
-		portrait = event_target:gray_governor
+		portrait = event_target:rg_gray_country_leader
 		planet_background = root.capital_scope
 		room = "ethic_spaceship_room"
 	}
