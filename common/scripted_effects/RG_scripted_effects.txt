@@ -1999,7 +1999,6 @@ rg_gray_country_init = {
 		}
 	}
 	last_created_country = {
-		rg_create_gray_species = yes
 		# 下一阶段的事件再建立通讯
 		# establish_communications_no_message = root
 		save_global_event_target_as = rg_gray_country
