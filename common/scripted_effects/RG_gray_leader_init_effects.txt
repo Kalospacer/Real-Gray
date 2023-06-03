@@ -158,6 +158,12 @@ rg_gray_admiral_init = {
                 set_leader_flag = gray_admiral
                 set_leader_flag = legendary_leader
                 set_leader_flag = immune_to_negative_traits
+
+                if = {
+                    limit = { has_global_flag = has_wsg_mod }
+                    set_leader_flag = not_has_wg_affection_normal
+                }
+                
                 if = {
                     limit = {
                         owner = {
@@ -254,6 +260,12 @@ rg_gray_general_init = {
                 set_leader_flag = gray_general
                 set_leader_flag = legendary_leader
                 set_leader_flag = immune_to_negative_traits
+
+                if = {
+                    limit = { has_global_flag = has_wsg_mod }
+                    set_leader_flag = not_has_wg_affection_normal
+                }
+                
                 if = {
                     limit = {
                         owner = {
@@ -289,7 +301,7 @@ rg_gray_general_init = {
             leader_event = {
                 id = wg_affection.8 days = 1
             }
-            add_trait_no_notify = leader_trait_admiral_wg_gray_affection
+            # add_trait_no_notify = leader_trait_admiral_wg_gray_affection
             if = {
                 limit = { owner = { has_country_flag = gray_encountered_the_loop }}
                 add_trait_no_notify = leader_trait_admiral_wg_the_loop
@@ -340,6 +352,12 @@ rg_gray_scientist_init = {
                 set_leader_flag = gray_scientist
                 set_leader_flag = legendary_leader
                 set_leader_flag = immune_to_negative_traits
+
+                if = {
+                    limit = { has_global_flag = has_wsg_mod }
+                    set_leader_flag = not_has_wg_affection_normal
+                }
+                
                 if = {
                     limit = {
                         owner = {
