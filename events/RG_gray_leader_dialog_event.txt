@@ -2,7 +2,7 @@ namespace = rg_grayleader_dialog
 
 country_event = {
 	id = rg_grayleader_dialog.4051
-	title = "TRme = OKANSMISSION"
+	title = "TRANSMISSION"
 	desc = "graygoo.405.b.response"
 
 	event_window_type = leader_story
