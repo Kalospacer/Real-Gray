@@ -69,15 +69,13 @@ country_event = {
 	diplomatic = yes
 
 	picture_event_data = {
-		portrait = event_target:gray_species
+		portrait = event_target:rg_gray_country_leader
 		planet_background = event_target:gray_homeworld
 		room = "ethic_spaceship_room"
 	}
 
-	immediate = {
-		hidden_effect = {
-			rg_create_gray_species = yes
-		}
+	immediate = {	
+		rg_gray_country_init = yes #创建国家
 	}
 
 	option = {
@@ -129,7 +127,7 @@ country_event = {
 	diplomatic = yes
 
 	picture_event_data = {
-		portrait = event_target:gray_species
+		portrait = event_target:rg_gray_country_leader
 		planet_background = event_target:gray_homeworld
 		room = "ethic_spaceship_room"
 	}
@@ -153,7 +151,7 @@ country_event = {
 	diplomatic = yes
 
 	picture_event_data = {
-		portrait = event_target:gray_species
+		portrait = event_target:rg_gray_country_leader
 		planet_background = event_target:gray_homeworld
 		room = "ethic_spaceship_room"
 	}
@@ -177,7 +175,7 @@ country_event = {
 	diplomatic = yes
 
 	picture_event_data = {
-		portrait = event_target:gray_species
+		portrait = event_target:rg_gray_country_leader
 		planet_background = event_target:gray_homeworld
 		room = "ethic_spaceship_room"
 	}
@@ -201,7 +199,7 @@ country_event = {
 	diplomatic = yes
 
 	picture_event_data = {
-		portrait = event_target:gray_species
+		portrait = event_target:rg_gray_country_leader
 		planet_background = event_target:gray_homeworld
 		room = "ethic_spaceship_room"
 	}
@@ -209,8 +207,6 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		rg_gray_country_init = yes #创建国家
-		rg_gray_govener_init = yes
 		event_target:gray_governor = {
 			set_owner = event_target:rg_gray_country
 		}
@@ -227,11 +223,6 @@ country_event = {
 	option = {
 		name = graygoo.405.b
 		response_text = graygoo.405.b.response
-		hidden_effect = {
-			event_target:gray_governor = {
-				kill_leader = { show_notification = no }
-			}
-		}
 	}
 }
 
@@ -244,7 +235,7 @@ country_event = {
 	diplomatic = yes
 
 	picture_event_data = {
-		portrait = event_target:gray_governor
+		portrait = event_target:rg_gray_country_leader
 		planet_background = event_target:gray_homeworld
 		room = ship_room
 	}
@@ -266,10 +257,8 @@ country_event = {
 		name = graygoo.405.b
 		tag = dismiss_leader
 		response_text = graygoo.405.b.response
-		hidden_effect = {
-			event_target:gray_governor = {
-				kill_leader = { show_notification = no }
-			}
+		owner = {
+			country_event = { id = rg_grayleader_dialog.4051 }
 		}
 	}
 	option = {

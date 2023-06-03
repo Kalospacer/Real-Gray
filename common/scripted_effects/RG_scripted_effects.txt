@@ -1972,6 +1972,43 @@ rg_create_graygoo_fleet_random = {
 	}
 }
 
+rg_gray_country_init = {
+	create_country = {
+		name = "NAME_Gray"
+		type = gray
+		flag = {
+			icon= {
+				category = "special"
+				file = "gray_goo.dds"
+			}
+			background= {
+				category = "backgrounds"
+				file = "sinus.dds"
+			}
+			colors={
+				"grey"
+				"dark_grey"
+				"null"
+				"null"
+			}
+		}
+		effect = {
+			rg_create_gray_species = yes
+			# 灰风国家用于领袖切换时暂存领袖
+			set_country_flag = can_have_wg_affection_country_flag
+		}
+	}
+	last_created_country = {
+		rg_create_gray_species = yes
+		# 下一阶段的事件再建立通讯
+		# establish_communications_no_message = root
+		save_global_event_target_as = rg_gray_country
+		# 创建看板娘用于第一次接触
+		rg_gray_country_leader_init = yes
+		set_leader = last_created_leader
+	}
+}
+
 rg_gray_country_after_init = {
 	# 送灰风母舰初始科技
 	give_technology = {
@@ -2001,40 +2038,10 @@ rg_gray_country_after_init = {
 	} else = {
 		set_variable = { which = rg_gray_level value = 10 }
 	}
+	# 启动开局故事事件链
 	rg_storyline_trigger = yes
+	# 接受小灰建立通信
 	event_target:rg_gray_country = {
 		establish_communications_no_message = event_target:gray_owner
-	}
-}
-
-rg_gray_country_init = {
-	create_country = {
-		name = "NAME_Gray"
-		type = gray
-		flag = {
-			icon= {
-				category = "special"
-				file = "gray_goo.dds"
-			}
-			background= {
-				category = "backgrounds"
-				file = "sinus.dds"
-			}
-			colors={
-				"grey"
-				"dark_grey"
-				"null"
-				"null"
-			}
-		}
-		effect = {
-			rg_create_gray_species = yes
-			# 灰风国家用于领袖切换时暂存领袖
-			set_country_flag = can_have_wg_affection_country_flag
-		}
-	}
-	last_created_country = {
-		# establish_communications_no_message = root
-		save_global_event_target_as = rg_gray_country
 	}
 }

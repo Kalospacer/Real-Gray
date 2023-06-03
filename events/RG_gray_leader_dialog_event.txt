@@ -1,6 +1,26 @@
 namespace = rg_grayleader_dialog
 
 country_event = {
+	id = rg_grayleader_dialog.4051
+	title = "TRme = OKANSMISSION"
+	desc = "graygoo.405.b.response"
+
+	event_window_type = leader_story
+
+	picture_event_data = {
+		portrait = event_target:rg_gray_country_leader
+		planet_background = event_target:gray_homeworld
+		room = ship_room
+	}
+
+	is_triggered_only = yes
+
+	option = {
+		name = OK
+	}
+}
+
+country_event = {
 	id = rg_grayleader_dialog.5001
 	title = "graygoo.500.title"
 	desc = "graygoo.500.a.response"
@@ -25,8 +45,8 @@ country_event = {
 		}
 	}
 
-	option = { # 诶嘿
-		name = YES
+	option = {
+		name = OK
 	}
 
 	option = {
@@ -69,8 +89,8 @@ country_event = {
 		}
 	}
 
-	option = { # 诶嘿
-		name = YES
+	option = {
+		name = OK
 	}
 
 	option = {
@@ -113,8 +133,8 @@ country_event = {
 		}
 	}
 
-	option = { # 诶嘿
-		name = YES
+	option = {
+		name = OK
 	}
 
 	option = {
@@ -157,8 +177,8 @@ country_event = {
 		}
 	}
 
-	option = { # 诶嘿
-		name = YES
+	option = {
+		name = OK
 	}
 
 	option = {
@@ -201,8 +221,8 @@ country_event = {
 		}
 	}
 
-	option = { # 诶嘿
-		name = YES
+	option = {
+		name = OK
 	}
 
 	option = {
@@ -245,8 +265,8 @@ country_event = {
 		}
 	}
 
-	option = { # 诶嘿
-		name = YES
+	option = {
+		name = OK
 	}
 
 	option = {
@@ -289,8 +309,8 @@ country_event = {
 		}
 	}
 
-	option = { # 诶嘿
-		name = YES
+	option = {
+		name = OK
 	}
 
 	option = {
@@ -332,8 +352,8 @@ country_event = {
 		}
 	}
 
-	option = { # 诶嘿
-		name = YES
+	option = {
+		name = OK
 	}
 
 	option = {
@@ -375,8 +395,8 @@ country_event = {
 		}
 	}
 
-	option = { # 诶嘿
-		name = YES
+	option = {
+		name = OK
 	}
 
 	option = {
@@ -418,8 +438,8 @@ country_event = {
 		}
 	}
 
-	option = { # 诶嘿
-		name = YES
+	option = {
+		name = OK
 	}
 
 	option = {
@@ -461,8 +481,8 @@ country_event = {
 		}
 	}
 
-	option = { # 诶嘿
-		name = YES
+	option = {
+		name = OK
 	}
 
 	option = {
@@ -504,8 +524,8 @@ country_event = {
 		}
 	}
 
-	option = { # 诶嘿
-		name = YES
+	option = {
+		name = OK
 	}
 
 	option = {
@@ -547,8 +567,8 @@ country_event = {
 		}
 	}
 
-	option = { # 诶嘿
-		name = YES
+	option = {
+		name = OK
 	}
 
 	option = {
@@ -590,8 +610,8 @@ country_event = {
 		}
 	}
 
-	option = { # 诶嘿
-		name = YES
+	option = {
+		name = OK
 	}
 
 	option = {
@@ -633,8 +653,8 @@ country_event = {
 		}
 	}
 
-	option = { # 诶嘿
-		name = YES
+	option = {
+		name = OK
 	}
 
 	option = {
@@ -676,8 +696,8 @@ country_event = {
 		}
 	}
 
-	option = { # 诶嘿
-		name = YES
+	option = {
+		name = OK
 	}
 
 	option = {
@@ -719,8 +739,8 @@ country_event = {
 		}
 	}
 
-	option = { # 诶嘿
-		name = YES
+	option = {
+		name = OK
 	}
 
 	option = {
@@ -762,8 +782,8 @@ country_event = {
 		}
 	}
 
-	option = { # 诶嘿
-		name = YES
+	option = {
+		name = OK
 	}
 
 	option = {

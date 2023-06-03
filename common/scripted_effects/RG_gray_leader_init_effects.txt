@@ -311,3 +311,63 @@ rg_gray_scientist_init = {
     }
     set_global_flag = rg_kac_leader
 }
+
+rg_gray_country_leader_init = {
+	create_leader = {	#只用作看板娘
+		class = governor
+		species = root
+		name = "NAME_Gray"
+		gender = female
+		immortal = yes
+		event_leader = yes
+		skip_background_generation = yes
+		custom_catch_phrase = gray_catch_phrase
+		custom_description = gray_backstory
+		background_ethic = ethic_gestalt_consciousness
+		hide_age = yes
+		skill = 10
+		set_age = 18
+		traits = {
+			trait = rg_leader_trait_governor_gray
+			trait = RG_leader_trait_ruler_gray
+		}
+		effect = {
+			save_global_event_target_as = rg_gray_country_leader
+			set_leader_flag = rg_gray_country_governor
+			set_leader_flag = legendary_leader
+			set_leader_flag = immune_to_negative_traits
+			# 暂时和小灰网络断开连接
+			# set_leader_flag = rg_gray_leader
+			if = {
+				limit = { has_global_flag = kdc_event_mod_active }
+				set_leader_flag = "gray_leader"
+				add_trait = leader_trait_governor_gray
+				add_trait = RG_leader_trait_ruler_gray
+				add_trait = subclass_governor_economist
+				add_trait = leader_trait_urbanist_3
+				add_trait = leader_trait_scrapper_2
+			}
+			else_if = {
+				limit = {
+					AND = {
+						has_global_flag = kdc_event_mod_active
+						has_country_flag = origin_gray_country
+					}
+				}
+				set_leader_flag = "gray_leader"
+				add_trait = leader_trait_governor_gray
+				add_trait = RG_leader_trait_ruler_gray
+			}
+			else = {
+				add_trait = RG_leader_trait_governor_gray
+				add_trait = RG_leader_trait_ruler_gray
+				add_trait = subclass_governor_economis
+				add_trait = leader_trait_urbanist_3
+				add_trait = leader_trait_scrapper_2
+			}
+		}
+	}
+	last_created_leader = {
+		rg_set_gray_portrait = yes
+	}
+}
