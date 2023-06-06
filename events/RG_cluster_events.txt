@@ -1,5 +1,85 @@
 namespace = rg_cluster
 
+# Special project completed (overwrite)
+country_event = {
+	id = rg_cluster.2
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		set_country_flag = lcluster_opener
+		set_global_flag = l_cluster_opened
+		
+		every_megastructure = {
+			limit = {
+				is_megastructure_type = lgate_base
+				NOT = { has_megastructure_flag = lgate_activated }
+			}
+			activate_gateway = this
+			set_megastructure_flag = lgate_activated
+		}
+
+		set_global_flag = lgates_activated_globally
+		# centralized handling of chain and project clean-up
+		every_playable_country = {
+			if = {
+				limit = { is_researching_technology = tech_lgate_activation }
+				give_technology = {
+					tech = tech_lgate_activation
+					message = no
+				}
+			}
+		}
+		every_playable_country = {
+			limit = {
+				NOR = {
+					has_event_chain = l_cluster_chain
+					has_special_project = LCLUSTER_PROJECT
+					is_same_value = root
+				}
+			}
+			country_event = { id = distar.10954 days = 1 }
+		}
+		every_playable_country = {
+			limit = {
+				NOR = {
+					has_special_project = LCLUSTER_PROJECT
+					is_same_value = root
+				}
+				has_event_chain = l_cluster_chain
+			}
+			country_event = { id = distar.10953 days = 1 }
+		}
+		observer_event = { id = observer.62 }
+
+		every_playable_country = {
+			if = {
+				limit = { has_modifier = rg_distant_stars_modifier }
+				remove_modifier = rg_distant_stars_modifier
+			}
+		}
+		country_event = { id = rg_cluster.10 }
+	}
+}
+
+# Allow all nanite worlds to be terraformed
+country_event = {
+    id = rg_cluster.3
+    hide_window = yes
+    is_triggered_only = yes
+
+    immediate = {
+        every_galaxy_planet = {
+			limit = { is_planet_class = pc_gray_goo }
+			add_modifier = {
+				modifier = "terraforming_candidate"
+				days = -1
+			}
+		}
+    }
+}
+
 # Spawn L-Cluster
 country_event = {
 	id = rg_cluster.8
@@ -379,84 +459,6 @@ country_event = {
         }
 
 		country_event = { id = rg_cluster.3 days = -1 }
-	}
-}
-
-# Allow all nanite worlds to be terraformed
-country_event = {
-    id = rg_cluster.3
-    hide_window = yes
-    is_triggered_only = yes
-
-    immediate = {
-        every_galaxy_planet = {
-			limit = { is_planet_class = pc_gray_goo }
-			add_modifier = {
-				modifier = "terraforming_candidate"
-				days = -1
-			}
-		}
-    }
-}
-
-# Special project completed (overwrite)
-country_event = {
-	id = rg_cluster.2
-	hide_window = yes
-
-	is_triggered_only = yes
-
-	immediate = {
-		if = {
-			limit = {
-				OR = {
-					has_global_flag = l_cluster_origin # l-cluster plus
-					has_global_flag = rg_origin_l_cluster # 遥远约定
-					has_global_flag = gray_origin_activate # 远星之歌
-				}
-			}
-			set_global_flag = l_cluster_opened
-			
-			# Activate Terminal Egress L-Gate
-			event_target:lcluster1 = {
-				random_system_megastructure = {
-					activate_gateway = this
-					set_megastructure_flag = lgate_activated
-				}
-			}
-			every_megastructure = {
-				limit = {
-					is_megastructure_type = lgate_base
-				}
-				activate_gateway = this
-			}
-			set_global_flag = lgates_activated_globally
-			
-			every_playable_country = {
-				if = {
-					limit = { is_researching_technology = tech_lgate_activation }
-					give_technology = {
-						tech = tech_lgate_activation
-						message = no
-					}
-				}
-			}
-
-			every_playable_country = {
-				if = {
-					limit = { has_modifier = rg_distant_stars_modifier }
-					remove_modifier = rg_distant_stars_modifier
-					every_owned_ship = {
-						limit = { has_modifier = rg_distant_stars_modifier }
-						remove_modifier = rg_distant_stars_modifier
-					}
-				}
-			}
-			country_event = { id = rg_cluster.10 }
-		}
-		else = {
-			country_event = { id = distar.10950 }
-		}
 	}
 }
 

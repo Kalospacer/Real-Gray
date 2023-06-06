@@ -2047,8 +2047,11 @@ rg_gray_country_after_init = {
 
 rg_timeline_attract_field_init = {
 	#世界线遭到劫持，手动收束关闭其他可能
+	###_清除[distar.8000]产生的flag
+	#_只有在完成L星门特殊项目后开启[distar.10950]才会用到这些flag, 所以开门前本事件都是可以执行的
 	if = {
 		limit = {
+			NOT = { has_global_flag = l_cluster_opened }
 			OR = {
 				has_global_flag = gray_goo_crisis_set
 				has_global_flag = active_gray_goo
