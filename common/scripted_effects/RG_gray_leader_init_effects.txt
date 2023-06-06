@@ -404,6 +404,7 @@ rg_gray_scientist_init = {
         else = {
             rg_set_gray_portrait = yes
         }
+        rg_gray_anti_kogasa_checker = yes
     }
     set_global_flag = rg_kac_leader
 }
@@ -466,4 +467,92 @@ rg_gray_country_leader_init = {
 	last_created_leader = {
 		rg_set_gray_portrait = yes
 	}
+}
+
+rg_gray_anti_kogasa_checker = {
+    #scope = leader
+    if = {  #检查小伞病毒
+        limit = {
+            AND = {
+                OR = {
+                    has_leader_flag = rg_gray_leader
+                    has_leader_flag = gray_leader   
+                }
+                has_leader_flag = FW_flg_ldr_HOK_kogasa
+            }
+        }
+        rg_gray_anti_kogasa_extermination_sequence = yes
+    }
+}
+#发现脏东西，彻底净化，杀杀杀
+rg_gray_anti_kogasa_extermination_sequence = {
+    event_target:gray_owner = {
+        every_owned_leader = {
+            limit = {
+                has_leader_flag = {
+                    OR = {
+                        has_leader_flag = rg_gray_leader
+                        has_leader_flag = gray_leader   
+                    }
+                    has_leader_flag = FW_flg_ldr_HOK_kogasa
+                }
+                remove_trait = FW_trait_ldr_HOK_kogasa
+                remove_trait = FW_trait_ldr_HOK_pupil
+                remove_leader_flag = FW_flg_ldr_HOK_kogasa
+                kill_leader = this
+            }
+        }
+		create_message = {
+			type = MESSAGE_RECRUITED_LEADER
+			localization = "rg_kogasa_exterminated_desc"
+			days = @toast_message_days
+			target = event_target:rg_gray_country_leader
+			variable = {
+				type = name
+				localization = LEADER
+				scope = event_target:rg_gray_country_leader
+			}
+		}
+    }
+    event_target:rg_gray_country = {
+        every_owned_leader = {
+            if = {
+                limit = {
+                    OR = {
+                        has_leader_flag = rg_gray_leader
+                        has_leader_flag = gray_leader   
+                    }
+                    has_leader_flag = FW_flg_ldr_HOK_kogasa
+                }
+                remove_trait = FW_trait_ldr_HOK_kogasa
+                remove_trait = FW_trait_ldr_HOK_pupil
+                remove_leader_flag = FW_flg_ldr_HOK_kogasa
+                kill_leader = this
+            }
+        }
+        every_owned_leader = {
+            if = {
+                limit = {
+                    OR = {
+                        has_leader_flag = rg_gray_leader
+                        has_leader_flag = gray_leader   
+                    }
+                    has_leader_flag = FW_flg_ldr_HOK_kogasa
+                }
+                remove_trait = FW_trait_ldr_HOK_kogasa
+                remove_trait = FW_trait_ldr_HOK_pupil
+                remove_leader_flag = FW_flg_ldr_HOK_kogasa
+                kill_leader = this
+            }
+        }
+        every_owned_leader = {
+            if = {
+                limit = {
+                    has_leader_flag = gray_scientist 
+                    has_leader_flag = rg_gray_leader_temp
+                }
+                kill_leader = this
+            }
+        }  
+    }
 }

@@ -319,3 +319,6 @@
  rg_timed_life_millennium_reborn:0 "§Y发光的§!§R千年魂环§!：模拟龙已经一千岁了~§R你是怎么做到的？难道一千年真的如此短暂吗？§!\n你获得了§R废物认证§!~"
  RG_sim_dragon_species:0 "伪装的龙"
  RG_SIMULATION_DRAGON_SPECIES:0 "伪装的龙"
+
+ MESSAGE_KOGASA_VIRUS_EXTERMINATED:0 "§R检测到伞病毒威胁§!"
+ rg_kogasa_exterminated_desc:0 "守护进程检测到小灰人格完整性遭到篡改，污染目标已被净化，处理方案：无害化处理。"
