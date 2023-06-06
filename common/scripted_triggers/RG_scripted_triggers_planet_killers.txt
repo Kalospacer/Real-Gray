@@ -57,22 +57,7 @@ can_destroy_planet_with_RG_PLANET_KILLER_SP = {
 	}
 	custom_tooltip = {
 		fail_text = "RG_requires_inside_border_star_killer"
-		AND = {
-			AND = {
-				is_inside_border = from.owner
-				solar_system = {
-					any_system_planet = {
-						OR = {
-							is_colony = yes
-						}
-					}
-				}
-			}
-			AND = {
-				exists = owner
-				owner = { is_same_value = from.owner }
-			}
-		}
+		is_inside_border = from.owner
 	}
 }
 

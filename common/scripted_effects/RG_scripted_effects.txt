@@ -1623,6 +1623,12 @@ RG_destroy_planet_effect = {
 			modifier = "terraforming_candidate"
 			days = -1
 		}
+		random_list = {
+			25 = { while = { count = 4 add_deposit = d_nanites_deposit } }
+			25 = { while = { count = 3 add_deposit = d_nanites_deposit } }
+			25 = { while = { count = 2 add_deposit = d_nanites_deposit } }
+			25 = { add_deposit = d_nanites_deposit }
+		}
 	}
 }
 
@@ -1768,6 +1774,12 @@ RG_destroy_star_system = {
 			add_modifier = {
 				modifier = "terraforming_candidate"
 				days = -1
+			}
+			random_list = {
+				25 = { while = { count = 4 add_deposit = d_nanites_deposit } }
+				25 = { while = { count = 3 add_deposit = d_nanites_deposit } }
+				25 = { while = { count = 2 add_deposit = d_nanites_deposit } }
+				25 = { add_deposit = d_nanites_deposit }
 			}
 		}
 	}
