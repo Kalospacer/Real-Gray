@@ -303,7 +303,7 @@ country_event = {
 	event_window_type = leader_recruit
 
 	picture_event_data = {
-		portrait = event_target:gray_governor
+		portrait = event_target:rg_gray_country_leader
 		planet_background = event_target:gray_governor_planet
 		room = root
 	}
@@ -438,7 +438,7 @@ country_event = {
 	event_window_type = leader_recruit
 
 	picture_event_data = {
-		portrait = event_target:gray_leader_admiral
+		portrait = event_target:rg_gray_country_leader
 		room = "ethic_spaceship_room"
 	}
 
@@ -807,7 +807,7 @@ country_event = {
 	event_window_type = leader_recruit
 
 	picture_event_data = {
-		portrait = event_target:gray_leader_general
+		portrait = event_target:rg_gray_country_leader
 		room = "ethic_spaceship_room"
 	}
 
@@ -1155,7 +1155,7 @@ country_event = {
 	event_window_type = leader_recruit
 
 	picture_event_data = {
-		portrait = event_target:gray_leader_scientist
+		portrait = event_target:rg_gray_country_leader
 		room = "ethic_spaceship_room"
 	}
 
@@ -1323,7 +1323,7 @@ country_event = {
 	event_window_type = leader_recruit
 
 	picture_event_data = {
-		portrait = event_target:gray_governor
+		portrait = event_target:rg_gray_country_leader
 		room = "ethic_spaceship_room"
 	}
 
@@ -1467,7 +1467,7 @@ country_event = {
 	event_window_type = leader_recruit
 
 	picture_event_data = {
-		portrait = event_target:gray_governor
+		portrait = event_target:rg_gray_country_leader
 		room = "ethic_spaceship_room"
 	}
 
@@ -1526,7 +1526,7 @@ country_event = {
 	event_window_type = leader_recruit
 
 	picture_event_data = {
-		portrait = event_target:gray_governor
+		portrait = event_target:rg_gray_country_leader
 		room = "ethic_spaceship_room"
 	}
 

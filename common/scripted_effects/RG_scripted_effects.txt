@@ -2,6 +2,9 @@
 
 rg_set_gray_portrait = {
 	change_leader_portrait = @gray_portrait
+	event_target:rg_gray_country_leader = {
+		change_leader_portrait = @gray_portrait
+	}
 }
 
 rg_create_gray_species = {
