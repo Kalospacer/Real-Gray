@@ -39,6 +39,7 @@ ship_event = {
 
 	immediate = {
 		from = { save_event_target_as = gray_homeworld }
+		rg_timeline_attract_field_init = yes
 	}
 
 	option = {
@@ -76,6 +77,7 @@ country_event = {
 
 	immediate = {	
 		rg_gray_country_init = yes #创建国家
+		rg_timeline_attract_field_init = yes
 	}
 
 	option = {
@@ -297,6 +299,7 @@ country_event = {
 
 	immediate = {
 		set_global_flag = rg_kac_499
+		rg_timeline_attract_field_init = yes
 		if = { # 非正常触发补事件
 			limit = {
 				NOT = {

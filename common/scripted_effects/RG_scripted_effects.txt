@@ -2044,3 +2044,24 @@ rg_gray_country_after_init = {
 		establish_communications_no_message = event_target:gray_owner
 	}
 }
+
+rg_timeline_attract_field_init = {
+	#世界线遭到劫持，手动收束关闭其他可能
+	if = {
+		limit = {
+			OR = {
+				has_global_flag = gray_goo_crisis_set
+				has_global_flag = active_gray_goo
+				has_global_flag = dragon_season
+				has_global_flag = gray_goo_empire_set
+			}
+		}
+		#灰蛊
+		remove_global_flag = gray_goo_crisis_set
+		remove_global_flag = active_gray_goo
+		#L星龙
+		remove_global_flag = dragon_season
+		#德萨努
+		remove_global_flag = gray_goo_empire_set
+	}
+}
