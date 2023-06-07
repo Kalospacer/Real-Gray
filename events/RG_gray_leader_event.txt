@@ -1137,8 +1137,8 @@ country_event = {
 			nanites = -1000
 			alloys = -50000
 		}
-		remove_country_flag = gray_reforming
 		remove_modifier = "gray_scattered"
+		country_event = { id = graygoo.512 }
 	}
 }
 

@@ -585,7 +585,7 @@ event = {
 				days = 3600
 			}
 			country_event = { id = graygoo.511 }
-			country_event = { id = graygoo.512 days = 3600 }
+			country_event = { id = rg.22 }
 		}
 	}
 }
