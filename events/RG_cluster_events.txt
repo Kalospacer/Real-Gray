@@ -283,7 +283,7 @@ country_event = {
 	immediate = {
 		random_system = {
 			limit = {				
-				has_star_flag = lcluster
+				has_star_flag = lcluster4
 				NOT = {
 					has_star_flag = lcluster_lgate
 				}
