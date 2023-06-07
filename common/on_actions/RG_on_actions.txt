@@ -40,7 +40,7 @@ on_army_killed_in_combat = {
 on_game_start_country = {
 	events = {
 		rg_cluster.8
-		rg.1
+		# rg.1
 	}
 }
 

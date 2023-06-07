@@ -1,50 +1,50 @@
 namespace = rg
 
-#灰风起源创建灰风事件
-country_event = {
-	id = rg.1 
-	hide_window = yes
-	
-	is_triggered_only = yes
-
-	trigger = {
-		has_country_flag = origin_rg_gray
-	}	
-
-	immediate = {
-		if = {
-			NOT = {
-				has_global_flag = origin_rg_gray_1st
-			}
-			set_global_flag = origin_rg_gray_1st_global
-			set_country_flag = origin_rg_gray_1st
-			set_country_flag = rg_gray_level_1
-			country_event = { id = rg.3 days = 30 }
-			add_modifier = {
-				modifier = rg_distant_stars_modifier
-			}
-			save_global_event_target_as = origin_rg_gray_country
-		}
-		else_if = {
-			limit = {
-				has_global_flag = origin_rg_gray_1st_global
-			}
-			set_country_flag = origin_gray_dragon_country
-			rg_create_fake_dragon = yes
-			start_lcluster_chain = yes
-			add_event_chain_counter = {
-				event_chain = l_cluster_chain
-				counter = clues
-				amount = 7
-			}
-			# increment variable
-			change_variable = {
-				which = num_lcluster_clues
-				value = 7
-			}
-		}
-	}
-}
+# 灰风起源创建灰风事件
+# country_event = {
+# 	id = rg.1 
+# 	hide_window = yes
+# 	
+# 	is_triggered_only = yes
+# 
+# 	trigger = {
+# 		has_country_flag = origin_rg_gray
+# 	}	
+# 
+# 	immediate = {
+# 		if = {
+# 			NOT = {
+# 				has_global_flag = origin_rg_gray_1st
+# 			}
+# 			set_global_flag = origin_rg_gray_1st_global
+# 			set_country_flag = origin_rg_gray_1st
+# 			set_country_flag = rg_gray_level_1
+# 			country_event = { id = rg.3 days = 30 }
+# 			add_modifier = {
+# 				modifier = rg_distant_stars_modifier
+# 			}
+# 			save_global_event_target_as = origin_rg_gray_country
+# 		}
+# 		else_if = {
+# 			limit = {
+# 				has_global_flag = origin_rg_gray_1st_global
+# 			}
+# 			set_country_flag = origin_gray_dragon_country
+# 			rg_create_fake_dragon = yes
+# 			start_lcluster_chain = yes
+# 			add_event_chain_counter = {
+# 				event_chain = l_cluster_chain
+# 				counter = clues
+# 				amount = 7
+# 			}
+# 			# increment variable
+# 			change_variable = {
+# 				which = num_lcluster_clues
+# 				value = 7
+# 			}
+# 		}
+# 	}
+# }
 
 country_event = {
 	id = rg.2
@@ -914,6 +914,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
+		is_multiplayer = yes
 		is_same_value = event_target:origin_rg_gray_country
 		has_country_flag = origin_rg_gray
 	}

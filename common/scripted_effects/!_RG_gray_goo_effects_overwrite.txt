@@ -14,3 +14,25 @@ create_gray_army = {
 create_gray_const = {
 	rg_create_gray_const = yes
 }
+
+start_lcluster_chain = {
+	if = {
+		limit = {
+			NOR = {
+				is_same_value = origin_rg_gray_country
+				has_country_flag = origin_rg_gray_1st
+			}
+		}
+		hidden_effect = {
+			custom_tooltip = begin_lcluster_chain
+			begin_event_chain = {
+				event_chain = l_cluster_chain
+				target = this
+			}
+			set_variable = {
+				which = num_lcluster_clues
+				value = 0
+			}
+		}
+	}
+}
