@@ -90,7 +90,8 @@ country_event = {
 	
 	trigger = {
 		AND = {
-			has_origin = origin_rg_gray
+			has_country_flag = origin_rg_gray_1st
+			#has_origin = origin_rg_gray
 			NOT = { has_global_flag = rg_origin_l_cluster }
 		}
 	}
@@ -282,7 +283,10 @@ country_event = {
 	immediate = {
 		random_system = {
 			limit = {				
-				has_star_flag = lcluster4
+				has_star_flag = lcluster
+				NOT = {
+					has_star_flag = lcluster_lgate
+				}
 			}
 			save_event_target_as = rg_cluster_home_system
 			
@@ -364,6 +368,7 @@ country_event = {
 
 		# Planet setup
 		event_target:rg_cluster_home_planet = {
+			change_pc = pc_gaia
 			set_owner = root
 			set_controller = root
 			set_capital = yes
