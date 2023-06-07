@@ -245,6 +245,12 @@
  message_RG_planet_killer_killed_star_desc:0 "$RG_target_planet|Y$因遭受$RG_attacker|Y$的$RG_attacker_ship|Y$的§R恒星级功率纳米同化注入攻击而被彻底净化§!，$RG_target_system|Y$恒星系被§R灰蛊风暴彻底污染§!。"
  message_RG_planet_killer_killed_planet_desc:0 "$RG_target_planet|Y$因遭受$RG_attacker|Y$的$RG_attacker_ship|Y$的§R纳米同化注入攻击而被彻底净化§!。"
 
+ RG_PLANET_KILLER_SMALL:0 "§H远星之歌§!"
+ RG_PLANET_KILLER_SMALL_DESC:0 "§Y发射高能级纳米射线蒸发行星大气，彻底污染星球上所有物体。若将能量重定向到敌舰上，将造成大量伤害。§!"
+ RG_PLANET_KILLER_SMALL_ACTION:0 "§H纳米注入§!"
+ FLEETORDER_DESTROY_PLANET_WITH_RG_PLANET_KILLER_SMALL:0 "准备注入$PLANET|Y$"
+ MESSAGE_DESC_FOR_RG_PLANET_KILLER_SMALL:0 "被执行了星球纳米转化"
+
  RG_PLANET_KILLER_SP:0 "§H奇怪的试射用武器§!"
  RG_PLANET_KILLER_SP_DESC:0 "§Y不知道发射后会发生什么的奇怪武器...被设定成只能对友军开火..?小灰要求我们帮忙试射来收集实验结果。这真的靠谱吗？§!"
  RG_PLANET_KILLER_SP_ACTION:0 "§H试验性开火§!"
