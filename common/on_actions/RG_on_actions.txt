@@ -128,6 +128,19 @@ on_destroy_planet_with_RG_PLANET_KILLER_queued = {
 on_destroy_planet_with_RG_PLANET_KILLER_unqueued = {
 }
 
+on_destroy_planet_with_RG_PLANET_KILLER_SMALL = {
+	events = {
+		RG_planet_killer.2
+		origin.3245
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_SMALL_queued = {
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_SMALL_unqueued = {
+}
+
 on_destroy_planet_with_RG_PLANET_KILLER_SP = {
 	events = {
 		RG_planet_killer.3
