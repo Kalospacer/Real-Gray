@@ -46,6 +46,46 @@ can_destroy_planet_with_RG_PLANET_KILLER = {
 	}
 }
 
+can_destroy_planet_with_RG_PLANET_KILLER_SMALL = {
+	custom_tooltip = {
+		fail_text = "RG_requires_a_star_star_killer" 
+		NOR = {
+			is_star = yes
+			is_planet_class = pc_ag_void_star
+			is_planet_class = pc_ag_void_planet
+		}
+	}
+	custom_tooltip = {
+		fail_text = "RG_requires_outside_border_star_killer"
+		NOR = {
+			AND = {
+				is_inside_border = from.owner
+				solar_system = {
+					any_system_planet = {
+						OR = {
+							is_colony = yes
+							is_under_colonization = yes
+						}
+					}
+				}
+			}
+			AND = {
+				exists = owner
+				owner = { is_same_value = from.owner }
+			}
+		}
+	}
+	custom_tooltip = {
+		fail_text = "RG_requires_no_pacifist_star_killer"
+		from.owner = {
+			NOR = {
+				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_pacifist
+			}
+		}
+	}
+}
+
 can_destroy_planet_with_RG_PLANET_KILLER_SP = {
 	custom_tooltip = {
 		fail_text = "RG_requires_a_star_star_killer" 

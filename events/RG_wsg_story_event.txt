@@ -1,3 +1,5 @@
+# 这里的事件暂时用不上
+
 namespace = rg_wsg_story
 
 country_event = {

@@ -45,10 +45,12 @@ on_game_start_country = {
 }
 
 # This = country
+# 最高优先级检测才放月检
 on_monthly_pulse_country = {
 	events = {
-		rg.8
-		rg.16
+		rg.8 #领袖等级检测更新
+		rg.16 #陆军压制舰更新
+		# rg.22 #小灰复活检测
 		# rg_skill.9
 	}
 }
@@ -124,6 +126,19 @@ on_destroy_planet_with_RG_PLANET_KILLER_queued = {
 }
 
 on_destroy_planet_with_RG_PLANET_KILLER_unqueued = {
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_SMALL = {
+	events = {
+		RG_planet_killer.2
+		origin.3245
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_SMALL_queued = {
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_SMALL_unqueued = {
 }
 
 on_destroy_planet_with_RG_PLANET_KILLER_SP = {
