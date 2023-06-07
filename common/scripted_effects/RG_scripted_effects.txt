@@ -2083,3 +2083,71 @@ rg_timeline_attract_field_init = {
 		remove_global_flag = gray_goo_empire_set
 	}
 }
+
+RG_const_auto_build_effect_event = {
+	if = {
+		limit = { 
+			solar_system = {
+				#星系必须完成扫描
+				is_surveyed = {
+					who = root.controller
+					status = yes
+				}
+				#星系内不能有其他自动工蜂
+				NOT = { any_fleet_in_system = { any_controlled_ship = { is_ship_size = RG_armed_constructor_ship } } }
+			}
+		}
+		#创建自动工蜂国家
+		if = {
+			limit = { 
+				NOT = { exists = event_target:RG_const_country }
+			}
+			create_country = {
+				name = RG_const_country
+				type = RG_gray_friendly
+				auto_delete = no
+				flag = root.controller
+				effect = {
+					save_global_event_target_as = RG_const_country
+					establish_communications_no_message = root.controller
+					set_faction_hostility = {
+						target = root.controller
+						set_friendly = yes
+					}
+					#对野怪国家中立
+					every_country = {
+						limit = {
+							OR = {
+								is_amoeba_country_type = yes
+								is_tiyanki_country_type = yes
+								is_crystal_country_type = yes
+								is_drone_country_type = yes
+							}
+						}
+						set_faction_hostility = {
+							target = prev
+							set_neutral = yes
+						}
+					}
+				}
+			}
+			controller = {
+				add_intel = {
+					who = event_target:RG_const_country
+					amount = 1000
+				}
+			}
+		}
+		#释放工蜂
+		switch = {
+			trigger = has_component
+			RG_AUTOCONST_HANGER = { 
+				RG_const_auto_build_effect = {
+					count = 1
+					starbase_time = 30
+					station_time = 150
+				}
+			}
+		}
+	}
+}

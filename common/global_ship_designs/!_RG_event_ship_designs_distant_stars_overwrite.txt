@@ -10,7 +10,7 @@ ship_design = {
 
 		component = {
 			slot = "PLANET_KILLER_GUN_01"
-			template = "PLANET_KILLER_NEUTRON"
+			template = "RG_PLANET_KILLER_SMALL"
 		}	
 		component = {
 			slot = "TITAN_01"

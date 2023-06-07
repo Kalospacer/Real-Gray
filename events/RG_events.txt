@@ -869,6 +869,28 @@ country_event = {
 	}
 }
 
+# looping check for escape lcluster
+country_event = {
+	id = rg.23
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_same_value = event_target:origin_rg_gray_country
+		has_country_flag = origin_rg_gray
+	}
+
+	immediate = {
+		if = {
+			limit = {
+				has_event_chain = "l_cluster_chain"
+			}
+			end_event_chain = "l_cluster_chain"
+		}
+	}
+}
+
 # 拆毁工厂小灰通讯
 country_event = {
 	id = rg.200

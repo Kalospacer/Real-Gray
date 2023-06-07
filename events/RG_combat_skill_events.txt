@@ -139,6 +139,11 @@ ship_event = {
 	immediate = {
 		if = {
 			limit = { 
+				owner = {
+					NOT = {
+						is_same_value = origin_rg_gray_country
+					}
+				}
 				solar_system = {
 					NOT = { #星系内不能有敌舰
 						any_fleet_in_system = { 
@@ -148,71 +153,48 @@ ship_event = {
 					}
 				}
 			}
-			if = {
-				limit = { 
-					solar_system = {
-						#星系必须完成扫描
-						is_surveyed = {
-							who = root.controller
-							status = yes
-						}
-						#星系内不能有其他自动工蜂
-						NOT = { any_fleet_in_system = { any_controlled_ship = { is_ship_size = RG_armed_constructor_ship } } }
+			#创建自动工程船暂存国家
+			RG_const_auto_build_effect_event = yes
+		}
+		else_if = {
+			limit = { 
+				owner = {
+					is_same_value = origin_rg_gray_country
+					NOT = {
+						has_global_flag = l_cluster_opened
 					}
 				}
-				#创建自动工蜂国家
-				if = {
-					limit = { 
-						NOT = { exists = event_target:RG_const_country }
-					}
-					create_country = {
-						name = RG_const_country
-						type = RG_gray_friendly
-						auto_delete = no
-						flag = root.controller
-						effect = {
-							save_global_event_target_as = RG_const_country
-							establish_communications_no_message = root.controller
-							set_faction_hostility = {
-								target = root.controller
-								set_friendly = yes
-							}
-							#对野怪国家中立
-							every_country = {
-								limit = {
-									OR = {
-										is_amoeba_country_type = yes
-										is_tiyanki_country_type = yes
-										is_crystal_country_type = yes
-										is_drone_country_type = yes
-									}
-								}
-								set_faction_hostility = {
-									target = prev
-									set_neutral = yes
-								}
-							}
-						}
-					}
-					controller = {
-						add_intel = {
-							who = event_target:RG_const_country
-							amount = 1000
-						}
-					}
-				}
-				#释放工蜂
-				switch = {
-					trigger = has_component
-					RG_AUTOCONST_HANGER = { 
-						RG_const_auto_build_effect = {
-							count = 1
-							starbase_time = 30
-							station_time = 150
+				solar_system = {
+					has_star_flag = lcluster
+					NOT = { #星系内不能有敌舰		
+						any_fleet_in_system = { 
+							exists = controller
+							controller = { is_hostile = root.controller } 
 						}
 					}
 				}
 			}
+			#创建自动工程船暂存国家
+			RG_const_auto_build_effect_event = yes
+		}
+		else_if = {
+			limit = { 
+				owner = {
+					is_same_value = origin_rg_gray_country # 是小灰起源
+					has_global_flag = l_cluster_opened # L星门已开启
+				}
+				solar_system = {
+					# has_star_flag = lcluster
+					NOT = { #星系内不能有敌舰		
+						any_fleet_in_system = { 
+							exists = controller
+							controller = { is_hostile = root.controller } 
+						}
+					}
+				}
+			}
+			#创建自动工程船暂存国家
+			RG_const_auto_build_effect_event = yes
 		}
 		#循环检查
 		ship_event = {
