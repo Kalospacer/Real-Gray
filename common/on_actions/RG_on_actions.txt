@@ -1,20 +1,15 @@
 on_game_start = {
 	events = {
-		rg.19
-		rg_kac_event.4
 	}
 }
 on_single_player_save_game_load = {
 	events = {
-		rg.19
-		rg_kac_event.4
 	}
 }
 
 on_custom_diplomacy = {
 	events = {
 		graygoo.505
-		rg_kac_event.1
 	}
 }
 
@@ -41,6 +36,7 @@ on_game_start_country = {
 	events = {
 		# rg_cluster.8
 		rg.1
+		rg.19
 	}
 }
 

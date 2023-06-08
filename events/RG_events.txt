@@ -52,12 +52,11 @@ country_event = {
 	hide_window = yes
 
 	is_triggered_only = yes
-	fire_only_once = yes
 	
 	trigger = {
 		AND = {
 			has_origin = origin_rg_gray
-			NOT = { has_global_flag = rg_origin_l_cluster }
+			# NOT = { has_global_flag = rg_origin_l_cluster }
 		}
 	}
 
@@ -65,7 +64,7 @@ country_event = {
 		if = {
 			limit = {
 				NOT = {
-					has_global_flag = origin_rg_gray_1st
+					has_global_flag = origin_rg_gray_1st_global
 				}
 			}
 			set_global_flag = origin_rg_gray_1st_global
@@ -78,13 +77,24 @@ country_event = {
 			save_global_event_target_as = origin_rg_gray_country
 			rg_lcluster_spawn_effect = yes
 		}
-		else_if = {
-			limit = {
-				has_global_flag = origin_rg_gray_1st_global
-			}
+		else = {
 			set_country_flag = origin_gray_dragon_country
 			set_global_flag = has_origin_gray_dragon
 			rg_create_fake_dragon = yes
+			random_owned_leader = {
+				limit = {
+					has_leader_flag = rg_fake_dragon
+				}
+				remove_trait = RG_leader_trait_admiral_timed_life
+				add_trait = RG_leader_trait_admiral_born_tobe_dragon
+				set_leader_flag = rg_fake_dragon_reborn
+				set_age = 0
+			}
+			set_country_flag = rg_fake_dragon_reborn_country
+            set_variable = {
+                which = rg_fake_dragon_timedlife_counter
+                value = 0
+            }
 			start_lcluster_chain = yes
 			add_event_chain_counter = {
 				event_chain = l_cluster_chain
@@ -816,10 +826,11 @@ country_event = {
 	}
 }
 
-event = {
+country_event = {
 	id = rg.19
 	hide_window = yes
 	is_triggered_only = yes
+	fire_only_once = yes
 
 	trigger = {
 		is_ai = no
@@ -838,9 +849,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		any_owned_leader = {
-			has_leader_flag = rg_fake_dragon
-		}
+		has_country_flag = rg_fake_dragon_owner
 	}
 	immediate = {
 		if = {
@@ -881,10 +890,15 @@ country_event = {
 		random_owned_leader = {
 			limit = { has_leader_flag = rg_fake_dragon }
 			set_age = owner.rg_fake_dragon_timedlife_counter
-		}
-		event_target:rg_fake_dragon_admiral = {
-			change_leader_portrait = wg_dragon
-			set_age = owner.rg_fake_dragon_timedlife_counter
+			if = {
+				limit = {
+					has_global_flag = has_wsg_mod
+				}
+				change_leader_portrait = wg_dragon
+			}
+			else = {
+				change_leader_portrait = species
+			}
 		}
 		random_owned_fleet = {
 			limit = {

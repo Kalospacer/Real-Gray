@@ -12,6 +12,9 @@ rg_storyline_trigger = {
 	if = {
 		limit = {
 			exists = event_target:guardian_dragon_country
+			NOT = {
+				has_global_flag = has_origin_gray_dragon
+			}
 		}
 		country_event = { id = rg_story.11 days = 3600 random = 12800 }
 	}
@@ -102,7 +105,7 @@ rg_create_fake_dragon = {
 		}
 		create_leader = {
 			class = admiral
-			species = event_target:RG_sim_dragon_species
+			species = root
 			name = "Name_rg_fake_dragon"
 			event_leader = yes
 			gender = female
@@ -114,7 +117,15 @@ rg_create_fake_dragon = {
 				trait = RG_leader_trait_admiral_timed_life
 			}
 			effect = {
-				change_leader_portrait = wg_dragon
+				if = {
+					limit = {
+						has_global_flag = has_wsg_mod
+					}
+					change_leader_portrait = wg_dragon
+				}
+				else = {
+					change_leader_portrait = species
+				}
 				set_leader_flag = has_gained_level_trait
 				set_leader_flag = has_gained_trait
 				set_leader_flag = legendary_leader
@@ -126,6 +137,7 @@ rg_create_fake_dragon = {
 			which = rg_fake_dragon_timedlife_counter
 			value = 0
 		}
+		set_country_flag = rg_fake_dragon_owner
 		save_global_event_target_as = rg_fake_dragon_owner
 		create_fleet = {
 			name = "NAME_RG_Nanite_Dragon"

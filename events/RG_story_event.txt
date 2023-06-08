@@ -664,7 +664,7 @@ country_event = {
 }
 
 # sim dragon ga le
-event = {
+country_event = {
 	id = rg_story.20
 	hide_window = yes
 
@@ -694,20 +694,21 @@ event = {
 	}
 
 	immediate = {
-		event_target:rg_fake_dragon_admiral = {
+		random_owned_leader = {
+            limit = {
+                has_leader_flag = rg_fake_dragon
+            }
             remove_trait = RG_leader_trait_admiral_timed_life
             add_trait = RG_leader_trait_admiral_born_tobe_dragon
             set_leader_flag = rg_fake_dragon_reborn
             set_age = 0
 		}
-        event_target:rg_fake_dragon_owner = {
-            set_country_flag = rg_fake_dragon_reborn_country
-            set_variable = {
-                which = rg_fake_dragon_timedlife_counter
-                value = 0
-            }
-            country_event = { id = rg_story.21 }
+        set_country_flag = rg_fake_dragon_reborn_country
+        set_variable = {
+            which = rg_fake_dragon_timedlife_counter
+            value = 0
         }
+        country_event = { id = rg_story.21 }
 	}
 }
 
