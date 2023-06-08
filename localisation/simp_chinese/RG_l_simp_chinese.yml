@@ -35,7 +35,7 @@
  RG_gatebuilder_thruster:0 "§Y灰风推进器§!"
  origin_rg_gray:0 "§Y遥远约定§!"
  origin_rg_gray_desc:0 "你偷偷说服了小灰从遥远的L星团前来看望你"
- origin_tooltip_rg_gray_effects:0 "开局拥有灰风\n\n§R<但...代价是什么？>§！"
+ origin_tooltip_rg_gray_effects:0 "开局拥有灰风\n\n§R<但...代价是什么？>§！\n§R该起源被多个国家选择时重复国家将被替换成隐藏起源§！§H<你也事龙>§！§R并开局获得全部L星门认知。§！\n§R多人游戏中存在重复龙开起源国家，L星团国家将无法触发中期开门事件。§！"
  RG_SHIP_AURA_NANOBOT_CLOUD:0 "§Y纳米机器场§!"
  RG_SHIP_AURA_NANOBOT_CLOUD_DESC:0 "灰风可以通过布置一个高浓度纳米机器人场来维修同星系内的友方舰船。"
  RG_BOMBER_HANGAR_AP_BOMB:0 "§Y纳米轰炸机中队§!"

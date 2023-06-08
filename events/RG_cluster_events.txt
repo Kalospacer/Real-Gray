@@ -117,6 +117,7 @@ country_event = {
 				has_global_flag = origin_rg_gray_1st_global
 			}
 			set_country_flag = origin_gray_dragon_country
+			set_global_flag = has_origin_gray_dragon
 			rg_create_fake_dragon = yes
 			start_lcluster_chain = yes
 			add_event_chain_counter = {

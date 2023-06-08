@@ -712,6 +712,10 @@ country_event = {
 	picture = GFX_evt_drifting_gateway
 	trigger = {
 		mid_game_years_passed >= 0
+		NOT = {
+			is_multiplayer = yes
+			has_global_flag = has_origin_gray_dragon
+		}
 		has_country_flag = origin_rg_gray
 		OR = {
 			any_system_megastructure = {
