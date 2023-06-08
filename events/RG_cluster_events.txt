@@ -80,60 +80,6 @@ country_event = {
     }
 }
 
-# Spawn L-Cluster
-country_event = {
-	id = rg_cluster.8
-	hide_window = yes
-
-	is_triggered_only = yes
-	fire_only_once = yes
-	
-	trigger = {
-		AND = {
-			has_origin = origin_rg_gray
-			NOT = { has_global_flag = rg_origin_l_cluster }
-		}
-	}
-
-	immediate = {
-		if = {
-			limit = {
-				NOT = {
-					has_global_flag = origin_rg_gray_1st
-				}
-			}
-			set_global_flag = origin_rg_gray_1st_global
-			set_country_flag = origin_rg_gray_1st
-			set_country_flag = rg_gray_level_1
-			country_event = { id = rg.3 days = 30 }
-			add_modifier = {
-				modifier = rg_distant_stars_modifier
-			}
-			save_global_event_target_as = origin_rg_gray_country
-			rg_lcluster_spawn_effect = yes
-		}
-		else_if = {
-			limit = {
-				has_global_flag = origin_rg_gray_1st_global
-			}
-			set_country_flag = origin_gray_dragon_country
-			set_global_flag = has_origin_gray_dragon
-			rg_create_fake_dragon = yes
-			start_lcluster_chain = yes
-			add_event_chain_counter = {
-				event_chain = l_cluster_chain
-				counter = clues
-				amount = 7
-			}
-			# increment variable
-			change_variable = {
-				which = num_lcluster_clues
-				value = 7
-			}
-		}
-	}
-}
-
 # Move home system
 country_event = {
 	id = rg_cluster.9
