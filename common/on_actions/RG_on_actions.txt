@@ -35,8 +35,8 @@ on_army_killed_in_combat = {
 on_game_start_country = {
 	events = {
 		# rg_cluster.8
-		rg.1
-		rg.19
+		rg_event.1
+		rg_event.19
 	}
 }
 
@@ -44,19 +44,19 @@ on_game_start_country = {
 # 最高优先级检测才放月检
 on_monthly_pulse_country = {
 	events = {
-		rg.8 #领袖等级检测更新
-		rg.16 #陆军压制舰更新
-		# rg.22 #小灰复活检测
-		# rg.23 #月检移除L星门认知防止收容失效
+		rg_event.8 #领袖等级检测更新
+		rg_event.16 #陆军压制舰更新
+		# rg_event.22 #小灰复活检测
+		# rg_event.23 #月检移除L星门认知防止收容失效
 		# rg_skill.9
 	}
 }
 
 on_yearly_pulse_country = {
 	events = {
-		rg.17
-		rg.18
-		rg.20
+		rg_event.17
+		rg_event.18
+		rg_event.20
 	}
 }
 
@@ -68,7 +68,7 @@ on_yearly_pulse = {
 
 on_mid_game_pulse_country = {
     events = {
-        # rg.18
+        # rg_event.18
     }
 }
 
@@ -83,7 +83,7 @@ on_mid_game_pulse_country = {
 # to retake the planet, the player is the attacker
 on_planet_attackers_win = {
 	events = {
-		rg.16
+		rg_event.16
 		# rg_skill.9
 	}
 }
@@ -94,7 +94,7 @@ on_planet_attackers_win = {
 # FromFrom = planet
 on_planet_attackers_lose = {
 	events = {
-		rg.16
+		rg_event.16
 		# rg_skill.9
 	}
 }
