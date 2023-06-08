@@ -1,5 +1,4 @@
 namespace = distar
-
 # Technology available upon gaining all insights
 country_event = {
 	id = distar.10904
@@ -22,17 +21,19 @@ country_event = {
 	}
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
-
 	is_triggered_only = yes
-
 	immediate = {
-		observer_event = { id = observer.61 }
+		observer_event = {
+			id = observer.61
+		}
 	}
-
 	option = {
 		name = GOOD
-		if = { # You can only research to open it if it has not been opened already
-			limit = { can_research_technology = tech_lgate_activation }
+		if = {
+			# You can only research to open it if it has not been opened already
+			limit = {
+				can_research_technology = tech_lgate_activation
+			}
 			add_research_option = tech_lgate_activation
 		}
 	}
@@ -64,17 +65,16 @@ country_event = {
 	picture = GFX_evt_drifting_gateway
 	show_sound = event_mystic_reveal
 	location = event_target:candidate_gateway
-
 	is_triggered_only = yes
-
 	immediate = {
 		end_event_chain = "l_cluster_chain"
 		event_target:candidate_gateway = {
-			solar_system = { save_event_target_as = candidate_gateway_system }
+			solar_system = {
+				save_event_target_as = candidate_gateway_system
+			}
 		}
 		set_global_flag = rg_kac_lcluster_project
 	}
-
 	option = {
 		name = "distar.10905.a"
 		event_target:candidate_gateway = {
@@ -94,17 +94,21 @@ country_event = {
 	picture = GFX_evt_l-gateway
 	show_sound = event_activating_unknown_technology
 	location = event_target:candidate_gateway
-
 	is_triggered_only = yes
-
 	immediate = {
-		country_event = { id = distar.11000 }
+		country_event = {
+			id = distar.11000
+		}
 		every_playable_country = {
 			limit = {
 				has_special_project = RG_LCLUSTER_PROJECT
-				NOT = { is_same_value = root }
+				NOT = {
+					is_same_value = root
+				}
 			}
-			country_event = { id = distar.10952 }
+			country_event = {
+				id = distar.10952
+			}
 		}
 		every_playable_country = {
 			limit = {
@@ -114,7 +118,9 @@ country_event = {
 					is_same_value = root
 				}
 			}
-			country_event = { id = distar.10954 }
+			country_event = {
+				id = distar.10954
+			}
 		}
 		every_playable_country = {
 			limit = {
@@ -124,11 +130,14 @@ country_event = {
 				}
 				has_event_chain = l_cluster_chain
 			}
-			country_event = { id = distar.10953 }
+			country_event = {
+				id = distar.10953
+			}
 		}
-		observer_event = { id = observer.62 }
+		observer_event = {
+			id = observer.62
+		}
 	}
-
 	option = {
 		name = "distar.10951.a"
 	}
@@ -141,13 +150,12 @@ country_event = {
 	desc = "distar.10952.desc"
 	picture = GFX_evt_glitchy_matrix
 	show_sound = event_alien_signal
-
 	is_triggered_only = yes
-
 	immediate = {
-		abort_special_project = { type = RG_LCLUSTER_PROJECT }
+		abort_special_project = {
+			type = RG_LCLUSTER_PROJECT
+		}
 	}
-
 	option = {
 		name = "distar.10952.a"
 	}
@@ -157,9 +165,7 @@ country_event = {
 event = {
 	id = distar.10955
 	hide_window = yes
-
 	is_triggered_only = yes
-
 	trigger = {
 		any_playable_country = {
 			is_ai = no
@@ -171,16 +177,19 @@ event = {
 				is_country_type = default
 				has_communications = prev
 				has_event_chain = l_cluster_chain
-				NOT = { has_country_flag = lgate_warned@prev }
+				NOT = {
+					has_country_flag = lgate_warned@prev
+				}
 				check_variable = {
 					which = num_lcluster_clues
 					value > 5
 				}
-				any_owned_megastructure = { is_megastructure_type = lgate_base }
+				any_owned_megastructure = {
+					is_megastructure_type = lgate_base
+				}
 			}
 		}
 	}
-
 	immediate = {
 		random_playable_country = {
 			limit = {
@@ -193,12 +202,16 @@ event = {
 					is_country_type = default
 					has_communications = prev
 					has_event_chain = l_cluster_chain
-					NOT = { has_country_flag = lgate_warned@prev }
+					NOT = {
+						has_country_flag = lgate_warned@prev
+					}
 					check_variable = {
 						which = num_lcluster_clues
 						value > 5
 					}
-					any_owned_megastructure = { is_megastructure_type = lgate_base }
+					any_owned_megastructure = {
+						is_megastructure_type = lgate_base
+					}
 				}
 			}
 			random_relation = {
@@ -206,17 +219,23 @@ event = {
 					is_country_type = default
 					has_communications = prev
 					has_event_chain = l_cluster_chain
-					NOT = { has_country_flag = lgate_warned@prev }
+					NOT = {
+						has_country_flag = lgate_warned@prev
+					}
 					check_variable = {
 						which = num_lcluster_clues
 						value > 5
 					}
-					any_owned_megastructure = { is_megastructure_type = lgate_base }
+					any_owned_megastructure = {
+						is_megastructure_type = lgate_base
+					}
 				}
 				save_event_target_as = lgate_warning_country
 				set_country_flag = lgate_warned@prev
 			}
-			country_event = { id = distar.10956 }
+			country_event = {
+				id = distar.10956
+			}
 		}
 	}
 }

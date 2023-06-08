@@ -20,7 +20,8 @@ RG_gray_friendly = {
 	}
 	custom_diplomacy = yes
 	modules = {
-		basic_technology_module = {}
+		basic_technology_module = {
+		}
 		exclusive_diplomacy_module = {
 			contact_rule = on_action_only
 		}

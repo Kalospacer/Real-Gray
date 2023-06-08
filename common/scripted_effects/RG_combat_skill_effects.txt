@@ -9,7 +9,6 @@ RG_leader_trait_tempest_incoming_random_kill_effect = {
 				}
 			}
 		}
-
 		if = {
 			limit = {
 				check_variable = {
@@ -34,7 +33,8 @@ RG_leader_trait_tempest_incoming_random_kill_effect = {
 				}
 				random_list = {
 					# NOTE: Update custom loc for effect when changing probablity
-					95 = {}
+					95 = {
+					}
 					5 = {
 						random_ground_combat_$SIDE_B$ = {
 							limit = {
@@ -54,7 +54,8 @@ RG_leader_trait_tempest_incoming_random_kill_effect = {
 				}
 				random_list = {
 					# NOTE: Update custom loc for effect when changing probablity
-					90 = {}
+					90 = {
+					}
 					10 = {
 						random_ground_combat_$SIDE_B$ = {
 							limit = {
@@ -74,7 +75,8 @@ RG_leader_trait_tempest_incoming_random_kill_effect = {
 				}
 				random_list = {
 					# NOTE: Update custom loc for effect when changing probablity
-					80 = {}
+					80 = {
+					}
 					20 = {
 						random_ground_combat_$SIDE_B$ = {
 							limit = {
@@ -94,7 +96,8 @@ RG_leader_trait_tempest_incoming_random_kill_effect = {
 				}
 				random_list = {
 					# NOTE: Update custom loc for effect when changing probablity
-					70 = {}
+					70 = {
+					}
 					30 = {
 						random_ground_combat_$SIDE_B$ = {
 							limit = {
@@ -114,7 +117,8 @@ RG_leader_trait_tempest_incoming_random_kill_effect = {
 				}
 				random_list = {
 					# NOTE: Update custom loc for effect when changing probablity
-					60 = {}
+					60 = {
+					}
 					40 = {
 						random_ground_combat_$SIDE_B$ = {
 							limit = {
@@ -134,7 +138,8 @@ RG_leader_trait_tempest_incoming_random_kill_effect = {
 				}
 				random_list = {
 					# NOTE: Update custom loc for effect when changing probablity
-					60 = {}
+					60 = {
+					}
 					40 = {
 						random_ground_combat_$SIDE_B$ = {
 							limit = {
@@ -154,7 +159,8 @@ RG_leader_trait_tempest_incoming_random_kill_effect = {
 				}
 				random_list = {
 					# NOTE: Update custom loc for effect when changing probablity
-					50 = {}
+					50 = {
+					}
 					50 = {
 						random_ground_combat_$SIDE_B$ = {
 							limit = {
@@ -174,7 +180,8 @@ RG_leader_trait_tempest_incoming_random_kill_effect = {
 				}
 				random_list = {
 					# NOTE: Update custom loc for effect when changing probablity
-					40 = {}
+					40 = {
+					}
 					60 = {
 						random_ground_combat_$SIDE_B$ = {
 							limit = {
@@ -194,7 +201,8 @@ RG_leader_trait_tempest_incoming_random_kill_effect = {
 				}
 				random_list = {
 					# NOTE: Update custom loc for effect when changing probablity
-					30 = {}
+					30 = {
+					}
 					70 = {
 						random_ground_combat_$SIDE_B$ = {
 							limit = {
@@ -214,7 +222,8 @@ RG_leader_trait_tempest_incoming_random_kill_effect = {
 				}
 				random_list = {
 					# NOTE: Update custom loc for effect when changing probablity
-					20 = {}
+					20 = {
+					}
 					80 = {
 						random_ground_combat_$SIDE_B$ = {
 							limit = {
@@ -234,7 +243,8 @@ RG_leader_trait_tempest_incoming_random_kill_effect = {
 				}
 				random_list = {
 					# NOTE: Update custom loc for effect when changing probablity
-					10 = {}
+					10 = {
+					}
 					90 = {
 						random_ground_combat_$SIDE_B$ = {
 							limit = {
@@ -254,7 +264,8 @@ RG_leader_trait_tempest_incoming_random_kill_effect = {
 				}
 				random_list = {
 					# NOTE: Update custom loc for effect when changing probablity
-					5 = {}
+					5 = {
+					}
 					95 = {
 						random_ground_combat_$SIDE_B$ = {
 							limit = {

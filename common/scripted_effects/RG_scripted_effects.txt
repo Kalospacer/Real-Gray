@@ -1,5 +1,4 @@
 @gray_portrait = Gray
-
 rg_set_gray_portrait = {
 	change_leader_portrait = @gray_portrait
 	event_target:rg_gray_country_leader = {
@@ -10,7 +9,9 @@ rg_set_gray_portrait = {
 rg_create_gray_species = {
 	if = {
 		limit = {
-			NOT = { exists = event_target:gray_species }
+			NOT = {
+				exists = event_target:gray_species
+			}
 		}
 		if = {
 			limit = {
@@ -50,11 +51,11 @@ rg_create_gray_warship_1 = {
 		name = "NAME_Gray"
 		settings = {
 			can_disband = yes
-			can_upgrade = yes 
-			can_change_composition = yes 
-			can_change_leader = yes 
+			can_upgrade = yes
+			can_change_composition = yes
+			can_change_leader = yes
 			uses_naval_capacity = yes
-			spawn_debris = yes					
+			spawn_debris = yes
 		}
 		effect = {
 			set_owner = root
@@ -62,7 +63,9 @@ rg_create_gray_warship_1 = {
 				name = "NAME_Gray"
 				design = "NAME_Gray_Warship"
 				upgradable = yes
-				effect = { set_ship_flag = rg_mothership }					
+				effect = {
+					set_ship_flag = rg_mothership
+				}
 			}
 			set_location = {
 				target = event_target:global_gray_location
@@ -78,18 +81,18 @@ rg_create_gray_juggernautship_1 = {
 		name = "NAME_Gray"
 		settings = {
 			can_disband = yes
-			can_upgrade = yes 
-			can_change_composition = yes 
-			can_change_leader = yes 
+			can_upgrade = yes
+			can_change_composition = yes
+			can_change_leader = yes
 			uses_naval_capacity = yes
-			spawn_debris = yes					
+			spawn_debris = yes
 		}
 		effect = {
 			set_owner = root
 			create_ship = {
 				name = "NAME_Gray"
 				design = "NAME_gray_juggernautship"
-				upgradable = yes			
+				upgradable = yes
 			}
 			set_location = {
 				target = event_target:global_gray_location
@@ -105,11 +108,11 @@ rg_create_gray_constship_1 = {
 		name = "NAME_Gray"
 		settings = {
 			can_disband = yes
-			can_upgrade = yes 
-			can_change_composition = yes 
-			can_change_leader = yes 
+			can_upgrade = yes
+			can_change_composition = yes
+			can_change_leader = yes
 			uses_naval_capacity = yes
-			spawn_debris = yes					
+			spawn_debris = yes
 		}
 		effect = {
 			set_owner = root
@@ -117,7 +120,7 @@ rg_create_gray_constship_1 = {
 				name = "NAME_Gray"
 				design = "NAME_RG_GRAY_constructor"
 				prefix = no
-				upgradable = yes					
+				upgradable = yes
 			}
 			set_location = {
 				target = event_target:global_gray_location
@@ -133,7 +136,9 @@ rg_create_graygoo_ships_1 = {
 		name = random
 		design = "NAME_Nanite_Mothership"
 		graphical_culture = "pirate_01"
-		effect = { set_ship_flag = rg_nanite_mothership }
+		effect = {
+			set_ship_flag = rg_nanite_mothership
+		}
 	}
 	create_ship = {
 		name = random
@@ -155,7 +160,9 @@ rg_create_graygoo_ships_2 = {
 		name = random
 		design = "NAME_Nanite_Mothership"
 		graphical_culture = "pirate_01"
-		effect = { set_ship_flag = rg_nanite_mothership }
+		effect = {
+			set_ship_flag = rg_nanite_mothership
+		}
 	}
 	create_ship = {
 		name = random
@@ -182,7 +189,9 @@ rg_create_graygoo_ships_3 = {
 		name = random
 		design = "NAME_Nanite_Mothership"
 		graphical_culture = "pirate_01"
-		effect = { set_ship_flag = rg_nanite_mothership }
+		effect = {
+			set_ship_flag = rg_nanite_mothership
+		}
 	}
 	create_ship = {
 		name = random
@@ -204,7 +213,9 @@ rg_create_graygoo_ships_4 = {
 		name = random
 		design = "NAME_Nanite_Mothership_Carrier"
 		graphical_culture = "pirate_01"
-		effect = { set_ship_flag = rg_nanite_mothership }
+		effect = {
+			set_ship_flag = rg_nanite_mothership
+		}
 	}
 	create_ship = {
 		name = random
@@ -230,7 +241,9 @@ rg_create_graygoo_roamers_1 = {
 				name = random
 				design = "NAME_Nanite_Mothership_Carrier"
 				graphical_culture = "pirate_01"
-				effect = { set_ship_flag = rg_nanite_mothership }
+				effect = {
+					set_ship_flag = rg_nanite_mothership
+				}
 			}
 			create_ship = {
 				name = random
@@ -250,7 +263,6 @@ rg_create_graygoo_roamers_1 = {
 			set_fleet_stance = aggressive
 			set_aggro_range_measure_from = self
 			set_aggro_range = 500
-
 			queue_actions = {
 				repeat = {
 					find_random_system = {
@@ -260,7 +272,7 @@ rg_create_graygoo_roamers_1 = {
 						}
 						found_system = {
 							move_to = THIS
-						}	
+						}
 					}
 					find_closest_planet = {
 						trigger = {
@@ -290,7 +302,9 @@ rg_create_graygoo_roamers_2 = {
 				name = random
 				design = "NAME_Nanite_Mothership_titan"
 				graphical_culture = "pirate_01"
-				effect = { set_ship_flag = rg_nanite_mothership }
+				effect = {
+					set_ship_flag = rg_nanite_mothership
+				}
 			}
 			create_ship = {
 				name = random
@@ -310,7 +324,6 @@ rg_create_graygoo_roamers_2 = {
 			set_fleet_stance = aggressive
 			set_aggro_range_measure_from = self
 			set_aggro_range = 500
-
 			queue_actions = {
 				repeat = {
 					find_random_system = {
@@ -320,7 +333,7 @@ rg_create_graygoo_roamers_2 = {
 						}
 						found_system = {
 							move_to = THIS
-						}	
+						}
 					}
 					find_closest_planet = {
 						trigger = {
@@ -350,7 +363,9 @@ rg_create_graygoo_roamers_3 = {
 				name = random
 				design = "NAME_Nanite_Mothership"
 				graphical_culture = "pirate_01"
-				effect = { set_ship_flag = rg_nanite_mothership }
+				effect = {
+					set_ship_flag = rg_nanite_mothership
+				}
 			}
 			create_ship = {
 				name = random
@@ -370,7 +385,6 @@ rg_create_graygoo_roamers_3 = {
 			set_fleet_stance = aggressive
 			set_aggro_range_measure_from = self
 			set_aggro_range = 500
-
 			queue_actions = {
 				repeat = {
 					find_random_system = {
@@ -380,7 +394,7 @@ rg_create_graygoo_roamers_3 = {
 						}
 						found_system = {
 							move_to = THIS
-						}	
+						}
 					}
 					find_closest_planet = {
 						trigger = {
@@ -410,7 +424,9 @@ rg_create_graygoo_roamers_4 = {
 				name = random
 				design = "NAME_Nanite_Mothership"
 				graphical_culture = "pirate_01"
-				effect = { set_ship_flag = rg_nanite_mothership }
+				effect = {
+					set_ship_flag = rg_nanite_mothership
+				}
 			}
 			create_ship = {
 				name = random
@@ -430,7 +446,6 @@ rg_create_graygoo_roamers_4 = {
 			set_fleet_stance = aggressive
 			set_aggro_range_measure_from = self
 			set_aggro_range = 500
-
 			queue_actions = {
 				repeat = {
 					find_random_system = {
@@ -440,7 +455,7 @@ rg_create_graygoo_roamers_4 = {
 						}
 						found_system = {
 							move_to = THIS
-						}	
+						}
 					}
 					find_closest_planet = {
 						trigger = {
@@ -470,7 +485,9 @@ rg_create_graygoo_roamers_5 = {
 				name = random
 				design = "NAME_Nanite_Mothership"
 				graphical_culture = "pirate_01"
-				effect = { set_ship_flag = rg_nanite_mothership }
+				effect = {
+					set_ship_flag = rg_nanite_mothership
+				}
 			}
 			create_ship = {
 				name = random
@@ -490,7 +507,6 @@ rg_create_graygoo_roamers_5 = {
 			set_fleet_stance = aggressive
 			set_aggro_range_measure_from = self
 			set_aggro_range = 500
-
 			queue_actions = {
 				repeat = {
 					find_random_system = {
@@ -500,7 +516,7 @@ rg_create_graygoo_roamers_5 = {
 						}
 						found_system = {
 							move_to = THIS
-						}	
+						}
 					}
 					find_closest_planet = {
 						trigger = {
@@ -530,7 +546,9 @@ rg_create_graygoo_roamers_6 = {
 				name = random
 				design = "NAME_Nanite_Mothership_Carrier"
 				graphical_culture = "pirate_01"
-				effect = { set_ship_flag = rg_nanite_mothership }
+				effect = {
+					set_ship_flag = rg_nanite_mothership
+				}
 			}
 			create_ship = {
 				name = random
@@ -550,7 +568,6 @@ rg_create_graygoo_roamers_6 = {
 			set_fleet_stance = aggressive
 			set_aggro_range_measure_from = self
 			set_aggro_range = 500
-
 			queue_actions = {
 				repeat = {
 					find_random_system = {
@@ -560,7 +577,7 @@ rg_create_graygoo_roamers_6 = {
 						}
 						found_system = {
 							move_to = THIS
-						}	
+						}
 					}
 					find_closest_planet = {
 						trigger = {
@@ -590,7 +607,9 @@ rg_create_graygoo_roamers_7 = {
 				name = random
 				design = "NAME_Nanite_Mothership"
 				graphical_culture = "pirate_01"
-				effect = { set_ship_flag = rg_nanite_mothership }
+				effect = {
+					set_ship_flag = rg_nanite_mothership
+				}
 			}
 			create_ship = {
 				name = random
@@ -610,7 +629,6 @@ rg_create_graygoo_roamers_7 = {
 			set_fleet_stance = aggressive
 			set_aggro_range_measure_from = self
 			set_aggro_range = 500
-
 			queue_actions = {
 				repeat = {
 					find_random_system = {
@@ -620,7 +638,7 @@ rg_create_graygoo_roamers_7 = {
 						}
 						found_system = {
 							move_to = THIS
-						}	
+						}
 					}
 					find_closest_planet = {
 						trigger = {
@@ -640,6 +658,7 @@ rg_create_graygoo_roamers_7 = {
 		}
 	}
 }
+
 ### Create Dessanu ships
 rg_create_dessanu_roamers_1 = {
 	event_target:graygoo_country = {
@@ -662,7 +681,9 @@ rg_create_dessanu_roamers_1 = {
 			create_ship = {
 				name = random
 				design = "NAME_Dessanu_Mothership"
-				effect = { set_ship_flag = rg_nanite_mothership }
+				effect = {
+					set_ship_flag = rg_nanite_mothership
+				}
 			}
 			while = {
 				count = 5
@@ -677,7 +698,6 @@ rg_create_dessanu_roamers_1 = {
 			set_aggro_range_measure_from = self
 			set_aggro_range = 500
 			assign_leader = last_created_leader
-
 			queue_actions = {
 				repeat = {
 					find_random_system = {
@@ -687,7 +707,7 @@ rg_create_dessanu_roamers_1 = {
 						}
 						found_system = {
 							move_to = THIS
-						}	
+						}
 					}
 					find_closest_planet = {
 						trigger = {
@@ -732,7 +752,9 @@ rg_create_dessanu_roamers_2 = {
 			create_ship = {
 				name = random
 				design = "NAME_Dessanu_Mothership"
-				effect = { set_ship_flag = rg_nanite_mothership }
+				effect = {
+					set_ship_flag = rg_nanite_mothership
+				}
 			}
 			while = {
 				count = 5
@@ -747,7 +769,6 @@ rg_create_dessanu_roamers_2 = {
 			set_aggro_range_measure_from = self
 			set_aggro_range = 500
 			assign_leader = last_created_leader
-
 			queue_actions = {
 				repeat = {
 					find_random_system = {
@@ -757,7 +778,7 @@ rg_create_dessanu_roamers_2 = {
 						}
 						found_system = {
 							move_to = THIS
-						}	
+						}
 					}
 					find_closest_planet = {
 						trigger = {
@@ -802,7 +823,9 @@ rg_create_dessanu_roamers_3 = {
 			create_ship = {
 				name = random
 				design = "NAME_Dessanu_Mothership"
-				effect = { set_ship_flag = rg_nanite_mothership }
+				effect = {
+					set_ship_flag = rg_nanite_mothership
+				}
 			}
 			while = {
 				count = 5
@@ -817,7 +840,6 @@ rg_create_dessanu_roamers_3 = {
 			set_aggro_range_measure_from = self
 			set_aggro_range = 500
 			assign_leader = last_created_leader
-
 			queue_actions = {
 				repeat = {
 					find_random_system = {
@@ -827,7 +849,7 @@ rg_create_dessanu_roamers_3 = {
 						}
 						found_system = {
 							move_to = THIS
-						}	
+						}
 					}
 					find_closest_planet = {
 						trigger = {
@@ -872,7 +894,9 @@ rg_create_dessanu_roamers_4 = {
 			create_ship = {
 				name = random
 				design = "NAME_Dessanu_Mothership"
-				effect = { set_ship_flag = rg_nanite_mothership }
+				effect = {
+					set_ship_flag = rg_nanite_mothership
+				}
 			}
 			while = {
 				count = 5
@@ -887,7 +911,6 @@ rg_create_dessanu_roamers_4 = {
 			set_aggro_range_measure_from = self
 			set_aggro_range = 500
 			assign_leader = last_created_leader
-
 			queue_actions = {
 				repeat = {
 					find_random_system = {
@@ -897,7 +920,7 @@ rg_create_dessanu_roamers_4 = {
 						}
 						found_system = {
 							move_to = THIS
-						}	
+						}
 					}
 					find_closest_planet = {
 						trigger = {
@@ -942,7 +965,9 @@ rg_create_dessanu_roamers_5 = {
 			create_ship = {
 				name = random
 				design = "NAME_Dessanu_Mothership"
-				effect = { set_ship_flag = rg_nanite_mothership }
+				effect = {
+					set_ship_flag = rg_nanite_mothership
+				}
 			}
 			while = {
 				count = 5
@@ -957,7 +982,6 @@ rg_create_dessanu_roamers_5 = {
 			set_aggro_range_measure_from = self
 			set_aggro_range = 500
 			assign_leader = last_created_leader
-
 			queue_actions = {
 				repeat = {
 					find_random_system = {
@@ -967,7 +991,7 @@ rg_create_dessanu_roamers_5 = {
 						}
 						found_system = {
 							move_to = THIS
-						}	
+						}
 					}
 					find_closest_planet = {
 						trigger = {
@@ -1012,7 +1036,9 @@ rg_create_dessanu_roamers_6 = {
 			create_ship = {
 				name = random
 				design = "NAME_Dessanu_Mothership"
-				effect = { set_ship_flag = rg_nanite_mothership }
+				effect = {
+					set_ship_flag = rg_nanite_mothership
+				}
 			}
 			while = {
 				count = 5
@@ -1027,7 +1053,6 @@ rg_create_dessanu_roamers_6 = {
 			set_aggro_range_measure_from = self
 			set_aggro_range = 500
 			assign_leader = last_created_leader
-
 			queue_actions = {
 				repeat = {
 					find_random_system = {
@@ -1037,7 +1062,7 @@ rg_create_dessanu_roamers_6 = {
 						}
 						found_system = {
 							move_to = THIS
-						}	
+						}
 					}
 					find_closest_planet = {
 						trigger = {
@@ -1082,7 +1107,9 @@ rg_create_dessanu_roamers_7 = {
 			create_ship = {
 				name = random
 				design = "NAME_Dessanu_Mothership"
-				effect = { set_ship_flag = rg_nanite_mothership }
+				effect = {
+					set_ship_flag = rg_nanite_mothership
+				}
 			}
 			while = {
 				count = 5
@@ -1097,7 +1124,6 @@ rg_create_dessanu_roamers_7 = {
 			set_aggro_range_measure_from = self
 			set_aggro_range = 500
 			assign_leader = last_created_leader
-
 			queue_actions = {
 				repeat = {
 					find_random_system = {
@@ -1107,7 +1133,7 @@ rg_create_dessanu_roamers_7 = {
 						}
 						found_system = {
 							move_to = THIS
-						}	
+						}
 					}
 					find_closest_planet = {
 						trigger = {
@@ -1135,7 +1161,9 @@ rg_create_dessanu_ships_1 = {
 	create_ship = {
 		name = random
 		design = "NAME_Dessanu_Mothership"
-		effect = { set_ship_flag = rg_nanite_mothership }
+		effect = {
+			set_ship_flag = rg_nanite_mothership
+		}
 	}
 	while = {
 		count = 5
@@ -1171,20 +1199,24 @@ RG_const_auto_build_effect = {
 					#前往哨站
 					find_closest_system = {
 						trigger = {
-                            id = RG_work_bees_trigger.1
+							id = RG_work_bees_trigger.1
 							is_same_value = prev.solar_system
-							NOT = { exists = space_owner }
+							NOT = {
+								exists = space_owner
+							}
 						}
 						found_system = {
-							move_to = this			
+							move_to = this
 						}
 					}
 					find_closest_planet = {
 						trigger = {
-                            id = RG_work_bees_trigger.2
+							id = RG_work_bees_trigger.2
 							is_star = yes
 							solar_system = {
-								NOT = { exists = space_owner }
+								NOT = {
+									exists = space_owner
+								}
 							}
 						}
 						found_planet = {
@@ -1210,7 +1242,9 @@ RG_const_auto_build_effect = {
 							id = RG_work_bees_trigger.3
 							is_star = yes
 							solar_system = {
-								NOT = { has_megastructure = hyper_relay }
+								NOT = {
+									has_megastructure = hyper_relay
+								}
 							}
 						}
 						found_planet = {
@@ -1235,9 +1269,9 @@ RG_const_auto_build_effect = {
 					#建造空间站
 					find_closest_planet = {
 						trigger = {
-                            id = RG_work_bees_trigger.1
+							id = RG_work_bees_trigger.1
 							RG_planet_can_auto_build = yes
-						}					
+						}
 						found_planet = {
 							move_to = this
 							orbit_planet = this
@@ -1248,7 +1282,7 @@ RG_const_auto_build_effect = {
 								id = RG_work_bees_effect.2
 								#若星系属于母国，则自动建造
 								if = {
-									limit = { 
+									limit = {
 										solar_system = {
 											is_owned_by = prevprevprev.controller
 										}
@@ -1263,7 +1297,7 @@ RG_const_auto_build_effect = {
 								}
 								#若星系有主但不属于母国，则工蜂自毁
 								else_if = {
-									limit = { 
+									limit = {
 										solar_system = {
 											has_owner = yes
 											NOT = {
@@ -1278,11 +1312,11 @@ RG_const_auto_build_effect = {
 						#若找不到可建造星球，则工蜂自毁
 						failed = {
 							effect = {
-                                id = RG_work_bees_failed.1
+								id = RG_work_bees_failed.1
 								delete_fleet = this
 							}
 						}
-					}	
+					}
 				}
 			}
 		}
@@ -1294,12 +1328,12 @@ RG_const_auto_build_effect = {
 RG_build_stations = {
 	switch = {
 		trigger = has_deposit_for
-		shipclass_mining_station = { 
+		shipclass_mining_station = {
 			create_mining_station = {
 				owner = $owner$
 			}
 		}
-		shipclass_research_station = { 
+		shipclass_research_station = {
 			create_research_station = {
 				owner = $owner$
 			}
@@ -1314,21 +1348,26 @@ RG_destroy_planet_effect = {
 			has_observation_outpost = yes
 		}
 		observation_outpost_owner = {
-			country_event = { id = planet_destruction.1000 days = 1 }
+			country_event = {
+				id = planet_destruction.1000
+				days = 1
+			}
 		}
 	}
-
 	# Contingency Machine World
 	if = {
 		limit = {
 			is_planet_class = pc_ai
-			NOT = { has_planet_flag = machine_lair }
+			NOT = {
+				has_planet_flag = machine_lair
+			}
 		}
 		set_planet_flag = destroyed_by_colossus
 		set_planet_flag = planet_cracked
-		planet_event = { id = crisis.2040 }
+		planet_event = {
+			id = crisis.2040
+		}
 	}
-
 	# Contingency Final Machine World
 	if = {
 		limit = {
@@ -1337,19 +1376,26 @@ RG_destroy_planet_effect = {
 		}
 		set_planet_flag = destroyed_by_colossus
 		set_planet_flag = planet_cracked
-		from.owner = { save_event_target_as = final_machine_world_destroyer }
+		from.owner = {
+			save_event_target_as = final_machine_world_destroyer
+		}
 		stop_crisis_sound = yes
-		planet_event = { id = crisis.2046 }
+		planet_event = {
+			id = crisis.2046
+		}
 	}
-
 	# Swarm Situation Log counter
 	if = {
 		limit = {
 			exists = owner
-			owner = { is_country_type = swarm }
+			owner = {
+				is_country_type = swarm
+			}
 		}
 		every_country = {
-			limit = { has_event_chain = "prethoryn_scourge_chain" }
+			limit = {
+				has_event_chain = "prethoryn_scourge_chain"
+			}
 			add_event_chain_counter = {
 				event_chain = "prethoryn_scourge_chain"
 				counter = "infested_worlds"
@@ -1362,7 +1408,6 @@ RG_destroy_planet_effect = {
 			}
 		}
 	}
-
 	if = {
 		limit = {
 			OR = {
@@ -1373,20 +1418,28 @@ RG_destroy_planet_effect = {
 			}
 		}
 		from.owner = {
-			set_timed_country_flag = { flag = resolution_breached_fired_cracker days = 3600 }
+			set_timed_country_flag = {
+				flag = resolution_breached_fired_cracker
+				days = 3600
+			}
 		}
 	}
-
 	# Exterminatus Achievement
 	if = {
-		limit = { is_capital = yes }
-		from.owner = { set_country_flag = exterminatus }
+		limit = {
+			is_capital = yes
+		}
+		from.owner = {
+			set_country_flag = exterminatus
+		}
 	}
 	if = {
 		limit = {
 			exists = owner
 			owner = {
-				NOT = { is_same_value = from.owner }
+				NOT = {
+					is_same_value = from.owner
+				}
 				OR = {
 					is_country_type = default
 					is_country_type = fallen_empire
@@ -1399,7 +1452,10 @@ RG_destroy_planet_effect = {
 			limit = {
 				is_colony = yes
 			}
-			add_threat = { who = from.owner amount = 3 }
+			add_threat = {
+				who = from.owner
+				amount = 3
+			}
 			# modifier for allies + those upset by genocide
 			every_country = {
 				limit = {
@@ -1431,7 +1487,11 @@ RG_destroy_planet_effect = {
 					}
 				}
 				if = {
-					limit = { root = { is_colony = no } }
+					limit = {
+						root = {
+							is_colony = no
+						}
+					}
 					add_opinion_modifier = {
 						modifier = opinion_cracked_an_uninhabited_world
 						who = from.owner
@@ -1446,12 +1506,19 @@ RG_destroy_planet_effect = {
 			}
 		}
 		else = {
-			add_threat = { who = from.owner amount = 1 }
+			add_threat = {
+				who = from.owner
+				amount = 1
+			}
 		}
 		# modifiers for victim
 		owner = {
 			if = {
-				limit = { root = { is_colony = no } }
+				limit = {
+					root = {
+						is_colony = no
+					}
+				}
 				add_opinion_modifier = {
 					modifier = opinion_cracked_my_uninhabited_world
 					who = from.owner
@@ -1464,22 +1531,30 @@ RG_destroy_planet_effect = {
 				}
 			}
 			if = {
-				limit = { NOT = { has_ethic = ethic_gestalt_consciousness } }
+				limit = {
+					NOT = {
+						has_ethic = ethic_gestalt_consciousness
+					}
+				}
 				add_modifier = {
 					modifier = colossus_victim
-					days = 10800 # 30 years
+					days = 10800					# 30 years
 				}
 			}
 		}
 		if = {
 			limit = {
 				exists = owner
-				owner = { is_country_type = primitive }
+				owner = {
+					is_country_type = primitive
+				}
 			}
 			# modifier for allies + those upset by genocide
 			every_country = {
 				limit = {
-					NOT = { is_same_value = from.owner }
+					NOT = {
+						is_same_value = from.owner
+					}
 					OR = {
 						has_communications = from.owner
 						has_communications = root.owner
@@ -1503,7 +1578,9 @@ RG_destroy_planet_effect = {
 			}
 			every_country = {
 				limit = {
-					NOT = { is_same_value = from.owner }
+					NOT = {
+						is_same_value = from.owner
+					}
 					OR = {
 						has_communications = from.owner
 						has_communications = root.owner
@@ -1530,29 +1607,35 @@ RG_destroy_planet_effect = {
 		}
 		owner = {
 			if = {
-				limit = { #isn't the case when the crisis bombards planets, for instance
+				limit = {
+					#isn't the case when the crisis bombards planets, for instance
 					is_at_war_with = from.fleet.owner
 				}
 				add_static_war_exhaustion = {
 					attacker = from.fleet.owner
 					location = root
-					value_for_planet_destruction = 1.0
+					value_for_planet_destruction = 1
 				}
 			}
 		}
 	}
 	if = {
-		limit = { is_planet_class = pc_habitat } # uncolonized
+		limit = {
+			is_planet_class = pc_habitat
+		}		# uncolonized
 		spawn_habitat_cracker_effect = yes
 		change_pc = pc_gray_goo
 	}
-
 	if = {
-		limit = { is_colony = yes }
+		limit = {
+			is_colony = yes
+		}
 		if = {
 			limit = {
 				exists = owner
-				owner = { is_same_value = event_target:gray_owner }
+				owner = {
+					is_same_value = event_target:gray_owner
+				}
 			}
 			# already owned
 		}
@@ -1606,15 +1689,21 @@ RG_destroy_planet_effect = {
 		}
 	}
 	else_if = {
-		limit = { is_ringworld = yes }
+		limit = {
+			is_ringworld = yes
+		}
 		spawn_ringworld_nanobot_effect = yes
 	}
 	else_if = {
-		limit = { is_planet_class = pc_ringworld_tech }
+		limit = {
+			is_planet_class = pc_ringworld_tech
+		}
 		spawn_ringworld_nanobot_effect = yes
 	}
 	else_if = {
-		limit = { is_planet_class = pc_ringworld_seam }
+		limit = {
+			is_planet_class = pc_ringworld_seam
+		}
 		spawn_ringworld_nanobot_effect = yes
 	}
 	else = {
@@ -1624,10 +1713,27 @@ RG_destroy_planet_effect = {
 			days = -1
 		}
 		random_list = {
-			25 = { while = { count = 4 add_deposit = d_nanites_deposit } }
-			25 = { while = { count = 3 add_deposit = d_nanites_deposit } }
-			25 = { while = { count = 2 add_deposit = d_nanites_deposit } }
-			25 = { add_deposit = d_nanites_deposit }
+			25 = {
+				while = {
+					count = 4
+					add_deposit = d_nanites_deposit
+				}
+			}
+			25 = {
+				while = {
+					count = 3
+					add_deposit = d_nanites_deposit
+				}
+			}
+			25 = {
+				while = {
+					count = 2
+					add_deposit = d_nanites_deposit
+				}
+			}
+			25 = {
+				add_deposit = d_nanites_deposit
+			}
 		}
 	}
 }
@@ -1644,7 +1750,9 @@ RG_destroy_star_system = {
 		destroy_ambient_object = this
 	}
 	every_system_planet = {
-		limit = { is_star = yes }
+		limit = {
+			is_star = yes
+		}
 		create_ambient_object = {
 			type = "star_explosion"
 			play_animation_once = yes
@@ -1658,10 +1766,27 @@ RG_destroy_star_system = {
 			}
 		}
 		change_pc = pc_black_hole
-		solar_system = { set_star_class = sc_black_hole }
-		if = { limit = { planet_size > 29 } set_planet_size = 15 }
-		else_if = { limit = { planet_size > 19 } set_planet_size = 10 }
-		else_if = { limit = { always = yes } set_planet_size = 7 }
+		solar_system = {
+			set_star_class = sc_black_hole
+		}
+		if = {
+			limit = {
+				planet_size > 29
+			}
+			set_planet_size = 15
+		}
+		else_if = {
+			limit = {
+				planet_size > 19
+			}
+			set_planet_size = 10
+		}
+		else_if = {
+			limit = {
+				always = yes
+			}
+			set_planet_size = 7
+		}
 		prevent_anomaly = yes
 		clear_deposits = yes
 	}
@@ -1669,7 +1794,9 @@ RG_destroy_star_system = {
 	every_system_planet = {
 		limit = {
 			is_planet_class = pc_ai
-			NOT = { has_planet_flag = machine_lair }
+			NOT = {
+				has_planet_flag = machine_lair
+			}
 		}
 		destroy_machine_world = yes
 	}
@@ -1678,9 +1805,13 @@ RG_destroy_star_system = {
 			is_planet_class = pc_ai
 			has_planet_flag = machine_lair
 		}
-		from.owner = { save_event_target_as = final_machine_world_destroyer }
+		from.owner = {
+			save_event_target_as = final_machine_world_destroyer
+		}
 		stop_crisis_sound = yes
-		planet_event = { id = crisis.2046 }
+		planet_event = {
+			id = crisis.2046
+		}
 	}
 	every_system_planet = {
 		limit = {
@@ -1692,19 +1823,23 @@ RG_destroy_star_system = {
 				is_planet_class = pc_ringworld_seam_damaged
 			}
 		}
-
 		if = {
-			limit = { is_planet_class = pc_habitat } # uncolonized
+			limit = {
+				is_planet_class = pc_habitat
+			}			# uncolonized
 			spawn_habitat_cracker_effect = yes
 			change_pc = pc_gray_goo
 		}
-		
 		if = {
-			limit = { is_colony = yes }
+			limit = {
+				is_colony = yes
+			}
 			if = {
 				limit = {
 					exists = owner
-					owner = { is_same_value = event_target:gray_owner }
+					owner = {
+						is_same_value = event_target:gray_owner
+					}
 				}
 				# already owned
 			}
@@ -1758,15 +1893,21 @@ RG_destroy_star_system = {
 			}
 		}
 		else_if = {
-			limit = { is_ringworld = yes }
+			limit = {
+				is_ringworld = yes
+			}
 			spawn_ringworld_nanobot_effect = yes
 		}
 		else_if = {
-			limit = { is_planet_class = pc_ringworld_tech }
+			limit = {
+				is_planet_class = pc_ringworld_tech
+			}
 			spawn_ringworld_nanobot_effect = yes
 		}
 		else_if = {
-			limit = { is_planet_class = pc_ringworld_seam }
+			limit = {
+				is_planet_class = pc_ringworld_seam
+			}
 			spawn_ringworld_nanobot_effect = yes
 		}
 		else = {
@@ -1776,10 +1917,27 @@ RG_destroy_star_system = {
 				days = -1
 			}
 			random_list = {
-				25 = { while = { count = 4 add_deposit = d_nanites_deposit } }
-				25 = { while = { count = 3 add_deposit = d_nanites_deposit } }
-				25 = { while = { count = 2 add_deposit = d_nanites_deposit } }
-				25 = { add_deposit = d_nanites_deposit }
+				25 = {
+					while = {
+						count = 4
+						add_deposit = d_nanites_deposit
+					}
+				}
+				25 = {
+					while = {
+						count = 3
+						add_deposit = d_nanites_deposit
+					}
+				}
+				25 = {
+					while = {
+						count = 2
+						add_deposit = d_nanites_deposit
+					}
+				}
+				25 = {
+					add_deposit = d_nanites_deposit
+				}
 			}
 		}
 	}
@@ -1787,10 +1945,14 @@ RG_destroy_star_system = {
 		limit = {
 			exists = orbital_station
 		}
-		orbital_station = { dismantle = yes }
+		orbital_station = {
+			dismantle = yes
+		}
 	}
 	every_system_planet = {
-		limit = { is_asteroid = yes }
+		limit = {
+			is_asteroid = yes
+		}
 		clear_deposits = yes
 	}
 	every_fleet_in_system = {
@@ -1813,7 +1975,7 @@ RG_destroy_star_system = {
 		}
 		if = {
 			limit = {
-				exists = event_target:gray_owner #i.e. not final destruction of all matter
+				exists = event_target:gray_owner				#i.e. not final destruction of all matter
 				is_mobile = yes
 			}
 			set_mia = yes
@@ -1844,7 +2006,7 @@ RG_destroy_star_system = {
 rg_emergency_fleet_defence = {
 	while = {
 		count = 3
-			create_ship = {
+		create_ship = {
 			name = random
 			design = "NAME_Nanite_Mothership_titan"
 			graphical_culture = "pirate_01"
@@ -1903,7 +2065,8 @@ rg_create_graygoo_fleet_random = {
 	while = {
 		count = 8
 		random_list = {
-			10 = { #1_航战
+			10 = {
+				#1_航战
 				create_ship = {
 					name = random
 					design = "RG_aircruiser_Interdictor"
@@ -1911,7 +2074,8 @@ rg_create_graygoo_fleet_random = {
 					upgradable = yes
 				}
 			}
-			10 = { #2_航母
+			10 = {
+				#2_航母
 				create_ship = {
 					name = random
 					design = "RG_carrier_Interdictor"
@@ -1919,7 +2083,8 @@ rg_create_graygoo_fleet_random = {
 					upgradable = yes
 				}
 			}
-			10 = { #3_战列
+			10 = {
+				#3_战列
 				create_ship = {
 					name = random
 					design = "RG_battleship_Interdictor"
@@ -1927,7 +2092,8 @@ rg_create_graygoo_fleet_random = {
 					upgradable = yes
 				}
 			}
-			10 = { #4_泰坦
+			10 = {
+				#4_泰坦
 				create_ship = {
 					name = random
 					design = "RG_titan_interdictor"
@@ -1935,7 +2101,8 @@ rg_create_graygoo_fleet_random = {
 					upgradable = yes
 				}
 			}
-			10 = { #5_雷击
+			10 = {
+				#5_雷击
 				create_ship = {
 					name = random
 					design = "RG_torpedo_interdictor"
@@ -1943,7 +2110,8 @@ rg_create_graygoo_fleet_random = {
 					upgradable = yes
 				}
 			}
-			10 = { #6_近防
+			10 = {
+				#6_近防
 				create_ship = {
 					name = random
 					design = "RG_AA_interdictor"
@@ -1951,15 +2119,17 @@ rg_create_graygoo_fleet_random = {
 					upgradable = yes
 				}
 			}
-			10 = { #7_武库
-				create_ship = { 
+			10 = {
+				#7_武库
+				create_ship = {
 					name = random
 					design = "RG_Arsenal_Interdictor"
 					graphical_culture = "pirate_01"
 					upgradable = yes
 				}
 			}
-			10 = { #8_雷巡
+			10 = {
+				#8_雷巡
 				create_ship = {
 					name = random
 					design = "RG_torpedocruiser_interdictor"
@@ -1967,7 +2137,8 @@ rg_create_graygoo_fleet_random = {
 					upgradable = yes
 				}
 			}
-			10 = { #9_破冰
+			10 = {
+				#9_破冰
 				create_ship = {
 					name = random
 					design = "RG_icebreaker_interdictor"
@@ -1975,7 +2146,8 @@ rg_create_graygoo_fleet_random = {
 					upgradable = yes
 				}
 			}
-			10 = { #10_线列
+			10 = {
+				#10_线列
 				create_ship = {
 					name = random
 					design = "RG_line_interdictor"
@@ -1992,15 +2164,15 @@ rg_gray_country_init = {
 		name = "NAME_Gray"
 		type = gray
 		flag = {
-			icon= {
+			icon = {
 				category = "special"
 				file = "gray_goo.dds"
 			}
-			background= {
+			background = {
 				category = "backgrounds"
 				file = "sinus.dds"
 			}
-			colors={
+			colors = {
 				"grey"
 				"dark_grey"
 				"null"
@@ -2027,30 +2199,45 @@ rg_gray_country_after_init = {
 	# 送灰风母舰初始科技
 	give_technology = {
 		tech = tech_object_gray_5
-		message = no 
+		message = no
 	}
 	save_global_event_target_as = gray_owner
 	set_country_flag = gray_owner
 	#初始化好感度和衣柜
-	set_variable = { which = gray_affection value = 1 }
-	set_variable = { which = gray_affection_level value = 1 }
-	set_variable = { which = wg_gray_cloth value = 6 }
-
+	set_variable = {
+		which = gray_affection
+		value = 1
+	}
+	set_variable = {
+		which = gray_affection_level
+		value = 1
+	}
+	set_variable = {
+		which = wg_gray_cloth
+		value = 6
+	}
 	# 否则事件会自动移除好感度特质(回娘家时保留特质）
 	set_country_flag = can_have_wg_affection_country_flag
 	# 默认关闭自动建造中继器
 	# set_country_flag = rg_can_const_hyper_relay
 	# 初始化小灰领袖等级
 	if = {
-		limit = { 
+		limit = {
 			OR = {
-				has_country_flag = origin_rg_gray #遥远约定
-				has_country_flag = origin_gray_country #远星之歌
+				has_country_flag = origin_rg_gray				#遥远约定
+				has_country_flag = origin_gray_country				#远星之歌
 			}
 		}
-		set_variable = { which = rg_gray_level value = 1 }
-	} else = {
-		set_variable = { which = rg_gray_level value = 10 }
+		set_variable = {
+			which = rg_gray_level
+			value = 1
+		}
+	}
+	else = {
+		set_variable = {
+			which = rg_gray_level
+			value = 10
+		}
 	}
 	# 启动开局故事事件链
 	rg_storyline_trigger = yes
@@ -2066,7 +2253,9 @@ rg_timeline_attract_field_init = {
 	#_只有在完成L星门特殊项目后开启[distar.10950]才会用到这些flag, 所以开门前本事件都是可以执行的
 	if = {
 		limit = {
-			NOT = { has_global_flag = l_cluster_opened }
+			NOT = {
+				has_global_flag = l_cluster_opened
+			}
 			OR = {
 				has_global_flag = gray_goo_crisis_set
 				has_global_flag = active_gray_goo
@@ -2086,7 +2275,7 @@ rg_timeline_attract_field_init = {
 
 RG_const_auto_build_effect_event = {
 	if = {
-		limit = { 
+		limit = {
 			solar_system = {
 				#星系必须完成扫描
 				is_surveyed = {
@@ -2094,13 +2283,21 @@ RG_const_auto_build_effect_event = {
 					status = yes
 				}
 				#星系内不能有其他自动工蜂
-				NOT = { any_fleet_in_system = { any_controlled_ship = { is_ship_size = RG_armed_constructor_ship } } }
+				NOT = {
+					any_fleet_in_system = {
+						any_controlled_ship = {
+							is_ship_size = RG_armed_constructor_ship
+						}
+					}
+				}
 			}
 		}
 		#创建自动工蜂国家
 		if = {
-			limit = { 
-				NOT = { exists = event_target:RG_const_country }
+			limit = {
+				NOT = {
+					exists = event_target:RG_const_country
+				}
 			}
 			create_country = {
 				name = RG_const_country
@@ -2141,7 +2338,7 @@ RG_const_auto_build_effect_event = {
 		#释放工蜂
 		switch = {
 			trigger = has_component
-			RG_AUTOCONST_HANGER = { 
+			RG_AUTOCONST_HANGER = {
 				RG_const_auto_build_effect = {
 					count = 1
 					starbase_time = 30
@@ -2166,7 +2363,9 @@ rg_lcluster_spawn_effect = {
 			hyperlane = no
 		}
 		random_system = {
-			limit = { has_star_flag = lcluster1 }
+			limit = {
+				has_star_flag = lcluster1
+			}
 			save_global_event_target_as = lcluster1
 			spawn_system = {
 				min_distance >= 29
@@ -2191,7 +2390,9 @@ rg_lcluster_spawn_effect = {
 			}
 		}
 		random_system = {
-			limit = { has_star_flag = lcluster2 }
+			limit = {
+				has_star_flag = lcluster2
+			}
 			save_global_event_target_as = lcluster2
 			spawn_system = {
 				min_distance >= 30
@@ -2202,7 +2403,9 @@ rg_lcluster_spawn_effect = {
 			}
 		}
 		random_system = {
-			limit = { has_star_flag = lcluster3 }
+			limit = {
+				has_star_flag = lcluster3
+			}
 			save_global_event_target_as = lcluster3
 			spawn_system = {
 				min_distance >= 20
@@ -2220,7 +2423,9 @@ rg_lcluster_spawn_effect = {
 			}
 		}
 		random_system = {
-			limit = { has_star_flag = lcluster4 }
+			limit = {
+				has_star_flag = lcluster4
+			}
 			save_global_event_target_as = lcluster4
 			spawn_system = {
 				min_distance >= 5
@@ -2238,34 +2443,43 @@ rg_lcluster_spawn_effect = {
 			}
 		}
 	}
-
 	random_system = {
-		limit = { has_star_flag = lcluster5 }
+		limit = {
+			has_star_flag = lcluster5
+		}
 		save_global_event_target_as = lcluster5
 	}
 	random_system = {
-		limit = { has_star_flag = lcluster1b }
+		limit = {
+			has_star_flag = lcluster1b
+		}
 		save_global_event_target_as = lcluster1b
 	}
 	random_system = {
-		limit = { has_star_flag = lcluster2b }
+		limit = {
+			has_star_flag = lcluster2b
+		}
 		save_global_event_target_as = lcluster2b
 	}
 	random_system = {
-		limit = { has_star_flag = lcluster3b }
+		limit = {
+			has_star_flag = lcluster3b
+		}
 		save_global_event_target_as = lcluster3b
 	}
 	random_system = {
-		limit = { has_star_flag = lcluster4b }
+		limit = {
+			has_star_flag = lcluster4b
+		}
 		save_global_event_target_as = lcluster4b
 	}
-
 	# clear all hyperlanes to and within the cluster
 	every_system = {
-		limit = { has_star_flag = lcluster }
+		limit = {
+			has_star_flag = lcluster
+		}
 		isolate_system = yes
 	}
-
 	# add hyperlanes
 	event_target:lcluster5 = {
 		add_hyperlane = {
@@ -2311,7 +2525,6 @@ rg_lcluster_spawn_effect = {
 			to = event_target:lcluster2b
 		}
 	}
-
 	event_target:lcluster1 = {
 		add_hyperlane = {
 			from = event_target:lcluster1
@@ -2325,5 +2538,8 @@ rg_lcluster_spawn_effect = {
 		}
 	}
 	set_spawn_system_batch = end
-	country_event = { id = rg_cluster.9 days = -1 }
+	country_event = {
+		id = rg_cluster.9
+		days = -1
+	}
 }

@@ -6,8 +6,6 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_cruiser_section_entity"
 	icon = "GFX_ship_part_core_mid"
-
-
 	component_slot = {
 		name = "STRIKE_CRAFT_01"
 		template = "large_strike_craft"
@@ -28,7 +26,6 @@ ship_section_template = {
 		template = "large_strike_craft"
 		locatorname = "turret_01"
 	}
-
 	component_slot = {
 		name = "PD_01"
 		template = "point_defence_turret"
@@ -44,10 +41,8 @@ ship_section_template = {
 		template = "point_defence_turret"
 		locatorname = "turret_01"
 	}
-
 	large_utility_slots = 6
 	aux_utility_slots = 2
-
 	resources = {
 		category = ship_sections
 		cost = {
@@ -55,6 +50,7 @@ ship_section_template = {
 		}
 	}
 }
+
 #战列2
 ship_section_template = {
 	key = "RG_battleship_interdictor_key"
@@ -62,7 +58,6 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_cruiser_section_entity"
 	icon = "GFX_ship_part_core_mid"
-
 	component_slot = {
 		name = "LARGE_GUN_01"
 		template = "large_turret"
@@ -93,16 +88,13 @@ ship_section_template = {
 		template = "large_turret"
 		locatorname = "turret_01"
 	}
-
 	component_slot = {
 		name = "PD_01"
 		template = "point_defence_turret"
 		locatorname = "turret_01"
 	}
-
 	large_utility_slots = 6
 	aux_utility_slots = 2
-
 	resources = {
 		category = ship_sections
 		cost = {
@@ -110,6 +102,7 @@ ship_section_template = {
 		}
 	}
 }
+
 #泰坦3
 ship_section_template = {
 	key = "RG_titan_interdictor_key"
@@ -117,22 +110,18 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_cruiser_section_entity"
 	icon = "GFX_ship_part_core_mid"
-
 	component_slot = {
 		name = "TITAN_01"
 		template = "invisible_titanic_fixed"
 		locatorname = "turret_01"
 	}
-
 	component_slot = {
 		name = "PD_01"
 		template = "point_defence_turret"
 		locatorname = "turret_01"
 	}
-
 	large_utility_slots = 6
 	aux_utility_slots = 2
-
 	resources = {
 		category = ship_sections
 		cost = {
@@ -140,6 +129,7 @@ ship_section_template = {
 		}
 	}
 }
+
 #线列4
 ship_section_template = {
 	key = "RG_line_interdictor_key"
@@ -147,7 +137,6 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_cruiser_section_entity"
 	icon = "GFX_ship_part_core_mid"
-
 	component_slot = {
 		name = "EXTRA_LARGE_01"
 		template = "invisible_extra_large_fixed"
@@ -158,10 +147,8 @@ ship_section_template = {
 		template = "invisible_extra_large_fixed"
 		locatorname = "turret_01"
 	}
-
 	large_utility_slots = 6
 	aux_utility_slots = 2
-
 	resources = {
 		category = ship_sections
 		cost = {
@@ -169,6 +156,7 @@ ship_section_template = {
 		}
 	}
 }
+
 #雷装5
 ship_section_template = {
 	key = "RG_torpedo_interdictor_key"
@@ -176,7 +164,6 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_cruiser_section_entity"
 	icon = "GFX_ship_part_core_mid"
-
 	component_slot = {
 		name = "TORPEDO_01"
 		template = "invisible_missile_turret"
@@ -207,16 +194,13 @@ ship_section_template = {
 		template = "invisible_missile_turret"
 		locatorname = "turret_01"
 	}
-
 	component_slot = {
 		name = "PD_01"
 		template = "point_defence_turret"
 		locatorname = "turret_01"
 	}
-
 	large_utility_slots = 6
 	aux_utility_slots = 2
-
 	resources = {
 		category = ship_sections
 		cost = {
@@ -232,7 +216,6 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_cruiser_section_entity"
 	icon = "GFX_ship_part_core_mid"
-
 	component_slot = {
 		name = "PD_01"
 		template = "point_defence_turret"
@@ -293,10 +276,8 @@ ship_section_template = {
 		template = "point_defence_turret"
 		locatorname = "turret_01"
 	}
-
 	large_utility_slots = 6
 	aux_utility_slots = 2
-
 	resources = {
 		category = ship_sections
 		cost = {
@@ -312,7 +293,6 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_cruiser_section_entity"
 	icon = "GFX_ship_part_core_mid"
-
 	component_slot = {
 		name = "PD_01"
 		template = "point_defence_turret"
@@ -323,10 +303,8 @@ ship_section_template = {
 		template = "point_defence_turret"
 		locatorname = "turret_01"
 	}
-
 	large_utility_slots = 6
 	aux_utility_slots = 2
-
 	resources = {
 		category = ship_sections
 		cost = {
@@ -342,16 +320,13 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "grey_tempesttw_colossus_entity"
 	icon = "GFX_ship_part_core_mid"
-
 	component_slot = {
 		name = "PLANET_KILLER_GUN_01"
 		template = "invisible_planet_killer_fixed"
-        locatorname = "boope"
+		locatorname = "boope"
 	}
-
 	large_utility_slots = 6
 	aux_utility_slots = 2
-
 	resources = {
 		category = ship_sections
 		cost = {
@@ -367,7 +342,6 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_cruiser_section_entity"
 	icon = "GFX_ship_part_core_mid"
-
 	component_slot = {
 		name = "LARGE_GUN_01"
 		template = "large_turret"
@@ -693,10 +667,8 @@ ship_section_template = {
 		template = "large_turret"
 		locatorname = "turret_01"
 	}
-
 	large_utility_slots = 6
 	aux_utility_slots = 2
-
 	resources = {
 		category = ship_sections
 		cost = {
@@ -712,7 +684,6 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_cruiser_section_entity"
 	icon = "GFX_ship_part_core_mid"
-
 	component_slot = {
 		name = "LARGE_GUN_01"
 		template = "large_turret"
@@ -728,7 +699,6 @@ ship_section_template = {
 		template = "large_turret"
 		locatorname = "turret_01"
 	}
-
 	component_slot = {
 		name = "STRIKE_CRAFT_01"
 		template = "large_strike_craft"
@@ -739,16 +709,13 @@ ship_section_template = {
 		template = "large_strike_craft"
 		locatorname = "turret_01"
 	}
-
 	component_slot = {
 		name = "PD_01"
 		template = "point_defence_turret"
 		locatorname = "turret_01"
 	}
-
 	large_utility_slots = 6
 	aux_utility_slots = 2
-
 	resources = {
 		category = ship_sections
 		cost = {
@@ -764,7 +731,6 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_cruiser_section_entity"
 	icon = "GFX_ship_part_core_mid"
-
 	component_slot = {
 		name = "LARGE_GUN_01"
 		template = "large_turret"
@@ -780,7 +746,6 @@ ship_section_template = {
 		template = "large_turret"
 		locatorname = "turret_01"
 	}
-
 	component_slot = {
 		name = "TORPEDO_01"
 		template = "invisible_missile_turret"
@@ -801,10 +766,8 @@ ship_section_template = {
 		template = "invisible_missile_turret"
 		locatorname = "turret_01"
 	}
-
 	large_utility_slots = 6
 	aux_utility_slots = 2
-
 	resources = {
 		category = ship_sections
 		cost = {
@@ -820,7 +783,6 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_cruiser_section_entity"
 	icon = "GFX_ship_part_core_mid"
-
 	component_slot = {
 		name = "PD_01"
 		template = "point_defence_turret"
@@ -836,10 +798,8 @@ ship_section_template = {
 		template = "point_defence_turret"
 		locatorname = "xl_gun_01"
 	}
-
 	large_utility_slots = 12
 	aux_utility_slots = 2
-
 	resources = {
 		category = ship_sections
 		cost = {
@@ -854,7 +814,6 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_mothership_section_entity"
 	icon = "GFX_ship_part_core_mid"
-
 	component_slot = {
 		name = "PD_01"
 		template = "point_defence_turret"
@@ -875,7 +834,6 @@ ship_section_template = {
 		template = "point_defence_turret"
 		locatorname = "xl_gun_01"
 	}
-
 	component_slot = {
 		name = "LARGE_GUN_01"
 		template = "large_turret"
@@ -886,7 +844,6 @@ ship_section_template = {
 		template = "large_turret"
 		locatorname = "xl_gun_01"
 	}
-	
 	component_slot = {
 		name = "STRIKE_CRAFT_01"
 		template = "large_strike_craft"
@@ -967,10 +924,8 @@ ship_section_template = {
 		template = "large_strike_craft"
 		locatorname = "xl_gun_01"
 	}
-
 	large_utility_slots = 12
 	aux_utility_slots = 2
-
 	resources = {
 		category = ship_sections
 		cost = {
@@ -985,7 +940,6 @@ ship_section_template = {
 	fits_on_slot = "mid"
 	entity = "gatebuilder_01_space_station_section_entity"
 	icon = "GFX_ship_part_core_mid"
-	
 	component_slot = {
 		name = "TITAN_01"
 		template = "invisible_titanic_turret"
@@ -1126,10 +1080,8 @@ ship_section_template = {
 		template = "large_strike_craft"
 		locatorname = "strike_craft_locator_03"
 	}
-	
 	large_utility_slots = 10
 	aux_utility_slots = 2
-
 	resources = {
 		category = ship_sections
 		cost = {
@@ -1145,7 +1097,6 @@ ship_section_template = {
 	should_draw_components = yes
 	entity = "empty_section_entity"
 	icon = "GFX_ship_part_core_mid"
-	
 	component_slot = {
 		name = "TORPEDO_01"
 		template = "invisible_missile_turret"
@@ -1201,9 +1152,7 @@ ship_section_template = {
 		template = "large_strike_craft"
 		locatorname = "root"
 	}
-	
 	aux_utility_slots = 1
-
 	resources = {
 		category = ship_sections
 		cost = {
@@ -1218,7 +1167,6 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_cruiser_section_entity"
 	icon = "GFX_ship_part_core_mid"
-
 	component_slot = {
 		name = "TORPEDO_01"
 		template = "invisible_missile_turret"
@@ -1239,7 +1187,6 @@ ship_section_template = {
 		template = "invisible_missile_turret"
 		locatorname = "turret_01"
 	}
-
 	component_slot = {
 		name = "STRIKE_CRAFT_01"
 		template = "large_strike_craft"
@@ -1255,10 +1202,8 @@ ship_section_template = {
 		template = "large_strike_craft"
 		locatorname = "turret_01"
 	}
-
 	large_utility_slots = 4
 	aux_utility_slots = 1
-
 	resources = {
 		category = ship_sections
 		cost = {
@@ -1273,7 +1218,6 @@ ship_section_template = {
 	fits_on_slot = mid
 	entity = "gatebuilder_01_mothership_section_entity"
 	icon = "GFX_ship_part_core_mid"
-
 	component_slot = {
 		name = "TITAN_01"
 		template = "invisible_titanic_fixed"
@@ -1284,7 +1228,6 @@ ship_section_template = {
 		template = "invisible_titanic_fixed"
 		locatorname = "xl_gun_01"
 	}
-	
 	component_slot = {
 		name = "TORPEDO_01"
 		template = "invisible_missile_turret"
@@ -1295,7 +1238,6 @@ ship_section_template = {
 		template = "invisible_missile_turret"
 		locatorname = "xl_gun_01"
 	}
-
 	component_slot = {
 		name = "LARGE_GUN_01"
 		template = "large_turret"
@@ -1321,10 +1263,8 @@ ship_section_template = {
 		template = "large_turret"
 		locatorname = "xl_gun_01"
 	}
-
 	large_utility_slots = 12
 	aux_utility_slots = 2
-
 	resources = {
 		category = ship_sections
 		cost = {

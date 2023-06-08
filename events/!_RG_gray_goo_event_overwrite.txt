@@ -5,7 +5,6 @@
 # Written by Henrik Thyrwall
 #
 ############################
-
 namespace = graygoo
 # Entering Empty Cluster
 ship_event = {
@@ -14,9 +13,7 @@ ship_event = {
 	desc = "graygoo.550.desc"
 	picture = GFX_evt_ruined_system
 	show_sound = event_radio_chatter
-
 	is_triggered_only = yes
-
 	trigger = {
 		NOR = {
 			has_global_flag = gray_goo_crisis_set
@@ -24,10 +21,15 @@ ship_event = {
 			has_global_flag = gray_goo_empire_set
 			has_global_flag = rg_l_cluster
 		}
-		from = { has_star_flag = lcluster1 }
-		owner = { NOT = { has_country_flag = origin_gray_country }}
+		from = {
+			has_star_flag = lcluster1
+		}
+		owner = {
+			NOT = {
+				has_country_flag = origin_gray_country
+			}
+		}
 	}
-
 	option = {
 		name = graygoo.550.a
 	}
@@ -37,9 +39,7 @@ ship_event = {
 country_event = {
 	id = graygoo.1
 	hide_window = yes
-
 	is_triggered_only = yes
-
 	immediate = {
 		set_update_modifiers_batch = begin
 		awaken_guardians_of_the_galaxy = yes
@@ -53,7 +53,9 @@ country_event = {
 		}
 		event_target:graygoo_factory_system = {
 			random_system_planet = {
-				limit = { has_planet_flag = main_star }
+				limit = {
+					has_planet_flag = main_star
+				}
 				save_event_target_as = main_star
 			}
 			create_country = {
@@ -61,15 +63,15 @@ country_event = {
 				type = "gray_goo"
 				name_list = "graygoo"
 				flag = {
-					icon= {
+					icon = {
 						category = "special"
 						file = "gray_goo.dds"
 					}
-					background= {
+					background = {
 						category = "backgrounds"
 						file = "sinus.dds"
 					}
-					colors={
+					colors = {
 						"grey"
 						"dark_grey"
 						"null"
@@ -112,7 +114,9 @@ country_event = {
 					save_event_target_as = nanite_factory
 				}
 			}
-			every_country = { establish_communications_no_message = event_target:graygoo_country }
+			every_country = {
+				establish_communications_no_message = event_target:graygoo_country
+			}
 			create_fleet = {
 				name = "NAME_Tempest_Fleet"
 				effect = {
@@ -190,9 +194,13 @@ country_event = {
 				}
 			}
 			every_system = {
-				limit = { has_star_flag = lcluster }
+				limit = {
+					has_star_flag = lcluster
+				}
 				every_system_planet = {
-					limit = { is_planet_class = pc_gray_goo }
+					limit = {
+						is_planet_class = pc_gray_goo
+					}
 					create_fleet = {
 						name = "NAME_Tempest_Fleet"
 						effect = {
@@ -216,37 +224,49 @@ country_event = {
 			}
 			event_target:lcluster1 = {
 				random_system_planet = {
-					limit = { is_planet_class = pc_gray_goo }
+					limit = {
+						is_planet_class = pc_gray_goo
+					}
 					save_event_target_as = start_1
 				}
 			}
 			event_target:lcluster2 = {
 				random_system_planet = {
-					limit = { is_planet_class = pc_gray_goo }
+					limit = {
+						is_planet_class = pc_gray_goo
+					}
 					save_event_target_as = start_2
 				}
 			}
 			event_target:lcluster3 = {
 				random_system_planet = {
-					limit = { is_planet_class = pc_gray_goo }
+					limit = {
+						is_planet_class = pc_gray_goo
+					}
 					save_event_target_as = start_3
 				}
 			}
 			event_target:lcluster4 = {
 				random_system_planet = {
-					limit = { is_planet_class = pc_gray_goo }
+					limit = {
+						is_planet_class = pc_gray_goo
+					}
 					save_event_target_as = start_4
 				}
 			}
 			event_target:lcluster5 = {
 				random_system_planet = {
-					limit = { is_planet_class = pc_gray_goo }
+					limit = {
+						is_planet_class = pc_gray_goo
+					}
 					save_event_target_as = start_5
 				}
 			}
 			event_target:lcluster1b = {
 				random_system_planet = {
-					limit = { is_planet_class = pc_gray_goo }
+					limit = {
+						is_planet_class = pc_gray_goo
+					}
 					save_event_target_as = start_6
 				}
 			}
@@ -259,7 +279,10 @@ country_event = {
 			rg_create_graygoo_roamers_7 = yes
 		}
 		event_target:graygoo_country = {
-			country_event = { id = graygoo.3 days = 3600 }
+			country_event = {
+				id = graygoo.3
+				days = 3600
+			}
 		}
 		every_megastructure = {
 			limit = {
@@ -289,7 +312,9 @@ country_event = {
 			}
 		}
 		set_update_modifiers_batch = end
-		country_event = { id = graygoo.10 }
+		country_event = {
+			id = graygoo.10
+		}
 		every_playable_country = {
 			limit = {
 				NOR = {
@@ -298,7 +323,9 @@ country_event = {
 					is_same_value = root
 				}
 			}
-			country_event = { id = graygoo.13 }
+			country_event = {
+				id = graygoo.13
+			}
 		}
 		every_playable_country = {
 			limit = {
@@ -306,11 +333,17 @@ country_event = {
 					has_event_chain = l_cluster_chain
 					has_special_project = RG_LCLUSTER_PROJECT
 				}
-				NOT = { is_same_value = root }
+				NOT = {
+					is_same_value = root
+				}
 			}
-			country_event = { id = graygoo.11 }
+			country_event = {
+				id = graygoo.11
+			}
 		}
-		observer_event = { id = observer.64 }
+		observer_event = {
+			id = observer.64
+		}
 	}
 }
 
@@ -321,9 +354,7 @@ country_event = {
 	desc = "graygoo.110.desc"
 	picture = GFX_evt_l-gateway
 	show_sound = event_radio_chatter
-
 	is_triggered_only = yes
-
 	after = {
 		hidden_effect = {
 			every_playable_country = {
@@ -332,9 +363,13 @@ country_event = {
 						has_special_project = RG_LCLUSTER_PROJECT
 						has_event_chain = l_cluster_chain
 					}
-					NOT = { is_same_value = root }
+					NOT = {
+						is_same_value = root
+					}
 				}
-				country_event = { id = graygoo.111 }
+				country_event = {
+					id = graygoo.111
+				}
 			}
 			every_playable_country = {
 				limit = {
@@ -344,15 +379,18 @@ country_event = {
 						is_same_value = root
 					}
 				}
-				country_event = { id = graygoo.112 }
+				country_event = {
+					id = graygoo.112
+				}
 			}
 		}
 	}
-
 	option = {
 		name = graygoo.10.a
 		hidden_effect = {
-			country_event = { id = graygoo.115 }
+			country_event = {
+				id = graygoo.115
+			}
 		}
 	}
 }
@@ -362,13 +400,13 @@ country_event = {
 	id = graygoo.3
 	hide_window = yes
 	is_triggered_only = yes
-
 	trigger = {
 		event_target:graygoo_factory_system = {
-			any_fleet_in_system = { is_ship_size = graygoo_factory }
+			any_fleet_in_system = {
+				is_ship_size = graygoo_factory
+			}
 		}
 	}
-
 	immediate = {
 		if = {
 			limit = {
@@ -376,13 +414,17 @@ country_event = {
 					has_star_flag = lcluster
 					any_fleet_in_system = {
 						owner = {
-							NOT = { is_same_value = root }
+							NOT = {
+								is_same_value = root
+							}
 						}
 					}
 				}
 			}
 			# Reinforce at factory if someone else is in the cluster...
-			country_event = { id = graygoo.4 }
+			country_event = {
+				id = graygoo.4
+			}
 			# Else spawn reinforcements...
 		}
 		else = {
@@ -515,7 +557,10 @@ country_event = {
 					}
 				}
 			}
-			country_event = { id = graygoo.3 days = 3600 }
+			country_event = {
+				id = graygoo.3
+				days = 3600
+			}
 		}
 	}
 }
@@ -524,12 +569,12 @@ country_event = {
 country_event = {
 	id = graygoo.4
 	hide_window = yes
-
 	is_triggered_only = yes
-
 	immediate = {
 		random_owned_ship = {
-			limit = { is_ship_size = graygoo_factory }
+			limit = {
+				is_ship_size = graygoo_factory
+			}
 			save_event_target_as = graygoo_factory
 		}
 		create_fleet = {
@@ -644,7 +689,10 @@ country_event = {
 				}
 			}
 		}
-		country_event = { id = graygoo.3 days = 3600 }
+		country_event = {
+			id = graygoo.3
+			days = 3600
+		}
 	}
 }
 
@@ -652,39 +700,56 @@ country_event = {
 country_event = {
 	id = graygoo.6
 	hide_window = yes
-
 	is_triggered_only = yes
-
 	trigger = {
 		is_country_type = gray_goo
-		fromfrom = { is_ship_size = graygoo_factory }
+		fromfrom = {
+			is_ship_size = graygoo_factory
+		}
 	}
-
 	immediate = {
 		remove_global_flag = active_gray_goo
 		remove_global_flag = gray_goo_crisis_active
-		fromfromfrom = { save_event_target_as = goo_slayer_ship }
+		fromfromfrom = {
+			save_event_target_as = goo_slayer_ship
+		}
 		from = {
 			save_event_target_as = goo_slayer
-			country_event = { id = graygoo.15 }
-			country_event = { id = rg.200 days = 80 random = 120}
+			country_event = {
+				id = graygoo.15
+			}
+			country_event = {
+				id = rg.200
+				days = 80
+				random = 120
+			}
 		}
 		every_playable_country = {
 			limit = {
 				is_ai = no
-				NOT = { is_same_value = event_target:goo_slayer }
+				NOT = {
+					is_same_value = event_target:goo_slayer
+				}
 			}
-			country_event = { id = graygoo.16 }
+			country_event = {
+				id = graygoo.16
+			}
 		}
-		observer_event = { id = observer.65 }
+		observer_event = {
+			id = observer.65
+		}
 		every_galaxy_planet = {
-			limit = { is_planet_class = pc_gray_goo }
+			limit = {
+				is_planet_class = pc_gray_goo
+			}
 			add_modifier = {
 				modifier = "terraforming_candidate"
 				days = -1
 			}
 		}
-		every_owned_fleet = { destroy_fleet = this }
+		every_owned_fleet = {
+			destroy_fleet = this
+		}
 		destroy_country = yes
 	}
 }
@@ -693,31 +758,46 @@ country_event = {
 country_event = {
 	id = graygoo.180
 	hide_window = yes
-
 	is_triggered_only = yes
-
 	trigger = {
 		is_country_type = gate_builders
-		fromfrom = { is_ship_size = graygoo_factory }
+		fromfrom = {
+			is_ship_size = graygoo_factory
+		}
 	}
-
 	immediate = {
-		fromfromfrom = { save_event_target_as = goo_slayer_ship }
+		fromfromfrom = {
+			save_event_target_as = goo_slayer_ship
+		}
 		from = {
 			save_event_target_as = goo_slayer
-			country_event = { id = graygoo.181 }
-			country_event = { id = rg.200 days = 80 random = 120}
+			country_event = {
+				id = graygoo.181
+			}
+			country_event = {
+				id = rg.200
+				days = 80
+				random = 120
+			}
 		}
 		every_playable_country = {
 			limit = {
 				is_ai = no
-				NOT = { is_same_value = event_target:goo_slayer }
+				NOT = {
+					is_same_value = event_target:goo_slayer
+				}
 			}
-			country_event = { id = graygoo.182 }
+			country_event = {
+				id = graygoo.182
+			}
 		}
-		observer_event = { id = observer.67 }
+		observer_event = {
+			id = observer.67
+		}
 		every_owned_planet = {
-			limit = { is_planet_class = pc_gaia }
+			limit = {
+				is_planet_class = pc_gaia
+			}
 			change_pc = pc_gray_goo
 			reroll_planet = yes
 			destroy_colony = yes
@@ -726,7 +806,9 @@ country_event = {
 				days = -1
 			}
 		}
-		every_owned_fleet = { destroy_fleet = this }
+		every_owned_fleet = {
+			destroy_fleet = this
+		}
 		destroy_country = yes
 	}
 }

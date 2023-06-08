@@ -1,104 +1,124 @@
 namespace = rg_grayleader
-
 # Check list (Initial)
 # 快速返回首页的按钮。
 country_event = {
 	id = rg_grayleader.1
 	hide_window = yes
 	is_triggered_only = yes
-
 	trigger = {
 		NOR = {
 			has_global_flag = has_wsg_mod
 			has_global_flag = kdc_event_mod_active
 		}
-		fromfrom = { OR = {
-			is_country_type = gray 
-			is_same_value = ROOT
-		}}
+		fromfrom = {
+			OR = {
+				is_country_type = gray
+				is_same_value = ROOT
+			}
+		}
 		is_same_value = event_target:gray_owner
 	}
-
 	immediate = {
 		if = {
-			limit = { #500.initial
-			NOR = {
-				has_global_flag = has_wsg_mod
-				has_global_flag = kdc_event_mod_active
+			limit = {
+				#500.initial
+				NOR = {
+					has_global_flag = has_wsg_mod
+					has_global_flag = kdc_event_mod_active
+				}
+				fromfrom = {
+					OR = {
+						is_country_type = gray
+						is_same_value = ROOT
+					}
+				}
+				is_same_value = event_target:gray_owner
+				NOR = {
+					has_country_flag = gray_constship_active
+					has_country_flag = gray_governor_active
+					has_country_flag = gray_warship_active
+					has_country_flag = gray_army_active
+					has_country_flag = gray_reforming
+					has_country_flag = gray_diplomacy_engaged
+				}
 			}
-			fromfrom = { OR = {
-				is_country_type = gray 
-				is_same_value = ROOT
-			}}
-			is_same_value = event_target:gray_owner
-			NOR = {
-				has_country_flag = gray_constship_active
-				has_country_flag = gray_governor_active
-				has_country_flag = gray_warship_active
-				has_country_flag = gray_army_active
-				has_country_flag = gray_reforming
-				has_country_flag = gray_diplomacy_engaged
+			country_event = {
+				id = rg_grayleader.500
 			}
-			}
-			country_event = { id = rg_grayleader.500 }
 		}
-		else_if = { #501.governor
+		else_if = {
+			#501.governor
 			limit = {
 				NOR = {
 					has_global_flag = has_wsg_mod
 					has_global_flag = kdc_event_mod_active
 				}
-				fromfrom = { OR = {
-					is_country_type = gray 
-					is_same_value = ROOT
-				}}
+				fromfrom = {
+					OR = {
+						is_country_type = gray
+						is_same_value = ROOT
+					}
+				}
 				is_same_value = event_target:gray_owner
 				has_country_flag = gray_governor_active
-				NOR = { 
-					has_country_flag = gray_reforming 
+				NOR = {
+					has_country_flag = gray_reforming
 					has_country_flag = gray_diplomacy_engaged
 				}
 				exists = event_target:gray_governor
 			}
-			country_event = { id = rg_grayleader.501 }
+			country_event = {
+				id = rg_grayleader.501
+			}
 		}
-		else_if = { #502.warship
+		else_if = {
+			#502.warship
 			limit = {
 				NOR = {
 					has_global_flag = has_wsg_mod
 					has_global_flag = kdc_event_mod_active
 				}
-				fromfrom = { OR = {
-					is_country_type = gray 
-					is_same_value = ROOT
-				}}
+				fromfrom = {
+					OR = {
+						is_country_type = gray
+						is_same_value = ROOT
+					}
+				}
 				is_same_value = event_target:gray_owner
 				has_country_flag = gray_warship_active
-				NOR = { 
-					has_country_flag = gray_reforming 
+				NOR = {
+					has_country_flag = gray_reforming
 					has_country_flag = gray_diplomacy_engaged
 				}
 				exists = event_target:gray_warship
-				any_owned_fleet = { is_same_value = event_target:gray_warship }
-				event_target:gray_warship = { num_ships > 0 }
+				any_owned_fleet = {
+					is_same_value = event_target:gray_warship
+				}
+				event_target:gray_warship = {
+					num_ships > 0
+				}
 			}
-			country_event = { id = rg_grayleader.502 }
+			country_event = {
+				id = rg_grayleader.502
+			}
 		}
-		else_if = { #503.army
+		else_if = {
+			#503.army
 			limit = {
 				NOR = {
 					has_global_flag = has_wsg_mod
 					has_global_flag = kdc_event_mod_active
 				}
-				fromfrom = { OR = {
-					is_country_type = gray 
-					is_same_value = ROOT
-				}}
+				fromfrom = {
+					OR = {
+						is_country_type = gray
+						is_same_value = ROOT
+					}
+				}
 				has_country_flag = gray_army_active
-				NOR = { 
-					has_country_flag = gray_reforming 
-					has_country_flag = gray_diplomacy_engaged 
-		
+				NOR = {
+					has_country_flag = gray_reforming
+					has_country_flag = gray_diplomacy_engaged
 				}
 				is_same_value = event_target:gray_owner
 				any_owned_army = {
@@ -107,53 +127,69 @@ country_event = {
 						exists = planet
 						AND = {
 							exists = fleet
-							fleet = { num_ships > 0 }
+							fleet = {
+								num_ships > 0
+							}
 						}
 					}
 				}
 			}
-			country_event = { id = rg_grayleader.503 }
+			country_event = {
+				id = rg_grayleader.503
+			}
 		}
-		else_if = { #505.scienceship
+		else_if = {
+			#505.scienceship
 			limit = {
 				NOR = {
 					has_global_flag = has_wsg_mod
 					has_global_flag = kdc_event_mod_active
 				}
-				fromfrom = { OR = {
-					is_country_type = gray 
-					is_same_value = ROOT
-				}}
+				fromfrom = {
+					OR = {
+						is_country_type = gray
+						is_same_value = ROOT
+					}
+				}
 				is_same_value = event_target:gray_owner
 				has_country_flag = gray_constship_active
-				NOR = { 
-					has_country_flag = gray_reforming 
+				NOR = {
+					has_country_flag = gray_reforming
 					has_country_flag = gray_diplomacy_engaged
-		
 				}
 				exists = event_target:global_gray_constship
-				any_owned_fleet = { is_same_value = event_target:global_gray_constship }
-				event_target:global_gray_constship = { num_ships > 0 }
+				any_owned_fleet = {
+					is_same_value = event_target:global_gray_constship
+				}
+				event_target:global_gray_constship = {
+					num_ships > 0
+				}
 			}
-			country_event = { id = rg_grayleader.505 }
-		}
-		else_if = { #504.gale
-		limit = {
-			NOR = {
-				has_global_flag = has_wsg_mod
-				has_global_flag = kdc_event_mod_active
+			country_event = {
+				id = rg_grayleader.505
 			}
-			fromfrom = { OR = {
-				is_country_type = gray 
-				is_same_value = ROOT
-			}}
-			is_same_value = event_target:gray_owner
-			has_country_flag = gray_reforming
 		}
-		country_event = { id = graygoo.504 }
+		else_if = {
+			#504.gale
+			limit = {
+				NOR = {
+					has_global_flag = has_wsg_mod
+					has_global_flag = kdc_event_mod_active
+				}
+				fromfrom = {
+					OR = {
+						is_country_type = gray
+						is_same_value = ROOT
+					}
+				}
+				is_same_value = event_target:gray_owner
+				has_country_flag = gray_reforming
+			}
+			country_event = {
+				id = graygoo.504
+			}
+		}
 	}
-	}
-
 }
 
 # Main Menu (Initial)
@@ -164,39 +200,35 @@ country_event = {
 	desc = "graygoo.500.b.desc"
 	desc = "graygoo.500.c.desc"
 	desc = "graygoo.500.d.desc"
-
 	diplomatic = yes
 	event_window_type = leader_recruit
-
 	picture_event_data = {
 		portrait = event_target:rg_gray_country_leader
 		planet_background = root.capital_scope
 		room = "ethic_spaceship_room"
 	}
-
 	is_triggered_only = yes
-
 	immediate = {
 		set_country_flag = gray_diplomacy_engaged
 	}
-
 	after = {
-		hidden_effect = { 
+		hidden_effect = {
 			remove_country_flag = gray_diplomacy_engaged
 			#初始化衣柜
 			reset_gray_cloth = yes
 		}
 	}
-
 	trigger = {
 		NOR = {
 			has_global_flag = has_wsg_mod
 			has_global_flag = kdc_event_mod_active
 		}
-		fromfrom = { OR = {
-			is_country_type = gray 
-			is_same_value = ROOT
-		}}
+		fromfrom = {
+			OR = {
+				is_country_type = gray
+				is_same_value = ROOT
+			}
+		}
 		is_same_value = event_target:gray_owner
 		NOR = {
 			has_country_flag = gray_constship_active
@@ -207,13 +239,14 @@ country_event = {
 			has_country_flag = gray_diplomacy_engaged
 		}
 	}
-
-	option = { # Governor
+	option = {
+		# Governor
 		name = graygoo.500.a
 		response_text = graygoo.500.a.response
-		
 		trigger = {
-			NOT = { has_country_flag = gray_governor_active }
+			NOT = {
+				has_country_flag = gray_governor_active
+			}
 		}
 		hidden_effect = {
 			rg_create_gray_governor = yes
@@ -222,12 +255,14 @@ country_event = {
 			}
 		}
 	}
-	option = { # Warship
+	option = {
+		# Warship
 		name = graygoo.500.b
 		response_text = graygoo.500.b.response
-		
 		trigger = {
-			NOT = { has_country_flag = gray_warship_active }
+			NOT = {
+				has_country_flag = gray_warship_active
+			}
 		}
 		hidden_effect = {
 			rg_create_gray_warship = yes
@@ -236,12 +271,14 @@ country_event = {
 			}
 		}
 	}
-	option = { # Army
+	option = {
+		# Army
 		name = graygoo.500.c
 		response_text = graygoo.500.c.response
-		
 		trigger = {
-			NOT = { has_country_flag = gray_army_active }
+			NOT = {
+				has_country_flag = gray_army_active
+			}
 		}
 		hidden_effect = {
 			rg_create_gray_army = yes
@@ -250,12 +287,14 @@ country_event = {
 			}
 		}
 	}
-	option = { # const
+	option = {
+		# const
 		name = rg_const
 		response_text = rg_const.500.response
-		
 		trigger = {
-			NOT = { has_country_flag = gray_const_active }
+			NOT = {
+				has_country_flag = gray_const_active
+			}
 		}
 		hidden_effect = {
 			rg_create_gray_const = yes
@@ -264,7 +303,8 @@ country_event = {
 			}
 		}
 	}
-	option = { # help
+	option = {
+		# help
 		name = rg_help
 		hidden_effect = {
 			country_event = {
@@ -272,13 +312,11 @@ country_event = {
 			}
 		}
 	}
-	
 	option = {
 		name = graygoo.500.d
 		tag = hire_leader
 		default_hide_option = yes
 	}
-
 	option = {
 		name = graygoo.500.prepage
 		tag = dismiss_leader
@@ -298,71 +336,74 @@ country_event = {
 	desc = "graygoo.501.b.desc"
 	desc = "graygoo.501.c.desc"
 	desc = "graygoo.501.d.desc"
-
 	diplomatic = yes
 	event_window_type = leader_recruit
-
 	picture_event_data = {
 		portrait = event_target:rg_gray_country_leader
 		planet_background = event_target:gray_governor_planet
 		room = root
 	}
-
 	is_triggered_only = yes
-
 	trigger = {
 		NOR = {
 			has_global_flag = has_wsg_mod
 			has_global_flag = kdc_event_mod_active
 		}
-		fromfrom = { OR = {
-			is_country_type = gray 
-			is_same_value = ROOT
-		}}
+		fromfrom = {
+			OR = {
+				is_country_type = gray
+				is_same_value = ROOT
+			}
+		}
 		is_same_value = event_target:gray_owner
 		has_country_flag = gray_governor_active
-		NOR = { 
-			has_country_flag = gray_reforming 
+		NOR = {
+			has_country_flag = gray_reforming
 			has_country_flag = gray_diplomacy_engaged
 		}
 		exists = event_target:gray_governor
 	}
-
 	immediate = {
 		set_country_flag = gray_diplomacy_engaged
 		if = {
 			limit = {
 				any_owned_planet = {
 					exists = sector.leader
-					sector.leader = { is_same_value = event_target:gray_governor }
+					sector.leader = {
+						is_same_value = event_target:gray_governor
+					}
 				}
 			}
 			random_owned_planet = {
 				limit = {
 					exists = sector.leader
-					sector.leader = { is_same_value = event_target:gray_governor }
+					sector.leader = {
+						is_same_value = event_target:gray_governor
+					}
 				}
 				save_event_target_as = gray_governor_planet
 			}
 		}
 		else = {
-			capital_scope = { save_event_target_as = gray_governor_planet }
+			capital_scope = {
+				save_event_target_as = gray_governor_planet
+			}
 		}
 	}
-
 	after = {
-		hidden_effect = { 
-			remove_country_flag = gray_diplomacy_engaged 
+		hidden_effect = {
+			remove_country_flag = gray_diplomacy_engaged
 			reset_gray_cloth = yes
 		}
 	}
-
-	option = { # Warship
+	option = {
+		# Warship
 		name = graygoo.500.b
 		response_text = graygoo.501.b.response
-		
 		allow = {
-			hidden_trigger = { exists = event_target:gray_governor } # To prevent exploit
+			hidden_trigger = {
+				exists = event_target:gray_governor
+			}			# To prevent exploit
 		}
 		hidden_effect = {
 			rg_create_gray_warship = yes
@@ -371,12 +412,14 @@ country_event = {
 			}
 		}
 	}
-	option = { # Army
+	option = {
+		# Army
 		name = graygoo.500.c
 		response_text = graygoo.501.c.response
-		
 		allow = {
-			hidden_trigger = { exists = event_target:gray_governor }
+			hidden_trigger = {
+				exists = event_target:gray_governor
+			}
 		}
 		hidden_effect = {
 			rg_create_gray_army = yes
@@ -385,12 +428,14 @@ country_event = {
 			}
 		}
 	}
-	option = { # const
+	option = {
+		# const
 		name = rg_const
 		response_text = rg_const.501.response
-		
 		allow = {
-			hidden_trigger = { exists = event_target:gray_governor }
+			hidden_trigger = {
+				exists = event_target:gray_governor
+			}
 		}
 		hidden_effect = {
 			rg_create_gray_const = yes
@@ -399,7 +444,8 @@ country_event = {
 			}
 		}
 	}
-	option = { # help
+	option = {
+		# help
 		name = rg_help
 		hidden_effect = {
 			country_event = {
@@ -407,13 +453,11 @@ country_event = {
 			}
 		}
 	}
-
 	option = {
 		name = graygoo.500.d
 		tag = hire_leader
 		default_hide_option = yes
 	}
-
 	option = {
 		name = graygoo.500.prepage
 		tag = dismiss_leader
@@ -433,64 +477,78 @@ country_event = {
 	desc = "graygoo.502.b.desc"
 	desc = "graygoo.502.c.desc"
 	desc = "graygoo.502.d.desc"
-
 	diplomatic = yes
 	event_window_type = leader_recruit
-
 	picture_event_data = {
 		portrait = event_target:rg_gray_country_leader
 		room = "ethic_spaceship_room"
 	}
-
 	is_triggered_only = yes
-
 	trigger = {
 		NOR = {
 			has_global_flag = has_wsg_mod
 			has_global_flag = kdc_event_mod_active
 		}
-		fromfrom = { OR = {
-			is_country_type = gray 
-			is_same_value = ROOT
-		}}
+		fromfrom = {
+			OR = {
+				is_country_type = gray
+				is_same_value = ROOT
+			}
+		}
 		is_same_value = event_target:gray_owner
 		has_country_flag = gray_warship_active
-		NOR = { 
-			has_country_flag = gray_reforming 
+		NOR = {
+			has_country_flag = gray_reforming
 			has_country_flag = gray_diplomacy_engaged
 		}
 		exists = event_target:gray_warship
-		any_owned_fleet = { is_same_value = event_target:gray_warship }
-		event_target:gray_warship = { num_ships > 0 }
+		any_owned_fleet = {
+			is_same_value = event_target:gray_warship
+		}
+		event_target:gray_warship = {
+			num_ships > 0
+		}
 	}
-
 	immediate = {
 		set_country_flag = gray_diplomacy_engaged
-		capital_scope = { solar_system = { starbase = { save_event_target_as = gray_owner_capital_starbase }}}
+		capital_scope = {
+			solar_system = {
+				starbase = {
+					save_event_target_as = gray_owner_capital_starbase
+				}
+			}
+		}
 	}
-
 	after = {
-		hidden_effect = { 
-			remove_country_flag = gray_diplomacy_engaged 
+		hidden_effect = {
+			remove_country_flag = gray_diplomacy_engaged
 			reset_gray_cloth = yes
 		}
 	}
-
-	option = { # Governor
+	option = {
+		# Governor
 		name = graygoo.500.a
 		response_text = graygoo.502.a.response
-		
 		allow = {
-			hidden_trigger = { # To prevent exploit
-				event_target:gray_warship = { num_ships > 0 }
+			hidden_trigger = {
+				# To prevent exploit
+				event_target:gray_warship = {
+					num_ships > 0
+				}
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.a
-				event_target:gray_warship = { is_in_combat = no }
+				event_target:gray_warship = {
+					is_in_combat = no
+				}
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.b
-				event_target:gray_warship = { NOT = { has_hp_percentage < 0.97 } }
+				event_target:gray_warship = {
+					NOT = {
+						has_hp_percentage < 0.97
+					}
+				}
 			}
 		}
 		hidden_effect = {
@@ -500,21 +558,29 @@ country_event = {
 			}
 		}
 	}
-	option = { # Army
+	option = {
+		# Army
 		name = graygoo.500.c
 		response_text = graygoo.502.c.response
-		
 		allow = {
 			hidden_trigger = {
-				event_target:gray_warship = { num_ships > 0 }
+				event_target:gray_warship = {
+					num_ships > 0
+				}
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.a
-				event_target:gray_warship = { is_in_combat = no }
+				event_target:gray_warship = {
+					is_in_combat = no
+				}
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.b
-				event_target:gray_warship = { NOT = { has_hp_percentage < 0.97 } }
+				event_target:gray_warship = {
+					NOT = {
+						has_hp_percentage < 0.97
+					}
+				}
 			}
 		}
 		hidden_effect = {
@@ -524,26 +590,35 @@ country_event = {
 			}
 		}
 	}
-
-	option = { # Juggernaut
+	option = {
+		# Juggernaut
 		name = RG_graygoo.500.d
 		response_text = RG_graygoo.502.d.response
-		
 		trigger = {
 			has_country_flag = rg_juggernaut_fired
-			NOT = { has_country_flag = gray_warship_is_juggernaut }
+			NOT = {
+				has_country_flag = gray_warship_is_juggernaut
+			}
 		}
 		allow = {
 			hidden_trigger = {
-				event_target:gray_warship = { num_ships > 0 }
+				event_target:gray_warship = {
+					num_ships > 0
+				}
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.a
-				event_target:gray_warship = { is_in_combat = no }
+				event_target:gray_warship = {
+					is_in_combat = no
+				}
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.b
-				event_target:gray_warship = { NOT = { has_hp_percentage < 0.97 } }
+				event_target:gray_warship = {
+					NOT = {
+						has_hp_percentage < 0.97
+					}
+				}
 			}
 		}
 		custom_tooltip = rg_need_manual_toggle
@@ -554,26 +629,33 @@ country_event = {
 			}
 		}
 	}
-
-	option = { # Warship
+	option = {
+		# Warship
 		name = RG_graygoo.500.e
 		response_text = RG_graygoo.502.e.response
-		
 		trigger = {
 			has_country_flag = rg_juggernaut_fired
 			has_country_flag = gray_warship_is_juggernaut
 		}
 		allow = {
 			hidden_trigger = {
-				event_target:gray_warship = { num_ships > 0 }
+				event_target:gray_warship = {
+					num_ships > 0
+				}
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.a
-				event_target:gray_warship = { is_in_combat = no }
+				event_target:gray_warship = {
+					is_in_combat = no
+				}
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.b
-				event_target:gray_warship = { NOT = { has_hp_percentage < 0.97 } }
+				event_target:gray_warship = {
+					NOT = {
+						has_hp_percentage < 0.97
+					}
+				}
 			}
 		}
 		custom_tooltip = rg_need_manual_toggle
@@ -584,21 +666,29 @@ country_event = {
 			}
 		}
 	}
-	option = { # const
+	option = {
+		# const
 		name = rg_const
 		response_text = rg_const.502.response
-		
 		allow = {
 			hidden_trigger = {
-				event_target:gray_warship = { num_ships > 0 }
+				event_target:gray_warship = {
+					num_ships > 0
+				}
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.a
-				event_target:gray_warship = { is_in_combat = no }
+				event_target:gray_warship = {
+					is_in_combat = no
+				}
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.b
-				event_target:gray_warship = { NOT = { has_hp_percentage < 0.97 } }
+				event_target:gray_warship = {
+					NOT = {
+						has_hp_percentage < 0.97
+					}
+				}
 			}
 		}
 		hidden_effect = {
@@ -608,13 +698,14 @@ country_event = {
 			}
 		}
 	}
-
-	option = { #升级-2
+	option = {
+		#升级-2
 		name = rg_levelup_2
-		
 		trigger = {
-			event_target:gray_leader_admiral = { has_skill >= 10 }
-			NOR = { 
+			event_target:gray_leader_admiral = {
+				has_skill >= 10
+			}
+			NOR = {
 				has_country_flag = rg_gray_level_2
 				has_country_flag = rg_gray_level_3
 				has_special_project = RG_GRAY_MOD1
@@ -622,23 +713,38 @@ country_event = {
 		}
 		allow = {
 			hidden_trigger = {
-				event_target:gray_warship = { num_ships > 0 }
+				event_target:gray_warship = {
+					num_ships > 0
+				}
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.a
-				event_target:gray_warship = { is_in_combat = no }
+				event_target:gray_warship = {
+					is_in_combat = no
+				}
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.b
-				event_target:gray_warship = { NOT = { has_hp_percentage < 0.97 } }
+				event_target:gray_warship = {
+					NOT = {
+						has_hp_percentage < 0.97
+					}
+				}
 			}
-
 			custom_tooltip = {
 				fail_text = requires_rg_graylevel_higherthan_25
-				event_target:gray_leader_admiral = { has_skill >= 10 }
+				event_target:gray_leader_admiral = {
+					has_skill >= 10
+				}
 			}
-			resource_stockpile_compare = { resource = energy value >= 40000 }
-			resource_stockpile_compare = { resource = alloys value >= 40000 }
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 40000
+			}
+			resource_stockpile_compare = {
+				resource = alloys
+				value >= 40000
+			}
 		}
 		custom_tooltip = rg_levelup_2.tooltip
 		enable_special_project = {
@@ -651,39 +757,54 @@ country_event = {
 			alloys = -40000
 		}
 	}
-
-	option = { #升级-3
+	option = {
+		#升级-3
 		name = rg_levelup_3
-		
 		trigger = {
 			AND = {
-				event_target:gray_leader_admiral = { has_skill >= 10 }
+				event_target:gray_leader_admiral = {
+					has_skill >= 10
+				}
 				has_country_flag = rg_gray_level_2
 			}
-			NOR = { 
+			NOR = {
 				has_country_flag = rg_gray_level_3
 				has_special_project = RG_GRAY_MOD2
 			}
 		}
 		allow = {
-			hidden_trigger = { # To prevent exploit
-				event_target:gray_warship = { num_ships > 0 }
+			hidden_trigger = {
+				# To prevent exploit
+				event_target:gray_warship = {
+					num_ships > 0
+				}
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.a
-				event_target:gray_warship = { is_in_combat = no }
+				event_target:gray_warship = {
+					is_in_combat = no
+				}
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.b
-				event_target:gray_warship = { NOT = { has_hp_percentage < 0.97 } }
+				event_target:gray_warship = {
+					NOT = {
+						has_hp_percentage < 0.97
+					}
+				}
 			}
-		
 			custom_tooltip = {
 				fail_text = requires_rg_graylevel_higherthan_50
 				has_technology = tech_juggernaut
 			}
-			resource_stockpile_compare = { resource = energy value >= 150000 }
-			resource_stockpile_compare = { resource = alloys value >= 150000 }
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 150000
+			}
+			resource_stockpile_compare = {
+				resource = alloys
+				value >= 150000
+			}
 		}
 		custom_tooltip = rg_levelup_2.tooltip
 		enable_special_project = {
@@ -696,10 +817,9 @@ country_event = {
 			alloys = -150000
 		}
 	}
-
-	option = { # 购买主宰
+	option = {
+		# 购买主宰
 		name = rg.4.d
-		
 		trigger = {
 			NOR = {
 				has_country_flag = gray_reforming
@@ -707,10 +827,15 @@ country_event = {
 			}
 			has_country_flag = rg_gray_level_3
 		}
-
 		allow = {
-			resource_stockpile_compare = { resource = energy value >= 150000 }
-			resource_stockpile_compare = { resource = alloys value >= 150000 }
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 150000
+			}
+			resource_stockpile_compare = {
+				resource = alloys
+				value >= 150000
+			}
 			has_technology = tech_juggernaut
 		}
 		custom_tooltip = rg_levelup_2.tooltip
@@ -719,16 +844,15 @@ country_event = {
 			location = event_target:gray_owner_capital_starbase
 			owner = root
 		}
-	    add_resource = {
+		add_resource = {
 			energy = -150000
 			alloys = -150000
-	    }
+		}
 	}
-
-	option = { # 开启隐形
+	option = {
+		# 开启隐形
 		name = rg.4.e
 		response_text = rg_cloak.a.response
-		
 		trigger = {
 			any_owned_fleet = {
 				AND = {
@@ -737,7 +861,6 @@ country_event = {
 				}
 			}
 		}
-
 		hidden_effect = {
 			every_owned_fleet = {
 				limit = {
@@ -748,13 +871,11 @@ country_event = {
 				set_cloaking_active = yes
 			}
 		}
-
 	}
-
-	option = { # 关闭隐形
+	option = {
+		# 关闭隐形
 		name = rg.4.f
 		response_text = rg_cloak_off.a.response
-		
 		trigger = {
 			any_owned_fleet = {
 				AND = {
@@ -763,7 +884,6 @@ country_event = {
 				}
 			}
 		}
-
 		hidden_effect = {
 			every_owned_fleet = {
 				limit = {
@@ -774,15 +894,12 @@ country_event = {
 				set_cloaking_active = no
 			}
 		}
-
 	}
-	
 	option = {
 		name = graygoo.500.d
 		tag = hire_leader
 		default_hide_option = yes
 	}
-
 	option = {
 		name = graygoo.500.prepage
 		tag = dismiss_leader
@@ -802,31 +919,28 @@ country_event = {
 	desc = "graygoo.503.b.desc"
 	desc = "graygoo.503.c.desc"
 	desc = "graygoo.503.d.desc"
-
 	diplomatic = yes
 	event_window_type = leader_recruit
-
 	picture_event_data = {
 		portrait = event_target:rg_gray_country_leader
 		room = "ethic_spaceship_room"
 	}
-
 	is_triggered_only = yes
-
 	trigger = {
 		NOR = {
 			has_global_flag = has_wsg_mod
 			has_global_flag = kdc_event_mod_active
 		}
-		fromfrom = { OR = {
-			is_country_type = gray 
-			is_same_value = ROOT
-		}}
+		fromfrom = {
+			OR = {
+				is_country_type = gray
+				is_same_value = ROOT
+			}
+		}
 		has_country_flag = gray_army_active
-		NOR = { 
-			has_country_flag = gray_reforming 
-			has_country_flag = gray_diplomacy_engaged 
-
+		NOR = {
+			has_country_flag = gray_reforming
+			has_country_flag = gray_diplomacy_engaged
 		}
 		is_same_value = event_target:gray_owner
 		any_owned_army = {
@@ -835,36 +949,38 @@ country_event = {
 				exists = planet
 				AND = {
 					exists = fleet
-					fleet = { num_ships > 0 }
+					fleet = {
+						num_ships > 0
+					}
 				}
 			}
 		}
 	}
-
 	immediate = {
 		set_country_flag = gray_diplomacy_engaged
 	}
-
 	after = {
-		hidden_effect = { 
-			remove_country_flag = gray_diplomacy_engaged 
+		hidden_effect = {
+			remove_country_flag = gray_diplomacy_engaged
 			reset_gray_cloth = yes
 		}
 	}
-
-	option = { # Governor
+	option = {
+		# Governor
 		name = graygoo.500.a
 		response_text = graygoo.503.a.response
-		
 		allow = {
-			hidden_trigger = {  # To prevent exploit
+			hidden_trigger = {
+				# To prevent exploit
 				any_owned_army = {
 					army_type = gray_army
 					OR = {
 						exists = planet
 						AND = {
 							exists = fleet
-							fleet = { num_ships > 0 }
+							fleet = {
+								num_ships > 0
+							}
 						}
 					}
 				}
@@ -874,8 +990,12 @@ country_event = {
 				any_owned_army = {
 					army_type = gray_army
 					if = {
-						limit = { exists = planet }
-						planet = { has_ground_combat = no }
+						limit = {
+							exists = planet
+						}
+						planet = {
+							has_ground_combat = no
+						}
 					}
 				}
 			}
@@ -888,7 +1008,9 @@ country_event = {
 						exists = planet
 						AND = {
 							exists = fleet
-							fleet = { num_ships > 0 }
+							fleet = {
+								num_ships > 0
+							}
 						}
 					}
 				}
@@ -898,8 +1020,12 @@ country_event = {
 				any_owned_army = {
 					army_type = gray_army
 					if = {
-						limit = { exists = fleet }
-						fleet = { is_in_combat = no }
+						limit = {
+							exists = fleet
+						}
+						fleet = {
+							is_in_combat = no
+						}
 					}
 				}
 			}
@@ -911,10 +1037,10 @@ country_event = {
 			}
 		}
 	}
-	option = { # Warship
+	option = {
+		# Warship
 		name = graygoo.500.b
 		response_text = graygoo.503.b.response
-		
 		allow = {
 			hidden_trigger = {
 				any_owned_army = {
@@ -923,7 +1049,9 @@ country_event = {
 						exists = planet
 						AND = {
 							exists = fleet
-							fleet = { num_ships > 0 }
+							fleet = {
+								num_ships > 0
+							}
 						}
 					}
 				}
@@ -933,8 +1061,12 @@ country_event = {
 				any_owned_army = {
 					army_type = gray_army
 					if = {
-						limit = { exists = planet }
-						planet = { has_ground_combat = no }
+						limit = {
+							exists = planet
+						}
+						planet = {
+							has_ground_combat = no
+						}
 					}
 				}
 			}
@@ -947,7 +1079,9 @@ country_event = {
 						exists = planet
 						AND = {
 							exists = fleet
-							fleet = { num_ships > 0 }
+							fleet = {
+								num_ships > 0
+							}
 						}
 					}
 				}
@@ -957,8 +1091,12 @@ country_event = {
 				any_owned_army = {
 					army_type = gray_army
 					if = {
-						limit = { exists = fleet }
-						fleet = { is_in_combat = no }
+						limit = {
+							exists = fleet
+						}
+						fleet = {
+							is_in_combat = no
+						}
 					}
 				}
 			}
@@ -970,10 +1108,10 @@ country_event = {
 			}
 		}
 	}
-	option = { # const
+	option = {
+		# const
 		name = rg_const
 		response_text = rg_const.503.response
-		
 		allow = {
 			hidden_trigger = {
 				any_owned_army = {
@@ -982,7 +1120,9 @@ country_event = {
 						exists = planet
 						AND = {
 							exists = fleet
-							fleet = { num_ships > 0 }
+							fleet = {
+								num_ships > 0
+							}
 						}
 					}
 				}
@@ -992,8 +1132,12 @@ country_event = {
 				any_owned_army = {
 					army_type = gray_army
 					if = {
-						limit = { exists = planet }
-						planet = { has_ground_combat = no }
+						limit = {
+							exists = planet
+						}
+						planet = {
+							has_ground_combat = no
+						}
 					}
 				}
 			}
@@ -1006,7 +1150,9 @@ country_event = {
 						exists = planet
 						AND = {
 							exists = fleet
-							fleet = { num_ships > 0 }
+							fleet = {
+								num_ships > 0
+							}
 						}
 					}
 				}
@@ -1016,8 +1162,12 @@ country_event = {
 				any_owned_army = {
 					army_type = gray_army
 					if = {
-						limit = { exists = fleet }
-						fleet = { is_in_combat = no }
+						limit = {
+							exists = fleet
+						}
+						fleet = {
+							is_in_combat = no
+						}
 					}
 				}
 			}
@@ -1029,11 +1179,10 @@ country_event = {
 			}
 		}
 	}
-
-	option = { # 开启隐形
+	option = {
+		# 开启隐形
 		name = rg.4.e
 		response_text = rg_cloak.a.response
-		
 		trigger = {
 			any_owned_fleet = {
 				AND = {
@@ -1042,7 +1191,6 @@ country_event = {
 				}
 			}
 		}
-
 		hidden_effect = {
 			every_owned_fleet = {
 				limit = {
@@ -1053,13 +1201,11 @@ country_event = {
 				set_cloaking_active = yes
 			}
 		}
-
 	}
-
-	option = { # 关闭隐形
+	option = {
+		# 关闭隐形
 		name = rg.4.f
 		response_text = rg_cloak_off.a.response
-		
 		trigger = {
 			any_owned_fleet = {
 				AND = {
@@ -1068,7 +1214,6 @@ country_event = {
 				}
 			}
 		}
-
 		hidden_effect = {
 			every_owned_fleet = {
 				limit = {
@@ -1079,15 +1224,12 @@ country_event = {
 				set_cloaking_active = no
 			}
 		}
-
 	}
-
 	option = {
 		name = graygoo.500.d
 		tag = hire_leader
 		default_hide_option = yes
 	}
-
 	option = {
 		name = graygoo.500.prepage
 		tag = dismiss_leader
@@ -1104,41 +1246,46 @@ country_event = {
 	id = rg_grayleader.504
 	title = "graygoo.500.title"
 	desc = "graygoo.504.desc"
-
 	diplomatic = yes
-
 	is_triggered_only = yes
-
 	trigger = {
 		NOR = {
 			has_global_flag = has_wsg_mod
 			has_global_flag = kdc_event_mod_active
 		}
-		from = { OR = {
-			is_country_type = gray 
-			is_same_value = ROOT
-		}}
+		from = {
+			OR = {
+				is_country_type = gray
+				is_same_value = ROOT
+			}
+		}
 		is_same_value = event_target:gray_owner
 		has_country_flag = gray_reforming
 	}
-
 	option = {
 		name = OK
 	}
-
 	option = {
 		name = rg_graygoo.504.a
 		allow = {
 			has_country_flag = gray_reforming
-			resource_stockpile_compare = { resource = nanites value >= 1000 }
-			resource_stockpile_compare = { resource = alloys value >= 50000 }
+			resource_stockpile_compare = {
+				resource = nanites
+				value >= 1000
+			}
+			resource_stockpile_compare = {
+				resource = alloys
+				value >= 50000
+			}
 		}
 		add_resource = {
 			nanites = -1000
 			alloys = -50000
 		}
 		remove_modifier = "gray_scattered"
-		country_event = { id = graygoo.512 }
+		country_event = {
+			id = graygoo.512
+		}
 	}
 }
 
@@ -1150,67 +1297,78 @@ country_event = {
 	desc = "graygoo.505.b.desc"
 	desc = "graygoo.505.c.desc"
 	desc = "graygoo.505.d.desc"
-
 	diplomatic = yes
 	event_window_type = leader_recruit
-
 	picture_event_data = {
 		portrait = event_target:rg_gray_country_leader
 		room = "ethic_spaceship_room"
 	}
-
 	is_triggered_only = yes
-
 	trigger = {
 		NOR = {
 			has_global_flag = has_wsg_mod
 			has_global_flag = kdc_event_mod_active
 		}
-		fromfrom = { OR = {
-			is_country_type = gray 
-			is_same_value = ROOT
-		}}
+		fromfrom = {
+			OR = {
+				is_country_type = gray
+				is_same_value = ROOT
+			}
+		}
 		is_same_value = event_target:gray_owner
 		has_country_flag = gray_constship_active
-		NOR = { 
-			has_country_flag = gray_reforming 
+		NOR = {
+			has_country_flag = gray_reforming
 			has_country_flag = gray_diplomacy_engaged
-
 		}
 		exists = event_target:global_gray_constship
-		any_owned_fleet = { is_same_value = event_target:global_gray_constship }
-		event_target:global_gray_constship = { num_ships > 0 }
+		any_owned_fleet = {
+			is_same_value = event_target:global_gray_constship
+		}
+		event_target:global_gray_constship = {
+			num_ships > 0
+		}
 	}
-
 	immediate = {
 		set_country_flag = gray_diplomacy_engaged
 	}
-
 	after = {
-		hidden_effect = { 
-			remove_country_flag = gray_diplomacy_engaged 
+		hidden_effect = {
+			remove_country_flag = gray_diplomacy_engaged
 		}
 	}
-
-	option = { # Governor
+	option = {
+		# Governor
 		name = graygoo.500.a
 		response_text = graygoo.505.a.response
-		
 		allow = {
-			hidden_trigger = { # To prevent exploit
-				event_target:global_gray_constship = { num_ships > 0 }
+			hidden_trigger = {
+				# To prevent exploit
+				event_target:global_gray_constship = {
+					num_ships > 0
+				}
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.a
-				event_target:global_gray_constship = { is_in_combat = no }
+				event_target:global_gray_constship = {
+					is_in_combat = no
+				}
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.b
-				event_target:global_gray_constship = { NOT = { has_hp_percentage < 0.97 } }
+				event_target:global_gray_constship = {
+					NOT = {
+						has_hp_percentage < 0.97
+					}
+				}
 			}
 			custom_tooltip = {
 				fail_text = gray_become_ruler
-				NOT = { ruler = { has_leader_flag = "gray_leader" }}
+				NOT = {
+					ruler = {
+						has_leader_flag = "gray_leader"
+					}
+				}
 			}
 		}
 		hidden_effect = {
@@ -1220,21 +1378,30 @@ country_event = {
 			}
 		}
 	}
-	option = { # Warship
+	option = {
+		# Warship
 		name = graygoo.500.b
 		response_text = graygoo.505.b.response
-		
 		allow = {
-			hidden_trigger = { # To prevent exploit
-				event_target:global_gray_constship = { num_ships > 0 }
+			hidden_trigger = {
+				# To prevent exploit
+				event_target:global_gray_constship = {
+					num_ships > 0
+				}
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.a
-				event_target:global_gray_constship = { is_in_combat = no }
+				event_target:global_gray_constship = {
+					is_in_combat = no
+				}
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.b
-				event_target:global_gray_constship = { NOT = { has_hp_percentage < 0.97 } }
+				event_target:global_gray_constship = {
+					NOT = {
+						has_hp_percentage < 0.97
+					}
+				}
 			}
 		}
 		hidden_effect = {
@@ -1244,21 +1411,30 @@ country_event = {
 			}
 		}
 	}
-	option = { # Army
+	option = {
+		# Army
 		name = graygoo.500.c
 		response_text = graygoo.505.c.response
-		
 		allow = {
-			hidden_trigger = { # To prevent exploit
-				event_target:global_gray_constship = { num_ships > 0 }
+			hidden_trigger = {
+				# To prevent exploit
+				event_target:global_gray_constship = {
+					num_ships > 0
+				}
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.a
-				event_target:global_gray_constship = { is_in_combat = no }
+				event_target:global_gray_constship = {
+					is_in_combat = no
+				}
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.b
-				event_target:global_gray_constship = { NOT = { has_hp_percentage < 0.97 } }
+				event_target:global_gray_constship = {
+					NOT = {
+						has_hp_percentage < 0.97
+					}
+				}
 			}
 		}
 		hidden_effect = {
@@ -1268,41 +1444,38 @@ country_event = {
 			}
 		}
 	}
-
-#	option = { # 开启建造中继器
-#		name = rg.5.e
-#		trigger = {
-#			has_country_flag = rg_can_const_hyper_relay
-#		}
-#
-#		hidden_effect = {
-#			remove_country_flag = rg_can_const_hyper_relay
-#		}
-#
-#	}
-#
-#	option = { # 关闭建造中继器
-#		name = rg.5.f
-#		trigger = {
-#			NOT = {
-#				has_country_flag = rg_can_const_hyper_relay
-#			}
-#		}
-#
-#		hidden_effect = {
-#			hidden_effect = {
-#				set_country_flag = rg_can_const_hyper_relay
-#			}
-#		}
-#
-#	}
-
+	#	option = { # 开启建造中继器
+	#		name = rg.5.e
+	#		trigger = {
+	#			has_country_flag = rg_can_const_hyper_relay
+	#		}
+	#
+	#		hidden_effect = {
+	#			remove_country_flag = rg_can_const_hyper_relay
+	#		}
+	#
+	#	}
+	#
+	#	option = { # 关闭建造中继器
+	#		name = rg.5.f
+	#		trigger = {
+	#			NOT = {
+	#				has_country_flag = rg_can_const_hyper_relay
+	#			}
+	#		}
+	#
+	#		hidden_effect = {
+	#			hidden_effect = {
+	#				set_country_flag = rg_can_const_hyper_relay
+	#			}
+	#		}
+	#
+	#	}
 	option = {
 		name = graygoo.500.d
 		tag = hire_leader
 		default_hide_option = yes
 	}
-
 	option = {
 		name = graygoo.500.prepage
 		tag = dismiss_leader
@@ -1319,41 +1492,41 @@ country_event = {
 	id = rg_grayleader.4
 	title = "graygoo.500.title"
 	desc = "rg.4.a.desc"
-
 	event_window_type = leader_recruit
-
 	picture_event_data = {
 		portrait = event_target:rg_gray_country_leader
 		room = "ethic_spaceship_room"
 	}
-
 	is_triggered_only = yes
-	
 	immediate = {
 		set_country_flag = gray_diplomacy_engaged
 	}
-
 	after = {
-		hidden_effect = { 
-			remove_country_flag = gray_diplomacy_engaged 
+		hidden_effect = {
+			remove_country_flag = gray_diplomacy_engaged
 		}
 	}
-
-	option = { # 购买灰风母舰
+	option = {
+		# 购买灰风母舰
 		name = rg.4.a
-		
 		trigger = {
-			NOT = { has_country_flag = gray_reforming }
+			NOT = {
+				has_country_flag = gray_reforming
+			}
 		}
-
 		allow = {
 			NOR = {
 				has_country_flag = rg_gray_level_1
 			}
-			resource_stockpile_compare = { resource = energy value >= 40000 }
-			resource_stockpile_compare = { resource = alloys value >= 40000 }
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 40000
+			}
+			resource_stockpile_compare = {
+				resource = alloys
+				value >= 40000
+			}
 		}
-
 		if = {
 			limit = {
 				has_country_flag = gray_begging
@@ -1363,67 +1536,73 @@ country_event = {
 		else = {
 			add_resource = {
 				energy = -40000
-				alloys = -40000	
+				alloys = -40000
 			}
 		}
-
 		hidden_effect = {
 			rg_create_gray_warship_1 = yes
 		}
 	}
-	
-	option = { # 购买工程船
+	option = {
+		# 购买工程船
 		name = rg.4.b
-		
 		trigger = {
-			NOT = { has_country_flag = gray_reforming }
+			NOT = {
+				has_country_flag = gray_reforming
+			}
 		}
-
 		allow = {
-			resource_stockpile_compare = { resource = energy value >= 2000 }
-			resource_stockpile_compare = { resource = alloys value >= 2000 }
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 2000
+			}
+			resource_stockpile_compare = {
+				resource = alloys
+				value >= 2000
+			}
 		}
-
-	    add_resource = {
+		add_resource = {
 			energy = -2000
 			alloys = -2000
-	    }
-
+		}
 		hidden_effect = {
 			rg_create_gray_constship_1 = yes
 		}
-
 	}
-
-	option = { # 购买殖民船
+	option = {
+		# 购买殖民船
 		name = rg.4.g
-
 		trigger = {
-			NOT = { has_country_flag = gray_reforming }
+			NOT = {
+				has_country_flag = gray_reforming
+			}
 		}
-
 		allow = {
-			resource_stockpile_compare = { resource = food value >= 2000 }
-			resource_stockpile_compare = { resource = energy value >= 2000 }
+			resource_stockpile_compare = {
+				resource = food
+				value >= 2000
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 2000
+			}
 		}
-
 		add_resource = {
 			food = -2000
 			energy = -2000
 		}
-
 		hidden_effect = {
 			rg_create_gray_colony_1 = yes
 		}
-
 	}
-
-	option = { # 没钱了，救救
+	option = {
+		# 没钱了，救救
 		name = rg.4.c
 		trigger = {
-			NOT = { has_country_flag = gray_reforming }
+			NOT = {
+				has_country_flag = gray_reforming
+			}
 		}
-
 		hidden_effect = {
 			if = {
 				limit = {
@@ -1440,7 +1619,6 @@ country_event = {
 			}
 		}
 	}
-	
 	option = {
 		name = graygoo.500.d
 		tag = hire_leader
@@ -1463,44 +1641,39 @@ country_event = {
 	desc = "rg.5.a.desc"
 	desc = "rg.5.b.desc"
 	desc = "rg.5.c.desc"
-
 	event_window_type = leader_recruit
-
 	picture_event_data = {
 		portrait = event_target:rg_gray_country_leader
 		room = "ethic_spaceship_room"
 	}
-
 	is_triggered_only = yes
-	
-	
 	immediate = {
 		set_country_flag = gray_diplomacy_engaged
 	}
-
 	after = {
-		hidden_effect = { 
-			remove_country_flag = gray_diplomacy_engaged 
+		hidden_effect = {
+			remove_country_flag = gray_diplomacy_engaged
 		}
 	}
-
-	option = { # 没钱了，救救
+	option = {
+		# 没钱了，救救
 		name = rg.5.a
-		
 		hidden_effect = {
 			set_country_flag = gray_begging
-			set_timed_country_flag = { flag = gray_alreadybegged days = 3600 }
+			set_timed_country_flag = {
+				flag = gray_alreadybegged
+				days = 3600
+			}
 			tooltip = {
 				add_resource = {
 					energy = 400
 					alloys = 200
 					consumer_goods = 200
 					mult = owner.rg_gray_level
-	    		}
+				}
 			}
-		}		
+		}
 	}
-
 	option = {
 		name = graygoo.500.d
 		tag = hire_leader
@@ -1522,30 +1695,24 @@ country_event = {
 	title = "graygoo.500.title"
 	desc = "rg.6.a.desc"
 	desc = "rg.6.b.desc"
-
 	event_window_type = leader_recruit
-
 	picture_event_data = {
 		portrait = event_target:rg_gray_country_leader
 		room = "ethic_spaceship_room"
 	}
-
 	is_triggered_only = yes
-
 	immediate = {
 		set_country_flag = gray_diplomacy_engaged
 	}
-
 	after = {
-		hidden_effect = { 
-			remove_country_flag = gray_diplomacy_engaged 
+		hidden_effect = {
+			remove_country_flag = gray_diplomacy_engaged
 		}
 	}
-
-	option = { # 诶嘿
+	option = {
+		# 诶嘿
 		name = rg.6.a
 	}
-
 	option = {
 		name = graygoo.500.d
 		tag = hire_leader

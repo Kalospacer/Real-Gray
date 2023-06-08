@@ -1,19 +1,20 @@
 objectTypes = {
-
 	#################################
 	#			Fallen Empire		#
 	#################################
-
 	#Spiritualist
-
 	pdxmesh = {
 		name = "grey_tempesttw_outpost_mesh"
 		file = "gfx/models/ships/gatebuilder_01/gatebuilder_01_space_station.mesh"
 		scale = 0.6
-
-		animation = { id = "idle" 			type = "gatebuilder_01_station_frame_idle_animation" }
-		animation = { id = "death" 			type = "gatebuilder_01_station_frame_death_animation" }
-
+		animation = {
+			id = "idle"
+			type = "gatebuilder_01_station_frame_idle_animation"
+		}
+		animation = {
+			id = "death"
+			type = "gatebuilder_01_station_frame_death_animation"
+		}
 		meshsettings = {
 			name = "large_finished_MeshShape"
 			index = 0
@@ -23,16 +24,20 @@ objectTypes = {
 			shader = "PdxMeshShip"
 		}
 	}
-
 	pdxmesh = {
 		name = "grey_tempesttw_citadel_mesh"
 		file = "gfx/models/ships/gatebuilder_01/gatebuilder_01_space_station.mesh"
-		scale = 1.0
+		scale = 1
 		# TODO?
 		#animation = { id = "idle"		type = "fallen_empire_01_citadel_idle_animation" }
-		animation = { id = "idle" 			type = "gatebuilder_01_station_frame_idle_animation" }
-		animation = { id = "death" 			type = "gatebuilder_01_station_frame_death_animation" }
-
+		animation = {
+			id = "idle"
+			type = "gatebuilder_01_station_frame_idle_animation"
+		}
+		animation = {
+			id = "death"
+			type = "gatebuilder_01_station_frame_death_animation"
+		}
 		meshsettings = {
 			name = "large_finished_MeshShape"
 			index = 0
@@ -42,12 +47,10 @@ objectTypes = {
 			shader = "PdxMeshShip"
 		}
 	}
-
 	pdxmesh = {
 		name = "grey_tempesttw_ion_cannon_mesh"
 		file = "gfx/models/ships/starbases/humanoid_01_ion_cannon.mesh"
 		scale = 0.8
-
 		meshsettings = {
 			name = "large_finished_MeshShape"
 			index = 0

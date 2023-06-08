@@ -5,13 +5,11 @@
 # Written by Henrik Thyrwall
 #
 ############################
-
 namespace = graygoo
 # Encountered Gray
 ship_event = {
 	id = graygoo.400
 	title = "graygoo.400.name"
-
 	trigger = {
 		NOT = {
 			any_playable_country = {
@@ -19,34 +17,38 @@ ship_event = {
 			}
 		}
 	}
-	
 	desc = {
 		trigger = {
-			owner = { is_synthetic_empire = no }
+			owner = {
+				is_synthetic_empire = no
+			}
 		}
 		text = "graygoo.400.a.desc"
 	}
 	desc = {
-		trigger = { 
-			owner = { is_synthetic_empire = yes } 
+		trigger = {
+			owner = {
+				is_synthetic_empire = yes
+			}
 		}
 		text = "graygoo.400.b.desc"
 	}
 	picture = GFX_evt_ship_in_orbit_2
 	show_sound = event_radio_chatter
-
 	is_triggered_only = yes
-
 	immediate = {
-		from = { save_event_target_as = gray_homeworld }
+		from = {
+			save_event_target_as = gray_homeworld
+		}
 		rg_timeline_attract_field_init = yes
 	}
-
 	option = {
 		name = graygoo.400.a
 		hidden_effect = {
 			owner = {
-				country_event = { id = graygoo.401 }
+				country_event = {
+					id = graygoo.401
+				}
 			}
 		}
 	}
@@ -57,29 +59,30 @@ country_event = {
 	id = graygoo.401
 	title = "TRANSMISSION"
 	desc = {
-		trigger = { NOT = { has_authority = auth_machine_intelligence } }
+		trigger = {
+			NOT = {
+				has_authority = auth_machine_intelligence
+			}
+		}
 		text = "graygoo.401.a.desc"
 	}
 	desc = {
-		trigger = { has_authority = auth_machine_intelligence }
+		trigger = {
+			has_authority = auth_machine_intelligence
+		}
 		text = "graygoo.401.b.desc"
 	}
-
 	is_triggered_only = yes
-	
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:rg_gray_country_leader
 		planet_background = event_target:gray_homeworld
 		room = "ethic_spaceship_room"
 	}
-
-	immediate = {	
-		rg_gray_country_init = yes #创建国家
+	immediate = {
+		rg_gray_country_init = yes		#创建国家
 		rg_timeline_attract_field_init = yes
 	}
-
 	option = {
 		name = graygoo.401.a
 		trigger = {
@@ -89,7 +92,9 @@ country_event = {
 			}
 		}
 		hidden_effect = {
-			country_event = { id = graygoo.402 }
+			country_event = {
+				id = graygoo.402
+			}
 		}
 	}
 	option = {
@@ -98,7 +103,9 @@ country_event = {
 			has_authority = auth_machine_intelligence
 		}
 		hidden_effect = {
-			country_event = { id = graygoo.402 }
+			country_event = {
+				id = graygoo.402
+			}
 		}
 	}
 	option = {
@@ -107,10 +114,11 @@ country_event = {
 			has_authority = auth_hive_mind
 		}
 		hidden_effect = {
-			country_event = { id = graygoo.402 }
+			country_event = {
+				id = graygoo.402
+			}
 		}
 	}
-	
 }
 
 # Gray 2
@@ -118,28 +126,32 @@ country_event = {
 	id = graygoo.402
 	title = "TRANSMISSION"
 	desc = {
-		trigger = { NOT = { has_authority = auth_machine_intelligence } }
+		trigger = {
+			NOT = {
+				has_authority = auth_machine_intelligence
+			}
+		}
 		text = "graygoo.402.a.desc"
 	}
 	desc = {
-		trigger = { has_authority = auth_machine_intelligence }
+		trigger = {
+			has_authority = auth_machine_intelligence
+		}
 		text = "graygoo.402.b.desc"
 	}
-
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:rg_gray_country_leader
 		planet_background = event_target:gray_homeworld
 		room = "ethic_spaceship_room"
 	}
-
 	is_triggered_only = yes
-
 	option = {
 		name = graygoo.402.a
 		hidden_effect = {
-			country_event = { id = graygoo.403 }
+			country_event = {
+				id = graygoo.403
+			}
 		}
 	}
 }
@@ -149,21 +161,19 @@ country_event = {
 	id = graygoo.403
 	title = "TRANSMISSION"
 	desc = "graygoo.403.desc"
-
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:rg_gray_country_leader
 		planet_background = event_target:gray_homeworld
 		room = "ethic_spaceship_room"
 	}
-
 	is_triggered_only = yes
-
 	option = {
 		name = graygoo.403.a
 		hidden_effect = {
-			country_event = { id = graygoo.404 }
+			country_event = {
+				id = graygoo.404
+			}
 		}
 	}
 }
@@ -173,21 +183,19 @@ country_event = {
 	id = graygoo.404
 	title = "TRANSMISSION"
 	desc = "graygoo.404.desc"
-
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:rg_gray_country_leader
 		planet_background = event_target:gray_homeworld
 		room = "ethic_spaceship_room"
 	}
-
 	is_triggered_only = yes
-
 	option = {
 		name = graygoo.404.a
 		hidden_effect = {
-			country_event = { id = graygoo.405 }
+			country_event = {
+				id = graygoo.405
+			}
 		}
 	}
 }
@@ -197,28 +205,25 @@ country_event = {
 	id = graygoo.405
 	title = "TRANSMISSION"
 	desc = "graygoo.405.desc"
-
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:rg_gray_country_leader
 		planet_background = event_target:gray_homeworld
 		room = "ethic_spaceship_room"
 	}
-
 	is_triggered_only = yes
-
 	immediate = {
 		event_target:gray_governor = {
 			set_owner = event_target:rg_gray_country
 		}
 	}
-
 	option = {
 		name = graygoo.405.a
 		hidden_effect = {
 			owner = {
-				country_event = { id = graygoo.406 }
+				country_event = {
+					id = graygoo.406
+				}
 			}
 		}
 	}
@@ -233,18 +238,14 @@ country_event = {
 	id = graygoo.406
 	title = "TRANSMISSION"
 	desc = "graygoo.406.desc"
-
 	diplomatic = yes
-
 	picture_event_data = {
 		portrait = event_target:rg_gray_country_leader
 		planet_background = event_target:gray_homeworld
 		room = ship_room
 	}
-
 	event_window_type = leader_recruit
 	is_triggered_only = yes
-
 	option = {
 		name = graygoo.406.a
 		response_text = graygoo.406.a.response
@@ -260,7 +261,9 @@ country_event = {
 		tag = dismiss_leader
 		response_text = graygoo.405.b.response
 		owner = {
-			country_event = { id = rg_grayleader_dialog.4051 }
+			country_event = {
+				id = rg_grayleader_dialog.4051
+			}
 		}
 	}
 	option = {
@@ -280,7 +283,9 @@ country_event = {
 					scope = event_target:gray_governor
 				}
 			}
-			country_event = { id = graygoo.499 }
+			country_event = {
+				id = graygoo.499
+			}
 		}
 	}
 }
@@ -289,24 +294,24 @@ country_event = {
 country_event = {
 	id = graygoo.499
 	hide_window = yes
-
 	is_triggered_only = yes
-
 	trigger = {
-		NOT = { exists = event_target:gray_owner }
+		NOT = {
+			exists = event_target:gray_owner
+		}
 		is_ai = no
 	}
-
 	immediate = {
 		set_global_flag = rg_kac_499
 		rg_timeline_attract_field_init = yes
-		if = { # 非正常触发补事件
+		if = {
+			# 非正常触发补事件
 			limit = {
 				NOT = {
 					exists = event_target:rg_gray_country
 				}
 			}
-			rg_gray_country_init = yes #创建国家
+			rg_gray_country_init = yes			#创建国家
 		}
 		rg_gray_country_after_init = yes
 		create_message = {
@@ -328,12 +333,13 @@ country_event = {
 	id = graygoo.500
 	hide_window = yes
 	is_triggered_only = yes
-
 	trigger = {
-		from = { OR = {
-			is_country_type = gray 
-			is_same_value = ROOT
-		}}
+		from = {
+			OR = {
+				is_country_type = gray
+				is_same_value = ROOT
+			}
+		}
 		is_same_value = event_target:gray_owner
 		NOR = {
 			has_country_flag = gray_constship_active
@@ -344,7 +350,6 @@ country_event = {
 			has_country_flag = gray_diplomacy_engaged
 		}
 	}
-
 	immediate = {
 		if = {
 			limit = {
@@ -353,9 +358,15 @@ country_event = {
 					has_global_flag = kdc_event_mod_active
 				}
 			}
-			country_event = { id = rg_graygoo.500 }
+			country_event = {
+				id = rg_graygoo.500
+			}
 		}
-		else = {country_event = { id = rg_grayleader.500 } }
+		else = {
+			country_event = {
+				id = rg_grayleader.500
+			}
+		}
 	}
 }
 
@@ -364,21 +375,21 @@ country_event = {
 	id = graygoo.501
 	hide_window = yes
 	is_triggered_only = yes
-
 	trigger = {
-		from = { OR = {
-			is_country_type = gray 
-			is_same_value = ROOT
-		}}
+		from = {
+			OR = {
+				is_country_type = gray
+				is_same_value = ROOT
+			}
+		}
 		is_same_value = event_target:gray_owner
 		has_country_flag = gray_governor_active
-		NOR = { 
-			has_country_flag = gray_reforming 
+		NOR = {
+			has_country_flag = gray_reforming
 			has_country_flag = gray_diplomacy_engaged
 		}
 		exists = event_target:gray_governor
 	}
-
 	immediate = {
 		if = {
 			limit = {
@@ -387,9 +398,15 @@ country_event = {
 					has_global_flag = kdc_event_mod_active
 				}
 			}
-			country_event = { id = rg_graygoo.501 }
+			country_event = {
+				id = rg_graygoo.501
+			}
 		}
-		else = {country_event = { id = rg_grayleader.501 } }
+		else = {
+			country_event = {
+				id = rg_grayleader.501
+			}
+		}
 	}
 }
 
@@ -398,23 +415,27 @@ country_event = {
 	id = graygoo.502
 	hide_window = yes
 	is_triggered_only = yes
-
 	trigger = {
-		from = { OR = {
-			is_country_type = gray 
-			is_same_value = ROOT
-		}}
+		from = {
+			OR = {
+				is_country_type = gray
+				is_same_value = ROOT
+			}
+		}
 		is_same_value = event_target:gray_owner
 		has_country_flag = gray_warship_active
-		NOR = { 
-			has_country_flag = gray_reforming 
+		NOR = {
+			has_country_flag = gray_reforming
 			has_country_flag = gray_diplomacy_engaged
 		}
 		exists = event_target:gray_warship
-		any_owned_fleet = { is_same_value = event_target:gray_warship }
-		event_target:gray_warship = { num_ships > 0 }
+		any_owned_fleet = {
+			is_same_value = event_target:gray_warship
+		}
+		event_target:gray_warship = {
+			num_ships > 0
+		}
 	}
-
 	immediate = {
 		if = {
 			limit = {
@@ -423,9 +444,15 @@ country_event = {
 					has_global_flag = kdc_event_mod_active
 				}
 			}
-			country_event = { id = rg_graygoo.502 }
+			country_event = {
+				id = rg_graygoo.502
+			}
 		}
-		else = {country_event = { id = rg_grayleader.502 } }
+		else = {
+			country_event = {
+				id = rg_grayleader.502
+			}
+		}
 	}
 }
 
@@ -434,17 +461,17 @@ country_event = {
 	id = graygoo.503
 	hide_window = yes
 	is_triggered_only = yes
-
 	trigger = {
-		from = { OR = {
-			is_country_type = gray 
-			is_same_value = ROOT
-		}}
+		from = {
+			OR = {
+				is_country_type = gray
+				is_same_value = ROOT
+			}
+		}
 		has_country_flag = gray_army_active
-		NOR = { 
-			has_country_flag = gray_reforming 
-			has_country_flag = gray_diplomacy_engaged 
-
+		NOR = {
+			has_country_flag = gray_reforming
+			has_country_flag = gray_diplomacy_engaged
 		}
 		is_same_value = event_target:gray_owner
 		any_owned_army = {
@@ -453,12 +480,13 @@ country_event = {
 				exists = planet
 				AND = {
 					exists = fleet
-					fleet = { num_ships > 0 }
+					fleet = {
+						num_ships > 0
+					}
 				}
 			}
 		}
 	}
-
 	immediate = {
 		if = {
 			limit = {
@@ -467,9 +495,15 @@ country_event = {
 					has_global_flag = kdc_event_mod_active
 				}
 			}
-			country_event = { id = rg_graygoo.503 }
+			country_event = {
+				id = rg_graygoo.503
+			}
 		}
-		else = {country_event = { id = rg_grayleader.503 } }
+		else = {
+			country_event = {
+				id = rg_grayleader.503
+			}
+		}
 	}
 }
 
@@ -478,16 +512,16 @@ country_event = {
 	id = graygoo.504
 	hide_window = yes
 	is_triggered_only = yes
-
 	trigger = {
-		from = { OR = {
-			is_country_type = gray 
-			is_same_value = ROOT
-		}}
+		from = {
+			OR = {
+				is_country_type = gray
+				is_same_value = ROOT
+			}
+		}
 		is_same_value = event_target:gray_owner
 		has_country_flag = gray_reforming
 	}
-
 	immediate = {
 		if = {
 			limit = {
@@ -496,9 +530,15 @@ country_event = {
 					has_global_flag = kdc_event_mod_active
 				}
 			}
-			country_event = { id = rg_graygoo.504 }
+			country_event = {
+				id = rg_graygoo.504
+			}
 		}
-		else = {country_event = { id = rg_grayleader.504 } }
+		else = {
+			country_event = {
+				id = rg_grayleader.504
+			}
+		}
 	}
 }
 
@@ -507,24 +547,27 @@ country_event = {
 	id = graygoo.505
 	hide_window = yes
 	is_triggered_only = yes
-
 	trigger = {
-		from = { OR = {
-			is_country_type = gray 
-			is_same_value = ROOT
-		}}
+		from = {
+			OR = {
+				is_country_type = gray
+				is_same_value = ROOT
+			}
+		}
 		is_same_value = event_target:gray_owner
 		has_country_flag = gray_constship_active
-		NOR = { 
-			has_country_flag = gray_reforming 
+		NOR = {
+			has_country_flag = gray_reforming
 			has_country_flag = gray_diplomacy_engaged
-
 		}
 		exists = event_target:global_gray_constship
-		any_owned_fleet = { is_same_value = event_target:global_gray_constship }
-		event_target:global_gray_constship = { num_ships > 0 }
+		any_owned_fleet = {
+			is_same_value = event_target:global_gray_constship
+		}
+		event_target:global_gray_constship = {
+			num_ships > 0
+		}
 	}
-
 	immediate = {
 		if = {
 			limit = {
@@ -533,9 +576,15 @@ country_event = {
 					has_global_flag = kdc_event_mod_active
 				}
 			}
-			country_event = { id = rg_graygoo.505 }
+			country_event = {
+				id = rg_graygoo.505
+			}
 		}
-		else = {country_event = { id = rg_grayleader.505 } }
+		else = {
+			country_event = {
+				id = rg_grayleader.505
+			}
+		}
 	}
 }
 
@@ -543,49 +592,60 @@ country_event = {
 event = {
 	id = graygoo.510
 	hide_window = yes
-
 	is_triggered_only = yes
-
 	trigger = {
-		any_country = { is_country_type = gray }
+		any_country = {
+			is_country_type = gray
+		}
 		exists = event_target:gray_owner
 		event_target:gray_owner = {
 			OR = {
 				AND = {
 					has_country_flag = gray_army_active
 					NOT = {
-						any_owned_army = { army_type = gray_army }
+						any_owned_army = {
+							army_type = gray_army
+						}
 					}
 				}
 				AND = {
 					has_country_flag = gray_warship_active
-					NOT = { exists = event_target:gray_warship }
+					NOT = {
+						exists = event_target:gray_warship
+					}
 				}
 				AND = {
 					has_country_flag = gray_governor_active
-					NOT = { exists = event_target:gray_governor }
+					NOT = {
+						exists = event_target:gray_governor
+					}
 				}
 				AND = {
 					has_country_flag = gray_constship_active
-					NOT = { exists = event_target:global_gray_constship }
+					NOT = {
+						exists = event_target:global_gray_constship
+					}
 				}
 			}
 		}
 	}
-
 	immediate = {
 		event_target:gray_owner = {
-			remove_country_flag = gray_governor_active #总督
-			remove_country_flag = gray_warship_active #旗舰
-			remove_country_flag = gray_army_active #陆军
-			remove_country_flag = gray_constship_active #科舰
+			remove_country_flag = gray_governor_active			#总督
+			remove_country_flag = gray_warship_active			#旗舰
+			remove_country_flag = gray_army_active			#陆军
+			remove_country_flag = gray_constship_active			#科舰
 			set_country_flag = gray_reforming
 			add_modifier = {
 				modifier = "gray_scattered"
 				days = 3600
 			}
-			country_event = { id = graygoo.511 }
-			country_event = { id = rg.22 }
+			country_event = {
+				id = graygoo.511
+			}
+			country_event = {
+				id = rg.22
+			}
 		}
 	}
 }
@@ -597,9 +657,7 @@ country_event = {
 	desc = "graygoo.511.desc"
 	picture = GFX_evt_circuitry_modification
 	show_sound = event_radio_chatter
-
 	is_triggered_only = yes
-
 	option = {
 		name = graygoo.511.a
 	}
@@ -612,17 +670,11 @@ country_event = {
 	desc = "graygoo.512.a.desc"
 	desc = "graygoo.512.b.desc"
 	desc = "graygoo.512.c.desc"
-
 	diplomatic = yes
-
-
 	is_triggered_only = yes
-	
-
 	immediate = {
 		remove_country_flag = gray_reforming
 	}
-
 	option = {
 		name = graygoo.512.a
 	}

@@ -1,11 +1,9 @@
 ship_section_template = {
 	key = "RG_ORBITAL_RING_TIER_1_STARBASE_SECTION"
 	ship_size = RG_orbital_ring_tier_1
-
 	fits_on_slot = "core"
 	entity = "grey_tempesttw_gateway_entity"
 	icon = "GFX_ship_part_core_mid"
-
 	component_slot = {
 		name = "LARGE_GUN_01"
 		template = "invisible_large_turret"
@@ -154,7 +152,6 @@ ship_section_template = {
 		template = "point_defence_turret"
 		locatorname = "rotate"
 	}
-
 	small_utility_slots = 0
 	medium_utility_slots = 0
 	large_utility_slots = 8
@@ -164,12 +161,10 @@ ship_section_template = {
 ship_section_template = {
 	key = "RG_Nanite_STARBASE_SECTION"
 	ship_size = starbase_starfortress
-
 	fits_on_slot = "core"
 	entity = "grey_tempesttw_starbase_starfortress_section_entity"
 	icon = "GFX_ship_part_core_mid"
 	hidden = yes
-
 	component_slot = {
 		name = "LARGE_GUN_01"
 		template = "invisible_large_turret"
@@ -318,7 +313,6 @@ ship_section_template = {
 		template = "point_defence_turret"
 		locatorname = "rotate"
 	}
-
 	small_utility_slots = 0
 	medium_utility_slots = 0
 	large_utility_slots = 8

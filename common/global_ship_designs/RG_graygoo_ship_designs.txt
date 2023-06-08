@@ -3,11 +3,9 @@ ship_design = {
 	name = "NAME_Gray_Warship_base"
 	ship_size = RG_graygoo_mothership
 	is_event_design = yes
-
 	section = {
 		template = "RG_gray_warship_base_key"
 		slot = "mid"
-
 		component = {
 			slot = "TITAN_01"
 			template = "GRAY_BEAM_STATIC_X"
@@ -40,7 +38,6 @@ ship_design = {
 			slot = "LARGE_GUN_02"
 			template = "LARGE_GRAY_WEAPON_LANCE"
 		}
-
 		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "LARGE_GRAY_MIX_ARMOR"
@@ -110,554 +107,37 @@ ship_design = {
 	name = "NAME_gray_capitalship"
 	ship_size = RG_graygoo_capitalship
 	is_event_design = yes
-
 	section = {
 		template = "RG_graygoo_capitalship_key"
 		slot = "core"
-
-		component = { slot = "PLANET_KILLER_GUN_01" template = "RG_PLANET_KILLER" }	
-
-		component = { slot = "TITAN_01" template = "GRAY_BEAM_STATIC_EX" }
-		component = { slot = "TITAN_02" template = "GRAY_BEAM_STATIC_EX" }
-		component = { slot = "TITAN_03" template = "GRAY_BEAM_STATIC_EX" }
-		component = { slot = "TITAN_04" template = "GRAY_BEAM_STATIC_EX" }
-		component = { slot = "TITAN_05" template = "GRAY_BEAM_STATIC_EX" }
-		component = { slot = "TITAN_06" template = "GRAY_BEAM_STATIC_EX" }
-
-		component = { slot = "EXTRA_LARGE_01" template = "GRAY_BEAM_STATIC_X" }
-		component = { slot = "EXTRA_LARGE_02" template = "GRAY_BEAM_STATIC_X" }
-		component = { slot = "EXTRA_LARGE_03" template = "GRAY_BEAM_STATIC_X" }
-		component = { slot = "EXTRA_LARGE_04" template = "GRAY_BEAM_STATIC_X" }
-		component = { slot = "EXTRA_LARGE_05" template = "GRAY_BEAM_STATIC_X" }
-		component = { slot = "EXTRA_LARGE_06" template = "GRAY_BEAM_STATIC_X" }
-		component = { slot = "EXTRA_LARGE_07" template = "GRAY_BEAM_STATIC_X" }
-		component = { slot = "EXTRA_LARGE_08" template = "GRAY_BEAM_STATIC_X" }
-
-		component = { slot = "TORPEDO_01" template = "RG_ENERGY_MISSILE" }
-		component = { slot = "TORPEDO_02" template = "RG_ENERGY_MISSILE" }
-		component = { slot = "TORPEDO_03" template = "RG_ENERGY_MISSILE" }
-		component = { slot = "TORPEDO_04" template = "RG_ENERGY_MISSILE" }
-		component = { slot = "TORPEDO_05" template = "RG_ENERGY_MISSILE" }
-		component = { slot = "TORPEDO_06" template = "RG_ENERGY_MISSILE" }
-		component = { slot = "TORPEDO_07" template = "RG_ENERGY_MISSILE" }
-		component = { slot = "TORPEDO_08" template = "RG_ENERGY_MISSILE" }
-
-		component = { slot = "LARGE_GUN_01" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_02" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_03" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_04" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_05" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_06" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_07" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_08" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_09" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_10" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_11" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_12" template = "LARGE_GRAY_WEAPON_LANCE" }
-
-
-		component = { slot = "STRIKE_CRAFT_01" template = "RG_FIGHTER_HANGAR_BEAM" }
-		component = { slot = "STRIKE_CRAFT_02" template = "RG_FIGHTER_HANGAR_BEAM" }
-		component = { slot = "STRIKE_CRAFT_03" template = "RG_FIGHTER_HANGAR_BEAM" }
-		component = { slot = "STRIKE_CRAFT_04" template = "RG_FIGHTER_HANGAR_BEAM" }
-
-		component = { slot = "STRIKE_CRAFT_05" template = "RG_BOMBER_HANGAR_ATTACK_ROCKET" }
-		component = { slot = "STRIKE_CRAFT_06" template = "RG_BOMBER_HANGAR_ATTACK_ROCKET" }
-		component = { slot = "STRIKE_CRAFT_07" template = "RG_BOMBER_HANGAR_ATTACK_ROCKET" }
-		component = { slot = "STRIKE_CRAFT_08" template = "RG_BOMBER_HANGAR_ATTACK_ROCKET" }
-
-		component = { slot = "STRIKE_CRAFT_09" template = "RG_BOMBER_HANGAR_AP_BOMB" }
-		component = { slot = "STRIKE_CRAFT_10" template = "RG_BOMBER_HANGAR_AP_BOMB" }
-		component = { slot = "STRIKE_CRAFT_11" template = "RG_BOMBER_HANGAR_AP_BOMB" }
-		component = { slot = "STRIKE_CRAFT_12" template = "RG_BOMBER_HANGAR_AP_BOMB" }
-
-		component = { slot = "STRIKE_CRAFT_13" template = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO" }
-		component = { slot = "STRIKE_CRAFT_14" template = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO" }
-		component = { slot = "STRIKE_CRAFT_15" template = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO" }
-		component = { slot = "STRIKE_CRAFT_16" template = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO" }
-
-		component = { slot = "LARGE_GUN_13" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_14" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_15" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_16" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_17" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_18" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_19" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_20" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_21" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_22" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_23" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_24" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_25" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_26" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_27" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_28" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_29" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_30" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_31" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_32" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_33" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_34" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_35" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_36" template = "HUGE_GRAY_WEAPON_KIN" }
-
-		component = { slot = "PD_01" template = "RG_FLAK_BATTERY" }
-		component = { slot = "PD_02" template = "RG_FLAK_BATTERY" }
-		component = { slot = "PD_03" template = "RG_FLAK_BATTERY" }
-		component = { slot = "PD_04" template = "RG_FLAK_BATTERY" }
-		component = { slot = "PD_05" template = "RG_FLAK_BATTERY" }
-		component = { slot = "PD_06" template = "RG_FLAK_BATTERY" }
-		component = { slot = "PD_07" template = "RG_FLAK_BATTERY" }
-		component = { slot = "PD_08" template = "RG_FLAK_BATTERY" }
-		component = { slot = "PD_09" template = "RG_FLAK_BATTERY" }
-		component = { slot = "PD_10" template = "RG_FLAK_BATTERY" }
-		component = { slot = "PD_11" template = "RG_FLAK_PHOENIX" }
-		component = { slot = "PD_12" template = "RG_FLAK_PHOENIX" }
-
-		component = { slot = "LARGE_UTILITY_1" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_2" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_3" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_4" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_5" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_6" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_7" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_8" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_9" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_10" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_11" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_12" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_13" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_14" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_15" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_16" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_17" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_18" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_19" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_20" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_21" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_22" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_23" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_24" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_25" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_26" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_27" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_28" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_29" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_30" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_31" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_32" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_33" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_34" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_35" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_36" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_37" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_38" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_39" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_40" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_41" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_42" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_43" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_44" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_45" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_46" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_47" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_48" template = "HUGE_GRAY_MIX_ARMOR" }
-	
-		component = { slot = "AUX_UTILITY_1" template = "RG_AUTO_REPAIR" }
-		component = { slot = "AUX_UTILITY_2" template = "RG_AUTO_REPAIR" }
-		component = { slot = "AUX_UTILITY_3" template = "RG_ARMOR_BOOSTER" }
-		component = { slot = "AUX_UTILITY_4" template = "RG_ARMOR_BOOSTER" }
-		component = { slot = "AUX_UTILITY_5" template = "RG_ENIGMATIC_SCHEDULER" }
-		component = { slot = "AUX_UTILITY_6" template = "RG_ENIGMATIC_SCHEDULER" }
-		component = { slot = "AUX_UTILITY_7" template = "RG_ENGINE_BOOSTER" }
-		component = { slot = "AUX_UTILITY_8" template = "RG_ENGINE_BOOSTER" }
-	}
-	required_component = "COLOSSUS_ZERO_POINT_REACTOR"
-	required_component = "RG_gatebuilder_jump"
-	required_component = "RG_gatebuilder_sensor"
-	required_component = "RG_gatebuilder_thruster"
-	required_component = "RG_COMBAT_COMPUTER_MotherShip"
-	required_component = "RG_CORVETTE_CLOAKING_3"
-	required_component = "RG_BAKAHALO"
-	required_component = "RG_ANTIBAKAHALO"
-	required_component = "RG_SHIP_AURA_NANOBOT_CLOUD"
-}
-
-# Gray Goo juggernaut
-ship_design = {
-	name = "NAME_gray_juggernautship"
-	ship_size = RG_gray_juggernaut
-	is_event_design = yes
-
-	section = {
-		template = "RG_graygoo_juggernaut_key"
-		slot = "core"
-
-		component = { slot = "PLANET_KILLER_GUN_01" template = "RG_PLANET_KILLER" }	
-
-		component = { slot = "TITAN_01" template = "GRAY_BEAM_STATIC_EX" }
-		component = { slot = "TITAN_02" template = "GRAY_BEAM_STATIC_EX" }
-		component = { slot = "TITAN_03" template = "GRAY_BEAM_STATIC_EX" }
-		component = { slot = "TITAN_04" template = "GRAY_BEAM_STATIC_EX" }
-		component = { slot = "TITAN_05" template = "GRAY_BEAM_STATIC_EX" }
-		component = { slot = "TITAN_06" template = "GRAY_BEAM_STATIC_EX" }
-
-		component = { slot = "EXTRA_LARGE_01" template = "GRAY_BEAM_STATIC_X" }
-		component = { slot = "EXTRA_LARGE_02" template = "GRAY_BEAM_STATIC_X" }
-		component = { slot = "EXTRA_LARGE_03" template = "GRAY_BEAM_STATIC_X" }
-		component = { slot = "EXTRA_LARGE_04" template = "GRAY_BEAM_STATIC_X" }
-		component = { slot = "EXTRA_LARGE_05" template = "GRAY_BEAM_STATIC_X" }
-		component = { slot = "EXTRA_LARGE_06" template = "GRAY_BEAM_STATIC_X" }
-		component = { slot = "EXTRA_LARGE_07" template = "GRAY_BEAM_STATIC_X" }
-		component = { slot = "EXTRA_LARGE_08" template = "GRAY_BEAM_STATIC_X" }
-
-		component = { slot = "TORPEDO_01" template = "RG_ENERGY_MISSILE" }
-		component = { slot = "TORPEDO_02" template = "RG_ENERGY_MISSILE" }
-		component = { slot = "TORPEDO_03" template = "RG_ENERGY_MISSILE" }
-		component = { slot = "TORPEDO_04" template = "RG_ENERGY_MISSILE" }
-		component = { slot = "TORPEDO_05" template = "RG_ENERGY_MISSILE" }
-		component = { slot = "TORPEDO_06" template = "RG_ENERGY_MISSILE" }
-		component = { slot = "TORPEDO_07" template = "RG_ENERGY_MISSILE" }
-		component = { slot = "TORPEDO_08" template = "RG_ENERGY_MISSILE" }
-
-		component = { slot = "LARGE_GUN_01" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_02" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_03" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_04" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_05" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_06" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_07" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_08" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_09" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_10" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_11" template = "LARGE_GRAY_WEAPON_LANCE" }
-		component = { slot = "LARGE_GUN_12" template = "LARGE_GRAY_WEAPON_LANCE" }
-
-
-		component = { slot = "STRIKE_CRAFT_01" template = "RG_FIGHTER_HANGAR_BEAM" }
-		component = { slot = "STRIKE_CRAFT_02" template = "RG_FIGHTER_HANGAR_BEAM" }
-		component = { slot = "STRIKE_CRAFT_03" template = "RG_FIGHTER_HANGAR_BEAM" }
-		component = { slot = "STRIKE_CRAFT_04" template = "RG_FIGHTER_HANGAR_BEAM" }
-
-		component = { slot = "STRIKE_CRAFT_05" template = "RG_BOMBER_HANGAR_ATTACK_ROCKET" }
-		component = { slot = "STRIKE_CRAFT_06" template = "RG_BOMBER_HANGAR_ATTACK_ROCKET" }
-		component = { slot = "STRIKE_CRAFT_07" template = "RG_BOMBER_HANGAR_ATTACK_ROCKET" }
-		component = { slot = "STRIKE_CRAFT_08" template = "RG_BOMBER_HANGAR_ATTACK_ROCKET" }
-
-		component = { slot = "STRIKE_CRAFT_09" template = "RG_BOMBER_HANGAR_AP_BOMB" }
-		component = { slot = "STRIKE_CRAFT_10" template = "RG_BOMBER_HANGAR_AP_BOMB" }
-		component = { slot = "STRIKE_CRAFT_11" template = "RG_BOMBER_HANGAR_AP_BOMB" }
-		component = { slot = "STRIKE_CRAFT_12" template = "RG_BOMBER_HANGAR_AP_BOMB" }
-
-		component = { slot = "STRIKE_CRAFT_13" template = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO" }
-		component = { slot = "STRIKE_CRAFT_14" template = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO" }
-		component = { slot = "STRIKE_CRAFT_15" template = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO" }
-		component = { slot = "STRIKE_CRAFT_16" template = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO" }
-
-		component = { slot = "LARGE_GUN_13" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_14" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_15" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_16" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_17" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_18" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_19" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_20" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_21" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_22" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_23" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_24" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_25" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_26" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_27" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_28" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_29" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_30" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_31" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_32" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_33" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_34" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_35" template = "HUGE_GRAY_WEAPON_KIN" }
-		component = { slot = "LARGE_GUN_36" template = "HUGE_GRAY_WEAPON_KIN" }
-
-		component = { slot = "PD_01" template = "RG_FLAK_BATTERY" }
-		component = { slot = "PD_02" template = "RG_FLAK_BATTERY" }
-		component = { slot = "PD_03" template = "RG_FLAK_BATTERY" }
-		component = { slot = "PD_04" template = "RG_FLAK_BATTERY" }
-		component = { slot = "PD_05" template = "RG_FLAK_BATTERY" }
-		component = { slot = "PD_06" template = "RG_FLAK_BATTERY" }
-		component = { slot = "PD_07" template = "RG_FLAK_BATTERY" }
-		component = { slot = "PD_08" template = "RG_FLAK_BATTERY" }
-		component = { slot = "PD_09" template = "RG_FLAK_BATTERY" }
-		component = { slot = "PD_10" template = "RG_FLAK_BATTERY" }
-		component = { slot = "PD_11" template = "RG_FLAK_PHOENIX" }
-		component = { slot = "PD_12" template = "RG_FLAK_PHOENIX" }
-
-		component = { slot = "LARGE_UTILITY_1" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_2" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_3" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_4" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_5" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_6" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_7" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_8" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_9" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_10" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_11" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_12" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_13" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_14" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_15" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_16" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_17" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_18" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_19" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_20" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_21" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_22" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_23" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_24" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_25" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_26" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_27" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_28" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_29" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_30" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_31" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_32" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_33" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_34" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_35" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_36" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_37" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_38" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_39" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_40" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_41" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_42" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_43" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_44" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_45" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_46" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_47" template = "HUGE_GRAY_MIX_ARMOR" }
-		component = { slot = "LARGE_UTILITY_48" template = "HUGE_GRAY_MIX_ARMOR" }
-	
-		component = { slot = "AUX_UTILITY_1" template = "RG_AUTO_REPAIR" }
-		component = { slot = "AUX_UTILITY_2" template = "RG_AUTO_REPAIR" }
-		component = { slot = "AUX_UTILITY_3" template = "RG_ARMOR_BOOSTER" }
-		component = { slot = "AUX_UTILITY_4" template = "RG_ARMOR_BOOSTER" }
-		component = { slot = "AUX_UTILITY_5" template = "RG_ENIGMATIC_SCHEDULER" }
-		component = { slot = "AUX_UTILITY_6" template = "RG_ENIGMATIC_SCHEDULER" }
-		component = { slot = "AUX_UTILITY_7" template = "RG_ENGINE_BOOSTER" }
-		component = { slot = "AUX_UTILITY_8" template = "RG_ENGINE_BOOSTER" }
-	}
-	required_component = "COLOSSUS_ZERO_POINT_REACTOR"
-	required_component = "RG_gatebuilder_jump"
-	required_component = "RG_gatebuilder_sensor"
-	required_component = "RG_gatebuilder_thruster"
-	required_component = "RG_COMBAT_COMPUTER_MotherShip"
-	required_component = "RG_CORVETTE_CLOAKING_3"
-	required_component = "RG_BAKAHALO"
-	required_component = "RG_ANTIBAKAHALO"
-	required_component = "RG_SHIP_AURA_NANOBOT_CLOUD"
-	required_component = "STARBASE_AURA_FTL_INHIBITOR"
-}
-
-# 航母 1
-ship_design = {
-	name = "RG_carrier_Interdictor"
-	ship_size = RG_graygoo_interdictor
-	is_event_design = yes
-	section = {
-		template = "RG_carrier_interdictor_key"
-		slot = "mid"
-
 		component = {
-			slot = "STRIKE_CRAFT_01"
-			template = "RG_FIGHTER_HANGAR_BEAM"
+			slot = "PLANET_KILLER_GUN_01"
+			template = "RG_PLANET_KILLER"
 		}
-		component = {
-			slot = "STRIKE_CRAFT_02"
-			template = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO"
-		}
-		component = {
-			slot = "STRIKE_CRAFT_03"
-			template = "RG_BOMBER_HANGAR_AP_BOMB"
-		}
-		component = {
-			slot = "STRIKE_CRAFT_04"
-			template = "RG_BOMBER_HANGAR_ATTACK_ROCKET"
-		}
-
-		component = {
-			slot = "PD_01"
-			template = "RG_FLAK_BATTERY"
-		}
-		component = {
-			slot = "PD_02"
-			template = "RG_FLAK_BATTERY"
-		}
-		component = {
-			slot = "PD_03"
-			template = "RG_CARRIER_RADAR"
-		}
-
-		component = {
-			slot = "LARGE_UTILITY_1"
-			template = "LARGE_GRAY_MIX_ARMOR"
-		}
-		component = {
-			slot = "LARGE_UTILITY_2"
-			template = "LARGE_GRAY_MIX_ARMOR"
-		}
-		component = {
-			slot = "LARGE_UTILITY_3"
-			template = "LARGE_GRAY_MIX_ARMOR"
-		}
-		component = {
-			slot = "LARGE_UTILITY_4"
-			template = "LARGE_GRAY_MIX_ARMOR"
-		}
-
-		component = {
-			slot = "AUX_UTILITY_1"
-			template = "RG_AUTO_REPAIR"
-		}
-
-	}
-	required_component = "RG_gatebuilder_jump"
-	required_component = "RG_gatebuilder_sensor"
-	required_component = "RG_gatebuilder_thruster"
-	required_component = "TITAN_ZERO_POINT_REACTOR"
-	required_component = "RG_COMBAT_COMPUTER_CARRIER"
-}
-
-# 战列 2
-ship_design = {
-	name = "RG_battleship_Interdictor"
-	ship_size = RG_graygoo_interdictor
-	is_event_design = yes
-	section = {
-		template = "RG_battleship_interdictor_key"
-		slot = "mid"
-
-		component = {
-			slot = "LARGE_GUN_01"
-			template = "LARGE_GRAY_WEAPON_LANCE"
-		}
-		component = {
-			slot = "LARGE_GUN_02"
-			template = "LARGE_GRAY_WEAPON_LANCE"
-		}
-		component = {
-			slot = "LARGE_GUN_03"
-			template = "LARGE_GRAY_WEAPON_LANCE"
-		}
-		component = {
-			slot = "LARGE_GUN_04"
-			template = "LARGE_GRAY_WEAPON_LANCE"
-		}
-		component = {
-			slot = "LARGE_GUN_05"
-			template = "LARGE_GRAY_WEAPON_LANCE"
-		}
-		component = {
-			slot = "LARGE_GUN_06"
-			template = "LARGE_GRAY_WEAPON_LANCE"
-		}
-
-		component = {
-			slot = "PD_01"
-			template = "RG_FLAK_BATTERY"
-		}
-
-		component = {
-			slot = "LARGE_UTILITY_1"
-			template = "LARGE_GRAY_MIX_ARMOR"
-		}
-		component = {
-			slot = "LARGE_UTILITY_2"
-			template = "LARGE_GRAY_MIX_ARMOR"
-		}
-		component = {
-			slot = "LARGE_UTILITY_3"
-			template = "LARGE_GRAY_MIX_ARMOR"
-		}
-		component = {
-			slot = "LARGE_UTILITY_4"
-			template = "LARGE_GRAY_MIX_ARMOR"
-		}
-
-		component = {
-			slot = "AUX_UTILITY_1"
-			template = "RG_AUTO_REPAIR"
-		}
-
-	}
-	required_component = "RG_gatebuilder_jump"
-	required_component = "RG_gatebuilder_sensor"
-	required_component = "RG_gatebuilder_thruster"
-	required_component = "TITAN_ZERO_POINT_REACTOR"
-	required_component = "RG_COMBAT_COMPUTER_battle"
-}
-
-# 泰坦 3
-ship_design = {
-	name = "RG_titan_interdictor"
-	ship_size = RG_graygoo_interdictor
-	is_event_design = yes
-	section = {
-		template = "RG_titan_interdictor_key"
-		slot = "mid"
-
 		component = {
 			slot = "TITAN_01"
 			template = "GRAY_BEAM_STATIC_EX"
 		}
-
 		component = {
-			slot = "PD_01"
-			template = "RG_FLAK_BATTERY"
-		}
-
-		component = {
-			slot = "LARGE_UTILITY_1"
-			template = "LARGE_GRAY_MIX_ARMOR"
+			slot = "TITAN_02"
+			template = "GRAY_BEAM_STATIC_EX"
 		}
 		component = {
-			slot = "LARGE_UTILITY_2"
-			template = "LARGE_GRAY_MIX_ARMOR"
+			slot = "TITAN_03"
+			template = "GRAY_BEAM_STATIC_EX"
 		}
 		component = {
-			slot = "LARGE_UTILITY_3"
-			template = "LARGE_GRAY_MIX_ARMOR"
+			slot = "TITAN_04"
+			template = "GRAY_BEAM_STATIC_EX"
 		}
 		component = {
-			slot = "LARGE_UTILITY_4"
-			template = "LARGE_GRAY_MIX_ARMOR"
+			slot = "TITAN_05"
+			template = "GRAY_BEAM_STATIC_EX"
 		}
-
 		component = {
-			slot = "AUX_UTILITY_1"
-			template = "RG_ENIGMATIC_SCHEDULER"
+			slot = "TITAN_06"
+			template = "GRAY_BEAM_STATIC_EX"
 		}
-
-	}
-	required_component = "RG_gatebuilder_jump"
-	required_component = "RG_gatebuilder_sensor"
-	required_component = "RG_gatebuilder_thruster"
-	required_component = "TITAN_ZERO_POINT_REACTOR"
-	required_component = "RG_COMBAT_COMPUTER_artillery"
-}
-
-# 线列 4
-ship_design = {
-	name = "RG_line_interdictor"
-	ship_size = RG_graygoo_interdictor
-	is_event_design = yes
-	section = {
-		template = "RG_line_interdictor_key"
-		slot = "mid"
-
 		component = {
 			slot = "EXTRA_LARGE_01"
 			template = "GRAY_BEAM_STATIC_X"
@@ -666,58 +146,30 @@ ship_design = {
 			slot = "EXTRA_LARGE_02"
 			template = "GRAY_BEAM_STATIC_X"
 		}
-
 		component = {
-			slot = "LARGE_UTILITY_1"
-			template = "LARGE_GRAY_MIX_ARMOR"
+			slot = "EXTRA_LARGE_03"
+			template = "GRAY_BEAM_STATIC_X"
 		}
 		component = {
-			slot = "LARGE_UTILITY_2"
-			template = "LARGE_GRAY_MIX_ARMOR"
+			slot = "EXTRA_LARGE_04"
+			template = "GRAY_BEAM_STATIC_X"
 		}
 		component = {
-			slot = "LARGE_UTILITY_3"
-			template = "LARGE_GRAY_MIX_ARMOR"
+			slot = "EXTRA_LARGE_05"
+			template = "GRAY_BEAM_STATIC_X"
 		}
 		component = {
-			slot = "LARGE_UTILITY_4"
-			template = "LARGE_GRAY_MIX_ARMOR"
+			slot = "EXTRA_LARGE_06"
+			template = "GRAY_BEAM_STATIC_X"
 		}
 		component = {
-			slot = "LARGE_UTILITY_5"
-			template = "LARGE_GRAY_MIX_ARMOR"
+			slot = "EXTRA_LARGE_07"
+			template = "GRAY_BEAM_STATIC_X"
 		}
 		component = {
-			slot = "LARGE_UTILITY_6"
-			template = "LARGE_GRAY_MIX_ARMOR"
+			slot = "EXTRA_LARGE_08"
+			template = "GRAY_BEAM_STATIC_X"
 		}
-
-		component = {
-			slot = "AUX_UTILITY_1"
-			template = "RG_AUTO_REPAIR"
-		}
-		component = {
-			slot = "AUX_UTILITY_2"
-			template = "RG_AUTO_REPAIR"
-		}
-
-	}
-	required_component = "RG_gatebuilder_jump"
-	required_component = "RG_gatebuilder_sensor"
-	required_component = "RG_gatebuilder_thruster"
-	required_component = "TITAN_ZERO_POINT_REACTOR"
-	required_component = "RG_COMBAT_COMPUTER_CHARGE"
-}
-
-# 雷装 5
-ship_design = {
-	name = "RG_torpedo_interdictor"
-	ship_size = RG_graygoo_interdictor
-	is_event_design = yes
-	section = {
-		template = "RG_torpedo_interdictor_key"
-		slot = "mid"
-
 		component = {
 			slot = "TORPEDO_01"
 			template = "RG_ENERGY_MISSILE"
@@ -742,12 +194,1135 @@ ship_design = {
 			slot = "TORPEDO_06"
 			template = "RG_ENERGY_MISSILE"
 		}
-
+		component = {
+			slot = "TORPEDO_07"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_08"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_05"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_06"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_07"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_08"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_09"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_10"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_11"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_12"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_05"
+			template = "RG_BOMBER_HANGAR_ATTACK_ROCKET"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_06"
+			template = "RG_BOMBER_HANGAR_ATTACK_ROCKET"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_07"
+			template = "RG_BOMBER_HANGAR_ATTACK_ROCKET"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_08"
+			template = "RG_BOMBER_HANGAR_ATTACK_ROCKET"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_09"
+			template = "RG_BOMBER_HANGAR_AP_BOMB"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_10"
+			template = "RG_BOMBER_HANGAR_AP_BOMB"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_11"
+			template = "RG_BOMBER_HANGAR_AP_BOMB"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_12"
+			template = "RG_BOMBER_HANGAR_AP_BOMB"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_13"
+			template = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_14"
+			template = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_15"
+			template = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_16"
+			template = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO"
+		}
+		component = {
+			slot = "LARGE_GUN_13"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_14"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_15"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_16"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_17"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_18"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_19"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_20"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_21"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_22"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_23"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_24"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_25"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_26"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_27"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_28"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_29"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_30"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_31"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_32"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_33"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_34"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_35"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_36"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
 		component = {
 			slot = "PD_01"
 			template = "RG_FLAK_BATTERY"
 		}
+		component = {
+			slot = "PD_02"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_03"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_04"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_05"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_06"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_07"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_08"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_09"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_10"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_11"
+			template = "RG_FLAK_PHOENIX"
+		}
+		component = {
+			slot = "PD_12"
+			template = "RG_FLAK_PHOENIX"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_13"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_14"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_15"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_16"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_17"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_18"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_19"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_20"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_21"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_22"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_23"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_24"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_25"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_26"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_27"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_28"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_29"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_30"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_31"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_32"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_33"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_34"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_35"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_36"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_37"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_38"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_39"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_40"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_41"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_42"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_43"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_44"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_45"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_46"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_47"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_48"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "RG_AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "RG_AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "RG_ARMOR_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_4"
+			template = "RG_ARMOR_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_5"
+			template = "RG_ENIGMATIC_SCHEDULER"
+		}
+		component = {
+			slot = "AUX_UTILITY_6"
+			template = "RG_ENIGMATIC_SCHEDULER"
+		}
+		component = {
+			slot = "AUX_UTILITY_7"
+			template = "RG_ENGINE_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_8"
+			template = "RG_ENGINE_BOOSTER"
+		}
+	}
+	required_component = "COLOSSUS_ZERO_POINT_REACTOR"
+	required_component = "RG_gatebuilder_jump"
+	required_component = "RG_gatebuilder_sensor"
+	required_component = "RG_gatebuilder_thruster"
+	required_component = "RG_COMBAT_COMPUTER_MotherShip"
+	required_component = "RG_CORVETTE_CLOAKING_3"
+	required_component = "RG_BAKAHALO"
+	required_component = "RG_ANTIBAKAHALO"
+	required_component = "RG_SHIP_AURA_NANOBOT_CLOUD"
+}
 
+# Gray Goo juggernaut
+ship_design = {
+	name = "NAME_gray_juggernautship"
+	ship_size = RG_gray_juggernaut
+	is_event_design = yes
+	section = {
+		template = "RG_graygoo_juggernaut_key"
+		slot = "core"
+		component = {
+			slot = "PLANET_KILLER_GUN_01"
+			template = "RG_PLANET_KILLER"
+		}
+		component = {
+			slot = "TITAN_01"
+			template = "GRAY_BEAM_STATIC_EX"
+		}
+		component = {
+			slot = "TITAN_02"
+			template = "GRAY_BEAM_STATIC_EX"
+		}
+		component = {
+			slot = "TITAN_03"
+			template = "GRAY_BEAM_STATIC_EX"
+		}
+		component = {
+			slot = "TITAN_04"
+			template = "GRAY_BEAM_STATIC_EX"
+		}
+		component = {
+			slot = "TITAN_05"
+			template = "GRAY_BEAM_STATIC_EX"
+		}
+		component = {
+			slot = "TITAN_06"
+			template = "GRAY_BEAM_STATIC_EX"
+		}
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "GRAY_BEAM_STATIC_X"
+		}
+		component = {
+			slot = "EXTRA_LARGE_02"
+			template = "GRAY_BEAM_STATIC_X"
+		}
+		component = {
+			slot = "EXTRA_LARGE_03"
+			template = "GRAY_BEAM_STATIC_X"
+		}
+		component = {
+			slot = "EXTRA_LARGE_04"
+			template = "GRAY_BEAM_STATIC_X"
+		}
+		component = {
+			slot = "EXTRA_LARGE_05"
+			template = "GRAY_BEAM_STATIC_X"
+		}
+		component = {
+			slot = "EXTRA_LARGE_06"
+			template = "GRAY_BEAM_STATIC_X"
+		}
+		component = {
+			slot = "EXTRA_LARGE_07"
+			template = "GRAY_BEAM_STATIC_X"
+		}
+		component = {
+			slot = "EXTRA_LARGE_08"
+			template = "GRAY_BEAM_STATIC_X"
+		}
+		component = {
+			slot = "TORPEDO_01"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_02"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_03"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_04"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_05"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_06"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_07"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_08"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_05"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_06"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_07"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_08"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_09"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_10"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_11"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_12"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_05"
+			template = "RG_BOMBER_HANGAR_ATTACK_ROCKET"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_06"
+			template = "RG_BOMBER_HANGAR_ATTACK_ROCKET"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_07"
+			template = "RG_BOMBER_HANGAR_ATTACK_ROCKET"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_08"
+			template = "RG_BOMBER_HANGAR_ATTACK_ROCKET"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_09"
+			template = "RG_BOMBER_HANGAR_AP_BOMB"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_10"
+			template = "RG_BOMBER_HANGAR_AP_BOMB"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_11"
+			template = "RG_BOMBER_HANGAR_AP_BOMB"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_12"
+			template = "RG_BOMBER_HANGAR_AP_BOMB"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_13"
+			template = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_14"
+			template = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_15"
+			template = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_16"
+			template = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO"
+		}
+		component = {
+			slot = "LARGE_GUN_13"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_14"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_15"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_16"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_17"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_18"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_19"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_20"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_21"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_22"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_23"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_24"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_25"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_26"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_27"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_28"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_29"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_30"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_31"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_32"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_33"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_34"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_35"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "LARGE_GUN_36"
+			template = "HUGE_GRAY_WEAPON_KIN"
+		}
+		component = {
+			slot = "PD_01"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_02"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_03"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_04"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_05"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_06"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_07"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_08"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_09"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_10"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_11"
+			template = "RG_FLAK_PHOENIX"
+		}
+		component = {
+			slot = "PD_12"
+			template = "RG_FLAK_PHOENIX"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_7"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_8"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_9"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_10"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_11"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_12"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_13"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_14"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_15"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_16"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_17"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_18"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_19"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_20"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_21"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_22"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_23"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_24"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_25"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_26"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_27"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_28"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_29"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_30"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_31"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_32"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_33"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_34"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_35"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_36"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_37"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_38"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_39"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_40"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_41"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_42"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_43"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_44"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_45"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_46"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_47"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_48"
+			template = "HUGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "RG_AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "RG_AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_3"
+			template = "RG_ARMOR_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_4"
+			template = "RG_ARMOR_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_5"
+			template = "RG_ENIGMATIC_SCHEDULER"
+		}
+		component = {
+			slot = "AUX_UTILITY_6"
+			template = "RG_ENIGMATIC_SCHEDULER"
+		}
+		component = {
+			slot = "AUX_UTILITY_7"
+			template = "RG_ENGINE_BOOSTER"
+		}
+		component = {
+			slot = "AUX_UTILITY_8"
+			template = "RG_ENGINE_BOOSTER"
+		}
+	}
+	required_component = "COLOSSUS_ZERO_POINT_REACTOR"
+	required_component = "RG_gatebuilder_jump"
+	required_component = "RG_gatebuilder_sensor"
+	required_component = "RG_gatebuilder_thruster"
+	required_component = "RG_COMBAT_COMPUTER_MotherShip"
+	required_component = "RG_CORVETTE_CLOAKING_3"
+	required_component = "RG_BAKAHALO"
+	required_component = "RG_ANTIBAKAHALO"
+	required_component = "RG_SHIP_AURA_NANOBOT_CLOUD"
+	required_component = "STARBASE_AURA_FTL_INHIBITOR"
+}
+
+# 航母 1
+ship_design = {
+	name = "RG_carrier_Interdictor"
+	ship_size = RG_graygoo_interdictor
+	is_event_design = yes
+	section = {
+		template = "RG_carrier_interdictor_key"
+		slot = "mid"
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "RG_BOMBER_HANGAR_AP_BOMB"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "RG_BOMBER_HANGAR_ATTACK_ROCKET"
+		}
+		component = {
+			slot = "PD_01"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_02"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_03"
+			template = "RG_CARRIER_RADAR"
+		}
 		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "LARGE_GRAY_MIX_ARMOR"
@@ -764,12 +1339,238 @@ ship_design = {
 			slot = "LARGE_UTILITY_4"
 			template = "LARGE_GRAY_MIX_ARMOR"
 		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "RG_AUTO_REPAIR"
+		}
+	}
+	required_component = "RG_gatebuilder_jump"
+	required_component = "RG_gatebuilder_sensor"
+	required_component = "RG_gatebuilder_thruster"
+	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_COMBAT_COMPUTER_CARRIER"
+}
 
+# 战列 2
+ship_design = {
+	name = "RG_battleship_Interdictor"
+	ship_size = RG_graygoo_interdictor
+	is_event_design = yes
+	section = {
+		template = "RG_battleship_interdictor_key"
+		slot = "mid"
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_03"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_04"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_05"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_06"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "PD_01"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "RG_AUTO_REPAIR"
+		}
+	}
+	required_component = "RG_gatebuilder_jump"
+	required_component = "RG_gatebuilder_sensor"
+	required_component = "RG_gatebuilder_thruster"
+	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_COMBAT_COMPUTER_battle"
+}
+
+# 泰坦 3
+ship_design = {
+	name = "RG_titan_interdictor"
+	ship_size = RG_graygoo_interdictor
+	is_event_design = yes
+	section = {
+		template = "RG_titan_interdictor_key"
+		slot = "mid"
+		component = {
+			slot = "TITAN_01"
+			template = "GRAY_BEAM_STATIC_EX"
+		}
+		component = {
+			slot = "PD_01"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
 		component = {
 			slot = "AUX_UTILITY_1"
 			template = "RG_ENIGMATIC_SCHEDULER"
 		}
+	}
+	required_component = "RG_gatebuilder_jump"
+	required_component = "RG_gatebuilder_sensor"
+	required_component = "RG_gatebuilder_thruster"
+	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_COMBAT_COMPUTER_artillery"
+}
 
+# 线列 4
+ship_design = {
+	name = "RG_line_interdictor"
+	ship_size = RG_graygoo_interdictor
+	is_event_design = yes
+	section = {
+		template = "RG_line_interdictor_key"
+		slot = "mid"
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "GRAY_BEAM_STATIC_X"
+		}
+		component = {
+			slot = "EXTRA_LARGE_02"
+			template = "GRAY_BEAM_STATIC_X"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "RG_AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "RG_AUTO_REPAIR"
+		}
+	}
+	required_component = "RG_gatebuilder_jump"
+	required_component = "RG_gatebuilder_sensor"
+	required_component = "RG_gatebuilder_thruster"
+	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_COMBAT_COMPUTER_CHARGE"
+}
+
+# 雷装 5
+ship_design = {
+	name = "RG_torpedo_interdictor"
+	ship_size = RG_graygoo_interdictor
+	is_event_design = yes
+	section = {
+		template = "RG_torpedo_interdictor_key"
+		slot = "mid"
+		component = {
+			slot = "TORPEDO_01"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_02"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_03"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_04"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_05"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_06"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "PD_01"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "RG_ENIGMATIC_SCHEDULER"
+		}
 	}
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
@@ -786,7 +1587,6 @@ ship_design = {
 	section = {
 		template = "RG_AA_interdictor_key"
 		slot = "mid"
-
 		component = {
 			slot = "PD_01"
 			template = "RG_FLAK_BATTERY"
@@ -835,7 +1635,6 @@ ship_design = {
 			slot = "PD_12"
 			template = "RG_FLAK_BATTERY"
 		}
-
 		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "LARGE_GRAY_MIX_ARMOR"
@@ -852,12 +1651,10 @@ ship_design = {
 			slot = "LARGE_UTILITY_4"
 			template = "LARGE_GRAY_MIX_ARMOR"
 		}
-
 		component = {
 			slot = "AUX_UTILITY_1"
 			template = "RG_ENIGMATIC_SCHEDULER"
 		}
-
 	}
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
@@ -874,7 +1671,6 @@ ship_design = {
 	section = {
 		template = "RG_Buff_interdictor_key"
 		slot = "mid"
-
 		component = {
 			slot = "PD_01"
 			template = "RG_FLAK_BATTERY"
@@ -883,7 +1679,6 @@ ship_design = {
 			slot = "PD_02"
 			template = "RG_FLAK_BATTERY"
 		}
-		
 		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "LARGE_GRAY_MIX_ARMOR"
@@ -900,12 +1695,10 @@ ship_design = {
 			slot = "LARGE_UTILITY_4"
 			template = "LARGE_GRAY_MIX_ARMOR"
 		}
-
 		component = {
 			slot = "AUX_UTILITY_1"
 			template = "RG_AUTO_REPAIR"
 		}
-
 	}
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
@@ -924,12 +1717,10 @@ ship_design = {
 	section = {
 		template = "RG_COLOSSUS_interdictor_key"
 		slot = "mid"
-
 		component = {
 			slot = "PLANET_KILLER_GUN_01"
 			template = "PLANET_KILLER_NANOBOTS"
-		}	
-
+		}
 		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "LARGE_GRAY_MIX_ARMOR"
@@ -954,12 +1745,10 @@ ship_design = {
 			slot = "LARGE_UTILITY_6"
 			template = "LARGE_GRAY_MIX_ARMOR"
 		}
-
 		component = {
 			slot = "AUX_UTILITY_1"
 			template = "RG_AUTO_REPAIR"
 		}
-
 	}
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
@@ -976,7 +1765,6 @@ ship_design = {
 	section = {
 		template = "RG_Arsenal_interdictor_key"
 		slot = "mid"
-
 		component = {
 			slot = "LARGE_GUN_01"
 			template = "LARGE_GRAY_WEAPON_KIN"
@@ -1237,7 +2025,6 @@ ship_design = {
 			slot = "LARGE_GUN_65"
 			template = "LARGE_GRAY_WEAPON_KIN"
 		}
-
 		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "LARGE_GRAY_MIX_ARMOR"
@@ -1246,12 +2033,10 @@ ship_design = {
 			slot = "LARGE_UTILITY_2"
 			template = "LARGE_GRAY_MIX_ARMOR"
 		}
-
 		component = {
 			slot = "AUX_UTILITY_1"
 			template = "RG_ENIGMATIC_SCHEDULER"
 		}
-
 	}
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
@@ -1268,7 +2053,6 @@ ship_design = {
 	section = {
 		template = "RG_aircruiser_interdictor_key"
 		slot = "mid"
-
 		component = {
 			slot = "LARGE_GUN_01"
 			template = "LARGE_GRAY_WEAPON_LANCE"
@@ -1281,7 +2065,6 @@ ship_design = {
 			slot = "LARGE_GUN_03"
 			template = "LARGE_GRAY_WEAPON_LANCE"
 		}
-
 		component = {
 			slot = "STRIKE_CRAFT_01"
 			template = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO"
@@ -1290,12 +2073,10 @@ ship_design = {
 			slot = "STRIKE_CRAFT_02"
 			template = "RG_BOMBER_HANGAR_NEUTRON_TORPEDO"
 		}
-
 		component = {
 			slot = "PD_01"
 			template = "RG_FLAK_BATTERY"
 		}
-
 		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "LARGE_GRAY_MIX_ARMOR"
@@ -1312,12 +2093,10 @@ ship_design = {
 			slot = "LARGE_UTILITY_4"
 			template = "LARGE_GRAY_MIX_ARMOR"
 		}
-
 		component = {
 			slot = "AUX_UTILITY_1"
 			template = "RG_AUTO_REPAIR"
 		}
-
 	}
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
@@ -1334,7 +2113,6 @@ ship_design = {
 	section = {
 		template = "RG_torpedocruiser_interdictor_key"
 		slot = "mid"
-
 		component = {
 			slot = "LARGE_GUN_01"
 			template = "LARGE_GRAY_WEAPON_LANCE"
@@ -1347,7 +2125,6 @@ ship_design = {
 			slot = "LARGE_GUN_03"
 			template = "LARGE_GRAY_WEAPON_LANCE"
 		}
-
 		component = {
 			slot = "TORPEDO_01"
 			template = "RG_ENERGY_MISSILE"
@@ -1364,7 +2141,6 @@ ship_design = {
 			slot = "TORPEDO_04"
 			template = "RG_ENERGY_MISSILE"
 		}
-
 		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "LARGE_GRAY_MIX_ARMOR"
@@ -1381,12 +2157,10 @@ ship_design = {
 			slot = "LARGE_UTILITY_4"
 			template = "LARGE_GRAY_MIX_ARMOR"
 		}
-
 		component = {
 			slot = "AUX_UTILITY_1"
 			template = "RG_ENIGMATIC_SCHEDULER"
 		}
-
 	}
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
@@ -1403,7 +2177,6 @@ ship_design = {
 	section = {
 		template = "RG_icebreaker_interdictor"
 		slot = "mid"
-
 		component = {
 			slot = "PD_01"
 			template = "RG_FLAK_PHOENIX"
@@ -1416,7 +2189,6 @@ ship_design = {
 			slot = "PD_03"
 			template = "RG_FLAK_PHOENIX"
 		}
-
 		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "LARGE_GRAY_MIX_ARMOR"
@@ -1465,8 +2237,6 @@ ship_design = {
 			slot = "LARGE_UTILITY_12"
 			template = "LARGE_GRAY_MIX_ARMOR"
 		}
-
-
 		component = {
 			slot = "AUX_UTILITY_1"
 			template = "RG_ARMOR_BOOSTER"
@@ -1475,7 +2245,6 @@ ship_design = {
 			slot = "AUX_UTILITY_2"
 			template = "RG_ENGINE_BOOSTER"
 		}
-
 	}
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"

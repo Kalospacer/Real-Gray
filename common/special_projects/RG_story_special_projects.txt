@@ -6,25 +6,32 @@ special_project = {
 	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
 	picture = GFX_evt_space_dragon
 	event_scope = ship_event
-	
 	requirements = {
 		shipclass_science_ship = 1
 		leader = scientist
 	}
-
 	on_start = {
-		owner = { country_event = { id = rg_story.13 } }
+		owner = {
+			country_event = {
+				id = rg_story.13
+			}
+		}
 	}
 	on_cancel = {
-		owner = { country_event = { id = rg_story.14 } }
-	}
-	
-	on_success = {
-        this = {
-            set_event_locked = no
-        }
 		owner = {
-			country_event = { id = rg_story.15 }
+			country_event = {
+				id = rg_story.14
+			}
 		}
-	}	
+	}
+	on_success = {
+		this = {
+			set_event_locked = no
+		}
+		owner = {
+			country_event = {
+				id = rg_story.15
+			}
+		}
+	}
 }

@@ -1,14 +1,21 @@
 rg_storyline_trigger = {
- # 初始化故事事件触发
+	# 初始化故事事件触发
 	random_list = {
 		50 = {
-			country_event = { id = rg_story.2 days = 3600 random = 12800 }
+			country_event = {
+				id = rg_story.2
+				days = 3600
+				random = 12800
+			}
 		}
 		50 = {
-			country_event = { id = rg_story.8 days = 3600 random = 12800 }
+			country_event = {
+				id = rg_story.8
+				days = 3600
+				random = 12800
+			}
 		}
 	}
-
 	if = {
 		limit = {
 			exists = event_target:guardian_dragon_country
@@ -16,9 +23,12 @@ rg_storyline_trigger = {
 				has_global_flag = has_origin_gray_dragon
 			}
 		}
-		country_event = { id = rg_story.11 days = 3600 random = 12800 }
+		country_event = {
+			id = rg_story.11
+			days = 3600
+			random = 12800
+		}
 	}
-	
 }
 
 rg_create_gray_planetkiller_testship_1 = {
@@ -26,11 +36,11 @@ rg_create_gray_planetkiller_testship_1 = {
 		name = "NAME_RG_TESTSHIP"
 		settings = {
 			can_disband = yes
-			can_upgrade = no 
-			can_change_composition = no 
-			can_change_leader = no 
+			can_upgrade = no
+			can_change_composition = no
+			can_change_leader = no
 			uses_naval_capacity = no
-			spawn_debris = no					
+			spawn_debris = no
 		}
 		effect = {
 			set_owner = root
@@ -41,7 +51,7 @@ rg_create_gray_planetkiller_testship_1 = {
 				upgradable = no
 				effect = {
 					save_global_event_target_as = rg_test_ship_global_event_target
-				}		
+				}
 			}
 			set_location = {
 				target = root.capital_scope
@@ -58,11 +68,11 @@ rg_create_gray_paperwork_testship_1 = {
 		name = "NAME_RG_TESTSHIP"
 		settings = {
 			can_disband = yes
-			can_upgrade = no 
-			can_change_composition = no 
-			can_change_leader = no 
+			can_upgrade = no
+			can_change_composition = no
+			can_change_leader = no
 			uses_naval_capacity = no
-			spawn_debris = no					
+			spawn_debris = no
 		}
 		effect = {
 			set_owner = root
@@ -143,11 +153,11 @@ rg_create_fake_dragon = {
 			name = "NAME_RG_Nanite_Dragon"
 			settings = {
 				can_disband = yes
-				can_upgrade = no 
-				can_change_composition = no 
-				can_change_leader = no 
+				can_upgrade = no
+				can_change_composition = no
+				can_change_leader = no
 				uses_naval_capacity = no
-				spawn_debris = no					
+				spawn_debris = no
 			}
 			effect = {
 				set_owner = root
@@ -175,11 +185,11 @@ rg_create_gray_constship_1 = {
 		name = "NAME_Gray"
 		settings = {
 			can_disband = yes
-			can_upgrade = yes 
-			can_change_composition = yes 
-			can_change_leader = yes 
+			can_upgrade = yes
+			can_change_composition = yes
+			can_change_leader = yes
 			uses_naval_capacity = yes
-			spawn_debris = yes					
+			spawn_debris = yes
 		}
 		effect = {
 			set_owner = root
@@ -187,7 +197,7 @@ rg_create_gray_constship_1 = {
 				name = "NAME_Gray"
 				design = "NAME_RG_GRAY_constructor"
 				prefix = no
-				upgradable = yes					
+				upgradable = yes
 			}
 			set_location = {
 				target = event_target:global_gray_location
@@ -207,11 +217,11 @@ rg_create_gray_colony_1 = {
 		name = "NAME_Gray"
 		settings = {
 			can_disband = yes
-			can_upgrade = yes 
-			can_change_composition = yes 
-			can_change_leader = yes 
+			can_upgrade = yes
+			can_change_composition = yes
+			can_change_leader = yes
 			uses_naval_capacity = yes
-			spawn_debris = yes					
+			spawn_debris = yes
 		}
 		effect = {
 			set_owner = root
@@ -219,7 +229,7 @@ rg_create_gray_colony_1 = {
 				name = "NAME_Gray"
 				design = "NAME_RG_armed_colony_ship"
 				prefix = no
-				upgradable = yes					
+				upgradable = yes
 			}
 			set_location = {
 				target = event_target:global_gray_location

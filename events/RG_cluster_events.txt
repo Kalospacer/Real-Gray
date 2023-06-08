@@ -1,30 +1,29 @@
 namespace = rg_cluster
-
 # Special project completed (overwrite)
 country_event = {
 	id = rg_cluster.2
 	hide_window = yes
-
 	is_triggered_only = yes
-
 	immediate = {
 		set_country_flag = lcluster_opener
 		set_global_flag = l_cluster_opened
-		
 		every_megastructure = {
 			limit = {
 				is_megastructure_type = lgate_base
-				NOT = { has_megastructure_flag = lgate_activated }
+				NOT = {
+					has_megastructure_flag = lgate_activated
+				}
 			}
 			activate_gateway = this
 			set_megastructure_flag = lgate_activated
 		}
-
 		set_global_flag = lgates_activated_globally
 		# centralized handling of chain and project clean-up
 		every_playable_country = {
 			if = {
-				limit = { is_researching_technology = tech_lgate_activation }
+				limit = {
+					is_researching_technology = tech_lgate_activation
+				}
 				give_technology = {
 					tech = tech_lgate_activation
 					message = no
@@ -39,7 +38,10 @@ country_event = {
 					is_same_value = root
 				}
 			}
-			country_event = { id = distar.10954 days = 1 }
+			country_event = {
+				id = distar.10954
+				days = 1
+			}
 		}
 		every_playable_country = {
 			limit = {
@@ -49,35 +51,44 @@ country_event = {
 				}
 				has_event_chain = l_cluster_chain
 			}
-			country_event = { id = distar.10953 days = 1 }
+			country_event = {
+				id = distar.10953
+				days = 1
+			}
 		}
-		observer_event = { id = observer.62 }
-
+		observer_event = {
+			id = observer.62
+		}
 		every_playable_country = {
 			if = {
-				limit = { has_modifier = rg_distant_stars_modifier }
+				limit = {
+					has_modifier = rg_distant_stars_modifier
+				}
 				remove_modifier = rg_distant_stars_modifier
 			}
 		}
-		country_event = { id = rg_cluster.10 }
+		country_event = {
+			id = rg_cluster.10
+		}
 	}
 }
 
 # Allow all nanite worlds to be terraformed
 country_event = {
-    id = rg_cluster.3
-    hide_window = yes
-    is_triggered_only = yes
-
-    immediate = {
-        every_galaxy_planet = {
-			limit = { is_planet_class = pc_gray_goo }
+	id = rg_cluster.3
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		every_galaxy_planet = {
+			limit = {
+				is_planet_class = pc_gray_goo
+			}
 			add_modifier = {
 				modifier = "terraforming_candidate"
 				days = -1
 			}
 		}
-    }
+	}
 }
 
 # Move home system
@@ -86,17 +97,15 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	fire_only_once = yes
-	
 	immediate = {
 		random_system = {
-			limit = {				
+			limit = {
 				has_star_flag = lcluster4
 				NOT = {
 					has_star_flag = lcluster_lgate
 				}
 			}
 			save_event_target_as = rg_cluster_home_system
-			
 			random_system_planet = {
 				limit = {
 					has_planet_flag = start_rg_cluster_gatebuilders
@@ -110,7 +119,6 @@ country_event = {
 				save_event_target_as = start_gatebuilders_mining_station_target1
 			}
 		}
-
 		capital_scope = {
 			save_event_target_as = rg_cluster_previous_home_planet
 			solar_system = {
@@ -122,7 +130,9 @@ country_event = {
 				}
 			}
 			if = {
-				limit = { exists = sector }
+				limit = {
+					exists = sector
+				}
 				sector = {
 					leader = {
 						unassign_leader = this
@@ -133,13 +143,14 @@ country_event = {
 			else = {
 				root = {
 					random_owned_leader = {
-						limit = { leader_class = governor }
+						limit = {
+							leader_class = governor
+						}
 						save_event_target_as = rg_cluster_sector_gov
 					}
 				}
 			}
 		}
-		
 		# Spaceport setup
 		if = {
 			limit = {
@@ -166,13 +177,11 @@ country_event = {
 				}
 			}
 		}
-		
 		event_target:start_gatebuilders_mining_station_target1 = {
 			create_mining_station = {
 				owner = root
 			}
 		}
-
 		# Planet setup
 		event_target:rg_cluster_home_planet = {
 			change_pc = pc_gaia
@@ -180,29 +189,34 @@ country_event = {
 			set_controller = root
 			set_capital = yes
 			set_sector_capital = yes
-			sector = { assign_leader = event_target:rg_cluster_sector_gov }
-			
+			sector = {
+				assign_leader = event_target:rg_cluster_sector_gov
+			}
 			set_name = random
-			
 			generate_start_buildings_and_districts = yes
 		}
-		
 		if = {
 			limit = {
-				owner = { is_machine_empire = no }
+				owner = {
+					is_machine_empire = no
+				}
 			}
 			every_owned_pop = {
 				modify_species = {
 					species = this
 					ideal_planet_class = pc_nuked
 				}
-				species = { save_event_target_as = target_species }
+				species = {
+					save_event_target_as = target_species
+				}
 			}
 			root = {
-				change_dominant_species = { species = event_target:target_species change_all = yes }
+				change_dominant_species = {
+					species = event_target:target_species
+					change_all = yes
+				}
 			}
 		}
-		
 		event_target:rg_cluster_home_system = {
 			random_system_planet = {
 				limit = {
@@ -211,7 +225,6 @@ country_event = {
 				save_event_target_as = rg_cluster_home_system_loc
 			}
 		}
-		
 		every_owned_fleet = {
 			limit = {
 				any_owned_ship = {
@@ -224,7 +237,6 @@ country_event = {
 			}
 			set_location = event_target:rg_cluster_home_system_loc
 		}
-		
 		event_target:rg_cluster_previous_home_planet = {
 			# move pops
 			every_owned_pop = {
@@ -243,7 +255,6 @@ country_event = {
 			}
 			check_planet_employment = yes
 		}
-
 		event_target:rg_cluster_previous_home_system = {
 			set_name = random
 			random_system_planet = {
@@ -252,25 +263,24 @@ country_event = {
 				}
 				set_name = solar_system
 			}
-			
 			remove_star_flag = sol
 			remove_star_flag = deneb_system
 		}
-
 		event_target:rg_cluster_previous_home_system = {
 			every_fleet_in_system = {
 				delete_fleet = this
 			}
 		}
-
-		owner_species = { 
+		owner_species = {
 			set_species_homeworld = event_target:rg_cluster_home_planet
 		}
 		every_owned_pop_species = {
-            set_species_homeworld = event_target:rg_cluster_home_planet
-        }
-
-		country_event = { id = rg_cluster.3 days = -1 }
+			set_species_homeworld = event_target:rg_cluster_home_planet
+		}
+		country_event = {
+			id = rg_cluster.3
+			days = -1
+		}
 	}
 }
 
@@ -298,23 +308,30 @@ country_event = {
 	picture = GFX_evt_l-gateway
 	show_sound = event_mystic_reveal
 	location = event_target:candidate_gateway
-	
 	immediate = {
 		every_playable_country = {
 			limit = {
 				OR = {
 					has_origin = origin_rg_gray
 				}
-				NOT = { is_same_value = root }
+				NOT = {
+					is_same_value = root
+				}
 			}
-			country_event = { id = rg_cluster.11 }
+			country_event = {
+				id = rg_cluster.11
+			}
 		}
 		every_playable_country = {
 			limit = {
 				has_special_project = RG_LCLUSTER_PROJECT
-				NOT = { is_same_value = root }
+				NOT = {
+					is_same_value = root
+				}
 			}
-			country_event = { id = rg_cluster.12 }
+			country_event = {
+				id = rg_cluster.12
+			}
 		}
 		every_playable_country = {
 			limit = {
@@ -324,7 +341,9 @@ country_event = {
 					is_same_value = root
 				}
 			}
-			country_event = { id = rg_cluster.13}
+			country_event = {
+				id = rg_cluster.13
+			}
 		}
 		every_playable_country = {
 			limit = {
@@ -334,11 +353,14 @@ country_event = {
 				}
 				has_event_chain = l_cluster_chain
 			}
-			country_event = { id = rg_cluster.12 }
+			country_event = {
+				id = rg_cluster.12
+			}
 		}
-		observer_event = { id = observer.62 }
+		observer_event = {
+			id = observer.62
+		}
 	}
-
 	option = {
 		trigger = {
 			NOR = {
@@ -365,13 +387,14 @@ country_event = {
 	desc = "rg_cluster.11.desc"
 	picture = GFX_evt_l-gateway
 	show_sound = event_mystic_reveal
-	
 	immediate = {
 		if = {
 			limit = {
 				has_special_project = RG_LCLUSTER_PROJECT
 			}
-			abort_special_project = { type = RG_LCLUSTER_PROJECT }
+			abort_special_project = {
+				type = RG_LCLUSTER_PROJECT
+			}
 		}
 		else_if = {
 			limit = {
@@ -381,7 +404,6 @@ country_event = {
 			end_event_chain = "l_cluster_chain"
 		}
 	}
-
 	option = {
 		name = "rg_cluster.11.a"
 	}
@@ -395,13 +417,14 @@ country_event = {
 	desc = "rg_cluster.12.desc"
 	picture = GFX_evt_l-gateway
 	show_sound = event_mystic_reveal
-	
 	immediate = {
 		if = {
 			limit = {
 				has_special_project = RG_LCLUSTER_PROJECT
 			}
-			abort_special_project = { type = RG_LCLUSTER_PROJECT }
+			abort_special_project = {
+				type = RG_LCLUSTER_PROJECT
+			}
 		}
 		else_if = {
 			limit = {
@@ -411,7 +434,6 @@ country_event = {
 			end_event_chain = "l_cluster_chain"
 		}
 	}
-
 	option = {
 		name = "rg_cluster.12.a"
 	}
@@ -425,7 +447,6 @@ country_event = {
 	desc = "rg_cluster.13.desc"
 	picture = GFX_evt_l-gateway
 	show_sound = event_mystic_reveal
-
 	option = {
 		name = "rg_cluster.13.a"
 	}

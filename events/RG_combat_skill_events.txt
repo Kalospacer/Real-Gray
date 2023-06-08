@@ -1,5 +1,4 @@
 namespace = rg_skill
-
 #fleet_event = {
 #    id = rg_skill.1
 #    hide_window = yes
@@ -67,7 +66,6 @@ namespace = rg_skill
 #		}	
 #	}	
 #}
-
 #fleet_event = {
 #    id = rg_skill.2
 #    hide_window = yes
@@ -92,29 +90,31 @@ namespace = rg_skill
 #		}
 #	}
 #}
-
 #自动星系建设
 ship_event = {
 	id = rg_skill.3
 	hide_window = yes
 	is_triggered_only = yes
-
 	trigger = {
 		OR = {
 			AND = {
 				is_ship_size = RG_armed_science_ship
 				OR = {
 					has_component = RG_AUTOCONST_HANGER
-				}	
+				}
 			}
 		}
 		solar_system = {
 			OR = {
 				#星系无主
-				NOT = { exists = space_owner }
+				NOT = {
+					exists = space_owner
+				}
 				#星系为我方但有空间站未建造
 				AND = {
-					space_owner = { is_same_empire = root.controller }
+					space_owner = {
+						is_same_empire = root.controller
+					}
 					any_system_planet = {
 						RG_planet_can_auto_build = yes
 					}
@@ -135,20 +135,22 @@ ship_event = {
 			}
 		}
 	}
-
 	immediate = {
 		if = {
-			limit = { 
+			limit = {
 				owner = {
 					NOT = {
 						is_same_value = origin_rg_gray_country
 					}
 				}
 				solar_system = {
-					NOT = { #星系内不能有敌舰
-						any_fleet_in_system = { 
+					NOT = {
+						#星系内不能有敌舰
+						any_fleet_in_system = {
 							exists = controller
-							controller = { is_hostile = root.controller } 
+							controller = {
+								is_hostile = root.controller
+							}
 						}
 					}
 				}
@@ -157,7 +159,7 @@ ship_event = {
 			RG_const_auto_build_effect_event = yes
 		}
 		else_if = {
-			limit = { 
+			limit = {
 				owner = {
 					is_same_value = origin_rg_gray_country
 					NOT = {
@@ -166,10 +168,13 @@ ship_event = {
 				}
 				solar_system = {
 					has_star_flag = lcluster
-					NOT = { #星系内不能有敌舰		
-						any_fleet_in_system = { 
+					NOT = {
+						#星系内不能有敌舰		
+						any_fleet_in_system = {
 							exists = controller
-							controller = { is_hostile = root.controller } 
+							controller = {
+								is_hostile = root.controller
+							}
 						}
 					}
 				}
@@ -178,17 +183,20 @@ ship_event = {
 			RG_const_auto_build_effect_event = yes
 		}
 		else_if = {
-			limit = { 
+			limit = {
 				owner = {
-					is_same_value = origin_rg_gray_country # 是小灰起源
-					has_global_flag = l_cluster_opened # L星门已开启
+					is_same_value = origin_rg_gray_country					# 是小灰起源
+					has_global_flag = l_cluster_opened					# L星门已开启
 				}
 				solar_system = {
 					# has_star_flag = lcluster
-					NOT = { #星系内不能有敌舰		
-						any_fleet_in_system = { 
+					NOT = {
+						#星系内不能有敌舰		
+						any_fleet_in_system = {
 							exists = controller
-							controller = { is_hostile = root.controller } 
+							controller = {
+								is_hostile = root.controller
+							}
 						}
 					}
 				}
@@ -208,18 +216,16 @@ ship_event = {
 fleet_event = {
 	id = rg_skill.4
 	hide_window = yes
-
-	mean_time_to_happen = { years = 1 }
-
-	trigger = {				
+	mean_time_to_happen = {
+		years = 1
+	}
+	trigger = {
 		any_controlled_ship = {
 			has_ship_flag = rg_mothership
-		} 
+		}
 		num_ships < 20
 		is_ship_size = RG_graygoo_mothership
 	}
-
-
 	immediate = {
 		random_list = {
 			14 = {
@@ -265,7 +271,7 @@ fleet_event = {
 				}
 			}
 			12 = {
-				create_ship = { 
+				create_ship = {
 					name = random
 					design = "RG_Arsenal_Interdictor"
 					upgradable = yes
@@ -286,9 +292,9 @@ fleet_event = {
 fleet_event = {
 	id = rg_skill.5
 	hide_window = yes
-
-	mean_time_to_happen = { months = 5 }
-
+	mean_time_to_happen = {
+		months = 5
+	}
 	trigger = {
 		any_controlled_ship = {
 			OR = {
@@ -298,11 +304,12 @@ fleet_event = {
 				}
 				has_ship_flag = rg_nanite_mothership
 			}
-			owner = { is_country_type = gray_goo }
-		} 
+			owner = {
+				is_country_type = gray_goo
+			}
+		}
 		num_ships < 40
 	}
-
 	immediate = {
 		random_list = {
 			14 = {
@@ -348,7 +355,7 @@ fleet_event = {
 				}
 			}
 			12 = {
-				create_ship = { 
+				create_ship = {
 					name = random
 					design = "RG_Arsenal_Interdictor"
 					upgradable = yes
@@ -373,28 +380,34 @@ planet_event = {
 	id = rg_skill.6
 	hide_window = yes
 	is_triggered_only = yes
-
 	immediate = {
 		save_event_target_as = tempest_incoming_battlefield_planet
-		if = { # planet
-			limit = { has_ground_combat = no }
+		if = {
+			# planet
+			limit = {
+				has_ground_combat = no
+			}
 			remove_planet_flag = checking_tempest_incoming
 		}
-		else = { #planet
-			any_ground_combat_attacker = { #army
+		else = {
+			#planet
+			any_ground_combat_attacker = {
+				#army
 				exists = leader
-				leader = { #leader
+				leader = {
+					#leader
 					has_trait = RG_leader_trait_general_gray_skill
-					owner = { #country
+					owner = {
+						#country
 						save_event_target_as = attacking_general_country
 					}
 				}
 			}
-
 			# Do the same check again in X days
-			country_event = { id = rg_skill.10 } # NOTE: Update custom loc for effect when changing days
+			country_event = {
+				id = rg_skill.10
+			}			# NOTE: Update custom loc for effect when changing days
 		}
-
 	}
 }
 
@@ -407,14 +420,14 @@ planet_event = {
 	id = rg_skill.7
 	hide_window = yes
 	is_triggered_only = yes
-
 	# Prevent duplicate events
 	trigger = {
-		not = { has_planet_flag = checking_tempest_incoming }
+		not = {
+			has_planet_flag = checking_tempest_incoming
+		}
 	}
-
 	immediate = {
-		set_planet_flag = checking_tempest_incoming # Prevent duplicate events
+		set_planet_flag = checking_tempest_incoming		# Prevent duplicate events
 		planet_event = {
 			id = rg_skill.6
 			days = 1
@@ -431,10 +444,9 @@ country_event = {
 	id = rg_skill.8
 	hide_window = yes
 	is_triggered_only = yes
-
 	immediate = {
-		FROMFROMFROM = { # Planet where ground combat is taking place.
-
+		FROMFROMFROM = {
+			# Planet where ground combat is taking place.
 			# Check if dead army is a defensive army.
 			if = {
 				limit = {
@@ -442,7 +454,6 @@ country_event = {
 						is_same_value = ROOT.FROM
 					}
 				}
-
 				# Check if attacking army has general with Crusader trait.
 				random_ground_combat_attacker = {
 					limit = {
@@ -461,13 +472,21 @@ country_event = {
 					}
 				}
 			}
-
-			if = { # planet where ground combat is taking place.
-				limit = { exists = event_target:attacking_general }
+			if = {
+				# planet where ground combat is taking place.
+				limit = {
+					exists = event_target:attacking_general
+				}
 				if = {
 					limit = {
-						event_target:attacking_general_country = { # attacking general country
-							NOT = { check_variable = { which = rg_general_skill_combat_killed_variable value = 100 } }
+						event_target:attacking_general_country = {
+							# attacking general country
+							NOT = {
+								check_variable = {
+									which = rg_general_skill_combat_killed_variable
+									value = 100
+								}
+							}
 						}
 					}
 					event_target:attacking_general_country = {
@@ -482,8 +501,14 @@ country_event = {
 					}
 				}
 				# Handle both sides of the ground combat
-				RG_leader_trait_tempest_incoming_random_kill_effect = { SIDE_A = attacker SIDE_B = defender }
-				RG_leader_trait_tempest_incoming_random_kill_effect = { SIDE_A = defender SIDE_B = attacker }
+				RG_leader_trait_tempest_incoming_random_kill_effect = {
+					SIDE_A = attacker
+					SIDE_B = defender
+				}
+				RG_leader_trait_tempest_incoming_random_kill_effect = {
+					SIDE_A = defender
+					SIDE_B = attacker
+				}
 			}
 		}
 	}
@@ -493,23 +518,27 @@ country_event = {
 	id = rg_skill.9
 	hide_window = yes
 	is_triggered_only = yes
-
 	trigger = {
 		any_owned_army = {
 			army_type = gray_army
 			if = {
-				limit = { exists = planet }
-				planet = { has_ground_combat = no }
+				limit = {
+					exists = planet
+				}
+				planet = {
+					has_ground_combat = no
+				}
 			}
 		}
 	}
-
 	immediate = {
-		set_variable = { # country
+		set_variable = {
+			# country
 			which = rg_general_skill_combat_daypassed_variable
 			value = 1
 		}
-		set_variable = { # country
+		set_variable = {
+			# country
 			which = rg_general_skill_combat_killed_variable
 			value = 0
 		}
@@ -520,7 +549,6 @@ country_event = {
 	id = rg_skill.10
 	hide_window = yes
 	is_triggered_only = yes
-
 	trigger = {
 		any_owned_army = {
 			army_type = gray_army
@@ -531,12 +559,15 @@ country_event = {
 				}
 			}
 			if = {
-				limit = { exists = planet }
-				planet = { has_ground_combat = yes }
+				limit = {
+					exists = planet
+				}
+				planet = {
+					has_ground_combat = yes
+				}
 			}
 		}
 	}
-
 	immediate = {
 		event_target:attacking_general_country = {
 			change_variable = {
@@ -544,8 +575,10 @@ country_event = {
 				value = 1
 			}
 		}
-
-		country_event = { id = rg_skill.10 days = 1 }
+		country_event = {
+			id = rg_skill.10
+			days = 1
+		}
 	}
 }
 
@@ -554,14 +587,12 @@ country_event = {
 	id = rg_skill.11
 	hide_window = yes
 	is_triggered_only = yes
-
 	trigger = {
 		FromFromFrom = {
 			is_in_combat = yes
 			has_component = RG_revive_component
 		}
 	}
-
 	immediate = {
 		FromFromFrom = {
 			save_event_target_as = event_ship
@@ -574,4 +605,3 @@ country_event = {
 		}
 	}
 }
-
