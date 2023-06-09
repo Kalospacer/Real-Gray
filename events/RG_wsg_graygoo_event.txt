@@ -1608,7 +1608,7 @@ country_event = {
 	}
 	option = {
 		# 购买灰风母舰
-		name = rg.4.a
+		name = rg_event.4.a
 		trigger = {
 			NOT = {
 				has_country_flag = gray_reforming
@@ -1645,7 +1645,7 @@ country_event = {
 	}
 	option = {
 		# 购买工程船
-		name = rg.4.b
+		name = rg_event.4.b
 		trigger = {
 			NOT = {
 				has_country_flag = gray_reforming
@@ -1671,7 +1671,7 @@ country_event = {
 	}
 	option = {
 		# 购买殖民船
-		name = rg.4.g
+		name = rg_event.4.g
 		trigger = {
 			NOT = {
 				has_country_flag = gray_reforming
@@ -1697,7 +1697,7 @@ country_event = {
 	}
 	option = {
 		# 没钱了，救救
-		name = rg.4.c
+		name = rg_event.4.c
 		trigger = {
 			NOT = {
 				has_country_flag = gray_reforming
@@ -1728,9 +1728,9 @@ country_event = {
 country_event = {
 	id = rg_graygoo.5
 	title = "graygoo.500.title"
-	desc = "rg.5.a.desc"
-	desc = "rg.5.b.desc"
-	desc = "rg.5.c.desc"
+	desc = "rg_event.5.a.desc"
+	desc = "rg_event.5.b.desc"
+	desc = "rg_event.5.c.desc"
 	diplomatic = yes
 	custom_gui = wg_gray_new_commu_window
 	custom_gui_option = wg_new_commu_option
@@ -1745,7 +1745,7 @@ country_event = {
 	}
 	option = {
 		# 没钱了，救救
-		name = rg.5.a
+		name = rg_event.5.a
 		hidden_effect = {
 			set_country_flag = gray_begging
 			set_timed_country_flag = {
@@ -1771,8 +1771,8 @@ country_event = {
 country_event = {
 	id = rg_graygoo.6
 	title = "graygoo.500.title"
-	desc = "rg.6.a.desc"
-	desc = "rg.6.b.desc"
+	desc = "rg_event.6.a.desc"
+	desc = "rg_event.6.b.desc"
 	diplomatic = yes
 	custom_gui = wg_gray_new_commu_window
 	custom_gui_option = wg_new_commu_option
@@ -1787,7 +1787,7 @@ country_event = {
 	}
 	option = {
 		# 诶嘿
-		name = rg.6.a
+		name = rg_event.6.a
 		default_hide_option = yes
 	}
 }
