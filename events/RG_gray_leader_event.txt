@@ -819,7 +819,7 @@ country_event = {
 	}
 	option = {
 		# 购买主宰
-		name = rg.4.d
+		name = rg_event.4.d
 		trigger = {
 			NOR = {
 				has_country_flag = gray_reforming
@@ -851,7 +851,7 @@ country_event = {
 	}
 	option = {
 		# 开启隐形
-		name = rg.4.e
+		name = rg_event.4.e
 		response_text = rg_cloak.a.response
 		trigger = {
 			any_owned_fleet = {
@@ -874,7 +874,7 @@ country_event = {
 	}
 	option = {
 		# 关闭隐形
-		name = rg.4.f
+		name = rg_event.4.f
 		response_text = rg_cloak_off.a.response
 		trigger = {
 			any_owned_fleet = {
@@ -1181,7 +1181,7 @@ country_event = {
 	}
 	option = {
 		# 开启隐形
-		name = rg.4.e
+		name = rg_event.4.e
 		response_text = rg_cloak.a.response
 		trigger = {
 			any_owned_fleet = {
@@ -1204,7 +1204,7 @@ country_event = {
 	}
 	option = {
 		# 关闭隐形
-		name = rg.4.f
+		name = rg_event.4.f
 		response_text = rg_cloak_off.a.response
 		trigger = {
 			any_owned_fleet = {
@@ -1445,7 +1445,7 @@ country_event = {
 		}
 	}
 	#	option = { # 开启建造中继器
-	#		name = rg.5.e
+	#		name = rg_event.5.e
 	#		trigger = {
 	#			has_country_flag = rg_can_const_hyper_relay
 	#		}
@@ -1457,7 +1457,7 @@ country_event = {
 	#	}
 	#
 	#	option = { # 关闭建造中继器
-	#		name = rg.5.f
+	#		name = rg_event.5.f
 	#		trigger = {
 	#			NOT = {
 	#				has_country_flag = rg_can_const_hyper_relay
@@ -1491,7 +1491,7 @@ country_event = {
 country_event = {
 	id = rg_grayleader.4
 	title = "graygoo.500.title"
-	desc = "rg.4.a.desc"
+	desc = "rg_event.4.a.desc"
 	event_window_type = leader_recruit
 	picture_event_data = {
 		portrait = event_target:rg_gray_country_leader
@@ -1508,7 +1508,7 @@ country_event = {
 	}
 	option = {
 		# 购买灰风母舰
-		name = rg.4.a
+		name = rg_event.4.a
 		trigger = {
 			NOT = {
 				has_country_flag = gray_reforming
@@ -1545,7 +1545,7 @@ country_event = {
 	}
 	option = {
 		# 购买工程船
-		name = rg.4.b
+		name = rg_event.4.b
 		trigger = {
 			NOT = {
 				has_country_flag = gray_reforming
@@ -1571,7 +1571,7 @@ country_event = {
 	}
 	option = {
 		# 购买殖民船
-		name = rg.4.g
+		name = rg_event.4.g
 		trigger = {
 			NOT = {
 				has_country_flag = gray_reforming
@@ -1597,7 +1597,7 @@ country_event = {
 	}
 	option = {
 		# 没钱了，救救
-		name = rg.4.c
+		name = rg_event.4.c
 		trigger = {
 			NOT = {
 				has_country_flag = gray_reforming
@@ -1638,9 +1638,9 @@ country_event = {
 country_event = {
 	id = rg_grayleader.5
 	title = "graygoo.500.title"
-	desc = "rg.5.a.desc"
-	desc = "rg.5.b.desc"
-	desc = "rg.5.c.desc"
+	desc = "rg_event.5.a.desc"
+	desc = "rg_event.5.b.desc"
+	desc = "rg_event.5.c.desc"
 	event_window_type = leader_recruit
 	picture_event_data = {
 		portrait = event_target:rg_gray_country_leader
@@ -1657,7 +1657,7 @@ country_event = {
 	}
 	option = {
 		# 没钱了，救救
-		name = rg.5.a
+		name = rg_event.5.a
 		hidden_effect = {
 			set_country_flag = gray_begging
 			set_timed_country_flag = {
@@ -1693,8 +1693,8 @@ country_event = {
 country_event = {
 	id = rg_grayleader.6
 	title = "graygoo.500.title"
-	desc = "rg.6.a.desc"
-	desc = "rg.6.b.desc"
+	desc = "rg_event.6.a.desc"
+	desc = "rg_event.6.b.desc"
 	event_window_type = leader_recruit
 	picture_event_data = {
 		portrait = event_target:rg_gray_country_leader
@@ -1711,7 +1711,7 @@ country_event = {
 	}
 	option = {
 		# 诶嘿
-		name = rg.6.a
+		name = rg_event.6.a
 	}
 	option = {
 		name = graygoo.500.d
