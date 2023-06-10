@@ -719,7 +719,7 @@ country_event = {
 				id = graygoo.15
 			}
 			country_event = {
-				id = rg.200
+				id = rg_event.200
 				days = 80
 				random = 120
 			}
@@ -775,7 +775,7 @@ country_event = {
 				id = graygoo.181
 			}
 			country_event = {
-				id = rg.200
+				id = rg_event.200
 				days = 80
 				random = 120
 			}

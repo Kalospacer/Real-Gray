@@ -316,7 +316,7 @@ country_event = {
 		rg_gray_country_after_init = yes
 		create_message = {
 			type = MESSAGE_RECRUITED_LEADER
-			localization = "rg.2.desc"
+			localization = "rg_event.2.desc"
 			days = @toast_message_days
 			target = event_target:rg_gray_country_leader
 			variable = {
@@ -644,7 +644,7 @@ event = {
 				id = graygoo.511
 			}
 			country_event = {
-				id = rg.22
+				id = rg_event.22
 			}
 		}
 	}

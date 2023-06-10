@@ -68,14 +68,14 @@ special_project = {
 	on_start = {
 		owner = {
 			country_event = {
-				id = rg.9
+				id = rg_event.9
 			}
 		}
 	}
 	on_cancel = {
 		owner = {
 			country_event = {
-				id = rg.10
+				id = rg_event.10
 			}
 		}
 	}
@@ -85,7 +85,7 @@ special_project = {
 		}
 		owner = {
 			country_event = {
-				id = rg.11
+				id = rg_event.11
 			}
 		}
 	}
@@ -107,13 +107,13 @@ special_project = {
 	on_start = {
 		owner = {
 			country_event = {
-				id = rg.9
+				id = rg_event.9
 			}
 		}
 	}
 	on_cancel = {
 		country_event = {
-			id = rg.13
+			id = rg_event.13
 		}
 	}
 	on_success = {
@@ -122,7 +122,7 @@ special_project = {
 		}
 		owner = {
 			country_event = {
-				id = rg.12
+				id = rg_event.12
 			}
 		}
 	}
@@ -144,13 +144,13 @@ special_project = {
 	on_start = {
 		owner = {
 			country_event = {
-				id = rg.9
+				id = rg_event.9
 			}
 		}
 	}
 	on_cancel = {
 		country_event = {
-			id = rg.14
+			id = rg_event.14
 		}
 	}
 	on_success = {
@@ -159,7 +159,7 @@ special_project = {
 		}
 		owner = {
 			country_event = {
-				id = rg.15
+				id = rg_event.15
 			}
 		}
 	}
