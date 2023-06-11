@@ -543,7 +543,9 @@ country_event = {
 # 取消改造项目1
 country_event = {
 	id = rg_event.10
-	hide_window = yes
+	title = rg_event.10.title
+	desc = rg_event.10.desc
+	picture = GFX_evt_gray_goo_ships
 	is_triggered_only = yes
 	immediate = {
 		if = {
@@ -566,6 +568,10 @@ country_event = {
 		abort_special_project = {
 			type = RG_GRAY_MOD1
 		}
+	}
+	option = {
+		name = rg_event.10.a
+		default_hide_option = yes
 	}
 }
 

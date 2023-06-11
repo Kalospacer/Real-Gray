@@ -87,6 +87,12 @@ special_project = {
 			country_event = {
 				id = rg_event.11
 			}
+			random_situation = {
+				limit = {
+					is_situation_type = situation_rg_gray_mod1
+				}
+				remove_situation_flag = situation_rg_gray_mod1_stage_6_booster
+			}
 		}
 	}
 }

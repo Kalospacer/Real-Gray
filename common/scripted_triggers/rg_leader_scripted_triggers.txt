@@ -35,14 +35,6 @@ RG_gray_mod1_allow_trigger = {
 			has_skill >= 10
 		}
 	}
-	resource_stockpile_compare = {
-		resource = energy
-		value >= 15000
-	}
-	resource_stockpile_compare = {
-		resource = alloys
-		value >= 15000
-	}
 }
 
 RG_gray_mod2_trigger = {

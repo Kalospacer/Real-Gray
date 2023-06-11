@@ -7,7 +7,7 @@ situation_rg_gray_mod1 = {
 		hidden_effect = {
 			owner = {
 				country_event = {
-					id = rg_event.11
+					id = rg_story.29
 				}
 			}
 		}
@@ -65,33 +65,71 @@ situation_rg_gray_mod1 = {
 			icon_background = GFX_situation_stage_frame_red
 			end = 50
 			custom_tooltip = situation_rg_gray_mod1_stage_3_tooltip
+			on_first_enter = {
+				country_event = {
+					id = rg_story.25
+				}
+			}
 		}
 		stage_4 = {
 			icon = GFX_situation_stage_3
 			icon_background = GFX_situation_stage_frame_red
 			end = 66
 			custom_tooltip = situation_rg_gray_mod1_stage_4_tooltip
+			on_first_enter = {
+				country_event = {
+					id = rg_story.26
+				}
+			}
 		}
 		stage_5 = {
 			icon = GFX_situation_stage_3
 			icon_background = GFX_situation_stage_frame_red
 			end = 82.5
 			custom_tooltip = situation_rg_gray_mod1_stage_5_tooltip
+			triggered_modifier = {
+				potential = {
+					has_situation_flag = situation_rg_gray_mod1_stage_5_booster
+				}
+				modifier = {
+					country_physics_research_produces_mult = -1
+				}
+			}
 		}
 		stage_6 = {
 			icon = GFX_situation_stage_3
 			icon_background = GFX_situation_stage_frame_red
 			end = 100
 			custom_tooltip = situation_rg_gray_mod1_stage_6_tooltip
+			on_first_enter = {
+				owner = {
+					RG_gray_mod1_effect = yes
+				}
+			}
 		}
 	}
 	approach = {
-		name = approach_stop_the_bullet
-		icon = GFX_situation_approach_fist
-		icon_background = GFX_situation_approach_bg_red
+		name = situation_rg_gray_mod1_approach_1
+		icon = GFX_situation_approach_research
+		icon_background = GFX_situation_approach_bg_green
 		default = yes
 		on_select = {
-			custom_tooltip = effect_stop_the_bullet
+			if = {
+				limit = { has_situation_flag = locked }
+				set_situation_locked = no
+				remove_situation_flag = locked
+			}
+			custom_tooltip = situation_rg_gray_mod1_approach_1_tooltip
+		}
+	}
+	approach = {
+		name = situation_rg_gray_mod1_approach_2
+		icon = GFX_situation_approach_pause
+		icon_background = GFX_situation_approach_bg_yellow
+		on_select = {
+			custom_tooltip = situation_rg_gray_mod1_approach_2_tooltip
+			set_situation_locked = yes
+			set_situation_flag = locked
 		}
 	}
 	monthly_progress = {
@@ -107,14 +145,29 @@ situation_rg_gray_mod1 = {
 			has_situation_flag = situation_rg_gray_mod1_stage_2_booster
 		}
 		modifier = {
-			subtract = 0.5
-			desc = counter_shot_tt
-			has_situation_flag = counter_shot
+			subtract = 0.1
+			desc = situation_rg_gray_mod1_stage_3_booster_tooltip
+			has_situation_flag = situation_rg_gray_mod1_stage_3_booster
+		}
+		modifier = {
+			subtract = 0.1
+			desc = situation_rg_gray_mod1_stage_3_booster_tooltip
+			has_situation_flag = situation_rg_gray_mod1_stage_4_booster
+		}
+		modifier = {
+			subtract = 1.5
+			desc = situation_rg_gray_mod1_stage_5_booster_tooltip
+			has_situation_flag = situation_rg_gray_mod1_stage_5_booster
+		}
+		modifier = {
+			subtract = 1.5
+			desc = situation_rg_gray_mod1_stage_5_booster_tooltip
+			has_situation_flag = situation_rg_gray_mod1_stage_5_booster
 		}
 		modifier = {
 			subtract = 0
-			desc = controlled_shattering_tt
-			has_situation_flag = controlled_shattering
+			desc = situation_rg_gray_mod1_stage_6_booster_tooltip
+			has_situation_flag = situation_rg_gray_mod1_stage_6_booster
 		}
 	}
 	abort_trigger = {

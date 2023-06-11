@@ -820,20 +820,145 @@ country_event = {
 	option = {
 		name = rg_story.25.a
 		default_hide_option = yes
+		random_situation = {
+			limit = {
+				is_situation_type = situation_rg_gray_mod1
+			}
+			set_situation_flag = situation_rg_gray_mod1_stage_3_booster
+		}
 	}
 	option = {
 		name = rg_story.25.b
+		allow = {
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 5000
+			}
+			resource_stockpile_compare = {
+				resource = alloys
+				value >= 5000
+			}
+		}
 		effect = {
 			add_resource = {
 				energy = -5000
 				alloys = -5000
 			}
+			rg_create_gray_mod1_testship_1 = yes
+		}
+	}
+}
+
+country_event = {
+	id = rg_story.26
+	title = rg_story.26.title
+	desc = rg_story.26.desc
+	picture = GFX_evt_gray_goo_ships
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = rg_gray_level_2
+			has_country_flag = rg_gray_level_3
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = rg_story.26.a
+		default_hide_option = yes
+		random_situation = {
+			limit = {
+				is_situation_type = situation_rg_gray_mod1
+			}
+			set_situation_flag = situation_rg_gray_mod1_stage_4_booster
+		}
+	}
+	option = {
+		name = rg_story.26.b
+		effect = {
+			add_resource = {
+				energy = -5000
+				alloys = -5000
+			}
+			rg_create_gray_planetkiller_testship_1 = yes
+		}
+	}
+}
+
+country_event = {
+	id = rg_story.27
+	title = rg_story.27.title
+	desc = rg_story.27.desc
+	picture = GFX_evt_gray_goo_ships
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = rg_gray_level_2
+			has_country_flag = rg_gray_level_3
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = rg_story.27.a
+		default_hide_option = yes
+
+	}
+	option = {
+		name = rg_story.27.b
+		effect = {
 			random_situation = {
 				limit = {
 					is_situation_type = situation_rg_gray_mod1
 				}
-				set_situation_flag = situation_rg_gray_mod1_stage_3_booster
+				set_situation_flag = situation_rg_gray_mod1_stage_5_booster
 			}
 		}
+	}
+}
+
+country_event = {
+	id = rg_story.28
+	title = rg_story.28.title
+	desc = rg_story.28.desc
+	picture = GFX_evt_gray_goo_ships
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = rg_gray_level_2
+			has_country_flag = rg_gray_level_3
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = rg_story.28.a
+		default_hide_option = yes
+		random_situation = {
+			limit = {
+				is_situation_type = situation_rg_gray_mod1
+			}
+			set_situation_flag = situation_rg_gray_mod1_stage_6_booster
+		}
+	}
+}
+
+country_event = {
+	id = rg_story.29
+	title = rg_story.29.title
+	desc = rg_story.29.desc
+	picture = GFX_evt_gray_goo_ships
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = rg_gray_level_2
+			has_country_flag = rg_gray_level_3
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = rg_story.28.a
+		default_hide_option = yes
 	}
 }

@@ -2545,14 +2545,9 @@ rg_lcluster_spawn_effect = {
 }
 RG_gray_mod1_effect = {
 	custom_tooltip = rg_levelup_2.tooltip
-	enable_special_project = {
-		name = RG_GRAY_MOD1
-		location = event_target:gray_owner_capital_starbase
-		owner = root
-	}
-	add_resource = {
-		energy = -15000
-		alloys = -15000
+	start_situation = {
+		type = gray_research_situation
+		target = ROOT
 	}
 }
 RG_gray_mod2_effect = {
