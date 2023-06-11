@@ -2551,8 +2551,8 @@ RG_gray_mod1_effect = {
 		owner = root
 	}
 	add_resource = {
-		energy = -40000
-		alloys = -40000
+		energy = -15000
+		alloys = -15000
 	}
 }
 RG_gray_mod2_effect = {
@@ -2575,7 +2575,7 @@ RG_gray_mod3_effect = {
 		owner = root
 	}
 	add_resource = {
-		energy = -150000
-		alloys = -150000
+		energy = -40000
+		alloys = -40000
 	}
 }

@@ -516,7 +516,9 @@ country_event = {
 # 开始改造
 country_event = {
 	id = rg_event.9
-	hide_window = yes
+	title = rg_event.9.title
+	desc = rg_event.9.desc
+	picture = GFX_evt_gray_goo_ships
 	is_triggered_only = yes
 	trigger = {
 		NOR = {
@@ -531,6 +533,10 @@ country_event = {
 		event_target:gray_owner = {
 			set_country_flag = rg_modifing_gray
 		}
+	}
+	option = {
+		name = rg_event.9.a
+		default_hide_option = yes
 	}
 }
 

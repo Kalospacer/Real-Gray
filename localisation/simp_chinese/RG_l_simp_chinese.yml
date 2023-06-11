@@ -329,3 +329,14 @@
 
  MESSAGE_KOGASA_VIRUS_EXTERMINATED:0 "§R检测到伞病毒威胁§!"
  rg_kogasa_exterminated_desc:0 "守护进程检测到小灰人格完整性遭到篡改，污染目标已被净化，处理方案：无害化处理。"
+
+ situation_rg_gray_mod1_finish_tooltip:0 "§Y我们的计划将会按部就班地顺利完成。§!"
+ situation_rg_gray_mod1_stage_1_tooltip:0 "§Y第一阶段：基本舰体修复阶段§!"
+ situation_rg_gray_mod1_stage_2_tooltip:0 "§Y第二阶段：武器载点重构阶段§!"
+ situation_rg_gray_mod1_stage_3_tooltip:0 "§Y第三阶段：可行性验证阶段§!"
+ situation_rg_gray_mod1_stage_4_tooltip:0 "§Y第四阶段：歼星武器设计阶段§!"
+ situation_rg_gray_mod1_stage_5_tooltip:0 "§Y第五阶段：全舰纳米化设计阶段§!"
+ situation_rg_gray_mod1_stage_6_tooltip:0 "§Y第六阶段：最终试航阶段§!"
+
+ situation_rg_gray_mod1_stage_1_booster_tooltip:0 "§Y我们的项目获得了额外预算§!"
+ situation_rg_gray_mod1_stage_2_booster_tooltip:0 "§Y我们的工程团队将会被指派帮助改造项目§!"

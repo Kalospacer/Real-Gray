@@ -725,3 +725,115 @@ country_event = {
 		}
 	}
 }
+
+# 开始改造
+country_event = {
+	id = rg_story.23
+	title = rg_story.23.title
+	desc = rg_story.23.desc
+	picture = GFX_evt_gray_goo_ships
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = rg_gray_level_2
+			has_country_flag = rg_gray_level_3
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = rg_story.23.a
+		default_hide_option = yes
+	}
+	option = {
+		name = rg_story.23.b
+		allow = {
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1500
+			}
+			resource_stockpile_compare = {
+				resource = alloys
+				value >= 1500
+			}
+		}
+		effect = {
+			add_resource = {
+				energy = -1500
+				alloys = -1500
+			}
+			random_situation = {
+				limit = {
+					is_situation_type = situation_rg_gray_mod1
+				}
+				set_situation_flag = situation_rg_gray_mod1_stage_1_booster
+			}
+		}
+	}
+}
+
+country_event = {
+	id = rg_story.24
+	title = rg_story.24.title
+	desc = rg_story.24.desc
+	picture = GFX_evt_gray_goo_ships
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = rg_gray_level_2
+			has_country_flag = rg_gray_level_3
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = rg_story.24.a
+		default_hide_option = yes
+	}
+	option = {
+		name = rg_story.24.b
+		effect = {
+			random_situation = {
+				limit = {
+					is_situation_type = situation_rg_gray_mod1
+				}
+				set_situation_flag = situation_rg_gray_mod1_stage_2_booster
+			}
+		}
+	}
+}
+
+country_event = {
+	id = rg_story.25
+	title = rg_story.25.title
+	desc = rg_story.25.desc
+	picture = GFX_evt_gray_goo_ships
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = rg_gray_level_2
+			has_country_flag = rg_gray_level_3
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = rg_story.25.a
+		default_hide_option = yes
+	}
+	option = {
+		name = rg_story.25.b
+		effect = {
+			add_resource = {
+				energy = -5000
+				alloys = -5000
+			}
+			random_situation = {
+				limit = {
+					is_situation_type = situation_rg_gray_mod1
+				}
+				set_situation_flag = situation_rg_gray_mod1_stage_3_booster
+			}
+		}
+	}
+}

@@ -1,0 +1,137 @@
+situation_rg_gray_mod1 = {
+	picture = GFX_evt_planet_beam
+	complete_icon_frame = GFX_situation_outcome_frame_red
+	complete_icon = GFX_situation_exploding_planet
+	on_progress_complete = {
+		custom_tooltip = situation_rg_gray_mod1_finish_tooltip
+		hidden_effect = {
+			owner = {
+				country_event = {
+					id = rg_event.11
+				}
+			}
+		}
+	}
+
+	on_start = {
+		owner = {
+			country_event = {
+				id = rg_event.9
+			}
+		}
+	}
+
+	on_monthly = {
+		events = {
+		}
+	}
+
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_red
+			end = 16.5
+			custom_tooltip = situation_rg_gray_mod1_stage_1_tooltip
+			on_first_enter = {
+				event_target:gray_warship = {
+					set_event_locked = yes
+				}
+				country_event = {
+					id = rg_story.23
+				}
+			}
+		}
+		stage_2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_red
+			end = 33
+			custom_tooltip = situation_rg_gray_mod1_stage_2_tooltip
+			on_first_enter = {
+				country_event = {
+					id = rg_story.24
+				}
+			}
+			triggered_modifier = {
+				potential = {
+					has_situation_flag = situation_rg_gray_mod1_stage_2_booster
+				}
+				modifier = {
+					country_engineering_research_produces_mult = -1
+				}
+			}
+		}
+		stage_3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_red
+			end = 50
+			custom_tooltip = situation_rg_gray_mod1_stage_3_tooltip
+		}
+		stage_4 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_red
+			end = 66
+			custom_tooltip = situation_rg_gray_mod1_stage_4_tooltip
+		}
+		stage_5 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_red
+			end = 82.5
+			custom_tooltip = situation_rg_gray_mod1_stage_5_tooltip
+		}
+		stage_6 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_red
+			end = 100
+			custom_tooltip = situation_rg_gray_mod1_stage_6_tooltip
+		}
+	}
+	approach = {
+		name = approach_stop_the_bullet
+		icon = GFX_situation_approach_fist
+		icon_background = GFX_situation_approach_bg_red
+		default = yes
+		on_select = {
+			custom_tooltip = effect_stop_the_bullet
+		}
+	}
+	monthly_progress = {
+		base = 1
+		modifier = {
+			subtract = 1.5
+			desc = situation_rg_gray_mod1_stage_1_booster_tooltip
+			has_situation_flag = situation_rg_gray_mod1_stage_1_booster
+		}
+		modifier = {
+			subtract = 1.5
+			desc = situation_rg_gray_mod1_stage_2_booster_tooltip
+			has_situation_flag = situation_rg_gray_mod1_stage_2_booster
+		}
+		modifier = {
+			subtract = 0.5
+			desc = counter_shot_tt
+			has_situation_flag = counter_shot
+		}
+		modifier = {
+			subtract = 0
+			desc = controlled_shattering_tt
+			has_situation_flag = controlled_shattering
+		}
+	}
+	abort_trigger = {
+		OR = {
+			NOT = { exists = event_target:gray_warship }
+			owner = {
+				NOT = {
+					has_country_flag = gray_warship_active
+				}
+			}
+		}
+	}
+	on_abort = {
+		owner = {
+			country_event = {
+				id = rg_event.10
+			}
+		}
+	}	
+}
