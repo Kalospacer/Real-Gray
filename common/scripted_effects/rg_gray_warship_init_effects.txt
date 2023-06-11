@@ -1,0 +1,160 @@
+#普通的母舰
+rg_warship_init_mod1 = {
+	create_fleet = {
+		name = "NAME_Gray"
+		settings = {
+			can_upgrade = no
+			can_disband = no
+			can_change_composition = no
+			can_change_leader = yes
+			uses_naval_capacity = no
+			spawn_debris = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "NAME_Gray"
+				design = "NAME_Gray_Warship_rg"
+				prefix = no
+				upgradable = yes
+			}
+			set_fleet_stance = aggressive
+			set_location = {
+				target = event_target:global_gray_location
+				distance = 0
+				angle = random
+			}
+			set_fleet_flag = gray_fleet
+			save_global_event_target_as = gray_warship
+			assign_leader = event_target:gray_leader_admiral
+			if = {
+				limit = {
+					has_global_flag = kdc_event_mod_active
+				}
+				add_modifier = {
+					modifier = remove_fleet_maintenance
+				}
+			}
+		}
+	}
+}
+#纳米旗舰
+rg_warship_init_mod2 = {
+	create_fleet = {
+		name = "NAME_Gray"
+		settings = {
+			can_upgrade = no
+			can_disband = no
+			can_change_composition = no
+			can_change_leader = yes
+			uses_naval_capacity = no
+			spawn_debris = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "NAME_Gray"
+				random_existing_design = RG_graygoo_capitalship
+				prefix = no
+				upgradable = yes
+			}
+			set_fleet_stance = aggressive
+			set_location = {
+				target = event_target:global_gray_location
+				distance = 0
+				angle = random
+			}
+			set_fleet_flag = gray_fleet
+			save_global_event_target_as = gray_warship
+			assign_leader = event_target:gray_leader_admiral
+			if = {
+				limit = {
+					has_global_flag = kdc_event_mod_active
+				}
+				add_modifier = {
+					modifier = remove_fleet_maintenance
+				}
+			}
+		}
+	}
+}
+#纳米主宰
+rg_warship_init_mod3 = {
+	create_fleet = {
+		name = "NAME_Gray"
+		settings = {
+			can_upgrade = no
+			can_disband = no
+			can_change_composition = no
+			can_change_leader = yes
+			uses_naval_capacity = no
+			spawn_debris = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "NAME_Gray"
+				design = "NAME_gray_juggernautship"
+				# random_existing_design = RG_gray_juggernaut
+				prefix = no
+				upgradable = yes
+			}
+			set_fleet_stance = aggressive
+			set_location = {
+				target = event_target:global_gray_location
+				distance = 0
+				angle = random
+			}
+			set_fleet_flag = gray_fleet
+			save_global_event_target_as = gray_warship
+			if = {
+				limit = {
+					has_global_flag = kdc_event_mod_active
+				}
+				add_modifier = {
+					modifier = remove_fleet_maintenance
+				}
+			}
+		}
+	}
+}
+#略有磨损的母舰
+rg_warship_init_mod0 = {
+	create_fleet = {
+		name = "NAME_Gray"
+		settings = {
+			can_upgrade = no
+			can_disband = no
+			can_change_composition = no
+			can_change_leader = yes
+			uses_naval_capacity = no
+			spawn_debris = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "NAME_Gray"
+				design = "NAME_Gray_Warship_base"
+				prefix = no
+				upgradable = yes
+			}
+			set_fleet_stance = aggressive
+			set_location = {
+				target = event_target:global_gray_location
+				distance = 0
+				angle = random
+			}
+			set_fleet_flag = gray_fleet
+			save_global_event_target_as = gray_warship
+			assign_leader = event_target:gray_leader_admiral
+			if = {
+				limit = {
+					has_global_flag = kdc_event_mod_active
+				}
+				add_modifier = {
+					modifier = remove_fleet_maintenance
+				}
+			}
+		}
+	}
+}
