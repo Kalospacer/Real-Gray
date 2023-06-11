@@ -351,7 +351,7 @@
 
  situation_rg_gray_mod1_approach_1:0 "按计划执行"
  situation_rg_gray_mod1_approach_2:0 "暂停执行计划"
- situation_rg_gray_mod1_approach_2:0 "放弃执行计划"
+ situation_rg_gray_mod1_approach_3:0 "放弃执行计划"
  situation_rg_gray_mod1_approach_1_tooltip:0 "§G我们的项目将会按计划按部就班执行。§!"
  situation_rg_gray_mod1_approach_2_tooltip:0 "§Y迫于外部压力，我们需要暂缓执行改造项目。§!"
  situation_rg_gray_mod1_approach_3_tooltip:0 "§R我们遇到了使计划难以为继的困难，不得不暂时中止计划等待下一个时机。§!"

@@ -56,14 +56,6 @@ situation_rg_gray_mod1 = {
 					}
 				}
 			}
-			triggered_modifier = {
-				potential = {
-					has_situation_flag = situation_rg_gray_mod1_stage_2_booster
-				}
-				modifier = {
-					country_engineering_research_produces_mult = -1
-				}
-			}
 		}
 		situation_rg_gray_mod1_stage_3 = {
 			icon = GFX_situation_stage_3
@@ -101,14 +93,6 @@ situation_rg_gray_mod1 = {
 					country_event = {
 						id = rg_story.27
 					}
-				}
-			}
-			triggered_modifier = {
-				potential = {
-					has_situation_flag = situation_rg_gray_mod1_stage_5_booster
-				}
-				modifier = {
-					country_physics_research_produces_mult = -1
 				}
 			}
 		}
@@ -149,6 +133,22 @@ situation_rg_gray_mod1 = {
 				set_event_locked = yes
 			}
 			custom_tooltip = situation_rg_gray_mod1_approach_1_tooltip
+		}
+		triggered_modifier = {
+			potential = {
+				has_situation_flag = situation_rg_gray_mod1_stage_5_booster
+			}
+			modifier = {
+				country_physics_research_produces_mult = -1
+			}
+		}
+		triggered_modifier = {
+			potential = {
+				has_situation_flag = situation_rg_gray_mod1_stage_2_booster
+			}
+			modifier = {
+				country_engineering_research_produces_mult = -1
+			}
 		}
 	}
 	approach = {
