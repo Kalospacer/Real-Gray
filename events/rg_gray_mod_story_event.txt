@@ -31,17 +31,15 @@ country_event = {
 				value >= 1500
 			}
 		}
-		effect = {
-			add_resource = {
-				energy = -1500
-				alloys = -1500
+		add_resource = {
+			energy = -1500
+			alloys = -1500
+		}
+		random_situation = {
+			limit = {
+				is_situation_type = situation_rg_gray_mod1
 			}
-			random_situation = {
-				limit = {
-					is_situation_type = situation_rg_gray_mod1
-				}
-				set_situation_flag = situation_rg_gray_mod1_stage_1_booster
-			}
+			set_situation_flag = situation_rg_gray_mod1_stage_1_booster
 		}
 	}
 }
@@ -66,13 +64,11 @@ country_event = {
 	}
 	option = {
 		name = rg_story.24.b
-		effect = {
-			random_situation = {
-				limit = {
-					is_situation_type = situation_rg_gray_mod1
-				}
-				set_situation_flag = situation_rg_gray_mod1_stage_2_booster
+		random_situation = {
+			limit = {
+				is_situation_type = situation_rg_gray_mod1
 			}
+			set_situation_flag = situation_rg_gray_mod1_stage_2_booster
 		}
 	}
 }
@@ -113,13 +109,11 @@ country_event = {
 				value >= 5000
 			}
 		}
-		effect = {
-			add_resource = {
-				energy = -5000
-				alloys = -5000
-			}
-			rg_create_gray_mod1_testship_1 = yes
+		add_resource = {
+			energy = -5000
+			alloys = -5000
 		}
+		rg_create_gray_mod1_testship_1 = yes
 	}
 }
 
@@ -149,13 +143,11 @@ country_event = {
 	}
 	option = {
 		name = rg_story.26.b
-		effect = {
-			add_resource = {
-				energy = -5000
-				alloys = -5000
-			}
-			rg_create_gray_planetkiller_testship_1 = yes
+		add_resource = {
+			energy = -5000
+			alloys = -5000
 		}
+		rg_create_gray_planetkiller_testship_1 = yes
 	}
 }
 
@@ -180,13 +172,11 @@ country_event = {
 	}
 	option = {
 		name = rg_story.27.b
-		effect = {
-			random_situation = {
-				limit = {
-					is_situation_type = situation_rg_gray_mod1
-				}
-				set_situation_flag = situation_rg_gray_mod1_stage_5_booster
+		random_situation = {
+			limit = {
+				is_situation_type = situation_rg_gray_mod1
 			}
+			set_situation_flag = situation_rg_gray_mod1_stage_5_booster
 		}
 	}
 }
@@ -240,7 +230,7 @@ country_event = {
 	immediate = {
 	}
 	option = {
-		name = rg_story.28.a
+		name = rg_story.29.a
 		default_hide_option = yes
 	}
 }

@@ -123,6 +123,9 @@ situation_rg_gray_mod1 = {
 						id = rg_story.28
 					}
 				}
+				event_target:gray_warship = {
+					set_event_locked = no
+				}
 			}
 		}
 	}
@@ -142,6 +145,9 @@ situation_rg_gray_mod1 = {
 				set_situation_locked = no
 				remove_situation_flag = locked
 			}
+			event_target:gray_warship = {
+				set_event_locked = yes
+			}
 			custom_tooltip = situation_rg_gray_mod1_approach_1_tooltip
 		}
 	}
@@ -153,6 +159,9 @@ situation_rg_gray_mod1 = {
 			custom_tooltip = situation_rg_gray_mod1_approach_2_tooltip
 			set_situation_locked = yes
 			set_situation_flag = locked
+			event_target:gray_warship = {
+				set_event_locked = no
+			}
 		}
 	}
 	monthly_progress = {
