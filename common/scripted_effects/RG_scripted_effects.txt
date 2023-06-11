@@ -2555,7 +2555,7 @@ RG_gray_mod1_effect_project = {
 	enable_special_project = {
 		name = RG_GRAY_MOD1
 		location = event_target:gray_owner_capital_starbase
-		owner = root
+		owner = event_target:gray_owner
 	}
 	add_resource = {
 		energy = -15000
@@ -2567,7 +2567,7 @@ RG_gray_mod2_effect = {
 	enable_special_project = {
 		name = RG_GRAY_MOD2
 		location = event_target:gray_owner_capital_starbase
-		owner = root
+		owner = event_target:gray_owner
 	}
 	add_resource = {
 		energy = -150000
@@ -2579,7 +2579,7 @@ RG_gray_mod3_effect = {
 	enable_special_project = {
 		name = RG_GRAY_MOD3
 		location = event_target:gray_owner_capital_starbase
-		owner = root
+		owner = event_target:gray_owner
 	}
 	add_resource = {
 		energy = -40000

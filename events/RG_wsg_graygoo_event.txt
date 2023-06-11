@@ -455,7 +455,7 @@ country_event = {
 		capital_scope = {
 			solar_system = {
 				starbase = {
-					save_event_target_as = gray_owner_capital_starbase
+					save_global_event_target_as = gray_owner_capital_starbase
 				}
 			}
 		}

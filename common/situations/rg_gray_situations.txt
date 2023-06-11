@@ -204,7 +204,7 @@ situation_rg_gray_mod1 = {
 			has_situation_flag = situation_rg_gray_mod1_stage_5_booster
 		}
 		modifier = {
-			subtract = 0.1
+			add = 0.1
 			desc = situation_rg_gray_mod1_stage_6_booster_tooltip
 			has_situation_flag = situation_rg_gray_mod1_stage_6_booster
 		}
