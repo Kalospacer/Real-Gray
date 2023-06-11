@@ -331,7 +331,7 @@
  MESSAGE_KOGASA_VIRUS_EXTERMINATED:0 "§R检测到伞病毒威胁§!"
  rg_kogasa_exterminated_desc:0 "守护进程检测到$NAME_Gray$人格完整性遭到篡改，污染目标已被净化，处理方案：无害化处理。"
 
- situation_rg_gray_mod1:0 "$RG_GRAY_MOD1$"
+ situation_rg_gray_mod1:0 "§Y$NAME_Gray$改造工程§!"
  situation_rg_gray_mod1_desc:0 "由于L星团资源太缺乏，$NAME_Gray$的舰体已经很久没有维护了。通过调集足够的资源$NAME_Gray$能够将母舰状态恢复到完全体。为了执行这项计划，$NAME_Gray$需要我们的工程团队的帮助。\n§R切换$NAME_Gray$形态将会导致计划失败。§!"
 
  situation_rg_gray_mod1_finish_tooltip:0 "§Y我们的计划按部就班地顺利完成。§!"
