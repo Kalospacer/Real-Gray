@@ -707,9 +707,7 @@ country_event = {
 		allow = {
 			RG_gray_mod1_allow_trigger = yes
 		}
-		effect = {
-			RG_gray_mod1_effect = yes
-		}
+		RG_gray_mod1_effect = yes
 	}
 	option = {
 		#升级-3
@@ -720,9 +718,7 @@ country_event = {
 		allow = {
 			RG_gray_mod2_allow_trigger = yes
 		}
-		effect = {
-			RG_gray_mod2_effect = yes
-		}
+		RG_gray_mod2_effect = yes
 	}
 	option = {
 		#升级-4
@@ -733,9 +729,7 @@ country_event = {
 		allow = {
 			RG_gray_mod3_allow_trigger = yes
 		}
-		effect = {
-			RG_gray_mod3_effect = yes
-		}
+		RG_gray_mod3_effect = yes
 	}
 	option = {
 		# 开启隐形

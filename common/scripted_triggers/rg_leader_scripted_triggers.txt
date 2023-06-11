@@ -6,6 +6,9 @@ RG_gray_mod1_trigger = {
 		has_country_flag = rg_gray_level_2
 		has_country_flag = rg_gray_level_3
 		has_special_project = RG_GRAY_MOD1
+		any_situation = {
+			is_situation_type = situation_rg_gray_mod1
+		}
 	}
 }
 

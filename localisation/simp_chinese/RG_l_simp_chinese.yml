@@ -1,5 +1,5 @@
 ﻿l_simp_chinese:
- NAME_Gray:0 "§Y灰风§!"
+ NAME_Gray:0 "灰风"
  gray_army_desc:0 "$NAME_Gray$和她的纳米作战母舰，可以轻易扫平一颗星球"
  RG_leader_trait_admiral_gray:0 "§Y纳米机器个体§!"
  RG_leader_trait_admiral_gray_desc:0 "$NAME_Gray$本质上是由千千万万纳米机械所组成的个体，这让她可以自由变换形态重组或快速修复自身。可不要让她做奇怪的事情哦？"
@@ -331,18 +331,28 @@
  MESSAGE_KOGASA_VIRUS_EXTERMINATED:0 "§R检测到伞病毒威胁§!"
  rg_kogasa_exterminated_desc:0 "守护进程检测到$NAME_Gray$人格完整性遭到篡改，污染目标已被净化，处理方案：无害化处理。"
 
+ situation_rg_gray_mod1:0 "$RG_GRAY_MOD1$"
+ situation_rg_gray_mod1_desc:0 "由于L星团资源太缺乏，$NAME_Gray$的舰体已经很久没有维护了。通过调集足够的资源$NAME_Gray$能够将母舰状态恢复到完全体。为了执行这项计划，$NAME_Gray$需要我们的工程团队的帮助。"
+
  situation_rg_gray_mod1_finish_tooltip:0 "§Y我们的计划按部就班地顺利完成。§!"
- situation_rg_gray_mod1_stage_1_tooltip:0 "§Y第一阶段：基本舰体修复阶段§!"
- situation_rg_gray_mod1_stage_2_tooltip:0 "§Y第二阶段：武器载点重构阶段§!"
- situation_rg_gray_mod1_stage_3_tooltip:0 "§Y第三阶段：可行性验证阶段§!"
- situation_rg_gray_mod1_stage_4_tooltip:0 "§Y第四阶段：歼星武器设计阶段§!"
- situation_rg_gray_mod1_stage_5_tooltip:0 "§Y第五阶段：全舰纳米化设计阶段§!"
- situation_rg_gray_mod1_stage_6_tooltip:0 "§Y第六阶段：最终试航阶段§!"
+ situation_rg_gray_mod1_stage_1_tooltip:0 "$rg_story.23.desc$"
+ situation_rg_gray_mod1_stage_2_tooltip:0 "$rg_story.24.desc$"
+ situation_rg_gray_mod1_stage_3_tooltip:0 "$rg_story.25.desc$"
+ situation_rg_gray_mod1_stage_4_tooltip:0 "$rg_story.26.desc$"
+ situation_rg_gray_mod1_stage_5_tooltip:0 "$rg_story.27.desc$"
+ situation_rg_gray_mod1_stage_6_tooltip:0 "$rg_story.28.desc$"
+
+ situation_rg_gray_mod1_stage_1:0 "§Y第一阶段：基本舰体修复阶段§!"
+ situation_rg_gray_mod1_stage_2:0 "§Y第二阶段：武器载点重构阶段§!"
+ situation_rg_gray_mod1_stage_3:0 "§Y第三阶段：可行性验证阶段§!"
+ situation_rg_gray_mod1_stage_4:0 "§Y第四阶段：歼星武器设计阶段§!"
+ situation_rg_gray_mod1_stage_5:0 "§Y第五阶段：全舰纳米化设计阶段§!"
+ situation_rg_gray_mod1_stage_6:0 "§Y第六阶段：最终试航阶段§!"
 
  situation_rg_gray_mod1_approach_1:0 "按计划执行"
  situation_rg_gray_mod1_approach_2:0 "暂停执行计划"
  situation_rg_gray_mod1_approach_1_tooltip:0 "§Y我们的项目将会按计划按部就班执行。§!"
- situation_rg_gray_mod2_approach_2:0 "§Y迫于外部压力，我们需要暂缓执行改造项目。§!"
+ situation_rg_gray_mod2_approach_2_tooltip:0 "§Y迫于外部压力，我们需要暂缓执行改造项目。§!"
 
  situation_rg_gray_mod1_stage_1_booster_tooltip:0 "§Y我们的项目获得了额外预算§!"
  situation_rg_gray_mod1_stage_2_booster_tooltip:0 "§Y我们的工程团队将会被指派帮助改造项目§!"
