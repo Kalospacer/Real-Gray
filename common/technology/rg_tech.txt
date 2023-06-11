@@ -188,6 +188,34 @@ tech_gray_army_7 = {
 	}
 }
 
+tech_gray_juggernaut_8 = {
+	area = engineering
+	cost = 5000
+	tier = 5
+	is_rare = yes
+	category = {
+		voidcraft
+	}
+	ai_update_type = military
+	weight = @tier2weight3
+	prerequisites = {
+		"tech_gray_matter_remix_2"
+		"tech_juggernaut"
+		"tech_mega_engineering"
+	}
+	ai_weight = {
+		factor = 0		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+}
+
 tech_gray_repair_system_1 = {
 	area = engineering
 	cost = 5000

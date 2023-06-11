@@ -125,7 +125,7 @@ RG_graygoo_capitalship = {
 	construction_type = starbase_shipyard
 	combat_size_multiplier = 4
 	prerequisites = {
-		"tech_object_gray_6"
+		"tech_gray_juggernaut_8"
 	}
 	required_component_set = "power_core"
 	required_component_set = "ftl_components"
@@ -500,7 +500,7 @@ RG_gray_juggernaut = {
 	default_behavior = colossus
 	is_designable = yes
 	prerequisites = {
-		"tech_object_gray_6"
+		"tech_gray_juggernaut_8"
 	}
 	class = shipclass_starbase
 	construction_type = starbase_shipyard

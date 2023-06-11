@@ -117,7 +117,7 @@ special_project = {
 		}
 	}
 	on_success = {
-		fleet = {
+		event_target:gray_warship = {
 			set_event_locked = no
 		}
 		owner = {

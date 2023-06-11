@@ -596,35 +596,7 @@ country_event = {
 				destroy_template = yes
 			}
 		}
-		create_fleet = {
-			name = "NAME_Gray"
-			settings = {
-				can_upgrade = no
-				can_disband = no
-				can_change_composition = no
-				can_change_leader = yes
-				uses_naval_capacity = no
-				spawn_debris = no
-			}
-			effect = {
-				set_owner = prev
-				create_ship = {
-					name = "NAME_Gray"
-					design = "NAME_Gray_Warship"
-					prefix = no
-					upgradable = yes
-				}
-				set_fleet_stance = aggressive
-				set_location = {
-					target = event_target:gray_owner_capital_starbase
-					distance = 0
-					angle = random
-				}
-				set_fleet_flag = gray_fleet
-				save_global_event_target_as = gray_warship
-				assign_leader = event_target:gray_leader_admiral
-			}
-		}
+		rg_warship_init_mod1 = yes
 		random_situation = {
 			limit = {
 				is_situation_type = situation_rg_gray_mod1
@@ -661,35 +633,11 @@ country_event = {
 				destroy_template = yes
 			}
 		}
-		create_fleet = {
-			name = "NAME_Gray"
-			settings = {
-				can_upgrade = no
-				can_disband = no
-				can_change_composition = no
-				can_change_leader = yes
-				uses_naval_capacity = no
-				spawn_debris = no
-			}
-			effect = {
-				set_owner = prev
-				create_ship = {
-					name = "NAME_Gray"
-					design = "NAME_gray_capitalship"
-					prefix = no
-					upgradable = yes
-				}
-				set_fleet_stance = aggressive
-				set_location = {
-					target = event_target:gray_owner_capital_starbase
-					distance = 0
-					angle = random
-				}
-				set_fleet_flag = gray_fleet
-				save_global_event_target_as = gray_warship
-				assign_leader = event_target:gray_leader_admiral
-			}
+		create_ship_design = {
+			design = "NAME_gray_capitalship"
 		}
+		add_ship_design = last_created_design
+		rg_warship_init_mod2 = yes
 	}
 	option = {
 		name = OK

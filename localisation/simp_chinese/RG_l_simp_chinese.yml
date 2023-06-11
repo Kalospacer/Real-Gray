@@ -238,6 +238,9 @@
  tech_gray_army_7:0 "§Y自演化纳米战体§!"
  tech_gray_army_7_desc:0 "通过植入一些低级自演化程序，结合对纳米物质的了解，我们能够小批量生产一些纳米战体作为陆军投放。"
 
+ tech_gray_juggernaut_8:0 "§Y纳米超宏舰系统§!"
+ tech_gray_juggernaut_8_desc:0 "纳米物质的自构特性使得它们能够用来建造一些规模无以伦比的工程。而我们将踏出第一步。"
+
  RG_PLANET_KILLER:0 "§H远星之歌§!"
  RG_PLANET_KILLER_DESC:0 "§Y发射高能级纳米射线蒸发行星大气，彻底污染星球上所有物体。以恒星级功率发射时，剧烈的扰动将摧毁恒星引发超新星爆炸，并污染星系中所有行星。若将能量重定向到敌舰上，将造成难以置信的伤害。§!"
  RG_PLANET_KILLER_ACTION:0 "§H纳米注入§!"
