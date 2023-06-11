@@ -154,37 +154,37 @@ situation_rg_gray_mod1 = {
 	monthly_progress = {
 		base = 0.1
 		modifier = {
-			subtract = 1.5
+			add = 0.9
 			desc = situation_rg_gray_mod1_stage_1_booster_tooltip
 			has_situation_flag = situation_rg_gray_mod1_stage_1_booster
 		}
 		modifier = {
-			subtract = 1.5
+			add = 0.9
 			desc = situation_rg_gray_mod1_stage_2_booster_tooltip
 			has_situation_flag = situation_rg_gray_mod1_stage_2_booster
 		}
 		modifier = {
-			subtract = 0.1
+			subtract = 0.05
 			desc = situation_rg_gray_mod1_stage_3_booster_tooltip
 			has_situation_flag = situation_rg_gray_mod1_stage_3_booster
 		}
 		modifier = {
-			subtract = 0.1
+			subtract = 0.05
 			desc = situation_rg_gray_mod1_stage_3_booster_tooltip
 			has_situation_flag = situation_rg_gray_mod1_stage_4_booster
 		}
 		modifier = {
-			subtract = 1.5
+			add = 0.9
 			desc = situation_rg_gray_mod1_stage_5_booster_tooltip
 			has_situation_flag = situation_rg_gray_mod1_stage_5_booster
 		}
 		modifier = {
-			subtract = 1.5
+			add = 0.9
 			desc = situation_rg_gray_mod1_stage_5_booster_tooltip
 			has_situation_flag = situation_rg_gray_mod1_stage_5_booster
 		}
 		modifier = {
-			subtract = 0
+			subtract = 0.1
 			desc = situation_rg_gray_mod1_stage_6_booster_tooltip
 			has_situation_flag = situation_rg_gray_mod1_stage_6_booster
 		}
