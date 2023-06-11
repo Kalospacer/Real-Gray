@@ -332,7 +332,7 @@
  rg_kogasa_exterminated_desc:0 "守护进程检测到$NAME_Gray$人格完整性遭到篡改，污染目标已被净化，处理方案：无害化处理。"
 
  situation_rg_gray_mod1:0 "$RG_GRAY_MOD1$"
- situation_rg_gray_mod1_desc:0 "由于L星团资源太缺乏，$NAME_Gray$的舰体已经很久没有维护了。通过调集足够的资源$NAME_Gray$能够将母舰状态恢复到完全体。为了执行这项计划，$NAME_Gray$需要我们的工程团队的帮助。"
+ situation_rg_gray_mod1_desc:0 "由于L星团资源太缺乏，$NAME_Gray$的舰体已经很久没有维护了。通过调集足够的资源$NAME_Gray$能够将母舰状态恢复到完全体。为了执行这项计划，$NAME_Gray$需要我们的工程团队的帮助。\n§R切换$NAME_Gray$形态将会导致计划失败。§!"
 
  situation_rg_gray_mod1_finish_tooltip:0 "§Y我们的计划按部就班地顺利完成。§!"
  situation_rg_gray_mod1_stage_1_tooltip:0 "$rg_story.23.desc$"
@@ -351,12 +351,14 @@
 
  situation_rg_gray_mod1_approach_1:0 "按计划执行"
  situation_rg_gray_mod1_approach_2:0 "暂停执行计划"
- situation_rg_gray_mod1_approach_1_tooltip:0 "§Y我们的项目将会按计划按部就班执行。§!"
+ situation_rg_gray_mod1_approach_2:0 "放弃执行计划"
+ situation_rg_gray_mod1_approach_1_tooltip:0 "§G我们的项目将会按计划按部就班执行。§!"
  situation_rg_gray_mod1_approach_2_tooltip:0 "§Y迫于外部压力，我们需要暂缓执行改造项目。§!"
+ situation_rg_gray_mod1_approach_3_tooltip:0 "§R我们遇到了使计划难以为继的困难，不得不暂时中止计划等待下一个时机。§!"
  situation_rg_gray_mod1_monthly_change_tooltip:0 "§Y我们正在稳步推进改造项目。§!"
 
- situation_rg_gray_mod1_stage_1_booster_tooltip:0 "§Y我们的项目获得了额外预算§!"
- situation_rg_gray_mod1_stage_2_booster_tooltip:0 "§Y我们的工程团队将会被指派帮助改造项目§!"
- situation_rg_gray_mod1_stage_3_booster_tooltip:0 "§Y由于我们的计划缺少预算，项目团队只能用想象力来弥补不足...§!"
- situation_rg_gray_mod1_stage_5_booster_tooltip:0 "§Y我们的物理团队将会被指派帮助改造项目§!"
+ situation_rg_gray_mod1_stage_1_booster_tooltip:0 "§G我们的项目获得了额外预算§!"
+ situation_rg_gray_mod1_stage_2_booster_tooltip:0 "§G我们的工程团队将会被指派帮助改造项目§!"
+ situation_rg_gray_mod1_stage_3_booster_tooltip:0 "§R由于我们的计划缺少预算，项目团队只能用想象力来弥补不足§!"
+ situation_rg_gray_mod1_stage_5_booster_tooltip:0 "§G我们的物理团队将会被指派帮助改造项目§!"
  situation_rg_gray_mod1_stage_6_booster_tooltip:0 "§Y我们需要实际开始执行改造项目§!"
