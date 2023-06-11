@@ -175,7 +175,7 @@ country_event = {
 	desc = "graygoo.501.b.response"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:rg_gray_country_leader
+		portrait = event_target:gray_leader_admiral
 		planet_background = event_target:gray_governor_planet
 		room = root
 	}
@@ -213,7 +213,7 @@ country_event = {
 	desc = "graygoo.501.c.response"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:rg_gray_country_leader
+		portrait = event_target:gray_leader_general
 		planet_background = event_target:gray_governor_planet
 		room = root
 	}
@@ -251,7 +251,7 @@ country_event = {
 	desc = "rg_const.501.response"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:rg_gray_country_leader
+		portrait = event_target:gray_leader_scientist
 		planet_background = event_target:gray_governor_planet
 		room = root
 	}
@@ -289,7 +289,7 @@ country_event = {
 	desc = "graygoo.502.a.response"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:rg_gray_country_leader
+		portrait = event_target:gray_governor
 		room = "ethic_spaceship_room"
 	}
 	is_triggered_only = yes
@@ -326,7 +326,7 @@ country_event = {
 	desc = "graygoo.502.c.response"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:rg_gray_country_leader
+		portrait = event_target:gray_leader_general
 		room = "ethic_spaceship_room"
 	}
 	is_triggered_only = yes
@@ -363,7 +363,7 @@ country_event = {
 	desc = "RG_graygoo.502.d.response"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:rg_gray_country_leader
+		portrait = event_target:gray_leader_admiral
 		room = "ethic_spaceship_room"
 	}
 	is_triggered_only = yes
@@ -400,7 +400,7 @@ country_event = {
 	desc = "RG_graygoo.502.e.response"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:rg_gray_country_leader
+		portrait = event_target:gray_leader_admiral
 		room = "ethic_spaceship_room"
 	}
 	is_triggered_only = yes
@@ -437,7 +437,7 @@ country_event = {
 	desc = "rg_const.502.response"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:rg_gray_country_leader
+		portrait = event_target:gray_leader_scientist
 		room = "ethic_spaceship_room"
 	}
 	is_triggered_only = yes
@@ -474,7 +474,7 @@ country_event = {
 	desc = "graygoo.503.a.response"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:rg_gray_country_leader
+		portrait = event_target:gray_governor
 		room = "ethic_spaceship_room"
 	}
 	is_triggered_only = yes
@@ -511,7 +511,7 @@ country_event = {
 	desc = "graygoo.503.b.response"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:rg_gray_country_leader
+		portrait = event_target:gray_leader_admiral
 		room = "ethic_spaceship_room"
 	}
 	is_triggered_only = yes
@@ -548,7 +548,7 @@ country_event = {
 	desc = "rg_const.503.response"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:rg_gray_country_leader
+		portrait = event_target:gray_leader_scientist
 		room = "ethic_spaceship_room"
 	}
 	is_triggered_only = yes
@@ -585,7 +585,7 @@ country_event = {
 	desc = "graygoo.505.a.response"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:rg_gray_country_leader
+		portrait = event_target:gray_governor
 		room = "ethic_spaceship_room"
 	}
 	is_triggered_only = yes
@@ -622,7 +622,7 @@ country_event = {
 	desc = "graygoo.505.b.response"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:rg_gray_country_leader
+		portrait = event_target:gray_leader_admiral
 		room = "ethic_spaceship_room"
 	}
 	is_triggered_only = yes
@@ -659,7 +659,7 @@ country_event = {
 	desc = "graygoo.505.c.response"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:rg_gray_country_leader
+		portrait = event_target:gray_leader_general
 		room = "ethic_spaceship_room"
 	}
 	is_triggered_only = yes
