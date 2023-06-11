@@ -668,151 +668,39 @@ country_event = {
 		#升级-2
 		name = rg_levelup_2
 		trigger = {
-			event_target:gray_leader_admiral = {
-				has_skill >= 10
-			}
-			NOR = {
-				has_country_flag = rg_gray_level_2
-				has_country_flag = rg_gray_level_3
-				has_special_project = RG_GRAY_MOD1
-			}
+			RG_gray_mod1_trigger = yes
 		}
 		allow = {
-			hidden_trigger = {
-				event_target:gray_warship = {
-					num_ships > 0
-				}
-			}
-			custom_tooltip = {
-				fail_text = graygoo.500.allow.a
-				event_target:gray_warship = {
-					is_in_combat = no
-				}
-			}
-			custom_tooltip = {
-				fail_text = graygoo.500.allow.b
-				event_target:gray_warship = {
-					NOT = {
-						has_hp_percentage < 0.97
-					}
-				}
-			}
-			custom_tooltip = {
-				fail_text = requires_rg_graylevel_higherthan_25
-				event_target:gray_leader_admiral = {
-					has_skill >= 10
-				}
-			}
-			resource_stockpile_compare = {
-				resource = energy
-				value >= 40000
-			}
-			resource_stockpile_compare = {
-				resource = alloys
-				value >= 40000
-			}
+			RG_gray_mod1_allow_trigger = yes
 		}
-		custom_tooltip = rg_levelup_2.tooltip
-		enable_special_project = {
-			name = RG_GRAY_MOD1
-			location = event_target:gray_owner_capital_starbase
-			owner = root
-		}
-		add_resource = {
-			energy = -40000
-			alloys = -40000
+		effect = {
+			RG_gray_mod1_effect = yes
 		}
 	}
 	option = {
 		#升级-3
 		name = rg_levelup_3
 		trigger = {
-			AND = {
-				event_target:gray_leader_admiral = {
-					has_skill >= 10
-				}
-				has_country_flag = rg_gray_level_2
-			}
-			NOR = {
-				has_country_flag = rg_gray_level_3
-				has_special_project = RG_GRAY_MOD2
-			}
+			RG_gray_mod2_trigger = yes
 		}
 		allow = {
-			hidden_trigger = {
-				# To prevent exploit
-				event_target:gray_warship = {
-					num_ships > 0
-				}
-			}
-			custom_tooltip = {
-				fail_text = graygoo.500.allow.a
-				event_target:gray_warship = {
-					is_in_combat = no
-				}
-			}
-			custom_tooltip = {
-				fail_text = graygoo.500.allow.b
-				event_target:gray_warship = {
-					NOT = {
-						has_hp_percentage < 0.97
-					}
-				}
-			}
-			custom_tooltip = {
-				fail_text = requires_rg_graylevel_higherthan_50
-				has_technology = tech_juggernaut
-			}
-			resource_stockpile_compare = {
-				resource = energy
-				value >= 150000
-			}
-			resource_stockpile_compare = {
-				resource = alloys
-				value >= 150000
-			}
+			RG_gray_mod2_allow_trigger = yes
 		}
-		custom_tooltip = rg_levelup_2.tooltip
-		enable_special_project = {
-			name = RG_GRAY_MOD2
-			location = event_target:gray_owner_capital_starbase
-			owner = root
-		}
-		add_resource = {
-			energy = -150000
-			alloys = -150000
+		effect = {
+			RG_gray_mod2_effect = yes
 		}
 	}
 	option = {
-		# 购买主宰
-		name = rg_graygoo.4.d
+		#升级-4
+		name = rg_event.4.d
 		trigger = {
-			NOR = {
-				has_country_flag = gray_reforming
-				has_country_flag = rg_juggernaut_fired
-			}
-			has_country_flag = rg_gray_level_3
+			RG_gray_mod3_trigger = yes
 		}
 		allow = {
-			resource_stockpile_compare = {
-				resource = energy
-				value >= 150000
-			}
-			resource_stockpile_compare = {
-				resource = alloys
-				value >= 150000
-			}
-			has_technology = tech_juggernaut
+			RG_gray_mod3_allow_trigger = yes
 		}
-		custom_tooltip = rg_levelup_2.tooltip
-		enable_special_project = {
-			name = RG_GRAY_MOD3
-			location = event_target:gray_owner_capital_starbase
-			owner = root
-		}
-		add_resource = {
-			energy = -150000
-			alloys = -150000
+		effect = {
+			RG_gray_mod3_effect = yes
 		}
 	}
 	option = {

@@ -1,0 +1,119 @@
+RG_gray_mod1_trigger = {
+	event_target:gray_leader_admiral = {
+		has_skill >= 10
+	}
+	NOR = {
+		has_country_flag = rg_gray_level_2
+		has_country_flag = rg_gray_level_3
+		has_special_project = RG_GRAY_MOD1
+	}
+}
+
+RG_gray_mod1_allow_trigger = {
+	hidden_trigger = {
+		event_target:gray_warship = {
+			num_ships > 0
+		}
+	}
+	custom_tooltip = {
+		fail_text = graygoo.500.allow.a
+		event_target:gray_warship = {
+			is_in_combat = no
+		}
+	}
+	custom_tooltip = {
+		fail_text = graygoo.500.allow.b
+		event_target:gray_warship = {
+			NOT = {
+				has_hp_percentage < 0.97
+			}
+		}
+	}
+	custom_tooltip = {
+		fail_text = requires_rg_graylevel_higherthan_25
+		event_target:gray_leader_admiral = {
+			has_skill >= 10
+		}
+	}
+	resource_stockpile_compare = {
+		resource = energy
+		value >= 15000
+	}
+	resource_stockpile_compare = {
+		resource = alloys
+		value >= 15000
+	}
+}
+
+RG_gray_mod2_trigger = {
+	AND = {
+		event_target:gray_leader_admiral = {
+			has_skill >= 10
+		}
+		has_country_flag = rg_gray_level_2
+	}
+	NOR = {
+		has_country_flag = rg_gray_level_3
+		has_special_project = RG_GRAY_MOD2
+	}
+}
+RG_gray_mod2_allow_trigger = {
+	hidden_trigger = {
+		# To prevent exploit
+		event_target:gray_warship = {
+			num_ships > 0
+		}
+	}
+	custom_tooltip = {
+		fail_text = graygoo.500.allow.a
+		event_target:gray_warship = {
+			is_in_combat = no
+		}
+	}
+	custom_tooltip = {
+		fail_text = graygoo.500.allow.b
+		event_target:gray_warship = {
+			NOT = {
+				has_hp_percentage < 0.97
+			}
+		}
+	}
+	OR = {
+		custom_tooltip = {
+			fail_text = requires_rg_graylevel_higherthan_50
+			has_technology = tech_juggernaut
+		}
+		custom_tooltip = {
+			fail_text = requires_rg_graylevel_higherthan_20
+			event_target:gray_leader_admiral = {
+				has_skill >= 20
+			}
+		}
+	}
+	resource_stockpile_compare = {
+		resource = energy
+		value >= 150000
+	}
+	resource_stockpile_compare = {
+		resource = alloys
+		value >= 150000
+	}
+}
+RG_gray_mod3_trigger = {
+	NOR = {
+		has_country_flag = gray_reforming
+		has_country_flag = rg_juggernaut_fired
+	}
+	has_country_flag = rg_gray_level_3
+}
+RG_gray_mod3_allow_trigger = {
+	resource_stockpile_compare = {
+		resource = energy
+		value >= 150000
+	}
+	resource_stockpile_compare = {
+		resource = alloys
+		value >= 150000
+	}
+	has_technology = tech_juggernaut
+}

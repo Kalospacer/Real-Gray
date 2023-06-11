@@ -263,7 +263,7 @@
  RG_const_country:0 "小灰-自动工程队"
  requires_rg_graylevel_higherthan_25:0 "§Y小灰必须达到10级§!"
  requires_rg_graylevel_higherthan_20:0 "§Y小灰必须达到20级§!"
- requires_rg_graylevel_higherthan_50:0 "§Y需要前置科技：§!$tech_juggernaut$"
+ rg_event.:0 "§Y需要前置科技：§!$tech_juggernaut$"
  rg_nothing:0 ""
  rg_nothing_desc:0 ""
 

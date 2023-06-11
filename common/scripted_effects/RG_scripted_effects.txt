@@ -2543,3 +2543,39 @@ rg_lcluster_spawn_effect = {
 		days = -1
 	}
 }
+RG_gray_mod1_effect = {
+	custom_tooltip = rg_levelup_2.tooltip
+	enable_special_project = {
+		name = RG_GRAY_MOD1
+		location = event_target:gray_owner_capital_starbase
+		owner = root
+	}
+	add_resource = {
+		energy = -40000
+		alloys = -40000
+	}
+}
+RG_gray_mod2_effect = {
+	custom_tooltip = rg_levelup_2.tooltip
+	enable_special_project = {
+		name = RG_GRAY_MOD2
+		location = event_target:gray_owner_capital_starbase
+		owner = root
+	}
+	add_resource = {
+		energy = -150000
+		alloys = -150000
+	}
+}
+RG_gray_mod3_effect = {
+	custom_tooltip = rg_levelup_2.tooltip
+	enable_special_project = {
+		name = RG_GRAY_MOD3
+		location = event_target:gray_owner_capital_starbase
+		owner = root
+	}
+	add_resource = {
+		energy = -150000
+		alloys = -150000
+	}
+}
