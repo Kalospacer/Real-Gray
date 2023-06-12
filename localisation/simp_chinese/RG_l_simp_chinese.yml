@@ -405,4 +405,7 @@
  situation_rg_gray_mod2_stage_14_tooltip:0 "$rg_story.43.desc$"
 
  rg_gray_mod2_stage1_project:0 "§Y指派首席科学家帮助改造项目§!"
- rg_gray_mod2_stage1_project_desc:0 "为了加快$NAME_Gray$改造项目进度，我们需要指派我们的科学家研究这个项目。嗯，就是这样。"
+ rg_gray_mod2_stage1_project_desc:0 "为了加快$NAME_Gray$改造项目进度，我们需要指派我们的科学家研究这个项目。嗯，就是这样。"、
+
+ rg_gray_mod2_stage4_project:0 "§Y指派首席科学家帮助改造项目§!"
+ rg_gray_mod2_stage4_project_desc:0 "为了加快$NAME_Gray$改造项目进度，我们需要指派我们的科学家研究这个项目。嗯，就是这样。"

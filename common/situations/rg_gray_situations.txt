@@ -518,7 +518,7 @@ situation_rg_gray_mod2 = {
 		}
 		modifier = {
 			add = 0.05
-			desc = situation_rg_gray_mod2_stage_2_booster_tooltip
+			desc = situation_rg_gray_mod2_stage_3_booster_tooltip
 			has_situation_flag = situation_rg_gray_mod2_stage_9_booster
 		}
 		modifier = {

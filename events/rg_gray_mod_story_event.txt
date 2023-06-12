@@ -570,22 +570,23 @@ country_event = {
 		name = rg_story.38.b
 		allow = {
 			resource_stockpile_compare = {
-				resource = energy
-				value >= 6000
+				resource = alloys
+				value >= 1500
 			}
 			resource_stockpile_compare = {
-				resource = minerals
-				value >= 3000
+				resource = energy
+				value >= 1500
 			}
+		}
+		add_resource = {
+			resource = alloys
+			value = -1500
 		}
 		add_resource = {
 			resource = energy
-			value = -6000
+			value = -1500
 		}
-		add_resource = {
-			resource = minerals
-			value = -3000
-		}
+		rg_create_gray_mod1_testship_2 = yes
 		random_situation = {
 			limit = {
 				is_situation_type = situation_rg_gray_mod2
