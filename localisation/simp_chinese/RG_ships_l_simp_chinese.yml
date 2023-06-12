@@ -33,6 +33,7 @@
  NAME_RG_GRAY_scienceship:0 "纳米机器科研单元"
  NAME_Gray_Warship_base:0 "略有磨损的纳米机器个体"
  NAME_Gray_Warship:0 "纳米机器个体"
+ NAME_Gray_Warship_rg:0 "$NAME_Gray_Warship$"
  NAME_gray_capitalship:0 "纳米机器终端核心"
  NAME_gray_juggernautship:0 "纳米机器中央处理核心"
  NAME_RG_GRAY_constructor:0 "纳米机器工造单元"
