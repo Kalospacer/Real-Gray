@@ -123,6 +123,9 @@ RG_graygoo_capitalship = {
 	combat_disengage_chance = 1.25
 	class = shipclass_military
 	construction_type = starbase_shipyard
+	possible_construction = {
+		always = no
+	}
 	combat_size_multiplier = 4
 	prerequisites = {
 		"tech_gray_juggernaut_8"
@@ -504,6 +507,9 @@ RG_gray_juggernaut = {
 	}
 	class = shipclass_starbase
 	construction_type = starbase_shipyard
+	possible_construction = {
+		always = no
+	}
 	required_component_set = "power_core"
 	required_component_set = "sensor_components"
 	required_component_set = "combat_computers"

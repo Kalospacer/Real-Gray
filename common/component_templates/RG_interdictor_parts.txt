@@ -162,7 +162,7 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_reactor_5"
 	icon_frame = 1
-	power = 5000
+	power = 50000
 	resources = {
 		category = ship_components
 		cost = {
@@ -179,8 +179,10 @@ utility_component_template = {
 	component_set = "power_core"
 	size_restriction = {
 		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 	}
-	upgrades_to = "RG_Interdictor_DARK_MATTER_REACTOR"
+	upgrades_to = "RG_Mothership_DARK_MATTER_REACTOR"
 	ai_weight = {
 		weight = 5
 	}
@@ -228,7 +230,7 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_dark_matter_power_core"
 	icon_frame = 1
-	power = 6000
+	power = 60000
 	resources = {
 		category = ship_components
 		cost = {
@@ -246,6 +248,8 @@ utility_component_template = {
 	component_set = "power_core"
 	size_restriction = {
 		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 	}
 	ai_weight = {
 		weight = 6
@@ -306,6 +310,8 @@ utility_component_template = {
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
 		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 		RG_graygoo_icebreaker_interdictor
 	}
 	upgrades_to = "BATTLESHIP_SHIP_THRUSTER_2"
@@ -339,6 +345,8 @@ utility_component_template = {
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
 		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 		RG_graygoo_icebreaker_interdictor
 	}
 	upgrades_to = "BATTLESHIP_SHIP_THRUSTER_3"
@@ -372,6 +380,8 @@ utility_component_template = {
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
 		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 		RG_graygoo_icebreaker_interdictor
 	}
 	upgrades_to = "BATTLESHIP_SHIP_THRUSTER_4"
@@ -405,6 +415,8 @@ utility_component_template = {
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
 		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 		RG_graygoo_icebreaker_interdictor
 	}
 	upgrades_to = "BATTLESHIP_SHIP_THRUSTER_5"
@@ -439,6 +451,8 @@ utility_component_template = {
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
 		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 		RG_graygoo_icebreaker_interdictor
 	}
 	ai_weight = {
@@ -469,6 +483,8 @@ weapon_component_template = {
 	size_restriction = {
 		RG_graygoo_Buff
 		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 	}
 	component_set = "PLANET_KILLER_CRACKER"
 	planet_destruction_gfx = "shatter_planet_gfx"
@@ -488,6 +504,8 @@ weapon_component_template = {
 	size_restriction = {
 		RG_graygoo_Buff
 		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 	}
 	component_set = "PLANET_KILLER_SHIELDER"
 	planet_destruction_gfx = "global_pacifier_gfx"
@@ -507,6 +525,8 @@ weapon_component_template = {
 	size_restriction = {
 		RG_graygoo_Buff
 		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 	}
 	component_set = "PLANET_KILLER_NEUTRON"
 	planet_destruction_gfx = "neutron_planet_gfx"
@@ -526,6 +546,8 @@ weapon_component_template = {
 	size_restriction = {
 		RG_graygoo_Buff
 		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 	}
 	component_set = "PLANET_KILLER_GODRAY"
 	planet_destruction_gfx = "god_ray_gfx"
@@ -545,6 +567,8 @@ weapon_component_template = {
 	size_restriction = {
 		RG_graygoo_Buff
 		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 	}
 	component_set = "PLANET_KILLER_NANOBOTS"
 	planet_destruction_gfx = "assimilation_nanobots_gfx"
@@ -564,6 +588,8 @@ weapon_component_template = {
 	size_restriction = {
 		RG_graygoo_Buff
 		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 	}
 	component_set = "PLANET_KILLER_DELUGE"
 	planet_destruction_gfx = "planet_deluge_gfx"
@@ -617,6 +643,8 @@ utility_component_template = {
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 		RG_graygoo_icebreaker_interdictor
 	}
 	ai_weight = {
@@ -651,6 +679,8 @@ utility_component_template = {
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
 		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 		RG_graygoo_icebreaker_interdictor
 	}
 	ai_weight = {
@@ -689,6 +719,8 @@ utility_component_template = {
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 		RG_graygoo_icebreaker_interdictor
 	}
 	ai_weight = {
@@ -722,6 +754,8 @@ utility_component_template = {
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
 		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 		RG_graygoo_icebreaker_interdictor
 	}
 	ai_weight = {
@@ -761,6 +795,8 @@ utility_component_template = {
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
 		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 		RG_graygoo_icebreaker_interdictor
 	}
 	ai_weight = {
@@ -794,6 +830,8 @@ utility_component_template = {
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
 		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 		RG_graygoo_icebreaker_interdictor
 	}
 	ai_weight = {

@@ -633,6 +633,7 @@ country_event = {
 				destroy_template = yes
 			}
 		}
+		give_technology = tech_gray_juggernaut_8
 		create_ship_design = {
 			design = "NAME_gray_capitalship"
 		}
@@ -720,6 +721,10 @@ country_event = {
 	immediate = {
 		remove_country_flag = rg_modifing_gray
 		set_country_flag = rg_juggernaut_fired
+		create_ship_design = {
+			design = "NAME_gray_juggernautship"
+		}
+		add_ship_design = last_created_design
 	}
 	option = {
 		name = OK

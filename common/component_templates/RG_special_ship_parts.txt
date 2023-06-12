@@ -39,6 +39,7 @@ weapon_component_template = {
 		weapon_type_energy
 	}
 	size_restriction = {
+		RG_gray_juggernaut
 		RG_graygoo_capitalship
 		RG_graygoo_mothership
 	}

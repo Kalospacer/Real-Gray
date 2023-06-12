@@ -94,8 +94,8 @@ rg_warship_init_mod3 = {
 			set_owner = prev
 			create_ship = {
 				name = "NAME_Gray"
-				design = "NAME_gray_juggernautship"
-				# random_existing_design = RG_gray_juggernaut
+				# design = "NAME_gray_juggernautship"
+				random_existing_design = RG_gray_juggernaut
 				prefix = no
 				upgradable = yes
 			}
