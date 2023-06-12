@@ -243,6 +243,267 @@ country_event = {
 }
 
 country_event = {
+	id = rg_story.30
+	title = rg_story.30.title
+	desc = rg_story.30.desc
+	picture = GFX_evt_gray_goo_ships
+	show_sound = event_radio_chatter
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = rg_gray_level_1
+			has_country_flag = rg_gray_level_3
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = rg_story.30.a
+		default_hide_option = yes
+	}
+	option = {
+		name = rg_story.30.b
+	}
+}
+
+country_event = {
+	id = rg_story.31
+	title = rg_story.31.title
+	desc = rg_story.31.desc
+	picture = GFX_evt_gray_goo_ships
+	show_sound = event_radio_chatter
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = rg_gray_level_1
+			has_country_flag = rg_gray_level_3
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = rg_story.31.a
+		default_hide_option = yes
+	}
+	option = {
+		name = rg_story.31.b
+	}
+}
+
+country_event = {
+	id = rg_story.32
+	title = rg_story.32.title
+	desc = rg_story.32.desc
+	picture = GFX_evt_gray_goo_ships
+	show_sound = event_radio_chatter
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = rg_gray_level_1
+			has_country_flag = rg_gray_level_3
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = rg_story.32.a
+		default_hide_option = yes
+	}
+}
+
+country_event = {
+	id = rg_story.33
+	title = rg_story.33.title
+	desc = rg_story.33.desc
+	picture = GFX_evt_gray_goo_ships
+	show_sound = event_radio_chatter
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = rg_gray_level_1
+			has_country_flag = rg_gray_level_3
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = rg_story.33.a
+		default_hide_option = yes
+	}
+	option = {
+		name = rg_story.33.b
+	}
+}
+
+country_event = {
+	id = rg_story.34
+	title = rg_story.34.title
+	desc = rg_story.34.desc
+	picture = GFX_evt_gray_goo_ships
+	show_sound = event_radio_chatter
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = rg_gray_level_1
+			has_country_flag = rg_gray_level_3
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = rg_story.34.a
+		default_hide_option = yes
+	}
+	option = {
+		name = rg_story.34.b
+	}
+}
+
+country_event = {
+	id = rg_story.35
+	title = rg_story.35.title
+	desc = rg_story.35.desc
+	picture = GFX_evt_gray_goo_ships
+	show_sound = event_radio_chatter
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = rg_gray_level_1
+			has_country_flag = rg_gray_level_3
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = rg_story.35.a
+		default_hide_option = yes
+	}
+	option = {
+		name = rg_story.35.b
+	}
+}
+
+country_event = {
+	id = rg_story.36
+	title = rg_story.36.title
+	desc = rg_story.36.desc
+	picture = GFX_evt_gray_goo_ships
+	show_sound = event_radio_chatter
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = rg_gray_level_1
+			has_country_flag = rg_gray_level_3
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = rg_story.36.a
+		default_hide_option = yes
+	}
+	option = {
+		name = rg_story.36.b
+	}
+}
+
+country_event = {
+	id = rg_story.37
+	title = rg_story.37.title
+	desc = rg_story.37.desc
+	picture = GFX_evt_gray_goo_ships
+	show_sound = event_radio_chatter
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = rg_gray_level_1
+			has_country_flag = rg_gray_level_3
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = rg_story.37.a
+		default_hide_option = yes
+	}
+	option = {
+		name = rg_story.37.b
+	}
+}
+
+country_event = {
+	id = rg_story.38
+	title = rg_story.38.title
+	desc = rg_story.38.desc
+	picture = GFX_evt_gray_goo_ships
+	show_sound = event_radio_chatter
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = rg_gray_level_1
+			has_country_flag = rg_gray_level_3
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = rg_story.38.a
+		default_hide_option = yes
+	}
+	option = {
+		name = rg_story.38.b
+	}
+}
+
+country_event = {
+	id = rg_story.39
+	title = rg_story.39.title
+	desc = rg_story.39.desc
+	picture = GFX_evt_gray_goo_ships
+	show_sound = event_radio_chatter
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = rg_gray_level_1
+			has_country_flag = rg_gray_level_3
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = rg_story.39.a
+		default_hide_option = yes
+	}
+	option = {
+		name = rg_story.39.b
+	}
+}
+
+country_event = {
+	id = rg_story.40
+	title = rg_story.40.title
+	desc = rg_story.40.desc
+	picture = GFX_evt_gray_goo_ships
+	show_sound = event_radio_chatter
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = rg_gray_level_1
+			has_country_flag = rg_gray_level_3
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = rg_story.40.a
+		default_hide_option = yes
+	}
+	option = {
+		name = rg_story.40.b
+	}
+}
+
+country_event = {
 	id = rg_story.41
 	title = rg_story.41.title
 	desc = rg_story.41.desc
@@ -251,7 +512,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		NOR = {
-			has_country_flag = rg_gray_level_2
+			has_country_flag = rg_gray_level_1
 			has_country_flag = rg_gray_level_3
 		}
 	}
@@ -285,7 +546,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		NOR = {
-			has_country_flag = rg_gray_level_2
+			has_country_flag = rg_gray_level_1
 			has_country_flag = rg_gray_level_3
 		}
 	}

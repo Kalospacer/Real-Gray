@@ -265,7 +265,11 @@ situation_rg_gray_mod2 = {
 			end = 8.4
 			custom_tooltip = situation_rg_gray_mod2_stage_1_tooltip
 			on_first_enter = {
-
+				owner = {
+					country_event = {
+						id = rg_story.30
+					}
+				}
 			}
 		}
 		situation_rg_gray_mod2_stage_2 = {
@@ -274,7 +278,11 @@ situation_rg_gray_mod2 = {
 			end = 16.8
 			custom_tooltip = situation_rg_gray_mod2_stage_2_tooltip
 			on_first_enter = {
-
+				owner = {
+					country_event = {
+						id = rg_story.31
+					}
+				}
 			}
 		}
 		situation_rg_gray_mod2_stage_3 = {
@@ -283,7 +291,11 @@ situation_rg_gray_mod2 = {
 			end = 25.2
 			custom_tooltip = situation_rg_gray_mod2_stage_3_tooltip
 			on_first_enter = {
-
+				owner = {
+					country_event = {
+						id = rg_story.32
+					}
+				}
 			}
 		}
 		situation_rg_gray_mod2_stage_4 = {
@@ -292,7 +304,11 @@ situation_rg_gray_mod2 = {
 			end = 33.6
 			custom_tooltip = situation_rg_gray_mod2_stage_4_tooltip
 			on_first_enter = {
-
+				owner = {
+					country_event = {
+						id = rg_story.33
+					}
+				}
 			}
 		}
 		situation_rg_gray_mod2_stage_5 = {
@@ -301,7 +317,11 @@ situation_rg_gray_mod2 = {
 			end = 42
 			custom_tooltip = situation_rg_gray_mod2_stage_5_tooltip
 			on_first_enter = {
-
+				owner = {
+					country_event = {
+						id = rg_story.34
+					}
+				}
 			}
 		}
 		situation_rg_gray_mod2_stage_6 = {
@@ -310,7 +330,11 @@ situation_rg_gray_mod2 = {
 			end = 50.4
 			custom_tooltip = situation_rg_gray_mod2_stage_6_tooltip
 			on_first_enter = {
-
+				owner = {
+					country_event = {
+						id = rg_story.35
+					}
+				}
 			}
 		}
 		situation_rg_gray_mod2_stage_7 = {
@@ -319,7 +343,11 @@ situation_rg_gray_mod2 = {
 			end = 58.8
 			custom_tooltip = situation_rg_gray_mod2_stage_7_tooltip
 			on_first_enter = {
-
+				owner = {
+					country_event = {
+						id = rg_story.36
+					}
+				}
 			}
 		}
 		situation_rg_gray_mod2_stage_8 = {
@@ -328,7 +356,11 @@ situation_rg_gray_mod2 = {
 			end = 67.2
 			custom_tooltip = situation_rg_gray_mod2_stage_8_tooltip
 			on_first_enter = {
-
+				owner = {
+					country_event = {
+						id = rg_story.37
+					}
+				}
 			}
 		}
 		situation_rg_gray_mod2_stage_9 = {
@@ -337,7 +369,11 @@ situation_rg_gray_mod2 = {
 			end = 75.6
 			custom_tooltip = situation_rg_gray_mod2_stage_9_tooltip
 			on_first_enter = {
-
+				owner = {
+					country_event = {
+						id = rg_story.38
+					}
+				}
 			}
 		}
 		situation_rg_gray_mod2_stage_10 = {
@@ -346,7 +382,11 @@ situation_rg_gray_mod2 = {
 			end = 84
 			custom_tooltip = situation_rg_gray_mod2_stage_10_tooltip
 			on_first_enter = {
-
+				owner = {
+					country_event = {
+						id = rg_story.39
+					}
+				}
 			}
 		}
 		situation_rg_gray_mod2_stage_11 = {
@@ -355,7 +395,11 @@ situation_rg_gray_mod2 = {
 			end = 92.4
 			custom_tooltip = situation_rg_gray_mod2_stage_11_tooltip
 			on_first_enter = {
-
+				owner = {
+					country_event = {
+						id = rg_story.40
+					}
+				}
 			}
 		}
 		situation_rg_gray_mod2_stage_12 = {
