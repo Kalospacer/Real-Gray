@@ -596,6 +596,10 @@ country_event = {
 				destroy_template = yes
 			}
 		}
+		create_ship_design = {
+			design = "NAME_Gray_Warship_rg"
+		}
+		add_ship_design = last_created_design
 		rg_warship_init_mod1 = yes
 		random_situation = {
 			limit = {

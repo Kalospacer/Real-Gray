@@ -2609,3 +2609,17 @@ RG_gray_mod3_effect = {
 		alloys = -40000
 	}
 }
+rg_gray_ship_design_reset_init = {
+	create_ship_design = {
+		design = "NAME_Gray_Warship_rg"
+	}
+	add_ship_design = last_created_design
+	create_ship_design = {
+		design = "NAME_gray_capitalship"
+	}
+	add_ship_design = last_created_design
+	create_ship_design = {
+		design = "NAME_gray_juggernautship"
+	}
+	add_ship_design = last_created_design
+}
