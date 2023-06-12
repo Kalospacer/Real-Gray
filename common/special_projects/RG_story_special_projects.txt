@@ -35,3 +35,78 @@ special_project = {
 		}
 	}
 }
+
+special_project = {
+	key = "rg_gray_mod2_stage1_project"
+	cost = 2000
+	#days_to_research = 300
+	tech_department = physics_research
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_l-gateway
+	event_scope = country_event
+	requirements = {
+	}
+	on_start = {
+		owner = {
+			random_situation = {
+				limit = {
+					is_situation_type = situation_rg_gray_mod2
+				}
+				set_situation_locked = yes
+				set_situation_flag = locked
+				set_situation_flag = rg_stage6_locked
+			}
+		}
+	}
+	on_cancel = {
+		owner = {
+		}
+	}
+	on_success = {
+		owner = {
+			random_situation = {
+				limit = {
+					is_situation_type = situation_rg_gray_mod2
+				}
+				set_situation_flag = situation_rg_gray_mod2_stage_1_booster
+			}
+		}
+	}
+}
+special_project = {
+	key = "rg_gray_mod2_stage4_project"
+	cost = 2000
+	#days_to_research = 300
+	tech_department = engineering_research
+	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
+	picture = GFX_evt_l-gateway
+	event_scope = country_event
+	requirements = {
+	}
+	on_start = {
+		owner = {
+			random_situation = {
+				limit = {
+					is_situation_type = situation_rg_gray_mod2
+				}
+				set_situation_locked = yes
+				set_situation_flag = locked
+				set_situation_flag = rg_stage6_locked
+			}
+		}
+	}
+	on_cancel = {
+		owner = {
+		}
+	}
+	on_success = {
+		owner = {
+			random_situation = {
+				limit = {
+					is_situation_type = situation_rg_gray_mod2
+				}
+				set_situation_flag = situation_rg_gray_mod2_stage_4_booster
+			}
+		}
+	}
+}

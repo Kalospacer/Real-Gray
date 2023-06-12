@@ -263,6 +263,11 @@ country_event = {
 	}
 	option = {
 		name = rg_story.30.b
+		enable_special_project = {
+			name = rg_gray_mod2_stage1_project
+			# location = event_target:gray_owner_capital_starbase
+			owner = event_target:gray_owner
+		}
 	}
 }
 
@@ -287,6 +292,22 @@ country_event = {
 	}
 	option = {
 		name = rg_story.31.b
+		allow = {
+			resource_stockpile_compare = {
+				resource = nanties
+				value >= 150
+			}
+		}
+		add_resource = {
+			resource = nanties
+			value = -150
+		}
+		random_situation = {
+			limit = {
+				is_situation_type = situation_rg_gray_mod2
+			}
+			set_situation_flag = situation_rg_gray_mod2_stage_2_booster
+		}
 	}
 }
 
@@ -332,6 +353,11 @@ country_event = {
 	}
 	option = {
 		name = rg_story.33.b
+		enable_special_project = {
+			name = rg_gray_mod2_stage4_project
+			# location = event_target:gray_owner_capital_starbase
+			owner = event_target:gray_owner
+		}
 	}
 }
 
@@ -356,6 +382,31 @@ country_event = {
 	}
 	option = {
 		name = rg_story.34.b
+		allow = {
+			resource_stockpile_compare = {
+				resource = alloys
+				value >= 1500
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1500
+			}
+		}
+		add_resource = {
+			resource = alloys
+			value = -1500
+		}
+		add_resource = {
+			resource = energy
+			value = -1500
+		}
+		rg_create_gray_mod1_testship_2 = yes
+		random_situation = {
+			limit = {
+				is_situation_type = situation_rg_gray_mod2
+			}
+			set_situation_flag = situation_rg_gray_mod2_stage_5_booster
+		}
 	}
 }
 
@@ -380,6 +431,31 @@ country_event = {
 	}
 	option = {
 		name = rg_story.35.b
+		allow = {
+			resource_stockpile_compare = {
+				resource = alloys
+				value >= 1500
+			}
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 1500
+			}
+		}
+		add_resource = {
+			resource = alloys
+			value = -1500
+		}
+		add_resource = {
+			resource = energy
+			value = -1500
+		}
+		rg_create_gray_mod1_testship_2 = yes
+		random_situation = {
+			limit = {
+				is_situation_type = situation_rg_gray_mod2
+			}
+			set_situation_flag = situation_rg_gray_mod2_stage_6_booster
+		}
 	}
 }
 
@@ -404,6 +480,30 @@ country_event = {
 	}
 	option = {
 		name = rg_story.36.b
+		allow = {
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 4000
+			}
+			resource_stockpile_compare = {
+				resource = minerals
+				value >= 1500
+			}
+		}
+		add_resource = {
+			resource = energy
+			value = -4000
+		}
+		add_resource = {
+			resource = minerals
+			value = -1500
+		}
+		random_situation = {
+			limit = {
+				is_situation_type = situation_rg_gray_mod2
+			}
+			set_situation_flag = situation_rg_gray_mod2_stage_7_booster
+		}
 	}
 }
 
@@ -428,6 +528,22 @@ country_event = {
 	}
 	option = {
 		name = rg_story.37.b
+		allow = {
+			resource_stockpile_compare = {
+				resource = consumer_goods
+				value >= 3000
+			}
+		}
+		add_resource = {
+			resource = consumer_goods
+			value = -3000
+		}
+		random_situation = {
+			limit = {
+				is_situation_type = situation_rg_gray_mod2
+			}
+			set_situation_flag = situation_rg_gray_mod2_stage_8_booster
+		}
 	}
 }
 
@@ -452,6 +568,30 @@ country_event = {
 	}
 	option = {
 		name = rg_story.38.b
+		allow = {
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 6000
+			}
+			resource_stockpile_compare = {
+				resource = minerals
+				value >= 3000
+			}
+		}
+		add_resource = {
+			resource = energy
+			value = -6000
+		}
+		add_resource = {
+			resource = minerals
+			value = -3000
+		}
+		random_situation = {
+			limit = {
+				is_situation_type = situation_rg_gray_mod2
+			}
+			set_situation_flag = situation_rg_gray_mod2_stage_9_booster
+		}
 	}
 }
 
@@ -476,6 +616,22 @@ country_event = {
 	}
 	option = {
 		name = rg_story.39.b
+		allow = {
+			resource_stockpile_compare = {
+				resource = alloys
+				value >= 3000
+			}
+		}
+		add_resource = {
+			resource = alloys
+			value = -3000
+		}
+		random_situation = {
+			limit = {
+				is_situation_type = situation_rg_gray_mod2
+			}
+			set_situation_flag = situation_rg_gray_mod2_stage_10_booster
+		}
 	}
 }
 
@@ -500,6 +656,22 @@ country_event = {
 	}
 	option = {
 		name = rg_story.40.b
+		allow = {
+			resource_stockpile_compare = {
+				resource = nanties
+				value >= 500
+			}
+		}
+		add_resource = {
+			resource = alloys
+			value = -500
+		}
+		random_situation = {
+			limit = {
+				is_situation_type = situation_rg_gray_mod2
+			}
+			set_situation_flag = situation_rg_gray_mod2_stage_11_booster
+		}
 	}
 }
 

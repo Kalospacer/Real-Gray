@@ -481,6 +481,56 @@ situation_rg_gray_mod2 = {
 	}
 	monthly_progress = {
 		base = 0.1
+		modifier = {
+			add = 0.05
+			desc = situation_rg_gray_mod2_stage_1_booster_tooltip
+			has_situation_flag = situation_rg_gray_mod2_stage_1_booster
+		}
+		modifier = {
+			add = 0.05
+			desc = situation_rg_gray_mod2_stage_2_booster_tooltip
+			has_situation_flag = situation_rg_gray_mod2_stage_2_booster
+		}
+		modifier = {
+			add = 0.05
+			desc = situation_rg_gray_mod2_stage_1_booster_tooltip
+			has_situation_flag = situation_rg_gray_mod2_stage_4_booster
+		}
+		modifier = {
+			add = 0.05
+			desc = situation_rg_gray_mod2_stage_3_booster_tooltip
+			has_situation_flag = situation_rg_gray_mod2_stage_5_booster
+		}
+		modifier = {
+			add = 0.05
+			desc = situation_rg_gray_mod2_stage_3_booster_tooltip
+			has_situation_flag = situation_rg_gray_mod2_stage_6_booster
+		}
+		modifier = {
+			add = 0.05
+			desc = situation_rg_gray_mod2_stage_2_booster_tooltip
+			has_situation_flag = situation_rg_gray_mod2_stage_7_booster
+		}
+		modifier = {
+			add = 0.05
+			desc = situation_rg_gray_mod2_stage_2_booster_tooltip
+			has_situation_flag = situation_rg_gray_mod2_stage_8_booster
+		}
+		modifier = {
+			add = 0.05
+			desc = situation_rg_gray_mod2_stage_2_booster_tooltip
+			has_situation_flag = situation_rg_gray_mod2_stage_9_booster
+		}
+		modifier = {
+			add = 0.05
+			desc = situation_rg_gray_mod2_stage_2_booster_tooltip
+			has_situation_flag = situation_rg_gray_mod2_stage_10_booster
+		}
+		modifier = {
+			add = 0.05
+			desc = situation_rg_gray_mod2_stage_2_booster_tooltip
+			has_situation_flag = situation_rg_gray_mod2_stage_11_booster
+		}
 	}
 	abort_trigger = {
 

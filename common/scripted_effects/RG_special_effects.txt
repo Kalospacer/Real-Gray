@@ -121,6 +121,35 @@ rg_create_gray_mod1_testship_1 = {
 	}
 }
 
+rg_create_gray_mod1_testship_2 = {
+	create_fleet = {
+		name = "NAME_RG_TESTSHIP"
+		settings = {
+			can_disband = yes
+			can_upgrade = no
+			can_change_composition = no
+			can_change_leader = no
+			uses_naval_capacity = no
+			spawn_debris = no
+		}
+		effect = {
+			set_owner = root
+			create_ship = {
+				name = "NAME_RG_TESTSHIP"
+				design = "RG_Buff_interdictor"
+				prefix = no
+				upgradable = no
+			}
+			set_location = {
+				target = root.capital_scope
+				distance = 0
+				angle = random
+			}
+			set_fleet_flag = rg_test_ship_fleet
+		}
+	}
+}
+
 rg_create_fake_dragon_species = {
 	create_species = {
 		name = RG_SIMULATION_DRAGON_SPECIES
