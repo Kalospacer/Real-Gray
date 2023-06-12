@@ -20,6 +20,8 @@ utility_component_template = {
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
 		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 	}
 	prerequisites = {
 		"tech_gray_matter_remix_2"
