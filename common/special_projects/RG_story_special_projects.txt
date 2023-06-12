@@ -69,6 +69,9 @@ special_project = {
 					is_situation_type = situation_rg_gray_mod2
 				}
 				set_situation_flag = situation_rg_gray_mod2_stage_1_booster
+				remove_situation_flag = rg_stage6_locked
+				set_situation_locked = no
+				remove_situation_flag = locked
 			}
 		}
 	}
@@ -106,6 +109,9 @@ special_project = {
 					is_situation_type = situation_rg_gray_mod2
 				}
 				set_situation_flag = situation_rg_gray_mod2_stage_4_booster
+				remove_situation_flag = rg_stage6_locked
+				set_situation_locked = no
+				remove_situation_flag = locked
 			}
 		}
 	}

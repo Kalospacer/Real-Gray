@@ -637,7 +637,9 @@ country_event = {
 				destroy_template = yes
 			}
 		}
-		give_technology = tech_gray_juggernaut_8
+		give_technology = {
+			tech = tech_gray_juggernaut_8
+		}
 		create_ship_design = {
 			design = "NAME_gray_capitalship"
 		}
@@ -865,7 +867,9 @@ country_event = {
 		}
 	}
 	immediate = {
-		give_technology = tech_lgate_activation
+		give_technology = {
+			tech = tech_lgate_activation
+		}
 		if = {
 			limit = {
 				any_system_within_border = {

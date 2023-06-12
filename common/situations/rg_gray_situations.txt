@@ -98,7 +98,7 @@ situation_rg_gray_mod1 = {
 		}
 		situation_rg_gray_mod1_stage_6 = {
 			icon = GFX_situation_stage_6
-			icon_background = GFX_situation_stage_frame_green
+			icon_background = GFX_situation_stage_frame_red
 			end = 100
 			custom_tooltip = situation_rg_gray_mod1_stage_6_tooltip
 			on_first_enter = {
@@ -404,7 +404,7 @@ situation_rg_gray_mod2 = {
 		}
 		situation_rg_gray_mod2_stage_12 = {
 			icon = GFX_situation_stage_6
-			icon_background = GFX_situation_stage_frame_green
+			icon_background = GFX_situation_stage_frame_red
 			end = 100
 			custom_tooltip = situation_rg_gray_mod2_stage_12_tooltip
 			on_first_enter = {
@@ -412,6 +412,9 @@ situation_rg_gray_mod2 = {
 					country_event = {
 						id = rg_story.41
 					}
+				}
+				event_target:gray_warship = {
+					set_event_locked = no
 				}
 			}
 		}
