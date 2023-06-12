@@ -2564,10 +2564,9 @@ RG_gray_mod1_effect_project = {
 }
 RG_gray_mod2_effect = {
 	custom_tooltip = rg_levelup_2.tooltip
-	enable_special_project = {
-		name = RG_GRAY_MOD2
-		location = event_target:gray_owner_capital_starbase
-		owner = event_target:gray_owner
+	start_situation = {
+		type = situation_rg_gray_mod2
+		target = this
 	}
 	add_resource = {
 		energy = -150000

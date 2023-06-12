@@ -228,3 +228,225 @@ situation_rg_gray_mod1 = {
 		destroy_situation = this 
 	}	
 }
+
+situation_rg_gray_mod2 = {
+	picture = GFX_evt_planet_beam
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_outcome_positive
+	on_progress_complete = {
+		custom_tooltip = situation_rg_gray_mod1_finish_tooltip
+		hidden_effect = {
+			owner = {
+				country_event = {
+					id = rg_story.29
+				}
+			}
+		}
+		destroy_situation = this 
+	}
+
+	on_start = {
+		owner = {
+			country_event = {
+				id = rg_event.9
+			}
+		}
+	}
+
+	on_monthly = {
+		events = {
+		}
+	}
+
+	stages = {
+		situation_rg_gray_mod2_stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_green
+			end = 8.4
+			custom_tooltip = situation_rg_gray_mod2_stage_1_tooltip
+			on_first_enter = {
+
+			}
+		}
+		situation_rg_gray_mod2_stage_2 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_green
+			end = 16.8
+			custom_tooltip = situation_rg_gray_mod2_stage_2_tooltip
+			on_first_enter = {
+
+			}
+		}
+		situation_rg_gray_mod2_stage_3 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_green
+			end = 25.2
+			custom_tooltip = situation_rg_gray_mod2_stage_3_tooltip
+			on_first_enter = {
+
+			}
+		}
+		situation_rg_gray_mod2_stage_4 = {
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_stage_frame_green
+			end = 33.6
+			custom_tooltip = situation_rg_gray_mod2_stage_4_tooltip
+			on_first_enter = {
+
+			}
+		}
+		situation_rg_gray_mod2_stage_5 = {
+			icon = GFX_situation_stage_5
+			icon_background = GFX_situation_stage_frame_green
+			end = 42
+			custom_tooltip = situation_rg_gray_mod2_stage_5_tooltip
+			on_first_enter = {
+
+			}
+		}
+		situation_rg_gray_mod2_stage_6 = {
+			icon = GFX_situation_stage_6
+			icon_background = GFX_situation_stage_frame_green
+			end = 50.4
+			custom_tooltip = situation_rg_gray_mod2_stage_6_tooltip
+			on_first_enter = {
+
+			}
+		}
+		situation_rg_gray_mod2_stage_7 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_green
+			end = 58.8
+			custom_tooltip = situation_rg_gray_mod2_stage_7_tooltip
+			on_first_enter = {
+
+			}
+		}
+		situation_rg_gray_mod2_stage_8 = {
+			icon = GFX_situation_stage_2
+			icon_background = GFX_situation_stage_frame_green
+			end = 67.2
+			custom_tooltip = situation_rg_gray_mod2_stage_8_tooltip
+			on_first_enter = {
+
+			}
+		}
+		situation_rg_gray_mod2_stage_9 = {
+			icon = GFX_situation_stage_3
+			icon_background = GFX_situation_stage_frame_green
+			end = 75.6
+			custom_tooltip = situation_rg_gray_mod2_stage_9_tooltip
+			on_first_enter = {
+
+			}
+		}
+		situation_rg_gray_mod2_stage_10 = {
+			icon = GFX_situation_stage_4
+			icon_background = GFX_situation_stage_frame_green
+			end = 84
+			custom_tooltip = situation_rg_gray_mod2_stage_10_tooltip
+			on_first_enter = {
+
+			}
+		}
+		situation_rg_gray_mod2_stage_11 = {
+			icon = GFX_situation_stage_5
+			icon_background = GFX_situation_stage_frame_green
+			end = 92.4
+			custom_tooltip = situation_rg_gray_mod2_stage_11_tooltip
+			on_first_enter = {
+
+			}
+		}
+		situation_rg_gray_mod2_stage_12 = {
+			icon = GFX_situation_stage_6
+			icon_background = GFX_situation_stage_frame_green
+			end = 100
+			custom_tooltip = situation_rg_gray_mod2_stage_12_tooltip
+			on_first_enter = {
+				owner = {
+					country_event = {
+						id = rg_story.41
+					}
+				}
+			}
+		}
+	}
+	approach = {
+		name = situation_rg_gray_mod1_approach_1
+		icon = GFX_situation_approach_research
+		icon_background = GFX_situation_approach_bg_green
+		default = yes
+		on_select = {
+			if = {
+				limit = {
+					NOT = {
+						has_situation_flag = rg_stage6_locked
+					}
+					has_situation_flag = locked
+				}
+				set_situation_locked = no
+				remove_situation_flag = locked
+			}
+			event_target:gray_warship = {
+				set_event_locked = yes
+			}
+			custom_tooltip = situation_rg_gray_mod1_approach_1_tooltip
+		}
+		triggered_modifier = {
+			potential = {
+				has_situation_flag = situation_rg_gray_mod1_stage_5_booster
+			}
+			modifier = {
+				country_physics_research_produces_mult = -1
+			}
+		}
+		triggered_modifier = {
+			potential = {
+				has_situation_flag = situation_rg_gray_mod1_stage_2_booster
+			}
+			modifier = {
+				country_engineering_research_produces_mult = -1
+			}
+		}
+	}
+	approach = {
+		name = situation_rg_gray_mod1_approach_2
+		icon = GFX_situation_approach_research
+		icon_background = GFX_situation_approach_bg_yellow
+		on_select = {
+			custom_tooltip = situation_rg_gray_mod1_approach_2_tooltip
+			set_situation_locked = yes
+			set_situation_flag = locked
+			event_target:gray_warship = {
+				set_event_locked = no
+			}
+		}
+	}
+	approach = {
+		name = situation_rg_gray_mod1_approach_3
+		icon = GFX_situation_approach_research
+		icon_background = GFX_situation_approach_bg_red
+		on_select = {
+			custom_tooltip = situation_rg_gray_mod1_approach_3_tooltip
+			abort_situation = this
+			event_target:gray_warship = {
+				set_event_locked = no
+			}
+		}
+	}
+	monthly_progress = {
+		base = 0.1
+	}
+	abort_trigger = {
+
+	}
+	on_abort = {
+		owner = {
+			country_event = {
+				id = rg_event.10
+			}
+		}
+		destroy_situation = this 
+	}	
+}

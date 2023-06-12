@@ -241,3 +241,71 @@ country_event = {
 		default_hide_option = yes
 	}
 }
+
+country_event = {
+	id = rg_story.41
+	title = rg_story.41.title
+	desc = rg_story.41.desc
+	picture = GFX_evt_gray_goo_ships
+	show_sound = event_radio_chatter
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = rg_gray_level_2
+			has_country_flag = rg_gray_level_3
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = rg_story.41.a
+		default_hide_option = yes
+		random_situation = {
+			limit = {
+				is_situation_type = situation_rg_gray_mod2
+			}
+			set_situation_locked = yes
+			set_situation_flag = locked
+			set_situation_flag = rg_stage6_locked
+		}
+		enable_special_project = {
+			name = RG_GRAY_MOD2
+			location = event_target:gray_owner_capital_starbase
+			owner = event_target:gray_owner
+		}
+	}
+}
+
+country_event = {
+	id = rg_story.42
+	title = rg_story.42.title
+	desc = rg_story.42.desc
+	picture = GFX_evt_gray_goo_ships
+	show_sound = event_radio_chatter
+	is_triggered_only = yes
+	trigger = {
+		NOR = {
+			has_country_flag = rg_gray_level_2
+			has_country_flag = rg_gray_level_3
+		}
+	}
+	immediate = {
+	}
+	option = {
+		name = rg_story.42.a
+		default_hide_option = yes
+		random_situation = {
+			limit = {
+				is_situation_type = situation_rg_gray_mod2
+			}
+			set_situation_locked = yes
+			set_situation_flag = locked
+			set_situation_flag = rg_stage6_locked
+		}
+		enable_special_project = {
+			name = RG_GRAY_MOD2
+			location = event_target:gray_owner_capital_starbase
+			owner = event_target:gray_owner
+		}
+	}
+}

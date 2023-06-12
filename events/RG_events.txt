@@ -638,6 +638,14 @@ country_event = {
 		}
 		add_ship_design = last_created_design
 		rg_warship_init_mod2 = yes
+		random_situation = {
+			limit = {
+				is_situation_type = situation_rg_gray_mod2
+			}
+			remove_situation_flag = rg_stage6_locked
+			set_situation_locked = no
+			remove_situation_flag = locked
+		}
 	}
 	option = {
 		name = OK
