@@ -354,6 +354,9 @@
  situation_rg_gray_mod1_monthly_change_tooltip:0 "§Y我们正在稳步推进改造项目。§!"
  situation_rg_gray_mod1_finish_tooltip:0 "§Y我们的计划按部就班地顺利完成。§!"
 
+ situation_rg_gray_mod2_monthly_change_tooltip:0 "§Y我们正在稳步推进改造项目。§!"
+ situation_rg_gray_mod2_finish_tooltip:0 "§Y我们的计划按部就班地顺利完成。§!"
+
  situation_rg_gray_mod1_approach_1:0 "按计划执行"
  situation_rg_gray_mod1_approach_2:0 "暂停执行计划"
  situation_rg_gray_mod1_approach_3:0 "放弃执行计划"
@@ -407,5 +410,5 @@
  rg_gray_mod2_stage1_project:0 "§Y指派首席科学家帮助改造项目§!"
  rg_gray_mod2_stage1_project_desc:0 "为了加快$NAME_Gray$改造项目进度，我们需要指派我们的科学家研究这个项目。嗯，就是这样。"、
 
- rg_gray_mod2_stage4_project:0 "§Y指派首席科学家帮助改造项目§!"
- rg_gray_mod2_stage4_project_desc:0 "为了加快$NAME_Gray$改造项目进度，我们需要指派我们的科学家研究这个项目。嗯，就是这样。"
+ rg_gray_mod2_stage4_project:0 "$rg_gray_mod2_stage1_project$"
+ rg_gray_mod2_stage4_project_desc:0 "$rg_gray_mod2_stage1_project_desc$"
