@@ -1,5 +1,3 @@
-#星球无法自动建造
-#scope (planet)
 RG_planet_can_auto_build = {
 	OR = {
 		AND = {

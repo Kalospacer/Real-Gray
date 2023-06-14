@@ -1,96 +1,98 @@
 namespace = rg_skill
-#fleet_event = {
-#    id = rg_skill.1
-#    hide_window = yes
-#    is_triggered_only = yes
-#
-#    trigger = {
-#        NOT = { has_global_flag = rg_grayskill_cooldown }
-#        any_owned_fleet = {
-#					exists = leader
-#					leader = { has_leader_flag = gray_leader_admiral }
-#					is_in_combat = yes
-#				}
-#    }
-#
-#    immediate = {
-#		if = {
-#			limit = {
-#				any_owned_fleet = {
-#					exists = leader
-#					leader = { has_leader_flag = gray_leader_admiral }
-#					is_in_combat = yes
-#				}
-#			}
-#			random_owned_fleet = {
-#				if = {
-#					limit = { leader = { has_leader_flag = gray_leader_admiral }}
-#					save_event_target_as = gray_warship_location
-#				}
-#			}
-#			create_fleet = {
-#				name = "NAME_RG_carrier"
-#				settings = { 
-#					can_disband = yes
-#					can_upgrade = no 
-#					can_change_composition = yes 
-#					can_change_leader = no 
-#					uses_naval_capacity = no
-#					spawn_debris = no
-#				}				
-#				effect = {
-#					set_owner = event_target:gray_owner
-#					while = {
-#						count = 4
-#						create_ship = {
-#							name = random
-#							design = "RG_carrier_Interdictor"
-#							graphical_culture = "pirate_01"
-#							prefix = no
-#							upgradable = no
-#						}
-#					}
-#					set_location = {
-#						target = event_target:gray_warship_location
-#						distance = 55
-#						angle = 270
-#					}
-#					set_fleet_flag = RG_carrier_fleet
-#					save_global_event_target_as = RG_carrier_fleet
-#				}
-#			}
-#			
-#			set_timed_global_flag = { 
-#				flag = rg_grayskill_cooldown days = 120
-#			}
-#		}	
-#	}	
-#}
-#fleet_event = {
-#    id = rg_skill.2
-#    hide_window = yes
-#    is_triggered_only = yes
-#
-#    trigger = {
-#        any_owned_fleet = {
-#					has_fleet_flag = RG_carrier_fleet
-#					is_in_combat = no
-#				}
-#    }
-#
-#    immediate = {
-#		if = {
-#			limit = {
-#				any_owned_fleet = {
-#					has_fleet_flag = RG_carrier_fleet
-#					is_in_combat = no
-#				}
-#			}	
-#			event_target:RG_carrier_fleet = { delete_ship = this }	
-#		}
-#	}
-#}
-#自动星系建设
+
+# fleet_event = {
+#     id = rg_skill.1
+#     hide_window = yes
+#     is_triggered_only = yes
+# 
+#     trigger = {
+#         NOT = { has_global_flag = rg_grayskill_cooldown }
+#         any_owned_fleet = {
+# 					exists = leader
+# 					leader = { has_leader_flag = gray_leader_admiral }
+# 					is_in_combat = yes
+# 				}
+#     }
+# 
+#     immediate = {
+# 		if = {
+# 			limit = {
+# 				any_owned_fleet = {
+# 					exists = leader
+# 					leader = { has_leader_flag = gray_leader_admiral }
+# 					is_in_combat = yes
+# 				}
+# 			}
+# 			random_owned_fleet = {
+# 				if = {
+# 					limit = { leader = { has_leader_flag = gray_leader_admiral }}
+# 					save_event_target_as = gray_warship_location
+# 				}
+# 			}
+# 			create_fleet = {
+# 				name = "NAME_RG_carrier"
+# 				settings = { 
+# 					can_disband = yes
+# 					can_upgrade = no 
+# 					can_change_composition = yes 
+# 					can_change_leader = no 
+# 					uses_naval_capacity = no
+# 					spawn_debris = no
+# 				}				
+# 				effect = {
+# 					set_owner = event_target:gray_owner
+# 					while = {
+# 						count = 4
+# 						create_ship = {
+# 							name = random
+# 							design = "RG_carrier_Interdictor"
+# 							graphical_culture = "pirate_01"
+# 							prefix = no
+# 							upgradable = no
+# 						}
+# 					}
+# 					set_location = {
+# 						target = event_target:gray_warship_location
+# 						distance = 55
+# 						angle = 270
+# 					}
+# 					set_fleet_flag = RG_carrier_fleet
+# 					save_global_event_target_as = RG_carrier_fleet
+# 				}
+# 			}
+# 			
+# 			set_timed_global_flag = { 
+# 				flag = rg_grayskill_cooldown days = 120
+# 			}
+# 		}	
+# 	}	
+# }
+
+# fleet_event = {
+#     id = rg_skill.2
+#     hide_window = yes
+#     is_triggered_only = yes
+# 
+#     trigger = {
+#         any_owned_fleet = {
+# 					has_fleet_flag = RG_carrier_fleet
+# 					is_in_combat = no
+# 				}
+#     }
+# 
+#     immediate = {
+# 		if = {
+# 			limit = {
+# 				any_owned_fleet = {
+# 					has_fleet_flag = RG_carrier_fleet
+# 					is_in_combat = no
+# 				}
+# 			}	
+# 			event_target:RG_carrier_fleet = { delete_ship = this }	
+# 		}
+# 	}
+# }
+
 ship_event = {
 	id = rg_skill.3
 	hide_window = yes
@@ -106,11 +108,9 @@ ship_event = {
 		}
 		solar_system = {
 			OR = {
-				#星系无主
 				NOT = {
 					exists = space_owner
 				}
-				#星系为我方但有空间站未建造
 				AND = {
 					space_owner = {
 						is_same_empire = root.controller
@@ -120,7 +120,6 @@ ship_event = {
 					}
 				}
 			}
-			#邻国不能是军孤
 			NOT = {
 				any_neighbor_system = {
 					has_owner = yes
@@ -145,7 +144,6 @@ ship_event = {
 				}
 				solar_system = {
 					NOT = {
-						#星系内不能有敌舰
 						any_fleet_in_system = {
 							exists = controller
 							controller = {
@@ -155,7 +153,6 @@ ship_event = {
 					}
 				}
 			}
-			#创建自动工程船暂存国家
 			RG_const_auto_build_effect_event = yes
 		}
 		else_if = {
@@ -168,8 +165,7 @@ ship_event = {
 				}
 				solar_system = {
 					has_star_flag = lcluster
-					NOT = {
-						#星系内不能有敌舰		
+					NOT = {	
 						any_fleet_in_system = {
 							exists = controller
 							controller = {
@@ -179,7 +175,6 @@ ship_event = {
 					}
 				}
 			}
-			#创建自动工程船暂存国家
 			RG_const_auto_build_effect_event = yes
 		}
 		else_if = {
@@ -190,8 +185,7 @@ ship_event = {
 				}
 				solar_system = {
 					# has_star_flag = lcluster
-					NOT = {
-						#星系内不能有敌舰		
+					NOT = {	
 						any_fleet_in_system = {
 							exists = controller
 							controller = {
@@ -201,10 +195,8 @@ ship_event = {
 					}
 				}
 			}
-			#创建自动工程船暂存国家
 			RG_const_auto_build_effect_event = yes
 		}
-		#循环检查
 		ship_event = {
 			id = rg_skill.3
 			days = 10
