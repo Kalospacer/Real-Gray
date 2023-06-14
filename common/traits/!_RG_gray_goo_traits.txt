@@ -54,7 +54,7 @@ RG_leader_trait_ruler_gray = {	#天选化身
 			}
 		}
 		leader_skill_levels = 1
-		leaders_upkeep_mult = 2
+		leaders_upkeep_mult = 0.1
 		mult = owner.rg_gray_level
 	}
 	triggered_self_modifier = {
@@ -72,7 +72,7 @@ RG_leader_trait_ruler_gray = {	#天选化身
 			}
 		}
 		leader_skill_levels = 1
-		leaders_upkeep_mult = 3
+		leaders_upkeep_mult = 0.15
 		mult = owner.rg_gray_level
 	}
 	triggered_self_modifier = {
@@ -86,7 +86,7 @@ RG_leader_trait_ruler_gray = {	#天选化身
 			}
 		}
 		leader_skill_levels = 1
-		leaders_upkeep_mult = 4
+		leaders_upkeep_mult = 0.2
 		mult = owner.rg_gray_level
 	}
 	triggered_modifier = {
@@ -99,7 +99,7 @@ RG_leader_trait_ruler_gray = {	#天选化身
 				}
 			}
 		}
-		country_energy_produces_mult = -0.02
+		# country_energy_produces_mult = -0.02
 		planet_stability_add = -2
 		mult = owner.rg_gray_level
 	}
@@ -117,7 +117,7 @@ RG_leader_trait_ruler_gray = {	#天选化身
 				}
 			}
 		}
-		country_energy_produces_mult = -0.03
+		# country_energy_produces_mult = -0.03
 		planet_stability_add = -3.5
 		mult = owner.rg_gray_level
 	}
@@ -131,7 +131,7 @@ RG_leader_trait_ruler_gray = {	#天选化身
 				}
 			}
 		}
-		country_energy_produces_mult = -0.04
+		# country_energy_produces_mult = -0.04
 		planet_stability_add = -5
 		mult = owner.rg_gray_level
 	}
