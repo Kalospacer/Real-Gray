@@ -23,6 +23,8 @@ utility_component_template = {
 		RG_graygoo_Buff
 		RG_graygoo_mothership
 		RG_graygoo_icebreaker_interdictor
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 	}
 	upgrades_to = "RG_Interdictor_FUSION_REACTOR"
 	ai_weight = {
@@ -55,6 +57,8 @@ utility_component_template = {
 		RG_graygoo_Buff
 		RG_graygoo_mothership
 		RG_graygoo_icebreaker_interdictor
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 	}
 	upgrades_to = "RG_Interdictor_COLD_FUSION_REACTOR"
 	ai_weight = {
@@ -87,6 +91,8 @@ utility_component_template = {
 		RG_graygoo_Buff
 		RG_graygoo_mothership
 		RG_graygoo_icebreaker_interdictor
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 	}
 	upgrades_to = "RG_Interdictor_ANTIMATTER_REACTOR"
 	ai_weight = {
@@ -119,6 +125,8 @@ utility_component_template = {
 		RG_graygoo_Buff
 		RG_graygoo_mothership
 		RG_graygoo_icebreaker_interdictor
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 	}
 	upgrades_to = "RG_Interdictor_ZERO_POINT_REACTOR"
 	ai_weight = {
