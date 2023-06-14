@@ -1,18 +1,17 @@
 namespace = RG_planet_killer
-
 # Destroyed a star.
 planet_event = {
 	id = RG_planet_killer.1
 	hide_window = yes
 	is_triggered_only = yes
-
-	trigger = { is_star = yes }
-
+	trigger = {
+		is_star = yes
+	}
 	immediate = {
 		set_update_modifiers_batch = begin
-
-		solar_system = { RG_destroy_star_system = yes }
-
+		solar_system = {
+			RG_destroy_star_system = yes
+		}
 		every_country = {
 			create_message = {
 				type = "STAR_DESTROYED"
@@ -50,9 +49,9 @@ planet_event = {
 	id = RG_planet_killer.2
 	is_triggered_only = yes
 	hide_window = yes
-
-	trigger = { is_star = no }
-
+	trigger = {
+		is_star = no
+	}
 	immediate = {
 		set_update_modifiers_batch = begin
 		RG_destroy_planet_effect = yes
@@ -88,9 +87,9 @@ planet_event = {
 	id = RG_planet_killer.3
 	is_triggered_only = yes
 	hide_window = yes
-
-	trigger = { is_star = no }
-
+	trigger = {
+		is_star = no
+	}
 	immediate = {
 		set_update_modifiers_batch = begin
 		RG_destroy_planet_effect = yes

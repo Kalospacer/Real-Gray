@@ -1,4 +1,4 @@
-version="0.1.12"
+version="d4a22820b3"
 tags={
 	"Military"
 	"Balance"
@@ -8,5 +8,5 @@ tags={
 }
 name="Real Gray"
 picture="thumbnail.png"
-supported_version="3.8.2"
+supported_version="3.8.*"
 remote_file_id="2136166095"

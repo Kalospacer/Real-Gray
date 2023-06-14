@@ -5,11 +5,9 @@
 #can_destroy_planet_with_PLANET_DESTRUCTION_COMPONENT = {
 #	...
 #}
-
-
 can_destroy_planet_with_RG_PLANET_KILLER = {
 	custom_tooltip = {
-		fail_text = "RG_requires_a_star_star_killer" 
+		fail_text = "RG_requires_a_star_star_killer"
 		NOR = {
 			is_planet_class = pc_ag_void_star
 			is_planet_class = pc_ag_void_planet
@@ -31,7 +29,51 @@ can_destroy_planet_with_RG_PLANET_KILLER = {
 			}
 			AND = {
 				exists = owner
-				owner = { is_same_value = from.owner }
+				owner = {
+					is_same_value = from.owner
+				}
+			}
+		}
+	}
+	custom_tooltip = {
+		fail_text = "RG_requires_no_pacifist_star_killer"
+		from.owner = {
+			NOR = {
+				has_ethic = ethic_fanatic_pacifist
+				has_ethic = ethic_pacifist
+			}
+		}
+	}
+}
+
+can_destroy_planet_with_RG_PLANET_KILLER_SMALL = {
+	custom_tooltip = {
+		fail_text = "RG_requires_a_star_star_killer"
+		NOR = {
+			is_star = yes
+			is_planet_class = pc_ag_void_star
+			is_planet_class = pc_ag_void_planet
+		}
+	}
+	custom_tooltip = {
+		fail_text = "RG_requires_outside_border_star_killer"
+		NOR = {
+			AND = {
+				is_inside_border = from.owner
+				solar_system = {
+					any_system_planet = {
+						OR = {
+							is_colony = yes
+							is_under_colonization = yes
+						}
+					}
+				}
+			}
+			AND = {
+				exists = owner
+				owner = {
+					is_same_value = from.owner
+				}
 			}
 		}
 	}
@@ -48,7 +90,7 @@ can_destroy_planet_with_RG_PLANET_KILLER = {
 
 can_destroy_planet_with_RG_PLANET_KILLER_SP = {
 	custom_tooltip = {
-		fail_text = "RG_requires_a_star_star_killer" 
+		fail_text = "RG_requires_a_star_star_killer"
 		NOR = {
 			is_star = yes
 			is_planet_class = pc_ag_void_star
@@ -57,22 +99,7 @@ can_destroy_planet_with_RG_PLANET_KILLER_SP = {
 	}
 	custom_tooltip = {
 		fail_text = "RG_requires_inside_border_star_killer"
-		AND = {
-			AND = {
-				is_inside_border = from.owner
-				solar_system = {
-					any_system_planet = {
-						OR = {
-							is_colony = yes
-						}
-					}
-				}
-			}
-			AND = {
-				exists = owner
-				owner = { is_same_value = from.owner }
-			}
-		}
+		is_inside_border = from.owner
 	}
 }
 
@@ -99,7 +126,9 @@ can_destroy_planet_with_RG_PLANET_KILLER_SHIELDER = {
 	if = {
 		limit = {
 			exists = owner
-			owner = { is_country_type = primitive }
+			owner = {
+				is_country_type = primitive
+			}
 		}
 		custom_tooltip = {
 			fail_text = primitives_not_active_or_full_interference
@@ -150,7 +179,8 @@ can_destroy_planet_with_RG_PLANET_KILLER_NEUTRON = {
 					}
 				}
 			}
-			AND = { # at war with primitive space owner
+			AND = {
+				# at war with primitive space owner
 				exists = space_owner
 				exists = owner
 				owner = {
@@ -202,18 +232,24 @@ can_destroy_planet_with_RG_PLANET_KILLER_GODRAY = {
 			is_planet_class = pc_ai
 			AND = {
 				exists = owner
-				owner = { is_country_type = primitive }
+				owner = {
+					is_country_type = primitive
+				}
 			}
 			AND = {
 				exists = owner
-				owner = { is_same_value = from.owner }
+				owner = {
+					is_same_value = from.owner
+				}
 			}
 		}
 	}
 	if = {
 		limit = {
 			exists = owner
-			owner = { is_country_type = primitive }
+			owner = {
+				is_country_type = primitive
+			}
 		}
 		custom_tooltip = {
 			fail_text = primitives_not_active_or_full_interference
@@ -232,7 +268,9 @@ can_destroy_planet_with_RG_PLANET_KILLER_GODRAY = {
 				planet_is_hostile = yes
 				AND = {
 					exists = owner
-					owner = { is_country_type = primitive }
+					owner = {
+						is_country_type = primitive
+					}
 				}
 			}
 			exists = owner
@@ -278,12 +316,16 @@ can_destroy_planet_with_RG_PLANET_KILLER_NANOBOTS = {
 	if = {
 		limit = {
 			exists = owner
-			owner = { is_country_type = primitive }
+			owner = {
+				is_country_type = primitive
+			}
 		}
 		custom_tooltip = {
 			fail_text = primitives_not_in_borders
 			exists = space_owner
-			space_owner = { is_same_value = from.owner }
+			space_owner = {
+				is_same_value = from.owner
+			}
 		}
 		custom_tooltip = {
 			fail_text = primitives_not_full_interference
@@ -325,16 +367,25 @@ can_destroy_planet_with_RG_PLANET_KILLER_DELUGE = {
 	}
 	custom_tooltip = {
 		fail_text = is_not_oceanic
-		NOT = { is_planet_class = pc_ocean }
+		NOT = {
+			is_planet_class = pc_ocean
+		}
 	}
 	if = {
-		limit = { is_inside_border = from.owner }
+		limit = {
+			is_inside_border = from.owner
+		}
 		if = {
-			limit = { #Uninhabited and primitive planets are always fine, if own colony then check if pops would be purged
+			limit = {
+				#Uninhabited and primitive planets are always fine, if own colony then check if pops would be purged
 				exists = owner
-				owner = { is_same_value = from.owner }
+				owner = {
+					is_same_value = from.owner
+				}
 				any_owned_species = {
-					NOT = { has_trait = trait_aquatic }
+					NOT = {
+						has_trait = trait_aquatic
+					}
 				}
 			}
 			custom_tooltip = {
@@ -364,12 +415,16 @@ can_destroy_planet_with_RG_PLANET_KILLER_DELUGE = {
 	if = {
 		limit = {
 			exists = owner
-			owner = { is_country_type = primitive }
+			owner = {
+				is_country_type = primitive
+			}
 		}
 		custom_tooltip = {
 			fail_text = primitives_not_in_borders
 			exists = space_owner
-			space_owner = { is_same_value = from.owner }
+			space_owner = {
+				is_same_value = from.owner
+			}
 		}
 		custom_tooltip = {
 			fail_text = primitives_not_full_interference
@@ -394,7 +449,9 @@ can_destroy_planet_with_RG_PLANET_KILLER_STAR_CRACKER = {
 		NOT = {
 			solar_system = {
 				has_star_flag = crisis_sphere_system@from.owner
-				any_system_megastructure = { has_megastructure_flag = crisis_sphere }
+				any_system_megastructure = {
+					has_megastructure_flag = crisis_sphere
+				}
 			}
 		}
 	}
@@ -404,14 +461,22 @@ can_destroy_planet_with_RG_PLANET_KILLER_STAR_CRACKER = {
 	}
 	custom_tooltip = {
 		fail_text = is_black_hole
-		NOT = { is_planet_class = pc_black_hole }
+		NOT = {
+			is_planet_class = pc_black_hole
+		}
 	}
 	custom_tooltip = {
 		fail_text = star_owner_is_not_hostile
 		OR = {
-			NOT = { exists = space_owner }
-			space_owner = { is_hostile = from.owner }
-			space_owner = { is_same_value = from.owner }
+			NOT = {
+				exists = space_owner
+			}
+			space_owner = {
+				is_hostile = from.owner
+			}
+			space_owner = {
+				is_same_value = from.owner
+			}
 		}
 	}
 }

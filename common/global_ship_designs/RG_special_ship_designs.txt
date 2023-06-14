@@ -1,64 +1,11 @@
-# 星海试验船
+#工程船
 ship_design = {
-    name = "RG_COLOSSUS_interdictor_SP"
-    ship_size = RG_graygoo_interdictor
-    is_event_design = yes
-    section = {
-        template = "RG_COLOSSUS_interdictor_key"
-        slot = "mid"
-
-        component = {
-            slot = "PLANET_KILLER_GUN_01"
-            template = "RG_PLANET_KILLER_SP"
-        }
-
-        component = {
-            slot = "LARGE_UTILITY_1"
-            template = ""
-        }
-        component = {
-            slot = "LARGE_UTILITY_2"
-            template = ""
-        }
-        component = {
-            slot = "LARGE_UTILITY_3"
-            template = ""
-        }
-        component = {
-            slot = "LARGE_UTILITY_4"
-            template = ""
-        }
-        component = {
-            slot = "LARGE_UTILITY_5"
-            template = ""
-        }
-        component = {
-            slot = "LARGE_UTILITY_6"
-            template = ""
-        }
-
-        component = {
-            slot = "AUX_UTILITY_1"
-            template = ""
-        }
-
-    }
-	required_component = "TITAN_ZERO_POINT_REACTOR"
-	required_component = "HYPER_DRIVE_3"
-	required_component = "SENSOR_4"
-	required_component = "RG_gatebuilder_thruster"
-	required_component = "RG_COMBAT_COMPUTER_MotherShip"
-}
-
-# 星海纸船
-ship_design = {
-	name = "RG_Buff_interdictor_SP"
-	ship_size = RG_graygoo_interdictor
+	name = "NAME_RG_GRAY_constructor"
+	ship_size = RG_armed_constructor_ship
 	is_event_design = yes
 	section = {
-		template = "RG_Buff_interdictor_key"
+		template = "RG_armed_constructor_ship"
 		slot = "mid"
-
 		component = {
 			slot = "PD_01"
 			template = "RG_FLAK_BATTERY"
@@ -67,7 +14,344 @@ ship_design = {
 			slot = "PD_02"
 			template = "RG_FLAK_BATTERY"
 		}
-		
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "GRAY_BEAM_STATIC_X"
+		}
+		component = {
+			slot = "LARGE_GUN_01"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "LARGE_GUN_02"
+			template = "LARGE_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "TORPEDO_01"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_02"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_03"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_04"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "RG_AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "RG_ENGINE_BOOSTER"
+		}
+	}
+	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_gatebuilder_jump"
+	required_component = "RG_gatebuilder_sensor"
+	required_component = "RG_gatebuilder_thruster"
+	required_component = "RG_COMBAT_COMPUTER_MotherShip"
+	required_component = "RG_CORVETTE_CLOAKING_3"
+	#required_component = "RG_ANTIBAKAHALO"
+}
+
+#科研船
+ship_design = {
+	name = "NAME_RG_GRAY_scienceship"
+	ship_size = RG_armed_science_ship
+	is_event_design = yes
+	section = {
+		template = "RG_armed_science_ship"
+		slot = "mid"
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "GRAY_BEAM_STATIC_X"
+		}
+		component = {
+			slot = "TORPEDO_01"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_02"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_03"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "TORPEDO_04"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "PD_01"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_02"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "RG_AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "RG_ENGINE_BOOSTER"
+		}
+	}
+	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_gatebuilder_jump"
+	required_component = "RG_gatebuilder_sensor"
+	required_component = "RG_gatebuilder_thruster"
+	required_component = "RG_COMBAT_COMPUTER_MotherShip"
+	required_component = "RG_CORVETTE_CLOAKING_3"
+	required_component = "RG_AUTOCONST_HANGER"
+}
+
+#压制舰
+ship_design = {
+	name = "NAME_RG_armed_transport_ship"
+	ship_size = RG_armed_transport_ship
+	is_event_design = yes
+	section = {
+		template = "RG_armed_transport_ship"
+		slot = "mid"
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "GRAY_BEAM_STATIC_X"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_05"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_06"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "PD_01"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_02"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "RG_AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "RG_ENGINE_BOOSTER"
+		}
+	}
+	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_gatebuilder_jump"
+	required_component = "RG_gatebuilder_sensor"
+	required_component = "RG_gatebuilder_thruster"
+	required_component = "RG_COMBAT_COMPUTER_MotherShip"
+	required_component = "RG_CORVETTE_CLOAKING_3"
+}
+
+#殖民舰
+ship_design = {
+	name = "NAME_RG_armed_colony_ship"
+	ship_size = RG_armed_colony_ship
+	is_event_design = yes
+	section = {
+		template = "RG_armed_colony_ship"
+		slot = "mid"
+		component = {
+			slot = "EXTRA_LARGE_01"
+			template = "GRAY_BEAM_STATIC_X"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_03"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_04"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_05"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_06"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "PD_01"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_02"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "RG_AUTO_REPAIR"
+		}
+		component = {
+			slot = "AUX_UTILITY_2"
+			template = "RG_ENGINE_BOOSTER"
+		}
+	}
+	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_gatebuilder_jump"
+	required_component = "RG_gatebuilder_sensor"
+	required_component = "RG_gatebuilder_thruster"
+	required_component = "RG_COMBAT_COMPUTER_MotherShip"
+	required_component = "RG_CORVETTE_CLOAKING_3"
+}
+
+# 星海试验船
+ship_design = {
+	name = "RG_COLOSSUS_interdictor_SP"
+	ship_size = RG_graygoo_interdictor
+	is_event_design = yes
+	section = {
+		template = "RG_COLOSSUS_interdictor_key"
+		slot = "mid"
+		component = {
+			slot = "PLANET_KILLER_GUN_01"
+			template = "RG_PLANET_KILLER_SP"
+		}
 		component = {
 			slot = "LARGE_UTILITY_1"
 			template = ""
@@ -84,12 +368,62 @@ ship_design = {
 			slot = "LARGE_UTILITY_4"
 			template = ""
 		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = ""
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = ""
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = ""
+		}
+	}
+	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "HYPER_DRIVE_3"
+	required_component = "SENSOR_4"
+	required_component = "RG_gatebuilder_thruster"
+	required_component = "RG_COMBAT_COMPUTER_MotherShip"
+}
 
+# 星海纸船
+ship_design = {
+	name = "RG_Buff_interdictor_SP"
+	ship_size = RG_graygoo_interdictor
+	is_event_design = yes
+	section = {
+		template = "RG_Buff_interdictor_key"
+		slot = "mid"
+		component = {
+			slot = "PD_01"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "PD_02"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = ""
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = ""
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = ""
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = ""
+		}
 		component = {
 			slot = "AUX_UTILITY_1"
 			template = "RG_revive_component"
 		}
-
 	}
 	required_component = "TITAN_ZERO_POINT_REACTOR"
 	required_component = "HYPER_DRIVE_3"
@@ -100,17 +434,14 @@ ship_design = {
 	required_component = ""
 }
 
-
 # Nanite Dragon
 ship_design = {
 	name = "NAME_RG_FAKE_Dragon"
 	ship_size = nanite_space_dragon_baby
 	is_event_design = yes
-
 	section = {
 		template = "nanite_space_dragon_baby_key"
 		slot = "mid"
-
 		component = {
 			slot = "PRIMARY_GUN_01"
 			template = "GRAY_BEAM_STATIC_X"
@@ -163,7 +494,6 @@ ship_design = {
 			slot = "TERTIARY_GUN_04"
 			template = "RG_FLAK_BATTERY"
 		}
-
 		component = {
 			slot = "LARGE_UTILITY_1"
 			template = "HUGE_GRAY_MIX_ARMOR"
@@ -189,8 +519,8 @@ ship_design = {
 			template = "RG_ARMOR_BOOSTER"
 		}
 	}
-	required_component="GUARDIAN_DRIVE"
-	required_component="RG_COMBAT_COMPUTER_battle"
-	required_component="GUARDIAN_PROPULSION"
-	required_component="GUARDIAN_SENSORS"
+	required_component = "GUARDIAN_DRIVE"
+	required_component = "RG_COMBAT_COMPUTER_battle"
+	required_component = "GUARDIAN_PROPULSION"
+	required_component = "GUARDIAN_SENSORS"
 }

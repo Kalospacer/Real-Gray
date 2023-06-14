@@ -1,747 +1,587 @@
-#灰风
+#灰风舰船刷新位置检测
+rg_global_gray_location_check = {
+	if = {
+		limit = {
+			has_country_flag = gray_constship_active
+		}
+		if = {
+			limit = {
+				exists = event_target:global_gray_constship
+			}
+			event_target:global_gray_constship = {
+				save_global_event_target_as = global_gray_location
+			}
+		}
+		else = {
+			random_owned_fleet = {
+				limit = {
+					has_fleet_flag = gray_constship
+				}
+				save_global_event_target_as = global_gray_location
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = gray_warship_active
+		}
+		if = {
+			limit = {
+				exists = event_target:gray_warship
+			}
+			event_target:gray_warship = {
+				save_global_event_target_as = global_gray_location
+			}
+		}
+		else = {
+			random_owned_fleet = {
+				limit = {
+					has_fleet_flag = gray_fleet
+				}
+				save_global_event_target_as = global_gray_location
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = gray_juggernaut_active
+		}
+		if = {
+			limit = {
+				exists = event_target:gray_juggernaut
+			}
+			event_target:gray_juggernaut = {
+				save_global_event_target_as = global_gray_location
+			}
+		}
+		else = {
+			random_controlled_fleet = {
+				limit = {
+					has_fleet_flag = gray_juggernaut_fleet
+				}
+				save_global_event_target_as = global_gray_location
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = gray_governor_active
+		}
+		if = {
+			limit = {
+				any_owned_planet = {
+					exists = sector.leader
+					sector.leader = {
+						has_leader_flag = gray_governor
+					}
+				}
+			}
+			random_owned_planet = {
+				limit = {
+					exists = sector.leader
+					sector.leader = {
+						has_leader_flag = gray_governor
+					}
+				}
+				save_global_event_target_as = global_gray_location
+			}
+		}
+		else = {
+			capital_scope = {
+				save_global_event_target_as = global_gray_location
+			}
+		}
+	}
+	else_if = {
+		limit = {
+			has_country_flag = gray_army_active
+		}
+		if = {
+			limit = {
+				any_owned_army = {
+					army_type = gray_army
+					exists = planet
+				}
+			}
+			random_owned_army = {
+				limit = {
+					army_type = gray_army
+				}
+				planet = {
+					save_global_event_target_as = global_gray_location
+				}
+			}
+		}
+		else = {
+			random_owned_army = {
+				limit = {
+					army_type = gray_army
+				}
+				fleet = {
+					save_global_event_target_as = global_gray_location
+				}
+			}
+		}
+	}
+	else = {
+		capital_scope = {
+			save_global_event_target_as = global_gray_location
+		}
+	}
+}
 
 #创造灰风总督
-rg_create_gray_governor = {	
-	#延迟执行
-	optimize_memory
-	#删除战舰
-	every_owned_fleet = {
-		limit = { has_fleet_flag = gray_fleet }
-		delete_fleet = {
-			target = this
-			kill_leader = no
-			destroy_template = yes
+rg_create_gray_governor = {
+	if = {
+		limit = {
+			has_country_flag = gray_governor_active
 		}
 	}
-	#删除科学舰
-	every_owned_fleet = {
-		limit = { has_fleet_flag = gray_constship }
-		delete_fleet = {
-			target = this
-			kill_leader = no
-			destroy_template = yes
+	else = {
+		#延迟执行
+		optimize_memory
+		#删除战舰
+		every_owned_fleet = {
+			limit = {
+				has_fleet_flag = gray_fleet
+			}
+			delete_fleet = {
+				target = this
+				kill_leader = no
+				destroy_template = yes
+			}
 		}
-	}
-	#删除陆军
-	every_owned_army = {
-		limit = { army_type = gray_army }
-		if = {
-			limit = { exists = leader }
-			unassign_leader = leader
+		#删除科学舰
+		every_owned_fleet = {
+			limit = {
+				has_fleet_flag = gray_constship
+			}
+			delete_fleet = {
+				target = this
+				kill_leader = no
+				destroy_template = yes
+			}
 		}
-		remove_army = yes
-	}
-	#存储当前领袖等级
-	every_owned_leader = {
-		if = {
-			###等级检测
+		#删除陆军
+		every_owned_army = {
+			limit = {
+				army_type = gray_army
+			}
+			if = {
+				limit = {
+					exists = leader
+				}
+				unassign_leader = leader
+			}
+			remove_army = yes
+		}
+		#存储当前领袖等级
+		every_owned_leader = {
+			if = {
+				###等级检测
+				limit = {
+					has_leader_flag = rg_gray_leader
+					NOT = {
+						has_leader_flag = rg_gray_leader_temp
+					}
+				}
+				#导出等级到暂存
+				export_trigger_value_to_variable = {
+					trigger = has_skill
+					variable = rg_gray_level_temp
+				}
+				#导入变量
+				owner = {
+					set_variable = {
+						which = rg_gray_level
+						value = prev.rg_gray_level_temp
+					}
+				}
+				#清理暂存区
+				clear_variable = rg_gray_level_temp
+			}
+		}
+		#把所有种类的小灰领袖都送回娘家
+		every_owned_leader = {
 			limit = {
 				has_leader_flag = rg_gray_leader
-				NOT = {
-					has_leader_flag = rg_gray_leader_temp
-				}
 			}
-			#导出等级到暂存
-			export_trigger_value_to_variable = {
-				trigger = has_skill
-				variable = rg_gray_level_temp
+			set_owner = event_target:rg_gray_country
+			set_leader_flag = rg_gray_leader_temp
+			# kill_leader = { show_notification = no }
+		}
+		#把娘家的总督领袖接回来
+		if = {
+			limit = {
+				exists = event_target:gray_governor
 			}
-			#导入变量
-			owner = {
-				set_variable = {
-					which = rg_gray_level
-					value = prev.rg_gray_level_temp
-				}
+			event_target:gray_governor = {
+				set_owner = event_target:gray_owner
+				remove_leader_flag = rg_gray_leader_temp
 			}
-			#清理暂存区
-			clear_variable = rg_gray_level_temp
 		}
-	}
-	#把所有种类的小灰领袖都送回娘家
-	every_owned_leader = {
-		limit = { has_leader_flag = rg_gray_leader }
-		set_owner = event_target:rg_gray_country
-		set_leader_flag = rg_gray_leader_temp
-		# kill_leader = { show_notification = no }
-	}
-	#把娘家的总督领袖接回来
-	if = {
-		limit = { 
-			exists = event_target:gray_governor
+		#如果不存在总督备份，现场变一个
+		else = {
+			rg_gray_govener_init = yes
 		}
-		event_target:gray_governor = { 
-			set_owner = event_target:gray_owner 
-			remove_leader_flag = rg_gray_leader_temp
+		#设置总督已启用标识
+		set_country_flag = gray_governor_active
+		#更新灰风形态
+		remove_country_flag = gray_warship_active
+		remove_country_flag = rg_kac_grayfleet_active
+		remove_country_flag = gray_constship_active
+		remove_country_flag = gray_army_active
+		#等级导入，把存储的领袖等级赋予到领袖身上
+		random_owned_leader = {
+			limit = {
+				has_leader_flag = gray_governor
+			}
+			set_skill = owner.rg_gray_level
 		}
-	}
-	#如果不存在总督备份，现场变一个
-	else = {
-		rg_gray_govener_init = yes
-	}
-	#设置总督已启用标识
-	set_country_flag = gray_governor_active
-	#更新灰风形态
-	remove_country_flag = gray_warship_active
-	remove_country_flag = gray_constship_active
-	remove_country_flag = gray_army_active
-	#等级导入，把存储的领袖等级赋予到领袖身上
-	random_owned_leader = {
-		limit = { has_leader_flag = gray_governor }
-		set_skill = owner.rg_gray_level
 	}
 }
+
 #创造灰风战舰
 rg_create_gray_warship = {
-	optimize_memory
-	#舰船刷新位置检测
 	if = {
-		limit = { has_country_flag = gray_constship_active }
-		if = {
-			limit = { exists = event_target:global_gray_constship }
-			event_target:global_gray_constship = {
-				save_event_target_as = gray_warship_location
-			}
-		} else = {
-			random_controlled_fleet = {
-				limit = { has_fleet_flag = gray_constship }
-				save_event_target_as = gray_warship_location
-			}
+		limit = {
+			has_country_flag = gray_warship_active
 		}
 	}
-	else_if = {
-		limit = { has_country_flag = gray_juggernaut_active }
-		if = {
-			limit = { exists = event_target:gray_juggernaut }
-			event_target:gray_juggernaut = {
-				save_event_target_as = gray_warship_location
-			}
-		} else = {
-			random_controlled_fleet = {
-				limit = { has_fleet_flag = gray_juggernaut_fleet }
-				save_event_target_as = gray_warship_location
-			}
-		}
-	}
-	else_if = {
-		limit = { has_country_flag = gray_army_active }
-		if = {
-			limit = {
-				any_owned_army = {
-					army_type = gray_army
-					exists = planet
-				}
-			}
-			random_owned_army = {
-				limit = { army_type = gray_army }
-				planet = { save_event_target_as = gray_warship_location }
-			}
-		}
-		else = {
-			random_owned_army = {
-				limit = { army_type = gray_army }
-				fleet = { save_event_target_as = gray_warship_location }
-			}
-		}
-	}
-	else_if = {
-		limit = { has_country_flag = gray_governor_active }
-		if = {
-			limit = { any_owned_planet = {
-				exists = sector.leader
-				sector.leader = { has_leader_flag = gray_governor }
-				}
-			}
-			random_owned_planet = {
-				limit = {
-					exists = sector.leader
-					sector.leader = { has_leader_flag = gray_governor }
-				}
-				save_event_target_as = gray_warship_location
-			}
-		}
-		else = {
-			capital_scope = { save_event_target_as = gray_warship_location }
-		}
-	} 
 	else = {
-		capital_scope = { save_event_target_as = gray_warship_location }
-	}
-	# 存储当前领袖等级
-	every_owned_leader = {
-		if = {
-			###等级检测
+		optimize_memory
+		#舰船刷新位置检测
+		rg_global_gray_location_check = yes
+		# 存储当前领袖等级
+		every_owned_leader = {
+			if = {
+				###等级检测
+				limit = {
+					has_leader_flag = rg_gray_leader
+					NOT = {
+						has_leader_flag = rg_gray_leader_temp
+					}
+				}
+				export_trigger_value_to_variable = {
+					trigger = has_skill
+					variable = rg_gray_level_temp
+				}
+				owner = {
+					set_variable = {
+						which = rg_gray_level
+						value = prev.rg_gray_level_temp
+					}
+				}
+				clear_variable = rg_gray_level_temp
+			}
+		}
+		every_owned_leader = {
 			limit = {
 				has_leader_flag = rg_gray_leader
+			}
+			set_owner = event_target:rg_gray_country
+			set_leader_flag = rg_gray_leader_temp
+			# kill_leader = { show_notification = no }
+		}
+		if = {
+			limit = {
+				exists = event_target:gray_leader_admiral
+			}
+			event_target:gray_leader_admiral = {
+				set_owner = event_target:gray_owner
+				remove_leader_flag = rg_gray_leader_temp
+			}
+		}
+		else = {
+			rg_gray_admiral_init = yes
+		}
+		set_country_flag = gray_warship_active
+		if = {
+			limit = {
+				has_country_flag = rg_gray_level_2
+			}
+			rg_warship_init_mod1 = yes
+		}
+		else_if = {
+			limit = {
+				has_country_flag = rg_gray_level_3
 				NOT = {
-					has_leader_flag = rg_gray_leader_temp
+					has_country_flag = gray_warship_is_juggernaut
 				}
 			}
-			export_trigger_value_to_variable = {
-				trigger = has_skill
-				variable = rg_gray_level_temp
-			}
-			owner = {
-				set_variable = {
-					which = rg_gray_level
-					value = prev.rg_gray_level_temp
-				}
-			}
-			clear_variable = rg_gray_level_temp
+			rg_warship_init_mod2 = yes
 		}
-	}
-
-	every_owned_leader = {
-		limit = { has_leader_flag = rg_gray_leader }
-		set_owner = event_target:rg_gray_country
-		set_leader_flag = rg_gray_leader_temp
-		# kill_leader = { show_notification = no }
-	}
-
-	if = {
-		limit = { 
-			exists = event_target:gray_leader_admiral
-		}
-		event_target:gray_leader_admiral = { 
-			set_owner = event_target:gray_owner 
-			remove_leader_flag = rg_gray_leader_temp
-		}
-	}
-	else = {
-		rg_gray_admiral_init = yes
-	}
-
-	set_country_flag = gray_warship_active
-	if = {
-		limit = {
-			has_country_flag = rg_gray_level_2
-		}
-		create_fleet = {
-			name = "NAME_Gray"
-			settings = { 
-				can_upgrade = no 
-				can_disband = no
-				can_change_composition = no 
-				can_change_leader = yes 
-				uses_naval_capacity = no
-				spawn_debris = no 
-			}
-			effect = {
-				set_owner = prev
-				create_ship = {
-					name = "NAME_Gray"
-					design = "NAME_Gray_Warship"
-					prefix = no
-					upgradable = yes
-				}
-				set_fleet_stance = aggressive
-				set_location = {
-					target = event_target:gray_warship_location
-					distance = 0
-					angle = random 
-				}
-				set_fleet_flag = gray_fleet
-				save_global_event_target_as = gray_warship
-
-				assign_leader = event_target:gray_leader_admiral
-
-				if = {
-					limit = { has_global_flag = kdc_event_mod_active }
-					add_modifier = { modifier = remove_fleet_maintenance }
-				}
-			}
-		}
-	}
-	else_if = {
-		limit = {
-			has_country_flag = rg_gray_level_3
-			NOT = {
+		else_if = {
+			limit = {
 				has_country_flag = gray_warship_is_juggernaut
 			}
+			rg_warship_init_mod3 = yes
 		}
-		create_fleet = {
-			name = "NAME_Gray"
-			settings = { 
-				can_upgrade = no 
-				can_disband = no
-				can_change_composition = no 
-				can_change_leader = yes 
-				uses_naval_capacity = no
-				spawn_debris = no 
+		else = {
+			rg_warship_init_mod0 = yes
+		}
+		every_owned_army = {
+			limit = {
+				army_type = gray_army
 			}
-			effect = {
-				set_owner = prev
-				create_ship = {
-					name = "NAME_Gray"
-					design = "NAME_gray_capitalship"
-					prefix = no
-					upgradable = yes
+			if = {
+				limit = {
+					exists = leader
 				}
-				set_fleet_stance = aggressive
-				set_location = {
-					target = event_target:gray_warship_location
-					distance = 0
-					angle = random 
-				}
-				set_fleet_flag = gray_fleet
-				save_global_event_target_as = gray_warship
-
-				assign_leader = event_target:gray_leader_admiral
-
-				if = {
-					limit = { has_global_flag = kdc_event_mod_active }
-					add_modifier = { modifier = remove_fleet_maintenance }
-				}
+				unassign_leader = leader
+			}
+			remove_army = yes
+		}
+		every_owned_fleet = {
+			limit = {
+				has_fleet_flag = gray_constship
+			}
+			delete_fleet = {
+				target = this
+				kill_leader = no
+				destroy_template = yes
 			}
 		}
-	}
-	else_if = {
-		limit = {
-			has_country_flag = gray_warship_is_juggernaut
-		}
-		create_fleet = {
-			name = "NAME_Gray"
-			settings = { 
-				can_upgrade = no 
-				can_disband = no
-				can_change_composition = no 
-				can_change_leader = yes 
-				uses_naval_capacity = no
-				spawn_debris = no 
+		remove_country_flag = gray_constship_active
+		remove_country_flag = gray_governor_active
+		remove_country_flag = gray_army_active
+		random_owned_leader = {
+			limit = {
+				has_leader_flag = gray_admiral
 			}
-			effect = {
-				set_owner = prev
-				create_ship = {
-					name = "NAME_Gray"
-					design = "NAME_gray_juggernautship"
-					prefix = no
-					upgradable = yes
-				}
-				set_fleet_stance = aggressive
-				set_location = {
-					target = root.capital_scope
-					distance = 0
-					angle = random 
-				}
-				set_fleet_flag = gray_fleet
-				save_global_event_target_as = gray_warship
-
-				if = {
-					limit = { has_global_flag = kdc_event_mod_active }
-					add_modifier = { modifier = remove_fleet_maintenance }
-				}
-			}
+			set_skill = owner.rg_gray_level
 		}
-	}
-	else = {
-		create_fleet = {
-			name = "NAME_Gray"
-			settings = { 
-				can_upgrade = no 
-				can_disband = no
-				can_change_composition = no 
-				can_change_leader = yes 
-				uses_naval_capacity = no
-				spawn_debris = no 
-			}
-			effect = {
-				set_owner = prev
-				create_ship = {
-					name = "NAME_Gray"
-					design = "NAME_Gray_Warship_base"
-					prefix = no
-					upgradable = yes
-				}
-				set_fleet_stance = aggressive
-				set_location = {
-					target = event_target:gray_warship_location
-					distance = 0
-					angle = random 
-				}
-				set_fleet_flag = gray_fleet
-				save_global_event_target_as = gray_warship
-
-				assign_leader = event_target:gray_leader_admiral
-
-				if = {
-					limit = { has_global_flag = kdc_event_mod_active }
-					add_modifier = { modifier = remove_fleet_maintenance }
-				}
-			}
-		}
-	}
-
-	every_owned_army = {
-		limit = { army_type = gray_army }
-		if = {
-			limit = { exists = leader }
-			unassign_leader = leader
-		}
-		remove_army = yes
-	}
-	every_owned_fleet = {
-		limit = { has_fleet_flag = gray_constship }
-		delete_fleet = {
-			target = this
-			kill_leader = no
-			destroy_template = yes
-		}
-	}
-
-
-	remove_country_flag = gray_constship_active
-	remove_country_flag = gray_governor_active
-	remove_country_flag = gray_army_active
-
-	random_owned_leader = {
-		limit = { has_leader_flag = gray_admiral }
-		set_skill = owner.rg_gray_level
 	}
 }
+
 #创造灰风地面单位
 rg_create_gray_army = {
-	optimize_memory
 	if = {
-		limit = { has_country_flag = gray_constship_active }
-		if = {
-			limit = { exists = event_target:global_gray_constship }
-			event_target:global_gray_constship = {
-				save_event_target_as = gray_transport_location
-			}
-		} else = {
-			random_owned_fleet = {
-				limit = { has_fleet_flag = gray_constship }
-				save_event_target_as = gray_transport_location
-			}
+		limit = {
+			has_leader_flag = gray_army_active
 		}
 	}
-	else_if = {
-		limit = { has_country_flag = gray_warship_active }
-		if = {
-			limit = { exists = event_target:gray_warship }
-			event_target:gray_warship = {
-				save_event_target_as = gray_transport_location
-			}
-		} else = {
-			random_owned_fleet = {
-				limit = { has_fleet_flag = gray_fleet }
-				save_event_target_as = gray_transport_location
-			}
-		}
-	}
-	else_if = {
-		limit = { has_country_flag = gray_juggernaut_active }
-		if = {
-			limit = { exists = event_target:gray_juggernaut }
-			event_target:gray_juggernaut = {
-				save_event_target_as = gray_transport_location
-			}
-		} else = {
-			random_controlled_fleet = {
-				limit = { has_fleet_flag = gray_juggernaut_fleet }
-				save_event_target_as = gray_transport_location
-			}
-		}
-	}
-	else_if = {
-		limit = { has_country_flag = gray_governor_active }
-		if = {
-			limit = { any_owned_planet = {
-				exists = sector.leader
-				sector.leader = { has_leader_flag = gray_governor }
-				}
-			}
-			random_owned_planet = {
+	else = {
+		optimize_memory
+		#舰船刷新位置检测
+		rg_global_gray_location_check = yes
+		every_owned_leader = {
+			if = {
+				###等级检测
 				limit = {
-					exists = sector.leader
-					sector.leader = { has_leader_flag = gray_governor }
+					has_leader_flag = rg_gray_leader
+					NOT = {
+						has_leader_flag = rg_gray_leader_temp
+					}
 				}
-				save_event_target_as = gray_transport_location
+				export_trigger_value_to_variable = {
+					trigger = has_skill
+					variable = rg_gray_level_temp
+				}
+				owner = {
+					set_variable = {
+						which = rg_gray_level
+						value = prev.rg_gray_level_temp
+					}
+				}
+				clear_variable = rg_gray_level_temp
+			}
+		}
+		every_owned_leader = {
+			limit = {
+				has_leader_flag = rg_gray_leader
+			}
+			set_owner = event_target:rg_gray_country
+			set_leader_flag = rg_gray_leader_temp
+			# kill_leader = { show_notification = no }
+		}
+		if = {
+			limit = {
+				exists = event_target:gray_leader_general
+			}
+			event_target:gray_leader_general = {
+				set_owner = event_target:gray_owner
+				remove_leader_flag = rg_gray_leader_temp
 			}
 		}
 		else = {
-			capital_scope = { save_event_target_as = gray_warship_location }
+			rg_gray_general_init = yes
 		}
-	} 
-	else = {
-		capital_scope = { save_event_target_as = gray_transport_location }
-	}
-
-	every_owned_leader = {
-		if = {
-			###等级检测
+		create_ship_design = {
+			design = "NAME_RG_armed_transport_ship"
+		}
+		add_ship_design = last_created_design
+		set_country_flag = gray_army_active
+		create_fleet = {
+			name = "NAME_Gray"
+			effect = {
+				set_owner = prev
+				create_army_transport = {
+					ship_name = "NAME_Gray"
+					army_name = "NAME_Gray"
+					army_type = "gray_army"
+				}
+				set_location = {
+					target = event_target:global_gray_location
+					distance = 0
+					angle = random
+				}
+				# set_cloaking_active = yes
+				set_fleet_stance = aggressive
+			}
+		}
+		last_created_army = {
+			assign_leader = event_target:gray_leader_general
+		}
+		every_owned_fleet = {
 			limit = {
-				has_leader_flag = rg_gray_leader
-				NOT = {
-					has_leader_flag = rg_gray_leader_temp
-				}
+				has_fleet_flag = gray_fleet
 			}
-			export_trigger_value_to_variable = {
-				trigger = has_skill
-				variable = rg_gray_level_temp
+			delete_fleet = {
+				target = this
+				kill_leader = no
+				destroy_template = yes
 			}
-			owner = {
-				set_variable = {
-					which = rg_gray_level
-					value = prev.rg_gray_level_temp
-				}
+		}
+		every_owned_fleet = {
+			limit = {
+				has_fleet_flag = gray_constship
 			}
-			clear_variable = rg_gray_level_temp
-		}
-	}
-
-	every_owned_leader = {
-		limit = { has_leader_flag = rg_gray_leader }
-		set_owner = event_target:rg_gray_country
-		set_leader_flag = rg_gray_leader_temp
-		# kill_leader = { show_notification = no }
-	}
-
-	if = {
-		limit = { 
-			exists = event_target:gray_leader_general
-		}
-		event_target:gray_leader_general = { 
-			set_owner = event_target:gray_owner 
-			remove_leader_flag = rg_gray_leader_temp
-		}
-	}
-	else = {
-		rg_gray_general_init = yes
-	}
-	create_ship_design = {
-		design = "NAME_RG_armed_transport_ship"
-	}
-	add_ship_design = last_created_design
-	set_country_flag = gray_army_active
-	create_fleet = {
-		name = "NAME_Gray"
-		effect = {
-			set_owner = prev
-			create_army_transport = {
-				ship_name = "NAME_Gray"
-				army_name = "NAME_Gray"
-				army_type = "gray_army"
+			delete_fleet = {
+				target = this
+				kill_leader = no
+				destroy_template = yes
 			}
-			set_location = {
-				target = event_target:gray_transport_location
-				distance = 0
-				angle = random 
+		}
+		remove_country_flag = gray_warship_active
+		remove_country_flag = rg_kac_grayfleet_active
+		remove_country_flag = gray_governor_active
+		remove_country_flag = gray_constship_active
+		remove_ship_design = last_created_design
+		random_owned_leader = {
+			limit = {
+				has_leader_flag = gray_general
 			}
-			# set_cloaking_active = yes
-			set_fleet_stance = aggressive
+			set_skill = owner.rg_gray_level
 		}
-	}
-	last_created_army = {
-		assign_leader = event_target:gray_leader_general
-	}
-
-	every_owned_fleet = {
-		limit = { has_fleet_flag = gray_fleet }
-		delete_fleet = {
-			target = this
-			kill_leader = no
-			destroy_template = yes
-		}
-	}
-
-	every_owned_fleet = {
-		limit = { has_fleet_flag = gray_constship }
-		delete_fleet = {
-			target = this
-			kill_leader = no
-			destroy_template = yes
-		}
-	}
-
-	remove_country_flag = gray_warship_active
-	remove_country_flag = gray_governor_active
-	remove_country_flag = gray_constship_active
-	
-	remove_ship_design = last_created_design
-
-	random_owned_leader = {
-		limit = { has_leader_flag = gray_general }
-		set_skill = owner.rg_gray_level
 	}
 }
+
 #创造灰风科学舰
 rg_create_gray_const = {
-	optimize_memory
 	if = {
-		limit = { has_country_flag = gray_warship_active }
-		if = {
-			limit = { exists = event_target:gray_warship }
-			event_target:gray_warship = {
-				save_event_target_as = gray_constship_location
-			}
-		} else = {
-			random_controlled_fleet = {
-				limit = { has_fleet_flag = gray_fleet }
-				save_event_target_as = gray_constship_location
-			}
+		limit = {
+			has_country_flag = gray_constship_active
 		}
 	}
-	else_if = {
-		limit = { has_country_flag = gray_juggernaut_active }
-		if = {
-			limit = { exists = event_target:gray_juggernaut }
-			event_target:gray_juggernaut = {
-				save_event_target_as = gray_constship_location
-			}
-		} else = {
-			random_controlled_fleet = {
-				limit = { has_fleet_flag = gray_juggernaut_fleet }
-				save_event_target_as = gray_constship_location
-			}
-		}
-	}
-	else_if = {
-		limit = { has_country_flag = gray_army_active }
-		if = {
-			limit = {
-				any_owned_army = {
-					army_type = gray_army
-					exists = planet
-				}
-			}
-			random_owned_army = {
-				limit = { army_type = gray_army }
-				planet = { save_event_target_as = gray_constship_location }
-			}
-		}
-		else = {
-			random_owned_army = {
-				limit = { army_type = gray_army }
-				fleet = { save_event_target_as = gray_constship_location }
-			}
-		}
-	}
-	else_if = {
-		limit = { has_country_flag = gray_governor_active }
-		if = {
-			limit = { any_owned_planet = {
-				exists = sector.leader
-				sector.leader = { has_leader_flag = gray_governor }
-				}
-			}
-			random_owned_planet = {
-				limit = {
-					exists = sector.leader
-					sector.leader = { has_leader_flag = gray_governor }
-				}
-				save_event_target_as = gray_constship_location
-			}
-		}
-		else = {
-			capital_scope = { save_event_target_as = gray_constship_location }
-		}
-	} 
 	else = {
-		capital_scope = { save_event_target_as = gray_constship_location }
-	}
-
-	every_owned_leader = {
-		if = {
-			###等级检测
+		optimize_memory
+		#舰船刷新位置检测
+		rg_global_gray_location_check = yes
+		every_owned_leader = {
+			if = {
+				###等级检测
+				limit = {
+					has_leader_flag = rg_gray_leader
+					NOT = {
+						has_leader_flag = rg_gray_leader_temp
+					}
+				}
+				export_trigger_value_to_variable = {
+					trigger = has_skill
+					variable = rg_gray_level_temp
+				}
+				owner = {
+					set_variable = {
+						which = rg_gray_level
+						value = prev.rg_gray_level_temp
+					}
+				}
+				clear_variable = rg_gray_level_temp
+			}
+		}
+		every_owned_leader = {
 			limit = {
 				has_leader_flag = rg_gray_leader
-				NOT = {
-					has_leader_flag = rg_gray_leader_temp
-				}
 			}
-			export_trigger_value_to_variable = {
-				trigger = has_skill
-				variable = rg_gray_level_temp
-			}
-			owner = {
-				set_variable = {
-					which = rg_gray_level
-					value = prev.rg_gray_level_temp
-				}
-			}
-			clear_variable = rg_gray_level_temp
+			set_owner = event_target:rg_gray_country
+			set_leader_flag = rg_gray_leader_temp
+			# kill_leader = { show_notification = no }
 		}
-	}
-
-	every_owned_leader = {
-		limit = { has_leader_flag = rg_gray_leader }
-		set_owner = event_target:rg_gray_country
-		set_leader_flag = rg_gray_leader_temp
-		# kill_leader = { show_notification = no }
-	}
-
-	if = {
-		limit = { 
-			exists = event_target:gray_leader_scientist
-		}
-		event_target:gray_leader_scientist = { 
-			set_owner = event_target:gray_owner 
-			remove_leader_flag = rg_gray_leader_temp
-		}
-	}
-	else = {
-		rg_gray_scientist_init = yes
-	}
-
-	set_country_flag = gray_constship_active
-	create_fleet = {
-		name = "NAME_Gray"
-		settings = { 
-			can_upgrade = no 
-			can_disband = no
-			can_change_composition = no 
-			can_change_leader = yes 
-			uses_naval_capacity = no
-			spawn_debris = no 
-		}
-		effect = {
-			set_owner = prev
-			create_ship = {
-				name = "NAME_Gray"
-				design = "NAME_RG_GRAY_scienceship"
-				prefix = no
-				upgradable = yes
-			}
-			set_fleet_stance = evasive
-			set_location = {
-				target = event_target:gray_constship_location
-				distance = 0
-				angle = random 
-			}
-			set_fleet_flag = gray_constship
-			save_global_event_target_as = global_gray_constship
-			set_cloaking_active = yes
-			assign_leader = event_target:gray_leader_scientist
-		}
-	}
-
-	every_owned_fleet = {
-		limit = { has_fleet_flag = gray_fleet }
-		delete_fleet = {
-			target = this
-			kill_leader = no
-			destroy_template = yes
-		}
-	}
-
-	every_owned_army = {
-		limit = { army_type = gray_army }
 		if = {
-			limit = { exists = leader }
-			unassign_leader = leader
+			limit = {
+				exists = event_target:gray_leader_scientist
+			}
+			event_target:gray_leader_scientist = {
+				set_owner = event_target:gray_owner
+				remove_leader_flag = rg_gray_leader_temp
+			}
 		}
-		remove_army = yes
-	}
-
-	remove_country_flag = gray_army_active
-	remove_country_flag = gray_warship_active
-	remove_country_flag = gray_governor_active
-
-	random_owned_leader = {
-		limit = { has_leader_flag = gray_scientist }
-		set_skill = owner.rg_gray_level
+		else = {
+			rg_gray_scientist_init = yes
+		}
+		set_country_flag = gray_constship_active
+		create_fleet = {
+			name = "NAME_Gray"
+			settings = {
+				can_upgrade = no
+				can_disband = no
+				can_change_composition = no
+				can_change_leader = yes
+				uses_naval_capacity = no
+				spawn_debris = no
+			}
+			effect = {
+				set_owner = prev
+				create_ship = {
+					name = "NAME_Gray"
+					design = "NAME_RG_GRAY_scienceship"
+					prefix = no
+					upgradable = yes
+				}
+				set_fleet_stance = evasive
+				set_location = {
+					target = event_target:global_gray_location
+					distance = 0
+					angle = random
+				}
+				set_fleet_flag = gray_constship
+				save_global_event_target_as = global_gray_constship
+				set_cloaking_active = yes
+				assign_leader = event_target:gray_leader_scientist
+			}
+		}
+		every_owned_fleet = {
+			limit = {
+				has_fleet_flag = gray_fleet
+			}
+			delete_fleet = {
+				target = this
+				kill_leader = no
+				destroy_template = yes
+			}
+		}
+		every_owned_army = {
+			limit = {
+				army_type = gray_army
+			}
+			if = {
+				limit = {
+					exists = leader
+				}
+				unassign_leader = leader
+			}
+			remove_army = yes
+		}
+		remove_country_flag = gray_army_active
+		remove_country_flag = gray_warship_active
+		remove_country_flag = rg_kac_grayfleet_active
+		remove_country_flag = gray_governor_active
+		random_owned_leader = {
+			limit = {
+				has_leader_flag = gray_scientist
+			}
+			set_skill = owner.rg_gray_level
+		}
 	}
 }
-
-
-

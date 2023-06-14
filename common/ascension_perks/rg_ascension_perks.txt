@@ -1,9 +1,8 @@
 rg_ap_nantiematter = {
 	on_enabled = {
 		custom_tooltip = "rg_ap_nantiematter_tooltip"
-    	add_research_option = tech_gray_weapon_lance_1
+		add_research_option = tech_gray_weapon_lance_1
 	}
-
 	possible = {
 		OR = {
 			has_country_flag = origin_rg_gray
@@ -15,7 +14,6 @@ rg_ap_nantiematter = {
 			has_ascension_perk = rg_nantiematter
 		}
 	}
-
 	potential = {
 		OR = {
 			has_country_flag = origin_rg_gray
@@ -25,7 +23,6 @@ rg_ap_nantiematter = {
 		}
 		is_ai = no
 	}
-
 	ai_weight = {
 		factor = 0
 	}

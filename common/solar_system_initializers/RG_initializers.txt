@@ -1,20 +1,19 @@
 # REGULAR START
-
 # Terminal Egress
 rg_cluster_init_01 = {
 	class = "sc_black_hole"
 	name = "NAME_Final_Egress"
-	
 	usage = misc_system_init
 	usage_odds = 0
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 190
 	}
-
-	flags = { lcluster lcluster1 lcluster_lgate }
-
+	flags = {
+		lcluster
+		lcluster1
+		lcluster_lgate
+	}
 	planet = {
 		name = "NAME_Final_Egress"
 		class = "pc_black_hole"
@@ -23,9 +22,7 @@ rg_cluster_init_01 = {
 		size = 30
 		has_ring = no
 	}
-	
 	change_orbit = 45
-	
 	planet = {
 		name = "NAME_Sel-Ufaan"
 		class = "pc_shattered"
@@ -34,7 +31,6 @@ rg_cluster_init_01 = {
 		size = 10
 		has_ring = no
 	}
-	
 	planet = {
 		name = "NAME_Ten-Aard-Shel"
 		class = "pc_gray_goo"
@@ -43,7 +39,6 @@ rg_cluster_init_01 = {
 		size = 20
 		has_ring = no
 	}
-	
 	planet = {
 		name = "NAME_Diim-Fu-Rem"
 		class = "pc_shattered"
@@ -54,32 +49,33 @@ rg_cluster_init_01 = {
 		has_ring = no
 		deposit_blockers = none
 		modifiers = none
-		flags = { planet_earth }
-		
+		flags = {
+			planet_earth
+		}
 		init_effect = {
 			prevent_anomaly = yes
 		}
-		
 		moon = {
 			name = "NAME_Dora-Fu-Rem"
 			class = "pc_broken"
-			size = { min = 8 max = 22 }
+			size = {
+				min = 8
+				max = 22
+			}
 			orbit_distance = 12
 			orbit_angle = 40
 			has_ring = no
 			entity = "cold_barren_planet_luna_entity"
 		}
 	}
-	
 	planet = {
 		name = "NAME_Naal-Di-Kor"
 		class = "pc_shattered"
 		orbit_distance = 25
 		orbit_angle = 60
 		size = 13
-		has_ring = no	
+		has_ring = no
 	}
-	
 	planet = {
 		name = "NAME_Tao-Enar-Vi"
 		class = "pc_asteroid"
@@ -88,7 +84,6 @@ rg_cluster_init_01 = {
 		size = 5
 		has_ring = no
 	}
-	
 	planet = {
 		name = "NAME_Tao-Fun-Vi"
 		class = "pc_asteroid"
@@ -97,7 +92,6 @@ rg_cluster_init_01 = {
 		size = 5
 		has_ring = no
 	}
-	
 	planet = {
 		name = "NAME_Tao-Arl-Vi"
 		class = "pc_asteroid"
@@ -106,7 +100,6 @@ rg_cluster_init_01 = {
 		size = 5
 		has_ring = no
 	}
-	
 	planet = {
 		name = "NAME_Tao-Got-Vi"
 		class = "pc_asteroid"
@@ -115,7 +108,6 @@ rg_cluster_init_01 = {
 		size = 5
 		has_ring = no
 	}
-	
 	planet = {
 		name = "NAME_Gol-Unda-Fiir"
 		class = "pc_gas_giant"
@@ -124,11 +116,13 @@ rg_cluster_init_01 = {
 		size = 35
 		has_ring = no
 		change_orbit = 6
-		
 		moon = {
 			name = "NAME_Dora-Enar-Fiir"
 			class = "pc_barren_cold"
-			size = { min = 8 max = 22 }
+			size = {
+				min = 8
+				max = 22
+			}
 			orbit_distance = 10
 			orbit_angle = 110
 			has_ring = no
@@ -136,7 +130,10 @@ rg_cluster_init_01 = {
 		moon = {
 			name = "NAME_Dora-Fun-Fiir"
 			class = "pc_shattered"
-			size = { min = 8 max = 22 }
+			size = {
+				min = 8
+				max = 22
+			}
 			orbit_distance = 4
 			orbit_angle = 100
 			has_ring = no
@@ -144,7 +141,10 @@ rg_cluster_init_01 = {
 		moon = {
 			name = "NAME_Dora-Arl-Fiir"
 			class = "pc_frozen"
-			size = { min = 8 max = 22 }
+			size = {
+				min = 8
+				max = 22
+			}
 			orbit_distance = 4
 			orbit_angle = 80
 			has_ring = no
@@ -152,13 +152,15 @@ rg_cluster_init_01 = {
 		moon = {
 			name = "NAME_Dora-Got-Fiir"
 			class = "pc_gray_goo"
-			size = { min = 8 max = 22 }
+			size = {
+				min = 8
+				max = 22
+			}
 			orbit_distance = 4
 			orbit_angle = -155
 			has_ring = no
 		}
 	}
-	
 	planet = {
 		name = "NAME_Gol-Umn-Toor"
 		class = "pc_gas_giant"
@@ -168,17 +170,18 @@ rg_cluster_init_01 = {
 		has_ring = yes
 		entity = "gas_giant_05_entity"
 		change_orbit = 7
-		
 		moon = {
 			name = "NAME_Dora-Enar-Toor"
 			class = "pc_gray_goo"
-			size = { min = 8 max = 22 }
+			size = {
+				min = 8
+				max = 22
+			}
 			orbit_distance = 12
 			orbit_angle = 320
 			has_ring = no
 		}
 	}
-	
 	planet = {
 		name = "NAME_Gol-Salm-Ri"
 		class = "pc_gas_giant"
@@ -188,7 +191,6 @@ rg_cluster_init_01 = {
 		has_ring = no
 		entity = "gas_giant_03_entity"
 	}
-	
 	planet = {
 		name = "NAME_Gol-Mel-Rood"
 		class = "pc_gas_giant"
@@ -198,17 +200,18 @@ rg_cluster_init_01 = {
 		has_ring = no
 		entity = "gas_giant_02_entity"
 		change_orbit = 4
-		
 		moon = {
 			name = "NAME_Dora-Enar-Rood"
 			class = "pc_broken"
-			size = { min = 8 max = 22 }
+			size = {
+				min = 8
+				max = 22
+			}
 			orbit_distance = 7
 			orbit_angle = 115
 			has_ring = no
 		}
 	}
-
 	init_effect = {
 		spawn_megastructure = {
 			type = lgate_base
@@ -228,151 +231,198 @@ rg_cluster_init_02 = {
 		type = icy_asteroid_belt
 		radius = 240
 	}
-	
 	usage = misc_system_init
 	usage_odds = 0
-
-	flags = { lcluster lcluster2 }
-	
+	flags = {
+		lcluster
+		lcluster2
+	}
 	planet = {
 		count = 1
 		class = star
 		orbit_distance = 25
 		orbit_angle = 1
-		size = { min = 20 max = 30 }
+		size = {
+			min = 20
+			max = 30
+		}
 		has_ring = no
 	}
-	
 	planet = {
 		count = 1
 		class = star
 		orbit_distance = 0
-		size = { min = 15 max = 25 }
+		size = {
+			min = 15
+			max = 25
+		}
 		has_ring = no
 	}
-	
 	change_orbit = 30
-	
 	planet = {
 		class = pc_broken
 		orbit_distance = 20
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-
 	planet = {
 		class = pc_gray_goo
 		orbit_distance = 25
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-	
 	change_orbit = 25
-	
 	planet = {
-		count = { min = 1 max = 4 }
+		count = {
+			min = 1
+			max = 4
+		}
 		class = pc_asteroid
 		orbit_distance = 0
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-
 	planet = {
 		class = pc_gray_goo
 		orbit_distance = 25
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-
 	planet = {
 		class = pc_gas_giant
 		orbit_distance = 30
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 		size = 35
-
 		change_orbit = 11
-		
 		moon = {
 			class = pc_broken
-			orbit_angle = { min = 90 max = 270 }
+			orbit_angle = {
+				min = 90
+				max = 270
+			}
 			orbit_distance = 5
 		}
 	}
-
 	planet = {
 		class = pc_shattered
 		orbit_distance = 30
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-
 	change_orbit = 30
-	
 	planet = {
-		count = { min = 1 max = 4 }
+		count = {
+			min = 1
+			max = 4
+		}
 		class = pc_ice_asteroid
 		orbit_distance = 0
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
 }
 
 rg_cluster_init_03 = {
 	class = "rl_standard_stars"
-	
 	usage = misc_system_init
 	usage_odds = 0
-
-	flags = { lcluster lcluster3 }
-	
+	flags = {
+		lcluster
+		lcluster3
+	}
 	planet = {
 		count = 1
 		class = star
 		orbit_distance = 0
 		orbit_angle = 1
-		size = { min = 20 max = 30 }
+		size = {
+			min = 20
+			max = 30
+		}
 		has_ring = no
 	}
-	
 	change_orbit = 70
-	
 	planet = {
 		class = pc_shattered
 		orbit_distance = 10
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-
 	planet = {
 		class = pc_broken
 		orbit_distance = 25
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-
 	planet = {
 		class = pc_shattered
 		orbit_distance = 30
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-
 	planet = {
 		class = pc_broken
 		orbit_distance = 25
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-
 	planet = {
 		class = pc_gray_goo
 		orbit_distance = 25
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-	
 	planet = {
-		count = { min = 1 max = 2 }
+		count = {
+			min = 1
+			max = 2
+		}
 		orbit_distance = 35
 		class = pc_gas_giant
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 		size = 25
-		
 		change_orbit = @base_moon_distance
-		
 		moon = {
-			count = { min = 1 max = 3 }
-			size = { min = 8 max = 20 }
-			orbit_angle = { min = 90 max = 270 }
+			count = {
+				min = 1
+				max = 3
+			}
+			size = {
+				min = 8
+				max = 20
+			}
+			orbit_angle = {
+				min = 90
+				max = 270
+			}
 			orbit_distance = 6
 		}
 	}
@@ -384,60 +434,74 @@ rg_cluster_init_04 = {
 		type = rocky_asteroid_belt
 		radius = 120
 	}
-	
 	usage = misc_system_init
 	usage_odds = 0
-
-	flags = { lcluster lcluster4 }
-	
+	flags = {
+		lcluster
+		lcluster4
+	}
 	planet = {
 		count = 1
 		class = star
 		orbit_distance = 0
 		orbit_angle = 1
-		size = { min = 20 max = 30 }
+		size = {
+			min = 20
+			max = 30
+		}
 		has_ring = no
 	}
-	
 	change_orbit = 120
-	
 	planet = {
-		count = { min = 3 max = 6 }
+		count = {
+			min = 3
+			max = 6
+		}
 		class = pc_asteroid
 		orbit_distance = 0
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-	
 	change_orbit = -80
-	
 	planet = {
 		class = pc_shattered
 		orbit_distance = 0
-		orbit_angle = { min = 90 max = 270 }
-		flags = { start_gatebuilders_mining_station1 }
-		
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+		flags = {
+			start_gatebuilders_mining_station1
+		}
 		init_effect = {
 			set_deposit = d_minerals_5
 		}
 	}
-
 	planet = {
 		class = pc_gray_goo
 		orbit_distance = 25
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-	
 	change_orbit = 80
-	
 	planet = {
 		class = pc_nuked
 		orbit_distance = 0
-		orbit_angle = { min = 90 max = 270 }
-		flags = { start_rg_cluster_gatebuilders ignore_startup_effect rw_spec_empire }
-
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+		flags = {
+			start_rg_cluster_gatebuilders
+			ignore_startup_effect
+			rw_spec_empire
+		}
 		init_effect = {
 			prevent_anomaly = yes
-			
 			add_deposit = d_underwater_vent
 			add_deposit = d_searing_desert
 			add_deposit = d_submerged_ore_veins
@@ -446,12 +510,13 @@ rg_cluster_init_04 = {
 			add_deposit = d_lichen_fields
 		}
 	}
-
 	planet = {
 		class = pc_broken
 		orbit_distance = 25
-		orbit_angle = { min = 90 max = 270 }
-		
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 		init_effect = {
 			set_deposit = d_minerals_6
 		}
@@ -460,27 +525,27 @@ rg_cluster_init_04 = {
 
 rg_cluster_init_05 = {
 	class = "sc_trinary_2"
-	flags = { lcluster lcluster5 }
-
+	flags = {
+		lcluster
+		lcluster5
+	}
 	usage = misc_system_init
 	usage_odds = 0
-
 	asteroid_belt = {
 		type = rocky_asteroid_belt
 		radius = 185
 	}
-
 	planet = {
 		class = star
 		orbit_distance = 60
 		orbit_angle = 90
 		size = 30
 		has_ring = no
-
-		flags = { main_star }
+		flags = {
+			main_star
+		}
 	}
-
-	 planet = {
+	planet = {
 		count = 1
 		class = star
 		orbit_distance = 0
@@ -488,7 +553,6 @@ rg_cluster_init_05 = {
 		size = 30
 		has_ring = no
 	}
-
 	planet = {
 		count = 1
 		class = star
@@ -497,7 +561,6 @@ rg_cluster_init_05 = {
 		size = 30
 		has_ring = no
 	}
-
 	planet = {
 		class = "pc_nuked"
 		orbit_distance = 85
@@ -505,35 +568,38 @@ rg_cluster_init_05 = {
 		size = 17
 		has_ring = no
 	}
-
 	change_orbit = 40
-
 	planet = {
-		count = { min = 2 max = 4 }
+		count = {
+			min = 2
+			max = 4
+		}
 		class = pc_asteroid
 		orbit_distance = 0
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-
 	planet = {
 		class = "pc_gas_giant"
 		orbit_distance = 40
 		orbit_angle = 165
 		size = 32
 		has_ring = no
-
-		 moon = {
+		moon = {
 			class = "pc_gray_goo"
 			size = 20
-			orbit_angle = { min = 90 max = 270 }
+			orbit_angle = {
+				min = 90
+				max = 270
+			}
 			orbit_distance = 20
 		}
-		
 		init_effect = {
 			set_deposit = d_exotic_gases_3
 		}
 	}
-
 	planet = {
 		class = "pc_gray_goo"
 		orbit_distance = 45
@@ -541,7 +607,6 @@ rg_cluster_init_05 = {
 		size = 18
 		has_ring = no
 	}
-
 }
 
 # EXTRAS
@@ -551,85 +616,109 @@ rg_cluster_init_01b = {
 		type = rocky_asteroid_belt
 		radius = 140
 	}
-	
 	usage = misc_system_init
 	usage_odds = 0
-
-	flags = { lcluster lcluster1b }
-	
+	flags = {
+		lcluster
+		lcluster1b
+	}
 	planet = {
 		count = 1
 		class = star
 		orbit_distance = 25
 		orbit_angle = 0
-		size = { min = 20 max = 30 }
+		size = {
+			min = 20
+			max = 30
+		}
 		has_ring = no
 	}
-
 	planet = {
 		count = 1
 		class = star
-		orbit_distance = { min = 0 max = 20 }
+		orbit_distance = {
+			min = 0
+			max = 20
+		}
 		orbit_angle = 120
-		size = { min = 25 max = 30 }
+		size = {
+			min = 25
+			max = 30
+		}
 		has_ring = no
 	}
-
 	planet = {
 		count = 1
 		class = star
-		orbit_distance = { min = 0 max = 20 }
+		orbit_distance = {
+			min = 0
+			max = 20
+		}
 		orbit_angle = 120
-		size = { min = 25 max = 30 }
+		size = {
+			min = 25
+			max = 30
+		}
 		has_ring = no
 	}
-	
 	change_orbit = 92
-	
 	planet = {
-		count = { min = 3 max = 6 }
+		count = {
+			min = 3
+			max = 6
+		}
 		class = pc_asteroid
 		orbit_distance = 0
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-	
 	planet = {
 		count = 1
 		class = pc_asteroid
 		orbit_distance = 0
-		orbit_angle = { min = 90 max = 270 }
-		
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 		init_effect = {
 			set_deposit = d_rare_crystals_2
 		}
 	}
-	
 	change_orbit = -60
-	
 	planet = {
 		class = pc_gray_goo
 		orbit_distance = 0
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-
 	planet = {
 		class = pc_broken
 		orbit_distance = 25
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-	
 	change_orbit = 80
-	
 	planet = {
 		class = pc_shattered
 		orbit_distance = 0
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-
 	planet = {
 		class = pc_shattered
 		orbit_distance = 25
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
 }
 
@@ -639,50 +728,61 @@ rg_cluster_init_02b = {
 		type = rocky_asteroid_belt
 		radius = 135
 	}
-	
 	usage = misc_system_init
 	usage_odds = 0
-
-	flags = { lcluster lcluster2b }
-	
+	flags = {
+		lcluster
+		lcluster2b
+	}
 	planet = {
 		count = 1
 		class = star
 		orbit_distance = 0
 		orbit_angle = 0
-		size = { min = 30 max = 35 }
+		size = {
+			min = 30
+			max = 35
+		}
 		has_ring = no
 	}
-	
 	change_orbit = 135
-	
 	planet = {
-		count = { min = 3 max = 6 }
+		count = {
+			min = 3
+			max = 6
+		}
 		class = pc_asteroid
 		orbit_distance = 0
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-	
 	change_orbit = -80
-	
 	planet = {
 		class = pc_gray_goo
 		orbit_distance = 30
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-	
 	change_orbit = 90
-	
 	planet = {
 		class = pc_shattered
 		orbit_distance = 0
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-
 	planet = {
 		class = pc_broken
 		orbit_distance = 30
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
 }
 
@@ -692,129 +792,158 @@ rg_cluster_init_03b = {
 		type = rocky_asteroid_belt
 		radius = 120
 	}
-	
 	usage = misc_system_init
 	usage_odds = 0
-
-	flags = { lcluster lcluster3b }
-	
+	flags = {
+		lcluster
+		lcluster3b
+	}
 	planet = {
 		count = 1
 		class = star
 		orbit_distance = 0
 		orbit_angle = 1
-		size = { min = 20 max = 30 }
+		size = {
+			min = 20
+			max = 30
+		}
 		has_ring = no
 	}
-	
 	change_orbit = 120
-	
 	planet = {
-		count = { min = 3 max = 5 }
+		count = {
+			min = 3
+			max = 5
+		}
 		class = pc_asteroid
 		orbit_distance = 0
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-	
 	planet = {
 		count = 1
 		class = pc_asteroid
 		orbit_distance = 0
-		orbit_angle = { min = 90 max = 270 }
-		
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 		init_effect = {
 			set_deposit = d_volatile_motes_2
 		}
 	}
-	
 	change_orbit = -70
-	
 	planet = {
 		class = pc_shattered
 		orbit_distance = 0
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-
 	planet = {
 		class = pc_broken
 		orbit_distance = 25
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-	
 	change_orbit = 70
-	
 	planet = {
 		class = pc_gray_goo
 		orbit_distance = 25
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-
 	planet = {
 		class = pc_gas_giant
 		orbit_distance = 25
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-
 	planet = {
 		class = pc_gray_goo
 		orbit_distance = 25
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
 }
 
 rg_cluster_init_04b = {
 	class = "rl_standard_stars"
-	
 	usage = misc_system_init
 	usage_odds = 0
-
-	flags = { lcluster lcluster4b }
-	
+	flags = {
+		lcluster
+		lcluster4b
+	}
 	planet = {
 		count = 1
 		class = star
 		orbit_distance = 0
 		orbit_angle = 1
-		size = { min = 20 max = 30 }
+		size = {
+			min = 20
+			max = 30
+		}
 		has_ring = no
 	}
-	
 	change_orbit = 50
-	
 	planet = {
 		class = pc_broken
 		orbit_distance = 0
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-
 	planet = {
 		class = pc_shattered
 		orbit_distance = 25
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-	
 	planet = {
 		class = pc_shattered
 		orbit_distance = 25
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-
 	planet = {
 		class = pc_gray_goo
 		orbit_distance = 30
-		orbit_angle = { min = 90 max = 270 }
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 	}
-
 	planet = {
 		class = pc_barren_cold
 		orbit_distance = 25
-		orbit_angle = { min = 90 max = 270 }
-
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
 		change_orbit = @base_moon_distance
-
 		moon = {
 			class = "pc_frozen"
-			orbit_angle = { min = 90 max = 270 }
+			orbit_angle = {
+				min = 90
+				max = 270
+			}
 		}
 	}
 }

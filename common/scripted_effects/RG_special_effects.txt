@@ -1,25 +1,34 @@
 rg_storyline_trigger = {
- # 初始化故事事件触发
- # if = {
- # 	limit = {
- # 		OR = {
- # 			has_global_flag = has_wsg_mod
- # 			has_global_flag = kdc_event_mod_active
- # 		}
- # 		country_event = { id = rg_wsg_story.2 days = 3600 random = 12800 }
- # 		country_event = { id = rg_wsg_story.8 days = 3600 random = 12800 }
- # 		country_event = { id = rg_wsg_story.13 days = 3600 random = 12800 }
- # 	}
- # }
- # else = {
- # 	country_event = { id = rg_story.2 days = 3600 random = 12800 }
- # 	country_event = { id = rg_story.8 days = 3600 random = 12800 }
- # 	country_event = { id = rg_story.13 days = 3600 random = 12800 }
- # }
-
-	country_event = { id = rg_story.2 days = 3600 random = 12800 }
-	country_event = { id = rg_story.8 days = 3600 random = 12800 }
-	country_event = { id = rg_story.11 days = 3600 random = 12800 }
+	# 初始化故事事件触发
+	random_list = {
+		50 = {
+			country_event = {
+				id = rg_story.2
+				days = 3600
+				random = 12800
+			}
+		}
+		50 = {
+			country_event = {
+				id = rg_story.8
+				days = 3600
+				random = 12800
+			}
+		}
+	}
+	if = {
+		limit = {
+			exists = event_target:guardian_dragon_country
+			NOT = {
+				has_global_flag = has_origin_gray_dragon
+			}
+		}
+		country_event = {
+			id = rg_story.11
+			days = 3600
+			random = 12800
+		}
+	}
 }
 
 rg_create_gray_planetkiller_testship_1 = {
@@ -27,11 +36,11 @@ rg_create_gray_planetkiller_testship_1 = {
 		name = "NAME_RG_TESTSHIP"
 		settings = {
 			can_disband = yes
-			can_upgrade = no 
-			can_change_composition = no 
-			can_change_leader = no 
+			can_upgrade = no
+			can_change_composition = no
+			can_change_leader = no
 			uses_naval_capacity = no
-			spawn_debris = no					
+			spawn_debris = no
 		}
 		effect = {
 			set_owner = root
@@ -42,7 +51,7 @@ rg_create_gray_planetkiller_testship_1 = {
 				upgradable = no
 				effect = {
 					save_global_event_target_as = rg_test_ship_global_event_target
-				}		
+				}
 			}
 			set_location = {
 				target = root.capital_scope
@@ -59,17 +68,75 @@ rg_create_gray_paperwork_testship_1 = {
 		name = "NAME_RG_TESTSHIP"
 		settings = {
 			can_disband = yes
-			can_upgrade = no 
-			can_change_composition = no 
-			can_change_leader = no 
+			can_upgrade = no
+			can_change_composition = no
+			can_change_leader = no
 			uses_naval_capacity = no
-			spawn_debris = no					
+			spawn_debris = no
 		}
 		effect = {
 			set_owner = root
 			create_ship = {
 				name = "NAME_RG_TESTSHIP"
 				design = "RG_Buff_interdictor_SP"
+				prefix = no
+				upgradable = no
+			}
+			set_location = {
+				target = root.capital_scope
+				distance = 0
+				angle = random
+			}
+			set_fleet_flag = rg_test_ship_fleet
+		}
+	}
+}
+
+rg_create_gray_mod1_testship_1 = {
+	create_fleet = {
+		name = "NAME_RG_TESTSHIP"
+		settings = {
+			can_disband = yes
+			can_upgrade = no
+			can_change_composition = no
+			can_change_leader = no
+			uses_naval_capacity = no
+			spawn_debris = no
+		}
+		effect = {
+			set_owner = root
+			create_ship = {
+				name = "NAME_RG_TESTSHIP"
+				design = "RG_aircruiser_Interdictor"
+				prefix = no
+				upgradable = no
+			}
+			set_location = {
+				target = root.capital_scope
+				distance = 0
+				angle = random
+			}
+			set_fleet_flag = rg_test_ship_fleet
+		}
+	}
+}
+
+rg_create_gray_mod1_testship_2 = {
+	create_fleet = {
+		name = "NAME_RG_TESTSHIP"
+		settings = {
+			can_disband = yes
+			can_upgrade = no
+			can_change_composition = no
+			can_change_leader = no
+			uses_naval_capacity = no
+			spawn_debris = no
+		}
+		effect = {
+			set_owner = root
+			create_ship = {
+				name = "NAME_RG_TESTSHIP"
+				design = "RG_Buff_interdictor"
 				prefix = no
 				upgradable = no
 			}
@@ -106,7 +173,7 @@ rg_create_fake_dragon = {
 		}
 		create_leader = {
 			class = admiral
-			species = event_target:RG_sim_dragon_species
+			species = root
 			name = "Name_rg_fake_dragon"
 			event_leader = yes
 			gender = female
@@ -118,7 +185,15 @@ rg_create_fake_dragon = {
 				trait = RG_leader_trait_admiral_timed_life
 			}
 			effect = {
-				change_leader_portrait = wg_dragon
+				if = {
+					limit = {
+						has_global_flag = has_wsg_mod
+					}
+					change_leader_portrait = wg_dragon
+				}
+				else = {
+					change_leader_portrait = species
+				}
 				set_leader_flag = has_gained_level_trait
 				set_leader_flag = has_gained_trait
 				set_leader_flag = legendary_leader
@@ -130,16 +205,17 @@ rg_create_fake_dragon = {
 			which = rg_fake_dragon_timedlife_counter
 			value = 0
 		}
+		set_country_flag = rg_fake_dragon_owner
 		save_global_event_target_as = rg_fake_dragon_owner
 		create_fleet = {
 			name = "NAME_RG_Nanite_Dragon"
 			settings = {
 				can_disband = yes
-				can_upgrade = no 
-				can_change_composition = no 
-				can_change_leader = no 
+				can_upgrade = no
+				can_change_composition = no
+				can_change_leader = no
 				uses_naval_capacity = no
-				spawn_debris = no					
+				spawn_debris = no
 			}
 			effect = {
 				set_owner = root
@@ -160,4 +236,65 @@ rg_create_fake_dragon = {
 			}
 		}
 	}
+}
+
+rg_create_gray_constship_1 = {
+	create_fleet = {
+		name = "NAME_Gray"
+		settings = {
+			can_disband = yes
+			can_upgrade = yes
+			can_change_composition = yes
+			can_change_leader = yes
+			uses_naval_capacity = yes
+			spawn_debris = yes
+		}
+		effect = {
+			set_owner = root
+			create_ship = {
+				name = "NAME_Gray"
+				design = "NAME_RG_GRAY_constructor"
+				prefix = no
+				upgradable = yes
+			}
+			set_location = {
+				target = event_target:global_gray_location
+				distance = 0
+				angle = random
+			}
+		}
+	}
+}
+
+rg_create_gray_colony_1 = {
+	create_ship_design = {
+		design = "NAME_RG_armed_colony_ship"
+	}
+	add_ship_design = last_created_design
+	create_fleet = {
+		name = "NAME_Gray"
+		settings = {
+			can_disband = yes
+			can_upgrade = yes
+			can_change_composition = yes
+			can_change_leader = yes
+			uses_naval_capacity = yes
+			spawn_debris = yes
+		}
+		effect = {
+			set_owner = root
+			create_ship = {
+				name = "NAME_Gray"
+				design = "NAME_RG_armed_colony_ship"
+				prefix = no
+				upgradable = yes
+			}
+			set_location = {
+				target = event_target:global_gray_location
+				distance = 0
+				angle = random
+			}
+		}
+	}
+	remove_ship_design = last_created_design
 }

@@ -10,16 +10,21 @@ utility_component_template = {
 			alloys = 80
 		}
 		upkeep = {
-			energy = 0.80
+			energy = 0.8
 			alloys = 0.08
 		}
 	}
-
-	prerequisites = { "tech_fission_power" }
+	prerequisites = {
+		"tech_fission_power"
+	}
 	component_set = "power_core"
-	size_restriction = { RG_graygoo_interdictor RG_graygoo_Buff RG_graygoo_mothership RG_graygoo_icebreaker_interdictor }
+	size_restriction = {
+		RG_graygoo_interdictor
+		RG_graygoo_Buff
+		RG_graygoo_mothership
+		RG_graygoo_icebreaker_interdictor
+	}
 	upgrades_to = "RG_Interdictor_FUSION_REACTOR"
-
 	ai_weight = {
 		weight = 1
 	}
@@ -41,12 +46,17 @@ utility_component_template = {
 			alloys = 0.104
 		}
 	}
-
-	prerequisites = { "tech_fusion_power" }
+	prerequisites = {
+		"tech_fusion_power"
+	}
 	component_set = "power_core"
-	size_restriction = { RG_graygoo_interdictor RG_graygoo_Buff RG_graygoo_mothership RG_graygoo_icebreaker_interdictor }
+	size_restriction = {
+		RG_graygoo_interdictor
+		RG_graygoo_Buff
+		RG_graygoo_mothership
+		RG_graygoo_icebreaker_interdictor
+	}
 	upgrades_to = "RG_Interdictor_COLD_FUSION_REACTOR"
-
 	ai_weight = {
 		weight = 2
 	}
@@ -68,17 +78,21 @@ utility_component_template = {
 			alloys = 0.135
 		}
 	}
-
-	prerequisites = { "tech_cold_fusion_power" }
+	prerequisites = {
+		"tech_cold_fusion_power"
+	}
 	component_set = "power_core"
-	size_restriction = { RG_graygoo_interdictor RG_graygoo_Buff RG_graygoo_mothership RG_graygoo_icebreaker_interdictor }
+	size_restriction = {
+		RG_graygoo_interdictor
+		RG_graygoo_Buff
+		RG_graygoo_mothership
+		RG_graygoo_icebreaker_interdictor
+	}
 	upgrades_to = "RG_Interdictor_ANTIMATTER_REACTOR"
-
 	ai_weight = {
 		weight = 3
 	}
 }
-
 
 utility_component_template = {
 	key = "RG_Interdictor_ANTIMATTER_REACTOR"
@@ -96,12 +110,17 @@ utility_component_template = {
 			alloys = 0.176
 		}
 	}
-
-	prerequisites = { "tech_antimatter_power" }
+	prerequisites = {
+		"tech_antimatter_power"
+	}
 	component_set = "power_core"
-	size_restriction = { RG_graygoo_interdictor RG_graygoo_Buff RG_graygoo_mothership RG_graygoo_icebreaker_interdictor }
+	size_restriction = {
+		RG_graygoo_interdictor
+		RG_graygoo_Buff
+		RG_graygoo_mothership
+		RG_graygoo_icebreaker_interdictor
+	}
 	upgrades_to = "RG_Interdictor_ZERO_POINT_REACTOR"
-
 	ai_weight = {
 		weight = 4
 	}
@@ -123,12 +142,16 @@ utility_component_template = {
 			alloys = 0.229
 		}
 	}
-
-	prerequisites = { "tech_zero_point_power" }
+	prerequisites = {
+		"tech_zero_point_power"
+	}
 	component_set = "power_core"
-	size_restriction = { RG_graygoo_interdictor RG_graygoo_Buff RG_graygoo_icebreaker_interdictor }
+	size_restriction = {
+		RG_graygoo_interdictor
+		RG_graygoo_Buff
+		RG_graygoo_icebreaker_interdictor
+	}
 	upgrades_to = "RG_Interdictor_DARK_MATTER_REACTOR"
-
 	ai_weight = {
 		weight = 5
 	}
@@ -139,7 +162,7 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_reactor_5"
 	icon_frame = 1
-	power = 5000
+	power = 50000
 	resources = {
 		category = ship_components
 		cost = {
@@ -150,12 +173,16 @@ utility_component_template = {
 			alloys = 0.229
 		}
 	}
-
-	prerequisites = { "tech_zero_point_power" }
+	prerequisites = {
+		"tech_zero_point_power"
+	}
 	component_set = "power_core"
-	size_restriction = { RG_graygoo_mothership }
-	upgrades_to = "RG_Interdictor_DARK_MATTER_REACTOR"
-
+	size_restriction = {
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+	}
+	upgrades_to = "RG_Mothership_DARK_MATTER_REACTOR"
 	ai_weight = {
 		weight = 5
 	}
@@ -178,16 +205,22 @@ utility_component_template = {
 			alloys = 0.298
 		}
 	}
-
-	prerequisites = { "tech_dark_matter_power_core" }
+	prerequisites = {
+		"tech_dark_matter_power_core"
+	}
 	component_set = "power_core"
-	size_restriction = { RG_graygoo_interdictor RG_graygoo_Buff RG_graygoo_icebreaker_interdictor }
-
+	size_restriction = {
+		RG_graygoo_interdictor
+		RG_graygoo_Buff
+		RG_graygoo_icebreaker_interdictor
+	}
 	ai_weight = {
 		weight = 6
 		modifier = {
-			factor = 0.0
-			no_resource_for_component = { RESOURCE = sr_dark_matter }
+			factor = 0
+			no_resource_for_component = {
+				RESOURCE = sr_dark_matter
+			}
 		}
 	}
 }
@@ -197,7 +230,7 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_dark_matter_power_core"
 	icon_frame = 1
-	power = 6000
+	power = 60000
 	resources = {
 		category = ship_components
 		cost = {
@@ -209,16 +242,22 @@ utility_component_template = {
 			alloys = 0.298
 		}
 	}
-
-	prerequisites = { "tech_dark_matter_power_core" }
+	prerequisites = {
+		"tech_dark_matter_power_core"
+	}
 	component_set = "power_core"
-	size_restriction = { RG_graygoo_mothership }
-
+	size_restriction = {
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+	}
 	ai_weight = {
 		weight = 6
 		modifier = {
-			factor = 0.0
-			no_resource_for_component = { RESOURCE = sr_dark_matter }
+			factor = 0
+			no_resource_for_component = {
+				RESOURCE = sr_dark_matter
+			}
 		}
 	}
 }
@@ -235,14 +274,14 @@ utility_component_template = {
 			alloys = 80
 		}
 		upkeep = {
-			energy = 0.80
+			energy = 0.8
 			alloys = 0.08
 		}
 	}
-
 	component_set = "power_core"
-	size_restriction = { RG_graygoo_Arsenal }
-
+	size_restriction = {
+		RG_graygoo_Arsenal
+	}
 	ai_weight = {
 		weight = 1
 	}
@@ -260,15 +299,22 @@ utility_component_template = {
 			alloys = 80
 		}
 	}
-
 	modifier = {
 	}
-
-	prerequisites = { "tech_thrusters_1" }
+	prerequisites = {
+		"tech_thrusters_1"
+	}
 	component_set = "thruster_components"
-	size_restriction = { RG_graygoo_interdictor RG_graygoo_Buff RG_graygoo_Arsenal RG_graygoo_mothership RG_graygoo_icebreaker_interdictor }
+	size_restriction = {
+		RG_graygoo_interdictor
+		RG_graygoo_Buff
+		RG_graygoo_Arsenal
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+		RG_graygoo_icebreaker_interdictor
+	}
 	upgrades_to = "BATTLESHIP_SHIP_THRUSTER_2"
-
 	ai_weight = {
 		weight = 1
 	}
@@ -286,17 +332,24 @@ utility_component_template = {
 			alloys = 107
 		}
 	}
-
 	modifier = {
 		ship_base_speed_mult = 0.25
 		ship_evasion_add = 2
 	}
-
-	prerequisites = { "tech_thrusters_2" }
+	prerequisites = {
+		"tech_thrusters_2"
+	}
 	component_set = "thruster_components"
-	size_restriction = { RG_graygoo_interdictor RG_graygoo_Buff RG_graygoo_Arsenal RG_graygoo_mothership RG_graygoo_icebreaker_interdictor }
+	size_restriction = {
+		RG_graygoo_interdictor
+		RG_graygoo_Buff
+		RG_graygoo_Arsenal
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+		RG_graygoo_icebreaker_interdictor
+	}
 	upgrades_to = "BATTLESHIP_SHIP_THRUSTER_3"
-
 	ai_weight = {
 		weight = 2
 	}
@@ -315,15 +368,23 @@ utility_component_template = {
 		}
 	}
 	modifier = {
-		ship_base_speed_mult = 0.50
+		ship_base_speed_mult = 0.5
 		ship_evasion_add = 4
 	}
-
-	prerequisites = { "tech_thrusters_3" }
+	prerequisites = {
+		"tech_thrusters_3"
+	}
 	component_set = "thruster_components"
-	size_restriction = { RG_graygoo_interdictor RG_graygoo_Buff RG_graygoo_Arsenal RG_graygoo_mothership RG_graygoo_icebreaker_interdictor }
+	size_restriction = {
+		RG_graygoo_interdictor
+		RG_graygoo_Buff
+		RG_graygoo_Arsenal
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+		RG_graygoo_icebreaker_interdictor
+	}
 	upgrades_to = "BATTLESHIP_SHIP_THRUSTER_4"
-
 	ai_weight = {
 		weight = 3
 	}
@@ -345,12 +406,20 @@ utility_component_template = {
 		ship_base_speed_mult = 0.75
 		ship_evasion_add = 6
 	}
-
-	prerequisites = { "tech_thrusters_4" }
+	prerequisites = {
+		"tech_thrusters_4"
+	}
 	component_set = "thruster_components"
-	size_restriction = { RG_graygoo_interdictor RG_graygoo_Buff RG_graygoo_Arsenal RG_graygoo_mothership RG_graygoo_icebreaker_interdictor }
+	size_restriction = {
+		RG_graygoo_interdictor
+		RG_graygoo_Buff
+		RG_graygoo_Arsenal
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+		RG_graygoo_icebreaker_interdictor
+	}
 	upgrades_to = "BATTLESHIP_SHIP_THRUSTER_5"
-
 	ai_weight = {
 		weight = 4
 	}
@@ -373,16 +442,26 @@ utility_component_template = {
 		ship_base_speed_mult = 1.25
 		ship_evasion_add = 8
 	}
-
-	prerequisites = { "tech_dark_matter_propulsion" }
+	prerequisites = {
+		"tech_dark_matter_propulsion"
+	}
 	component_set = "thruster_components"
-	size_restriction = { RG_graygoo_interdictor RG_graygoo_Buff RG_graygoo_Arsenal RG_graygoo_mothership RG_graygoo_icebreaker_interdictor }
-
+	size_restriction = {
+		RG_graygoo_interdictor
+		RG_graygoo_Buff
+		RG_graygoo_Arsenal
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+		RG_graygoo_icebreaker_interdictor
+	}
 	ai_weight = {
 		weight = 5
 		modifier = {
-			factor = 0.0
-			no_resource_for_component = { RESOURCE = sr_dark_matter }
+			factor = 0
+			no_resource_for_component = {
+				RESOURCE = sr_dark_matter
+			}
 		}
 	}
 }
@@ -390,114 +469,135 @@ utility_component_template = {
 ####################
 #原版部件
 ####################
-
-weapon_component_template = { # World Cracker
+weapon_component_template = {
+	# World Cracker
 	key = "RG_PLANET_KILLER_CRACKER"
 	size = planet_killer
 	type = planet_killer
 	use_ship_kill_target = no
-
-	prerequisites = { "tech_pk_cracker" }
-
+	prerequisites = {
+		"tech_pk_cracker"
+	}
 	icon = GFX_ship_part_world_cracker
 	icon_frame = 1
-
-	size_restriction = { RG_graygoo_Buff RG_graygoo_mothership }
+	size_restriction = {
+		RG_graygoo_Buff
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+	}
 	component_set = "PLANET_KILLER_CRACKER"
-
 	planet_destruction_gfx = "shatter_planet_gfx"
 }
 
-weapon_component_template = { # Pacifier
+weapon_component_template = {
+	# Pacifier
 	key = "RG_PLANET_KILLER_SHIELDER"
 	size = planet_killer
 	type = planet_killer
 	use_ship_kill_target = no
-
-	prerequisites = { "tech_pk_shielder" }
-
+	prerequisites = {
+		"tech_pk_shielder"
+	}
 	icon = GFX_ship_part_global_pacifier
 	icon_frame = 1
-
-	size_restriction = { RG_graygoo_Buff RG_graygoo_mothership }
+	size_restriction = {
+		RG_graygoo_Buff
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+	}
 	component_set = "PLANET_KILLER_SHIELDER"
-
 	planet_destruction_gfx = "global_pacifier_gfx"
 }
 
-weapon_component_template = { # Neutron Beam
+weapon_component_template = {
+	# Neutron Beam
 	key = "RG_PLANET_KILLER_NEUTRON"
 	size = planet_killer
 	type = planet_killer
 	use_ship_kill_target = no
-
-	prerequisites = { "tech_pk_neutron" }
-
+	prerequisites = {
+		"tech_pk_neutron"
+	}
 	icon = GFX_ship_part_neutron_sweep
 	icon_frame = 1
-
-	size_restriction = { RG_graygoo_Buff RG_graygoo_mothership }
+	size_restriction = {
+		RG_graygoo_Buff
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+	}
 	component_set = "PLANET_KILLER_NEUTRON"
-
 	planet_destruction_gfx = "neutron_planet_gfx"
 }
 
-weapon_component_template = { # God Ray
+weapon_component_template = {
+	# God Ray
 	key = "RG_PLANET_KILLER_GODRAY"
 	size = planet_killer
 	type = planet_killer
 	use_ship_kill_target = no
-
-	prerequisites = { "tech_pk_godray" }
-
+	prerequisites = {
+		"tech_pk_godray"
+	}
 	icon = GFX_ship_part_divine_enforcer
 	icon_frame = 1
-
-	size_restriction = { RG_graygoo_Buff RG_graygoo_mothership }
+	size_restriction = {
+		RG_graygoo_Buff
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+	}
 	component_set = "PLANET_KILLER_GODRAY"
-
 	planet_destruction_gfx = "god_ray_gfx"
 }
 
-weapon_component_template = { # Nanobot Assimilation
+weapon_component_template = {
+	# Nanobot Assimilation
 	key = "RG_PLANET_KILLER_NANOBOTS"
 	size = planet_killer
 	type = planet_killer
 	use_ship_kill_target = no
-
-	prerequisites = { "tech_pk_nanobots" }
-
+	prerequisites = {
+		"tech_pk_nanobots"
+	}
 	icon = GFX_ship_part_nanobot_diffuser
 	icon_frame = 1
-
-	size_restriction = { RG_graygoo_Buff RG_graygoo_mothership }
+	size_restriction = {
+		RG_graygoo_Buff
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+	}
 	component_set = "PLANET_KILLER_NANOBOTS"
-
 	planet_destruction_gfx = "assimilation_nanobots_gfx"
 }
 
-weapon_component_template = { # Deluge
+weapon_component_template = {
+	# Deluge
 	key = "RG_PLANET_KILLER_DELUGE"
 	size = planet_killer
 	type = planet_killer
 	use_ship_kill_target = no
-
 	valid_for_country = {
 		has_ascension_perk = ap_hydrocentric
 	}
-
 	icon = GFX_ship_part_deluge
 	icon_frame = 1
-
-	size_restriction = { RG_graygoo_Buff RG_graygoo_mothership }
+	size_restriction = {
+		RG_graygoo_Buff
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+	}
 	component_set = "PLANET_KILLER_DELUGE"
-
 	planet_destruction_gfx = "planet_deluge_gfx"
-
 	ai_weight = {
 		factor = 10
 	}
 }
+
 #weapon_component_template = {
 #	key = "RG_PLANET_KILLER_STAR_CRACKER"
 #	size = planet_killer
@@ -515,11 +615,9 @@ weapon_component_template = { # Deluge
 #
 #	planet_destruction_gfx = "star_destroyer_effect_gfx"
 #}
-
 ####################
 #舰R部件
 ####################
-
 utility_component_template = {
 	key = "RG_ID_wsg_alpha_REACTOR"
 	size = small
@@ -537,11 +635,18 @@ utility_component_template = {
 			alloys = 0.5
 		}
 	}
-	
-	prerequisites = { "tech_wsg_alpha_power" }
+	prerequisites = {
+		"tech_wsg_alpha_power"
+	}
 	component_set = "power_core"
-	size_restriction = { RG_graygoo_interdictor RG_graygoo_Buff RG_graygoo_mothership RG_graygoo_icebreaker_interdictor }
-	
+	size_restriction = {
+		RG_graygoo_interdictor
+		RG_graygoo_Buff
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+		RG_graygoo_icebreaker_interdictor
+	}
 	ai_weight = {
 		weight = 5
 	}
@@ -565,16 +670,27 @@ utility_component_template = {
 		ship_base_speed_mult = 1.35
 		ship_evasion_add = 12
 	}
-
-	prerequisites = { "tech_wsg_alpha_propulsion" }
+	prerequisites = {
+		"tech_wsg_alpha_propulsion"
+	}
 	component_set = "thruster_components"
-	size_restriction = { RG_graygoo_interdictor RG_graygoo_Buff RG_graygoo_Arsenal RG_graygoo_mothership RG_graygoo_icebreaker_interdictor }
-	
+	size_restriction = {
+		RG_graygoo_interdictor
+		RG_graygoo_Buff
+		RG_graygoo_Arsenal
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+		RG_graygoo_icebreaker_interdictor
+	}
 	ai_weight = {
 		weight = 5
 		modifier = {
-			factor = 0.0
-			has_monthly_income = { resource = sr_dark_matter value <= 0 }
+			factor = 0
+			has_monthly_income = {
+				resource = sr_dark_matter
+				value <= 0
+			}
 		}
 	}
 }
@@ -599,7 +715,14 @@ utility_component_template = {
 		"tech_sh_senergy_reactor"
 	}
 	component_set = "power_core"
-	size_restriction = { RG_graygoo_interdictor RG_graygoo_Buff RG_graygoo_mothership RG_graygoo_icebreaker_interdictor }
+	size_restriction = {
+		RG_graygoo_interdictor
+		RG_graygoo_Buff
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+		RG_graygoo_icebreaker_interdictor
+	}
 	ai_weight = {
 		weight = 5
 	}
@@ -626,7 +749,15 @@ utility_component_template = {
 		"tech_sh_propulsion"
 	}
 	component_set = "thruster_components"
-	size_restriction = { RG_graygoo_interdictor RG_graygoo_Buff RG_graygoo_Arsenal RG_graygoo_mothership RG_graygoo_icebreaker_interdictor }
+	size_restriction = {
+		RG_graygoo_interdictor
+		RG_graygoo_Buff
+		RG_graygoo_Arsenal
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+		RG_graygoo_icebreaker_interdictor
+	}
 	ai_weight = {
 		weight = 5
 		modifier = {
@@ -659,7 +790,15 @@ utility_component_template = {
 		"tech_wsg_senergy_reactor"
 	}
 	component_set = "power_core"
-	size_restriction = { RG_graygoo_interdictor RG_graygoo_Buff RG_graygoo_Arsenal RG_graygoo_mothership RG_graygoo_icebreaker_interdictor }
+	size_restriction = {
+		RG_graygoo_interdictor
+		RG_graygoo_Buff
+		RG_graygoo_Arsenal
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+		RG_graygoo_icebreaker_interdictor
+	}
 	ai_weight = {
 		weight = 5
 	}
@@ -686,7 +825,15 @@ utility_component_template = {
 		"tech_wsg_senergy_propulsion"
 	}
 	component_set = "thruster_components"
-	size_restriction = { RG_graygoo_interdictor RG_graygoo_Buff RG_graygoo_Arsenal RG_graygoo_mothership RG_graygoo_icebreaker_interdictor }
+	size_restriction = {
+		RG_graygoo_interdictor
+		RG_graygoo_Buff
+		RG_graygoo_Arsenal
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+		RG_graygoo_icebreaker_interdictor
+	}
 	ai_weight = {
 		weight = 5
 		modifier = {
@@ -702,23 +849,27 @@ utility_component_template = {
 #######################################
 # Science Ships and Observation Posts #
 #######################################
-
 # These go in a unique ship component slot and are automatically
 # equipped when the relevant technology is researched.
-
-
 utility_component_template = {
 	key = "RG_SCIENCE_CLOAKING_EMPTY"
 	size = small
 	icon = "GFX_ship_part_empty_ftl_drive"
 	icon_frame = 1
 	power = 0
-
-	size_restriction = {RG_gray_juggernaut RG_graygoo_Buff RG_graygoo_icebreaker_interdictor RG_armed_science_ship RG_armed_constructor_ship RG_graygoo_capitalship RG_graygoo_mothership}
-	prerequisites = { }
+	size_restriction = {
+		RG_gray_juggernaut
+		RG_graygoo_Buff
+		RG_graygoo_icebreaker_interdictor
+		RG_armed_science_ship
+		RG_armed_constructor_ship
+		RG_graygoo_capitalship
+		RG_graygoo_mothership
+	}
+	prerequisites = {
+	}
 	component_set = "science_cloaking_components"
 	upgrades_to = "RG_SCIENCE_CLOAKING_1"
-
 	ai_weight = {
 		weight = 1
 	}
@@ -730,11 +881,9 @@ utility_component_template = {
 	icon = "GFX_ship_part_cloak_1"
 	icon_frame = 1
 	power = 0
-
 	modifier = {
 		ship_cloaking_strength_add = 1
 	}
-
 	triggered_ship_modifier = {
 		potential = {
 			is_cloaked = yes
@@ -744,12 +893,20 @@ utility_component_template = {
 		}
 	}
 	custom_tooltip = "CLOAKING_1_TOOLTIP"
-
-	size_restriction = {RG_gray_juggernaut RG_graygoo_Buff RG_graygoo_icebreaker_interdictor RG_armed_science_ship RG_armed_constructor_ship RG_graygoo_capitalship RG_graygoo_mothership}
-	prerequisites = { "tech_cloaking_1" }
+	size_restriction = {
+		RG_gray_juggernaut
+		RG_graygoo_Buff
+		RG_graygoo_icebreaker_interdictor
+		RG_armed_science_ship
+		RG_armed_constructor_ship
+		RG_graygoo_capitalship
+		RG_graygoo_mothership
+	}
+	prerequisites = {
+		"tech_cloaking_1"
+	}
 	component_set = "science_cloaking_components"
 	upgrades_to = "RG_SCIENCE_CLOAKING_2"
-
 	ai_weight = {
 		weight = 5
 	}
@@ -761,11 +918,9 @@ utility_component_template = {
 	icon = "GFX_ship_part_cloak_2"
 	icon_frame = 1
 	power = 0
-
 	modifier = {
 		ship_cloaking_strength_add = 2
 	}
-
 	triggered_ship_modifier = {
 		potential = {
 			is_cloaked = yes
@@ -775,12 +930,20 @@ utility_component_template = {
 		}
 	}
 	custom_tooltip = "CLOAKING_2_TOOLTIP"
-
-	size_restriction = {RG_gray_juggernaut RG_graygoo_Buff RG_graygoo_icebreaker_interdictor RG_armed_science_ship RG_armed_constructor_ship RG_graygoo_capitalship RG_graygoo_mothership}
-	prerequisites = { "tech_cloaking_2" }
+	size_restriction = {
+		RG_gray_juggernaut
+		RG_graygoo_Buff
+		RG_graygoo_icebreaker_interdictor
+		RG_armed_science_ship
+		RG_armed_constructor_ship
+		RG_graygoo_capitalship
+		RG_graygoo_mothership
+	}
+	prerequisites = {
+		"tech_cloaking_2"
+	}
 	component_set = "science_cloaking_components"
 	upgrades_to = "RG_SCIENCE_CLOAKING_3"
-
 	ai_weight = {
 		weight = 10
 	}
@@ -792,11 +955,9 @@ utility_component_template = {
 	icon = "GFX_ship_part_cloak_3"
 	icon_frame = 1
 	power = 0
-
 	modifier = {
 		ship_cloaking_strength_add = 3
 	}
-
 	triggered_ship_modifier = {
 		potential = {
 			is_cloaked = yes
@@ -806,12 +967,20 @@ utility_component_template = {
 		}
 	}
 	custom_tooltip = "CLOAKING_3_TOOLTIP"
-
-	size_restriction = {RG_gray_juggernaut RG_graygoo_Buff RG_graygoo_icebreaker_interdictor RG_armed_science_ship RG_armed_constructor_ship RG_graygoo_capitalship RG_graygoo_mothership}
-	prerequisites = { "tech_cloaking_3" }
+	size_restriction = {
+		RG_gray_juggernaut
+		RG_graygoo_Buff
+		RG_graygoo_icebreaker_interdictor
+		RG_armed_science_ship
+		RG_armed_constructor_ship
+		RG_graygoo_capitalship
+		RG_graygoo_mothership
+	}
+	prerequisites = {
+		"tech_cloaking_3"
+	}
 	component_set = "science_cloaking_components"
 	upgrades_to = "RG_CIENCE_CLOAKING_DARK_MATTER"
-
 	ai_weight = {
 		weight = 15
 	}
@@ -823,11 +992,9 @@ utility_component_template = {
 	icon = "GFX_ship_part_cloak_dark_matter"
 	icon_frame = 1
 	power = 0
-
 	modifier = {
 		ship_cloaking_strength_add = 4
 	}
-
 	triggered_ship_modifier = {
 		potential = {
 			is_cloaked = yes
@@ -837,12 +1004,20 @@ utility_component_template = {
 		}
 	}
 	custom_tooltip = "CLOAKING_DARK_MATTER_TOOLTIP"
-
-	size_restriction = {RG_gray_juggernaut RG_graygoo_Buff RG_graygoo_icebreaker_interdictor RG_armed_science_ship RG_armed_constructor_ship RG_graygoo_capitalship RG_graygoo_mothership}
-	prerequisites = { "tech_cloaking_dark_matter" }
+	size_restriction = {
+		RG_gray_juggernaut
+		RG_graygoo_Buff
+		RG_graygoo_icebreaker_interdictor
+		RG_armed_science_ship
+		RG_armed_constructor_ship
+		RG_graygoo_capitalship
+		RG_graygoo_mothership
+	}
+	prerequisites = {
+		"tech_cloaking_dark_matter"
+	}
 	component_set = "science_cloaking_components"
 	upgrades_to = "RG_SCIENCE_CLOAKING_PSI"
-
 	ai_weight = {
 		weight = 20
 	}
@@ -854,11 +1029,9 @@ utility_component_template = {
 	icon = "GFX_ship_part_cloak_psi"
 	icon_frame = 1
 	power = 0
-
 	modifier = {
 		ship_cloaking_strength_add = 5
 	}
-	
 	triggered_ship_modifier = {
 		potential = {
 			is_cloaked = yes
@@ -869,13 +1042,20 @@ utility_component_template = {
 		}
 	}
 	custom_tooltip = "CLOAKING_PSI_TOOLTIP"
-
-	size_restriction = {RG_gray_juggernaut RG_graygoo_Buff RG_graygoo_icebreaker_interdictor RG_armed_science_ship RG_armed_constructor_ship RG_graygoo_capitalship RG_graygoo_mothership}
-	prerequisites = { "tech_cloaking_psi" }
+	size_restriction = {
+		RG_gray_juggernaut
+		RG_graygoo_Buff
+		RG_graygoo_icebreaker_interdictor
+		RG_armed_science_ship
+		RG_armed_constructor_ship
+		RG_graygoo_capitalship
+		RG_graygoo_mothership
+	}
+	prerequisites = {
+		"tech_cloaking_psi"
+	}
 	component_set = "science_cloaking_components"
-
 	ai_weight = {
 		weight = 25
 	}
 }
-

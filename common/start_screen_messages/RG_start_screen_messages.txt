@@ -2,7 +2,6 @@
 part = {
 	location = 0
 	localization = "START_SCREEN_RG_GRAY_ORIGIN"
-	
 	trigger = {
 		has_origin = origin_rg_gray
 	}

@@ -1,6 +1,5 @@
 #reloadable with 'reload stats'
 # This file is where you start when you want to configure something new, then go to sections
-
 ####################
 # NOTE FOR MODDERS #
 ####################
@@ -13,14 +12,13 @@
 # for other modifiers, use ship_modifier = { }
 # use_shipnames_from = other_size # allows a ship size to use names from another size
 # icon = ship_size_military_1
-		#ship_size_military_1 is default. The following sprite keys are generated from it:
-			#GFX_text_<key>
-			#GFX_<key>
-			#GFX_<key>_top
-			#GFX_<key>_top_damaged
+#ship_size_military_1 is default. The following sprite keys are generated from it:
+#GFX_text_<key>
+#GFX_<key>
+#GFX_<key>_top
+#GFX_<key>_top_damaged
 # icon_frame: now only used for starbases. Value of 2 or more means it shows up on the galaxy map, 1-5 denote which icon it uses on starbase sprite sheets (e.g. gfx/interface/icons/starbase_ship_sizes.dds)
 ####################
-
 # Gray Goo Mothership
 RG_graygoo_mothership = {
 	graphical_culture = no
@@ -43,25 +41,26 @@ RG_graygoo_mothership = {
 	max_hitpoints = 25600
 	size_multiplier = 16
 	fleet_slot_size = 16
-	section_slots = { "mid" = { locator = "part1" } }
+	section_slots = {
+		"mid" = {
+			locator = "part1"
+		}
+	}
 	num_target_locators = 12
 	is_space_station = no
 	icon = ship_size_military_16
 	base_buildtime = @titan_build_time
 	can_have_federation_design = yes
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
-	enable_3dview_in_ship_browser = yes #if yes, ship design will have a 3d view in the ship browser
+	enable_3dview_in_ship_browser = yes	#if yes, ship design will have a 3d view in the ship browser
 	is_designable = yes
-
 	default_behavior = colossus
-
-	prerequisites = { "tech_object_gray_5" }
-
+	prerequisites = {
+		"tech_object_gray_5"
+	}
 	combat_disengage_chance = 1.25
-
 	class = shipclass_military
 	construction_type = starbase_shipyard
-	
 	required_component_set = "power_core"
 	required_component_set = "ftl_components"
 	required_component_set = "combat_computers"
@@ -69,7 +68,6 @@ RG_graygoo_mothership = {
 	required_component_set = "sensor_components"
 	required_component_set = "science_cloaking_components"
 	required_component_set = "ship_aura_components"
-
 	resources = {
 		category = ships
 		upkeep = {
@@ -77,7 +75,6 @@ RG_graygoo_mothership = {
 			alloys = @battleship_upkeep_alloys
 		}
 	}
-
 	min_upgrade_cost = {
 		alloys = 8
 	}
@@ -107,8 +104,12 @@ RG_graygoo_capitalship = {
 	size_multiplier = 32
 	fleet_slot_size = 32
 	section_slots = {
-		"core" = { locator = "part1" }
-		"behind" = { locator = "part2" }
+		"core" = {
+			locator = "part1"
+		}
+		"behind" = {
+			locator = "part2"
+		}
 	}
 	num_target_locators = 16
 	is_space_station = no
@@ -116,19 +117,19 @@ RG_graygoo_capitalship = {
 	base_buildtime = @titan_build_time
 	can_have_federation_design = yes
 	enable_default_design = no	#if yes, countries will have an auto-generated design at start
-	enable_3dview_in_ship_browser = yes #if yes, ship design will have a 3d view in the ship browser
+	enable_3dview_in_ship_browser = yes	#if yes, ship design will have a 3d view in the ship browser
 	is_designable = yes
-
 	default_behavior = colossus
-
 	combat_disengage_chance = 1.25
-
 	class = shipclass_military
 	construction_type = starbase_shipyard
+	possible_construction = {
+		always = no
+	}
 	combat_size_multiplier = 4
-
-	prerequisites = { "tech_object_gray_6" }
-	
+	prerequisites = {
+		"tech_gray_juggernaut_8"
+	}
 	required_component_set = "power_core"
 	required_component_set = "ftl_components"
 	required_component_set = "combat_computers"
@@ -138,7 +139,6 @@ RG_graygoo_capitalship = {
 	required_component_set = "ship_aura_components"
 	required_component_set = "ship_aura_components"
 	required_component_set = "ship_aura_components"
-
 	resources = {
 		category = ships
 		upkeep = {
@@ -146,7 +146,6 @@ RG_graygoo_capitalship = {
 			alloys = @battleship_upkeep_alloys
 		}
 	}
-
 	min_upgrade_cost = {
 		alloys = 8
 	}
@@ -166,18 +165,20 @@ RG_armed_constructor_ship = {
 	ship_modifier = {
 		ship_hyperlane_range_add = 3
 		ship_piracy_suppression_add = 100
-		ships_upkeep_mult = -1.0
+		ships_upkeep_mult = -1
 		ship_shield_hardening_add = 1
 		ship_armor_hardening_add = 1
 	}
 	size_multiplier = 1
 	fleet_slot_size = 1
-	section_slots = { "mid" = { locator = "part1" } }
+	section_slots = {
+		"mid" = {
+			locator = "part1"
+		}
+	}
 	num_target_locators = 2
 	is_space_station = no
-	
-	combat_disengage_chance = 2.0
-	
+	combat_disengage_chance = 2
 	enable_default_design = no	#if yes, countries will have an auto-generated design at start
 	components_add_to_cost = no
 	is_designable = no
@@ -185,7 +186,6 @@ RG_armed_constructor_ship = {
 	class = shipclass_constructor
 	icon = ship_size_constructor
 	valid_target_aggressive_stance = no
-	
 	required_component_set = "power_core"
 	required_component_set = "ftl_components"
 	required_component_set = "thruster_components"
@@ -214,21 +214,21 @@ RG_armed_science_ship = {
 	}
 	size_multiplier = 1
 	fleet_slot_size = 1
-	section_slots = { "mid" = { locator = "part1" } }
+	section_slots = {
+		"mid" = {
+			locator = "part1"
+		}
+	}
 	num_target_locators = 2
 	is_space_station = no
-	
 	combat_size_multiplier = 1
-
-	combat_disengage_chance = 2.0
-	
+	combat_disengage_chance = 2
 	enable_default_design = no	#if yes, countries will have an auto-generated design at start
 	components_add_to_cost = no
 	is_designable = no
 	is_civilian = yes
 	class = shipclass_science_ship
 	valid_target_aggressive_stance = no
-	
 	required_component_set = "power_core"
 	required_component_set = "ftl_components"
 	required_component_set = "thruster_components"
@@ -256,31 +256,31 @@ RG_graygoo_interdictor = {
 	max_hitpoints = 5000
 	size_multiplier = 8
 	fleet_slot_size = 4
-	section_slots = { "mid" = { locator = "part1" } }
+	section_slots = {
+		"mid" = {
+			locator = "part1"
+		}
+	}
 	num_target_locators = 4
 	is_space_station = no
 	icon = ship_size_military_4
 	base_buildtime = @battleship_build_time
 	can_have_federation_design = yes
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
-	enable_3dview_in_ship_browser = yes #if yes, ship design will have a 3d view in the ship browser
+	enable_3dview_in_ship_browser = yes	#if yes, ship design will have a 3d view in the ship browser
 	is_designable = yes
-
 	default_behavior = line
-
-	prerequisites = { "tech_gray_interdictor_4" }
-
+	prerequisites = {
+		"tech_gray_interdictor_4"
+	}
 	combat_disengage_chance = 1.25
-
 	class = shipclass_military
 	construction_type = starbase_shipyard
-	
 	required_component_set = "power_core"
 	required_component_set = "ftl_components"
 	required_component_set = "combat_computers"
 	required_component_set = "thruster_components"
 	required_component_set = "sensor_components"
-
 	resources = {
 		category = ships
 		upkeep = {
@@ -288,7 +288,6 @@ RG_graygoo_interdictor = {
 			alloys = @battleship_upkeep_alloys
 		}
 	}
-
 	min_upgrade_cost = {
 		alloys = 8
 	}
@@ -312,32 +311,32 @@ RG_graygoo_icebreaker_interdictor = {
 	max_hitpoints = 10000
 	size_multiplier = 8
 	fleet_slot_size = 4
-	section_slots = { "mid" = { locator = "part1" } }
+	section_slots = {
+		"mid" = {
+			locator = "part1"
+		}
+	}
 	num_target_locators = 4
 	is_space_station = no
 	icon = ship_size_military_4
 	base_buildtime = @battleship_build_time
 	can_have_federation_design = yes
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
-	enable_3dview_in_ship_browser = yes #if yes, ship design will have a 3d view in the ship browser
+	enable_3dview_in_ship_browser = yes	#if yes, ship design will have a 3d view in the ship browser
 	is_designable = yes
-
 	default_behavior = colossus
-
-	prerequisites = { "tech_gray_buffnut_6" }
-
+	prerequisites = {
+		"tech_gray_buffnut_6"
+	}
 	combat_disengage_chance = 1.25
-
 	class = shipclass_military
 	construction_type = starbase_shipyard
-	
 	required_component_set = "power_core"
 	required_component_set = "ftl_components"
 	required_component_set = "combat_computers"
 	required_component_set = "thruster_components"
 	required_component_set = "sensor_components"
 	required_component_set = "science_cloaking_components"
-
 	resources = {
 		category = ships
 		upkeep = {
@@ -345,7 +344,6 @@ RG_graygoo_icebreaker_interdictor = {
 			alloys = @battleship_upkeep_alloys
 		}
 	}
-
 	min_upgrade_cost = {
 		alloys = 8
 	}
@@ -369,31 +367,31 @@ RG_graygoo_Arsenal = {
 	max_hitpoints = 5000
 	size_multiplier = 8
 	fleet_slot_size = 4
-	section_slots = { "mid" = { locator = "part1" } }
+	section_slots = {
+		"mid" = {
+			locator = "part1"
+		}
+	}
 	num_target_locators = 64
 	is_space_station = no
 	icon = ship_size_military_4
 	base_buildtime = @battleship_build_time
 	can_have_federation_design = yes
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
-	enable_3dview_in_ship_browser = yes #if yes, ship design will have a 3d view in the ship browser
+	enable_3dview_in_ship_browser = yes	#if yes, ship design will have a 3d view in the ship browser
 	is_designable = yes
-
 	default_behavior = line
-
-	prerequisites = { "tech_gray_matter_spray_5" }
-
+	prerequisites = {
+		"tech_gray_matter_spray_5"
+	}
 	combat_disengage_chance = 1.25
-
 	class = shipclass_military
 	construction_type = starbase_shipyard
-	
 	required_component_set = "power_core"
 	required_component_set = "ftl_components"
 	required_component_set = "combat_computers"
 	required_component_set = "thruster_components"
 	required_component_set = "sensor_components"
-
 	resources = {
 		category = ships
 		upkeep = {
@@ -401,7 +399,6 @@ RG_graygoo_Arsenal = {
 			alloys = @battleship_upkeep_alloys
 		}
 	}
-
 	min_upgrade_cost = {
 		alloys = 8
 	}
@@ -424,25 +421,26 @@ RG_graygoo_Buff = {
 	max_hitpoints = 20000
 	size_multiplier = 8
 	fleet_slot_size = 4
-	section_slots = { "mid" = { locator = "part1" } }
+	section_slots = {
+		"mid" = {
+			locator = "part1"
+		}
+	}
 	num_target_locators = 4
 	is_space_station = no
 	icon = ship_size_military_4
 	base_buildtime = @battleship_build_time
 	can_have_federation_design = yes
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
-	enable_3dview_in_ship_browser = yes #if yes, ship design will have a 3d view in the ship browser
+	enable_3dview_in_ship_browser = yes	#if yes, ship design will have a 3d view in the ship browser
 	is_designable = yes
-
 	default_behavior = colossus
-
-	prerequisites = { "tech_gray_buffnut_6" }
-
+	prerequisites = {
+		"tech_gray_buffnut_6"
+	}
 	combat_disengage_chance = 1.25
-
 	class = shipclass_military
 	construction_type = starbase_shipyard
-	
 	required_component_set = "power_core"
 	required_component_set = "ftl_components"
 	required_component_set = "combat_computers"
@@ -450,7 +448,6 @@ RG_graygoo_Buff = {
 	required_component_set = "sensor_components"
 	required_component_set = "ship_aura_components"
 	required_component_set = "science_cloaking_components"
-
 	resources = {
 		category = ships
 		upkeep = {
@@ -458,7 +455,6 @@ RG_graygoo_Buff = {
 			alloys = @battleship_upkeep_alloys
 		}
 	}
-
 	min_upgrade_cost = {
 		alloys = 8
 	}
@@ -485,33 +481,35 @@ RG_gray_juggernaut = {
 		ship_armor_hardening_add = 2
 	}
 	max_hitpoints = 108000
-
 	base_buildtime = @juggernaut_build_time
-
 	combat_size_multiplier = 5
 	size_multiplier = 32
 	fleet_slot_size = 32
 	section_slots = {
-		"core" = { locator = "part1" }
-		"behind" = { locator = "part2" }
+		"core" = {
+			locator = "part1"
+		}
+		"behind" = {
+			locator = "part2"
+		}
 	}
-
 	num_target_locators = 16
 	can_have_federation_design = no
 	enable_default_design = no	#if yes, countries will have an auto-generated design at start
-	enable_3dview_in_ship_browser = yes #if yes, ship design will have a 3d view in the ship browser
-	icon_frame = 7 #probably unused, but mobile starbases are special
+	enable_3dview_in_ship_browser = yes	#if yes, ship design will have a 3d view in the ship browser
+	icon_frame = 7	#probably unused, but mobile starbases are special
 	icon = ship_size_military_64
 	ship_class_icon_frame = 35
-
 	default_behavior = colossus
-
 	is_designable = yes
-	prerequisites = { "tech_object_gray_6" }
-
+	prerequisites = {
+		"tech_gray_juggernaut_8"
+	}
 	class = shipclass_starbase
 	construction_type = starbase_shipyard
-
+	possible_construction = {
+		always = no
+	}
 	required_component_set = "power_core"
 	required_component_set = "sensor_components"
 	required_component_set = "combat_computers"
@@ -522,10 +520,9 @@ RG_gray_juggernaut = {
 	required_component_set = "ship_aura_components"
 	required_component_set = "ship_aura_components"
 	required_component_set = "ship_aura_components"
-
 }
 
-# armed Transport
+# Armed Transport
 RG_armed_transport_ship = {
 	max_speed = 150
 	acceleration = 0.1
@@ -540,13 +537,17 @@ RG_armed_transport_ship = {
 	ship_modifier = {
 		ship_hyperlane_range_add = 3
 		ship_piracy_suppression_add = 100
-		ships_upkeep_mult = -1.0
+		ships_upkeep_mult = -1
 		ship_shield_hardening_add = 1
 		ship_armor_hardening_add = 1
 	}
 	size_multiplier = 1
 	fleet_slot_size = 1
-	section_slots = { "mid" = { locator = "part1" } }
+	section_slots = {
+		"mid" = {
+			locator = "part1"
+		}
+	}
 	num_target_locators = 2
 	is_space_station = no
 	icon = ship_size_transport
@@ -558,20 +559,63 @@ RG_armed_transport_ship = {
 	required_component_set = "thruster_components"
 	required_component_set = "combat_computers"
 	required_component_set = "science_cloaking_components"
-
 	components_add_to_cost = no
 	resources = {
 		category = ships
-			cost = {
-				food = @salvagecostmedium
-    		}
+		cost = {
+			food = @salvagecostmedium
+		}
+	}
+}
+
+# Armed Colonizer
+RG_armed_colony_ship = {
+	max_speed = 150
+	acceleration = 0.1
+	rotation_speed = 0.2
+	max_hitpoints = 20000
+	entity = "grey_tempesttw_colonizer_entity"
+	modifier = {
+		ship_evasion_add = 10
+		ship_armor_add = 12800
+		ship_shield_add = 12800
+	}
+	ship_modifier = {
+		ship_hyperlane_range_add = 3
+		ship_piracy_suppression_add = 100
+		ships_upkeep_mult = -1
+		ship_shield_hardening_add = 1
+		ship_armor_hardening_add = 1
+	}
+	size_multiplier = 1
+	fleet_slot_size = 1
+	section_slots = {
+		"mid" = {
+			locator = "part1"
+		}
+	}
+	num_target_locators = 2
+	is_space_station = no
+	icon = ship_size_colonizer
+	is_civilian = yes
+	is_designable = no
+	class = shipclass_colonizer
+	required_component_set = "ftl_components"
+	required_component_set = "sensor_components"
+	required_component_set = "thruster_components"
+	components_add_to_cost = no
+	resources = {
+		category = ships
+		cost = {
+			food = @salvagecostmedium
+		}
 	}
 }
 
 RG_orbital_ring_tier_1 = {
-	max_speed = 0.0
-	acceleration = 0.0
-	rotation_speed = 0.0
+	max_speed = 0
+	acceleration = 0
+	rotation_speed = 0
 	modifier = {
 		ship_evasion_mult = -1
 		ship_armor_add = 125000
@@ -583,8 +627,8 @@ RG_orbital_ring_tier_1 = {
 		ship_cloaking_detection_add = 5
 	}
 	ship_modifier = {
-		ship_fire_rate_mult = 1.0
-		ship_weapon_range_mult = 1.0
+		ship_fire_rate_mult = 1
+		ship_weapon_range_mult = 1
 	}
 	max_hitpoints = 125000
 	base_buildtime = 720
@@ -598,25 +642,27 @@ RG_orbital_ring_tier_1 = {
 			energy = 2
 		}
 	}
-
 	combat_size_multiplier = 5
 	size_multiplier = 4
 	fleet_slot_size = 2
 	section_slots = {
-		"core" = { locator = "part1" }
-		"1" = { locator = "part2" }
-		"2" = { locator = "part3" }
+		"core" = {
+			locator = "part1"
+		}
+		"1" = {
+			locator = "part2"
+		}
+		"2" = {
+			locator = "part3"
+		}
 	}
-
 	potential_construction = {
 		# This is build through a megastructure
 		always = no
 	}
-
 	possible_construction = {
 		always = no
 	}
-
 	is_designable = yes
 	num_target_locators = 0
 	is_space_station = no
@@ -625,17 +671,16 @@ RG_orbital_ring_tier_1 = {
 	components_add_to_cost = no
 	can_disable = yes
 	flip_control_on_disable = yes
-
 	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
-	prerequisites = { "tech_object_gray_6" }
+	prerequisites = {
+		"tech_object_gray_6"
+	}
 	class = shipclass_starbase
-
 	required_component_set = "power_core"
 	required_component_set = "sensor_components"
 	required_component_set = "combat_computers"
 	required_component_set = "science_cloaking_components"
 	required_component_set = "ship_aura_components"
-
 	build_block_radius = @build_block_orbital_ring
 	formation_priority = @orbital_ring_formation_priority
 	icon_frame = 7

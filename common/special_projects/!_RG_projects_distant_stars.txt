@@ -1,7 +1,6 @@
 #	on_fail
 #	this = country (project owner)
 #	from = project creation scope (usually equals location)
-
 special_project = {
 	key = "RG_LCLUSTER_PROJECT"
 	cost = 0
@@ -9,29 +8,40 @@ special_project = {
 	tech_department = engineering_technology
 	picture = GFX_evt_surreal_visions
 	icon = "gfx/interface/icons/situation_log/situation_log_planet.dds"
-
 	event_scope = ship_event
-
 	requirements = {
 		shipclass_science_ship = 1
 		leader = scientist
 		#skill = 3
 	}
-
 	on_success = {
-		owner = { country_event = { id = rg_cluster.2 } }
+		owner = {
+			if = {
+				limit = {
+					OR = {
+						has_global_flag = l_cluster_origin						# l-cluster plus
+						has_global_flag = rg_origin_l_cluster						# 遥远约定
+						has_global_flag = gray_origin_activate						# 远星之歌
+					}
+				}
+				country_event = {
+					id = rg_cluster.2
+				}
+			}
+			else = {
+				country_event = {
+					id = distar.10950
+				}
+			}
+		}
 	}
-
 	on_fail = {
 	}
-
 	on_start = {
 	}
-
 	abort_trigger = {
-		has_global_flag = l_cluster_opened # someone else got to it first
+		has_global_flag = l_cluster_opened		# someone else got to it first
 	}
-
 	AI_wait_days = {
 		base = 0
 		modifier = {
@@ -50,28 +60,35 @@ special_project = {
 	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
 	picture = GFX_evt_planet_beam
 	event_scope = ship_event
-	
 	requirements = {
 		shipclass_military = 1
 		leader = admiral
 		has_trait = RG_leader_trait_admiral_gray
 	}
-
 	on_start = {
-		owner = { country_event = { id = rg.9 }}
+		owner = {
+			country_event = {
+				id = rg_event.9
+			}
+		}
 	}
 	on_cancel = {
-		owner = { country_event = { id = rg.10 }}
-	}
-	
-	on_success = {
-        this = {
-            set_event_locked = no
-        }
 		owner = {
-			country_event = { id = rg.11 }
+			country_event = {
+				id = rg_event.10
+			}
 		}
-	}	
+	}
+	on_success = {
+		this = {
+			set_event_locked = no
+		}
+		owner = {
+			country_event = {
+				id = rg_event.11
+			}
+		}
+	}
 }
 
 special_project = {
@@ -82,28 +99,33 @@ special_project = {
 	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
 	picture = GFX_evt_planet_beam
 	event_scope = ship_event
-	
 	requirements = {
 		shipclass_military = 1
 		leader = admiral
 		has_trait = RG_leader_trait_admiral_gray
 	}
-
 	on_start = {
-		owner = { country_event = { id = rg.9 }}
+		owner = {
+			country_event = {
+				id = rg_event.9
+			}
+		}
 	}
 	on_cancel = {
-		country_event = { id = rg.13 }
-	}
-	
-	on_success = {
-        fleet = {
-            set_event_locked = no
-        }
-		owner = {
-			country_event = { id = rg.12 }
+		country_event = {
+			id = rg_event.13
 		}
-	}	
+	}
+	on_success = {
+		event_target:gray_warship = {
+			set_event_locked = no
+		}
+		owner = {
+			country_event = {
+				id = rg_event.12
+			}
+		}
+	}
 }
 
 special_project = {
@@ -114,26 +136,31 @@ special_project = {
 	icon = "gfx/interface/icons/situation_log/situation_log_main_quest.dds"
 	picture = GFX_evt_planet_beam
 	event_scope = ship_event
-	
 	requirements = {
 		shipclass_military = 1
 		leader = admiral
 		has_trait = RG_leader_trait_admiral_gray
 	}
-
 	on_start = {
-		owner = { country_event = { id = rg.9 }}
+		owner = {
+			country_event = {
+				id = rg_event.9
+			}
+		}
 	}
 	on_cancel = {
-		country_event = { id = rg.14 }
-	}
-	
-	on_success = {
-        fleet = {
-            set_event_locked = no
-        }
-		owner = {
-			country_event = { id = rg.15 }
+		country_event = {
+			id = rg_event.14
 		}
-	}	
+	}
+	on_success = {
+		fleet = {
+			set_event_locked = no
+		}
+		owner = {
+			country_event = {
+				id = rg_event.15
+			}
+		}
+	}
 }

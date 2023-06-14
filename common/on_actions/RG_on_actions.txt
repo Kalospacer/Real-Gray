@@ -1,24 +1,16 @@
 on_game_start = {
 	events = {
-		rg.19
 	}
 }
+
 on_single_player_save_game_load = {
 	events = {
-		rg.19
 	}
 }
 
 on_custom_diplomacy = {
 	events = {
 		graygoo.505
-		
-		rg_graygoo.500
-		rg_graygoo.501
-		rg_graygoo.502
-		rg_graygoo.503
-		rg_graygoo.504
-		rg_graygoo.505
 	}
 }
 
@@ -26,7 +18,8 @@ on_custom_diplomacy = {
 # This = planet
 # From = country attacking
 on_ground_combat_started = {
-	events = { # Tempest Incoming trait effect
+	events = {
+		# Tempest Incoming trait effect
 	}
 }
 
@@ -37,31 +30,35 @@ on_ground_combat_started = {
 # FromFromFrom = planet
 on_army_killed_in_combat = {
 	events = {
-		rg_skill.8 # Tempest Incoming trait effect
+		rg_skill.8		# Tempest Incoming trait effect
 	}
 }
 
 on_game_start_country = {
 	events = {
-		rg_cluster.8
-		rg.1
+		# rg_cluster.8
+		rg_event.1
+		rg_event.19
 	}
 }
 
 # This = country
+# 最高优先级检测才放月检
 on_monthly_pulse_country = {
 	events = {
-		rg.8
-		rg.16
+		rg_event.8		#领袖等级检测更新
+		rg_event.16		#陆军压制舰更新
+		# rg_event.22 #小灰复活检测
+		# rg_event.23 #月检移除L星门认知防止收容失效
 		# rg_skill.9
 	}
 }
 
 on_yearly_pulse_country = {
 	events = {
-		rg.17
-		rg.18
-		rg.20
+		rg_event.17
+		rg_event.18
+		rg_event.20
 	}
 }
 
@@ -72,9 +69,9 @@ on_yearly_pulse = {
 }
 
 on_mid_game_pulse_country = {
-    events = {
-        # rg.18
-    }
+	events = {
+		# rg_event.18
+	}
 }
 
 # Triggers country_event for the attacker upon victory
@@ -88,7 +85,7 @@ on_mid_game_pulse_country = {
 # to retake the planet, the player is the attacker
 on_planet_attackers_win = {
 	events = {
-		rg.16
+		rg_event.16
 		# rg_skill.9
 	}
 }
@@ -99,7 +96,7 @@ on_planet_attackers_win = {
 # FromFrom = planet
 on_planet_attackers_lose = {
 	events = {
-		rg.16
+		rg_event.16
 		# rg_skill.9
 	}
 }
@@ -130,6 +127,19 @@ on_destroy_planet_with_RG_PLANET_KILLER_queued = {
 on_destroy_planet_with_RG_PLANET_KILLER_unqueued = {
 }
 
+on_destroy_planet_with_RG_PLANET_KILLER_SMALL = {
+	events = {
+		RG_planet_killer.2
+		origin.3245
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_SMALL_queued = {
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_SMALL_unqueued = {
+}
+
 on_destroy_planet_with_RG_PLANET_KILLER_SP = {
 	events = {
 		RG_planet_killer.3
@@ -138,19 +148,17 @@ on_destroy_planet_with_RG_PLANET_KILLER_SP = {
 }
 
 on_destroy_planet_with_RG_PLANET_KILLER_SP_queued = {
-	
 }
 
 on_destroy_planet_with_RG_PLANET_KILLER_SP_unqueued = {
 }
-
 
 #舰船建造完成
 # Root = Ship
 # From = Planet
 on_ship_built = {
 	events = {
-		rg_skill.3 #科研舰在无主权星系中被建造出来
+		rg_skill.3		#科研舰在无主权星系中被建造出来
 	}
 }
 

@@ -2,15 +2,12 @@ origin_rg_gray = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origins_fratricide.dds"
 	picture = GFX_evt_ship_in_orbit_2
-
-	flags = { origin_rg_gray }
-
+	flags = {
+		origin_rg_gray
+	}
 	non_colonizable_planet_class_neighbor = yes
-
 	description = "origin_tooltip_rg_gray_effects"
-
 	advanced_start = yes
-		
 	random_weight = {
 		base = 0
 	}

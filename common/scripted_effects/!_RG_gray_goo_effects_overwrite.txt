@@ -1,16 +1,41 @@
 #创造灰风总督
-create_gray_governor = {	
+create_gray_governor = {
 	rg_create_gray_governor = yes
 }
+
 #创造灰风战舰
 create_gray_warship = {
 	rg_create_gray_warship = yes
 }
+
 #创造灰风地面单位
 create_gray_army = {
 	rg_create_gray_army = yes
 }
+
 #创造灰风科学舰
 create_gray_const = {
 	rg_create_gray_const = yes
+}
+
+start_lcluster_chain = {
+	if = {
+		limit = {
+			NOR = {
+				is_same_value = origin_rg_gray_country
+				has_country_flag = origin_rg_gray_1st
+			}
+		}
+		hidden_effect = {
+			custom_tooltip = begin_lcluster_chain
+			begin_event_chain = {
+				event_chain = l_cluster_chain
+				target = this
+			}
+			set_variable = {
+				which = num_lcluster_clues
+				value = 0
+			}
+		}
+	}
 }
