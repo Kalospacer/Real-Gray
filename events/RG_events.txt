@@ -969,15 +969,6 @@ country_event = {
 				has_leader_flag = rg_fake_dragon
 			}
 			set_age = owner.rg_fake_dragon_timedlife_counter
-			if = {
-				limit = {
-					has_global_flag = has_wsg_mod
-				}
-				change_leader_portrait = wg_dragon
-			}
-			else = {
-				change_leader_portrait = species
-			}
 		}
 		random_owned_fleet = {
 			limit = {

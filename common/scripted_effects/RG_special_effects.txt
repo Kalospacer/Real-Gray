@@ -185,15 +185,6 @@ rg_create_fake_dragon = {
 				trait = RG_leader_trait_admiral_timed_life
 			}
 			effect = {
-				if = {
-					limit = {
-						has_global_flag = has_wsg_mod
-					}
-					change_leader_portrait = wg_dragon
-				}
-				else = {
-					change_leader_portrait = species
-				}
 				set_leader_flag = has_gained_level_trait
 				set_leader_flag = has_gained_trait
 				set_leader_flag = legendary_leader
