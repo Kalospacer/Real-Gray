@@ -190,5 +190,27 @@ on_ship_destroyed_perp = {
 		rg_skill.11
 		rg_story.10
 		rg_story.22
+		rg_skill.12
+		rg_skill.13
+	}
+}
+
+# This = owner of fleet 1 (winner)
+# From = owner of fleet 2 (loser)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_space_battle_won = {
+	events = {
+		rg_skill.14
+	}
+}
+
+# This = owner of fleet 1 (loser)
+# From = owner of fleet 2 (winner)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+on_space_battle_lost = {
+	events = {
+		rg_skill.14
 	}
 }

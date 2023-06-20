@@ -246,6 +246,32 @@ RG_leader_trait_admiral_gray = {
 	randomized = no
 }
 
+RG_leader_trait_admiral_nanorebuild_gray = {
+	#3级舰长（默认
+	cost = 0
+	inline_script = {
+		script = trait/icon_psionic
+		CLASS = admiral
+		ICON = "GFX_leader_trait_nanorebuild"
+		RARITY = paragon
+		COUNCIL = no
+		TIER = none
+	}
+	custom_tooltip_with_modifiers = RG_leader_trait_admiral_nanorebuild_effect
+	modifier = {
+		ship_armor_mult = 0.5
+		ship_hull_mult = 0.5
+		ships_upkeep_mult = -0.1
+		ship_hull_regen_add_perc = 0.5
+		ship_armor_regen_add_perc = 0.5
+	}
+	leader_class = {
+		admiral
+	}
+	initial = no
+	randomized = no
+}
+
 RG_leader_trait_scientist_gray = {
 	#科学家特质
 	cost = 0

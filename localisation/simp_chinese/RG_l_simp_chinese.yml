@@ -18,6 +18,9 @@
  RG_leader_trait_general_gray_skill:0 "§Y风暴将至§!"
  RG_leader_trait_general_gray_skill_desc:0 "灰色风暴在L星团中席卷无数纪元。倘若风暴再度到来，想必那星球上的人们所看到的景色一定永生难忘吧。"
  RG_leader_trait_tempest_incoming_effect:0 "\n$t$§Y每击杀一个敌军单位§!：\n$tt$§G  额外陆军伤害 +5%§!\n§G  额外陆军生命值 +5%§!$t$\n当前BUFF层数：§G[owner.rg_general_skill_combat_daypassed_variable]§!£time£\n$tt$§G直接击杀一支敌对陆军的概率增加：§!§Y1%§!\n当前概率为：§R[owner.rg_general_skill_combat_killed_variable]%§!"
+ RG_leader_trait_admiral_nanorebuild_gray:0 "§Y灰质重塑§!"
+ RG_leader_trait_admiral_nanorebuild_gray_desc:0 "分解与重组，纳米机器席卷之处我们无所不能。"
+ RG_leader_trait_admiral_nanorebuild_effect:0 "\n$t$§Y每击杀一个敌军单位§!：\n$tt$§G  重组计数器 +1§!\n当前计数器层数：§G[owner.rg_nanorebuild_counter]§!\n$tt$§Y该特质领袖所在舰队损失舰船时：消耗1计数器层数立即重塑舰船。灰风母舰无法被该技能重组。§!"
 
  SMALL_GRAY_MIX_ARMOR:0 "§Y纳米能量装甲§!"
  MEDIUM_GRAY_MIX_ARMOR:0 "§Y纳米能量装甲§!"

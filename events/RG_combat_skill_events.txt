@@ -597,3 +597,110 @@ country_event = {
 		}
 	}
 }
+
+# 纳米重塑
+country_event = {
+	id = rg_skill.12
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		FromFromFrom = {
+			is_in_combat = yes
+			NOT = {
+				is_same_value = event_target:gray_warship
+			}
+		}
+		FromFrom.leader = {
+			has_trait = RG_leader_trait_admiral_nanorebuild_gray
+		}
+	}
+	immediate = {
+		if = {
+			limit = {
+				event_target:gray_owner = {
+					check_variable = {
+						which = rg_nanorebuild_counter
+						value >= 1
+					}
+				}
+			}
+			FromFromFrom = {
+				save_event_target_as = event_ship
+			}
+			FromFromFrom.fleet = {
+				create_ship = {
+					name = event_target:event_ship
+					design = event_target:event_ship
+				}
+			}
+			event_target:gray_owner = {
+				change_variable = {
+					which = rg_nanorebuild_counter
+					value = -1
+				}
+			}
+		}
+	}
+}
+
+country_event = {
+	id = rg_skill.13
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		FromFromFrom = {
+			is_in_combat = yes
+		}
+		FromFrom.solar_system = {
+			any_fleet_in_system = {
+				leader = {
+					has_trait = RG_leader_trait_admiral_nanorebuild_gray
+				}
+			}
+		}
+		this = {
+			NOT = {
+				is_same_value = event_target:gray_owner
+				is_in_federation_with = event_target:gray_owner
+			}
+		}
+	}
+	immediate = {
+		event_target:gray_owner = {
+			change_variable = {
+				which = rg_nanorebuild_counter
+				value = 1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = rg_skill.14
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		event_target:gray_warship = {
+			is_in_combat = no
+			fleet.leader = {
+				has_trait = RG_leader_trait_admiral_nanorebuild_gray
+			}
+		}
+		NOT = {
+			event_target:gray_owner = {
+				check_variable = {
+					which = rg_nanorebuild_counter
+					value = 0
+				}
+			}
+		}
+	}
+	immediate = {
+		event_target:gray_owner = {
+			change_variable = {
+				which = rg_nanorebuild_counter
+				value = 0
+			}
+		}
+	}
+}

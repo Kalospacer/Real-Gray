@@ -196,6 +196,7 @@ rg_gray_admiral_init = {
 				}
 				set_leader_flag = rg_gray_leader
 				add_trait_no_notify = RG_leader_trait_admiral_gray
+				add_trait_no_notify = RG_leader_trait_admiral_nanorebuild_gray
 				# 缺少特质RG_leader_trait_admiral_gray将导致小灰改造项目无法完成
 				add_trait_no_notify = subclass_admiral_aggressor
 				add_trait_no_notify = leader_trait_carrier_specialization
@@ -243,7 +244,7 @@ rg_gray_admiral_init = {
 			rg_set_gray_portrait = yes
 		}
 	}
-	
+	RG_leader_trait_admiral_nanorebuild_gray_counter_init_effect = yes
 }
 
 rg_gray_general_init = {

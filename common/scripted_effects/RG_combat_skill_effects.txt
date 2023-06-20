@@ -279,3 +279,10 @@ RG_leader_trait_tempest_incoming_random_kill_effect = {
 		}
 	}
 }
+
+RG_leader_trait_admiral_nanorebuild_gray_counter_init_effect = {
+	set_variable = {
+		which = rg_nanorebuild_counter
+		value = 0
+	}
+}

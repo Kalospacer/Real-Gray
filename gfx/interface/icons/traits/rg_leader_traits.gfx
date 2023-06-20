@@ -1,0 +1,6 @@
+spriteTypes = {
+	spriteType = {
+		name = "GFX_leader_trait_nanorebuild"
+		texturefile = "gfx/interface/icons/traits/leader_trait_icons/nanorebuild.dds"
+	}
+}
