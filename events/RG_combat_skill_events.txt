@@ -599,6 +599,10 @@ country_event = {
 }
 
 # 纳米重塑
+# This = owner of ship 1 (combatant)
+# From = owner of ship 2 (destroyed)
+# FromFrom = ship 1
+# FromFromFrom = ship 2
 country_event = {
 	id = rg_skill.12
 	hide_window = yes
@@ -610,14 +614,14 @@ country_event = {
 				is_same_value = event_target:gray_warship
 			}
 		}
-		FromFrom.leader = {
+		FromFromFrom.fleet.leader = {
 			has_trait = RG_leader_trait_admiral_nanorebuild_gray
 		}
 	}
 	immediate = {
 		if = {
 			limit = {
-				event_target:gray_owner = {
+				From = {
 					check_variable = {
 						which = rg_nanorebuild_counter
 						value >= 1
@@ -633,7 +637,7 @@ country_event = {
 					design = event_target:event_ship
 				}
 			}
-			event_target:gray_owner = {
+			From = {
 				change_variable = {
 					which = rg_nanorebuild_counter
 					value = -1
@@ -643,33 +647,63 @@ country_event = {
 	}
 }
 
+# country_event = {
+# 	id = rg_skill.13
+# 	hide_window = yes
+# 	is_triggered_only = yes
+# 	trigger = {
+# 		FromFromFrom = {
+# 			is_in_combat = yes
+# 		}
+# 		FromFrom.solar_system = {
+# 			any_fleet_in_system = {
+# 				leader = {
+# 					has_trait = RG_leader_trait_admiral_nanorebuild_gray
+# 				}
+# 			}
+# 		}
+# 		this = {
+# 			NOT = {
+# 				is_same_value = event_target:gray_owner
+# 				is_in_federation_with = event_target:gray_owner
+# 			}
+# 		}
+# 	}
+# 	immediate = {
+# 		event_target:gray_owner = {
+# 			change_variable = {
+# 				which = rg_nanorebuild_counter
+# 				value = 1
+# 			}
+# 		}
+# 	}
+# }
+
+# On destroying enemy ship.
 country_event = {
 	id = rg_skill.13
 	hide_window = yes
 	is_triggered_only = yes
-	trigger = {
-		FromFromFrom = {
-			is_in_combat = yes
-		}
-		FromFrom.solar_system = {
-			any_fleet_in_system = {
-				leader = {
-					has_trait = RG_leader_trait_admiral_nanorebuild_gray
-				}
-			}
-		}
-		this = {
-			NOT = {
-				is_same_value = event_target:gray_owner
-				is_in_federation_with = event_target:gray_owner
-			}
-		}
-	}
+
 	immediate = {
-		event_target:gray_owner = {
-			change_variable = {
-				which = rg_nanorebuild_counter
-				value = 1
+		FROMFROM = { # Winning ship.
+			if = {
+				limit = { exists = fleet.leader }
+				fleet.leader = {
+					if = {
+						limit = {
+							OR = {
+								has_trait = RG_leader_trait_admiral_nanorebuild_gray
+							}
+						}
+						ROOT = {
+							change_variable = {
+								which = rg_nanorebuild_counter
+								value = 1
+							}
+						}
+					}
+				}
 			}
 		}
 	}
