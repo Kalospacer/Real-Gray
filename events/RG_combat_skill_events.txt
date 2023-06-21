@@ -708,20 +708,22 @@ country_event = {
 		}
 	}
 }
-
+# This = owner of fleet 1 (winner)
+# From = owner of fleet 2 (loser)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
 country_event = {
 	id = rg_skill.14
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		event_target:gray_warship = {
-			is_in_combat = no
-			fleet.leader = {
+		OR = {
+			fromfrom.leader = {
 				has_trait = RG_leader_trait_admiral_nanorebuild_gray
 			}
 		}
 		NOT = {
-			event_target:gray_owner = {
+			This = {
 				check_variable = {
 					which = rg_nanorebuild_counter
 					value = 0
@@ -730,8 +732,40 @@ country_event = {
 		}
 	}
 	immediate = {
-		event_target:gray_owner = {
-			change_variable = {
+		This = {
+			set_variable = {
+				which = rg_nanorebuild_counter
+				value = 0
+			}
+		}
+	}
+}
+# This = owner of fleet 1 (loser)
+# From = owner of fleet 2 (winner)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+country_event = {
+	id = rg_skill.15
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		OR = {
+			fromfrom.leader = {
+				has_trait = RG_leader_trait_admiral_nanorebuild_gray
+			}
+		}
+		NOT = {
+			This = {
+				check_variable = {
+					which = rg_nanorebuild_counter
+					value = 0
+				}
+			}
+		}
+	}
+	immediate = {
+		This = {
+			set_variable = {
 				which = rg_nanorebuild_counter
 				value = 0
 			}

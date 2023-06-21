@@ -11,4 +11,7 @@ origin_rg_gray = {
 	random_weight = {
 		base = 0
 	}
+	playable = {
+		host_has_dlc = "Distant Stars Story Pack"
+	}
 }

@@ -117,7 +117,6 @@ on_destroy_planet_with_RG_PLANET_KILLER = {
 	events = {
 		RG_planet_killer.1
 		RG_planet_killer.2
-		origin.3245
 	}
 }
 
@@ -130,7 +129,6 @@ on_destroy_planet_with_RG_PLANET_KILLER_unqueued = {
 on_destroy_planet_with_RG_PLANET_KILLER_SMALL = {
 	events = {
 		RG_planet_killer.2
-		origin.3245
 	}
 }
 
@@ -211,6 +209,6 @@ on_space_battle_won = {
 # FromFromFrom = fleet 2
 on_space_battle_lost = {
 	events = {
-		rg_skill.14
+		rg_skill.15
 	}
 }
