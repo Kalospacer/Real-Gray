@@ -22,7 +22,7 @@ country_event = {
 			set_country_flag = origin_rg_gray_1st
 			set_country_flag = rg_gray_level_1
 			country_event = {
-				id = rg_event.3
+				id = rg_event.2
 				days = 30
 			}
 			add_modifier = {
@@ -66,20 +66,32 @@ country_event = {
 
 country_event = {
 	id = rg_event.2
-	hide_window = yes
+	title = graygoo.500.title
+	desc = RG_realgray.desc
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:rg_gray_country_leader
+		room = "ethic_spaceship_room"
+	}
 	is_triggered_only = yes
 	immediate = {
+		rg_gray_country_init = yes
 		country_event = {
 			id = graygoo.499
 		}
+		give_technology = {
+			tech = tech_minilaser_gray_1
+			message = no
+		}
+		give_technology = {
+			tech = tech_object_gray_5
+			message = no
+		}
 	}
-	# option = {
-	# 	name = rg_event.2.a
-	# 	hidden_effect = {
-	# 		country_event = { id = graygoo.499 }
-	# 	}
-	# 	default_hide_option = yes
-	# }
+	option = {
+		name = rg_event.2.a
+		default_hide_option = yes
+	}
 }
 
 country_event = {
@@ -245,7 +257,7 @@ country_event = {
 				RG_realgray = {
 					custom_tooltip = "RG_realgray"
 					country_event = {
-						id = rg_event.2
+						id = graygoo.499
 						days = 30
 					}
 					give_technology = {
@@ -260,7 +272,7 @@ country_event = {
 				RG_sleepinggray = {
 					custom_tooltip = "RG_sleepinggray"
 					country_event = {
-						id = rg_event.2
+						id = graygoo.499
 						days = 360
 					}
 					give_technology = {
@@ -275,7 +287,7 @@ country_event = {
 				RG_whitenoise = {
 					custom_tooltip = "RG_whitenoise"
 					country_event = {
-						id = rg_event.2
+						id = graygoo.499
 						days = 360
 					}
 					give_technology = {
@@ -290,7 +302,7 @@ country_event = {
 				RG_dragon = {
 					custom_tooltip = "RG_dragon"
 					country_event = {
-						id = rg_event.2
+						id = graygoo.499
 						days = 360
 					}
 					give_technology = {
@@ -324,7 +336,7 @@ country_event = {
 				RG_desanau = {
 					custom_tooltip = "RG_desanau"
 					country_event = {
-						id = rg_event.2
+						id = graygoo.499
 						days = 360
 					}
 					give_technology = {
@@ -355,7 +367,7 @@ country_event = {
 				RG_pirate = {
 					custom_tooltip = "RG_pirate"
 					country_event = {
-						id = rg_event.2
+						id = graygoo.499
 						days = 360
 					}
 					give_technology = {
@@ -386,7 +398,7 @@ country_event = {
 				RG_alienpoem = {
 					custom_tooltip = "RG_alienpoem"
 					country_event = {
-						id = rg_event.2
+						id = graygoo.499
 						days = 360
 					}
 					give_technology = {
@@ -417,7 +429,7 @@ country_event = {
 				RG_gift = {
 					custom_tooltip = "RG_gift"
 					country_event = {
-						id = rg_event.2
+						id = graygoo.499
 						days = 360
 					}
 					give_technology = {
@@ -444,7 +456,7 @@ country_event = {
 				RG_biggift = {
 					custom_tooltip = "RG_biggift"
 					country_event = {
-						id = rg_event.2
+						id = graygoo.499
 						days = 360
 					}
 					give_technology = {
