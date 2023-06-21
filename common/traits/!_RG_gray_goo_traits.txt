@@ -102,7 +102,7 @@ RG_leader_trait_ruler_gray = {
 			}
 		}
 		# country_energy_produces_mult = -0.02
-		planet_stability_add = -2
+		planet_stability_add = -1
 		mult = owner.rg_gray_level
 	}
 	triggered_modifier = {
@@ -120,7 +120,7 @@ RG_leader_trait_ruler_gray = {
 			}
 		}
 		# country_energy_produces_mult = -0.03
-		planet_stability_add = -3.5
+		planet_stability_add = -1.5
 		mult = owner.rg_gray_level
 	}
 	triggered_modifier = {
@@ -134,7 +134,7 @@ RG_leader_trait_ruler_gray = {
 			}
 		}
 		# country_energy_produces_mult = -0.04
-		planet_stability_add = -5
+		planet_stability_add = -2
 		mult = owner.rg_gray_level
 	}
 	triggered_modifier = {
