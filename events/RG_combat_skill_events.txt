@@ -611,8 +611,9 @@ country_event = {
 		FromFromFrom = {
 			is_in_combat = yes
 			NOT = {
-				is_same_value = event_target:gray_warship
+				is_same_value = event_target:gray_warship_ship
 			}
+			exists = fleet.leader
 		}
 		FromFromFrom.fleet.leader = {
 			has_trait = RG_leader_trait_admiral_nanorebuild_gray
@@ -684,6 +685,16 @@ country_event = {
 	id = rg_skill.13
 	hide_window = yes
 	is_triggered_only = yes
+
+	trigger = {
+		FromFrom = {
+			is_in_combat = yes
+			exists = fleet.leader
+		}
+		FromFrom.fleet.leader = {
+			has_trait = RG_leader_trait_admiral_nanorebuild_gray
+		}
+	}
 
 	immediate = {
 		FROMFROM = { # Winning ship.

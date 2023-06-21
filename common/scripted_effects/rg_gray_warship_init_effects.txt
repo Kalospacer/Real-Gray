@@ -18,6 +18,10 @@ rg_warship_init_mod1 = {
 				random_existing_design = RG_graygoo_mothership
 				prefix = no
 				upgradable = yes
+				effect = {
+					set_fleet_flag = gray_fleet_ship
+					save_global_event_target_as = gray_warship_ship
+				}
 			}
 			set_fleet_stance = aggressive
 			set_location = {
@@ -58,6 +62,10 @@ rg_warship_init_mod2 = {
 				random_existing_design = RG_graygoo_capitalship
 				prefix = no
 				upgradable = yes
+				effect = {
+					set_fleet_flag = gray_fleet_ship
+					save_global_event_target_as = gray_warship_ship
+				}
 			}
 			set_fleet_stance = aggressive
 			set_location = {
@@ -99,6 +107,10 @@ rg_warship_init_mod3 = {
 				random_existing_design = RG_gray_juggernaut
 				prefix = no
 				upgradable = yes
+				effect = {
+					set_fleet_flag = gray_fleet_ship
+					save_global_event_target_as = gray_warship_ship
+				}
 			}
 			set_fleet_stance = aggressive
 			set_location = {
@@ -138,6 +150,10 @@ rg_warship_init_mod0 = {
 				design = "NAME_Gray_Warship_base"
 				prefix = no
 				upgradable = yes
+				effect = {
+					set_fleet_flag = gray_fleet_ship
+					save_global_event_target_as = gray_warship_ship
+				}
 			}
 			set_fleet_stance = aggressive
 			set_location = {
