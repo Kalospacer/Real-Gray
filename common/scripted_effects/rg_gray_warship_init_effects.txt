@@ -175,3 +175,54 @@ rg_warship_init_mod0 = {
 		}
 	}
 }
+
+rg_juggernaut_habitat_init = {
+	capital_scope = {
+		save_event_target_as = rg_capital_home_planet
+	}
+	spawn_planet = {
+		class = pc_habitat
+		location = root.home_planet
+		orbit_location = yes
+		orbit_angle_offset = 45
+		orbit_distance_offset = 9.899
+		size = 20
+		has_ring = no
+
+		init_effect = {
+			set_name = "NAME_rg_gray_habitat_base"
+			set_planet_entity = {
+				entity = "fc_01_evil_slaver_hab_entity"
+			}
+			set_surveyed = {
+				surveyed = yes
+				surveyor = FROM
+			}
+			set_all_comms_surveyed = yes
+			clear_blockers = yes
+
+			set_planet_flag = megastructure
+			set_planet_flag = habitat
+			set_planet_flag = advanced_habitat
+			set_planet_flag = advanced_habitat_2
+			set_planet_flag = rg_gray_habitat
+			save_global_event_target_as = rg_gray_habitat_target
+		}
+	}
+	event_target:spawn_planet = {
+		set_planet_flag = has_megastructure
+		# set_planet_flag = has_payback_habitat
+	}
+	event_target:rg_capital_home_planet = {
+		while = {
+			count = 1
+			random_owned_pop = {
+				resettle_pop = {
+					pop = this
+					planet = event_target:rg_gray_habitat_target
+				}
+				unemploy_pop = yes
+			}
+		}
+	}
+}

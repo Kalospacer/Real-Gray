@@ -241,6 +241,119 @@ rg_create_gray_governor = {
 	}
 }
 
+#创造灰风总督
+rg_create_gray_governor_habitat = {
+	if = {
+		limit = {
+			has_country_flag = gray_habitat_active
+		}
+	}
+	else = {
+		#延迟执行
+		optimize_memory
+		#删除战舰
+		every_owned_fleet = {
+			limit = {
+				has_fleet_flag = gray_fleet
+			}
+			delete_fleet = {
+				target = this
+				kill_leader = no
+				destroy_template = yes
+			}
+		}
+		#删除科学舰
+		every_owned_fleet = {
+			limit = {
+				has_fleet_flag = gray_constship
+			}
+			delete_fleet = {
+				target = this
+				kill_leader = no
+				destroy_template = yes
+			}
+		}
+		#删除陆军
+		every_owned_army = {
+			limit = {
+				army_type = gray_army
+			}
+			if = {
+				limit = {
+					exists = leader
+				}
+				unassign_leader = leader
+			}
+			remove_army = yes
+		}
+		#存储当前领袖等级
+		every_owned_leader = {
+			if = {
+				###等级检测
+				limit = {
+					has_leader_flag = rg_gray_leader
+					NOT = {
+						has_leader_flag = rg_gray_leader_temp
+					}
+				}
+				#导出等级到暂存
+				export_trigger_value_to_variable = {
+					trigger = has_skill
+					variable = rg_gray_level_temp
+				}
+				#导入变量
+				owner = {
+					set_variable = {
+						which = rg_gray_level
+						value = prev.rg_gray_level_temp
+					}
+				}
+				#清理暂存区
+				clear_variable = rg_gray_level_temp
+			}
+		}
+		#把所有种类的小灰领袖都送回娘家
+		every_owned_leader = {
+			limit = {
+				has_leader_flag = rg_gray_leader
+			}
+			set_owner = event_target:rg_gray_country
+			set_leader_flag = rg_gray_leader_temp
+			# kill_leader = { show_notification = no }
+		}
+		#把娘家的总督领袖接回来
+		if = {
+			limit = {
+				exists = event_target:gray_governor
+			}
+			event_target:gray_governor = {
+				set_owner = event_target:gray_owner
+				remove_leader_flag = rg_gray_leader_temp
+			}
+		}
+		#如果不存在总督备份，现场变一个
+		else = {
+			rg_gray_govener_init = yes
+		}
+		rg_juggernaut_habitat_init = yes
+		#设置总督已启用标识
+		set_country_flag = gray_governor_active
+		set_country_flag = gray_habitat_active
+		#更新灰风形态
+		remove_country_flag = gray_warship_active
+		remove_country_flag = rg_kac_grayfleet_active
+		remove_country_flag = gray_constship_active
+		remove_country_flag = gray_army_active
+		#等级导入，把存储的领袖等级赋予到领袖身上
+		random_owned_leader = {
+			limit = {
+				has_leader_flag = gray_governor
+			}
+			set_skill = owner.rg_gray_level
+		}
+	}
+}
+
 #创造灰风战舰
 rg_create_gray_warship = {
 	if = {
