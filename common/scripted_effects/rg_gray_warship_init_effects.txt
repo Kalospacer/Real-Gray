@@ -192,7 +192,7 @@ rg_juggernaut_habitat_init = {
 		init_effect = {
 			set_name = "NAME_rg_gray_habitat_base"
 			set_planet_entity = {
-				entity = "fc_01_evil_slaver_hab_entity"
+				entity = "grey_tempesttw_juggernaut_entity"
 			}
 			set_surveyed = {
 				surveyed = yes
