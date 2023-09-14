@@ -204,7 +204,7 @@ country_event = {
 		}
 		hidden_effect = {
 			country_event = {
-				id = wg_aft.30000
+				id = wg_affection.30000
 			}
 		}
 	}
@@ -403,7 +403,7 @@ country_event = {
 		}
 		hidden_effect = {
 			country_event = {
-				id = wg_aft.30000
+				id = wg_affection.30000
 			}
 		}
 	}
@@ -792,7 +792,7 @@ country_event = {
 		}
 		hidden_effect = {
 			country_event = {
-				id = wg_aft.30000
+				id = wg_affection.30000
 			}
 		}
 	}
@@ -1153,7 +1153,7 @@ country_event = {
 		}
 		hidden_effect = {
 			country_event = {
-				id = wg_aft.30000
+				id = wg_affection.30000
 			}
 		}
 	}
@@ -1216,7 +1216,7 @@ country_event = {
 		}
 		hidden_effect = {
 			country_event = {
-				id = wg_aft.30000
+				id = wg_affection.30000
 			}
 		}
 	}
@@ -1461,7 +1461,7 @@ country_event = {
 		}
 		hidden_effect = {
 			country_event = {
-				id = wg_aft.30000
+				id = wg_affection.30000
 			}
 		}
 	}

@@ -118,9 +118,17 @@ rg_gray_govener_init = {
 					}
 				}
 			}
-			leader_event = {
-				id = wg_affection.8
-				days = 1
+			if = {
+				limit = {
+					has_leader_flag = has_wg_affection_wg_gray
+				}
+				if = {
+					limit = {
+						owner = { has_country_flag = married_gray }
+					}
+					set_leader_flag = married
+				}
+				set_variable = { which = affection value = owner.wg_gray_affection }
 			}
 			if = {
 				limit = {
@@ -224,9 +232,17 @@ rg_gray_admiral_init = {
 					}
 				}
 			}
-			leader_event = {
-				id = wg_affection.8
-				days = 1
+			if = {
+				limit = {
+					has_leader_flag = has_wg_affection_wg_gray
+				}
+				if = {
+					limit = {
+						owner = { has_country_flag = married_gray }
+					}
+					set_leader_flag = married
+				}
+				set_variable = { which = affection value = owner.wg_gray_affection }
 			}
 			add_trait_no_notify = leader_trait_admiral_wg_gray_affection
 			if = {
@@ -316,9 +332,17 @@ rg_gray_general_init = {
 					}
 				}
 			}
-			leader_event = {
-				id = wg_affection.8
-				days = 1
+			if = {
+				limit = {
+					has_leader_flag = has_wg_affection_wg_gray
+				}
+				if = {
+					limit = {
+						owner = { has_country_flag = married_gray }
+					}
+					set_leader_flag = married
+				}
+				set_variable = { which = affection value = owner.wg_gray_affection }
 			}
 			# add_trait_no_notify = leader_trait_admiral_wg_gray_affection
 			if = {
@@ -415,9 +439,17 @@ rg_gray_scientist_init = {
 					}
 				}
 			}
-			leader_event = {
-				id = wg_affection.8
-				days = 1
+			if = {
+				limit = {
+					has_leader_flag = has_wg_affection_wg_gray
+				}
+				if = {
+					limit = {
+						owner = { has_country_flag = married_gray }
+					}
+					set_leader_flag = married
+				}
+				set_variable = { which = affection value = owner.wg_gray_affection }
 			}
 			add_trait_no_notify = leader_trait_admiral_wg_gray_affection
 			if = {

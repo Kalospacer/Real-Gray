@@ -1,0 +1,22 @@
+namespace = wg_affection
+
+country_event = {
+	id = wg_affection.30000
+	title = wg_affection.30000.name
+	desc = wg_affection.30000.desc
+	is_triggered_only = yes
+	diplomatic = yes
+	show_sound = event_wg_wedding
+	custom_gui = wg_gray_commu_window
+	custom_gui_option = wg_gray_commu_option
+
+	immediate = {
+		set_country_flag = married_gray
+	}
+
+	option = {
+		name = wg_affection.30000.a
+		response_text = wg_affection.30000.response
+		change_variable = { which = rankpts value = 2 }
+	}
+}
