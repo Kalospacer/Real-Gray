@@ -272,15 +272,20 @@ country_event = {
 		default_hide_option = yes
 		tag = hire_leader
 		hidden_effect = {
-			create_message = {
-				type = MESSAGE_RECRUITED_LEADER
-				localization = MESSAGE_RECRUITED_LEADER_DESC
-				days = @toast_message_days
-				target = event_target:gray_governor
-				variable = {
-					type = name
-					localization = LEADER
-					scope = event_target:gray_governor
+			# create_message = {
+			# 	type = MESSAGE_RECRUITED_LEADER
+			# 	localization = MESSAGE_RECRUITED_LEADER_DESC
+			# 	days = @toast_message_days
+			# 	target = event_target:gray_governor
+			# 	variable = {
+			# 		type = name
+			# 		localization = LEADER
+			# 		scope = event_target:gray_governor
+			# 	}
+			# }
+			owner = {
+				country_event = {
+					id = rg_grayleader_dialog.4063
 				}
 			}
 			country_event = {

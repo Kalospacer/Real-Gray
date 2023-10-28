@@ -18,6 +18,22 @@ country_event = {
 }
 
 country_event = {
+	id = rg_grayleader_dialog.4063
+	title = "TRANSMISSION"
+	desc = "graygoo.406.c.response"
+	diplomatic = yes
+	picture_event_data = {
+		portrait = event_target:rg_gray_country_leader
+		planet_background = event_target:gray_homeworld
+		room = ship_room
+	}
+	is_triggered_only = yes
+	option = {
+		name = OK
+	}
+}
+
+country_event = {
 	id = rg_grayleader_dialog.5001
 	title = "graygoo.500.title"
 	desc = "graygoo.500.a.response"
