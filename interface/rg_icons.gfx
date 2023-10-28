@@ -1,7 +1,7 @@
 spriteTypes = {
 	spriteType = {
 		name = "GFX_ship_part_gray_armor"
-		textureFile = "gfx/interface/icons/ship_parts/ship_part_gray_armor.dds"
+		textureFile = "gfx/interface/icons/ship_parts/rg_hull_4.dds"
 		noOfFrames = 1
 	}
 	spriteType = {
@@ -16,12 +16,30 @@ spriteTypes = {
 	}
 	spriteType = {
 		name = "GFX_ship_part_graymine"
-		textureFile = "gfx/interface/icons/ship_parts/ship_part_graymine.dds"
+		textureFile = "gfx/interface/icons/ship_parts/rg_big_bomb_2.dds"
 		noOfFrames = 1
 	}
 	spriteType = {
 		name = "GFX_ship_part_rg_armor_hardener"
 		textureFile = "gfx/interface/icons/ship_parts/ship_part_rg_armor_hardener.dds"
 		noOfFrames = 1
+	}
+	spriteType = {
+		name = "GFX_ship_part_mod_warp_drive_3"
+		texturefile = "gfx/interface/icons/ship_parts/rg_warp_drive_3.dds"
+		noOfFrames = 1
+	}
+	spriteType = {
+		name = "GFX_ship_weapon_rg_spacetime_disruptor"
+		texturefile = "gfx/interface/icons/ship_parts/mod_disruptor_3.dds"
+		noOfFrames = 1
+	}
+	spriteType = {
+		name = "GFX_ship_weapon_phaser_bank"
+		texturefile = "gfx/interface/icons/ship_parts/mod_phaser_2.dds"
+	}
+	spriteType = {
+		name = "GFX_ship_weapon_rg_cutting_beam"
+		texturefile = "gfx/interface/icons/ship_parts/rg_cutting_beam.dds"
 	}
 }

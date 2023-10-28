@@ -6,7 +6,7 @@ component_set = {
 
 component_set = {
 	key = "LARGE_GRAY_WEAPON_LANCE"
-	icon = "GFX_ship_part_gray_laser_1"
+	icon = "GFX_ship_weapon_rg_spacetime_disruptor"
 	icon_frame = 1
 }
 
@@ -36,13 +36,13 @@ component_set = {
 
 component_set = {
 	key = "LARGE_GRAY_WEAPON_KIN"
-	icon = "GFX_ship_part_autocannon_4"
+	icon = "GFX_ship_weapon_phaser_bank"
 	icon_frame = 1
 }
 
 component_set = {
 	key = "HUGE_GRAY_WEAPON_KIN"
-	icon = "GFX_ship_part_autocannon_4"
+	icon = "GFX_ship_weapon_phaser_bank"
 	icon_frame = 1
 }
 
@@ -90,7 +90,7 @@ component_set = {
 
 component_set = {
 	key = "RG_BOMBER_HANGAR_ATTACK_ROCKET"
-	icon = "STRIKE_CRAFT_HANGAR_3"
+	icon = "GFX_ship_part_strike_craft_bomber_3"
 	icon_frame = 1
 }
 
