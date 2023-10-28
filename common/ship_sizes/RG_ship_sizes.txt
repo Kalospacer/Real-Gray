@@ -293,6 +293,68 @@ RG_graygoo_interdictor = {
 	}
 }
 
+# Gray Goo destroyer
+RG_graygoo_destroyer = {
+	graphical_culture = no
+	entity = "grey_tempesttw_colonizer_entity"
+	max_speed = 220
+	acceleration = 0.25
+	rotation_speed = 0.175
+	collision_radius = 4
+	modifier = {
+		ship_evasion_add = 40
+		ships_upkeep_mult = -1
+		ship_piracy_suppression_add = 4
+		ship_armor_add = 1100
+		ship_shield_add = 1100
+	}
+	max_hitpoints = 2000
+	size_multiplier = 2
+	fleet_slot_size = 2
+	section_slots = {
+		"mid" = {
+			locator = "part1"
+		}
+	}
+	num_target_locators = 2
+	is_space_station = no
+	icon = ship_size_military_2
+	base_buildtime = @battleship_build_time
+	can_have_federation_design = yes
+	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
+	enable_3dview_in_ship_browser = yes	#if yes, ship design will have a 3d view in the ship browser
+	is_designable = yes
+	default_behavior = line
+	prerequisites = {
+		"tech_gray_interdictor_4"
+	}
+	ship_roles = { screen gunship artillery brawler }
+	triggered_ship_roles = {
+		{
+			name = artillery_stealth
+			trigger = { has_technology = tech_cloaking_2 }
+		}
+	}
+	combat_disengage_chance = 1.25
+	class = shipclass_military
+	construction_type = starbase_shipyard
+	required_component_set = "power_core"
+	required_component_set = "ftl_components"
+	required_component_set = "combat_computers"
+	required_component_set = "thruster_components"
+	required_component_set = "sensor_components"
+	resources = {
+		category = ships
+		upkeep = {
+			energy = @destroyer_upkeep_energy
+			alloys = @destroyer_upkeep_alloys
+		}
+	}
+	min_upgrade_cost = {
+		alloys = 8
+	}
+}
+
 # Gray Goo Icebreaker
 RG_graygoo_icebreaker_interdictor = {
 	graphical_culture = no

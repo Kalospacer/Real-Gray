@@ -16,6 +16,7 @@ utility_component_template = {
 		ship_shield_regen_add_perc = 0.1
 	}
 	size_restriction = {
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
@@ -569,7 +570,7 @@ weapon_component_template = {
 	type = point_defence
 	key = "RG_FLAK_PHOENIX"
 	size = point_defence
-	icon = GFX_ship_part_deluge
+	icon = "GFX_ship_part_graymine_old"
 	icon_frame = 1
 	damage = {
 		min = 10200
@@ -904,6 +905,7 @@ strike_craft_component_template = {
 		}
 	}
 	size_restriction = {
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_mothership
 		RG_gray_juggernaut
@@ -970,6 +972,7 @@ strike_craft_component_template = {
 		}
 	}
 	size_restriction = {
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_mothership
 		RG_gray_juggernaut
@@ -1039,6 +1042,7 @@ strike_craft_component_template = {
 		}
 	}
 	size_restriction = {
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_mothership
 		RG_gray_juggernaut
@@ -1109,6 +1113,7 @@ strike_craft_component_template = {
 		}
 	}
 	size_restriction = {
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_mothership
 		RG_gray_juggernaut
@@ -1170,6 +1175,7 @@ utility_component_template = {
 	}
 	ship_behavior = "RG_colossus"
 	size_restriction = {
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
@@ -1210,6 +1216,7 @@ utility_component_template = {
 	}
 	ship_behavior = "rg_carrier_behavior"
 	size_restriction = {
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Arsenal
 		RG_graygoo_mothership
@@ -1248,6 +1255,7 @@ utility_component_template = {
 	}
 	ship_behavior = "RG_line"
 	size_restriction = {
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Arsenal
 		RG_graygoo_mothership
@@ -1286,6 +1294,7 @@ utility_component_template = {
 	}
 	ship_behavior = "RG_artillery"
 	size_restriction = {
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Arsenal
 		RG_graygoo_mothership
@@ -1360,6 +1369,7 @@ utility_component_template = {
 	}
 	ship_behavior = "rg_aura_behavior"
 	size_restriction = {
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
@@ -1399,6 +1409,7 @@ utility_component_template = {
 	}
 	ship_behavior = "RG_battle"
 	size_restriction = {
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Arsenal
 		RG_graygoo_mothership
@@ -1437,6 +1448,7 @@ utility_component_template = {
 	}
 	ship_behavior = "RG_torpedo"
 	size_restriction = {
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Arsenal
 		RG_graygoo_mothership
@@ -1475,6 +1487,7 @@ utility_component_template = {
 	}
 	ship_behavior = "RG_AA"
 	size_restriction = {
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Arsenal
 		RG_graygoo_mothership
@@ -1513,6 +1526,7 @@ utility_component_template = {
 	}
 	ship_behavior = "RG_icebreak"
 	size_restriction = {
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Arsenal
 		RG_graygoo_mothership
@@ -2316,6 +2330,7 @@ utility_component_template = {
 	}
 	component_set = "power_core"
 	size_restriction = {
+		RG_graygoo_destroyer
 		RG_armed_constructor_ship
 		RG_armed_science_ship
 		RG_armed_transport_ship

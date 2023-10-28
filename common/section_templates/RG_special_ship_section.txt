@@ -701,3 +701,78 @@ ship_section_template = {
 		}
 	}
 }
+
+ship_section_template = {
+	key = "RG_carrier_destroyer_key"
+	ship_size = RG_graygoo_destroyer
+	fits_on_slot = mid
+	entity = "grey_tempesttw_colony_ship_entity"
+	icon = "GFX_ship_part_core_mid"
+
+	component_slot = {
+		name = "STRIKE_CRAFT_01"
+		template = "large_strike_craft"
+		rotation = 90
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "STRIKE_CRAFT_02"
+		template = "large_strike_craft"
+		rotation = 90
+		locatorname = "xl_gun_01"
+	}
+
+	component_slot = {
+		name = "PD_01"
+		template = "point_defence_turret"
+		locatorname = "xl_gun_01"
+	}
+
+	large_utility_slots = 2
+	aux_utility_slots = 1
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 30
+		}
+	}
+}
+
+ship_section_template = {
+	key = "RG_base_destroyer_key"
+	ship_size = RG_graygoo_destroyer
+	fits_on_slot = mid
+	entity = "grey_tempesttw_colony_ship_entity"
+	icon = "GFX_ship_part_core_mid"
+
+	component_slot = {
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
+		locatorname = "xl_gun_01"
+	}
+	component_slot = {
+		name = "MEDIUM_GUN_03"
+		template = "medium_turret"
+		locatorname = "xl_gun_01"
+	}
+
+	component_slot = {
+		name = "TORPEDO_01"
+		template = "invisible_missile_turret"
+		locatorname = "wing_1_3"
+	}
+
+	large_utility_slots = 2
+	aux_utility_slots = 1
+	resources = {
+		category = ship_sections
+		cost = {
+			alloys = 30
+		}
+	}
+}

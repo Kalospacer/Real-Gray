@@ -524,3 +524,88 @@ ship_design = {
 	required_component = "GUARDIAN_PROPULSION"
 	required_component = "GUARDIAN_SENSORS"
 }
+
+#运航舰
+ship_design = {
+	name = "NAME_RG_carrier_destroyer"
+	ship_size = RG_armed_transport_ship
+	is_event_design = yes
+	section = {
+		template = "RG_carrier_destroyer_key"
+		slot = "mid"
+		component = {
+			slot = "STRIKE_CRAFT_01"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "STRIKE_CRAFT_02"
+			template = "RG_FIGHTER_HANGAR_BEAM"
+		}
+		component = {
+			slot = "PD_01"
+			template = "RG_FLAK_BATTERY"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "RG_AUTO_REPAIR"
+		}
+	}
+	required_component = "RG_FUSION_NANO_REACTOR_S"
+	required_component = "RG_gatebuilder_jump"
+	required_component = "RG_gatebuilder_sensor"
+	required_component = "RG_gatebuilder_thruster"
+	required_component = "RG_COMBAT_COMPUTER_torpedo"
+}
+
+#驱逐舰
+ship_design = {
+	name = "NAME_RG_base_destroyer"
+	ship_size = RG_graygoo_destroyer
+	is_event_design = yes
+	section = {
+		template = "RG_base_destroyer_key"
+		slot = "mid"
+		component = {
+			slot = "MEDIUM_GUN_01"
+			template = "MEDIUM_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "MEDIUM_GUN_02"
+			template = "MEDIUM_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "MEDIUM_GUN_03"
+			template = "MEDIUM_GRAY_WEAPON_LANCE"
+		}
+		component = {
+			slot = "TORPEDO_01"
+			template = "RG_ENERGY_MISSILE"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = "LARGE_GRAY_MIX_ARMOR"
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = "RG_AUTO_REPAIR"
+		}
+	}
+	required_component = "RG_FUSION_NANO_REACTOR_S"
+	required_component = "RG_gatebuilder_jump"
+	required_component = "RG_gatebuilder_sensor"
+	required_component = "RG_gatebuilder_thruster"
+	required_component = "RG_COMBAT_COMPUTER_torpedo"
+}
+

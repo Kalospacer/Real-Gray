@@ -35,6 +35,11 @@ spriteTypes = {
 		noOfFrames = 1
 	}
 	spriteType = {
+		name = "GFX_ship_part_graymine_old"
+		textureFile = "gfx/interface/icons/ship_parts/GFX_ship_part_graymine.dds"
+		noOfFrames = 1
+	}
+	spriteType = {
 		name = "GFX_ship_part_rg_armor_hardener"
 		textureFile = "gfx/interface/icons/ship_parts/ship_part_rg_armor_hardener.dds"
 		noOfFrames = 1

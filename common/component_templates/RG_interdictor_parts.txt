@@ -19,6 +19,8 @@ utility_component_template = {
 	}
 	component_set = "power_core"
 	size_restriction = {
+		RG_armed_science_ship
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_mothership
@@ -53,6 +55,8 @@ utility_component_template = {
 	}
 	component_set = "power_core"
 	size_restriction = {
+		RG_armed_science_ship
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_mothership
@@ -87,6 +91,8 @@ utility_component_template = {
 	}
 	component_set = "power_core"
 	size_restriction = {
+		RG_armed_science_ship
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_mothership
@@ -121,6 +127,8 @@ utility_component_template = {
 	}
 	component_set = "power_core"
 	size_restriction = {
+		RG_armed_science_ship
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_mothership
@@ -155,6 +163,8 @@ utility_component_template = {
 	}
 	component_set = "power_core"
 	size_restriction = {
+		RG_armed_science_ship
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_icebreaker_interdictor
@@ -218,6 +228,8 @@ utility_component_template = {
 	}
 	component_set = "power_core"
 	size_restriction = {
+		RG_armed_science_ship
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_icebreaker_interdictor
@@ -314,6 +326,8 @@ utility_component_template = {
 	}
 	component_set = "thruster_components"
 	size_restriction = {
+		RG_armed_science_ship
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
@@ -349,6 +363,8 @@ utility_component_template = {
 	}
 	component_set = "thruster_components"
 	size_restriction = {
+		RG_armed_science_ship
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
@@ -384,6 +400,8 @@ utility_component_template = {
 	}
 	component_set = "thruster_components"
 	size_restriction = {
+		RG_armed_science_ship
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
@@ -419,6 +437,8 @@ utility_component_template = {
 	}
 	component_set = "thruster_components"
 	size_restriction = {
+		RG_armed_science_ship
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
@@ -455,6 +475,8 @@ utility_component_template = {
 	}
 	component_set = "thruster_components"
 	size_restriction = {
+		RG_armed_science_ship
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
@@ -648,6 +670,8 @@ utility_component_template = {
 	}
 	component_set = "power_core"
 	size_restriction = {
+		RG_armed_science_ship
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_mothership
@@ -683,6 +707,8 @@ utility_component_template = {
 	}
 	component_set = "thruster_components"
 	size_restriction = {
+		RG_armed_science_ship
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
@@ -724,6 +750,8 @@ utility_component_template = {
 	}
 	component_set = "power_core"
 	size_restriction = {
+		RG_armed_science_ship
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_mothership
@@ -758,6 +786,8 @@ utility_component_template = {
 	}
 	component_set = "thruster_components"
 	size_restriction = {
+		RG_armed_science_ship
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
@@ -799,6 +829,8 @@ utility_component_template = {
 	}
 	component_set = "power_core"
 	size_restriction = {
+		RG_armed_science_ship
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal
@@ -834,6 +866,8 @@ utility_component_template = {
 	}
 	component_set = "thruster_components"
 	size_restriction = {
+		RG_armed_science_ship
+		RG_graygoo_destroyer
 		RG_graygoo_interdictor
 		RG_graygoo_Buff
 		RG_graygoo_Arsenal

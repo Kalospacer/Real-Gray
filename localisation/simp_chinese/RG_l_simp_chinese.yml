@@ -203,6 +203,9 @@
  RG_graygoo_juggernaut_key: "§Y主宰核心§!"
  RG_icebreaker_interdictor_key: "§Y破冰核心§!"
 
+ RG_carrier_destroyer_key: "§Y运航核心§!"
+ RG_base_destroyer_key: "§Y驱逐核心§!"
+
  LARGE_GRAY_WEAPON_KIN:0 "§Y「糖豆发射器」§!"
  LARGE_GRAY_WEAPON_KIN_DESC:0 "§Y多就是美。§!\n这些密集的轴基无管动能炮使用了前所未有的重型弹头，被设计成只能发射一次的终极火炮。这种武器通常成编制部署，占据了整艘战舰一半以上的质量。"
  HUGE_GRAY_WEAPON_KIN:0 "§Y「棒糖发射器」§!"

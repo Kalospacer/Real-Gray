@@ -289,3 +289,31 @@ rg_create_gray_colony_1 = {
 	}
 	remove_ship_design = last_created_design
 }
+
+rg_create_gray_destroyer_1 = {
+	create_fleet = {
+		name = "NAME_RG_base_destroyer"
+		settings = {
+			can_disband = yes
+			can_upgrade = no
+			can_change_composition = no
+			can_change_leader = no
+			uses_naval_capacity = no
+			spawn_debris = no
+		}
+		effect = {
+			set_owner = root
+			create_ship = {
+				name = "NAME_RG_base_destroyer"
+				design = "RG_base_destroyer_key"
+				prefix = no
+				upgradable = no
+			}
+			set_location = {
+				target = root.capital_scope
+				distance = 0
+				angle = random
+			}
+		}
+	}
+}
