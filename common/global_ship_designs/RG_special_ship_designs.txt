@@ -75,7 +75,7 @@ ship_design = {
 			template = "RG_ENGINE_BOOSTER"
 		}
 	}
-	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_S"
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
 	required_component = "RG_gatebuilder_thruster"
@@ -161,7 +161,7 @@ ship_design = {
 			template = "RG_ENGINE_BOOSTER"
 		}
 	}
-	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_S"
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
 	required_component = "RG_gatebuilder_thruster"
@@ -247,7 +247,7 @@ ship_design = {
 			template = "RG_ENGINE_BOOSTER"
 		}
 	}
-	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_S"
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
 	required_component = "RG_gatebuilder_thruster"
@@ -332,7 +332,7 @@ ship_design = {
 			template = "RG_ENGINE_BOOSTER"
 		}
 	}
-	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_S"
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
 	required_component = "RG_gatebuilder_thruster"
@@ -381,7 +381,7 @@ ship_design = {
 			template = ""
 		}
 	}
-	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_S"
 	required_component = "HYPER_DRIVE_3"
 	required_component = "SENSOR_4"
 	required_component = "RG_gatebuilder_thruster"
@@ -425,7 +425,7 @@ ship_design = {
 			template = "RG_revive_component"
 		}
 	}
-	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_S"
 	required_component = "HYPER_DRIVE_3"
 	required_component = "SENSOR_4"
 	required_component = "RG_gatebuilder_thruster"

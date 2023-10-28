@@ -20,15 +20,15 @@ ship_design = {
 		}
 		component = {
 			slot = "MEDIUM_GUN_01"
-			template = "SMALL_GRAY_WEAPON_LANCE"
+			template = "MEDIUM_GRAY_WEAPON_LANCE"
 		}
 		component = {
 			slot = "MEDIUM_GUN_02"
-			template = "SMALL_GRAY_WEAPON_LANCE"
+			template = "MEDIUM_GRAY_WEAPON_LANCE"
 		}
 		component = {
 			slot = "MEDIUM_GUN_03"
-			template = "SMALL_GRAY_WEAPON_LANCE"
+			template = "MEDIUM_GRAY_WEAPON_LANCE"
 		}
 		component = {
 			slot = "LARGE_GUN_01"
@@ -251,7 +251,7 @@ ship_design = {
 			template = "RG_ENIGMATIC_SCHEDULER"
 		}
 	}
-	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_M"
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
 	required_component = "RG_gatebuilder_thruster"
@@ -841,7 +841,7 @@ ship_design = {
 			template = "RG_ENGINE_BOOSTER"
 		}
 	}
-	required_component = "COLOSSUS_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_L"
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
 	required_component = "RG_gatebuilder_thruster"
@@ -1433,7 +1433,7 @@ ship_design = {
 			template = "RG_ENGINE_BOOSTER"
 		}
 	}
-	required_component = "COLOSSUS_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_L"
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
 	required_component = "RG_gatebuilder_thruster"
@@ -1505,7 +1505,7 @@ ship_design = {
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
 	required_component = "RG_gatebuilder_thruster"
-	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_M"
 	required_component = "RG_COMBAT_COMPUTER_CARRIER"
 }
 
@@ -1569,7 +1569,7 @@ ship_design = {
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
 	required_component = "RG_gatebuilder_thruster"
-	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_M"
 	required_component = "RG_COMBAT_COMPUTER_battle"
 }
 
@@ -1613,7 +1613,7 @@ ship_design = {
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
 	required_component = "RG_gatebuilder_thruster"
-	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_M"
 	required_component = "RG_COMBAT_COMPUTER_artillery"
 }
 
@@ -1669,7 +1669,7 @@ ship_design = {
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
 	required_component = "RG_gatebuilder_thruster"
-	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_M"
 	required_component = "RG_COMBAT_COMPUTER_CHARGE"
 }
 
@@ -1733,7 +1733,7 @@ ship_design = {
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
 	required_component = "RG_gatebuilder_thruster"
-	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_M"
 	required_component = "RG_COMBAT_COMPUTER_torpedo"
 }
 
@@ -1817,7 +1817,7 @@ ship_design = {
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
 	required_component = "RG_gatebuilder_thruster"
-	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_M"
 	required_component = "RG_COMBAT_COMPUTER_AA"
 }
 
@@ -1861,7 +1861,7 @@ ship_design = {
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
 	required_component = "RG_gatebuilder_thruster"
-	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_M"
 	required_component = "RG_COMBAT_COMPUTER_aura"
 	required_component = "RG_ANTIBAKAHALO"
 	required_component = "RG_BAKAHALO"
@@ -2199,7 +2199,7 @@ ship_design = {
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
 	required_component = "RG_gatebuilder_thruster"
-	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_M"
 	required_component = "RG_COMBAT_COMPUTER_battle"
 }
 
@@ -2259,7 +2259,7 @@ ship_design = {
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
 	required_component = "RG_gatebuilder_thruster"
-	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_M"
 	required_component = "RG_COMBAT_COMPUTER_battle"
 }
 
@@ -2323,7 +2323,7 @@ ship_design = {
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
 	required_component = "RG_gatebuilder_thruster"
-	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_M"
 	required_component = "RG_COMBAT_COMPUTER_torpedo"
 }
 
@@ -2407,7 +2407,7 @@ ship_design = {
 	required_component = "RG_gatebuilder_jump"
 	required_component = "RG_gatebuilder_sensor"
 	required_component = "RG_gatebuilder_thruster"
-	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_M"
 	required_component = "RG_COMBAT_COMPUTER_icebreak"
 	required_component = "RG_CORVETTE_CLOAKING_3"
 }

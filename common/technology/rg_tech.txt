@@ -26,6 +26,82 @@ tech_gray_weapon_lance_1 = {
 	}
 }
 
+tech_minilaser_gray_1 = {
+	cost = 2000
+	area = physics
+	tier = 5
+	is_rare = yes
+	is_reverse_engineerable = no
+	category = {
+		particles
+	}
+	ai_update_type = military
+	prerequisites = {
+		"tech_gray_weapon_lance_1"
+		"tech_zero_point_power"
+	}
+	weight = @tier2weight3
+	## unlock 
+	ai_weight = {
+		factor = 0
+	}
+}
+
+# Elite Cloaking Devices
+tech_gray_cloaking_3 = {
+	cost = @tier4cost3
+	area = physics
+	tier = 4
+	category = { field_manipulation }
+	ai_update_type = all
+	is_rare = yes
+	prerequisites = { "tech_cloaking_3" "tech_gray_weapon_lance_1" }
+	weight = @tier4weight3
+
+	potential = {
+		has_first_contact_dlc = yes
+	}
+
+	prereqfor_desc = {
+		hide_prereq_for_desc = component
+		custom = {
+			title = "TECH_UNLOCK_CLOAKING_3_TITLE"
+			desc = "TECH_UNLOCK_CLOAKING_3_DESC"
+		}
+	}
+
+	weight_modifier = {
+		modifier = {
+			factor = value:tech_weight_likelihood
+			has_trait_in_council = { TRAIT = leader_trait_curator }
+		}
+		modifier = {
+			factor = value:tech_weight_likelihood
+			has_trait_in_council = { TRAIT = leader_trait_fotd_scientist }
+		}
+		modifier = {
+			factor = @ap_technological_ascendancy_rare_tech
+			has_ascension_perk = ap_technological_ascendancy
+		}
+		modifier = {
+			factor = @federation_perk_factor
+			has_federation = yes
+			federation = {
+				has_federation_perk = rare_tech_boost
+				any_member = { has_technology = tech_cloaking_3 }
+			}
+		}
+		modifier = {
+			factor = 5
+			has_tradition = tr_subterfuge_adopt
+		}
+	}
+
+	ai_weight = {
+		factor = 0
+	}
+}
+
 tech_gray_matter_remix_2 = {
 	area = engineering
 	cost = 5000
@@ -249,22 +325,6 @@ tech_object_gray_5 = {
 	is_reverse_engineerable = no
 	category = {
 		voidcraft
-	}
-	weight = 0
-	## unlock 
-	ai_weight = {
-		factor = 1
-	}
-}
-
-tech_minilaser_gray_1 = {
-	cost = 2000
-	area = physics
-	tier = 5
-	is_rare = yes
-	is_reverse_engineerable = no
-	category = {
-		particles
 	}
 	weight = 0
 	## unlock 

@@ -64,6 +64,8 @@
  bombardment_graygoo_desc:0 "$bombardment_graygoo$轰炸将在星球上散布灰色风暴，以最快的速度席卷一切有形之物。\n-对§Y军团§!造成§Y巨大的§!伤害\n-对§Y星球§!造成§Y不可修复的§!伤害\n-对§Y人口§!造成§Y巨大的§!伤害\n-将会轰炸不设防的星球。！"
  LARGE_GRAY_WEAPON_LANCE:0 "§Y「星光」§!"
  LARGE_GRAY_WEAPON_LANCE_DESC:0 "使用远古L星门建造者的技术所制成的武器，是最初的一型光束武器。"
+ MEDIUM_GRAY_WEAPON_LANCE:0 "§Y「星光」Lite§!"
+ MEDIUM_GRAY_WEAPON_LANCE_DESC:0 "使用远古L星门建造者的技术所制成的武器的...仿真模型，未成年智慧生物请勿玩耍。"
  SMALL_GRAY_WEAPON_LANCE:0 "§Y「星光」Mini§!"
  SMALL_GRAY_WEAPON_LANCE_DESC:0 "使用远古L星门建造者的技术所制成的武器的...玩具模型，仍然具有巨大威力。"
  GRAY_BEAM_STATIC_MX:0 "§Y「耀光」Mini§!"
@@ -223,6 +225,9 @@
  tech_gray_buffnut_6:0 "§Y纳米支援巨像工程§!"
  tech_gray_buffnut_6_desc:0 "拥有巨像技术的我们可以使用L星门技术设计新型的支援战舰，他们拥有巨大的潜力。"
 
+ tech_gray_cloaking_3:0 "§Y纳米光线追踪力场§!"
+ tech_gray_cloaking_3_desc:0 "通过逆向计算光线的照射路线，精细调整护盾力场，使得舰体在部分光线频谱不可见。显然这是一项昂贵的技术。"
+
  tech_gray_repair_system_1:0 "§Y$NAME_Gray$纳米修复系统§!"
  tech_gray_repair_system_1_desc:0 "在灰色风暴的残骸里发现了一种高效的船壳自动维修系统，由数十亿个微型纳米机器人组成，并已改造成可为我们所用。"
 
@@ -230,7 +235,7 @@
  tech_object_gray_5_desc:0 "通过日常维护$NAME_Gray$舰体以及...小小的逆向工程，我们得以部分复制$NAME_Gray$母舰的设计，当然，这一切还要征得$NAME_Gray$本人同意。"
 
  tech_minilaser_gray_1:0 "§Y$NAME_Gray$武器微型化§!"
- tech_minilaser_gray_1_desc:0 "从某个资料架上掉下来一个奇怪的盒子，经过研究里面装着一些奇怪的科技。"
+ tech_minilaser_gray_1_desc:0 "从某个资料架上掉下来一个奇怪的盒子，里面装着一份将纳米武器小型化的可行性验证设计图。"
 
  tech_gray_noway:0 "§Y$NAME_Gray$的不存在课题§!"
  tech_gray_noway_desc:0 "好像是一些奇怪的东西，还是不要管比较好吧。"
@@ -290,6 +295,20 @@
  weapon_type_rg_torpedoe:0 "§Y鱼雷§!"
  weapon_type_rg_main:0 "§Y主武器§!"
  weapon_type_rg_armor:0 "§Y装甲部件§!"
+ weapon_type_rg_reactor:0 "§Y能源核心§!"
+
+ RG_FUSION_NANO_REACTOR:0 "§Y「梦核」§!"
+ RG_FUSION_NANO_REACTOR_DESC:0 "利用纳米物质的能量传导特性大幅压缩传统反应堆提升密度。如果要制造一颗恒星，还是把它关在笼子里比较好吧。"
+
+ RG_FUSION_NANO_REACTOR_S:0 "$RG_FUSION_NANO_REACTOR$"
+ RG_FUSION_NANO_REACTOR_S_DESC:0 "$RG_FUSION_NANO_REACTOR_DESC$"
+
+ RG_FUSION_NANO_REACTOR_M:0 "$RG_FUSION_NANO_REACTOR$"
+ RG_FUSION_NANO_REACTOR_M_DESC:0 "$RG_FUSION_NANO_REACTOR_DESC$"
+
+ RG_FUSION_NANO_REACTOR_L:0 "$RG_FUSION_NANO_REACTOR$"
+ RG_FUSION_NANO_REACTOR_L_DESC:0 "$RG_FUSION_NANO_REACTOR_DESC$"
+
  rg_distant_stars_modifier:0 "§H遥远繁星§!"
  rg_distant_stars_modifier_desc:0 "L-星团是一群距离我们所熟知的银河系相距极远的星系组成的星团。从内部几乎没有可能启动跃迁引擎回到银河系。\n§H当然你执意要出去...那我也没办法嘛。L-星门开启后自动移除该修正。§!"
 

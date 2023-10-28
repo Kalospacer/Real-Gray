@@ -87,19 +87,19 @@ ship_design = {
 		}
 		component = {
 			slot = "MEDIUM_GUN_01"
-			template = "SMALL_GRAY_WEAPON_LANCE"
+			template = "MEDIUM_GRAY_WEAPON_LANCE"
 		}
 		component = {
 			slot = "MEDIUM_GUN_02"
-			template = "SMALL_GRAY_WEAPON_LANCE"
+			template = "MEDIUM_GRAY_WEAPON_LANCE"
 		}
 		component = {
 			slot = "MEDIUM_GUN_03"
-			template = "SMALL_GRAY_WEAPON_LANCE"
+			template = "MEDIUM_GRAY_WEAPON_LANCE"
 		}
 		component = {
 			slot = "MEDIUM_GUN_04"
-			template = "SMALL_GRAY_WEAPON_LANCE"
+			template = "MEDIUM_GRAY_WEAPON_LANCE"
 		}
 		component = {
 			slot = "PD_01"
@@ -159,7 +159,7 @@ ship_design = {
 		}
 	}
 	required_component = "RG_gatebuilder_sensor"
-	required_component = "TITAN_ZERO_POINT_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_L"
 	required_component = "RG_COMBAT_COMPUTER_COLOSSUS"
 	required_component = "RG_CORVETTE_CLOAKING_3"
 	required_component = "STARBASE_AURA_FTL_INHIBITOR"
@@ -335,7 +335,7 @@ ship_design = {
 		}
 	}
 	required_component = "RG_gatebuilder_sensor"
-	required_component = "TITAN_ANTIMATTER_REACTOR"
+	required_component = "RG_FUSION_NANO_REACTOR_L"
 	required_component = "COMBAT_COMPUTER_PLATFORM_ADVANCED"
 	required_component = "RG_CORVETTE_CLOAKING_3"
 	required_component = "STARBASE_AURA_FTL_INHIBITOR"

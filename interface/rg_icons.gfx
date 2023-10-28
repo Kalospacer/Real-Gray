@@ -5,6 +5,21 @@ spriteTypes = {
 		noOfFrames = 1
 	}
 	spriteType = {
+		name = "GFX_ship_part_gray_reactor"
+		textureFile = "gfx/interface/icons/ship_parts/rg_reactor_2.dds"
+		noOfFrames = 1
+	}
+	spriteType = {
+		name = "GFX_ship_part_gray_engine"
+		textureFile = "gfx/interface/icons/ship_parts/rg_aux_engine_1.dds"
+		noOfFrames = 1
+	}
+	spriteType = {
+		name = "GFX_ship_part_gray_sensor"
+		textureFile = "gfx/interface/icons/ship_parts/ship_part_rg_sensors.dds"
+		noOfFrames = 1
+	}
+	spriteType = {
 		name = "GFX_ship_part_gray_lance_2"
 		textureFile = "gfx/interface/icons/ship_parts/ship_part_gray_lance_2.dds"
 		noOfFrames = 1

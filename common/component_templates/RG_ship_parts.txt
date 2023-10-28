@@ -147,8 +147,8 @@ weapon_component_template = {
 	icon = "GFX_ship_part_gray_laser_1"
 	icon_frame = 1
 	damage = {
-		min = 20
-		max = 200
+		min = 40
+		max = 400
 	}
 	windup = {
 		min = 1
@@ -159,6 +159,55 @@ weapon_component_template = {
 	accuracy = 0.85
 	tracking = 0.4
 	power = -30
+	component_set = "SMALL_GRAY_WEAPON_LANCE"
+	prerequisites = {
+		"tech_minilaser_gray_1"
+	}
+	tags = {
+		weapon_type_rg_secondary
+	}
+	armor_damage = 1.2
+	shield_penetration = 1
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 25
+		}
+		upkeep = {
+			energy = 1.2
+			alloys = 1
+		}
+	}
+	projectile_gfx = "gatebuilder_lance_weapon"
+	tags = {
+		weapon_type_energy
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#M槽光矛Mini
+weapon_component_template = {
+	key = "MEDIUM_GRAY_WEAPON_LANCE"
+	size = medium
+	entity = "invisible_turret_entity"
+	type = instant
+	icon = "GFX_ship_part_gray_laser_1"
+	icon_frame = 1
+	damage = {
+		min = 100
+		max = 1000
+	}
+	windup = {
+		min = 1
+		max = 5
+	}
+	total_fire_time = 55
+	range = 120
+	accuracy = 0.85
+	tracking = 0.4
+	power = -50
 	component_set = "SMALL_GRAY_WEAPON_LANCE"
 	prerequisites = {
 		"tech_minilaser_gray_1"
@@ -336,14 +385,12 @@ weapon_component_template = {
 	}
 	size_restriction = {
 		RG_graygoo_capitalship
-		RG_graygoo_mothership
 		RG_gray_juggernaut
 	}
 	component_set = "RG_PLANET_KILLER"
 	prerequisites = {
 		"tech_gray_juggernaut_8"
 	}
-	hidden = yes
 	ship_limit = 1
 	ai_weight = {
 		weight = 0
@@ -2164,7 +2211,7 @@ utility_component_template = {
 			alloys = 300
 		}
 	}
-	prerequisites = { "tech_gray_interdictor_4" }
+	prerequisites = { "tech_gray_nano_boost_3" }
 	ftl = yes
 	jumpdrive = yes
 	ship_modifier = {
@@ -2188,7 +2235,7 @@ utility_component_template = {
 utility_component_template = {
 	key = "RG_gatebuilder_sensor"
 	size = medium
-	icon = "GFX_ship_part_sensor_4"
+	icon = "GFX_ship_part_gray_sensor"
 	icon_frame = 1
 	power = -20
 	# hidden = yes
@@ -2200,7 +2247,7 @@ utility_component_template = {
 	}
 	sensor_range = 15
 	hyperlane_range = 20
-	prerequisites = { "tech_gray_interdictor_4" }
+	prerequisites = { "tech_gray_matter_remix_2" }
 	ship_modifier = {
 		ship_tracking_add = 20
 	}
@@ -2217,7 +2264,7 @@ utility_component_template = {
 utility_component_template = {
 	key = "RG_gatebuilder_thruster"
 	size = small
-	icon = "GFX_ship_part_thruster_4"
+	icon = "GFX_ship_part_gray_engine"
 	icon_frame = 1
 	power = -50
 	# hidden = yes
@@ -2227,7 +2274,7 @@ utility_component_template = {
 			alloys = 200
 		}
 	}
-	prerequisites = { "tech_gray_interdictor_4" }
+	prerequisites = { "tech_gray_nano_boost_3" }
 	modifier = {
 		ship_speed_mult = 1.25
 		ship_evasion_add = 10
@@ -2238,6 +2285,107 @@ utility_component_template = {
 	}
 	tags = {
 		weapon_type_rg_thruster
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#反应堆
+utility_component_template = {
+	key = "RG_FUSION_NANO_REACTOR_S"
+	size = small
+	icon = "GFX_ship_part_gray_reactor"
+	icon_frame = 1
+	power = 4800
+	resources = {
+		category = ship_components
+		cost = {
+			nanties = 12
+			alloys = 120
+		}
+		upkeep = {
+			energy = 2.0
+		}
+	}
+	prerequisites = {
+		"tech_gray_weapon_lance_1"
+	}
+	tags = {
+		weapon_type_rg_reactor
+	}
+	component_set = "power_core"
+	size_restriction = {
+		RG_armed_constructor_ship
+		RG_armed_science_ship
+		RG_armed_transport_ship
+		RG_armed_colony_ship
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+utility_component_template = {
+	key = "RG_FUSION_NANO_REACTOR_M"
+	size = small
+	icon = "GFX_ship_part_gray_reactor"
+	icon_frame = 1
+	power = 9600
+	resources = {
+		category = ship_components
+		cost = {
+			nanties = 24
+			alloys = 120
+		}
+		upkeep = {
+			energy = 3.0
+		}
+	}
+	prerequisites = {
+		"tech_gray_weapon_lance_1"
+	}
+	tags = {
+		weapon_type_rg_reactor
+	}
+	component_set = "power_core"
+	size_restriction = {
+		RG_graygoo_interdictor
+		RG_graygoo_Buff
+		RG_graygoo_mothership
+		RG_graygoo_icebreaker_interdictor
+	}
+	ai_weight = {
+		weight = 0
+	}
+}
+
+utility_component_template = {
+	key = "RG_FUSION_NANO_REACTOR_L"
+	size = small
+	icon = "GFX_ship_part_gray_reactor"
+	icon_frame = 1
+	power = 280000
+	resources = {
+		category = ship_components
+		cost = {
+			nanties = 120
+			alloys = 120
+		}
+		upkeep = {
+			energy = 5.0
+		}
+	}
+	prerequisites = {
+		"tech_gray_weapon_lance_1"
+	}
+	tags = {
+		weapon_type_rg_reactor
+	}
+	component_set = "power_core"
+	size_restriction = {
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
 	}
 	ai_weight = {
 		weight = 0
