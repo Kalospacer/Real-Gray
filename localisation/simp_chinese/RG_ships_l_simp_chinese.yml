@@ -22,7 +22,9 @@
  RG_gray_juggernaut:0 "§B纳米机器主宰舰§!"
  RG_gray_juggernaut_plural:0 "§B纳米机器主宰舰§!"
  RG_orbital_ring_tier_1:0 "§Y纳米星环防御终端§!"
- RG_orbital_ring_tier_1_plural:0 "§B纳米机器主宰舰§!"
+ RG_orbital_ring_tier_1_plural:0 "§Y纳米星环防御终端§!"
+ RG_graygoo_destroyer:0 "§Y纳米机器驱逐舰§!"
+ RG_graygoo_destroyer_plural:0 "§Y纳米机器驱逐舰§!"
 
  RG_gray_warship_key:0 "§Y$NAME_Gray$船体§!"
  RG_gray_warship_base_key:0 "§Y$NAME_Gray$船体§!"

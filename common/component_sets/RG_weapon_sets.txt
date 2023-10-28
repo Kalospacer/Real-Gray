@@ -54,7 +54,7 @@ component_set = {
 
 component_set = {
 	key = "RG_FLAK_PHOENIX"
-	icon = "GFX_ship_part_flak_batteries_3"
+	icon = "GFX_ship_part_graymine_old"
 	icon_frame = 1
 }
 
@@ -72,7 +72,7 @@ component_set = {
 
 component_set = {
 	key = "RG_CARRIER_RADAR"
-	icon = "GFX_ship_part_sensor_1"
+	icon = "GFX_ship_part_gray_sensor"
 	icon_frame = 1
 }
 

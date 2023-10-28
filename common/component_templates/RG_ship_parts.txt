@@ -759,13 +759,11 @@ weapon_component_template = {
 	power = -180
 	tags = {
 		weapon_type_energy
+		weapon_type_rg_torpedoe
 	}
 	projectile_gfx = "rg_gatebuilder_torpedo_ballistic"
 	prerequisites = {
 		"tech_gray_nano_boost_3"
-	}
-	tags = {
-		weapon_type_rg_torpedoe
 	}
 	size_damage_factor = 1
 	armor_damage = 1.2
@@ -809,6 +807,7 @@ weapon_component_template = {
 	power = -180
 	tags = {
 		weapon_type_energy
+		weapon_type_rg_torpedoe
 	}
 	projectile_gfx = "gatebuilder_torpedo"
 	prerequisites = {
@@ -845,7 +844,7 @@ weapon_component_template = {
 	size = point_defence
 	entity = "turret_point_defence_entity"
 	type = instant
-	icon = "GFX_ship_part_sensor_1"
+	icon = "GFX_ship_part_gray_sensor"
 	icon_frame = 1
 	damage = {
 		min = 0
