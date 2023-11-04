@@ -113,43 +113,6 @@ on_planet_attackers_lose = {
 # 	}
 # }
 # this = country
-on_destroy_planet_with_RG_PLANET_KILLER = {
-	events = {
-		RG_planet_killer.1
-		RG_planet_killer.2
-	}
-}
-
-on_destroy_planet_with_RG_PLANET_KILLER_queued = {
-}
-
-on_destroy_planet_with_RG_PLANET_KILLER_unqueued = {
-}
-
-on_destroy_planet_with_RG_PLANET_KILLER_SMALL = {
-	events = {
-		RG_planet_killer.2
-	}
-}
-
-on_destroy_planet_with_RG_PLANET_KILLER_SMALL_queued = {
-}
-
-on_destroy_planet_with_RG_PLANET_KILLER_SMALL_unqueued = {
-}
-
-on_destroy_planet_with_RG_PLANET_KILLER_SP = {
-	events = {
-		RG_planet_killer.3
-		rg_story.6
-	}
-}
-
-on_destroy_planet_with_RG_PLANET_KILLER_SP_queued = {
-}
-
-on_destroy_planet_with_RG_PLANET_KILLER_SP_unqueued = {
-}
 
 #舰船建造完成
 # Root = Ship

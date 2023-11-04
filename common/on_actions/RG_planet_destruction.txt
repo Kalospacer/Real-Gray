@@ -1,0 +1,162 @@
+# Scope:
+# this/root = planet that have been fired upon
+# from = fleet that fired
+#on_destroy_planet_with_PLANET_DESTRUCTION_COMPONENT = {
+#	events = {
+#		planet_destruction.1
+#	}
+#}
+
+# Note: The _queued on_actions also fire when the command is made even if there is nothing else in the queue
+# Similarly, the _unqueued on_actions fire even if you cancel the order while the weapon is on the wind-up to fire
+# They use the same scopes as the standard events
+
+on_destroy_planet_with_RG_PLANET_KILLER = {
+	events = {
+		RG_planet_killer.1
+		RG_planet_killer.2
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_queued = {
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_unqueued = {
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_SMALL = {
+	events = {
+		RG_planet_killer.2
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_SMALL_queued = {
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_SMALL_unqueued = {
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_SP = {
+	events = {
+		RG_planet_killer.3
+		rg_story.6
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_SP_queued = {
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_SP_unqueued = {
+}
+# World Cracker
+on_destroy_planet_with_RG_PLANET_KILLER_CRACKER = {
+	events = {
+		toxoids.8016 #Destroyed knight Keep
+		crisis.5015 # Menace Objective - Destroy World/Empire
+		planet_destruction.110
+		origin.3245 # Glassing a Progenitors Nest
+		planet_destruction.600 # frag holy world
+		planet_destruction.100 # goes last because it can kill a country, making some trigger checks impossible
+		awareness.150 # Planet cracker used OR planet terraformed, chance to gain 20 awareness.
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_CRACKER_queued = {
+	events = {
+		fircon.5035 #Solarpunk Planet queued
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_CRACKER_unqueued = {
+}
+# Pacifier
+on_destroy_planet_with_RG_PLANET_KILLER_SHIELDER = {
+	events = {
+		crisis.5015 # Menace Objective - Destroy World/Empire
+		toxoids.8016 #Destroyed knight Keep placed up here so events fire while it's a planet
+		planet_destruction.200
+		planet_destruction.600 # frag holy world
+		origin.3245
+		awareness.150 # Planet cracker used OR planet terraformed, chance to gain 20 awareness.
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_SHIELDER_queued = {
+	events = {
+		fircon.5035 #Solarpunk Planet queued
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_SHIELDER_unqueued = {
+}
+# Neutron Beam
+on_destroy_planet_with_RG_PLANET_KILLER_NEUTRON = {
+	events = {
+		planet_destruction.300
+		origin.3245
+		awareness.150 # Planet cracker used OR planet terraformed, chance to gain 20 awareness.
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_NEUTRON_queued = {
+	events = {
+		fircon.5035 #Solarpunk Planet queued
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_NEUTRON_unqueued = {
+}
+# God Ray
+on_destroy_planet_with_RG_PLANET_KILLER_GODRAY = {
+	events = {
+		planet_destruction.400
+		origin.3245
+		awareness.150 # Planet cracker used OR planet terraformed, chance to gain 20 awareness.
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_GODRAY_queued = {
+	events = {
+		fircon.5035 #Solarpunk Planet queued
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_GODRAY_unqueued = {
+}
+# Nanobot Assimilation
+on_destroy_planet_with_RG_PLANET_KILLER_NANOBOTS = {
+	events = {
+		crisis.5015 # Menace Objective - Destroy World/Empire
+		planet_destruction.500
+		origin.3245
+		awareness.150 # Planet cracker used OR planet terraformed, chance to gain 20 awareness.
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_NANOBOTS_queued = {
+	events = {
+		fircon.5035 #Solarpunk Planet queued
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_NANOBOTS_unqueued = {
+}
+# Deluge
+on_destroy_planet_with_RG_PLANET_KILLER_DELUGE = {
+	events = {
+		planet_destruction.607 # frag holy world
+		planet_destruction.700
+		origin.3245
+		awareness.150 # Planet cracker used OR planet terraformed, chance to gain 20 awareness.
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_DELUGE_queued = {
+	events = {
+		fircon.5035 #Solarpunk Planet queued
+#		planet_destruction.705
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_DELUGE_unqueued = {
+}

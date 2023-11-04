@@ -2238,9 +2238,6 @@ utility_component_template = {
 	ai_weight = {
 		weight = 0
 	}
-	class_restriction = {
-		shipclass_military
-	}
 	component_set = "ftl_components"
 }
 
@@ -2293,9 +2290,6 @@ utility_component_template = {
 		ship_evasion_add = 10
 	}
 	component_set = "thruster_components"
-	class_restriction = {
-		shipclass_military
-	}
 	tags = {
 		weapon_type_rg_thruster
 	}
@@ -2322,19 +2316,12 @@ utility_component_template = {
 		}
 	}
 	prerequisites = {
-		"tech_gray_weapon_lance_1"
+		"tech_gray_nano_fusion_3"
 	}
 	tags = {
 		weapon_type_rg_reactor
 	}
 	component_set = "power_core"
-	size_restriction = {
-		RG_graygoo_destroyer
-		RG_armed_constructor_ship
-		RG_armed_science_ship
-		RG_armed_transport_ship
-		RG_armed_colony_ship
-	}
 	ai_weight = {
 		weight = 0
 	}
@@ -2357,7 +2344,7 @@ utility_component_template = {
 		}
 	}
 	prerequisites = {
-		"tech_gray_weapon_lance_1"
+		"tech_gray_nano_fusion_3"
 	}
 	tags = {
 		weapon_type_rg_reactor
@@ -2391,7 +2378,7 @@ utility_component_template = {
 		}
 	}
 	prerequisites = {
-		"tech_gray_weapon_lance_1"
+		"tech_gray_nano_fusion_3"
 	}
 	tags = {
 		weapon_type_rg_reactor
@@ -2445,10 +2432,9 @@ utility_component_template = {
 		RG_graygoo_mothership
 	}
 	prerequisites = {
-		"tech_cloaking_3"
+		"tech_gray_cloaking_3"
 	}
 	ship_limit = 1
-	hidden = yes
 	component_set = "science_cloaking_components"
 	ai_weight = {
 		weight = 0

@@ -56,6 +56,7 @@ tech_gray_cloaking_3 = {
 	ai_update_type = all
 	is_rare = yes
 	prerequisites = { "tech_cloaking_3" "tech_gray_weapon_lance_1" }
+	is_reverse_engineerable = no
 	weight = @tier4weight3
 
 	potential = {
@@ -112,9 +113,38 @@ tech_gray_matter_remix_2 = {
 	}
 	ai_update_type = military
 	weight = @tier2weight3
+	is_reverse_engineerable = no
 	prerequisites = {
 		"tech_gray_weapon_lance_1"
 		"tech_ship_armor_5"
+	}
+	ai_weight = {
+		factor = 0		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+}
+
+tech_gray_nano_fusion_3 = {
+	area = physics
+	cost = 5000
+	tier = 5
+	is_rare = yes
+	is_reverse_engineerable = no
+	category = {
+		particles
+	}
+	ai_update_type = military
+	weight = @tier2weight3
+	prerequisites = {
+		"tech_gray_matter_remix_2"
+		"tech_zero_point_power"
 	}
 	ai_weight = {
 		factor = 0		#weapons are good
@@ -139,6 +169,7 @@ tech_gray_nano_boost_3 = {
 	}
 	ai_update_type = military
 	weight = @tier2weight3
+	is_reverse_engineerable = no
 	prerequisites = {
 		"tech_gray_matter_remix_2"
 		"tech_thrusters_4"
@@ -166,6 +197,7 @@ tech_gray_interdictor_4 = {
 	}
 	ai_update_type = military
 	weight = @tier2weight3
+	is_reverse_engineerable = no
 	prerequisites = {
 		"tech_gray_nano_boost_3"
 		"tech_battleships"
@@ -193,6 +225,7 @@ tech_gray_matter_spray_5 = {
 	}
 	ai_update_type = military
 	weight = @tier2weight3
+	is_reverse_engineerable = no
 	prerequisites = {
 		"tech_gray_interdictor_4"
 		"tech_kinetic_artillery_2"
@@ -220,6 +253,7 @@ tech_gray_buffnut_6 = {
 	}
 	ai_update_type = military
 	weight = @tier2weight3
+	is_reverse_engineerable = no
 	prerequisites = {
 		"tech_gray_interdictor_4"
 		"tech_juggernaut"
@@ -247,6 +281,7 @@ tech_gray_army_7 = {
 	}
 	ai_update_type = military
 	weight = @tier2weight3
+	is_reverse_engineerable = no
 	prerequisites = {
 		"tech_gray_matter_remix_2"
 		"tech_self_aware_logic"
@@ -274,6 +309,7 @@ tech_gray_juggernaut_8 = {
 	}
 	ai_update_type = military
 	weight = @tier2weight3
+	is_reverse_engineerable = no
 	prerequisites = {
 		"tech_gray_matter_remix_2"
 		"tech_juggernaut"

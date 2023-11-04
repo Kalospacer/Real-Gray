@@ -116,6 +116,8 @@
 
  RG_Arsenal_FISSION_REACTOR:0 "$FISSION_REACTOR$"
  RG_Arsenal_FISSION_REACTOR_DESC:0 "$FISSION_REACTOR_DESC$"
+ RG_Arsenal_FUSION_NANO_REACTOR:0 "$RG_FUSION_NANO_REACTOR$"
+ RG_Arsenal_FUSION_NANO_REACTOR_DESC:0 "$RG_FUSION_NANO_REACTOR_DESC$"
 
  RG_PLANET_KILLER_CRACKER:0 "$PLANET_KILLER_CRACKER$"
  RG_PLANET_KILLER_CRACKER_DESC:0 "$PLANET_KILLER_CRACKER_DESC$"
@@ -215,6 +217,9 @@
  tech_gray_weapon_lance_1_desc:0 "通过研究L星门中灰色风暴战舰所使用的武器，我们得以使用纳米机器人部分还原这种技术。"
  tech_gray_matter_remix_2:0 "§Y纳米物质混合工程§!"
  tech_gray_matter_remix_2_desc:0 "通过将纳米机器人运用在特殊材料中，我们得以赋予这些材料新的性质。"
+
+ tech_gray_nano_fusion_3:0 "§Y纳米物质能量生产§!"
+ tech_gray_nano_fusion_3_desc:0 "利用纳米物质特性大幅压缩传统反应堆，极大提升能量产出效率。"
 
  tech_gray_nano_boost_3:0 "§Y纳米物质推进工程§!"
  tech_gray_nano_boost_3_desc:0 "将新的材料进一步加以改良，我们得以制造出可以自我产生推力的材料，使得更加精密的工程成为可能。"

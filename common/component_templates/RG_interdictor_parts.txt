@@ -298,12 +298,48 @@ utility_component_template = {
 			alloys = 0.08
 		}
 	}
+	prerequisites = {
+		"tech_gray_matter_spray_5"
+	}
 	component_set = "power_core"
+	upgrades_to = "RG_Arsenal_FUSION_NANO_REACTOR"
 	size_restriction = {
 		RG_graygoo_Arsenal
 	}
 	ai_weight = {
 		weight = 1
+	}
+}
+
+utility_component_template = {
+	key = "RG_Arsenal_FUSION_NANO_REACTOR"
+	size = small
+	icon = "GFX_ship_part_gray_reactor"
+	icon_frame = 1
+	power = 600
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 80
+			nanties = 2
+		}
+		upkeep = {
+			energy = 0.8
+		}
+	}
+	component_set = "power_core"
+	prerequisites = {
+		"tech_gray_nano_fusion_3"
+		"tech_gray_matter_spray_5"
+	}
+	tags = {
+		weapon_type_rg_reactor
+	}
+	size_restriction = {
+		RG_graygoo_Arsenal
+	}
+	ai_weight = {
+		weight = 0
 	}
 }
 
