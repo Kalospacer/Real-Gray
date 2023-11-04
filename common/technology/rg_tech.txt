@@ -66,8 +66,8 @@ tech_gray_cloaking_3 = {
 	prereqfor_desc = {
 		hide_prereq_for_desc = component
 		custom = {
-			title = "TECH_UNLOCK_CLOAKING_3_TITLE"
-			desc = "TECH_UNLOCK_CLOAKING_3_DESC"
+			title = "TECH_UNLOCK_RG_CLOAKING_3_TITLE"
+			desc = "TECH_UNLOCK_RG_CLOAKING_3_DESC"
 		}
 	}
 

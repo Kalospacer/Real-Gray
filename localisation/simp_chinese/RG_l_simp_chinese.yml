@@ -215,6 +215,7 @@
 
  tech_gray_weapon_lance_1:0 "§Y纳米层级能量操纵§!"
  tech_gray_weapon_lance_1_desc:0 "通过研究L星门中灰色风暴战舰所使用的武器，我们得以使用纳米机器人部分还原这种技术。"
+
  tech_gray_matter_remix_2:0 "§Y纳米物质混合工程§!"
  tech_gray_matter_remix_2_desc:0 "通过将纳米机器人运用在特殊材料中，我们得以赋予这些材料新的性质。"
 
@@ -335,6 +336,9 @@
  RG_CORVETTE_CLOAKING_3:0 "§Y「记忆中的流星」§!"
  RG_CORVETTE_CLOAKING_3_DESC:0 "通过$NAME_Gray$精细的能量输入调控，改装过的隐形场能够保留绝大多数的护盾强度的同时提高隐形场强度。但这种改造却无法量产。"
  RG_CLOAKING_3_TOOLTIP:0 "\n隐形时护盾强度削减： §R-10%§!"
+
+ TECH_UNLOCK_RG_CLOAKING_3_TITLE: "§H解锁部件：§!$RG_CORVETTE_CLOAKING_3$"
+ TECH_UNLOCK_RG_CLOAKING_3_DESC: "§H$RG_CORVETTE_CLOAKING_3$§!\n$tech_gray_cloaking_3_desc$"
 
  rg_gray_army_base:0 "§Y自走纳米机器战体§!"
  rg_gray_army_base_desc:0 "经过逆向工程制造出的纳米作战体复制品，只拥有有限的作战决策能力。不过仍具有巨大的威力。"
