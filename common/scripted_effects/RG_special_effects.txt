@@ -172,7 +172,7 @@ rg_create_fake_dragon = {
 			}
 		}
 		create_leader = {
-			class = admiral
+			class = commander
 			species = root
 			name = "Name_rg_fake_dragon"
 			event_leader = yes

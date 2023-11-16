@@ -35,7 +35,8 @@ country_event = {
 				is_same_value = event_target:gray_owner
 				NOR = {
 					has_country_flag = gray_constship_active
-					has_country_flag = gray_governor_active
+					has_country_flag = gray_official_active
+					has_country_flag = gray_governor_active #旧版flag
 					has_country_flag = gray_warship_active
 					has_country_flag = gray_army_active
 					has_country_flag = gray_reforming
@@ -60,7 +61,10 @@ country_event = {
 					}
 				}
 				is_same_value = event_target:gray_owner
-				has_country_flag = gray_governor_active
+				OR = {
+					has_country_flag = gray_official_active
+					has_country_flag = gray_governor_active #旧版flag
+				}
 				NOR = {
 					has_country_flag = gray_reforming
 					has_country_flag = gray_diplomacy_engaged
@@ -232,7 +236,8 @@ country_event = {
 		is_same_value = event_target:gray_owner
 		NOR = {
 			has_country_flag = gray_constship_active
-			has_country_flag = gray_governor_active
+			has_country_flag = gray_official_active
+			has_country_flag = gray_governor_active #旧版flag
 			has_country_flag = gray_warship_active
 			has_country_flag = gray_army_active
 			has_country_flag = gray_reforming
@@ -244,8 +249,9 @@ country_event = {
 		name = graygoo.500.a
 		response_text = graygoo.500.a.response
 		trigger = {
-			NOT = {
-				has_country_flag = gray_governor_active
+			NOR = {
+				has_country_flag = gray_official_active
+				has_country_flag = gray_governor_active #旧版flag
 			}
 		}
 		hidden_effect = {
@@ -356,7 +362,10 @@ country_event = {
 			}
 		}
 		is_same_value = event_target:gray_owner
-		has_country_flag = gray_governor_active
+		OR = {
+			has_country_flag = gray_official_active
+			has_country_flag = gray_governor_active #旧版flag
+		}
 		NOR = {
 			has_country_flag = gray_reforming
 			has_country_flag = gray_diplomacy_engaged

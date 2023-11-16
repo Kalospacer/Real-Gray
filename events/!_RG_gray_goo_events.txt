@@ -348,7 +348,10 @@ country_event = {
 		is_same_value = event_target:gray_owner
 		NOR = {
 			has_country_flag = gray_constship_active
-			has_country_flag = gray_governor_active
+			OR = {
+				has_country_flag = gray_official_active
+				has_country_flag = gray_governor_active #旧版flag
+			}
 			has_country_flag = gray_warship_active
 			has_country_flag = gray_army_active
 			has_country_flag = gray_reforming
@@ -388,7 +391,10 @@ country_event = {
 			}
 		}
 		is_same_value = event_target:gray_owner
-		has_country_flag = gray_governor_active
+		OR = {
+			has_country_flag = gray_official_active
+			has_country_flag = gray_governor_active #旧版flag
+		}
 		NOR = {
 			has_country_flag = gray_reforming
 			has_country_flag = gray_diplomacy_engaged
@@ -620,7 +626,10 @@ event = {
 					}
 				}
 				AND = {
-					has_country_flag = gray_governor_active
+					OR = {
+						has_country_flag = gray_official_active
+						has_country_flag = gray_governor_active #旧版flag
+					}
 					NOT = {
 						exists = event_target:gray_governor
 					}
@@ -636,7 +645,10 @@ event = {
 	}
 	immediate = {
 		event_target:gray_owner = {
-			remove_country_flag = gray_governor_active			#总督
+			OR = {
+				has_country_flag = gray_official_active
+				has_country_flag = gray_governor_active #旧版flag
+			}			#总督
 			remove_country_flag = gray_warship_active			#旗舰
 			remove_country_flag = gray_army_active			#陆军
 			remove_country_flag = gray_constship_active			#科舰

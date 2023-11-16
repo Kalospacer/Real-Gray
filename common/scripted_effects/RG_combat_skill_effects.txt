@@ -286,3 +286,14 @@ RG_leader_trait_admiral_nanorebuild_gray_counter_init_effect = {
 		value = 0
 	}
 }
+
+RG_leader_trait_general_tempest_incoming_counter_init_effect = {
+	set_variable = {
+		which = rg_general_skill_combat_daypassed_variable
+		value = 1
+	}
+	set_variable = {
+		which = rg_general_skill_combat_killed_variable
+		value = 0
+	}
+}

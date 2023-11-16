@@ -65,7 +65,10 @@ rg_global_gray_location_check = {
 	}
 	else_if = {
 		limit = {
-			has_country_flag = gray_governor_active
+			OR = {
+				has_country_flag = gray_official_active
+				has_country_flag = gray_governor_active #旧版flag
+			}
 		}
 		if = {
 			limit = {
@@ -134,7 +137,10 @@ rg_global_gray_location_check = {
 rg_create_gray_governor = {
 	if = {
 		limit = {
-			has_country_flag = gray_governor_active
+			OR = {
+				has_country_flag = gray_official_active
+				has_country_flag = gray_governor_active #旧版flag
+			}
 		}
 	}
 	else = {
@@ -225,7 +231,8 @@ rg_create_gray_governor = {
 			rg_gray_govener_init = yes
 		}
 		#设置总督已启用标识
-		set_country_flag = gray_governor_active
+		set_country_flag = gray_official_active #新版flag
+		set_country_flag = gray_governor_active #旧版flag
 		#更新灰风形态
 		remove_country_flag = gray_warship_active
 		remove_country_flag = rg_kac_grayfleet_active
@@ -337,7 +344,8 @@ rg_create_gray_governor_habitat = {
 		}
 		rg_juggernaut_habitat_init = yes
 		#设置总督已启用标识
-		set_country_flag = gray_governor_active
+		set_country_flag = gray_official_active #新版flag
+		set_country_flag = gray_governor_active #旧版flag
 		set_country_flag = gray_habitat_active
 		#更新灰风形态
 		remove_country_flag = gray_warship_active
@@ -406,7 +414,7 @@ rg_create_gray_warship = {
 			}
 		}
 		else = {
-			rg_gray_admiral_init = yes
+			rg_gray_commander_init = yes
 		}
 		set_country_flag = gray_warship_active
 		if = {
@@ -456,7 +464,8 @@ rg_create_gray_warship = {
 			}
 		}
 		remove_country_flag = gray_constship_active
-		remove_country_flag = gray_governor_active
+		remove_country_flag = gray_governor_active #旧版flag
+		remove_country_flag = gray_official_active
 		remove_country_flag = gray_army_active
 		random_owned_leader = {
 			limit = {
@@ -518,7 +527,7 @@ rg_create_gray_army = {
 			}
 		}
 		else = {
-			rg_gray_general_init = yes
+			rg_gray_commander_init = yes
 		}
 		create_ship_design = {
 			design = "NAME_RG_armed_transport_ship"
@@ -568,7 +577,8 @@ rg_create_gray_army = {
 		}
 		remove_country_flag = gray_warship_active
 		remove_country_flag = rg_kac_grayfleet_active
-		remove_country_flag = gray_governor_active
+		remove_country_flag = gray_governor_active #旧版flag
+		remove_country_flag = gray_official_active
 		remove_country_flag = gray_constship_active
 		remove_ship_design = last_created_design
 		random_owned_leader = {
@@ -689,7 +699,8 @@ rg_create_gray_const = {
 		remove_country_flag = gray_army_active
 		remove_country_flag = gray_warship_active
 		remove_country_flag = rg_kac_grayfleet_active
-		remove_country_flag = gray_governor_active
+		remove_country_flag = gray_governor_active #旧版flag
+		remove_country_flag = gray_official_active
 		random_owned_leader = {
 			limit = {
 				has_leader_flag = gray_scientist
