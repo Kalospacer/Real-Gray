@@ -49,6 +49,7 @@ rg_gray_govener_init = {
 			skill = 10
 			set_age = 18
 			traits = {
+				0 = RG_leader_trait_governor_gray
 			}
 			effect = {
 				save_global_event_target_as = gray_governor
@@ -508,10 +509,10 @@ rg_gray_scientist_init = {
 			skill = 10
 			set_age = 18
 			traits = {
-				trait = RG_leader_trait_scientist_gray
-				trait = subclass_scientist_explorer
-				trait = leader_trait_engineering_focus_2
-				trait = leader_trait_salvager_3
+				0 = RG_leader_trait_scientist_gray
+				1 = subclass_scientist_explorer
+				2 = leader_trait_engineering_focus_2
+				3 = leader_trait_salvager_3
 			}
 			effect = {
 				save_global_event_target_as = gray_leader_scientist
@@ -607,8 +608,8 @@ rg_gray_country_leader_init = {
 		skill = 10
 		set_age = 18
 		traits = {
-			trait = RG_leader_trait_offical_gray
-			trait = RG_leader_trait_ruler_gray
+			0 = RG_leader_trait_offical_gray
+			1 = RG_leader_trait_ruler_gray
 		}
 		effect = {
 			save_global_event_target_as = rg_gray_country_leader
