@@ -51,7 +51,7 @@ RG_leader_trait_offical_gray = {
 	councilor_modifier = {
 		all_technology_research_speed = 0.5
 	}
-	modifier = {
+	fleet_modifier = {
 		ship_archaeological_site_excavation_speed_mult = 0.5
 		science_ship_survey_speed = 1
 		ship_anomaly_generation_chance_mult = -1
