@@ -201,7 +201,7 @@ RG_leader_trait_ruler_gray = {
 		planet_stability_add = -1
 		mult = owner.rg_gray_level
 	}
-	triggered_modifier = {
+	triggered_councilor_modifier = {
 		potential = {
 			is_councilor = yes
 			owner = {
@@ -219,7 +219,7 @@ RG_leader_trait_ruler_gray = {
 		planet_stability_add = -1.5
 		mult = owner.rg_gray_level
 	}
-	triggered_modifier = {
+	triggered_councilor_modifier = {
 		potential = {
 			is_councilor = yes
 			owner = {
@@ -233,7 +233,7 @@ RG_leader_trait_ruler_gray = {
 		planet_stability_add = -2
 		mult = owner.rg_gray_level
 	}
-	triggered_modifier = {
+	triggered_councilor_modifier = {
 		potential = {
 			always = yes
 		}
