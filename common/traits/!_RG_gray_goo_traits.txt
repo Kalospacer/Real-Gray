@@ -136,7 +136,6 @@ RG_leader_trait_ruler_gray = {
 		TIER = none
 	}
 	# councilor_trait = yes
-	custom_tooltip_with_modifiers = RG_leader_trait_admiral_nanorebuild_effect
 	triggered_self_modifier = {
 		potential = {
 			is_councilor = yes
@@ -183,7 +182,7 @@ RG_leader_trait_ruler_gray = {
 		leaders_upkeep_mult = 0.2
 		mult = trigger:has_skill
 	}
-	triggered_modifier = {
+	triggered_councilor_modifier = {
 		potential = {
 			is_councilor = yes
 			owner = {
