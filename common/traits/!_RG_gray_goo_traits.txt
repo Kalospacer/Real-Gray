@@ -51,11 +51,6 @@ RG_leader_trait_offical_gray = {
 	councilor_modifier = {
 		all_technology_research_speed = 0.5
 	}
-	fleet_modifier = {
-		ship_archaeological_site_excavation_speed_mult = 0.5
-		science_ship_survey_speed = 1
-		ship_anomaly_generation_chance_mult = -1
-	}
 	planet_modifier = {
 		planet_buildings_cost_mult = -0.4
 		planet_building_build_speed_mult = 0.6
@@ -140,7 +135,8 @@ RG_leader_trait_ruler_gray = {
 		COUNCIL = yes
 		TIER = none
 	}
-	councilor_trait = yes
+	# councilor_trait = yes
+	custom_tooltip_with_modifiers = RG_leader_trait_admiral_nanorebuild_effect
 	triggered_self_modifier = {
 		potential = {
 			is_councilor = yes
@@ -153,7 +149,7 @@ RG_leader_trait_ruler_gray = {
 		}
 		leader_skill_levels = 1
 		leaders_upkeep_mult = 0.1
-		mult = owner.rg_gray_level
+		mult = trigger:has_skill
 	}
 	triggered_self_modifier = {
 		potential = {
@@ -171,7 +167,7 @@ RG_leader_trait_ruler_gray = {
 		}
 		leader_skill_levels = 1
 		leaders_upkeep_mult = 0.15
-		mult = owner.rg_gray_level
+		mult = trigger:has_skill
 	}
 	triggered_self_modifier = {
 		potential = {
@@ -185,7 +181,7 @@ RG_leader_trait_ruler_gray = {
 		}
 		leader_skill_levels = 1
 		leaders_upkeep_mult = 0.2
-		mult = owner.rg_gray_level
+		mult = trigger:has_skill
 	}
 	triggered_modifier = {
 		potential = {
@@ -199,7 +195,7 @@ RG_leader_trait_ruler_gray = {
 		}
 		# country_energy_produces_mult = -0.02
 		planet_stability_add = -1
-		mult = owner.rg_gray_level
+		mult = trigger:has_skill
 	}
 	triggered_councilor_modifier = {
 		potential = {
@@ -217,7 +213,7 @@ RG_leader_trait_ruler_gray = {
 		}
 		# country_energy_produces_mult = -0.03
 		planet_stability_add = -1.5
-		mult = owner.rg_gray_level
+		mult = trigger:has_skill
 	}
 	triggered_councilor_modifier = {
 		potential = {
@@ -231,7 +227,7 @@ RG_leader_trait_ruler_gray = {
 		}
 		# country_energy_produces_mult = -0.04
 		planet_stability_add = -2
-		mult = owner.rg_gray_level
+		mult = trigger:has_skill
 	}
 	triggered_councilor_modifier = {
 		potential = {
@@ -246,7 +242,7 @@ RG_leader_trait_ruler_gray = {
 		megastructure_build_speed_mult = 0.1
 		country_unity_produces_mult = 0.05
 		country_base_influence_produces_add = 1
-		mult = owner.rg_gray_level
+		mult = trigger:has_skill
 	}
 	leader_class = {
 		official
@@ -453,7 +449,7 @@ RG_leader_trait_general_gray_skill = {
 		TIER = none
 	}
 	custom_tooltip_with_modifiers = RG_leader_trait_tempest_incoming_effect
-	triggered_modifier = {
+	triggered_army_modifier = {
 		potential = {
 			always = yes
 		}
