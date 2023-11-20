@@ -33,58 +33,65 @@
 # 	randomized = no
 # }
 
-RG_leader_trait_offical_gray = {
-	#唯一特质
-	cost = 0
-	inline_script = {
-		script = trait/icon_psionic
-		CLASS = leader
-		ICON = "GFX_leader_trait_psionic_chosen_one"
-		RARITY = paragon
-		COUNCIL = no
-		TIER = none
-	}
-	immortal_leaders = yes
-	self_modifier = {
-		species_leader_exp_gain = 1
-	}
-	councilor_modifier = {
-		all_technology_research_speed = 0.5
-	}
-	planet_modifier = {
-		planet_buildings_cost_mult = -0.4
-		planet_building_build_speed_mult = 0.6
-		planet_jobs_alloys_produces_mult = 0.25
-		planet_jobs_engineering_research_produces_mult = 0.25
-		deposit_blockers_cost_mult = -0.4
-		planet_clear_blocker_time_mult = -0.6
-	}
-	sector_modifier = {
-		planet_buildings_cost_mult = -0.2
-		planet_building_build_speed_mult = 0.2
-		planet_jobs_alloys_produces_mult = 0.1
-		planet_jobs_engineering_research_produces_mult = 0.1
-		deposit_blockers_cost_mult = -0.2
-		planet_clear_blocker_time_mult = -0.2
-		starbase_shipyard_build_cost_mult = -0.25
-		starbase_shipyard_build_speed_mult = -0.3
-	}
-	fleet_modifier = {
-		ship_armor_mult = 3.5
-		ship_hull_mult = 3.5
-		ships_upkeep_mult = -0.4
-		ship_hull_regen_add_perc = 5
-		ship_armor_regen_add_perc = 5
-	}
-	army_modifier = {
-		army_collateral_damage_mult = 0.15
-		army_disengage_chance_mult = 0.5
-		army_health = 0.35
-	}
-	leader_class = { commander official scientist }
-	initial = no
-	randomized = no
-}
+# RG_leader_trait_offical_gray = {
+# 	#唯一特质
+# 	cost = 0
+# 	inline_script = {
+# 		script = trait/icon_psionic
+# 		CLASS = leader
+# 		ICON = "GFX_leader_trait_psionic_chosen_one"
+# 		RARITY = paragon
+# 		COUNCIL = no
+# 		TIER = none
+# 	}
+# 	immortal_leaders = yes
+# 		triggered_self_modifier = {
+# 		potential = {
+# 			always = yes
+# 		}
+# 		leader_skill_levels = 1
+# 		mult = trigger:has_skill
+# 	}
+# 	self_modifier = {
+# 		species_leader_exp_gain = 1
+# 	}
+# 	councilor_modifier = {
+# 		all_technology_research_speed = 0.5
+# 	}
+# 	planet_modifier = {
+# 		planet_buildings_cost_mult = -0.4
+# 		planet_building_build_speed_mult = 0.6
+# 		planet_jobs_alloys_produces_mult = 0.25
+# 		planet_jobs_engineering_research_produces_mult = 0.25
+# 		deposit_blockers_cost_mult = -0.4
+# 		planet_clear_blocker_time_mult = -0.6
+# 	}
+# 	sector_modifier = {
+# 		planet_buildings_cost_mult = -0.2
+# 		planet_building_build_speed_mult = 0.2
+# 		planet_jobs_alloys_produces_mult = 0.1
+# 		planet_jobs_engineering_research_produces_mult = 0.1
+# 		deposit_blockers_cost_mult = -0.2
+# 		planet_clear_blocker_time_mult = -0.2
+# 		starbase_shipyard_build_cost_mult = -0.25
+# 		starbase_shipyard_build_speed_mult = -0.3
+# 	}
+# 	fleet_modifier = {
+# 		ship_armor_mult = 3.5
+# 		ship_hull_mult = 3.5
+# 		ships_upkeep_mult = -0.4
+# 		ship_hull_regen_add_perc = 5
+# 		ship_armor_regen_add_perc = 5
+# 	}
+# 	army_modifier = {
+# 		army_collateral_damage_mult = 0.15
+# 		army_disengage_chance_mult = 0.5
+# 		army_health = 0.35
+# 	}
+# 	leader_class = all
+# 	initial = no
+# 	randomized = no
+# }
 
 RG_leader_trait_governor_gray = {
 	#总督特质
@@ -142,7 +149,7 @@ RG_leader_trait_ruler_gray = {
 		COUNCIL = yes
 		TIER = none
 	}
-	# councilor_trait = yes
+	# forced_councilor_trait = yes
 	triggered_self_modifier = {
 		potential = {
 			is_councilor = yes
@@ -191,7 +198,7 @@ RG_leader_trait_ruler_gray = {
 	}
 	triggered_councilor_modifier = {
 		potential = {
-			is_councilor = yes
+			# is_councilor = yes
 			owner = {
 				check_variable = {
 					which = rg_gray_level
@@ -205,7 +212,7 @@ RG_leader_trait_ruler_gray = {
 	}
 	triggered_councilor_modifier = {
 		potential = {
-			is_councilor = yes
+			# is_councilor = yes
 			owner = {
 				check_variable = {
 					which = rg_gray_level
@@ -223,7 +230,7 @@ RG_leader_trait_ruler_gray = {
 	}
 	triggered_councilor_modifier = {
 		potential = {
-			is_councilor = yes
+			# is_councilor = yes
 			owner = {
 				check_variable = {
 					which = rg_gray_level
@@ -250,9 +257,7 @@ RG_leader_trait_ruler_gray = {
 		country_base_influence_produces_add = 1
 		mult = trigger:has_skill
 	}
-	leader_class = {
-		official
-	}
+	leader_class = { official }
 	initial = no
 	randomized = no
 }
@@ -291,9 +296,7 @@ RG_leader_trait_admiral_gray_1 = {
 		army_disengage_chance_mult = 0.3
 		army_health = 0.15
 	}
-	leader_class = {
-		commander
-	}
+	leader_class = { commander }
 	initial = no
 	randomized = no
 }
@@ -332,9 +335,7 @@ RG_leader_trait_admiral_gray_2 = {
 		army_disengage_chance_mult = 0.4
 		army_health = 0.25
 	}
-	leader_class = {
-		commander
-	}
+	leader_class = { commander }
 	initial = no
 	randomized = no
 }
@@ -373,9 +374,7 @@ RG_leader_trait_admiral_gray = {
 		army_disengage_chance_mult = 0.5
 		army_health = 0.35
 	}
-	leader_class = {
-		commander
-	}
+	leader_class = { commander }
 	initial = no
 	randomized = no
 }
@@ -398,9 +397,7 @@ RG_leader_trait_admiral_nanorebuild_gray = {
 		ship_hull_regen_add_perc = 0.5
 		ship_armor_regen_add_perc = 0.5
 	}
-	leader_class = {
-		commander
-	}
+	leader_class = { commander }
 	initial = no
 	randomized = no
 }
@@ -437,9 +434,7 @@ RG_leader_trait_scientist_gray = {
 		# ship_speed_mult = 0.5
 		ship_anomaly_generation_chance_mult = -1
 	}
-	leader_class = {
-		scientist
-	}
+	leader_class = { scientist }
 	initial = no
 	randomized = no
 }
@@ -490,9 +485,7 @@ RG_leader_trait_general_gray_skill = {
 		army_health = 0.05
 		mult = owner.rg_general_skill_combat_daypassed_variable
 	}
-	leader_class = {
-		commander
-	}
+	leader_class = { commander }
 	initial = no
 	randomized = no
 	destiny_background_icon = "GFX_leader_background_destiny_1"
@@ -517,9 +510,7 @@ RG_leader_trait_admiral_fake_dragon = {
 		ship_hull_mult = 0.2
 		ship_weapon_damage = 0.2
 	}
-	leader_class = {
-		commander
-	}
+	leader_class = { commander }
 	initial = no
 	randomized = no
 }
@@ -562,9 +553,7 @@ RG_leader_trait_admiral_timed_life = {
 		ship_weapon_damage = 10
 		custom_tooltip_with_modifiers = rg_timed_life_millennium
 	}
-	leader_class = {
-		commander
-	}
+	leader_class = { commander }
 	initial = no
 	randomized = no
 }
@@ -608,9 +597,7 @@ RG_leader_trait_admiral_born_tobe_dragon = {
 		ship_weapon_damage = 0.01
 		custom_tooltip_with_modifiers = rg_timed_life_millennium_reborn
 	}
-	leader_class = {
-		commander
-	}
+	leader_class = { commander }
 	initial = no
 	randomized = no
 }
