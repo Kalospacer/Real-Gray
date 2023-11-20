@@ -397,6 +397,14 @@ RG_leader_trait_admiral_nanorebuild_gray = {
 		ship_hull_regen_add_perc = 0.5
 		ship_armor_regen_add_perc = 0.5
 	}
+	triggered_army_modifier = {
+		potential = {
+			always = yes
+		}
+		army_damage_mult = 0.05
+		army_health = 0.05
+		mult = owner.rg_general_skill_combat_daypassed_variable
+	}
 	leader_class = { commander }
 	initial = no
 	randomized = no
@@ -466,30 +474,31 @@ RG_leader_trait_scientist_gray = {
 # 	randomized = no
 # }
 
-RG_leader_trait_general_gray_skill = {
-	destiny_trait = yes
-	inline_script = {
-		script = trait/icon_psionic
-		CLASS = commander
-		ICON = "GFX_leader_trait_supreme_warrior"
-		RARITY = paragon
-		COUNCIL = no
-		TIER = none
-	}
-	custom_tooltip_with_modifiers = RG_leader_trait_tempest_incoming_effect
-	triggered_army_modifier = {
-		potential = {
-			always = yes
-		}
-		army_damage_mult = 0.05
-		army_health = 0.05
-		mult = owner.rg_general_skill_combat_daypassed_variable
-	}
-	leader_class = { commander }
-	initial = no
-	randomized = no
-	destiny_background_icon = "GFX_leader_background_destiny_1"
-}
+# 与舰长技能合并，弃用
+# RG_leader_trait_general_gray_skill = {
+# 	destiny_trait = yes
+# 	inline_script = {
+# 		script = trait/icon_psionic
+# 		CLASS = commander
+# 		ICON = "GFX_leader_trait_supreme_warrior"
+# 		RARITY = paragon
+# 		COUNCIL = no
+# 		TIER = none
+# 	}
+# 	custom_tooltip_with_modifiers = RG_leader_trait_tempest_incoming_effect
+# 	triggered_army_modifier = {
+# 		potential = {
+# 			always = yes
+# 		}
+# 		army_damage_mult = 0.05
+# 		army_health = 0.05
+# 		mult = owner.rg_general_skill_combat_daypassed_variable
+# 	}
+# 	leader_class = { commander }
+# 	initial = no
+# 	randomized = no
+# 	destiny_background_icon = "GFX_leader_background_destiny_1"
+# }
 
 RG_leader_trait_admiral_fake_dragon = {
 	cost = 0

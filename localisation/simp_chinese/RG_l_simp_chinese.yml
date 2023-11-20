@@ -19,10 +19,10 @@
  RG_leader_trait_general_gray_desc:0 "$NAME_Gray$本质上是由千千万万纳米机械所组成的个体，这让她可以辅助星域资源调度和研究资源调度。可不要让她做奇怪的事情哦？"
  RG_leader_trait_general_gray_skill:0 "§Y风暴将至§!"
  RG_leader_trait_general_gray_skill_desc:0 "灰色风暴在L星团中席卷无数纪元。倘若风暴再度到来，想必那星球上的人们所看到的景色一定永生难忘吧。"
- RG_leader_trait_tempest_incoming_effect:0 "$ARMY_EFFECTS_TXT$:\n$t$每击杀一支敌对陆军:\n$tt$$MOD_ARMY_DAMAGE_MULT$: §G+5%§!\n$tt$$MOD_ARMY_HEALTH$: §G+5%§!\n$tt$直接击杀一支敌对陆军的概率: §G+1%§!\n当前BUFF层数: §Y[owner.rg_general_skill_combat_daypassed_variable]§!\n当前概率为: §Y[owner.rg_general_skill_combat_killed_variable]%§!"
+ RG_leader_trait_tempest_incoming_effect:0 "$ARMY_EFFECTS_TXT$:\n$t$每击杀一支敌对陆军:\n$tt$$MOD_ARMY_DAMAGE_MULT$: §G+5%§!\n$tt$$MOD_ARMY_HEALTH$: §G+5%§!\n$tt$§Y直接击杀一支敌对陆军的概率§!: §G+1%§!\n$t$当前§YBUFF层数§!: §Y[owner.rg_general_skill_combat_daypassed_variable]§!\n$t$当前§Y直接击杀一支敌对陆军的概率§!为: §Y[owner.rg_general_skill_combat_killed_variable]%§!"
  RG_leader_trait_admiral_nanorebuild_gray:0 "§Y灰质重塑§!"
- RG_leader_trait_admiral_nanorebuild_gray_desc:0 "创造与解构，纳米机器席卷之处我们无所不能。"
- RG_leader_trait_admiral_nanorebuild_effect:0 "$FLEET_EFFECTS_TXT$:\n$t$每摧毁一艘敌军舰船:\n$tt$§Y计数器层数§!: §G+1§!\n$t$这位领袖所在舰队损失舰船时:\n$tt$消耗§Y计数器层数§!立即重建舰船。\n$t$当前§Y计数器层数§!: §Y[owner.rg_nanorebuild_counter]§!\n$t$§Y$NAME_Gray$§!无法被该技能重组。"
+ RG_leader_trait_admiral_nanorebuild_gray_desc:0 "灰色风暴在L星团中席卷无数纪元。\n创造与解构，纳米机器席卷之处我们无所不能。"
+ RG_leader_trait_admiral_nanorebuild_effect:0 "$FLEET_EFFECTS_TXT$:\n$t$每摧毁一艘敌军舰船:\n$tt$§Y重塑计数器层数§!: §G+1§!\n$t$这位领袖所在舰队损失舰船时:\n$tt$消耗§Y重塑计数器层数§!立即重建舰船。\n$t$当前§Y重塑计数器层数§!: §Y[owner.rg_nanorebuild_counter]§!\n$t$§Y$NAME_Gray$§!无法被该技能重建。\n\n$RG_leader_trait_tempest_incoming_effect$"
 
  RG_leader_trait_ruler_gray_tt:0 "§E随每技能等级提升的效果:§!"
  RG_leader_trait_variable_tt:0 "§E随变量层数提升的效果:§!"

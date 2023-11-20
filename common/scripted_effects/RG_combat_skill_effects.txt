@@ -5,7 +5,7 @@ RG_leader_trait_tempest_incoming_random_kill_effect = {
 			any_ground_combat_$SIDE_A$ = {
 				exists = leader
 				leader = {
-					has_trait = RG_leader_trait_general_gray_skill
+					has_trait = RG_leader_trait_admiral_nanorebuild_gray
 				}
 			}
 		}

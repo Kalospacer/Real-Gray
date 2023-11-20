@@ -388,7 +388,7 @@ planet_event = {
 				exists = leader
 				leader = {
 					#leader
-					has_trait = RG_leader_trait_general_gray_skill
+					has_trait = RG_leader_trait_admiral_nanorebuild_gray
 					owner = {
 						#country
 						save_event_target_as = attacking_general_country
@@ -452,7 +452,7 @@ country_event = {
 						exists = leader
 						leader = {
 							OR = {
-								has_trait = RG_leader_trait_general_gray_skill
+								has_trait = RG_leader_trait_admiral_nanorebuild_gray
 							}
 						}
 					}
@@ -547,7 +547,7 @@ country_event = {
 			exists = leader
 			leader = {
 				OR = {
-					has_trait = RG_leader_trait_general_gray_skill
+					has_trait = RG_leader_trait_admiral_nanorebuild_gray
 				}
 			}
 			if = {

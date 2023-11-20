@@ -1,5 +1,7 @@
 namespace = wg_affection
 
+# 3.9引用空事件崩溃问题占位
+# 3.10已弃用
 country_event = {
 	id = wg_affection.30000
 	title = wg_affection.30000.name
