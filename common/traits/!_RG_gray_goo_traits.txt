@@ -98,6 +98,13 @@ RG_leader_trait_governor_gray = {
 		TIER = none
 	}
 	immortal_leaders = yes
+	triggered_self_modifier = {
+		potential = {
+			always = yes
+		}
+		leader_skill_levels = 1
+		mult = trigger:has_skill
+	}
 	self_modifier = {
 		species_leader_exp_gain = 1
 	}
@@ -146,7 +153,7 @@ RG_leader_trait_ruler_gray = {
 				}
 			}
 		}
-		leader_skill_levels = 1
+		# leader_skill_levels = 1
 		leaders_upkeep_mult = 0.1
 		mult = trigger:has_skill
 	}
@@ -164,7 +171,7 @@ RG_leader_trait_ruler_gray = {
 				}
 			}
 		}
-		leader_skill_levels = 1
+		# leader_skill_levels = 1
 		leaders_upkeep_mult = 0.15
 		mult = trigger:has_skill
 	}
@@ -178,7 +185,7 @@ RG_leader_trait_ruler_gray = {
 				}
 			}
 		}
-		leader_skill_levels = 1
+		# leader_skill_levels = 1
 		leaders_upkeep_mult = 0.2
 		mult = trigger:has_skill
 	}
@@ -261,6 +268,13 @@ RG_leader_trait_admiral_gray_1 = {
 		COUNCIL = no
 		TIER = none
 	}
+	triggered_self_modifier = {
+		potential = {
+			always = yes
+		}
+		leader_skill_levels = 1
+		mult = trigger:has_skill
+	}
 	self_modifier = {
 		species_leader_exp_gain = 1
 	}
@@ -294,6 +308,13 @@ RG_leader_trait_admiral_gray_2 = {
 		RARITY = paragon
 		COUNCIL = no
 		TIER = none
+	}
+	triggered_self_modifier = {
+		potential = {
+			always = yes
+		}
+		leader_skill_levels = 1
+		mult = trigger:has_skill
 	}
 	self_modifier = {
 		species_leader_exp_gain = 1
@@ -329,6 +350,13 @@ RG_leader_trait_admiral_gray = {
 		COUNCIL = no
 		TIER = none
 	}
+	triggered_self_modifier = {
+		potential = {
+			always = yes
+		}
+		leader_skill_levels = 1
+		mult = trigger:has_skill
+	}
 	self_modifier = {
 		species_leader_exp_gain = 1
 	}
@@ -353,7 +381,6 @@ RG_leader_trait_admiral_gray = {
 }
 
 RG_leader_trait_admiral_nanorebuild_gray = {
-	#3级舰长（默认
 	cost = 0
 	inline_script = {
 		script = trait/icon_psionic
@@ -388,6 +415,13 @@ RG_leader_trait_scientist_gray = {
 		RARITY = paragon
 		COUNCIL = no
 		TIER = none
+	}
+	triggered_self_modifier = {
+		potential = {
+			always = yes
+		}
+		leader_skill_levels = 1
+		mult = trigger:has_skill
 	}
 	self_modifier = {
 		species_leader_exp_gain = 1
