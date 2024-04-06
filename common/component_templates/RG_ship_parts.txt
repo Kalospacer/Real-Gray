@@ -450,7 +450,6 @@ weapon_component_template = {
 	prerequisites = {
 		"tech_gray_juggernaut_8"
 	}
-	hidden = yes
 	ship_limit = 1
 	ai_weight = {
 		weight = 0
