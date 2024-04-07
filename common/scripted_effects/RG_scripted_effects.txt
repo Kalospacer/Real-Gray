@@ -10,7 +10,7 @@ rg_create_gray_species = {
 	if = {
 		limit = {
 			NOT = {
-				exists = event_target:gray_species
+				exists = event_target:gray_species_target
 			}
 		}
 		if = {
@@ -21,25 +21,25 @@ rg_create_gray_species = {
 				}
 			}
 			create_species = {
-				name = GRAY_SPECIES
-				plural = GRAY_SPECIES
+				name = gray_species
+				plural = gray_species
 				class = ART
 				portrait = GrayTempest06
 				namelist = ART1
 				effect = {
-					save_global_event_target_as = gray_species
+					save_global_event_target_as = gray_species_target
 				}
 			}
 		}
 		else = {
 			create_species = {
-				name = GRAY_SPECIES
-				plural = GRAY_SPECIES
+				name = gray_species
+				plural = gray_species
 				class = ART
 				portrait = @gray_portrait
 				namelist = ART1
 				effect = {
-					save_global_event_target_as = gray_species
+					save_global_event_target_as = gray_species_target
 				}
 			}
 		}

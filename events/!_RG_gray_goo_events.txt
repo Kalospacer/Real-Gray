@@ -212,11 +212,6 @@ country_event = {
 		room = "ethic_spaceship_room"
 	}
 	is_triggered_only = yes
-	immediate = {
-		event_target:gray_governor = {
-			set_owner = event_target:rg_gray_country
-		}
-	}
 	option = {
 		name = graygoo.405.a
 		hidden_effect = {

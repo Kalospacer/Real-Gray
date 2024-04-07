@@ -116,7 +116,7 @@ RG_graygoo_capitalship = {
 	icon = ship_size_military_16
 	base_buildtime = @titan_build_time
 	can_have_federation_design = yes
-	enable_default_design = no	#if yes, countries will have an auto-generated design at start
+	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
 	enable_3dview_in_ship_browser = yes	#if yes, ship design will have a 3d view in the ship browser
 	is_designable = yes
 	default_behavior = colossus
@@ -196,6 +196,114 @@ RG_graygoo_capitalship = {
 	min_upgrade_cost = {
 		alloys = 8
 	}
+
+	empire_limit = 1
+}
+
+RG_gray_juggernaut = {
+	max_speed = 100
+	entity = "grey_tempesttw_juggernaut_entity"
+	acceleration = 0.2
+	rotation_speed = 0.15
+	collision_radius = @juggernaut_collision_radius
+	modifier = {
+		ship_evasion_add = 100
+		ship_armor_add = 108000
+		ship_shield_add = 108000
+		ship_weapon_damage = 2
+		starbase_shipyard_capacity_add = 12
+		ship_cloaking_detection_add = 5
+	}
+	ship_modifier = {
+		ship_disengage_chance_reduction = 8
+		ships_upkeep_mult = -1
+		ship_shield_hardening_add = 2
+		ship_armor_hardening_add = 2
+	}
+	max_hitpoints = 108000
+	base_buildtime = @juggernaut_build_time
+	combat_size_multiplier = 5
+	size_multiplier = 32
+	fleet_slot_size = 32
+	section_slots = {
+		"core" = {
+			locator = "part1"
+		}
+		"behind" = {
+			locator = "part2"
+		}
+	}
+	num_target_locators = 16
+	can_have_federation_design = no
+	enable_default_design = yes	#if yes, countries will have an auto-generated design at start
+	enable_3dview_in_ship_browser = yes	#if yes, ship design will have a 3d view in the ship browser
+	icon_frame = 7	#probably unused, but mobile starbases are special
+	icon = ship_size_military_64
+	ship_class_icon_frame = 35
+	default_behavior = colossus
+	is_designable = yes
+	prerequisites = {
+		"tech_gray_juggernaut_8"
+	}
+	class = shipclass_starbase
+	construction_type = starbase_shipyard
+	potential_construction = {
+		OR = {
+			is_scope_type = starbase
+			AND = {
+				is_scope_type = megastructure
+				OR = {
+					is_megastructure_type = mega_shipyard_3
+					is_megastructure_type = mega_shipyard_restored
+				}
+			}
+		}
+	}
+
+	possible_construction = {
+		custom_tooltip = {
+			fail_text = starbase_citadel_trigger
+			OR = {
+				AND = {
+					is_scope_type = megastructure
+					OR = {
+						is_megastructure_type = mega_shipyard_3
+						is_megastructure_type = mega_shipyard_restored
+					}
+				}
+				AND = {
+					is_scope_type = starbase
+					has_starbase_size >= starbase_citadel
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = starbase_colossal_yards_trigger
+			OR = {
+				AND = {
+					is_scope_type = megastructure
+					OR = {
+						is_megastructure_type = mega_shipyard_3
+						is_megastructure_type = mega_shipyard_restored
+					}
+				}
+				AND = {
+					is_scope_type = starbase
+					has_starbase_building = colossus_yards
+				}
+			}
+		}
+	}
+	required_component_set = "power_core"
+	required_component_set = "sensor_components"
+	required_component_set = "combat_computers"
+	required_component_set = "ftl_components"
+	required_component_set = "thruster_components"
+	required_component_set = "science_cloaking_components"
+	required_component_set = "ship_aura_components"
+	required_component_set = "ship_aura_components"
+	required_component_set = "ship_aura_components"
+	required_component_set = "ship_aura_components"
 
 	empire_limit = 1
 }
@@ -569,68 +677,6 @@ RG_graygoo_Buff = {
 	min_upgrade_cost = {
 		alloys = 8
 	}
-}
-
-RG_gray_juggernaut = {
-	max_speed = 100
-	entity = "grey_tempesttw_juggernaut_entity"
-	acceleration = 0.2
-	rotation_speed = 0.15
-	collision_radius = @juggernaut_collision_radius
-	modifier = {
-		ship_evasion_add = 100
-		ship_armor_add = 108000
-		ship_shield_add = 108000
-		ship_weapon_damage = 2
-		starbase_shipyard_capacity_add = 12
-		ship_cloaking_detection_add = 5
-	}
-	ship_modifier = {
-		ship_disengage_chance_reduction = 8
-		ships_upkeep_mult = -1
-		ship_shield_hardening_add = 2
-		ship_armor_hardening_add = 2
-	}
-	max_hitpoints = 108000
-	base_buildtime = @juggernaut_build_time
-	combat_size_multiplier = 5
-	size_multiplier = 32
-	fleet_slot_size = 32
-	section_slots = {
-		"core" = {
-			locator = "part1"
-		}
-		"behind" = {
-			locator = "part2"
-		}
-	}
-	num_target_locators = 16
-	can_have_federation_design = no
-	enable_default_design = no	#if yes, countries will have an auto-generated design at start
-	enable_3dview_in_ship_browser = yes	#if yes, ship design will have a 3d view in the ship browser
-	icon_frame = 7	#probably unused, but mobile starbases are special
-	icon = ship_size_military_64
-	ship_class_icon_frame = 35
-	default_behavior = colossus
-	is_designable = yes
-	prerequisites = {
-		"tech_gray_juggernaut_8"
-	}
-	class = shipclass_starbase
-	construction_type = starbase_shipyard
-	possible_construction = {
-		always = no
-	}
-	required_component_set = "power_core"
-	required_component_set = "sensor_components"
-	required_component_set = "combat_computers"
-	required_component_set = "ftl_components"
-	required_component_set = "thruster_components"
-	required_component_set = "science_cloaking_components"
-	required_component_set = "ship_aura_components"
-	required_component_set = "ship_aura_components"
-	required_component_set = "ship_aura_components"
-	required_component_set = "ship_aura_components"
 }
 
 # Armed Transport

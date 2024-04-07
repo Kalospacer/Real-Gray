@@ -14,7 +14,7 @@
 # possible										ethics/government requirements; see common/governments/readme_requirements.txt
 # gender = yes/no (default: yes)				whether the species has a gender
 # portrait_modding yes/no (default: yes)		whether the portrait can be modified with e.g. genemodding or robomodding
-GRAY_SPECIES = {
+gray_species = {
 	archetype = OTHER
 
 	playable = { always = no }
