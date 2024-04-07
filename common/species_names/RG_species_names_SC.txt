@@ -1,8 +1,0 @@
-﻿GRAY_SPECIES = {
-	language = "l_simp_chinese"
-	name = "灰风"
-	plural = "灰风"
-	home_planet = ?
-	home_system = ?
-	name_list = "RG"
-}
