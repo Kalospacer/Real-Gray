@@ -2,10 +2,121 @@ portraits = {
 	Gray = {
 		texturefile = "gfx/models/portraits/Gray.png"
 	}
-	Gray01 = {
-		texturefile = "gfx/models/portraits/Gray01.png"
+	rg_machine_maid01 = {
+		texturefile = "gfx/models/portraits/mamaid01.png"
 	}
-	Gray02 = {
-		texturefile = "gfx/models/portraits/Gray02.png"
+	rg_machine_maid02 = {
+		texturefile = "gfx/models/portraits/mamaid02.png"
+	}
+	rg_machine_maid03 = {
+		texturefile = "gfx/models/portraits/mamaid03.png"
+	}
+	rg_machine_maid04 = {
+		texturefile = "gfx/models/portraits/mamaid04.png"
+	}
+	rg_machine_maid05 = {
+		texturefile = "gfx/models/portraits/mamaid05.png"
+	}
+	rg_machine_maid06 = {
+		texturefile = "gfx/models/portraits/mamaid06.png"
+	}
+	rg_machine_maid07 = {
+		texturefile = "gfx/models/portraits/mamaid07.png"
+	}
+	rg_machine_maid08 = {
+		texturefile = "gfx/models/portraits/mamaid08.png"
+	}
+	rg_machine_maid09 = {
+		texturefile = "gfx/models/portraits/mamaid09.png"
+	}
+}
+
+portrait_groups = {
+	rg_machine_maid = {
+		default = rg_machine_maid01
+		game_setup = { #will run with a limited country scope. species and government is set but the country does not actually exist
+			add = {
+				portraits = {
+					rg_machine_maid01
+					rg_machine_maid02
+					rg_machine_maid03
+					rg_machine_maid04
+					rg_machine_maid05
+					rg_machine_maid06
+					rg_machine_maid07
+					rg_machine_maid08
+					rg_machine_maid09
+				}
+			}
+		}
+
+		#species scope
+		species = { #generic portrait for a species
+			add = {
+				portraits = {
+					rg_machine_maid01
+					rg_machine_maid02
+					rg_machine_maid03
+					rg_machine_maid04
+					rg_machine_maid05
+					rg_machine_maid06
+					rg_machine_maid07
+					rg_machine_maid08
+					rg_machine_maid09
+				}
+			}
+		}
+
+		#pop scope
+		pop = { #for a specific pop
+			add = {
+				portraits = {
+					rg_machine_maid01
+					rg_machine_maid02
+					rg_machine_maid03
+					rg_machine_maid04
+					rg_machine_maid05
+					rg_machine_maid06
+					rg_machine_maid07
+					rg_machine_maid08
+					rg_machine_maid09
+				}
+			}
+		}
+
+		#leader scope
+		leader = { #scientists, generals, admirals, governor
+			add = {
+				portraits = {
+					rg_machine_maid01
+					rg_machine_maid02
+					rg_machine_maid03
+					rg_machine_maid04
+					rg_machine_maid05
+					rg_machine_maid06
+					rg_machine_maid07
+					rg_machine_maid08
+					rg_machine_maid09
+				}
+			}
+		}
+
+
+		#leader scope
+		ruler = {
+			add = {
+				portraits = {
+					rg_machine_maid01
+					rg_machine_maid02
+					rg_machine_maid03
+					rg_machine_maid04
+					rg_machine_maid05
+					rg_machine_maid06
+					rg_machine_maid07
+					rg_machine_maid08
+					rg_machine_maid09
+				}
+			}
+		}
 	}
 }

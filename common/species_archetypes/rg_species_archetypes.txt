@@ -1,0 +1,4 @@
+RG_MACHINE = {
+	species_trait_points = 10
+	species_max_traits = 6
+}

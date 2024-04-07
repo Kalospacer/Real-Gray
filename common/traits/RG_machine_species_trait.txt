@@ -1,0 +1,56 @@
+rg_machine_maid_trait = {
+	cost = {
+		base = 0
+	}
+	# custom_tooltip = rg_machine_maid_trait_effect
+	initial = no
+	species_potential_add = { always = no }
+	species_possible_remove = { always = no }
+	species_possible_merge_add = { always = no }
+	species_possible_merge_remove = { always = no }
+	randomized = no
+	allowed_archetypes = { MACHINE }
+	sorting_priority = 20
+	potential_crossbreeding_chance = 1.0
+
+	opposites = {
+	}
+
+	assembling_modifier = {
+		planet_pop_assemblers_nanites_upkeep_add = 0.1
+	}
+	
+	# 在灰风主人国家工作提供加成
+	triggered_pop_modifier = {
+		potential = {
+			exists = owner
+			owner = { is_same_value = event_target:gray_owner }
+		}
+		planet_jobs_produces_mult = 1.1
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+	
+	assembly_score = {
+		modifier = {
+			add = 3
+			from.owner = { is_same_value = event_target:gray_owner }
+		}
+		modifier = {
+			mult = 0
+			from.owner = { 
+				NOT = {
+					is_same_value = event_target:gray_owner
+				}
+			}
+		}
+	
+	
+	}
+	
+	slave_cost = {
+		energy = 1000
+	}
+}
