@@ -8,5 +8,5 @@ tags={
 }
 name="Real Gray"
 picture="thumbnail.png"
-supported_version="3.10.*"
+supported_version="3.11.*"
 remote_file_id="2136166095"
