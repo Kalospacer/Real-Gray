@@ -1069,42 +1069,6 @@ country_event = {
 	}
 }
 
-# looping check for grayport
-country_event = {
-	id = rg_event.24
-	hide_window = yes
-	is_triggered_only = yes
-	trigger = {
-		is_same_value = event_target:gray_owner
-	}
-	immediate = {
-		random_owned_leader = {
-			limit = {
-				has_leader_flag = gray_governor
-			}
-			if = {
-				limit = {
-					owner = {
-						OR = {
-							has_global_flag = has_wsg_mod
-							has_global_flag = kdc_event_mod_active
-						}
-					}
-				}
-				set_gray_portrait = yes
-			}
-			else = {
-				rg_set_gray_portrait = yes
-			}
-		}
-		country_event = {
-			id = rg_event.24
-			years = 1
-		}
-		# *THIS* looping check
-	}
-}
-
 # 拆毁工厂小灰通讯
 country_event = {
 	id = rg_event.200

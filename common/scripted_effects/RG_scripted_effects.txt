@@ -2245,11 +2245,6 @@ rg_gray_country_after_init = {
 	event_target:rg_gray_country = {
 		establish_communications_no_message = event_target:gray_owner
 	}
-	# 年检立绘并替换回正常立绘
-	country_event = {
-		id = rg_event.24
-	}
-
 }
 
 rg_timeline_attract_field_init = {

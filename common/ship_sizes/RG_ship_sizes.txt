@@ -123,55 +123,8 @@ RG_graygoo_capitalship = {
 	combat_disengage_chance = 1.25
 	class = shipclass_military
 	construction_type = starbase_shipyard
-	# possible_construction = {
-	# 	always = no
-	# }
-	potential_construction = {
-		OR = {
-			is_scope_type = starbase
-			AND = {
-				is_scope_type = megastructure
-				OR = {
-					is_megastructure_type = mega_shipyard_3
-					is_megastructure_type = mega_shipyard_restored
-				}
-			}
-		}
-	}
-
 	possible_construction = {
-		custom_tooltip = {
-			fail_text = starbase_citadel_trigger
-			OR = {
-				AND = {
-					is_scope_type = megastructure
-					OR = {
-						is_megastructure_type = mega_shipyard_3
-						is_megastructure_type = mega_shipyard_restored
-					}
-				}
-				AND = {
-					is_scope_type = starbase
-					has_starbase_size >= starbase_citadel
-				}
-			}
-		}
-		custom_tooltip = {
-			fail_text = starbase_colossal_yards_trigger
-			OR = {
-				AND = {
-					is_scope_type = megastructure
-					OR = {
-						is_megastructure_type = mega_shipyard_3
-						is_megastructure_type = mega_shipyard_restored
-					}
-				}
-				AND = {
-					is_scope_type = starbase
-					has_starbase_building = colossus_yards
-				}
-			}
-		}
+		always = no
 	}
 	combat_size_multiplier = 4
 	prerequisites = {
@@ -196,8 +149,6 @@ RG_graygoo_capitalship = {
 	min_upgrade_cost = {
 		alloys = 8
 	}
-
-	empire_limit = 1
 }
 
 RG_gray_juggernaut = {

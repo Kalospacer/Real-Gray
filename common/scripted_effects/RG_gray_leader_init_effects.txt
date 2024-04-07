@@ -598,7 +598,7 @@ rg_gray_country_leader_init = {
 	create_leader = {
 		# 只用作看板娘
 		class = official
-		species = root
+		species = event_target:gray_species
 		name = "NAME_Gray"
 		gender = female
 		immortal = yes

@@ -59,7 +59,6 @@ on_yearly_pulse_country = {
 		rg_event.17
 		rg_event.18
 		rg_event.20
-		rg_event.24
 	}
 }
 
