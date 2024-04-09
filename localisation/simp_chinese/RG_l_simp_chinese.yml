@@ -3,6 +3,8 @@
  GRAY_SPECIES:0 "$NAME_Gray$"
  RG_MACHINE:0 "§Y纳米构造体§!"
  gray_army_desc:0 "$NAME_Gray$和她的纳米作战母舰，可以轻易扫平一颗星球"
+ rg_machine_maid_trait:0 "§Y菠萝包网络§!"
+ rg_machine_maid_trait_desc:0 "这种机械体似乎是由纳米机械所构造的。她们只有有限的个体智能，但每个个体似乎都将心智互相链接组成了一个强大的意识网络。个体的数量越多她们的意识就越强大。"
  RG_leader_trait_admiral_gray:0 "§Y纳米机器个体§!"
  RG_leader_trait_admiral_gray_desc:0 "$NAME_Gray$本质上是由千千万万纳米机械所组成的个体，这让她可以自由变换形态重组或快速修复自身。可不要让她做奇怪的事情哦？"
  RG_leader_trait_admiral_gray_1:0 "§Y纳米机器个体§!"

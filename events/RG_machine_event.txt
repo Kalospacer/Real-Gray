@@ -1,0 +1,42 @@
+namespace = rg_maid
+country_event = {
+	id = rg_maid.1
+	hide_window = yes
+	is_triggered_only = yes
+	immediate = {
+		if = {
+			limit = {
+				NOT = {
+					exist = event_target:rg_maid_species
+				}
+			}
+			create_species = {
+				#is_mod = yes
+				name = 纳米构造体
+				plural = root
+				class = RG_MACHINE
+				portrait = "rg_machine_maid"
+				traits = {
+					trait = trait_machine_unit
+					trait = rg_machine_maid_trait
+					trait = trait_robot_mass_produced
+				}
+				can_be_modified = yes
+				homeworld = root
+				namelist = root
+				gender = root
+				effect = {
+					save_event_target_as = rg_maid_species
+				}
+			}
+		}
+		capital_scope = {
+			while = {
+				count = 5
+				create_pop = {
+					species = event_target:rg_maid_species
+				}
+			}
+		}
+	}
+}

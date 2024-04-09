@@ -32,17 +32,20 @@ GRAY_SPECIES = {
 RG_MACHINE = {
 	archetype = MACHINE
 
-	playable = { always = no }
+	playable = no
 	randomized = no
 	# possible = { always = yes }
 	# possible_secondary = { always = no text = SECONDARY_SPECIES_CLASS_INVALID }
 
 	gender = no
 	use_climate_preference = no
-	portrait_modding = no
+	portrait_modding = yes
 
 	leader_age_min = 2
 	leader_age_max = 10
+
+	species_trait_points = 10
+	species_max_traits = 6
 
 	custom_portraits = { # use custom_portraits instead of portraits so we can put them after the custom_portraits above
 		portraits = {
