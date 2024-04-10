@@ -223,7 +223,7 @@ rg_fallen_machine = {
 			while = {
 				count = 94
 				create_pop = {
-					species = owner_main_species
+					species = event_target:rg_scion_slave.species
 				}
 			}
 
@@ -301,6 +301,12 @@ rg_fallen_machine = {
 			}
 			while = {
 				count = 20
+				create_pop = {
+					species = event_target:rg_scion_slave.species
+				}
+			}
+			while = {
+				count = 20
 				create_army = {
 					name = random
 					owner = event_target:rg_scion_fe
@@ -351,6 +357,12 @@ rg_fallen_machine = {
 				count = 22
 				create_pop = {
 					species = owner_main_species
+				}
+			}
+			while = {
+				count = 10
+				create_pop = {
+					species = event_target:rg_scion_slave.species
 				}
 			}
 			while = {
