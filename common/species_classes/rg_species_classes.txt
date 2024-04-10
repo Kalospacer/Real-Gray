@@ -44,9 +44,6 @@ RG_MACHINE = {
 	leader_age_min = 2
 	leader_age_max = 10
 
-	species_trait_points = 10
-	species_max_traits = 6
-
 	custom_portraits = { # use custom_portraits instead of portraits so we can put them after the custom_portraits above
 		portraits = {
 			"rg_machine_maid"

@@ -1,0 +1,236 @@
+# Home System - Machine
+rg_fallen_machine = {
+	usage = fallen_empire_init
+	name = 芬里尔III
+	class = "rl_standard_stars"
+
+	flags = { ring_world_built }
+
+	init_effect = {
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = -90
+			orbit_distance = 45
+		}
+
+		create_fe_citadel = yes
+	}
+
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 0
+	}
+
+	change_orbit = 45
+
+	planet = {
+		class = "pc_ringworld_tech"
+		name = 外环
+		orbit_angle = -30
+		orbit_distance = 0
+	}
+
+	planet = {
+		class = "pc_ringworld_seam"
+		name = 泡芙碗
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = 菠萝包工厂
+		orbit_angle = 30
+		orbit_distance = 0
+		deposit_blockers = none
+		modifiers = none
+
+		init_effect = {
+
+			create_cluster = {
+				id = fe_mach_cluster
+				radius = 80
+				center = this.solar_system
+			}
+
+			set_planet_flag = fallen_empire_world
+			prevent_anomaly = yes
+			set_owner = root
+			set_controller = root
+			set_capital = yes
+
+			add_building = building_ancient_control_center
+			add_building = building_nourishment_center
+			add_building = building_nourishment_center
+			add_building = building_ancient_cryo_chamber
+			add_building = building_ancient_cryo_chamber
+			add_building = building_ancient_cryo_chamber
+			add_building = building_ancient_cryo_chamber
+			add_building = building_ancient_cryo_chamber
+			add_building = building_ancient_cryo_chamber
+			add_building = building_ancient_cryo_chamber
+			add_building = building_ancient_cryo_chamber
+			add_building = building_ancient_cryo_chamber
+
+			while = {
+				count = 5
+				add_district = district_rw_science
+			}
+			while = {
+				count = 5
+				add_district = district_rw_nexus
+			}
+			while = {
+				count = 105
+				create_pop = {
+					species = owner_main_species
+				}
+			}
+			create_fallen_empire_starting_navy = yes
+
+			while = {
+				count = 40
+				create_army = {
+					name = random
+					owner = root
+					species = root
+					type = "gray_army"
+				}
+			}
+		}
+	}
+
+	planet = {
+		class = "pc_ringworld_tech"
+		name = 中环
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+
+	planet = {
+		class = "pc_ringworld_seam"
+		name = 长面包机
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = 可颂工厂
+		orbit_angle = 30
+		orbit_distance = 0
+		deposit_blockers = none
+		modifiers = none
+
+		init_effect = {
+			set_planet_flag = fallen_empire_world
+			prevent_anomaly = yes
+			set_owner = ROOT
+
+			add_building = building_ancient_control_center
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+
+			while = {
+				count = 5
+				add_district = district_rw_nexus
+			}
+			while = {
+				count = 50
+				create_pop = {
+					species = owner_main_species
+				}
+			}
+			while = {
+				count = 20
+				create_army = {
+					name = random
+					owner = root
+					species = root
+					type = "gray_army"
+				}
+			}
+		}
+	}
+
+	planet = {
+		class = "pc_ringworld_tech"
+		name = 内环
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+
+	planet = {
+		class = "pc_ringworld_seam"
+		name = 蔗糖核心
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = 霜糖工厂
+		orbit_angle = 30
+		orbit_distance = 0
+		deposit_blockers = none
+		modifiers = none
+
+		init_effect = {
+			set_planet_flag = fallen_empire_world
+			prevent_anomaly = yes
+			set_owner = ROOT
+
+			add_building = building_ancient_control_center
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+
+			while = {
+				count = 5
+				add_district = district_rw_generator
+			}
+			while = {
+				count = 22
+				create_pop = {
+					species = owner_main_species
+				}
+			}
+			while = {
+				count = 10
+				create_army = {
+					name = random
+					owner = root
+					species = root
+					type = "gray_army"
+				}
+			}
+		}
+	}
+
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_machine_2"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_machine_3"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_machine_4"
+	}
+	neighbor_system = {
+		distance = { min = 0 max = 50 }
+		initializer = "fallen_machine_5"
+	}
+}

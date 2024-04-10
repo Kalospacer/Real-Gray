@@ -11,9 +11,7 @@ country_event = {
 				}
 			}
 			create_species = {
-				#is_mod = yes
 				name = 纳米构造体
-				plural = root
 				class = RG_MACHINE
 				portrait = "rg_machine_maid"
 				traits = {
@@ -22,9 +20,7 @@ country_event = {
 					trait = trait_robot_mass_produced
 				}
 				can_be_modified = yes
-				homeworld = root
-				namelist = root
-				gender = root
+				namelist = root.species
 				effect = {
 					save_event_target_as = rg_maid_species
 				}

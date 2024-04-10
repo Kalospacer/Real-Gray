@@ -1,0 +1,177 @@
+rg_create_fallen_empire_reinforcements = {
+	create_fleet = {
+		effect = {
+			set_owner = prev.owner
+			while = {
+				count = 4
+				create_fallen_empire_large_ship = yes
+			}
+			while = {
+				count = 8
+				create_fallen_empire_small_ship = yes
+			}
+			random_list = {
+				25 = {
+					set_location = {
+						target = prev
+						distance = 30
+						angle = random
+					}
+				}
+				25 = {
+					set_location = {
+						target = prev
+						distance = 45
+						angle = random
+					}
+				}
+				25 = {
+					set_location = {
+						target = prev
+						distance = 60
+						angle = random
+					}
+				}
+				25 = {
+					set_location = {
+						target = prev
+						distance = 75
+						angle = random
+					}
+				}
+			}
+		}
+	}
+}
+
+rg_create_fallen_empire_fleet = {
+	owner = {
+		create_leader = {
+			class = commander
+			species = owner_main_species
+			name = random
+			skill = 10
+			leader_age_min = 25
+			leader_age_max = 45
+		}
+	}
+	create_fleet = {
+		effect = {
+			set_owner = prev.owner
+			while = {
+				count = 8
+				create_fallen_empire_large_ship = yes
+			}
+			while = {
+				count = 18
+				create_fallen_empire_small_ship = yes
+			}
+			random_list = {
+				25 = {
+					set_location = {
+						target = prev
+						distance = 30
+						angle = random
+					}
+				}
+				25 = {
+					set_location = {
+						target = prev
+						distance = 45
+						angle = random
+					}
+				}
+				25 = {
+					set_location = {
+						target = prev
+						distance = 60
+						angle = random
+					}
+				}
+				25 = {
+					set_location = {
+						target = prev
+						distance = 75
+						angle = random
+					}
+				}
+			}
+		}
+	}
+	last_created_fleet = { assign_leader = last_created_leader }
+}
+
+rg_create_fallen_empire_starting_navy = {
+	create_fallen_empire_fleet = yes
+	create_fallen_empire_fleet = yes
+	random = {
+		chance = 33
+		create_fallen_empire_fleet = yes
+	}
+	if = {
+		limit = {
+			host_has_dlc = "Apocalypse"
+		}
+		random = {
+			chance = 10
+			create_fleet = {
+				effect = {
+					set_owner = prev.owner
+					create_fallen_empire_colossus = yes
+					set_location = {
+						target = prev
+						distance = 30
+						angle = random
+					}
+				}
+			}
+		}
+	}
+	random = {
+		chance = 25
+		create_fleet = {
+			effect = {
+				set_owner = prev.owner
+				create_fallen_empire_titan = yes
+				set_location = {
+					target = prev
+					distance = 20
+					angle = random
+				}
+			}
+		}
+	}
+	create_fleet = {
+		effect = {
+			set_owner = prev.owner
+			create_fallen_empire_construction_ship = yes
+			set_location = {
+				target = prev
+				distance = 60
+				angle = random
+			}
+		}
+	}
+	create_fleet = {
+		effect = {
+			set_owner = prev.owner
+			create_fallen_empire_construction_ship = yes
+			set_location = {
+				target = prev
+				distance = 80
+				angle = random
+			}
+		}
+	}
+	create_fleet = {
+		effect = {
+			set_owner = prev.owner
+			create_fallen_empire_construction_ship = yes
+			set_location = {
+				target = prev
+				distance = 100
+				angle = random
+			}
+		}
+	}
+}
