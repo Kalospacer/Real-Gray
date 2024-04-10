@@ -1,0 +1,9 @@
+spriteTypes = {
+
+	spriteType = {
+		name = "GFX_origin_rg_scion"
+		texturefile = "gfx/event_pictures/origins/origin_rg_scion.dds"
+		alwaystransparent = yes
+	}
+	
+}

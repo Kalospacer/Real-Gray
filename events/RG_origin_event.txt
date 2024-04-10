@@ -31,7 +31,6 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		save_global_event_target_as = rg_scion_slave
 		set_country_flag = first_contact_event
 		set_country_flag = Story2 # Already encountered spacefarers
 		# Spawn mini-FE if player turned off Fallen Empires but picked this Origin anyway...

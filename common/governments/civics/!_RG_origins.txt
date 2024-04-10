@@ -20,7 +20,7 @@ origin_rg_gray = {
 rg_origin_scion = {
 	is_origin = yes
 	icon = "gfx/interface/icons/origins/origins_scion_1.dds"
-	picture = GFX_origin_scion
+	picture = GFX_origin_rg_scion
 	advanced_start = yes
 	max_once_global = yes
 

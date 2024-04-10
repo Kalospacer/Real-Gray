@@ -176,7 +176,7 @@ rg_fallen_machine = {
 			while = {
 				count = 105
 				create_pop = {
-					species = event_target:rg_scion_slave.species
+					species = owner_main_species
 				}
 			}
 
@@ -197,16 +197,16 @@ rg_fallen_machine = {
 						has_country_flag = rg_scion_needs_fe
 					}
 					remove_country_flag = rg_scion_needs_fe
-					save_event_target_as = rg_scion_gate
+					save_event_target_as = rg_scion_slave
 				}
 				set_country_flag = rg_scion_master
 				save_event_target_as = rg_scion_master
 				add_opinion_modifier = {
-					who = event_target:rg_scion_gate
+					who = event_target:rg_scion_slave
 					modifier = opinion_scion
 				}
 				# country_event = { id = origin.20 days = 9000 random = 9000 }
-				event_target:rg_scion_gate = {
+				event_target:rg_scion_slave = {
 					establish_communications_no_message = event_target:rg_scion_fe
 					set_subject_of = {
 						who = event_target:rg_scion_fe
@@ -246,7 +246,6 @@ rg_fallen_machine = {
 			orbit_angle = -90
 			orbit_distance = 45
 		}
-
 		rg_create_fe_citadel = yes
 	}
 

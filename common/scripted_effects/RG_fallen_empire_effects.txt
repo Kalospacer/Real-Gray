@@ -271,6 +271,7 @@ rg_create_fe_citadel = {
 		building = "dark_matter_listening_post"
 
 		effect = {
+			set_owner = event_target:rg_scion_fe
 			while = {
 				count = 4
 				rg_create_fallen_empire_platform = yes
