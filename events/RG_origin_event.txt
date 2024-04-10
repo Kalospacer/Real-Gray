@@ -1,0 +1,95 @@
+namespace = rg_origin
+
+########
+# SCION
+########
+
+country_event = {
+	id = rg_origin.1
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		AND = {
+			has_origin = rg_origin_scion
+			# NOT = { has_global_flag = rg_origin_l_cluster }
+		}
+	}
+
+	immediate = {
+		# Scion
+		country_event = { id = rg_origin.5 }
+	}
+}
+
+
+# Setup
+country_event = {
+	id = rg_origin.5
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		save_global_event_target_as = rg_scion_slave
+		set_country_flag = first_contact_event
+		set_country_flag = Story2 # Already encountered spacefarers
+		# Spawn mini-FE if player turned off Fallen Empires but picked this Origin anyway...
+		if = {
+			limit = {
+				NOT = {
+					exist = event_target:rg_scion_fe
+				}
+			}
+			set_country_flag = rg_scion_needs_fe
+			random_system = {
+				limit = { has_owner = no }
+				spawn_system = { initializer = "rg_fallen_machine" }
+			}
+			add_extra_hyperlane_to_spawned_system_effect = yes
+		}
+		if = {
+			limit = {
+				exists = event_target:rg_scion_master
+			}
+			rg_create_scion_wormhole_link = yes
+			capital_scope = {
+				solar_system = {
+					spawn_megastructure = {
+						type = lgate_base
+						orbit_angle = 225
+						orbit_distance = 30
+					}
+				}
+			}
+		}
+	}
+}
+
+# Intro Diplomatic Message
+country_event = {
+	id = rg_origin.10
+	title = TRANSMISSION
+
+	desc = {
+		text = "origin.10.b.desc"
+	}
+	diplomatic = yes
+	is_triggered_only = yes
+
+	picture_event_data = {
+		portrait = event_target:rg_scion_master
+		planet_background = event_target:rg_scion_master
+		graphical_culture = event_target:rg_scion_master
+		city_level = event_target:rg_scion_master
+		room = event_target:rg_scion_master
+	}
+
+	immediate = {
+		overlord = { save_event_target_as = rg_scion_master }
+	}
+
+	option = {
+		name = origin.10.b
+	}
+}

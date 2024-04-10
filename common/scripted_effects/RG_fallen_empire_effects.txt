@@ -4,11 +4,11 @@ rg_create_fallen_empire_reinforcements = {
 			set_owner = prev.owner
 			while = {
 				count = 4
-				create_fallen_empire_large_ship = yes
+				rg_create_fallen_empire_large_ship = yes
 			}
 			while = {
 				count = 8
-				create_fallen_empire_small_ship = yes
+				rg_create_fallen_empire_small_ship = yes
 			}
 			random_list = {
 				25 = {
@@ -60,11 +60,11 @@ rg_create_fallen_empire_fleet = {
 			set_owner = prev.owner
 			while = {
 				count = 8
-				create_fallen_empire_large_ship = yes
+				rg_create_fallen_empire_large_ship = yes
 			}
 			while = {
 				count = 18
-				create_fallen_empire_small_ship = yes
+				rg_create_fallen_empire_small_ship = yes
 			}
 			random_list = {
 				25 = {
@@ -102,11 +102,11 @@ rg_create_fallen_empire_fleet = {
 }
 
 rg_create_fallen_empire_starting_navy = {
-	create_fallen_empire_fleet = yes
-	create_fallen_empire_fleet = yes
+	rg_create_fallen_empire_fleet = yes
+	rg_create_fallen_empire_fleet = yes
 	random = {
 		chance = 33
-		create_fallen_empire_fleet = yes
+		rg_create_fallen_empire_fleet = yes
 	}
 	if = {
 		limit = {
@@ -117,7 +117,7 @@ rg_create_fallen_empire_starting_navy = {
 			create_fleet = {
 				effect = {
 					set_owner = prev.owner
-					create_fallen_empire_colossus = yes
+					rg_create_fallen_empire_colossus = yes
 					set_location = {
 						target = prev
 						distance = 30
@@ -132,7 +132,7 @@ rg_create_fallen_empire_starting_navy = {
 		create_fleet = {
 			effect = {
 				set_owner = prev.owner
-				create_fallen_empire_titan = yes
+				rg_create_fallen_empire_titan = yes
 				set_location = {
 					target = prev
 					distance = 20
@@ -144,7 +144,7 @@ rg_create_fallen_empire_starting_navy = {
 	create_fleet = {
 		effect = {
 			set_owner = prev.owner
-			create_fallen_empire_construction_ship = yes
+			rg_create_fallen_empire_construction_ship = yes
 			set_location = {
 				target = prev
 				distance = 60
@@ -155,7 +155,7 @@ rg_create_fallen_empire_starting_navy = {
 	create_fleet = {
 		effect = {
 			set_owner = prev.owner
-			create_fallen_empire_construction_ship = yes
+			rg_create_fallen_empire_construction_ship = yes
 			set_location = {
 				target = prev
 				distance = 80
@@ -166,7 +166,7 @@ rg_create_fallen_empire_starting_navy = {
 	create_fleet = {
 		effect = {
 			set_owner = prev.owner
-			create_fallen_empire_construction_ship = yes
+			rg_create_fallen_empire_construction_ship = yes
 			set_location = {
 				target = prev
 				distance = 100
@@ -174,4 +174,136 @@ rg_create_fallen_empire_starting_navy = {
 			}
 		}
 	}
+}
+
+rg_create_fallen_empire_platform = {
+	if = {
+		limit = {
+			owner = { has_authority = auth_machine_intelligence }
+		}
+		create_ship = {
+			name = random
+			design = "NAME_Gray_Sigma"
+			graphical_culture = owner
+		}
+	}
+}
+
+rg_create_fallen_empire_colossus = {
+	if = {
+		limit = {
+			owner = { has_authority = auth_machine_intelligence }
+		}
+		create_ship = {
+			name = random
+			design = "NAME_Gray_Omega"
+			graphical_culture = owner
+		}
+	}
+}
+
+rg_create_fallen_empire_titan = {
+	if = {
+		limit = {
+			owner = { has_authority = auth_machine_intelligence }
+		}
+		create_ship = {
+			name = random
+			design = "NAME_Gray_Alpha"
+			graphical_culture = owner
+		}
+	}
+}
+
+rg_create_fallen_empire_large_ship = {
+	if = {
+		limit = {
+			owner = { has_authority = auth_machine_intelligence }
+		}
+		create_ship = {
+			name = random
+			design = "NAME_Gray_Beta"
+			graphical_culture = owner
+		}
+	}
+}
+
+rg_create_fallen_empire_small_ship = {
+	if = {
+		limit = {
+			owner = { has_authority = auth_machine_intelligence }
+		}
+		create_ship = {
+			name = random
+			design = "NAME_Gray_Gamma"
+			graphical_culture = owner
+		}
+	}
+}
+
+rg_create_fallen_empire_construction_ship = {
+	if = {
+		limit = {
+			owner = { has_authority = auth_machine_intelligence }
+		}
+		create_ship = {
+			name = random
+			design = "NAME_Gray_Theta"
+			graphical_culture = owner
+		}
+	}
+}
+
+rg_create_fe_citadel = {
+	create_starbase = {
+		size = "starbase_citadel"
+
+		module = "shipyard"
+		module = "anchorage"
+		module = "anchorage"
+		module = "hangar_bay"
+		module = "gun_battery"
+		module = "gun_battery"
+
+		building = "crew_quarters"
+		building = "command_center"
+		building = "target_uplink_computer"
+		building = "dark_matter_listening_post"
+
+		effect = {
+			while = {
+				count = 4
+				rg_create_fallen_empire_platform = yes
+			}
+		}
+	}
+}
+
+#scope = scion
+rg_create_scion_wormhole_link = {
+	capital_scope = {
+		solar_system = { save_event_target_as = home_system }
+	}
+	event_target:rg_scion_master = {
+		random_system_within_border = { save_event_target_as = fe_target_system }
+	}
+	event_target:home_system = {
+		event_target:fe_target_system = {
+			prev = { # done this way to ensure we don't spawn "orphan wormholes (wormholes that aren't linked to anything)
+				spawn_natural_wormhole = {
+					bypass_type = wormhole
+					random_pos = no
+					orbit_angle = 360
+				}
+			}
+			spawn_natural_wormhole = {
+				bypass_type = wormhole
+				random_pos = no
+				orbit_angle = 270
+			}
+			link_wormholes = prev
+		}
+	}
+	set_country_flag = encountered_first_wormhole
+	add_seen_bypass_type = wormhole
 }

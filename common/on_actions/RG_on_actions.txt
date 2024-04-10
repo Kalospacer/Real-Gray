@@ -38,6 +38,7 @@ on_game_start_country = {
 	events = {
 		# rg_cluster.8
 		rg_event.1
+		rg_origin.1
 		rg_event.19
 	}
 }

@@ -6,16 +6,6 @@ rg_fallen_machine = {
 
 	flags = { ring_world_built }
 
-	init_effect = {
-		spawn_megastructure = {
-			type = "ring_world_ruined"
-			orbit_angle = -90
-			orbit_distance = 45
-		}
-
-		create_fe_citadel = yes
-	}
-
 	planet = {
 		class = star
 		orbit_distance = 0
@@ -54,10 +44,100 @@ rg_fallen_machine = {
 				center = this.solar_system
 			}
 
+			create_species = {
+				name = 纳米构造体
+				class = RG_MACHINE
+				portrait = "rg_machine_maid"
+				traits = {
+					trait = trait_machine_unit
+					trait = rg_machine_maid_trait
+					trait = trait_robot_mass_produced
+					trait = ramdom_trait
+				}
+				extra_trait_points = 3
+				allow_negative_traits = no
+				namelist = MACHINE3
+				effect = {
+					save_event_target_as = rg_fallen_maid_species
+				}
+			}
+			create_country = {
+				name = 德萨努-纳迪沙协议
+				type = fallen_empire
+				flag = {
+					icon = {
+						category = "special"
+						file = "gray_goo.dds"
+					}
+					background = {
+						category = "backgrounds"
+						file = "sinus.dds"
+					}
+					colors = {
+						"grey"
+						"dark_grey"
+						"null"
+						"null"
+					}
+				}
+				ignore_initial_colony_error = yes
+				authority = auth_machine_intelligence
+				civics = {
+					civic = civic_machine_remnants
+					civic = civic_custodian_directives
+				}
+				species = last_created_species
+				ethos = {
+					ethic = ethic_gestalt_consciousness
+				}
+				origin = "origin_fallen_empire"
+				effect = {
+					set_built_species = last_created_species
+					save_global_event_target_as = rg_scion_fe
+					set_country_flag = rg_fallen_empire_machine
+					add_resource = {
+						minerals = 10000
+						energy = 10000
+						food = 1000
+						influence = 500
+					}
+					if = {
+						limit = { host_has_dlc = "Apocalypse" }
+						give_technology = {
+							tech = tech_colossus
+							message = no
+						}
+					}
+					# must initialize global designs here
+					add_global_ship_design = "NAME_Gray_Omega"
+					add_global_ship_design = "NAME_Gray_Alpha"
+					add_global_ship_design = "NAME_Gray_Beta"
+					add_global_ship_design = "NAME_Gray_Gamma"
+					add_global_ship_design = "NAME_Gray_Theta"
+					add_global_ship_design = "NAME_Gray_Tau"
+					add_global_ship_design = "NAME_Gray_Sigma"
+					add_global_ship_design = "NAME_Gray_FE_Starbase"
+					if = {
+						limit = {
+							NOT = {
+								exist = event_target:rg_gray_country_leader
+							}
+						}
+						rg_gray_country_leader_init = yes
+						set_leader = last_created_leader
+					}
+					else = {
+						set_leader = last_created_leader
+					}
+					ruler = {
+						add_skill = 9
+					}
+				}
+			}
 			set_planet_flag = fallen_empire_world
 			prevent_anomaly = yes
-			set_owner = root
-			set_controller = root
+			set_owner = event_target:rg_scion_fe
+			set_controller = event_target:rg_scion_fe
 			set_capital = yes
 
 			add_building = building_ancient_control_center
@@ -72,6 +152,18 @@ rg_fallen_machine = {
 			add_building = building_ancient_cryo_chamber
 			add_building = building_ancient_cryo_chamber
 			add_building = building_ancient_cryo_chamber
+			add_building = building_ancient_palace
+			add_building = building_fe_stronghold
+			add_building = building_fe_stronghold
+			add_building = building_affluence_center
+			add_building = building_affluence_center
+			add_building = building_nourishment_center
+			add_building = building_nourishment_center
+			add_building = building_class_4_singularity
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_nano_forge
+			add_building = building_nano_forge
 
 			while = {
 				count = 5
@@ -84,21 +176,78 @@ rg_fallen_machine = {
 			while = {
 				count = 105
 				create_pop = {
+					species = event_target:rg_scion_slave.species
+				}
+			}
+
+			event_target:rg_scion_fe = {
+				set_policy = {
+					policy = artificial_intelligence_policy
+					option = ai_servitude
+					cooldown = no
+				}
+				set_policy = {
+					policy = robot_pop_policy
+					option = robot_pops_allowed
+					cooldown = no
+				}
+				random_playable_country = {
+					limit = {
+						has_origin = rg_origin_scion
+						has_country_flag = rg_scion_needs_fe
+					}
+					remove_country_flag = rg_scion_needs_fe
+					save_event_target_as = rg_scion_gate
+				}
+				set_country_flag = rg_scion_master
+				save_event_target_as = rg_scion_master
+				add_opinion_modifier = {
+					who = event_target:rg_scion_gate
+					modifier = opinion_scion
+				}
+				# country_event = { id = origin.20 days = 9000 random = 9000 }
+				event_target:rg_scion_gate = {
+					establish_communications_no_message = event_target:rg_scion_fe
+					set_subject_of = {
+						who = event_target:rg_scion_fe
+						preset = preset_scion
+					}
+					add_opinion_modifier = {
+						who = event_target:rg_scion_fe
+						modifier = opinion_scion
+					}
+					country_event = { id = rg_origin.10 days = 3 }
+				}
+			}
+
+			while = {
+				count = 94
+				create_pop = {
 					species = owner_main_species
 				}
 			}
-			create_fallen_empire_starting_navy = yes
+
+			rg_create_fallen_empire_starting_navy = yes
 
 			while = {
 				count = 40
 				create_army = {
 					name = random
-					owner = root
-					species = root
+					owner = event_target:rg_scion_fe
 					type = "gray_army"
 				}
 			}
 		}
+	}
+
+	init_effect = {
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = -90
+			orbit_distance = 45
+		}
+
+		rg_create_fe_citadel = yes
 	}
 
 	planet = {
@@ -110,7 +259,7 @@ rg_fallen_machine = {
 
 	planet = {
 		class = "pc_ringworld_seam"
-		name = 长面包机
+		name = 烤面包机
 		orbit_angle = 30
 		orbit_distance = 0
 	}
@@ -124,9 +273,10 @@ rg_fallen_machine = {
 		modifiers = none
 
 		init_effect = {
+
 			set_planet_flag = fallen_empire_world
 			prevent_anomaly = yes
-			set_owner = ROOT
+			set_owner = event_target:rg_scion_fe
 
 			add_building = building_ancient_control_center
 			add_building = building_dimensional_fabricator
@@ -154,8 +304,7 @@ rg_fallen_machine = {
 				count = 20
 				create_army = {
 					name = random
-					owner = root
-					species = root
+					owner = event_target:rg_scion_fe
 					type = "gray_army"
 				}
 			}
@@ -187,7 +336,7 @@ rg_fallen_machine = {
 		init_effect = {
 			set_planet_flag = fallen_empire_world
 			prevent_anomaly = yes
-			set_owner = ROOT
+			set_owner = event_target:rg_scion_fe
 
 			add_building = building_ancient_control_center
 			add_building = building_class_4_singularity
@@ -209,28 +358,17 @@ rg_fallen_machine = {
 				count = 10
 				create_army = {
 					name = random
-					owner = root
-					species = root
+					owner = event_target:rg_scion_fe
 					type = "gray_army"
 				}
 			}
 		}
 	}
 
-	neighbor_system = {
-		distance = { min = 0 max = 50 }
-		initializer = "fallen_machine_2"
+	spawn_megastructure = {
+		type = lgate_base
+		orbit_angle = 225
+		orbit_distance = 30
 	}
-	neighbor_system = {
-		distance = { min = 0 max = 50 }
-		initializer = "fallen_machine_3"
-	}
-	neighbor_system = {
-		distance = { min = 0 max = 50 }
-		initializer = "fallen_machine_4"
-	}
-	neighbor_system = {
-		distance = { min = 0 max = 50 }
-		initializer = "fallen_machine_5"
-	}
+
 }
