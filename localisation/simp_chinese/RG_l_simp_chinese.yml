@@ -60,7 +60,7 @@
  origin_tooltip_rg_gray_effects:0 "—开局时获得['concept_rg_gray']的帮助\n—母星系：一个孤立的L-星团中开始你的冒险\n—原$HOME_SYSTEM$通过一个['concept_l_gates']连接到['concept_l_gates']网络中。\n\n§R<但...你将很难有重见银河的机会。>§！\n§Y—该起源无法重复选择。§！\n§Y—该起源被AI帝国占用时L-星团将被AI帝国占用。唔，你懂的§！"
  rg_origin_scion:0 "§Y未来追迹§!"
  rg_origin_scion_desc:0 "剧本疑似被什么人改写了。你将在$NAME_Gray$无微不至的监护下成长。"
- origin_tooltip_rg_scion_effects:0 "开局时将作为['concept_rg_gray']堕落帝国的附属国。['concept_rg_gray']将保护你的国家不受外敌侵犯，有时候还会给予你一定的帮助。\n—['concept_rg_gray']['concept_fallen_empire']宗主的['concept_rg_scion', £scion£誓约计划国]\n—$HOME_SYSTEM$通过一个['concept_l_gates']连接到['concept_l_gates']网络中。\n—['concept_rg_gray']['concept_fallen_empire']无视星系设置必定出现在一个孤立的L星团中\n—将会受到['concept_rg_gray']视若己出的保护。\n\n§R<但这同样会成为阻碍你发展的障碍...>§！\n§Y—这是一个未完成的起源。仅供开发测试使用。请不要在正式游戏中使用。§！"
+ origin_tooltip_rg_scion_effects:0 "开局时将作为['concept_rg_gray']['concept_fallen_empire']的附属国。['concept_rg_gray']将保护你的国家不受外敌侵犯，有时候还会给予你一定的帮助。\n—['concept_rg_gray']['concept_fallen_empire']宗主的['concept_rg_scion', £scion£誓约计划国]\n—$HOME_SYSTEM$通过一个['concept_l_gates']连接到['concept_l_gates']网络中。\n—['concept_rg_gray']['concept_fallen_empire']无视星系设置必定出现在一个孤立的L星团中\n—将会受到['concept_rg_gray']视若己出的保护。\n\n§R<但这同样会成为阻碍你发展的障碍...>§！\n§Y—这是一个未完成的起源。仅供开发测试使用。请不要在正式游戏中使用。§！"
  RG_SHIP_AURA_NANOBOT_CLOUD:0 "§Y「漫播飞尘」§!"
  RG_SHIP_AURA_NANOBOT_CLOUD_DESC:0 "§Y散播希望，还有绝望。§!\n多用途微型纳米机器。$NAME_Gray$可以通过布置一个高浓度纳米机器人场来维修同星系内的友方舰船。"
  RG_BOMBER_HANGAR_AP_BOMB:0 "§Y「落光」§!"

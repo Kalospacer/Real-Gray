@@ -148,18 +148,15 @@ rg_fallen_machine = {
 			add_building = building_ancient_control_center
 			add_building = building_nourishment_center
 			add_building = building_nourishment_center
+			add_building = building_nourishment_center
+			add_building = building_nourishment_center
 			add_building = building_ancient_palace
-			add_building = building_fe_stronghold
-			add_building = building_fe_stronghold
 			add_building = building_affluence_center
 			add_building = building_affluence_center
-			add_building = building_nourishment_center
-			add_building = building_nourishment_center
-			add_building = building_class_4_singularity
+			add_building = building_affluence_center
+			add_building = building_affluence_center
 			add_building = building_dimensional_fabricator
 			add_building = building_dimensional_fabricator
-			add_building = building_nano_forge
-			add_building = building_nano_forge
 
 			while = {
 				count = 5
@@ -281,14 +278,14 @@ rg_fallen_machine = {
 
 	planet = {
 		class = "pc_ringworld_seam"
-		name = 蔗糖核心
+		name = 奶油核心
 		orbit_angle = 30
 		orbit_distance = 0
 	}
 
 	planet = {
 		class = "pc_ringworld_habitable"
-		name = 霜糖工厂
+		name = 糖霜工厂
 		orbit_angle = 30
 		orbit_distance = 0
 		deposit_blockers = none
@@ -304,6 +301,12 @@ rg_fallen_machine = {
 			add_building = building_class_4_singularity
 			add_building = building_class_4_singularity
 			add_building = building_class_4_singularity
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
 
 			while = {
 				count = 5

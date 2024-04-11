@@ -13,21 +13,24 @@ preset_rg_scion = {
 			{ key = joins_overlord_wars			value = joins_overlord_wars_all }
 			{ key = joins_subject_wars			value = joins_subject_wars_all }
 			{ key = subject_holdings_limit		value = subject_holdings_limit_0 }
-			{ key = subject_sensors				value = subject_is_not_protectorate }
+			{ key = subject_sensors				value = subject_does_not_get_sensors }
 		}
 		resource_terms = {
-			{ key = resource_subsidies_advanced		value = -0.35 }
-			{ key = resource_subsidies_strategic	value = -0.35 }
+			{ key = resource_subsidies_basic	value = -0.5 }
+			{ key = resource_subsidies_advanced		value = -0.5 }
+			{ key = resource_subsidies_strategic	value = -0.5 }
+			# { key = resource_subsidies_research value = -0.35 }
 		}
 	}
 	potential = {
-		any_agreement = {
-			agreement_preset = preset_rg_scion
-		}
+		# any_agreement = {
+		# 	agreement_preset = preset_rg_scion
+		# }
 		from = {
 			OR = {
 				is_country_type = fallen_empire
 				is_country_type = awakened_fallen_empire
+				has_country_flag = rg_scion_master
 			}
 		}
 	}
