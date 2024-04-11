@@ -22,6 +22,7 @@ special_project = {
 						has_global_flag = l_cluster_origin						# l-cluster plus
 						has_global_flag = rg_origin_l_cluster						# 遥远约定
 						has_global_flag = gray_origin_activate						# 远星之歌
+						has_global_flag = rg_origin_scion_l_cluster					# 未来追迹
 					}
 				}
 				country_event = {

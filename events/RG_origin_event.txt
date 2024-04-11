@@ -31,8 +31,8 @@ country_event = {
 	is_triggered_only = yes
 
 	immediate = {
-		set_country_flag = first_contact_event
-		set_country_flag = Story2 # Already encountered spacefarers
+		# set_country_flag = first_contact_event
+		# set_country_flag = Story2 # Already encountered spacefarers
 		# Spawn mini-FE if player turned off Fallen Empires but picked this Origin anyway...
 		if = {
 			limit = {
@@ -41,17 +41,48 @@ country_event = {
 				}
 			}
 			set_country_flag = rg_scion_needs_fe
-			random_system = {
-				limit = { has_owner = no }
-				spawn_system = { initializer = "rg_fallen_machine" }
+			rg_lcluster_spawn_effect_scion = yes
+			event_target:rg_scion_fe = {
+				set_policy = {
+					policy = artificial_intelligence_policy
+					option = ai_servitude
+					cooldown = no
+				}
+				set_policy = {
+					policy = robot_pop_policy
+					option = robot_pops_allowed
+					cooldown = no
+				}
+				random_playable_country = {
+					limit = {
+						has_origin = rg_origin_scion
+						has_country_flag = rg_scion_needs_fe
+					}
+					remove_country_flag = rg_scion_needs_fe
+					save_event_target_as = rg_scion_slave
+				}
+				set_country_flag = rg_scion_master
+				save_event_target_as = rg_scion_master
+				add_opinion_modifier = {
+					who = event_target:rg_scion_slave
+					modifier = opinion_scion
+				}
+				# country_event = { id = origin.20 days = 9000 random = 9000 }
+				event_target:rg_scion_slave = {
+					establish_communications_no_message = event_target:rg_scion_fe
+					set_subject_of = {
+						who = event_target:rg_scion_fe
+						preset = preset_rg_scion
+					}
+					overlord = {
+						add_opinion_modifier = {
+							modifier = opinion_scion
+							who = rg_scion_fe
+						}
+					}
+					country_event = { id = rg_origin.10 days = 3 }
+				}
 			}
-			add_extra_hyperlane_to_spawned_system_effect = yes
-		}
-		if = {
-			limit = {
-				exists = event_target:rg_scion_master
-			}
-			rg_create_scion_wormhole_link = yes
 			capital_scope = {
 				solar_system = {
 					spawn_megastructure = {
@@ -61,6 +92,13 @@ country_event = {
 					}
 				}
 			}
+			every_system = {
+				limit = {
+					has_star_flag = lcluster
+				}
+				rg_create_fe_citadel = yes
+			}
+			# add_extra_hyperlane_to_spawned_system_effect = yes
 		}
 	}
 }

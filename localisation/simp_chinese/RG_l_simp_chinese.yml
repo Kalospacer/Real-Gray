@@ -28,6 +28,15 @@
  RG_leader_trait_admiral_nanorebuild_gray_desc:0 "灰色风暴在L星团中席卷无数纪元。\n创造与解构，纳米机器席卷之处我们无所不能。"
  RG_leader_trait_admiral_nanorebuild_effect:0 "$FLEET_EFFECTS_TXT$:\n$t$每摧毁一艘敌军舰船:\n$tt$§Y重塑计数器层数§!: §G+1§!\n$t$这位领袖所在舰队损失舰船时:\n$tt$消耗§Y重塑计数器层数§!立即重建舰船。\n$t$当前§Y重塑计数器层数§!: §Y[owner.rg_nanorebuild_counter]§!\n$t$§Y$NAME_Gray$§!无法被该技能重建。\n\n$RG_leader_trait_tempest_incoming_effect$"
 
+ preset_rg_scion: "誓约计划国"
+ preset_rg_scion_desc: "出于某种不可告人的目的，远古堕落帝国将其视若己出。他们的远古宗主不会允许其誓约国受到任何外部干扰。"
+
+ concept_rg_scion: "$preset_rg_scion$"
+ concept_rg_scion_desc: "$preset_rg_scion_desc$"
+
+ concept_rg_gray: "$NAME_Gray$"
+ concept_rg_gray_desc: "$gray_backstory$"
+
  RG_leader_trait_ruler_gray_tt:0 "§E随每技能等级提升的效果:§!"
  RG_leader_trait_variable_tt:0 "§E随变量层数提升的效果:§!"
 
@@ -48,10 +57,10 @@
  RG_gatebuilder_thruster:0 "§Y「漫步星海」§!"
  origin_rg_gray:0 "§Y遥远约定§!"
  origin_rg_gray_desc:0 "你偷偷说服了$NAME_Gray$从遥远的L星团前来看望你"
- origin_tooltip_rg_gray_effects:0 "开局时拥有$NAME_Gray$,并在一个孤立的L-星团中开始你的冒险。你将很难有重见银河的机会。\n\n§R<但...代价是什么？>§！\n§Y- 为防止重复选择，该起源被重复选择时将被替换成隐藏起源§！§H<你也事龙>§！§Y并开局获得全部L星门认知。§！\n§R- 多人游戏中存在重复龙开起源国家，L星团国家将无法触发中期开门事件。§！\n§R- 该起源被AI帝国占用时L-星团将被AI帝国占用。唔，你懂的。§！"
+ origin_tooltip_rg_gray_effects:0 "—开局时获得['concept_rg_gray']的帮助\n—母星系：一个孤立的L-星团中开始你的冒险\n—原$HOME_SYSTEM$通过一个['concept_l_gates']连接到['concept_l_gates']网络中。\n\n§R<但...你将很难有重见银河的机会。>§！\n§Y—该起源无法重复选择。§！\n§Y—该起源被AI帝国占用时L-星团将被AI帝国占用。唔，你懂的§！"
  rg_origin_scion:0 "§Y未来追迹§!"
  rg_origin_scion_desc:0 "剧本疑似被什么人改写了。你将在$NAME_Gray$无微不至的监护下成长。"
- origin_tooltip_rg_scion_effects:0 "开局时将作为$NAME_Gray$堕落帝国的附属国。$NAME_Gray$将保护你的国家不受外敌侵犯，有时候还会给予你一定的帮助...但这同样会成为阻碍你发展的障碍...\n§Y- 这是一个未完成的起源。仅供测试使用。§！"
+ origin_tooltip_rg_scion_effects:0 "开局时将作为['concept_rg_gray']堕落帝国的附属国。['concept_rg_gray']将保护你的国家不受外敌侵犯，有时候还会给予你一定的帮助。\n—['concept_rg_gray']['concept_fallen_empire']宗主的['concept_rg_scion', £scion£誓约计划国]\n—$HOME_SYSTEM$通过一个['concept_l_gates']连接到['concept_l_gates']网络中。\n—['concept_rg_gray']['concept_fallen_empire']无视星系设置必定出现在一个孤立的L星团中\n—将会受到['concept_rg_gray']视若己出的保护。\n\n§R<但这同样会成为阻碍你发展的障碍...>§！\n§Y—这是一个未完成的起源。仅供开发测试使用。请不要在正式游戏中使用。§！"
  RG_SHIP_AURA_NANOBOT_CLOUD:0 "§Y「漫播飞尘」§!"
  RG_SHIP_AURA_NANOBOT_CLOUD_DESC:0 "§Y散播希望，还有绝望。§!\n多用途微型纳米机器。$NAME_Gray$可以通过布置一个高浓度纳米机器人场来维修同星系内的友方舰船。"
  RG_BOMBER_HANGAR_AP_BOMB:0 "§Y「落光」§!"

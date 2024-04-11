@@ -498,7 +498,6 @@ rg_cluster_init_04 = {
 		flags = {
 			start_rg_cluster_gatebuilders
 			ignore_startup_effect
-			rw_spec_empire
 		}
 		init_effect = {
 			prevent_anomaly = yes

@@ -1,10 +1,15 @@
 # Home System - Machine
+
 rg_fallen_machine = {
 	usage = fallen_empire_init
 	name = 芬里尔III
 	class = "rl_standard_stars"
 
-	flags = { ring_world_built }
+	flags = {
+		lcluster
+		lcluster4
+		ring_world_built
+	}
 
 	planet = {
 		class = star
@@ -143,15 +148,6 @@ rg_fallen_machine = {
 			add_building = building_ancient_control_center
 			add_building = building_nourishment_center
 			add_building = building_nourishment_center
-			add_building = building_ancient_cryo_chamber
-			add_building = building_ancient_cryo_chamber
-			add_building = building_ancient_cryo_chamber
-			add_building = building_ancient_cryo_chamber
-			add_building = building_ancient_cryo_chamber
-			add_building = building_ancient_cryo_chamber
-			add_building = building_ancient_cryo_chamber
-			add_building = building_ancient_cryo_chamber
-			add_building = building_ancient_cryo_chamber
 			add_building = building_ancient_palace
 			add_building = building_fe_stronghold
 			add_building = building_fe_stronghold
@@ -177,46 +173,6 @@ rg_fallen_machine = {
 				count = 105
 				create_pop = {
 					species = owner_main_species
-				}
-			}
-
-			event_target:rg_scion_fe = {
-				set_policy = {
-					policy = artificial_intelligence_policy
-					option = ai_servitude
-					cooldown = no
-				}
-				set_policy = {
-					policy = robot_pop_policy
-					option = robot_pops_allowed
-					cooldown = no
-				}
-				random_playable_country = {
-					limit = {
-						has_origin = rg_origin_scion
-						has_country_flag = rg_scion_needs_fe
-					}
-					remove_country_flag = rg_scion_needs_fe
-					save_event_target_as = rg_scion_slave
-				}
-				set_country_flag = rg_scion_master
-				save_event_target_as = rg_scion_master
-				add_opinion_modifier = {
-					who = event_target:rg_scion_slave
-					modifier = opinion_scion
-				}
-				# country_event = { id = origin.20 days = 9000 random = 9000 }
-				event_target:rg_scion_slave = {
-					establish_communications_no_message = event_target:rg_scion_fe
-					set_subject_of = {
-						who = event_target:rg_scion_fe
-						preset = preset_scion
-					}
-					add_opinion_modifier = {
-						who = event_target:rg_scion_fe
-						modifier = opinion_scion
-					}
-					country_event = { id = rg_origin.10 days = 3 }
 				}
 			}
 
@@ -246,7 +202,7 @@ rg_fallen_machine = {
 			orbit_angle = -90
 			orbit_distance = 45
 		}
-		rg_create_fe_citadel = yes
+		# rg_create_fe_citadel = yes
 	}
 
 	planet = {
@@ -376,10 +332,10 @@ rg_fallen_machine = {
 		}
 	}
 
-	spawn_megastructure = {
-		type = lgate_base
-		orbit_angle = 225
-		orbit_distance = 30
-	}
-
+	# spawn_megastructure = {
+	# 	type = lgate_base
+	# 	orbit_angle = 225
+	# 	orbit_distance = 30
+	# }
 }
+
