@@ -112,17 +112,14 @@ rg_create_fallen_empire_starting_navy = {
 		limit = {
 			host_has_dlc = "Apocalypse"
 		}
-		random = {
-			chance = 10
-			create_fleet = {
-				effect = {
-					set_owner = prev.owner
-					rg_create_fallen_empire_colossus = yes
-					set_location = {
-						target = prev
-						distance = 30
-						angle = random
-					}
+		create_fleet = {
+			effect = {
+				set_owner = prev.owner
+				rg_create_fallen_empire_colossus = yes
+				set_location = {
+					target = prev
+					distance = 30
+					angle = random
 				}
 			}
 		}
