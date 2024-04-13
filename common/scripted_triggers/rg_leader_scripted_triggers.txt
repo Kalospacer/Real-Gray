@@ -1,5 +1,5 @@
 RG_gray_mod1_trigger = {
-	event_target:gray_leader_admiral = {
+	event_target:gray_official = {
 		has_skill >= 10
 	}
 	NOR = {
@@ -34,7 +34,7 @@ RG_gray_mod1_allow_trigger = {
 	}
 	custom_tooltip = {
 		fail_text = requires_rg_graylevel_higherthan_25
-		event_target:gray_leader_admiral = {
+		event_target:gray_official = {
 			has_skill >= 10
 		}
 	}
@@ -50,7 +50,7 @@ RG_gray_mod1_allow_trigger = {
 
 RG_gray_mod2_trigger = {
 	AND = {
-		event_target:gray_leader_admiral = {
+		event_target:gray_official = {
 			has_skill >= 10
 		}
 		has_country_flag = rg_gray_level_2
@@ -91,7 +91,7 @@ RG_gray_mod2_allow_trigger = {
 		}
 		custom_tooltip = {
 			fail_text = requires_rg_graylevel_higherthan_20
-			event_target:gray_leader_admiral = {
+			event_target:gray_official = {
 				has_skill >= 20
 			}
 		}

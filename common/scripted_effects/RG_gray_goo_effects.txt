@@ -75,7 +75,7 @@ rg_global_gray_location_check = {
 				any_owned_planet = {
 					exists = sector.leader
 					sector.leader = {
-						has_leader_flag = gray_governor
+						has_leader_flag = gray_official
 					}
 				}
 			}
@@ -83,7 +83,7 @@ rg_global_gray_location_check = {
 				limit = {
 					exists = sector.leader
 					sector.leader = {
-						has_leader_flag = gray_governor
+						has_leader_flag = gray_official
 					}
 				}
 				save_global_event_target_as = global_gray_location
@@ -219,16 +219,16 @@ rg_create_gray_governor = {
 		#把娘家的总督领袖接回来
 		if = {
 			limit = {
-				exists = event_target:gray_governor
+				exists = event_target:gray_official
 			}
-			event_target:gray_governor = {
+			event_target:gray_official = {
 				set_owner = event_target:gray_owner
 				remove_leader_flag = rg_gray_leader_temp
 			}
 		}
 		#如果不存在总督备份，现场变一个
 		else = {
-			rg_gray_govener_init = yes
+			rg_gray_offical_init = yes
 		}
 		#设置总督已启用标识
 		set_country_flag = gray_official_active #新版flag
@@ -241,7 +241,7 @@ rg_create_gray_governor = {
 		#等级导入，把存储的领袖等级赋予到领袖身上
 		random_owned_leader = {
 			limit = {
-				has_leader_flag = gray_governor
+				has_leader_flag = gray_official
 			}
 			set_skill = owner.rg_gray_level
 		}
@@ -331,16 +331,16 @@ rg_create_gray_governor_habitat = {
 		#把娘家的总督领袖接回来
 		if = {
 			limit = {
-				exists = event_target:gray_governor
+				exists = event_target:gray_official
 			}
-			event_target:gray_governor = {
+			event_target:gray_official = {
 				set_owner = event_target:gray_owner
 				remove_leader_flag = rg_gray_leader_temp
 			}
 		}
 		#如果不存在总督备份，现场变一个
 		else = {
-			rg_gray_govener_init = yes
+			rg_gray_offical_init = yes
 		}
 		rg_juggernaut_habitat_init = yes
 		#设置总督已启用标识
@@ -355,7 +355,7 @@ rg_create_gray_governor_habitat = {
 		#等级导入，把存储的领袖等级赋予到领袖身上
 		random_owned_leader = {
 			limit = {
-				has_leader_flag = gray_governor
+				has_leader_flag = gray_official
 			}
 			set_skill = owner.rg_gray_level
 		}
@@ -406,15 +406,15 @@ rg_create_gray_warship = {
 		}
 		if = {
 			limit = {
-				exists = event_target:gray_leader_admiral
+				exists = event_target:gray_official
 			}
-			event_target:gray_leader_admiral = {
+			event_target:gray_official = {
 				set_owner = event_target:gray_owner
 				remove_leader_flag = rg_gray_leader_temp
 			}
 		}
 		else = {
-			rg_gray_commander_init = yes
+			rg_gray_offical_init = yes
 		}
 		set_country_flag = gray_warship_active
 		if = {
@@ -469,7 +469,7 @@ rg_create_gray_warship = {
 		remove_country_flag = gray_army_active
 		random_owned_leader = {
 			limit = {
-				has_leader_flag = gray_admiral
+				has_leader_flag = gray_official
 			}
 			set_skill = owner.rg_gray_level
 		}
@@ -480,7 +480,7 @@ rg_create_gray_warship = {
 rg_create_gray_army = {
 	if = {
 		limit = {
-			has_leader_flag = gray_army_active
+			has_country_flag = gray_army_active
 		}
 	}
 	else = {
@@ -519,15 +519,15 @@ rg_create_gray_army = {
 		}
 		if = {
 			limit = {
-				exists = event_target:gray_leader_general
+				exists = event_target:gray_official
 			}
-			event_target:gray_leader_general = {
+			event_target:gray_official = {
 				set_owner = event_target:gray_owner
 				remove_leader_flag = rg_gray_leader_temp
 			}
 		}
 		else = {
-			rg_gray_commander_init = yes
+			rg_gray_offical_init = yes
 		}
 		create_ship_design = {
 			design = "NAME_RG_armed_transport_ship"
@@ -553,7 +553,7 @@ rg_create_gray_army = {
 			}
 		}
 		last_created_army = {
-			assign_leader = event_target:gray_leader_general
+			assign_leader = event_target:gray_official
 		}
 		every_owned_fleet = {
 			limit = {
@@ -583,7 +583,7 @@ rg_create_gray_army = {
 		remove_ship_design = last_created_design
 		random_owned_leader = {
 			limit = {
-				has_leader_flag = gray_general
+				has_leader_flag = gray_official
 			}
 			set_skill = owner.rg_gray_level
 		}
@@ -633,15 +633,15 @@ rg_create_gray_const = {
 		}
 		if = {
 			limit = {
-				exists = event_target:gray_leader_scientist
+				exists = event_target:gray_official
 			}
-			event_target:gray_leader_scientist = {
+			event_target:gray_official = {
 				set_owner = event_target:gray_owner
 				remove_leader_flag = rg_gray_leader_temp
 			}
 		}
 		else = {
-			rg_gray_scientist_init = yes
+			rg_gray_offical_init = yes
 		}
 		set_country_flag = gray_constship_active
 		create_fleet = {
@@ -671,7 +671,7 @@ rg_create_gray_const = {
 				set_fleet_flag = gray_constship
 				save_global_event_target_as = global_gray_constship
 				set_cloaking_active = yes
-				assign_leader = event_target:gray_leader_scientist
+				assign_leader = event_target:gray_official
 			}
 		}
 		every_owned_fleet = {
@@ -703,7 +703,7 @@ rg_create_gray_const = {
 		remove_country_flag = gray_official_active
 		random_owned_leader = {
 			limit = {
-				has_leader_flag = gray_scientist
+				has_leader_flag = gray_official
 			}
 			set_skill = owner.rg_gray_level
 		}

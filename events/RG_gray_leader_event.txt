@@ -69,7 +69,6 @@ country_event = {
 					has_country_flag = gray_reforming
 					has_country_flag = gray_diplomacy_engaged
 				}
-				exists = event_target:gray_governor
 			}
 			country_event = {
 				id = rg_grayleader.501
@@ -345,7 +344,7 @@ country_event = {
 	diplomatic = yes
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:gray_governor
+		portrait = event_target:gray_official
 		planet_background = event_target:gray_governor_planet
 		room = root
 	}
@@ -370,7 +369,6 @@ country_event = {
 			has_country_flag = gray_reforming
 			has_country_flag = gray_diplomacy_engaged
 		}
-		exists = event_target:gray_governor
 	}
 	immediate = {
 		set_country_flag = gray_diplomacy_engaged
@@ -379,7 +377,7 @@ country_event = {
 				any_owned_planet = {
 					exists = sector.leader
 					sector.leader = {
-						is_same_value = event_target:gray_governor
+						is_same_value = event_target:gray_official
 					}
 				}
 			}
@@ -387,7 +385,7 @@ country_event = {
 				limit = {
 					exists = sector.leader
 					sector.leader = {
-						is_same_value = event_target:gray_governor
+						is_same_value = event_target:gray_official
 					}
 				}
 				save_event_target_as = gray_governor_planet
@@ -411,7 +409,10 @@ country_event = {
 		response_text = graygoo.501.b.response
 		allow = {
 			hidden_trigger = {
-				exists = event_target:gray_governor
+				OR = {
+					has_country_flag = gray_official_active
+					has_country_flag = gray_governor_active #旧版flag
+				}
 			}			# To prevent exploit
 		}
 		hidden_effect = {
@@ -427,7 +428,10 @@ country_event = {
 		response_text = graygoo.501.c.response
 		allow = {
 			hidden_trigger = {
-				exists = event_target:gray_governor
+				OR = {
+					has_country_flag = gray_official_active
+					has_country_flag = gray_governor_active #旧版flag
+				}
 			}
 		}
 		hidden_effect = {
@@ -443,7 +447,10 @@ country_event = {
 		response_text = rg_const.501.response
 		allow = {
 			hidden_trigger = {
-				exists = event_target:gray_governor
+				OR = {
+					has_country_flag = gray_official_active
+					has_country_flag = gray_governor_active #旧版flag
+				}
 			}
 		}
 		hidden_effect = {
@@ -489,7 +496,7 @@ country_event = {
 	diplomatic = yes
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:gray_leader_admiral
+		portrait = event_target:gray_official
 		room = "ethic_spaceship_room"
 	}
 	is_triggered_only = yes
@@ -813,7 +820,7 @@ country_event = {
 	diplomatic = yes
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:gray_leader_general
+		portrait = event_target:gray_official
 		room = "ethic_spaceship_room"
 	}
 	is_triggered_only = yes
@@ -1191,7 +1198,7 @@ country_event = {
 	diplomatic = yes
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:gray_leader_scientist
+		portrait = event_target:gray_official
 		room = "ethic_spaceship_room"
 	}
 	is_triggered_only = yes
@@ -1385,7 +1392,7 @@ country_event = {
 	desc = "rg_event.4.a.desc"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:gray_governor
+		portrait = event_target:gray_official
 		room = "ethic_spaceship_room"
 	}
 	is_triggered_only = yes
@@ -1534,7 +1541,7 @@ country_event = {
 	desc = "rg_event.5.c.desc"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:gray_governor
+		portrait = event_target:gray_official
 		room = "ethic_spaceship_room"
 	}
 	is_triggered_only = yes
@@ -1588,7 +1595,7 @@ country_event = {
 	desc = "rg_event.6.b.desc"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:gray_governor
+		portrait = event_target:gray_official
 		room = "ethic_spaceship_room"
 	}
 	is_triggered_only = yes

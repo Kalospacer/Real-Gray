@@ -249,7 +249,7 @@ country_event = {
 			has_country_flag = gray_diplomacy_engaged
 			has_country_flag = ban_commu_with_gray
 		}
-		exists = event_target:gray_governor
+		exists = event_target:gray_official
 	}
 	immediate = {
 		set_country_flag = gray_diplomacy_engaged
@@ -258,7 +258,7 @@ country_event = {
 				any_owned_planet = {
 					exists = sector.leader
 					sector.leader = {
-						is_same_value = event_target:gray_governor
+						is_same_value = event_target:gray_official
 					}
 				}
 			}
@@ -266,7 +266,7 @@ country_event = {
 				limit = {
 					exists = sector.leader
 					sector.leader = {
-						is_same_value = event_target:gray_governor
+						is_same_value = event_target:gray_official
 					}
 				}
 				save_event_target_as = gray_governor_planet
@@ -290,7 +290,10 @@ country_event = {
 		response_text = graygoo.501.b.response
 		allow = {
 			hidden_trigger = {
-				exists = event_target:gray_governor
+				OR = {
+					has_country_flag = gray_official_active
+					has_country_flag = gray_governor_active #旧版flag
+				}
 			}
 			custom_tooltip = {
 				fail_text = gray_become_ruler
@@ -312,7 +315,10 @@ country_event = {
 		response_text = rg_const.501.response
 		allow = {
 			hidden_trigger = {
-				exists = event_target:gray_governor
+				OR = {
+					has_country_flag = gray_official_active
+					has_country_flag = gray_governor_active #旧版flag
+				}
 			}
 			custom_tooltip = {
 				fail_text = gray_become_ruler
@@ -333,7 +339,10 @@ country_event = {
 		response_text = graygoo.501.c.response
 		allow = {
 			hidden_trigger = {
-				exists = event_target:gray_governor
+				OR = {
+					has_country_flag = gray_official_active
+					has_country_flag = gray_governor_active #旧版flag
+				}
 			}
 			custom_tooltip = {
 				fail_text = gray_become_ruler

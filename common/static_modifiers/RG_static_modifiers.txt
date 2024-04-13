@@ -47,3 +47,77 @@ gray_affection_warship_lv5 = {
 	ship_ftl_jumpdrive_range_mult = 0.5
 	force_disparity_fire_rate_mult = 3
 }
+
+skill_rg_nanite_leader_navy = {
+	ship_weapon_range_mult = 0.05
+	ship_hull_mult = 0.05
+	ship_fire_rate_mult = 0.1
+}
+
+skill_rg_nanite_leader_army = {
+	army_damage_mult = 0.1
+	army_morale_damage_mult = 0.1
+	army_health = 0.1
+	army_morale = 0.1
+}
+
+skill_rg_nanite_leader = {
+	custom_tooltip = skill_official_delegate_tt
+	science_ship_survey_speed = 0.10
+	ship_archaeological_site_clues_add = 1
+	ship_astral_rift_clues_add = 1
+}
+
+skill_rg_nanite_leader_planet_governor = {
+	custom_tooltip = skill_official_planet_governor_tt
+	planet_jobs_energy_produces_mult = @planet_job_mult
+	planet_jobs_minerals_produces_mult = @planet_job_mult
+	planet_jobs_food_produces_mult = @planet_job_mult
+	planet_jobs_alloys_produces_mult = @planet_job_mult
+	planet_jobs_consumer_goods_produces_mult = @planet_job_mult
+	planet_jobs_exotic_gases_produces_mult = @planet_job_mult
+	planet_jobs_rare_crystals_produces_mult = @planet_job_mult
+	planet_jobs_volatile_motes_produces_mult = @planet_job_mult
+
+	# planet_jobs_ruler_produces_mult = @negative_planet_job_mult
+	# planet_jobs_specialist_produces_mult = @negative_planet_job_mult
+	planet_jobs_worker_produces_mult = @planet_job_mult
+	planet_jobs_slave_produces_mult = @planet_job_mult
+	job_soldier_or_warrior_add = 1
+	planet_crime_add = -1
+
+	planet_jobs_physics_research_produces_mult = @planet_job_mult
+	planet_jobs_society_research_produces_mult = @planet_job_mult
+	planet_jobs_engineering_research_produces_mult = @planet_job_mult
+	species_empire_size_mult = @planet_empire_size
+}
+
+skill_rg_nanite_leader_sector_governor = {
+	custom_tooltip = skill_official_sector_governor_tt
+	planet_jobs_energy_produces_mult = @sector_job_mult
+	planet_jobs_minerals_produces_mult = @sector_job_mult
+	planet_jobs_food_produces_mult = @sector_job_mult
+	planet_jobs_alloys_produces_mult = @sector_job_mult
+	planet_jobs_consumer_goods_produces_mult = @sector_job_mult
+	planet_jobs_exotic_gases_produces_mult = @sector_job_mult
+	planet_jobs_rare_crystals_produces_mult = @sector_job_mult
+	planet_jobs_volatile_motes_produces_mult = @sector_job_mult
+
+	# planet_jobs_ruler_produces_mult = @negative_sector_job_mult
+	# planet_jobs_specialist_produces_mult = @negative_sector_job_mult
+	planet_jobs_worker_produces_mult = @sector_job_mult
+	planet_jobs_slave_produces_mult = @sector_job_mult
+	job_soldier_or_warrior_add = 0.5
+	planet_crime_add = -0.5
+
+	planet_jobs_physics_research_produces_mult = @sector_job_mult
+	planet_jobs_society_research_produces_mult = @sector_job_mult
+	planet_jobs_engineering_research_produces_mult = @sector_job_mult
+	species_empire_size_mult = @sector_empire_size
+}
+
+skill_rg_nanite_leader_background_planet_governor = {
+	planet_amenities_add = 2
+	planet_stability_add = 0.5
+	planet_jobs_upkeep_mult = -0.01
+}

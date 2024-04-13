@@ -1,37 +1,128 @@
-# 避免代码复用原则：
-# 如果你需要在不同的地方重复调用同一套代码，你应当把他们封装在这样的函数里。
-# 避免需要修改代码时需要重复修改n次，或是发生修改了A处忘记修改B处导致bug发生的问题。
-# 当然，这种分块需要到什么程度，我也不知道
 #灰风
-################################
-# 舰R 灰风领袖好感度设定块部分：采样时间戳：2023/6/1 8：17
-# 仅用于留档比对不进行改动
-# wg_affection_wg_gray_system_launch = {
-# 	if = {
-# 		limit = { has_leader_flag = gray_leader }
-# 	set_leader_flag = has_wg_affection
-# 	set_leader_flag = has_wg_affection_wg_gray
-# 	set_leader_flag = wg_affection_auto_change_no
-# 	add_trait_no_notify = leader_trait_wg_gray_affection
-# 	set_variable = { which = affection value = owner.wg_gray_affection }
-# 	set_variable = { which = wg_leader_affection_to_lv2 value = @wg_gray_affection_to_lv2 }
-# 	set_variable = { which = wg_leader_affection_to_lv3 value = @wg_gray_affection_to_lv3 }
-# 	set_variable = { which = wg_leader_affection_to_lv4 value = @wg_gray_affection_to_lv4 }
-# 	set_variable = { which = wg_leader_affection_to_lv5 value = @wg_gray_affection_to_lv5 }
-# 	set_variable = { which = wg_leader_affection_reduce value = @wg_gray_affection_reduce }
-# 	set_variable = { which = wg_leader_affection_increase value = @wg_gray_affection_increase }
-# 	}
-# 
-# }
-# wg_affection_wg_gray_system_check = {
-# 	if = {
-# 		limit = {
-# 			has_leader_flag = has_wg_affection_wg_gray
-# 		}
-# 		set_variable = { which = affection value = owner.wg_gray_affection }
-# 	}
-# }
-################################
+rg_gray_offical_init = {
+	event_target:rg_gray_country = {
+		create_leader = {
+			class = rg_nanite_leader
+			species = event_target:gray_species
+			name = "NAME_Gray"
+			gender = female
+			immortal = yes
+			event_leader = yes
+			skip_background_generation = yes
+			randomize_traits = no
+			custom_catch_phrase = gray_catch_phrase
+			custom_description = gray_backstory
+			background_ethic = ethic_gestalt_consciousness
+			hide_age = yes
+			skill = 10
+			set_age = 18
+			traits = {
+				0 = RG_leader_trait_offical_gray
+			}
+			effect = {
+				save_global_event_target_as = gray_official
+				set_leader_flag = gray_governor
+				set_leader_flag = gray_official
+				set_leader_flag = legendary_leader
+				set_leader_flag = immune_to_negative_traits
+				set_leader_flag = rg_gray_leader
+				if = {
+					limit = {
+						owner = {
+							has_global_flag = has_wsg_mod
+						}
+					}
+					set_leader_flag = not_has_wg_affection_normal
+				}
+				if = {
+					limit = {
+						owner = {
+							OR = {
+								has_global_flag = has_wsg_mod
+								has_global_flag = kdc_event_mod_active
+							}
+						}
+					}
+					set_leader_flag = "gray_leader"
+					set_leader_flag = gray_leader
+					add_trait_no_notify = leader_trait_governor_gray
+					if = {
+						limit = {
+							owner = {
+								has_country_flag = origin_gray_weaken
+								has_country_flag = origin_gray_country
+							}
+						}
+						remove_trait = leader_trait_governor_gray
+						add_trait_no_notify = leader_trait_governor_gray_weak
+					}
+				}
+				add_trait_no_notify = RG_leader_trait_offical_gray
+				add_trait_no_notify = RG_leader_trait_ruler_gray
+				add_trait_no_notify = RG_leader_trait_admiral_nanorebuild_gray
+				add_trait_no_notify = subclass_official_governor
+				add_trait_no_notify = subclass_commander_councilor
+				add_trait_no_notify = subclass_scientist_explorer
+				add_trait_no_notify = trait_ruler_architectural_sense_3
+				add_trait_no_notify = leader_trait_distribution_lines_2
+				add_trait_no_notify = leader_trait_carrier_specialization
+				add_trait_no_notify = leader_trait_juryrigger_2
+				add_trait_no_notify = leader_trait_reinforcer_2
+				add_trait_no_notify = leader_trait_engineering_focus_2
+				add_trait_no_notify = leader_trait_salvager_3
+			}
+		}
+		last_created_leader = {
+			set_owner = event_target:gray_owner
+		}
+	}
+	last_created_leader = {
+		set_leader_flag = has_gained_level_trait
+	}
+	random_owned_leader = {
+		limit = {
+			has_leader_flag = gray_official
+		}
+		if = {
+			limit = {
+				owner = {
+					OR = {
+						has_global_flag = has_wsg_mod
+						has_global_flag = kdc_event_mod_active
+					}
+				}
+			}
+			if = {
+				limit = {
+					has_leader_flag = has_wg_affection_wg_gray
+				}
+				if = {
+					limit = {
+						owner = { has_country_flag = married_gray }
+					}
+					set_leader_flag = married
+				}
+				set_variable = { which = affection value = owner.wg_gray_affection }
+			}
+			# if = {
+			# 	limit = {
+			# 		owner = {
+			# 			has_country_flag = gray_encountered_the_loop
+			# 		}
+			# 	}
+			# 	add_trait_no_notify = leader_trait_governor_wg_the_loop
+			# }
+			set_gray_portrait = yes
+			# add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = governor MARRIED_FLAG = married_gray }
+		}
+		else = {
+			rg_set_gray_portrait = yes
+		}
+	}
+	RG_leader_trait_admiral_nanorebuild_gray_counter_init_effect = yes
+	RG_leader_trait_general_tempest_incoming_counter_init_effect = yes
+}
+
 rg_gray_govener_init = {
 	event_target:rg_gray_country = {
 		create_leader = {
@@ -74,7 +165,7 @@ rg_gray_govener_init = {
 							}
 						}
 					}
-					set_leader_flag = "gray_leader"					#某个mod新旧flag混用，我不说是谁。嗯嘿嘿
+					set_leader_flag = "gray_leader"
 					set_leader_flag = gray_leader
 					add_trait_no_notify = leader_trait_governor_gray
 					add_trait_no_notify = RG_leader_trait_ruler_gray
@@ -148,7 +239,6 @@ rg_gray_govener_init = {
 			rg_set_gray_portrait = yes
 		}
 	}
-	
 }
 
 rg_gray_commander_init = {

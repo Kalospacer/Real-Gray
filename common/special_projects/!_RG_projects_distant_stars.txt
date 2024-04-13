@@ -63,8 +63,8 @@ special_project = {
 	event_scope = ship_event
 	requirements = {
 		shipclass_military = 1
-		leader = commander
-		has_trait = RG_leader_trait_admiral_gray
+		leader = rg_nanite_leader
+		# has_trait = RG_leader_trait_admiral_gray
 	}
 	on_start = {
 		owner = {
@@ -102,8 +102,8 @@ special_project = {
 	event_scope = ship_event
 	requirements = {
 		shipclass_military = 1
-		leader = admiral
-		has_trait = RG_leader_trait_admiral_gray
+		leader = rg_nanite_leader
+		# has_trait = RG_leader_trait_admiral_gray
 	}
 	on_start = {
 		owner = {
@@ -139,8 +139,8 @@ special_project = {
 	event_scope = ship_event
 	requirements = {
 		shipclass_military = 1
-		leader = commander
-		has_trait = RG_leader_trait_admiral_gray
+		leader = rg_nanite_leader
+		# has_trait = RG_leader_trait_admiral_gray
 	}
 	on_start = {
 		owner = {

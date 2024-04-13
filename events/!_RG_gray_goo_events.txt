@@ -394,7 +394,6 @@ country_event = {
 			has_country_flag = gray_reforming
 			has_country_flag = gray_diplomacy_engaged
 		}
-		exists = event_target:gray_governor
 	}
 	immediate = {
 		if = {
@@ -626,7 +625,7 @@ event = {
 						has_country_flag = gray_governor_active #旧版flag
 					}
 					NOT = {
-						exists = event_target:gray_governor
+						exists = event_target:gray_offical
 					}
 				}
 				AND = {

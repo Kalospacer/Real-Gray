@@ -31,7 +31,7 @@ rg_warship_init_mod1 = {
 			}
 			set_fleet_flag = gray_fleet
 			save_global_event_target_as = gray_warship
-			assign_leader = event_target:gray_leader_admiral
+			assign_leader = event_target:gray_official
 			if = {
 				limit = {
 					has_global_flag = kdc_event_mod_active
@@ -75,7 +75,7 @@ rg_warship_init_mod2 = {
 			}
 			set_fleet_flag = gray_fleet
 			save_global_event_target_as = gray_warship
-			assign_leader = event_target:gray_leader_admiral
+			assign_leader = event_target:gray_official
 			if = {
 				limit = {
 					has_global_flag = kdc_event_mod_active
@@ -163,7 +163,7 @@ rg_warship_init_mod0 = {
 			}
 			set_fleet_flag = gray_fleet
 			save_global_event_target_as = gray_warship
-			assign_leader = event_target:gray_leader_admiral
+			assign_leader = event_target:gray_official
 			if = {
 				limit = {
 					has_global_flag = kdc_event_mod_active
