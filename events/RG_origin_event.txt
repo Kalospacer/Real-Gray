@@ -41,7 +41,30 @@ country_event = {
 				}
 			}
 			set_country_flag = rg_scion_needs_fe
-			rg_lcluster_spawn_effect_scion = yes
+			if = {
+				limit ={
+					any_playable_country = {
+						AND = {
+							has_origin = origin_rg_gray
+							# NOT = { has_global_flag = rg_origin_l_cluster }
+						}
+					}
+				}
+				random_system = {
+					limit = { has_owner = no }
+					spawn_system = { initializer = "rg_fallen_machine_1" }
+				}
+				add_extra_hyperlane_to_spawned_system_effect = yes
+			}
+			else = {
+				rg_lcluster_spawn_effect_scion = yes
+				every_system = {
+					limit = {
+						has_star_flag = lcluster
+					}
+					rg_create_fe_citadel = yes
+				}
+			}
 			event_target:rg_scion_fe = {
 				set_policy = {
 					policy = artificial_intelligence_policy
@@ -85,18 +108,13 @@ country_event = {
 			}
 			capital_scope = {
 				solar_system = {
+					set_star_flag = lgate
 					spawn_megastructure = {
 						type = lgate_base
 						orbit_angle = 225
 						orbit_distance = 30
 					}
 				}
-			}
-			every_system = {
-				limit = {
-					has_star_flag = lcluster
-				}
-				rg_create_fe_citadel = yes
 			}
 			# add_extra_hyperlane_to_spawned_system_effect = yes
 		}

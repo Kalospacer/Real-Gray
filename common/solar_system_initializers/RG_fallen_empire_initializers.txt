@@ -255,3 +255,653 @@ rg_fallen_machine = {
 	# }
 }
 
+
+rg_fallen_machine_1 = {
+	usage = fallen_empire_init
+	name = 芬里尔III
+	class = "rl_standard_stars"
+
+	flags = {
+		ring_world_built
+	}
+
+	planet = {
+		class = star
+		orbit_distance = 0
+		orbit_angle = 0
+	}
+
+	change_orbit = 45
+
+	planet = {
+		class = "pc_ringworld_tech"
+		name = 外环
+		orbit_angle = -30
+		orbit_distance = 0
+	}
+
+	planet = {
+		class = "pc_ringworld_seam"
+		name = 泡芙碗
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = 菠萝包工厂
+		orbit_angle = 30
+		orbit_distance = 0
+		deposit_blockers = none
+		modifiers = none
+
+		init_effect = {
+
+			create_cluster = {
+				id = fe_mach_cluster
+				radius = 80
+				center = this.solar_system
+			}
+
+			rg_create_fallen_empire_species_effect = yes
+			rg_create_fallen_empire_country_effect = yes
+
+			set_planet_flag = fallen_empire_world
+			prevent_anomaly = yes
+			set_owner = event_target:rg_scion_fe
+			set_controller = event_target:rg_scion_fe
+			set_capital = yes
+
+			add_building = building_ancient_control_center
+			add_building = building_nourishment_center
+			add_building = building_nourishment_center
+			add_building = building_nourishment_center
+			add_building = building_nourishment_center
+			add_building = building_ancient_palace
+			add_building = building_affluence_center
+			add_building = building_affluence_center
+			add_building = building_affluence_center
+			add_building = building_affluence_center
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+
+			while = {
+				count = 5
+				add_district = district_rw_science
+			}
+			while = {
+				count = 5
+				add_district = district_rw_nexus
+			}
+			while = {
+				count = 105
+				create_pop = {
+					species = owner_main_species
+				}
+			}
+
+			while = {
+				count = 94
+				create_pop = {
+					species = event_target:rg_scion_slave.species
+				}
+			}
+
+			rg_create_fallen_empire_starting_navy = yes
+
+			while = {
+				count = 40
+				create_army = {
+					name = random
+					owner = event_target:rg_scion_fe
+					type = "gray_army"
+				}
+			}
+		}
+	}
+
+	init_effect = {
+		spawn_megastructure = {
+			type = "ring_world_ruined"
+			orbit_angle = -90
+			orbit_distance = 45
+		}
+		# rg_create_fe_citadel = yes
+		set_star_flag = lgate
+		spawn_megastructure = {
+			type = lgate_base
+			orbit_angle = 225
+			orbit_distance = 30
+		}
+	
+		rg_create_fe_citadel = yes
+	}
+
+	planet = {
+		class = "pc_ringworld_tech"
+		name = 中环
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+
+	planet = {
+		class = "pc_ringworld_seam"
+		name = 烤面包机
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = 可颂工厂
+		orbit_angle = 30
+		orbit_distance = 0
+		deposit_blockers = none
+		modifiers = none
+
+		init_effect = {
+
+			set_planet_flag = fallen_empire_world
+			prevent_anomaly = yes
+			set_owner = event_target:rg_scion_fe
+
+			add_building = building_ancient_control_center
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_dimensional_fabricator
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+
+			while = {
+				count = 5
+				add_district = district_rw_nexus
+			}
+			while = {
+				count = 50
+				create_pop = {
+					species = owner_main_species
+				}
+			}
+			while = {
+				count = 20
+				create_pop = {
+					species = event_target:rg_scion_slave.species
+				}
+			}
+			while = {
+				count = 20
+				create_army = {
+					name = random
+					owner = event_target:rg_scion_fe
+					type = "gray_army"
+				}
+			}
+		}
+	}
+
+	planet = {
+		class = "pc_ringworld_tech"
+		name = 内环
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+
+	planet = {
+		class = "pc_ringworld_seam"
+		name = 奶油核心
+		orbit_angle = 30
+		orbit_distance = 0
+	}
+
+	planet = {
+		class = "pc_ringworld_habitable"
+		name = 糖霜工厂
+		orbit_angle = 30
+		orbit_distance = 0
+		deposit_blockers = none
+		modifiers = none
+
+		init_effect = {
+			set_planet_flag = fallen_empire_world
+			prevent_anomaly = yes
+			set_owner = event_target:rg_scion_fe
+
+			add_building = building_ancient_control_center
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+			add_building = building_class_4_singularity
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+			add_building = building_nano_forge
+
+			while = {
+				count = 5
+				add_district = district_rw_generator
+			}
+			while = {
+				count = 22
+				create_pop = {
+					species = owner_main_species
+				}
+			}
+			while = {
+				count = 10
+				create_pop = {
+					species = event_target:rg_scion_slave.species
+				}
+			}
+			while = {
+				count = 10
+				create_army = {
+					name = random
+					owner = event_target:rg_scion_fe
+					type = "gray_army"
+				}
+			}
+		}
+	}
+
+	init_effect = {
+		spawn_system = {
+			min_distance >= 10
+			max_distance <= 50
+			initializer = rg_fallen_machine_01b
+		}
+	}
+
+}
+
+# EXTRAS
+rg_fallen_machine_01b = {
+	class = "rl_trinary_stars"
+
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 140
+	}
+	init_effect = {
+		rg_create_fe_citadel = yes
+	}
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 25
+		orbit_angle = 0
+		size = {
+			min = 20
+			max = 30
+		}
+		has_ring = no
+	}
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = {
+			min = 0
+			max = 20
+		}
+		orbit_angle = 120
+		size = {
+			min = 25
+			max = 30
+		}
+		has_ring = no
+	}
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = {
+			min = 0
+			max = 20
+		}
+		orbit_angle = 120
+		size = {
+			min = 25
+			max = 30
+		}
+		has_ring = no
+	}
+	change_orbit = 92
+	planet = {
+		count = {
+			min = 3
+			max = 6
+		}
+		class = pc_asteroid
+		orbit_distance = 0
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+	}
+	planet = {
+		count = 1
+		class = pc_asteroid
+		orbit_distance = 0
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+		init_effect = {
+			set_deposit = d_rare_crystals_2
+		}
+	}
+	change_orbit = -60
+	planet = {
+		class = pc_gray_goo
+		orbit_distance = 0
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+	}
+	planet = {
+		class = pc_broken
+		orbit_distance = 25
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+	}
+	change_orbit = 80
+	planet = {
+		class = pc_shattered
+		orbit_distance = 0
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+	}
+	planet = {
+		class = pc_shattered
+		orbit_distance = 25
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+	}
+
+	init_effect = {
+		spawn_system = {
+			min_distance >= 10
+			max_distance <= 50
+			initializer = rg_fallen_machine_02b
+		}
+
+		add_hyperlane = {
+			from = this
+			to = prev
+		}
+	}
+
+	
+}
+
+rg_fallen_machine_02b = {
+	class = "rl_standard_stars"
+
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 135
+	}
+
+	init_effect = {
+		rg_create_fe_citadel = yes
+	}
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 0
+		size = {
+			min = 30
+			max = 35
+		}
+		has_ring = no
+	}
+	change_orbit = 135
+	planet = {
+		count = {
+			min = 3
+			max = 6
+		}
+		class = pc_asteroid
+		orbit_distance = 0
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+	}
+	change_orbit = -80
+	planet = {
+		class = pc_gray_goo
+		orbit_distance = 30
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+	}
+	change_orbit = 90
+	planet = {
+		class = pc_shattered
+		orbit_distance = 0
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+	}
+	planet = {
+		class = pc_broken
+		orbit_distance = 30
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+	}
+
+	init_effect = {
+		spawn_system = {
+			min_distance >= 10
+			max_distance <= 50
+			initializer = rg_fallen_machine_03b
+		}
+
+		add_hyperlane = {
+			from = this
+			to = prev
+		}
+	}
+}
+
+rg_fallen_machine_03b = {
+	class = "rl_standard_stars"
+
+	asteroid_belt = {
+		type = rocky_asteroid_belt
+		radius = 120
+	}
+
+	init_effect = {
+		rg_create_fe_citadel = yes
+	}
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = {
+			min = 20
+			max = 30
+		}
+		has_ring = no
+	}
+	change_orbit = 120
+	planet = {
+		count = {
+			min = 3
+			max = 5
+		}
+		class = pc_asteroid
+		orbit_distance = 0
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+	}
+	planet = {
+		count = 1
+		class = pc_asteroid
+		orbit_distance = 0
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+		init_effect = {
+			set_deposit = d_volatile_motes_2
+		}
+	}
+	change_orbit = -70
+	planet = {
+		class = pc_shattered
+		orbit_distance = 0
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+	}
+	planet = {
+		class = pc_broken
+		orbit_distance = 25
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+	}
+	change_orbit = 70
+	planet = {
+		class = pc_gray_goo
+		orbit_distance = 25
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+	}
+	planet = {
+		class = pc_gas_giant
+		orbit_distance = 25
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+	}
+	planet = {
+		class = pc_gray_goo
+		orbit_distance = 25
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+	}
+
+	init_effect = {
+		spawn_system = {
+			min_distance >= 10
+			max_distance <= 50
+			initializer = rg_fallen_machine_04b
+		}
+
+		add_hyperlane = {
+			from = this
+			to = prev
+		}
+	}
+}
+
+rg_fallen_machine_04b = {
+	class = "rl_standard_stars"
+
+	init_effect = {
+		rg_create_fe_citadel = yes
+	}
+
+	planet = {
+		count = 1
+		class = star
+		orbit_distance = 0
+		orbit_angle = 1
+		size = {
+			min = 20
+			max = 30
+		}
+		has_ring = no
+	}
+	change_orbit = 50
+	planet = {
+		class = pc_broken
+		orbit_distance = 0
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+	}
+	planet = {
+		class = pc_shattered
+		orbit_distance = 25
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+	}
+	planet = {
+		class = pc_shattered
+		orbit_distance = 25
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+	}
+	planet = {
+		class = pc_gray_goo
+		orbit_distance = 30
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+	}
+	planet = {
+		class = pc_barren_cold
+		orbit_distance = 25
+		orbit_angle = {
+			min = 90
+			max = 270
+		}
+		change_orbit = @base_moon_distance
+		moon = {
+			class = "pc_frozen"
+			orbit_angle = {
+				min = 90
+				max = 270
+			}
+		}
+	}
+
+	init_effect = {
+		add_hyperlane = {
+			from = this
+			to = prev
+		}
+	}
+}
+

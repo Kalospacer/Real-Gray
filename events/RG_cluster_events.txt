@@ -123,6 +123,7 @@ country_event = {
 			save_event_target_as = rg_cluster_previous_home_planet
 			solar_system = {
 				save_event_target_as = rg_cluster_previous_home_system
+				set_star_flag = lgate
 				spawn_megastructure = {
 					type = lgate_base
 					orbit_angle = 225
