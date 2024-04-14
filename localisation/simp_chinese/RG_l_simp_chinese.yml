@@ -28,8 +28,13 @@
  RG_leader_trait_admiral_nanorebuild_gray_desc:0 "灰色风暴在L星团中席卷无数纪元。\n创造与解构，纳米机器席卷之处我们无所不能。"
  RG_leader_trait_admiral_nanorebuild_effect:0 "$FLEET_EFFECTS_TXT$:\n$t$每摧毁一艘敌军舰船:\n$tt$§Y重塑计数器层数§!: §G+1§!\n$t$这位领袖所在舰队损失舰船时:\n$tt$消耗§Y重塑计数器层数§!立即重建舰船。\n$t$当前§Y重塑计数器层数§!: §Y[owner.rg_nanorebuild_counter]§!\n$t$§Y$NAME_Gray$§!无法被该技能重建。\n\n$RG_leader_trait_tempest_incoming_effect$"
 
- preset_rg_scion: "誓约计划国"
+ preset_rg_scion: "§Y誓约计划国§!"
  preset_rg_scion_desc: "出于某种不可告人的目的，远古堕落帝国将其视若己出。他们的远古宗主不会允许其誓约国受到任何外部干扰。"
+
+ rg_nanite_leader:0"§Y纳米机器个体§!"
+ rg_nanite_leader_plural:0"§Y纳米机器个体§!"
+ rg_nanite_leader_description:0"§Y本质上是由千千万万纳米机械所组成的个体。因为能做到，所以将无所不能。§!"
+ rg_nanite_leader_plural_with_icon:0"£offical£ $rg_nanite_leader_plural$"
 
  concept_rg_scion: "$preset_rg_scion$"
  concept_rg_scion_desc: "$preset_rg_scion_desc$"
