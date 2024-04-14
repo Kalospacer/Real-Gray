@@ -1,3 +1,99 @@
+rg_create_fallen_empire_species_effect = {
+	create_species = {
+		name = 纳米构造体
+		class = RG_MACHINE
+		portrait = "rg_machine_maid"
+		traits = {
+			trait = trait_machine_unit
+			trait = rg_machine_maid_trait
+			trait = trait_robot_mass_produced
+			trait = ramdom_trait
+		}
+		extra_trait_points = 3
+		allow_negative_traits = no
+		namelist = MACHINE3
+		effect = {
+			save_event_target_as = rg_fallen_maid_species
+		}
+	}
+}
+
+rg_create_fallen_empire_country_effect = {
+	create_country = {
+		name = 德萨努-纳迪沙协议
+		type = fallen_empire
+		flag = {
+			icon = {
+				category = "special"
+				file = "gray_goo.dds"
+			}
+			background = {
+				category = "backgrounds"
+				file = "sinus.dds"
+			}
+			colors = {
+				"grey"
+				"dark_grey"
+				"null"
+				"null"
+			}
+		}
+		ignore_initial_colony_error = yes
+		authority = auth_machine_intelligence
+		civics = {
+			civic = civic_machine_remnants
+			civic = civic_custodian_directives
+		}
+		species = last_created_species
+		ethos = {
+			ethic = ethic_gestalt_consciousness
+		}
+		origin = "origin_fallen_empire"
+		effect = {
+			set_built_species = last_created_species
+			save_global_event_target_as = rg_scion_fe
+			set_country_flag = rg_fallen_empire_machine
+			add_resource = {
+				minerals = 10000
+				energy = 10000
+				food = 1000
+				influence = 500
+			}
+			if = {
+				limit = { host_has_dlc = "Apocalypse" }
+				give_technology = {
+					tech = tech_colossus
+					message = no
+				}
+			}
+			# must initialize global designs here
+			add_global_ship_design = "NAME_Gray_Omega"
+			add_global_ship_design = "NAME_Gray_Alpha"
+			add_global_ship_design = "NAME_Gray_Beta"
+			add_global_ship_design = "NAME_Gray_Gamma"
+			add_global_ship_design = "NAME_Gray_Theta"
+			add_global_ship_design = "NAME_Gray_Tau"
+			add_global_ship_design = "NAME_Gray_Sigma"
+			add_global_ship_design = "NAME_Gray_FE_Starbase"
+			if = {
+				limit = {
+					NOT = {
+						exist = event_target:rg_gray_country_leader
+					}
+				}
+				rg_gray_country_leader_init = yes
+				set_leader = last_created_leader
+			}
+			else = {
+				set_leader = last_created_leader
+			}
+			ruler = {
+				add_skill = 9
+			}
+		}
+	}
+}
+
 rg_create_fallen_empire_reinforcements = {
 	create_fleet = {
 		effect = {
