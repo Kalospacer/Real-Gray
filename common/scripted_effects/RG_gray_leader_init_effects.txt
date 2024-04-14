@@ -1,37 +1,3 @@
-# 避免代码复用原则：
-# 如果你需要在不同的地方重复调用同一套代码，你应当把他们封装在这样的函数里。
-# 避免需要修改代码时需要重复修改n次，或是发生修改了A处忘记修改B处导致bug发生的问题。
-# 当然，这种分块需要到什么程度，我也不知道
-#灰风
-################################
-# 舰R 灰风领袖好感度设定块部分：采样时间戳：2023/6/1 8：17
-# 仅用于留档比对不进行改动
-# wg_affection_wg_gray_system_launch = {
-# 	if = {
-# 		limit = { has_leader_flag = gray_leader }
-# 	set_leader_flag = has_wg_affection
-# 	set_leader_flag = has_wg_affection_wg_gray
-# 	set_leader_flag = wg_affection_auto_change_no
-# 	add_trait_no_notify = leader_trait_wg_gray_affection
-# 	set_variable = { which = affection value = owner.wg_gray_affection }
-# 	set_variable = { which = wg_leader_affection_to_lv2 value = @wg_gray_affection_to_lv2 }
-# 	set_variable = { which = wg_leader_affection_to_lv3 value = @wg_gray_affection_to_lv3 }
-# 	set_variable = { which = wg_leader_affection_to_lv4 value = @wg_gray_affection_to_lv4 }
-# 	set_variable = { which = wg_leader_affection_to_lv5 value = @wg_gray_affection_to_lv5 }
-# 	set_variable = { which = wg_leader_affection_reduce value = @wg_gray_affection_reduce }
-# 	set_variable = { which = wg_leader_affection_increase value = @wg_gray_affection_increase }
-# 	}
-# 
-# }
-# wg_affection_wg_gray_system_check = {
-# 	if = {
-# 		limit = {
-# 			has_leader_flag = has_wg_affection_wg_gray
-# 		}
-# 		set_variable = { which = affection value = owner.wg_gray_affection }
-# 	}
-# }
-################################
 rg_gray_govener_init = {
 	event_target:rg_gray_country = {
 		create_leader = {
@@ -74,7 +40,7 @@ rg_gray_govener_init = {
 							}
 						}
 					}
-					set_leader_flag = "gray_leader"					#某个mod新旧flag混用，我不说是谁。嗯嘿嘿
+					set_leader_flag = "gray_leader"
 					set_leader_flag = gray_leader
 					add_trait_no_notify = leader_trait_governor_gray
 					add_trait_no_notify = RG_leader_trait_ruler_gray

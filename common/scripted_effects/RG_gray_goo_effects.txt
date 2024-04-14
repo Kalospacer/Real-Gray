@@ -480,7 +480,7 @@ rg_create_gray_warship = {
 rg_create_gray_army = {
 	if = {
 		limit = {
-			has_leader_flag = gray_army_active
+			has_country_flag = gray_army_active
 		}
 	}
 	else = {
