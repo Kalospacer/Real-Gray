@@ -18,8 +18,10 @@ rg_ap_nantiematter = {
 		OR = {
 			has_country_flag = origin_rg_gray
 			has_country_flag = gray_owner
-			has_event_chain = l_cluster_chain
-			has_technology = tech_lgate_activation
+			AND = {
+				has_event_chain = l_cluster_chain
+				has_technology = tech_lgate_activation
+			}
 		}
 		is_ai = no
 	}
