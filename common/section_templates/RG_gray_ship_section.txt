@@ -160,12 +160,6 @@ ship_section_template = {
 	}
 	large_utility_slots = 12
 	aux_utility_slots = 3
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 960
-		}
-	}
 }
 
 ship_section_template = {
@@ -627,12 +621,6 @@ ship_section_template = {
 	}
 	large_utility_slots = 48
 	aux_utility_slots = 8
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 114514
-		}
-	}
 }
 
 ship_section_template = {
@@ -1094,12 +1082,6 @@ ship_section_template = {
 	}
 	large_utility_slots = 48
 	aux_utility_slots = 8
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 114514
-		}
-	}
 }
 
 ship_section_template = {
@@ -1108,12 +1090,6 @@ ship_section_template = {
 	fits_on_slot = behind
 	entity = "grey_tempesttw_thinktank_phase_03_entity"
 	icon = "GFX_ship_part_core_mid"
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 114514
-		}
-	}
 }
 
 ship_section_template = {
@@ -1122,10 +1098,4 @@ ship_section_template = {
 	fits_on_slot = behind
 	entity = "grey_tempesttw_thinktank_phase_03_entity"
 	icon = "GFX_ship_part_core_mid"
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 114514
-		}
-	}
 }

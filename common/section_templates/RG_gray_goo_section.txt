@@ -43,12 +43,6 @@ ship_section_template = {
 	}
 	large_utility_slots = 6
 	aux_utility_slots = 2
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 240
-		}
-	}
 }
 
 #战列2
@@ -95,12 +89,6 @@ ship_section_template = {
 	}
 	large_utility_slots = 6
 	aux_utility_slots = 2
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 240
-		}
-	}
 }
 
 #泰坦3
@@ -122,12 +110,6 @@ ship_section_template = {
 	}
 	large_utility_slots = 6
 	aux_utility_slots = 2
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 480
-		}
-	}
 }
 
 #线列4
@@ -149,12 +131,6 @@ ship_section_template = {
 	}
 	large_utility_slots = 6
 	aux_utility_slots = 2
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 240
-		}
-	}
 }
 
 #雷装5
@@ -201,12 +177,6 @@ ship_section_template = {
 	}
 	large_utility_slots = 6
 	aux_utility_slots = 2
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 240
-		}
-	}
 }
 
 #近防6
@@ -278,12 +248,6 @@ ship_section_template = {
 	}
 	large_utility_slots = 6
 	aux_utility_slots = 2
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 120
-		}
-	}
 }
 
 #光环7
@@ -305,12 +269,6 @@ ship_section_template = {
 	}
 	large_utility_slots = 6
 	aux_utility_slots = 2
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 120
-		}
-	}
 }
 
 #巨像8
@@ -327,12 +285,6 @@ ship_section_template = {
 	}
 	large_utility_slots = 6
 	aux_utility_slots = 2
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 120
-		}
-	}
 }
 
 #武库舰9
@@ -669,12 +621,6 @@ ship_section_template = {
 	}
 	large_utility_slots = 6
 	aux_utility_slots = 2
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 240
-		}
-	}
 }
 
 #航战10
@@ -716,12 +662,6 @@ ship_section_template = {
 	}
 	large_utility_slots = 6
 	aux_utility_slots = 2
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 240
-		}
-	}
 }
 
 #雷巡11
@@ -768,12 +708,6 @@ ship_section_template = {
 	}
 	large_utility_slots = 6
 	aux_utility_slots = 2
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 240
-		}
-	}
 }
 
 #撞击舰12
@@ -800,12 +734,6 @@ ship_section_template = {
 	}
 	large_utility_slots = 12
 	aux_utility_slots = 2
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 240
-		}
-	}
 }
 
 ship_section_template = {
@@ -926,12 +854,6 @@ ship_section_template = {
 	}
 	large_utility_slots = 12
 	aux_utility_slots = 2
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 480
-		}
-	}
 }
 
 ship_section_template = {
@@ -1082,12 +1004,6 @@ ship_section_template = {
 	}
 	large_utility_slots = 10
 	aux_utility_slots = 2
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 480
-		}
-	}
 }
 
 ship_section_template = {
@@ -1153,12 +1069,6 @@ ship_section_template = {
 		locatorname = "root"
 	}
 	aux_utility_slots = 1
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 480
-		}
-	}
 }
 
 ship_section_template = {
@@ -1204,12 +1114,6 @@ ship_section_template = {
 	}
 	large_utility_slots = 4
 	aux_utility_slots = 1
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 240
-		}
-	}
 }
 
 ship_section_template = {
@@ -1265,10 +1169,4 @@ ship_section_template = {
 	}
 	large_utility_slots = 12
 	aux_utility_slots = 2
-	resources = {
-		category = ship_sections
-		cost = {
-			alloys = 480
-		}
-	}
 }

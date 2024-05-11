@@ -15,7 +15,7 @@ graygoo_mothership = {
 	modifier = {
 		ship_evasion_add = 50
 		ship_armor_add = 25600
-		ship_shield_add = 25600
+		# ship_shield_add = 25600
 	}
 	ship_modifier = {
 		ship_disengage_chance_reduction = 8
@@ -46,8 +46,8 @@ graygoo_mothership = {
 	resources = {
 		category = ships
 		cost = {
-			nanites = @salvagecostlargerare
-		}
+			nanites = 30000
+	    }
 	}
 }
 
@@ -64,7 +64,7 @@ graygoo_interdictor = {
 		ships_upkeep_mult = -1
 		ship_piracy_suppression_add = 4
 		ship_armor_add = 2800
-		ship_shield_add = 2800
+		# ship_shield_add = 2800
 	}
 	max_hitpoints = 5000
 	size_multiplier = 8
@@ -88,8 +88,8 @@ graygoo_interdictor = {
 	resources = {
 		category = ships
 		cost = {
-			nanites = @salvagecostmediumrare
-		}
+			nanites = 3000
+	    }
 	}
 }
 
@@ -103,8 +103,8 @@ graygoo_factory = {
 	modifier = {
 		ship_cloaking_detection_add = 5
 		ship_evasion_add = 50
-		ship_armor_add = 1024000
-		ship_shield_add = 1024000
+		ship_armor_add = 2048000
+		# ship_shield_add = 1024000
 	}
 	ship_modifier = {
 		ship_shield_hardening_add = 5
@@ -132,8 +132,8 @@ graygoo_factory = {
 	resources = {
 		category = ships
 		cost = {
-			nanites = @salvagecostlargerare
-		}
+			nanites = 30000
+	    }
 	}
 }
 
@@ -180,8 +180,7 @@ nanite_space_dragon_baby = {
 	resources = {
 		category = ships
 		cost = {
-			alloys = @salvagecostmedium
-			nanites = @salvagecostmediumrare
-		}
+			nanites = 30000
+	    }
 	}
 }
