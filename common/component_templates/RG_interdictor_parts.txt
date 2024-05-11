@@ -330,7 +330,6 @@ utility_component_template = {
 	component_set = "power_core"
 	prerequisites = {
 		"tech_gray_nano_fusion_3"
-		"tech_gray_matter_spray_5"
 	}
 	tags = {
 		weapon_type_rg_reactor

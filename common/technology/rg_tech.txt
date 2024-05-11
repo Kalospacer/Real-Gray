@@ -9,10 +9,10 @@ tech_gray_weapon_lance_1 = {
 	}
 	ai_update_type = military
 	prerequisites = {
-		"tech_object_gray_5"
-		"tech_zero_point_power"
+		"tech_energy_lance_1"
+		"tech_minilaser_gray_1"
 	}
-	weight = @tier2weight3
+	weight = @tier4weight2
 	ai_weight = {
 		factor = 0		#weapons are good
 		modifier = {
@@ -38,9 +38,9 @@ tech_minilaser_gray_1 = {
 	ai_update_type = military
 	prerequisites = {
 		"tech_gray_weapon_lance_1"
-		"tech_zero_point_power"
+		"tech_lasers_4"
 	}
-	weight = @tier2weight3
+	weight = 0
 	## unlock 
 	ai_weight = {
 		factor = 0
@@ -55,7 +55,7 @@ tech_gray_cloaking_3 = {
 	category = { field_manipulation }
 	ai_update_type = all
 	is_rare = yes
-	prerequisites = { "tech_cloaking_3" "tech_gray_weapon_lance_1" }
+	prerequisites = { "tech_cloaking_3" "tech_gray_nano_fusion_3" }
 	is_reverse_engineerable = no
 	weight = @tier4weight3
 
@@ -112,10 +112,12 @@ tech_gray_matter_remix_2 = {
 		materials
 	}
 	ai_update_type = military
-	weight = @tier2weight3
+	weight = @tier3weight2
+
+	gateway = infrastructure
 	is_reverse_engineerable = no
 	prerequisites = {
-		"tech_gray_weapon_lance_1"
+		"tech_gray_nano_fusion_3"
 		"tech_ship_armor_5"
 	}
 	ai_weight = {
@@ -141,9 +143,12 @@ tech_gray_nano_fusion_3 = {
 		particles
 	}
 	ai_update_type = military
-	weight = @tier2weight3
+	weight = @tier4weight2
+
+	gateway = power_generation
+
 	prerequisites = {
-		"tech_gray_matter_remix_2"
+		"tech_minilaser_gray_1"
 		"tech_zero_point_power"
 	}
 	ai_weight = {
@@ -168,11 +173,94 @@ tech_gray_nano_boost_3 = {
 		propulsion
 	}
 	ai_update_type = military
-	weight = @tier2weight3
+	weight = @tier4weight1
 	is_reverse_engineerable = no
 	prerequisites = {
-		"tech_gray_matter_remix_2"
+		"tech_gray_nano_fusion_3"
 		"tech_thrusters_4"
+	}
+	ai_weight = {
+		factor = 0		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+}
+
+tech_gray_nano_drive = {
+	area = physics
+	cost = 5000
+	tier = 5
+	is_rare = yes
+	is_dangerous = yes
+	category = { particles }
+	ai_update_type = military
+	weight = @tier5weight1
+	is_reverse_engineerable = no
+	prerequisites = {
+		"tech_gray_nano_boost_3"
+		"tech_jump_drive_1"
+	}
+
+	feature_flags = {
+		jump_method
+	}
+	ai_weight = {
+		factor = 0		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+}
+
+tech_gray_nano_aircraft = {
+	area = engineering
+	cost = 5000
+	tier = 5
+	is_rare = yes
+	category = { voidcraft }
+	ai_update_type = military
+	weight = @tier3weight3
+	is_reverse_engineerable = no
+	prerequisites = {
+		"tech_gray_nano_boost_3"
+		"tech_strike_craft_3"
+	}
+	ai_weight = {
+		factor = 0		#weapons are good
+		modifier = {
+			factor = 1.25
+			has_ethic = ethic_militarist
+		}
+		modifier = {
+			factor = 1.5
+			has_ethic = ethic_fanatic_militarist
+		}
+	}
+}
+
+tech_gray_nano_torpedo = {
+	area = physics
+	cost = 5000
+	tier = 5
+	is_rare = yes
+	category = { particles }
+	ai_update_type = military
+	weight = @tier4weight2
+	is_reverse_engineerable = no
+	prerequisites = {
+		"tech_gray_nano_boost_3"
+		"tech_energy_torpedoes_2"
 	}
 	ai_weight = {
 		factor = 0		#weapons are good
@@ -196,10 +284,10 @@ tech_gray_interdictor_4 = {
 		voidcraft
 	}
 	ai_update_type = military
-	weight = @tier2weight3
+	weight = @tier4weight1
 	is_reverse_engineerable = no
 	prerequisites = {
-		"tech_gray_nano_boost_3"
+		"tech_gray_matter_remix_2"
 		"tech_battleships"
 	}
 	ai_weight = {
@@ -224,7 +312,7 @@ tech_gray_matter_spray_5 = {
 		propulsion
 	}
 	ai_update_type = military
-	weight = @tier2weight3
+	weight = @tier4weight2
 	is_reverse_engineerable = no
 	prerequisites = {
 		"tech_gray_interdictor_4"
@@ -252,11 +340,11 @@ tech_gray_buffnut_6 = {
 		voidcraft
 	}
 	ai_update_type = military
-	weight = @tier2weight3
+	weight = @tier5weight3
 	is_reverse_engineerable = no
 	prerequisites = {
 		"tech_gray_interdictor_4"
-		"tech_juggernaut"
+		"tech_colossus"
 	}
 	ai_weight = {
 		factor = 0		#weapons are good
@@ -280,7 +368,7 @@ tech_gray_army_7 = {
 		military_theory
 	}
 	ai_update_type = military
-	weight = @tier2weight3
+	weight = @tier2weight2
 	is_reverse_engineerable = no
 	prerequisites = {
 		"tech_gray_matter_remix_2"
@@ -308,12 +396,11 @@ tech_gray_juggernaut_8 = {
 		voidcraft
 	}
 	ai_update_type = military
-	weight = @tier2weight3
+	weight = @tier5weight3
 	is_reverse_engineerable = no
 	prerequisites = {
-		"tech_gray_matter_remix_2"
+		"tech_gray_interdictor_4"
 		"tech_juggernaut"
-		"tech_mega_engineering"
 	}
 	ai_weight = {
 		factor = 0		#weapons are good

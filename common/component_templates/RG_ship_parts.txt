@@ -533,7 +533,7 @@ weapon_component_template = {
 	tracking = 0.8
 	power = -5
 	prerequisites = {
-		"tech_gray_weapon_lance_1"
+		"tech_gray_nano_torpedo"
 	}
 	component_set = "RG_FLAK_BATTERY"
 	projectile_gfx = "RG_flak_pd_3"
@@ -762,7 +762,7 @@ weapon_component_template = {
 	}
 	projectile_gfx = "rg_gatebuilder_torpedo_ballistic"
 	prerequisites = {
-		"tech_gray_nano_boost_3"
+		"tech_gray_nano_torpedo"
 	}
 	size_damage_factor = 1
 	armor_damage = 1.2
@@ -810,7 +810,7 @@ weapon_component_template = {
 	}
 	projectile_gfx = "gatebuilder_torpedo"
 	prerequisites = {
-		"tech_gray_nano_boost_3"
+		"tech_gray_nano_torpedo"
 	}
 	missile_speed = 150
 	missile_evasion = 0.35
@@ -910,7 +910,7 @@ strike_craft_component_template = {
 		RG_graygoo_capitalship
 	}
 	prerequisites = {
-		"tech_gray_nano_boost_3"
+		"tech_gray_nano_aircraft"
 	}
 	count = 15
 	regeneration_per_day = 1
@@ -977,7 +977,7 @@ strike_craft_component_template = {
 		RG_graygoo_capitalship
 	}
 	prerequisites = {
-		"tech_gray_nano_boost_3"
+		"tech_gray_nano_aircraft"
 	}
 	count = 15
 	regeneration_per_day = 1
@@ -1047,7 +1047,7 @@ strike_craft_component_template = {
 		RG_graygoo_capitalship
 	}
 	prerequisites = {
-		"tech_gray_nano_boost_3"
+		"tech_gray_nano_aircraft"
 	}
 	count = 15
 	regeneration_per_day = 1
@@ -1118,7 +1118,7 @@ strike_craft_component_template = {
 		RG_graygoo_capitalship
 	}
 	prerequisites = {
-		"tech_gray_nano_boost_3"
+		"tech_gray_nano_aircraft"
 	}
 	count = 30
 	regeneration_per_day = 2
@@ -2224,7 +2224,7 @@ utility_component_template = {
 			nanties = 10
 		}
 	}
-	prerequisites = { "tech_gray_nano_boost_3" }
+	prerequisites = { "tech_gray_nano_drive" }
 	ftl = yes
 	jumpdrive = yes
 	ship_modifier = {
@@ -2258,7 +2258,7 @@ utility_component_template = {
 	}
 	sensor_range = 15
 	hyperlane_range = 20
-	prerequisites = { "tech_gray_matter_remix_2" }
+	prerequisites = { "tech_gray_nano_fusion_3" }
 	ship_modifier = {
 		ship_tracking_add = 20
 	}
