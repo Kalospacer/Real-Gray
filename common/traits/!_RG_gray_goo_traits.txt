@@ -33,78 +33,78 @@
 # 	randomized = no
 # }
 
-RG_leader_trait_offical_gray = {
-	#唯一特质
-	cost = 0
-	inline_script = {
-		script = trait/icon_psionic
-		CLASS = leader
-		ICON = "GFX_leader_trait_psionic_chosen_one"
-		RARITY = paragon
-		COUNCIL = no
-		TIER = none
-	}
-	immortal_leaders = yes
-		triggered_self_modifier = {
-		potential = {
-			always = yes
-		}
-		leader_skill_levels = 1
-		mult = trigger:has_skill
-	}
-	self_modifier = {
-		species_leader_exp_gain = 1
-	}
-	councilor_modifier = {
-		all_technology_research_speed = 0.5
-	}
-	planet_modifier = {
-		planet_buildings_cost_mult = -0.4
-		planet_building_build_speed_mult = 0.6
-		planet_jobs_alloys_produces_mult = 0.25
-		planet_jobs_engineering_research_produces_mult = 0.25
-		deposit_blockers_cost_mult = -0.4
-		planet_clear_blocker_time_mult = -0.6
-	}
-	sector_modifier = {
-		planet_buildings_cost_mult = -0.2
-		planet_building_build_speed_mult = 0.2
-		planet_jobs_alloys_produces_mult = 0.1
-		planet_jobs_engineering_research_produces_mult = 0.1
-		deposit_blockers_cost_mult = -0.2
-		planet_clear_blocker_time_mult = -0.2
-		starbase_shipyard_build_cost_mult = -0.25
-		starbase_shipyard_build_speed_mult = -0.3
-	}
-	fleet_modifier = {
-		ship_armor_mult = 3.5
-		ship_hull_mult = 3.5
-		ships_upkeep_mult = -0.4
-		ship_hull_regen_add_perc = 5
-		ship_armor_regen_add_perc = 5
-	}
-	army_modifier = {
-		army_collateral_damage_mult = 0.15
-		army_disengage_chance_mult = 0.5
-		army_health = 0.35
-	}
-	modifier = {
-		ship_archaeological_site_excavation_speed_mult = 0.5
-		science_ship_survey_speed = 1
-		# ship_windup_mult = -1
-		# ship_speed_mult = 0.5
-		ship_anomaly_generation_chance_mult = -1
-	}
-	triggered_modifier = {
-		potential = {
-			has_astral_planes_dlc = yes
-		}
-		country_astral_rift_speed_mult = 0.5
-	}
-	leader_class = { rg_nanite_leader }
-	initial = no
-	randomized = no
-}
+# RG_leader_trait_offical_gray = {
+# 	#唯一特质
+# 	cost = 0
+# 	inline_script = {
+# 		script = trait/icon_psionic
+# 		CLASS = leader
+# 		ICON = "GFX_leader_trait_psionic_chosen_one"
+# 		RARITY = paragon
+# 		COUNCIL = no
+# 		TIER = none
+# 	}
+# 	immortal_leaders = yes
+# 		triggered_self_modifier = {
+# 		potential = {
+# 			always = yes
+# 		}
+# 		leader_skill_levels = 1
+# 		mult = trigger:has_skill
+# 	}
+# 	self_modifier = {
+# 		species_leader_exp_gain = 1
+# 	}
+# 	councilor_modifier = {
+# 		all_technology_research_speed = 0.5
+# 	}
+# 	planet_modifier = {
+# 		planet_buildings_cost_mult = -0.4
+# 		planet_building_build_speed_mult = 0.6
+# 		planet_jobs_alloys_produces_mult = 0.25
+# 		planet_jobs_engineering_research_produces_mult = 0.25
+# 		deposit_blockers_cost_mult = -0.4
+# 		planet_clear_blocker_time_mult = -0.6
+# 	}
+# 	sector_modifier = {
+# 		planet_buildings_cost_mult = -0.2
+# 		planet_building_build_speed_mult = 0.2
+# 		planet_jobs_alloys_produces_mult = 0.1
+# 		planet_jobs_engineering_research_produces_mult = 0.1
+# 		deposit_blockers_cost_mult = -0.2
+# 		planet_clear_blocker_time_mult = -0.2
+# 		starbase_shipyard_build_cost_mult = -0.25
+# 		starbase_shipyard_build_speed_mult = -0.3
+# 	}
+# 	fleet_modifier = {
+# 		ship_armor_mult = 3.5
+# 		ship_hull_mult = 3.5
+# 		ships_upkeep_mult = -0.4
+# 		ship_hull_regen_add_perc = 5
+# 		ship_armor_regen_add_perc = 5
+# 	}
+# 	army_modifier = {
+# 		army_collateral_damage_mult = 0.15
+# 		army_disengage_chance_mult = 0.5
+# 		army_health = 0.35
+# 	}
+# 	modifier = {
+# 		ship_archaeological_site_excavation_speed_mult = 0.5
+# 		science_ship_survey_speed = 1
+# 		# ship_windup_mult = -1
+# 		# ship_speed_mult = 0.5
+# 		ship_anomaly_generation_chance_mult = -1
+# 	}
+# 	triggered_modifier = {
+# 		potential = {
+# 			has_astral_planes_dlc = yes
+# 		}
+# 		country_astral_rift_speed_mult = 0.5
+# 	}
+# 	leader_class = { rg_nanite_leader }
+# 	initial = no
+# 	randomized = no
+# }
 
 RG_leader_trait_governor_gray = {
 	#总督特质
@@ -270,7 +270,7 @@ RG_leader_trait_ruler_gray = {
 		country_base_influence_produces_add = 1
 		mult = trigger:has_skill
 	}
-	leader_class = { official rg_nanite_leader }
+	leader_class = { official }
 	initial = no
 	randomized = no
 }
@@ -418,7 +418,7 @@ RG_leader_trait_admiral_nanorebuild_gray = {
 		army_health = 0.05
 		mult = owner.rg_general_skill_combat_daypassed_variable
 	}
-	leader_class = { commander rg_nanite_leader }
+	leader_class = { commander }
 	initial = no
 	randomized = no
 }
