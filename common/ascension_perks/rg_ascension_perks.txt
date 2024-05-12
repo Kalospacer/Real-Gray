@@ -1,27 +1,14 @@
 rg_ap_nantiematter = {
 	on_enabled = {
 		custom_tooltip = "rg_ap_nantiematter_tooltip"
-		add_research_option = tech_minilaser_gray_1
+		add_research_option = tech_gray_weapon_lance_1
 	}
 	possible = {
-		custom_tooltip = {
-			fail_text = "requires_ascension_perks_3"
-			num_ascension_perks > 2
-		}
-		custom_tooltip = {
-			fail_text = "rg_requires_ascension_perks_lgate"
-			OR = {
-				has_country_flag = origin_rg_gray
-				has_country_flag = gray_owner
-				AND = {
-					has_event_chain = l_cluster_chain
-					has_technology = tech_lgate_activation
-				}
-			}
-		}
-		custom_tooltip = {
-			fail_text = "rg_requires_ascension_perks_lgate"
-			has_technology = tech_lasers_4
+		OR = {
+			has_country_flag = origin_rg_gray
+			has_country_flag = gray_owner
+			has_technology = tech_lgate_activation
+			can_research_technology = tech_lgate_activation
 		}
 		NOT = {
 			has_ascension_perk = rg_nantiematter
@@ -31,7 +18,10 @@ rg_ap_nantiematter = {
 		OR = {
 			has_country_flag = origin_rg_gray
 			has_country_flag = gray_owner
-			has_event_chain = l_cluster_chain
+			AND = {
+				has_event_chain = l_cluster_chain
+				has_technology = tech_lgate_activation
+			}
 		}
 		is_ai = no
 	}
