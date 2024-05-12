@@ -68,36 +68,36 @@
 # Step 4: Assign the highest leader/location pair based on the weight
 # Step 5: if no leader was assigned, see if hiring a leader is possible repeating the same steps
 
-# rg_nanite_leader = {
-# 	name = rg_nanite_leader
-# 	name_plural = rg_nanite_leader_plural
-# 	description = rg_nanite_leader_description
-# 
-# 	can_lead_army = yes
-# 	can_lead_navy = yes
-# 	can_govern_planet = yes
-# 	can_be_envoy = yes
-# 	can_research_tech = yes
-# 	can_research_special_projects = yes
-# 	can_crew_science_ship = yes
-# 	can_research_anomalies = yes
-# 	can_research_archaeology_site = yes
-# 	can_survey = yes
-# 	can_boost_cloaking_detection = yes
-# 	can_explore_rifts = yes
-# 	can_conduct_active_reconnaissance = yes
-# 	can_govern_planet = yes
-# 	can_have_traits = yes
-# 	can_rule_empire = yes
-# 	recruitable = no
-# 	max_trait_points = 3
-# 	leader_capacity = 3
-# 
-# 	ai_weight = {
-# 		modifier = {
-# 			factor = 0
-# 		}
-# 	}
-# 	icon = 4
-# 	paragon_background_selector = "paragon_background_selector"
-# }
+rg_nanite_leader = {
+	name = rg_nanite_leader
+	name_plural = rg_nanite_leader_plural
+	description = rg_nanite_leader_description
+
+	can_lead_army = yes
+	can_lead_navy = yes
+	can_govern_planet = yes
+	can_be_envoy = yes
+	can_research_tech = yes
+	can_research_special_projects = yes
+	can_crew_science_ship = yes
+	can_research_anomalies = yes
+	can_research_archaeology_site = yes
+	can_survey = yes
+	can_boost_cloaking_detection = yes
+	can_explore_rifts = yes
+	can_conduct_active_reconnaissance = yes
+	can_govern_planet = yes
+	can_have_traits = yes
+	can_rule_empire = yes
+	recruitable = no
+	max_trait_points = 3
+	leader_capacity = 3
+
+	ai_weight = {
+		modifier = {
+			factor = 0
+		}
+	}
+	icon = 4
+	paragon_background_selector = "paragon_background_selector"
+}
