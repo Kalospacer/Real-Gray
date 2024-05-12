@@ -304,7 +304,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "COMBAT_COMPUTER_SWARM_AUTONOMOUS"
+	key = "RG_COMBAT_COMPUTER_SWARM_AUTONOMOUS"
 	size = small
 	icon = "GFX_ship_part_computer_swarm_sapient"
 	icon_frame = 1
@@ -343,7 +343,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "COMBAT_COMPUTER_SWARM_PRECOG"
+	key = "RG_COMBAT_COMPUTER_SWARM_PRECOG"
 	size = small
 	icon = "GFX_ship_part_computer_swarm_precog"
 	icon_frame = 1
@@ -510,7 +510,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "COMBAT_COMPUTER_TORPEDO_AUTONOMOUS"
+	key = "RG_COMBAT_COMPUTER_TORPEDO_AUTONOMOUS"
 	size = small
 	icon = "GFX_ship_part_computer_swarm_sapient"
 	icon_frame = 1
@@ -547,7 +547,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "COMBAT_COMPUTER_TORPEDO_PRECOG"
+	key = "RG_COMBAT_COMPUTER_TORPEDO_PRECOG"
 	size = small
 	icon = "GFX_ship_part_computer_swarm_precog"
 	icon_frame = 1
@@ -663,7 +663,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "COMBAT_COMPUTER_PICKET_SAPIENT"
+	key = "RG_COMBAT_COMPUTER_PICKET_SAPIENT"
 	size = small
 	icon = "GFX_ship_part_computer_picket_sapient"
 	icon_frame = 1
@@ -714,7 +714,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "COMBAT_COMPUTER_PICKET_AUTONOMOUS"
+	key = "RG_COMBAT_COMPUTER_PICKET_AUTONOMOUS"
 	size = small
 	icon = "GFX_ship_part_computer_picket_sapient"
 	icon_frame = 1
@@ -754,7 +754,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "COMBAT_COMPUTER_PICKET_PRECOG"
+	key = "RG_COMBAT_COMPUTER_PICKET_PRECOG"
 	size = small
 	icon = "GFX_ship_part_computer_picket_precog"
 	icon_frame = 1
@@ -918,7 +918,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "COMBAT_COMPUTER_LINE_AUTONOMOUS"
+	key = "RG_COMBAT_COMPUTER_LINE_AUTONOMOUS"
 	size = small
 	icon = "GFX_ship_part_computer_line_sapient"
 	icon_frame = 1
@@ -955,7 +955,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "COMBAT_COMPUTER_LINE_PRECOG"
+	key = "RG_COMBAT_COMPUTER_LINE_PRECOG"
 	size = small
 	icon = "GFX_ship_part_computer_line_precog"
 	icon_frame = 1
@@ -1121,7 +1121,7 @@ utility_component_template = {
 
 
 utility_component_template = {
-	key = "COMBAT_COMPUTER_ARTILLERY_AUTONOMOUS"
+	key = "RG_COMBAT_COMPUTER_ARTILLERY_AUTONOMOUS"
 	size = small
 	icon = "GFX_ship_part_computer_artillery_sapient"
 	icon_frame = 1
@@ -1158,7 +1158,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "COMBAT_COMPUTER_ARTILLERY_PRECOG"
+	key = "RG_COMBAT_COMPUTER_ARTILLERY_PRECOG"
 	size = small
 	icon = "GFX_ship_part_computer_artillery_precog"
 	icon_frame = 1
@@ -1281,7 +1281,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "COMBAT_COMPUTER_CARRIER_SAPIENT"
+	key = "RG_COMBAT_COMPUTER_CARRIER_SAPIENT"
 	size = small
 	icon = "GFX_ship_part_computer_carrier_sapient"
 	icon_frame = 1
@@ -1333,7 +1333,7 @@ utility_component_template = {
 
 
 utility_component_template = {
-	key = "COMBAT_COMPUTER_CARRIER_AUTONOMOUS"
+	key = "RG_COMBAT_COMPUTER_CARRIER_AUTONOMOUS"
 	size = small
 	icon = "GFX_ship_part_computer_carrier_sapient"
 	icon_frame = 1
@@ -1373,7 +1373,7 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "COMBAT_COMPUTER_CARRIER_PRECOG"
+	key = "RG_COMBAT_COMPUTER_CARRIER_PRECOG"
 	size = small
 	icon = "GFX_ship_part_computer_carrier_precog"
 	icon_frame = 1
