@@ -3,7 +3,7 @@
 ########################
 
 utility_component_template = {
-	key = " q"
+	key = "RG_COMBAT_COMPUTER_SWARM_DEFAULT"
 	size = small
 	icon = "GFX_ship_part_computer_default"
 	icon_frame = 1
