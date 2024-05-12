@@ -176,37 +176,6 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "RG_Mothership_ZERO_POINT_REACTOR"
-	size = small
-	icon = "GFX_ship_part_reactor_5"
-	icon_frame = 1
-	power = 50000
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = 224
-		}
-		upkeep = {
-			energy = 2.29
-			alloys = 0.229
-		}
-	}
-	prerequisites = {
-		"tech_zero_point_power"
-	}
-	component_set = "power_core"
-	size_restriction = {
-		RG_graygoo_mothership
-		RG_gray_juggernaut
-		RG_graygoo_capitalship
-	}
-	upgrades_to = "RG_Mothership_DARK_MATTER_REACTOR"
-	ai_weight = {
-		weight = 5
-	}
-}
-
-utility_component_template = {
 	key = "RG_Interdictor_DARK_MATTER_REACTOR"
 	size = small
 	icon = "GFX_ship_part_dark_matter_power_core"
@@ -246,11 +215,167 @@ utility_component_template = {
 }
 
 utility_component_template = {
+	key = "RG_Mothership_FISSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_1"
+	icon_frame = 1
+	power = 7700
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 44.8
+		}
+		upkeep = {
+			energy = 0.458
+			alloys = 0.045
+		}
+	}
+
+	prerequisites = { "tech_fission_power" }
+	component_set = "power_core"
+	size_restriction = {
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+	}
+	upgrades_to = "RG_Mothership_FUSION_REACTOR"
+
+	ai_weight = {
+		weight = 1
+	}
+}
+
+utility_component_template = {
+	key = "RG_Mothership_FUSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_2"
+	icon_frame = 1
+	power = 15400
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 89.6
+		}
+		upkeep = {
+			energy = 0.92
+			alloys = 0.09
+		}
+	}
+
+	prerequisites = { "tech_fusion_power" }
+	component_set = "power_core"
+	size_restriction = {
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+	}
+	upgrades_to = "RG_Mothership_COLD_FUSION_REACTOR"
+
+	ai_weight = {
+		weight = 2
+	}
+}
+
+utility_component_template = {
+	key = "RG_Mothership_COLD_FUSION_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_3"
+	icon_frame = 1
+	power = 23100
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 134
+		}
+		upkeep = {
+			energy = 1.37
+			alloys = 0.137
+		}
+	}
+
+	prerequisites = { "tech_cold_fusion_power" }
+	component_set = "power_core"
+	size_restriction = {
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+	}
+	upgrades_to = "RG_Mothership_ANTIMATTER_REACTOR"
+
+	ai_weight = {
+		weight = 3
+	}
+}
+
+utility_component_template = {
+	key = "RG_Mothership_ANTIMATTER_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_4"
+	icon_frame = 1
+	power = 30800
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 179
+		}
+		upkeep = {
+			energy = 1.83
+			alloys = 0.183
+		}
+	}
+
+	prerequisites = { "tech_antimatter_power" }
+	component_set = "power_core"
+	size_restriction = {
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+	}
+	upgrades_to = "RG_Mothership_ZERO_POINT_REACTOR"
+
+	ai_weight = {
+		weight = 4
+	}
+}
+
+
+utility_component_template = {
+	key = "RG_Mothership_ZERO_POINT_REACTOR"
+	size = small
+	icon = "GFX_ship_part_reactor_5"
+	icon_frame = 1
+	power = 38500
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 224
+		}
+		upkeep = {
+			energy = 2.29
+			alloys = 0.229
+		}
+	}
+	prerequisites = {
+		"tech_zero_point_power"
+	}
+	component_set = "power_core"
+	size_restriction = {
+		RG_graygoo_mothership
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+	}
+	upgrades_to = "RG_Mothership_DARK_MATTER_REACTOR"
+	ai_weight = {
+		weight = 5
+	}
+}
+
+utility_component_template = {
 	key = "RG_Mothership_DARK_MATTER_REACTOR"
 	size = small
 	icon = "GFX_ship_part_dark_matter_power_core"
 	icon_frame = 1
-	power = 60000
+	power = 
 	resources = {
 		category = ship_components
 		cost = {

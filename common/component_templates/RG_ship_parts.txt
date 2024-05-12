@@ -2354,8 +2354,8 @@ utility_component_template = {
 	component_set = "power_core"
 	size_restriction = {
 		RG_graygoo_interdictor
+		RG_graygoo_destroyer
 		RG_graygoo_Buff
-		RG_graygoo_mothership
 		RG_graygoo_icebreaker_interdictor
 	}
 	ai_weight = {
@@ -2368,7 +2368,7 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_gray_reactor"
 	icon_frame = 1
-	power = 280000
+	power = 92400
 	resources = {
 		category = ship_components
 		cost = {
@@ -2389,6 +2389,7 @@ utility_component_template = {
 	size_restriction = {
 		RG_gray_juggernaut
 		RG_graygoo_capitalship
+		RG_graygoo_mothership
 	}
 	ai_weight = {
 		weight = 0
