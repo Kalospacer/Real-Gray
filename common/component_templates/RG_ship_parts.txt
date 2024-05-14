@@ -2321,6 +2321,8 @@ utility_component_template = {
 	}
 	size_restriction = {
 		RG_graygoo_destroyer
+		RG_armed_science_ship
+		RG_armed_constructor_ship
 	}
 	component_set = "power_core"
 	ai_weight = {
