@@ -5,8 +5,11 @@ rg_create_fallen_empire_species_effect = {
 		portrait = "rg_machine_maid"
 		traits = {
 			trait = trait_machine_unit
+			trait = trait_robot_domestic_protocols
 			trait = rg_machine_maid_trait
-			trait = trait_robot_mass_produced
+			trait = trait_auto_mod_robotic
+			trait = trait_robot_streamlined_protocols
+			trait = trait_robot_luxurious
 			trait = ramdom_trait
 		}
 		extra_trait_points = 3
@@ -81,7 +84,7 @@ rg_create_fallen_empire_country_effect = {
 				modifier = fe_ship_cost_modifier
 				days = -1
 			}
-			
+
 			if = {
 				limit = {
 					NOT = {
