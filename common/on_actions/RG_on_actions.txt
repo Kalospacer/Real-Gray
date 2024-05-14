@@ -176,3 +176,12 @@ on_space_battle_lost = {
 		rg_skill.15
 	}
 }
+
+on_pop_assembled = {
+	events = {
+		crisis.2055
+		crisis.2312
+		necroids.250 #makes zombie pops
+		cyber.7 # Limited Cybernetic pops
+	}
+}

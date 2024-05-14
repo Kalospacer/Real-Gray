@@ -1,0 +1,14 @@
+rg_count_maid = {
+	base = 0
+	complex_trigger_modifier = {
+		trigger = count_traits
+		trigger_scope = pop
+		parameters = {
+			limit = {
+				has_trait = rg_machine_maid_trait
+			}
+		}
+		mode = add
+	}
+	# max = 20
+}

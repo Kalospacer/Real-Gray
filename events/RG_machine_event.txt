@@ -36,3 +36,59 @@ country_event = {
 		}
 	}
 }
+
+# country_event = {
+# 	id = rg_maid.2
+# 	hide_window = yes
+# 	is_triggered_only = yes
+# 	immediate = {
+# 		every_playable_country = {
+# 			limit = {
+# 				any_owned_species = {
+# 					has_trait = rg_machine_maid_trait
+# 				}
+# 			}
+# 			triggered_planet_modifier = {
+# 				potential = {
+# 					can_assemble_budding_pop = yes
+# 				}
+# 				planet_pop_assembly_organic_add = @plantoid_budding_rate
+# 				mult = value:budding_multiplier
+# 			}
+# 		}
+# 		capital_scope = {
+# 			while = {
+# 				count = 5
+# 				create_pop = {
+# 					species = event_target:rg_maid_species
+# 				}
+# 			}
+# 		}
+# 	}
+# }
+
+# planet_event = { #Braiiiins
+# 	id = rg_maid.3
+# 	is_triggered_only = yes
+# 	hide_window = yes
+# 
+# 	trigger = {
+# 		fromfrom = { 
+# 			is_organic_species = yes
+# 			NOT = { has_trait = trait_zombie }
+# 		}
+# 		owner = { has_valid_civic = civic_permanent_employment }
+# 		has_building = building_posthumous_employment_center
+# 	}
+# 
+# 	immediate = {
+# 		fromfrom = {
+# 			make_pop_zombie = yes
+# 		}
+# 	}
+# 	after = {
+# 		fromfrom = {
+# 			clear_pop_category = yes #To make sure that the zombie pop does not spawn as a non worker strata
+# 		}
+# 	}
+# }
