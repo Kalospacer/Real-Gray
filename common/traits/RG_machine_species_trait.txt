@@ -2,7 +2,7 @@ rg_machine_maid_trait = {
 	cost = {
 		base = 0
 	}
-	# custom_tooltip = rg_machine_maid_trait_effect
+	custom_tooltip = TRAIT_PLANTOID_BUDDING_EFFECT
 	initial = no
 	species_potential_add = { always = no }
 	species_possible_remove = { always = no }

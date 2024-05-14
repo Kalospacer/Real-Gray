@@ -75,6 +75,13 @@ rg_create_fallen_empire_country_effect = {
 			add_global_ship_design = "NAME_Gray_Tau"
 			add_global_ship_design = "NAME_Gray_Sigma"
 			add_global_ship_design = "NAME_Gray_FE_Starbase"
+			set_graphical_culture = fallen_machine_empire_01
+
+			add_modifier = {
+				modifier = fe_ship_cost_modifier
+				days = -1
+			}
+			
 			if = {
 				limit = {
 					NOT = {
