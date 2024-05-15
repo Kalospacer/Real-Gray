@@ -622,12 +622,9 @@ event = {
 					}
 				}
 				AND = {
-					OR = {
-						has_country_flag = gray_official_active
-						has_country_flag = gray_governor_active #旧版flag
-					}
+					has_country_flag = gray_official_active
 					NOT = {
-						exists = event_target:gray_governor
+						exists = event_target:gray_official
 					}
 				}
 				AND = {
@@ -641,10 +638,8 @@ event = {
 	}
 	immediate = {
 		event_target:gray_owner = {
-			OR = {
-				has_country_flag = gray_official_active
-				has_country_flag = gray_governor_active #旧版flag
-			}			#总督
+			remove_country_flag = gray_official_active #新版flag
+			remove_country_flag = gray_governor_active #旧版flag	#总督
 			remove_country_flag = gray_warship_active			#旗舰
 			remove_country_flag = gray_army_active			#陆军
 			remove_country_flag = gray_constship_active			#科舰
@@ -653,12 +648,8 @@ event = {
 				modifier = "gray_scattered"
 				days = 3600
 			}
-			country_event = {
-				id = graygoo.511
-			}
-			country_event = {
-				id = rg_event.22
-			}
+			country_event = { id = graygoo.511 }
+			country_event = { id = graygoo.512 days = 3600 }
 		}
 	}
 }
@@ -683,11 +674,20 @@ country_event = {
 	desc = "graygoo.512.a.desc"
 	desc = "graygoo.512.b.desc"
 	desc = "graygoo.512.c.desc"
-	diplomatic = yes
+
+	event_window_type = leader_story
+	picture = GFX_evt_gray_gooed_planet
+	picture_event_data = {
+		portrait = event_target:rg_gray_country_leader
+		room = root
+	}
+
 	is_triggered_only = yes
+
 	immediate = {
 		remove_country_flag = gray_reforming
 	}
+
 	option = {
 		name = graygoo.512.a
 	}
