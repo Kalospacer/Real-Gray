@@ -33,12 +33,10 @@ rg_gray_govener_init = {
 				}
 				if = {
 					limit = {
-						owner = {
 							OR = {
 								has_global_flag = has_wsg_mod
 								has_global_flag = kdc_event_mod_active
 							}
-						}
 					}
 					set_leader_flag = "gray_leader"
 					set_leader_flag = gray_leader
@@ -152,12 +150,10 @@ rg_gray_commander_init = {
 				}
 				if = {
 					limit = {
-						owner = {
 							OR = {
 								has_global_flag = has_wsg_mod
 								has_global_flag = kdc_event_mod_active
 							}
-						}
 					}
 					set_leader_flag = "gray_leader"					# "gray_leader"==rg_gray_leader
 					set_leader_flag = gray_leader
@@ -497,11 +493,9 @@ rg_gray_scientist_init = {
 				}
 				if = {
 					limit = {
-						owner = {
-							OR = {
-								has_global_flag = has_wsg_mod
-								has_global_flag = kdc_event_mod_active
-							}
+						OR = {
+							has_global_flag = has_wsg_mod
+							has_global_flag = kdc_event_mod_active
 						}
 					}
 					set_leader_flag = "gray_leader"					# "gray_leader"==rg_gray_leader
@@ -522,11 +516,9 @@ rg_gray_scientist_init = {
 		}
 		if = {
 			limit = {
-				owner = {
-					OR = {
-						has_global_flag = has_wsg_mod
-						has_global_flag = kdc_event_mod_active
-					}
+				OR = {
+					has_global_flag = has_wsg_mod
+					has_global_flag = kdc_event_mod_active
 				}
 			}
 			if = {
@@ -590,11 +582,9 @@ rg_gray_country_leader_init = {
 			# set_leader_flag = rg_gray_leader
 			if = {
 				limit = {
-					owner = {
-						OR = {
-							has_global_flag = has_wsg_mod
-							has_global_flag = kdc_event_mod_active
-						}
+					OR = {
+						has_global_flag = has_wsg_mod
+						has_global_flag = kdc_event_mod_active
 					}
 				}
 				# 暂时和小灰网络断开连接
