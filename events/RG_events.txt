@@ -30,6 +30,10 @@ country_event = {
 			}
 			save_global_event_target_as = origin_rg_gray_country
 			rg_lcluster_spawn_effect = yes
+			country_event = {
+				id = rg_cluster
+				years = 10
+			}
 		}
 		else = {
 			set_country_flag = origin_gray_dragon_country
@@ -859,9 +863,7 @@ country_event = {
 	fire_only_once = yes
 	picture = GFX_evt_drifting_gateway
 	trigger = {
-		mid_game_years_passed >= 0
 		NOT = {
-			is_multiplayer = yes
 			has_global_flag = has_origin_gray_dragon
 		}
 		has_country_flag = origin_rg_gray
