@@ -12,8 +12,6 @@ utility_component_template = {
 		ship_armor_regen_add_perc = 0.2
 		ship_hull_add = 1960
 		ship_hull_regen_add_perc = 0.2
-		ship_shield_add = 980
-		ship_shield_regen_add_perc = 0.1
 	}
 	size_restriction = {
 		RG_graygoo_destroyer
@@ -23,6 +21,11 @@ utility_component_template = {
 		RG_graygoo_mothership
 		RG_gray_juggernaut
 		RG_graygoo_capitalship
+		RG_armed_science_ship
+		RG_armed_constructor_ship
+		RG_armed_transport_ship
+		RG_armed_colony_ship
+		RG_graygoo_icebreaker_interdictor
 	}
 	prerequisites = {
 		"tech_gray_matter_remix_2"
@@ -56,12 +59,10 @@ utility_component_template = {
 	power = 0
 	power = -180
 	modifier = {
-		ship_armor_add = 13840
+		ship_armor_add = 7680
 		ship_armor_regen_add_perc = 0.2
-		ship_hull_add = 11960
+		ship_hull_add = 3920
 		ship_hull_regen_add_perc = 0.2
-		ship_shield_add = 4560
-		ship_shield_regen_add_perc = 0.1
 	}
 	size_restriction = {
 		RG_graygoo_capitalship
@@ -902,13 +903,6 @@ strike_craft_component_template = {
 			alloys = 0.2
 		}
 	}
-	size_restriction = {
-		RG_graygoo_destroyer
-		RG_graygoo_interdictor
-		RG_graygoo_mothership
-		RG_gray_juggernaut
-		RG_graygoo_capitalship
-	}
 	prerequisites = {
 		"tech_gray_nano_boost_3"
 	}
@@ -968,13 +962,6 @@ strike_craft_component_template = {
 			energy = 0.2
 			alloys = 0.2
 		}
-	}
-	size_restriction = {
-		RG_graygoo_destroyer
-		RG_graygoo_interdictor
-		RG_graygoo_mothership
-		RG_gray_juggernaut
-		RG_graygoo_capitalship
 	}
 	prerequisites = {
 		"tech_gray_nano_boost_3"
@@ -1038,13 +1025,6 @@ strike_craft_component_template = {
 			energy = 0.2
 			alloys = 0.2
 		}
-	}
-	size_restriction = {
-		RG_graygoo_destroyer
-		RG_graygoo_interdictor
-		RG_graygoo_mothership
-		RG_gray_juggernaut
-		RG_graygoo_capitalship
 	}
 	prerequisites = {
 		"tech_gray_nano_boost_3"
@@ -1110,13 +1090,6 @@ strike_craft_component_template = {
 			alloys = 0.2
 		}
 	}
-	size_restriction = {
-		RG_graygoo_destroyer
-		RG_graygoo_interdictor
-		RG_graygoo_mothership
-		RG_gray_juggernaut
-		RG_graygoo_capitalship
-	}
 	prerequisites = {
 		"tech_gray_nano_boost_3"
 	}
@@ -1181,6 +1154,10 @@ utility_component_template = {
 		RG_graygoo_icebreaker_interdictor
 		RG_gray_juggernaut
 		RG_graygoo_capitalship
+		RG_armed_science_ship
+		RG_armed_constructor_ship
+		RG_armed_transport_ship
+		RG_armed_colony_ship
 	}
 	prerequisites = {
 		"tech_gray_interdictor_4"
@@ -2323,6 +2300,13 @@ utility_component_template = {
 	tags = {
 		weapon_type_rg_reactor
 	}
+	size_restriction = {
+		RG_graygoo_destroyer
+		RG_armed_science_ship
+		RG_armed_constructor_ship
+		RG_armed_transport_ship
+		RG_armed_colony_ship
+	}
 	component_set = "power_core"
 	ai_weight = {
 		weight = 0
@@ -2354,7 +2338,6 @@ utility_component_template = {
 	component_set = "power_core"
 	size_restriction = {
 		RG_graygoo_interdictor
-		RG_graygoo_destroyer
 		RG_graygoo_Buff
 		RG_graygoo_icebreaker_interdictor
 	}

@@ -207,47 +207,47 @@ ship_section_template = {
 		locatorname = "turret_01"
 	}
 	component_slot = {
-		name = "PD_05"
-		template = "point_defence_turret"
+		name = "MEDIUM_GUN_01"
+		template = "medium_turret"
 		locatorname = "turret_01"
 	}
 	component_slot = {
-		name = "PD_06"
-		template = "point_defence_turret"
+		name = "MEDIUM_GUN_02"
+		template = "medium_turret"
 		locatorname = "turret_01"
 	}
 	component_slot = {
-		name = "PD_07"
-		template = "point_defence_turret"
+		name = "MEDIUM_GUN_03"
+		template = "medium_turret"
 		locatorname = "turret_01"
 	}
 	component_slot = {
-		name = "PD_08"
-		template = "point_defence_turret"
+		name = "MEDIUM_GUN_04"
+		template = "medium_turret"
 		locatorname = "turret_01"
 	}
 	component_slot = {
-		name = "PD_09"
-		template = "point_defence_turret"
+		name = "MEDIUM_GUN_05"
+		template = "medium_turret"
 		locatorname = "turret_01"
 	}
 	component_slot = {
-		name = "PD_10"
-		template = "point_defence_turret"
+		name = "MEDIUM_GUN_06"
+		template = "medium_turret"
 		locatorname = "turret_01"
 	}
 	component_slot = {
-		name = "PD_11"
-		template = "point_defence_turret"
+		name = "MEDIUM_GUN_07"
+		template = "medium_turret"
 		locatorname = "turret_01"
 	}
 	component_slot = {
-		name = "PD_12"
-		template = "point_defence_turret"
+		name = "MEDIUM_GUN_08"
+		template = "medium_turret"
 		locatorname = "turret_01"
 	}
 	large_utility_slots = 6
-	aux_utility_slots = 2
+	aux_utility_slots = 3
 }
 
 #光环7
@@ -268,7 +268,7 @@ ship_section_template = {
 		locatorname = "turret_01"
 	}
 	large_utility_slots = 6
-	aux_utility_slots = 2
+	aux_utility_slots = 3
 }
 
 #巨像8
@@ -284,7 +284,7 @@ ship_section_template = {
 		locatorname = "boope"
 	}
 	large_utility_slots = 6
-	aux_utility_slots = 2
+	aux_utility_slots = 3
 }
 
 #武库舰9
@@ -733,7 +733,7 @@ ship_section_template = {
 		locatorname = "xl_gun_01"
 	}
 	large_utility_slots = 12
-	aux_utility_slots = 2
+	aux_utility_slots = 3
 }
 
 ship_section_template = {
