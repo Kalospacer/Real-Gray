@@ -1,8 +1,22 @@
 @gray_portrait = Gray
 rg_set_gray_portrait = {
-	change_leader_portrait = @gray_portrait
-	event_target:rg_gray_country_leader = {
+	if = {
+		limit = {
+			has_global_flag = ms_species_enabled
+			event_target:gray_owner = {
+				has_country_flag = mss_enable_gray_maid
+			}
+		}
+		ms_update_gray_portrait = yes
+		event_target:rg_gray_country_leader = {
+			ms_update_gray_portrait = yes
+		}
+	}
+	else = {
 		change_leader_portrait = @gray_portrait
+		event_target:rg_gray_country_leader = {
+			change_leader_portrait = @gray_portrait
+		}
 	}
 }
 
@@ -2189,6 +2203,7 @@ rg_gray_country_init = {
 		# 下一阶段的事件再建立通讯
 		# establish_communications_no_message = root
 		save_global_event_target_as = rg_gray_country
+		save_global_event_target_as = gray_country
 		# 创建看板娘用于第一次接触
 		rg_gray_country_leader_init = yes
 		set_leader = last_created_leader

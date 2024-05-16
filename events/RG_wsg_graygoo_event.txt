@@ -1225,28 +1225,28 @@ country_event = {
 			}
 		}
 	}
-	option = {
-		name = rg_graygoo.504.a
-		allow = {
-			has_country_flag = gray_reforming
-			resource_stockpile_compare = {
-				resource = nanites
-				value >= 1000
-			}
-			resource_stockpile_compare = {
-				resource = alloys
-				value >= 50000
-			}
-		}
-		add_resource = {
-			nanites = -1000
-			alloys = -50000
-		}
-		remove_modifier = "gray_scattered"
-		country_event = {
-			id = graygoo.512
-		}
-	}
+	# option = {
+	# 	name = rg_graygoo.504.a
+	# 	allow = {
+	# 		has_country_flag = gray_reforming
+	# 		resource_stockpile_compare = {
+	# 			resource = nanites
+	# 			value >= 1000
+	# 		}
+	# 		resource_stockpile_compare = {
+	# 			resource = alloys
+	# 			value >= 50000
+	# 		}
+	# 	}
+	# 	add_resource = {
+	# 		nanites = -1000
+	# 		alloys = -50000
+	# 	}
+	# 	remove_modifier = "gray_scattered"
+	# 	country_event = {
+	# 		id = graygoo.512
+	# 	}
+	# }
 }
 
 # Main Menu (const)
