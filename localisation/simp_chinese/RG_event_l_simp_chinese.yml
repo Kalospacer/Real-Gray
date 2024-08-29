@@ -175,6 +175,11 @@
  RG_graygoo.500.e:0 "§Y启动旗舰核心§!"
  RG_graygoo.502.e.response:0 "我能做到。"
 
+ RG_graygoo.500.f:0 "§Y启动空间站核心§!"
+ RG_graygoo.502.f.response:0 "舰体宜居性评估中，全舰核心自检完成。"
+ RG_graygoo.500.g:0 "§Y关闭空间站核心§!"
+ RG_graygoo.502.g.response:0 "启动紧急疏散程序，请稍安勿躁。"
+
 # 2.1 奇怪的巨像
  rg_story.2.desc:0 "哈喽？有空吗？可以来...咳咳、我有一个有趣的东西想给你看......如果没有空也没有关系。不过我保证这个一定很好玩。"
  rg_story.2.a:0 "§G有哦§!"

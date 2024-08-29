@@ -52,6 +52,8 @@ on_monthly_pulse_country = {
 		# rg_event.22 #小灰复活检测
 		# rg_event.23 #月检移除L星门认知防止收容失效
 		# rg_skill.9
+		rg_planet.5025	# Virtual Machine pop creation
+		rg_planet.5030	# Virtual Machine pop destruction
 	}
 }
 
@@ -173,5 +175,85 @@ on_space_battle_won = {
 on_space_battle_lost = {
 	events = {
 		rg_skill.15
+	}
+}
+
+# A planet has been colonized.
+# Scope = Planet
+on_colonized = {
+	events = {
+		rg_planet.2026	# Virtual Machine pop creation
+		rg_planet.2031	# Virtual Machine pop destruction
+	}
+}
+
+#A building construction has been completed.
+# This = Planet
+on_building_complete = {
+	events = {
+		rg_planet.2026 # Virtual Machine pop creation
+		rg_planet.2031 # Virtual Machine pop destruction
+	}
+}
+
+# A building construction has been completed, which is an upgrade of previous building.
+# This = Planet
+on_building_upgraded = {
+	events = {
+		rg_planet.2026 # Virtual Machine pop creation
+		rg_planet.2031 # Virtual Machine pop destruction
+	}
+}
+
+# A building construction has demolished.
+# This = Planet
+on_building_demolished = {
+	events = {
+		rg_planet.2026 # Virtual Machine pop creation
+		rg_planet.2031 # Virtual Machine pop destruction
+	}
+}
+# A building repair has finished
+# This = Planet
+on_building_repaired = {
+	events = {
+		rg_planet.2026 # Virtual Machine pop creation
+		rg_planet.2031 # Virtual Machine pop destruction
+	}
+}
+
+#A district construction has been completed.
+# This = Planet
+on_district_complete = {
+	events = {
+		rg_planet.2026 # Virtual Machine pop creation
+		rg_planet.2031 # Virtual Machine pop destruction
+	}
+}
+
+# A building construction has finished, replacing another building.
+# This = Planet
+on_building_replaced = {
+	events = {
+		rg_planet.2026 # Virtual Machine pop creation
+		rg_planet.2031 # Virtual Machine pop destruction
+	}
+}
+
+# A building construction has been downgraded and replaced.
+# This = Planet
+on_building_downgraded = {
+	events = {
+		rg_planet.2026 # Virtual Machine pop creation
+		rg_planet.2031 # Virtual Machine pop destruction
+	}
+}
+
+# A district construction has demolished.
+# This = Planet
+on_district_demolished = {
+	events = {
+		rg_planet.2026 # Virtual Machine pop creation
+		rg_planet.2031 # Virtual Machine pop destruction
 	}
 }

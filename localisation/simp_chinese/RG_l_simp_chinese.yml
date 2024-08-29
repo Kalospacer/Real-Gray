@@ -400,6 +400,9 @@
  rg_nothing:0 ""
  rg_nothing_desc:0 ""
 
+ pc_rg_grayhabitat: "纳米空间站点"
+ pc_rg_grayhabitat_desc: "一座由纳米机械组成的深空居所，能提供仿佛行星一般的居住体验，具体而言是指行星上的城市区域。完全由纳米机器人组成使得建筑如梦幻般瞬间出现，由纳米机器组成的实体承担着空间站点的一切生产工作。"
+
  rg_ap_nantiematter:0 "§Y纳米物质构成工程§!"
  rg_ap_nantiematter_desc:0 "如果能够对L星门建造者的物质与科技进行一次彻底的构成研究，这些强力的纳米机器将极大的提升我们的军备水平。这需要我们获得足够的L星门认知。"
  rg_ap_nantiematter_tooltip:0 "§Y这表明了一切。§!"

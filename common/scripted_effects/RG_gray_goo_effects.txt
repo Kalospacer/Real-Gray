@@ -134,7 +134,7 @@ rg_global_gray_location_check = {
 }
 
 #创造灰风总督
-rg_create_gray_governor = {
+rg_create_gray_governor_leader = {
 	if = {
 		limit = {
 			OR = {
@@ -180,6 +180,9 @@ rg_create_gray_governor = {
 				unassign_leader = leader
 			}
 			remove_army = yes
+		}
+		event_target:rg_gray_habitat_target = {
+			remove_planet = yes
 		}
 		#存储当前领袖等级
 		every_owned_leader = {
@@ -238,6 +241,7 @@ rg_create_gray_governor = {
 		remove_country_flag = rg_kac_grayfleet_active
 		remove_country_flag = gray_constship_active
 		remove_country_flag = gray_army_active
+		remove_country_flag = gray_habitat_active
 		#等级导入，把存储的领袖等级赋予到领袖身上
 		random_owned_leader = {
 			limit = {
@@ -245,6 +249,19 @@ rg_create_gray_governor = {
 			}
 			set_skill = owner.rg_gray_level
 		}
+	}
+}
+
+rg_create_gray_governor = {
+	if = {
+		limit = {
+			#has_country_flag = gray_warship_is_juggernaut
+			has_country_flag = rg_habitat_enabled
+		}
+		rg_create_gray_governor_habitat = yes
+	}
+	else =  {
+		rg_create_gray_governor_leader = yes
 	}
 }
 
@@ -463,10 +480,14 @@ rg_create_gray_warship = {
 				destroy_template = yes
 			}
 		}
+		event_target:rg_gray_habitat_target = {
+			remove_planet = yes
+		}
 		remove_country_flag = gray_constship_active
 		remove_country_flag = gray_governor_active #旧版flag
 		remove_country_flag = gray_official_active
 		remove_country_flag = gray_army_active
+		remove_country_flag = gray_habitat_active
 		random_owned_leader = {
 			limit = {
 				has_leader_flag = gray_admiral
@@ -575,11 +596,15 @@ rg_create_gray_army = {
 				destroy_template = yes
 			}
 		}
+		event_target:rg_gray_habitat_target = {
+			remove_planet = yes
+		}
 		remove_country_flag = gray_warship_active
 		remove_country_flag = rg_kac_grayfleet_active
 		remove_country_flag = gray_governor_active #旧版flag
 		remove_country_flag = gray_official_active
 		remove_country_flag = gray_constship_active
+		remove_country_flag = gray_habitat_active
 		remove_ship_design = last_created_design
 		random_owned_leader = {
 			limit = {
@@ -696,11 +721,15 @@ rg_create_gray_const = {
 			}
 			remove_army = yes
 		}
+		event_target:rg_gray_habitat_target = {
+			remove_planet = yes
+		}
 		remove_country_flag = gray_army_active
 		remove_country_flag = gray_warship_active
 		remove_country_flag = rg_kac_grayfleet_active
 		remove_country_flag = gray_governor_active #旧版flag
 		remove_country_flag = gray_official_active
+		remove_country_flag = gray_habitat_active
 		random_owned_leader = {
 			limit = {
 				has_leader_flag = gray_scientist

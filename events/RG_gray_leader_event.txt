@@ -438,6 +438,50 @@ country_event = {
 		}
 	}
 	option = {
+		# Juggernaut
+		name = RG_graygoo.500.f
+		response_text = RG_graygoo.502.f.response
+		trigger = {
+			has_country_flag = rg_juggernaut_fired
+			NOT = {
+				has_country_flag = rg_habitat_enabled
+			}
+		}
+		allow = {
+			hidden_trigger = {
+				exists = event_target:gray_governor
+			}			# To prevent exploit
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			set_country_flag = rg_habitat_enabled
+			country_event = {
+				id = rg_grayleader_dialog.5026
+			}
+		}
+	}
+	option = {
+		# Warship
+		name = RG_graygoo.500.g
+		response_text = RG_graygoo.502.g.response
+		trigger = {
+			has_country_flag = rg_juggernaut_fired
+			has_country_flag = rg_habitat_enabled
+		}
+		allow = {
+			hidden_trigger = {
+				exists = event_target:gray_governor
+			}			# To prevent exploit
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			remove_country_flag = rg_habitat_enabled
+			country_event = {
+				id = rg_grayleader_dialog.5027
+			}
+		}
+	}
+	option = {
 		# const
 		name = rg_const
 		response_text = rg_const.501.response

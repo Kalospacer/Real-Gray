@@ -1,0 +1,178 @@
+namespace = rg_planet
+
+##### Virtual Ascension Events
+
+### Create the Unemployed
+### Country scope gatekeeper
+### on_monthly_pulse_country
+country_event = {
+	id = rg_planet.5025
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		has_country_flag = gray_habitat_active
+		exists = event_target:rg_gray_habitat_target
+		event_target:rg_gray_habitat_target = {
+			is_under_colonization = no
+			NOT = { is_planet_class = pc_cosmogenesis_world }
+			free_jobs > 0
+			NOR = {
+				free_jobs_of_type = {
+					job = mortal_initiate
+					value >= 1
+				}
+				free_jobs_of_type = {
+					category = bio_trophy
+					value >= 1
+				}
+			}
+		}
+	}
+
+	immediate = {
+		event_target:rg_gray_habitat_target = {
+			planet_event = { id = rg_planet.2027 days = 1 }
+		}
+	}
+}
+
+### Create the Unemployed
+### Planet scope gatekeeper
+### on_building_complete, on_building_upgraded, on_building_demolished,
+### on_building_downgraded, on_building_replaced
+### on_district_complete, on_district_demolished
+planet_event = {
+	id = rg_planet.2026
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_same_value = event_target:rg_gray_habitat_target
+		is_under_colonization = no
+		NOT = { is_planet_class = pc_cosmogenesis_world }
+		exists = owner
+		owner = {
+			is_fallen_empire = no
+			has_country_flag = gray_habitat_active
+		}
+		free_jobs > 0
+	}
+
+	immediate = {
+		planet_event = { id = rg_planet.2027 days = 1 }
+	}
+}
+
+### Create the Unemployed
+### Fired by cybernetics.2025 and cybernetics.2026
+planet_event = {
+	id = rg_planet.2027
+	hide_window = yes
+
+	is_triggered_only = yes
+	trigger = {
+		is_same_value = event_target:rg_gray_habitat_target
+		is_under_colonization = no
+		NOT = { is_planet_class = pc_cosmogenesis_world }
+		exists = owner
+		owner = {
+			is_fallen_empire = no
+			has_country_flag = gray_habitat_active
+		}
+		free_jobs > 0
+	}
+
+	immediate = {
+		set_variable = {
+			which = num_pops
+			value = value:num_free_virtual_jobs
+		}
+		# Create pops for every free job
+		while = {
+			count = num_pops
+			create_pop = {
+				species = rg_fallen_maid_species
+			}
+		}
+		# Kill pops generated in excess (e.g. from forbidden jobs)
+		if = {
+			limit = {
+				any_owned_pop = {
+					is_unemployed = yes
+				}
+			}
+			every_owned_pop = {
+				limit = {
+					is_unemployed = yes
+				}
+				kill_pop = yes
+			}
+		}
+	}
+}
+
+### Kill the unemployed
+### Country scope
+### on_monthly_pulse_country
+country_event = {
+	id = rg_planet.5030
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_fallen_empire = no
+		has_country_flag = gray_habitat_active
+		event_target:rg_gray_habitat_target = {
+			any_owned_pop = {
+				is_unemployed = yes
+			}
+		}
+	}
+
+	immediate = {
+		event_target:rg_gray_habitat_target = {
+			every_owned_pop = {
+				limit = {
+					is_unemployed = yes
+				}
+				kill_pop = yes
+			}
+		}
+	}
+}
+
+### Kill the unemployed
+### Planet scope
+### on_building_complete, on_building_upgraded, on_building_demolished,
+### on_building_downgraded, on_building_replaced
+### on_district_complete, on_district_demolished
+planet_event = {
+	id = rg_planet.2031
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		exists = owner
+		owner = {
+			is_fallen_empire = no
+			has_country_flag = gray_habitat_active
+		}
+		any_owned_pop = {
+			is_unemployed = yes
+		}
+	}
+
+	immediate = {
+		every_owned_pop = {
+			limit = {
+				is_unemployed = yes
+			}
+			kill_pop = yes
+		}
+	}
+}

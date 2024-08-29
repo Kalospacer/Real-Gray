@@ -2,6 +2,9 @@
 	"folders": [
 		{
 			"path": "."
+		},
+		{
+			"path": "D:/SteamLibrary/steamapps/common/Stellaris/common"
 		}
 	]
 }
