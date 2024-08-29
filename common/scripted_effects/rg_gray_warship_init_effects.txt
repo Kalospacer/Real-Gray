@@ -176,6 +176,29 @@ rg_warship_init_mod0 = {
 	}
 }
 
+rg_create_gray_maid_species_effect = {
+	create_species = {
+		name = 纳米构造体
+		class = RG_MACHINE
+		portrait = "rg_machine_maid"
+		traits = {
+			trait = trait_machine_unit
+			trait = trait_robot_domestic_protocols
+			trait = rg_machine_maid_trait
+			trait = trait_auto_mod_robotic
+			trait = trait_robot_streamlined_protocols
+			trait = trait_robot_luxurious
+			trait = ramdom_trait
+		}
+		extra_trait_points = 3
+		allow_negative_traits = no
+		namelist = MACHINE3
+		effect = {
+			save_event_target_as = rg_gray_maid_species
+		}
+	}
+}
+
 rg_juggernaut_habitat_init = {
 	event_target:global_gray_location = {
 		solar_system = {
@@ -200,7 +223,7 @@ rg_juggernaut_habitat_init = {
 					set_controller = root
 					create_colony = {
 						owner = root
-						species = owner_main_species
+						species = rg_gray_maid_species
 						ethos = owner
 					}
 					set_name = "NAME_rg_gray_habitat_base"
@@ -215,7 +238,7 @@ rg_juggernaut_habitat_init = {
 					if = {
 						limit = {
 							NOT = {
-								exists = event_target:rg_fallen_maid_species
+								exists = event_target:rg_gray_maid_species
 							}
 						}
 						rg_create_fallen_empire_species_effect = yes
@@ -224,7 +247,7 @@ rg_juggernaut_habitat_init = {
 					while = {
 						count = 5
 						create_pop = {
-							species = rg_fallen_maid_species
+							species = rg_gray_maid_species
 						}
 					}
 		

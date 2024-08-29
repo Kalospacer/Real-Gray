@@ -94,7 +94,7 @@ planet_event = {
 		while = {
 			count = num_pops
 			create_pop = {
-				species = rg_fallen_maid_species
+				species = rg_gray_maid_species
 			}
 		}
 		# Kill pops generated in excess (e.g. from forbidden jobs)
