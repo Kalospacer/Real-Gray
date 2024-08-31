@@ -1,6 +1,6 @@
 # 星环基地 1
 ship_design = {
-	name = "RG_RG_ORBITAL_RING_TIER_1_STARBASE"
+	name = "RG_ORBITAL_RING_TIER_1_STARBASE"
 	ship_size = RG_orbital_ring_tier_1
 	section = {
 		template = "RG_ORBITAL_RING_TIER_1_STARBASE_SECTION"

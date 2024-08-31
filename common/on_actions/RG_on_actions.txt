@@ -61,11 +61,6 @@ on_yearly_pulse_country = {
 	events = {
 		rg_event.17
 		rg_event.20
-	}
-}
-
-on_yearly_pulse = {
-	events = {
 		rg_story.20
 	}
 }

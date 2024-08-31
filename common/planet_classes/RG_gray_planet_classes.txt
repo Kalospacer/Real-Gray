@@ -1,6 +1,6 @@
 pc_rg_grayhabitat = {
 	habitat = yes
-	entity = "gray_goo_planet"
+	entity = "grey_tempesttw_orbital_habitat_entity"
 	entity_scale = @planet_standard_scale
 	icon = GFX_planet_type_habitat
 	enable_tilt = no
@@ -29,10 +29,12 @@ pc_rg_grayhabitat = {
 
 	modifier = {
 		planet_colony_development_speed_mult = 2.0 # Habitats should be fast to colonize
-		pop_environment_tolerance = 0.40
-		planet_structures_cost_mult = -10
-		planet_buildings_cost_mult = -10
+		pop_environment_tolerance = 1
+		planet_structures_cost_mult = -2
+		planet_buildings_cost_mult = -2
 		planet_building_build_speed_mult = 10
+		planet_crime_add = -1000
+		pop_resettlement_cost_mult = 10
 	}
 
 	carry_cap_per_free_district = @carry_cap_low

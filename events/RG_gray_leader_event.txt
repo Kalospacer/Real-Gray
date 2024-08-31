@@ -310,6 +310,54 @@ country_event = {
 		}
 	}
 	option = {
+		# 空间站
+		name = RG_graygoo.500.f
+		response_text = RG_graygoo.502.f.response
+		trigger = {
+			has_country_flag = rg_juggernaut_fired
+			NOT = {
+				has_country_flag = rg_habitat_enabled
+			}
+		}
+		allow = {
+			has_country_flag = rg_juggernaut_fired	# To prevent exploit
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = rg_habitat_enabled
+				}
+				rg_clear_harbitat = yes
+			}
+			else = {
+				rg_juggernaut_habitat_init = yes
+			}
+			country_event = {
+				id = rg_grayleader_dialog.5026
+			}
+		}
+	}
+	option = {
+		# 空间站
+		name = RG_graygoo.500.g
+		response_text = RG_graygoo.502.g.response
+		trigger = {
+			has_country_flag = rg_juggernaut_fired
+			has_country_flag = rg_habitat_enabled
+		}
+		allow = {
+			has_country_flag = rg_juggernaut_fired	# To prevent exploit
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			rg_clear_harbitat = yes
+			country_event = {
+				id = rg_grayleader_dialog.5027
+			}
+		}
+	}
+	option = {
 		# help
 		name = rg_help
 		hidden_effect = {
@@ -438,50 +486,6 @@ country_event = {
 		}
 	}
 	option = {
-		# Juggernaut
-		name = RG_graygoo.500.f
-		response_text = RG_graygoo.502.f.response
-		trigger = {
-			has_country_flag = rg_juggernaut_fired
-			NOT = {
-				has_country_flag = rg_habitat_enabled
-			}
-		}
-		allow = {
-			hidden_trigger = {
-				exists = event_target:gray_governor
-			}			# To prevent exploit
-		}
-		custom_tooltip = rg_need_manual_toggle
-		hidden_effect = {
-			set_country_flag = rg_habitat_enabled
-			country_event = {
-				id = rg_grayleader_dialog.5026
-			}
-		}
-	}
-	option = {
-		# Warship
-		name = RG_graygoo.500.g
-		response_text = RG_graygoo.502.g.response
-		trigger = {
-			has_country_flag = rg_juggernaut_fired
-			has_country_flag = rg_habitat_enabled
-		}
-		allow = {
-			hidden_trigger = {
-				exists = event_target:gray_governor
-			}			# To prevent exploit
-		}
-		custom_tooltip = rg_need_manual_toggle
-		hidden_effect = {
-			remove_country_flag = rg_habitat_enabled
-			country_event = {
-				id = rg_grayleader_dialog.5027
-			}
-		}
-	}
-	option = {
 		# const
 		name = rg_const
 		response_text = rg_const.501.response
@@ -494,6 +498,46 @@ country_event = {
 			rg_create_gray_const = yes
 			country_event = {
 				id = rg_grayleader_dialog.5013
+			}
+		}
+	}
+	option = {
+		# 空间站
+		name = RG_graygoo.500.f
+		response_text = RG_graygoo.502.f.response
+		trigger = {
+			has_country_flag = rg_juggernaut_fired
+			NOT = {
+				has_country_flag = rg_habitat_enabled
+			}
+		}
+		allow = {
+			has_country_flag = rg_juggernaut_fired	# To prevent exploit
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			rg_juggernaut_habitat_init = yes
+			country_event = {
+				id = rg_grayleader_dialog.5026
+			}
+		}
+	}
+	option = {
+		# 空间站
+		name = RG_graygoo.500.g
+		response_text = RG_graygoo.502.g.response
+		trigger = {
+			has_country_flag = rg_juggernaut_fired
+			has_country_flag = rg_habitat_enabled
+		}
+		allow = {
+			has_country_flag = rg_juggernaut_fired	# To prevent exploit
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			rg_clear_harbitat = yes
+			country_event = {
+				id = rg_grayleader_dialog.5027
 			}
 		}
 	}
@@ -748,6 +792,54 @@ country_event = {
 			rg_create_gray_const = yes
 			country_event = {
 				id = rg_grayleader_dialog.5025
+			}
+		}
+	}
+	option = {
+		# 空间站
+		name = RG_graygoo.500.f
+		response_text = RG_graygoo.502.f.response
+		trigger = {
+			has_country_flag = rg_juggernaut_fired
+			NOT = {
+				has_country_flag = rg_habitat_enabled
+			}
+		}
+		allow = {
+			has_country_flag = rg_juggernaut_fired	# To prevent exploit
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = rg_habitat_enabled
+				}
+				rg_clear_harbitat = yes
+			}
+			else = {
+				rg_juggernaut_habitat_init = yes
+			}
+			country_event = {
+				id = rg_grayleader_dialog.5026
+			}
+		}
+	}
+	option = {
+		# 空间站
+		name = RG_graygoo.500.g
+		response_text = RG_graygoo.502.g.response
+		trigger = {
+			has_country_flag = rg_juggernaut_fired
+			has_country_flag = rg_habitat_enabled
+		}
+		allow = {
+			has_country_flag = rg_juggernaut_fired	# To prevent exploit
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			rg_clear_harbitat = yes
+			country_event = {
+				id = rg_grayleader_dialog.5027
 			}
 		}
 	}
@@ -1115,6 +1207,54 @@ country_event = {
 		}
 	}
 	option = {
+		# 空间站
+		name = RG_graygoo.500.f
+		response_text = RG_graygoo.502.f.response
+		trigger = {
+			has_country_flag = rg_juggernaut_fired
+			NOT = {
+				has_country_flag = rg_habitat_enabled
+			}
+		}
+		allow = {
+			has_country_flag = rg_juggernaut_fired	# To prevent exploit
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = rg_habitat_enabled
+				}
+				rg_clear_harbitat = yes
+			}
+			else = {
+				rg_juggernaut_habitat_init = yes
+			}
+			country_event = {
+				id = rg_grayleader_dialog.5026
+			}
+		}
+	}
+	option = {
+		# 空间站
+		name = RG_graygoo.500.g
+		response_text = RG_graygoo.502.g.response
+		trigger = {
+			has_country_flag = rg_juggernaut_fired
+			has_country_flag = rg_habitat_enabled
+		}
+		allow = {
+			has_country_flag = rg_juggernaut_fired	# To prevent exploit
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			rg_clear_harbitat = yes
+			country_event = {
+				id = rg_grayleader_dialog.5027
+			}
+		}
+	}
+	option = {
 		# 开启隐形
 		name = rg_event.4.e
 		response_text = rg_cloak.a.response
@@ -1379,6 +1519,54 @@ country_event = {
 			}
 		}
 	}
+	option = {
+		# 空间站
+		name = RG_graygoo.500.f
+		response_text = RG_graygoo.502.f.response
+		trigger = {
+			has_country_flag = rg_juggernaut_fired
+			NOT = {
+				has_country_flag = rg_habitat_enabled
+			}
+		}
+		allow = {
+			has_country_flag = rg_juggernaut_fired	# To prevent exploit
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = rg_habitat_enabled
+				}
+				rg_clear_harbitat = yes
+			}
+			else = {
+				rg_juggernaut_habitat_init = yes
+			}
+			country_event = {
+				id = rg_grayleader_dialog.5026
+			}
+		}
+	}
+	option = {
+		# 空间站
+		name = RG_graygoo.500.g
+		response_text = RG_graygoo.502.g.response
+		trigger = {
+			has_country_flag = rg_juggernaut_fired
+			has_country_flag = rg_habitat_enabled
+		}
+		allow = {
+			has_country_flag = rg_juggernaut_fired	# To prevent exploit
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			rg_clear_harbitat = yes
+			country_event = {
+				id = rg_grayleader_dialog.5027
+			}
+		}
+	}
 	#	option = { # 开启建造中继器
 	#		name = rg_event.5.e
 	#		trigger = {
@@ -1528,6 +1716,32 @@ country_event = {
 		}
 		hidden_effect = {
 			rg_create_gray_colony_1 = yes
+		}
+	}
+	option = {
+		# 购买巨像
+		name = rg_event.4.h
+		trigger = {
+			NOT = {
+				has_country_flag = gray_reforming
+			}
+		}
+		allow = {
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 8000
+			}
+			resource_stockpile_compare = {
+				resource = alloys
+				value >= 8000
+			}
+		}
+		add_resource = {
+			energy = -8000
+			alloys = -8000
+		}
+		hidden_effect = {
+			rg_create_gray_planetkiller_testship_1 = yes
 		}
 	}
 	option = {

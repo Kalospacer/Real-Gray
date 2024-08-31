@@ -31,8 +31,9 @@ country_event = {
 			save_global_event_target_as = origin_rg_gray_country
 			rg_lcluster_spawn_effect = yes
 			country_event = {
-				id = rg_cluster
-				years = 10
+				id = rg_event.18
+				days = 3600
+				random = 12800
 			}
 		}
 		else = {
@@ -918,6 +919,9 @@ country_event = {
 				days = 120
 			}
 		}
+	}
+	option = {
+		name = OK
 	}
 }
 

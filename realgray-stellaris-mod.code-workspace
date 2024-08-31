@@ -5,6 +5,15 @@
 		},
 		{
 			"path": "D:/SteamLibrary/steamapps/common/Stellaris/common"
+		},
+		{
+			"path": "D:/SteamLibrary/steamapps/common/Stellaris/events"
+		},
+		{
+			"path": "D:/SteamLibrary/steamapps/common/Stellaris/gfx"
+		},
+		{
+			"path": "D:/SteamLibrary/steamapps/common/Stellaris/localisation"
 		}
 	]
 }

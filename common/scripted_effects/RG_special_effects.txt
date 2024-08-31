@@ -1,20 +1,14 @@
 rg_storyline_trigger = {
 	# 初始化故事事件触发
-	random_list = {
-		50 = {
-			country_event = {
-				id = rg_story.2
-				days = 3600
-				random = 12800
-			}
-		}
-		50 = {
-			country_event = {
-				id = rg_story.8
-				days = 3600
-				random = 12800
-			}
-		}
+	country_event = {
+		id = rg_story.2
+		days = 3600
+		random = 12800
+	}
+	country_event = {
+		id = rg_story.8
+		days = 3600
+		random = 12800
 	}
 	if = {
 		limit = {

@@ -126,6 +126,18 @@ rg_global_gray_location_check = {
 			}
 		}
 	}
+	else_if = {
+		limit = {
+			has_country_flag = rg_habitat_enabled
+		}
+		if = {
+			limit = {exists = event_target:rg_gray_habitat_target}
+			event_target:rg_gray_habitat_target = {
+				save_global_event_target_as = global_gray_location
+			}
+		}
+
+	}
 	else = {
 		capital_scope = {
 			save_global_event_target_as = global_gray_location
@@ -134,7 +146,7 @@ rg_global_gray_location_check = {
 }
 
 #创造灰风总督
-rg_create_gray_governor_leader = {
+rg_create_gray_governor = {
 	if = {
 		limit = {
 			OR = {
@@ -181,9 +193,7 @@ rg_create_gray_governor_leader = {
 			}
 			remove_army = yes
 		}
-		event_target:rg_gray_habitat_target = {
-			remove_planet = yes
-		}
+
 		#存储当前领袖等级
 		every_owned_leader = {
 			if = {
@@ -242,133 +252,6 @@ rg_create_gray_governor_leader = {
 		remove_country_flag = gray_constship_active
 		remove_country_flag = gray_army_active
 		remove_country_flag = gray_habitat_active
-		#等级导入，把存储的领袖等级赋予到领袖身上
-		random_owned_leader = {
-			limit = {
-				has_leader_flag = gray_governor
-			}
-			set_skill = owner.rg_gray_level
-		}
-	}
-}
-
-rg_create_gray_governor = {
-	if = {
-		limit = {
-			#has_country_flag = gray_warship_is_juggernaut
-			has_country_flag = rg_habitat_enabled
-		}
-		rg_create_gray_governor_habitat = yes
-	}
-	else =  {
-		rg_create_gray_governor_leader = yes
-	}
-}
-
-#创造灰风总督
-rg_create_gray_governor_habitat = {
-	if = {
-		limit = {
-			has_country_flag = gray_habitat_active
-		}
-	}
-	else = {
-		#延迟执行
-		optimize_memory
-		#删除战舰
-		every_owned_fleet = {
-			limit = {
-				has_fleet_flag = gray_fleet
-			}
-			delete_fleet = {
-				target = this
-				kill_leader = no
-				destroy_template = yes
-			}
-		}
-		#删除科学舰
-		every_owned_fleet = {
-			limit = {
-				has_fleet_flag = gray_constship
-			}
-			delete_fleet = {
-				target = this
-				kill_leader = no
-				destroy_template = yes
-			}
-		}
-		#删除陆军
-		every_owned_army = {
-			limit = {
-				army_type = gray_army
-			}
-			if = {
-				limit = {
-					exists = leader
-				}
-				unassign_leader = leader
-			}
-			remove_army = yes
-		}
-		#存储当前领袖等级
-		every_owned_leader = {
-			if = {
-				###等级检测
-				limit = {
-					has_leader_flag = rg_gray_leader
-					NOT = {
-						has_leader_flag = rg_gray_leader_temp
-					}
-				}
-				#导出等级到暂存
-				export_trigger_value_to_variable = {
-					trigger = has_skill
-					variable = rg_gray_level_temp
-				}
-				#导入变量
-				owner = {
-					set_variable = {
-						which = rg_gray_level
-						value = prev.rg_gray_level_temp
-					}
-				}
-				#清理暂存区
-				clear_variable = rg_gray_level_temp
-			}
-		}
-		#把所有种类的小灰领袖都送回娘家
-		every_owned_leader = {
-			limit = {
-				has_leader_flag = rg_gray_leader
-			}
-			set_owner = event_target:rg_gray_country
-			set_leader_flag = rg_gray_leader_temp
-			# kill_leader = { show_notification = no }
-		}
-		#把娘家的总督领袖接回来
-		if = {
-			limit = {
-				exists = event_target:gray_governor
-			}
-			event_target:gray_governor = {
-				set_owner = event_target:gray_owner
-				remove_leader_flag = rg_gray_leader_temp
-			}
-		}
-		#如果不存在总督备份，现场变一个
-		else = {
-			rg_gray_govener_init = yes
-		}
-		rg_juggernaut_habitat_init = yes
-		#设置总督已启用标识
-		set_country_flag = gray_official_active #新版flag
-		set_country_flag = gray_governor_active #旧版flag
-		set_country_flag = gray_habitat_active
-		#更新灰风形态
-		remove_country_flag = gray_warship_active
-		remove_country_flag = rg_kac_grayfleet_active
-		remove_country_flag = gray_constship_active
-		remove_country_flag = gray_army_active
 		#等级导入，把存储的领袖等级赋予到领袖身上
 		random_owned_leader = {
 			limit = {
@@ -480,9 +363,7 @@ rg_create_gray_warship = {
 				destroy_template = yes
 			}
 		}
-		event_target:rg_gray_habitat_target = {
-			remove_planet = yes
-		}
+
 		remove_country_flag = gray_constship_active
 		remove_country_flag = gray_governor_active #旧版flag
 		remove_country_flag = gray_official_active
@@ -596,9 +477,7 @@ rg_create_gray_army = {
 				destroy_template = yes
 			}
 		}
-		event_target:rg_gray_habitat_target = {
-			remove_planet = yes
-		}
+
 		remove_country_flag = gray_warship_active
 		remove_country_flag = rg_kac_grayfleet_active
 		remove_country_flag = gray_governor_active #旧版flag
@@ -721,9 +600,7 @@ rg_create_gray_const = {
 			}
 			remove_army = yes
 		}
-		event_target:rg_gray_habitat_target = {
-			remove_planet = yes
-		}
+
 		remove_country_flag = gray_army_active
 		remove_country_flag = gray_warship_active
 		remove_country_flag = rg_kac_grayfleet_active
@@ -736,5 +613,90 @@ rg_create_gray_const = {
 			}
 			set_skill = owner.rg_gray_level
 		}
+	}
+}
+
+
+rg_juggernaut_habitat_init = {
+	if = {
+		limit = {
+			has_country_flag = rg_habitat_enabled
+		}
+	}
+	else = {
+		optimize_memory
+		rg_global_gray_location_check = yes
+		set_country_flag = rg_habitat_enabled
+		event_target:global_gray_location = {
+			solar_system = {
+				spawn_planet = {
+					class = pc_rg_grayhabitat
+					location = event_target:global_gray_location
+					orbit_location = yes
+					orbit_angle = 225
+					orbit_distance = 360
+					orbit_angle_offset = 45
+					orbit_distance_offset = 9.899
+					size = 30
+					has_ring = no
+			
+					init_effect = {
+						set_planet_entity = {
+							entity = "grey_tempesttw_orbital_habitat_entity"
+						}
+						set_surveyed = {
+							surveyed = yes
+							surveyor = FROM
+						}
+						set_all_comms_surveyed = yes
+						clear_blockers = yes
+		
+						set_owner = root
+						set_controller = root
+						create_colony = {
+							owner = root
+							species = owner_main_species
+							ethos = owner
+						}
+						set_name = "NAME_rg_gray_habitat_base"
+						
+						if = {
+							OR = {
+								has_country_flag = gray_official_active
+								has_country_flag = gray_governor_active #旧版flag
+							}
+							assign_leader = event_target:gray_governor
+						}
+						
+						add_building = building_ancient_control_center
+						add_building = building_nourishment_center
+						add_building = building_ancient_palace
+						add_building = building_affluence_center
+						add_building = building_dimensional_fabricator
+			
+						while = {
+							count = 5
+							create_pop = {
+								species = owner_main_species
+							}
+						}
+			
+						set_planet_flag = megastructure
+						set_planet_flag = habitat
+						set_planet_flag = advanced_habitat
+						set_planet_flag = advanced_habitat_2
+						set_planet_flag = rg_gray_habitat
+						save_global_event_target_as = rg_gray_habitat_target
+					}
+				}
+			}
+		}
+	}
+}
+
+rg_clear_harbitat = {
+	remove_country_flag = rg_habitat_enabled
+	event_target:rg_gray_habitat_target = {
+		remove_planet = yes
 	}
 }
