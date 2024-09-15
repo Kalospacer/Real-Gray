@@ -1,0 +1,26 @@
+graytempest_storm_aftermath_modifier_severity_1 = {
+	planet_stability_add = -5
+	planet_building_build_speed_mult = -1
+
+	custom_tooltip = graytempest_storm_aftermath_1_tt
+	icon = "gfx/interface/icons/planet_modifiers/pm_particle_aftermath_modifier.dds"
+	icon_frame = 2
+}
+
+graytempest_storm_aftermath_modifier_severity_2 = {
+	planet_stability_add = -10
+	planet_building_build_speed_mult = -2
+
+	custom_tooltip = graytempest_storm_aftermath_2_tt
+	icon = "gfx/interface/icons/planet_modifiers/pm_particle_aftermath_modifier.dds"
+	icon_frame = 2
+}
+
+graytempest_storm_aftermath_modifier_severity_3 = {
+	planet_stability_add = -20
+	planet_building_build_speed_mult = -10
+
+	custom_tooltip = graytempest_storm_aftermath_3_tt
+	icon = "gfx/interface/icons/planet_modifiers/pm_particle_aftermath_modifier.dds"
+	icon_frame = 2
+}

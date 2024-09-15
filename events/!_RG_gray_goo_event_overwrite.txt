@@ -195,6 +195,14 @@ country_event = {
 			}
 			every_system = {
 				limit = {
+					has_star_flag = lgate
+				}
+				system_event = {
+					id = rg_storms.1
+				}
+			}
+			every_system = {
+				limit = {
 					has_star_flag = lcluster
 				}
 				every_system_planet = {

@@ -1,0 +1,57 @@
+d_rg_tempest_storm_1 = {
+	is_for_colonizable = yes
+	icon = d_fractal_seed
+	category = deposit_cat_rare
+
+	resources = {
+		category = planet_deposits
+		produces = {
+			nanites = 5
+		}
+	}
+
+	planet_modifier = {
+		district_mining_max = -2
+	}
+
+	potential = { always = no }
+}
+
+d_rg_tempest_storm_2 = {
+	is_for_colonizable = yes
+	icon = d_fractal_seed
+	category = deposit_cat_rare
+
+	resources = {
+		category = planet_deposits
+		produces = {
+			nanites = 9
+		}
+	}
+
+	planet_modifier = {
+		district_mining_max = -3
+	}
+
+	potential = { always = no }
+}
+
+d_rg_tempest_storm_3 = {
+	is_for_colonizable = yes
+	icon = d_fractal_seed
+	category = deposit_cat_rare
+
+	resources = {
+		category = planet_deposits
+		produces = {
+			nanites = 15
+		}
+	}
+
+	planet_modifier = {
+		pop_happiness = -1
+		district_mining_max = -5
+	}
+
+	potential = { always = no }
+}

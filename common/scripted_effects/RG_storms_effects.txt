@@ -1,0 +1,129 @@
+rg_storm_relic_add = {
+	add_relic = rg_tempest_invocator
+}
+
+graytempest_storm_add = {
+	set_star_flag = storm_system
+	set_global_flag = cosmic_storm_has_occurred
+
+	inline_script = {
+		script = cosmic_storms/StormVisuals
+		STORM_NAME = "graytempest_storm"
+	}
+}
+
+graytempest_storm_remove = {
+	remove_storm_visuals_effect = yes
+	remove_star_flag = storm_system
+	graytempest_storm_apply_aftermath_modifier = yes
+	graytempest_storm_apply_deposits = yes
+}
+
+graytempest_storm_apply_aftermath_modifier = {
+	every_system_planet = {
+		limit = {
+			OR = {
+				is_colonizable = yes
+				is_colony = yes
+			}
+		}
+
+		storm_apply_aftermath_modifier = {
+			severity = {
+				modifier = "graytempest_storm_aftermath_modifier_severity_1"
+				days = @Severity1Duration
+				chance = {
+					base = @Severity1BaseChance
+					modifier = {
+						factor = 0
+						OR = {
+							has_modifier = "graytempest_storm_aftermath_modifier_severity_2"
+							has_modifier = "graytempest_storm_aftermath_modifier_severity_3"
+						}
+					}
+					modifier = {
+						factor =  $FactorSev1|1$
+					}
+				}
+			}
+
+			severity = {
+				modifier = "graytempest_storm_aftermath_modifier_severity_2"
+				days = @Severity2Duration
+				chance = {
+					base = @Severity2BaseChance
+					modifier = {
+						factor = 0
+						has_modifier = "graytempest_storm_aftermath_modifier_severity_3"
+					}
+					modifier = {
+						factor =  $FactorSev2|1$
+					}
+				}
+			}
+
+			severity = {
+				modifier = "graytempest_storm_aftermath_modifier_severity_3"
+				days = @Severity3Duration
+				chance = {
+					base = @Severity3BaseChance
+					modifier = {
+						factor =  $FactorSev3|1$
+					}
+				}
+			}
+		}
+
+		if = {
+			limit = { is_colony = yes }
+			owner = {
+				create_message = {
+					type = TEMPEST_STORM_AFTERMATH
+					localization = MESSAGE_STORM_AFTERMATH_DESC
+					days = @toast_important_message_days
+					target = prev
+					variable = {
+						type = name
+						localization = PLANET
+						scope = prev
+					}
+					custom_toast_content_text = tempest_storm_aftermath_custom_desc
+				}
+			}
+		}
+	}
+}
+
+graytempests_storm_apply_deposits = {
+	every_system_planet = {
+		limit = {
+			OR = {
+				is_colonizable = yes
+				is_colony = yes
+			}
+			is_artificial = no
+			NOR = {
+				has_deposit = d_rg_tempest_storm_1
+				has_deposit = d_rg_tempest_storm_2
+				has_deposit = d_rg_tempest_storm_3
+			}
+		}
+
+		random_list = {
+			80 = {}
+			20 = {
+				random_list = {
+					30 = { add_deposit = d_rg_tempest_storm_1 }
+					30 = { add_deposit = d_rg_tempest_storm_2 }
+					30 = { add_deposit = d_rg_tempest_storm_3 }
+				}
+				if = {
+					limit = {
+						has_owner = yes
+					}
+					planet_event = { id = cstorms.8000 }
+				}
+			}
+		}
+	}
+}

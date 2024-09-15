@@ -1,0 +1,20 @@
+namespace = rg_storms
+system_event = {
+	id = rg_storms.1
+	hide_window = yes
+	is_triggered_only = yes
+
+	trigger = {
+		NOT = {
+			has_star_flag = storm_system
+		}
+	}
+
+	immediate = {
+		create_cosmic_storm = {
+			type = graytempest_storm
+			immediate = yes
+			cosmic_storm_start_position = this
+		}
+	}
+}

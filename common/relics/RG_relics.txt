@@ -1,0 +1,86 @@
+rg_tempest_invocator = {
+	activation_duration = @triumph_duration
+	portrait = "GFX_relic_the_tempest_exsoulcillator"
+	sound = "relic_activation_vultaum_real_perforator"
+
+	resources = {
+		category = relics
+		# Activation cost
+		cost = {
+			energy = 0
+		}
+	}
+
+	triggered_country_modifier = {
+		potential = {
+			always = yes
+		}
+		country_unity_produces_mult = 0.1
+		ships_upkeep_mult = -0.15
+	}
+
+	active_effect = {
+		# custom_tooltip = r_the_tempest_invocator_active_effect_tt
+
+		set_country_flag = "started_placing_storm"
+
+		start_storm_area_placing = {
+			sacrifice_leader_with_ui = no
+			cosmic_storm = graytempest_storm
+			immediate = yes
+
+			reticle_radius = {
+				base = 100
+				modifier = {
+					mult = value:storm_area_placing_reticle_radius_multiplier
+				}
+			}
+
+			max_range = {
+				base = 1500
+				modifier = {
+					mult = value:storm_area_placing_max_range_multiplier
+				}
+			}
+
+			on_confirm = {
+				add_modifier = {
+					modifier = tempest_invocator_active_modifier
+					days = 3600
+				}
+				custom_tooltip = relic_triumph_cooldown
+
+				hidden_effect = {
+					add_modifier = {
+						modifier = "relic_activation_cooldown"
+						days = @triumph_duration
+					}
+					set_country_flag = used_tempest_invocator_relic_achievement
+				}
+
+				remove_country_flag = "started_placing_storm"
+			}
+
+			on_cancel = {
+				add_resource = {
+					energy = 0
+				}
+
+				remove_country_flag = "started_placing_storm"
+			}
+		}
+	}
+
+	# Possible check for activation
+	possible = {
+		inline_script = {
+			script = relics/activation_checks
+			RELIC = r_the_tempest_invocator
+		}
+
+		custom_tooltip = {
+			fail_text = r_the_tempest_invocator_started_placing_fail_tt
+			NOT = { has_country_flag = "started_placing_storm" }
+		}
+	}
+}

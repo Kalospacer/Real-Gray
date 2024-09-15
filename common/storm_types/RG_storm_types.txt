@@ -1,0 +1,111 @@
+# graytempest Storm Type
+
+graytempest_storm = {
+	inline_script = "cosmic_storms/BaseModifier"
+
+	inline_script = {
+		script = "cosmic_storms/StormConfig"
+		MIN_RADIUS = 40
+		MAX_RADIUS = 100
+		MIN_RANGE = value:storm_range_min
+		MAX_RANGE = value:storm_range_max
+		STORM_SPEED = 0.01
+		ACTIVATION_PERIOD_IN_MONTHS = 120
+		MONTHLY_ADDED_DEVASTATION = 0.2
+	}
+	affect_hp_regen = yes
+	affect_armor_regen = yes
+
+	spawn_weight = 0
+	description = graytempest_storm_lore_description
+
+	### positive effects ###
+
+	triggered_planet_modifier = {
+		potential = {
+			OR = {
+				is_colony = yes
+				is_colonizable = yes
+			}
+			system_has_negating_storm_building = no
+		}
+		modifier = {
+			planet_building_build_speed_mult = 10
+			planet_clear_blocker_speed_mult = 10
+			custom_tooltip = graytempest_storm_fleet_tt
+			show_only_custom_tooltip = no
+		}
+	}
+	triggered_system_modifier = {
+		potential = {
+			system_has_negating_storm_building = no
+		}
+		modifier = {
+			starbase_shipyard_build_speed_mult = 10
+		}
+	}
+
+	### negative effects ###
+
+	triggered_planet_modifier = {
+		potential = {
+			is_colony = no
+			system_has_negating_storm_building = no
+		}
+		modifier = {
+			stations_upkeep_mult = 2
+		}
+	}
+
+	triggered_fleet_modifier = {
+		potential = {
+			always = yes
+		}
+		modifier = {
+			ships_upkeep_mult = 2
+			custom_tooltip = graytempest_storm_fleet_tt
+			show_only_custom_tooltip = no
+		}
+	}
+
+	on_start = {
+		every_system_within_storm = {
+			added_to_storm_base_effect = yes
+			graytempest_storm_add = yes
+		}
+	}
+
+	on_finished = {
+		every_system_within_storm = {
+			removed_from_storm_base_effect = yes
+			graytempest_storm_remove = yes
+		}
+	}
+
+	on_moved = {
+		every_system_added_to_storm = {
+			added_to_storm_base_effect = yes
+			graytempest_storm_add = yes
+		}
+
+		every_system_removed_from_storm= {
+			removed_from_storm_base_effect = yes
+			graytempest_storm_remove = yes
+		}
+	}
+
+	cosmic_storm_texture_path = "gfx/map/storms/NebulaOpacity.dds"
+	cosmic_storm_texture_color_path = "gfx/map/storms/graytempest_storm_color.dds"
+	cosmic_storm_event_sprite = "GFX_particle_storm"
+	icon = GFX_planetview_storm_particle_modifier_frame
+
+	cosmic_storm_texture_lightning_paths = {
+		"gfx/map/storms/lightning/lightning_small_storm_01.dds"
+		"gfx/map/storms/lightning/lightning_small_storm_02.dds"
+		"gfx/map/storms/lightning/lightning_mid_storm_01.dds"
+		"gfx/map/storms/lightning/lightning_mid_storm_02.dds"
+	}
+
+	cosmic_storm_galaxy_lightning_time = 7.0
+	cosmic_storm_galaxy_max_opacity = 0.4
+}
