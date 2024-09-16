@@ -30,8 +30,8 @@ graytempest_storm = {
 			system_has_negating_storm_building = no
 		}
 		modifier = {
-			planet_building_build_speed_mult = 10
-			planet_clear_blocker_speed_mult = 10
+			planet_building_build_speed_mult = 2
+			planet_clear_blocker_speed_mult = 2
 			custom_tooltip = graytempest_storm_fleet_tt
 			show_only_custom_tooltip = no
 		}
@@ -41,7 +41,7 @@ graytempest_storm = {
 			system_has_negating_storm_building = no
 		}
 		modifier = {
-			starbase_shipyard_build_speed_mult = 10
+			starbase_shipyard_build_speed_mult = 4
 		}
 	}
 

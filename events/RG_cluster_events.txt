@@ -186,6 +186,7 @@ country_event = {
 		# Planet setup
 		event_target:rg_cluster_home_planet = {
 			change_pc = pc_gaia
+			set_planet_size = 20
 			set_owner = root
 			set_controller = root
 			set_capital = yes

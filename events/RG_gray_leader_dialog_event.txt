@@ -559,6 +559,52 @@ country_event = {
 }
 
 country_event = {
+	id = rg_grayleader_dialog.5028
+	title = "graygoo.500.title"
+	desc = "RG_graygoo.502.h.response"
+	event_window_type = leader_recruit
+	picture_event_data = {
+		portrait = event_target:rg_gray_country_leader
+		room = "ethic_spaceship_room"
+	}
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = gray_diplomacy_engaged
+	}
+	after = {
+		hidden_effect = {
+			remove_country_flag = gray_diplomacy_engaged
+		}
+	}
+	option = {
+		name = RG_graygoo.502.h.a
+	}
+	option = {
+		name = RG_graygoo.502.h.b
+		hidden_effect = {
+			rg_clear_harbitat = yes
+			country_event = {
+				id = rg_grayleader_dialog.5027
+			}
+		}
+	}
+	option = {
+		name = graygoo.500.d
+		tag = hire_leader
+		default_hide_option = yes
+	}
+	option = {
+		name = graygoo.500.prepage
+		tag = dismiss_leader
+		hidden_effect = {
+			country_event = {
+				id = rg_grayleader.1
+			}
+		}
+	}
+}
+
+country_event = {
 	id = rg_grayleader_dialog.5031
 	title = "graygoo.500.title"
 	desc = "graygoo.503.a.response"

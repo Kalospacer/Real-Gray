@@ -637,7 +637,7 @@ rg_juggernaut_habitat_init = {
 					orbit_distance = 360
 					orbit_angle_offset = 45
 					orbit_distance_offset = 9.899
-					size = 30
+					size = 40
 					has_ring = no
 			
 					init_effect = {

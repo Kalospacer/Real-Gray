@@ -347,9 +347,8 @@ country_event = {
 		}
 		custom_tooltip = rg_need_manual_toggle
 		hidden_effect = {
-			rg_clear_harbitat = yes
 			country_event = {
-				id = rg_grayleader_dialog.5027
+				id = rg_grayleader_dialog.5028
 			}
 		}
 	}
@@ -527,9 +526,8 @@ country_event = {
 		}
 		custom_tooltip = rg_need_manual_toggle
 		hidden_effect = {
-			rg_clear_harbitat = yes
 			country_event = {
-				id = rg_grayleader_dialog.5027
+				id = rg_grayleader_dialog.5028
 			}
 		}
 	}
@@ -825,9 +823,8 @@ country_event = {
 		}
 		custom_tooltip = rg_need_manual_toggle
 		hidden_effect = {
-			rg_clear_harbitat = yes
 			country_event = {
-				id = rg_grayleader_dialog.5027
+				id = rg_grayleader_dialog.5028
 			}
 		}
 	}
@@ -1234,9 +1231,8 @@ country_event = {
 		}
 		custom_tooltip = rg_need_manual_toggle
 		hidden_effect = {
-			rg_clear_harbitat = yes
 			country_event = {
-				id = rg_grayleader_dialog.5027
+				id = rg_grayleader_dialog.5028
 			}
 		}
 	}
@@ -1543,9 +1539,8 @@ country_event = {
 		}
 		custom_tooltip = rg_need_manual_toggle
 		hidden_effect = {
-			rg_clear_harbitat = yes
 			country_event = {
-				id = rg_grayleader_dialog.5027
+				id = rg_grayleader_dialog.5028
 			}
 		}
 	}
