@@ -2260,6 +2260,7 @@ rg_gray_country_after_init = {
 	event_target:rg_gray_country = {
 		establish_communications_no_message = event_target:gray_owner
 	}
+	rg_juggernaut_habitat_init = yes
 }
 
 rg_timeline_attract_field_init = {

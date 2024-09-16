@@ -2,7 +2,7 @@ rg_machine_maid_trait = {
 	cost = {
 		base = 0
 	}
-	custom_tooltip = TRAIT_PLANTOID_BUDDING_EFFECT
+	custom_tooltip = rg_machine_maid_trait_effect_tooltip
 	initial = no
 	species_potential_add = { always = no }
 	species_possible_remove = { always = no }
@@ -28,10 +28,13 @@ rg_machine_maid_trait = {
 	# 在灰风主人国家工作提供加成
 	triggered_pop_modifier = {
 		potential = {
-			exists = owner
-			owner = { is_same_value = event_target:gray_owner }
+			exists = planet
+			planet = {
+				exists = owner
+				owner = { is_same_value = event_target:gray_owner }
+			}
 		}
-		planet_jobs_produces_mult = 1.1
+		planet_jobs_produces_mult = 0.1
 	}
 
 	ai_weight = {

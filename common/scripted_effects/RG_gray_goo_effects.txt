@@ -700,11 +700,7 @@ rg_juggernaut_habitat_init = {
 							assign_leader = event_target:gray_governor
 						}
 						
-						add_building = building_ancient_control_center
-						add_building = building_nourishment_center
-						add_building = building_ancient_palace
-						add_building = building_affluence_center
-						add_building = building_dimensional_fabricator
+						generate_start_buildings_and_districts = yes
 			
 						while = {
 							count = 5
