@@ -31,6 +31,11 @@
  preset_rg_scion: "§Y誓约计划国§!"
  preset_rg_scion_desc: "出于某种不可告人的目的，远古堕落帝国将其视若己出。他们的远古宗主不会允许其誓约国受到任何外部干扰。"
 
+ civic_rg_gray_cluster: "§Y遥远约定-星团开局§!"
+ civic_rg_gray_non_cluster: "§Y遥远约定-银河开局§!"
+ civic_tooltip_rg_gray_cluster: "选择在§YL-星团§!中开启你的冒险。本mod标准的开局选项。"
+ civic_tooltip_rg_gray_non_cluster: "选择在§Y银河系§!中开启你的冒险。适合不希望在L-星团中开局的玩家。"
+
  rg_tempest_invocator: "灰蛊核心"
 
  graytempest_storm: "灰蛊风暴"

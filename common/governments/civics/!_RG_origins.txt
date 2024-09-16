@@ -15,6 +15,12 @@ origin_rg_gray = {
 	playable = {
 		host_has_dlc = "Distant Stars Story Pack"
 	}
+	potential = {
+		OR = {
+			has_civic = civic_rg_gray_cluster
+			has_civic = civic_rg_gray_non_cluster
+		}
+	}
 }
 
 rg_origin_scion = {

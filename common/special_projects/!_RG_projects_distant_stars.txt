@@ -16,24 +16,7 @@ special_project = {
 	}
 	on_success = {
 		owner = {
-			if = {
-				limit = {
-					OR = {
-						has_global_flag = l_cluster_origin						# l-cluster plus
-						has_global_flag = rg_origin_l_cluster						# 遥远约定
-						has_global_flag = gray_origin_activate						# 远星之歌
-						has_global_flag = rg_origin_scion_l_cluster					# 未来追迹
-					}
-				}
-				country_event = {
-					id = rg_cluster.2
-				}
-			}
-			else = {
-				country_event = {
-					id = distar.10950
-				}
-			}
+			rg_event_effect_lcluster_open = yes
 		}
 	}
 	on_fail = {

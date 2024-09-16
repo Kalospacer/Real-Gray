@@ -1,0 +1,37 @@
+civic_rg_gray_cluster = {
+	icon = gfx/interface/icons/governments/civics/civic_efficient_bureaucracy.dds
+	potential = {
+		origin = { value = origin_rg_gray }
+	}
+	possible = {
+		ethics = { NOT = { value = civic_rg_gray_non_cluster } }
+		origin = { value = origin_rg_gray }
+	}
+	random_weight = {
+		base = 0
+	}
+	modification = no
+	description = "civic_tooltip_rg_gray_cluster"
+	modifier = {
+		country_government_civic_points_add = 1
+	}
+}
+
+civic_rg_gray_non_cluster = {
+	icon = gfx/interface/icons/governments/civics/civic_nationalistic_zeal.dds
+	potential = {
+		origin = { value = origin_rg_gray }
+	}
+	possible = {
+		ethics = { NOT = { value = civic_rg_gray_cluster } }
+		origin = { value = origin_rg_gray }
+	}
+	random_weight = {
+		base = 0
+	}
+	modification = no
+	description = "civic_tooltip_rg_gray_non_cluster"
+	modifier = {
+		country_government_civic_points_add = 1
+	}
+}

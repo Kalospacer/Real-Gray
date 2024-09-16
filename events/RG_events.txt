@@ -14,57 +14,18 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				NOT = {
-					has_global_flag = origin_rg_gray_1st_global
-				}
+				has_civic = civic_rg_gray_cluster
 			}
-			set_global_flag = origin_rg_gray_1st_global
-			set_country_flag = origin_rg_gray_1st
-			set_country_flag = rg_gray_level_1
-			country_event = {
-				id = rg_event.2
-				days = 30
+			rg_event_effect_event1_cluster = yes
+		}
+		else_if = {
+			limit = {
+				has_civic = civic_rg_gray_non_cluster
 			}
-			add_modifier = {
-				modifier = rg_distant_stars_modifier
-			}
-			save_global_event_target_as = origin_rg_gray_country
-			rg_lcluster_spawn_effect = yes
-			country_event = {
-				id = rg_event.18
-				days = 3600
-				random = 12800
-			}
+			rg_event_effect_event1_cluster_galaxy = yes
 		}
 		else = {
-			set_country_flag = origin_gray_dragon_country
-			set_global_flag = has_origin_gray_dragon
-			rg_create_fake_dragon = yes
-			random_owned_leader = {
-				limit = {
-					has_leader_flag = rg_fake_dragon
-				}
-				remove_trait = RG_leader_trait_admiral_timed_life
-				add_trait = RG_leader_trait_admiral_born_tobe_dragon
-				set_leader_flag = rg_fake_dragon_reborn
-				set_age = 0
-			}
-			set_country_flag = rg_fake_dragon_reborn_country
-			set_variable = {
-				which = rg_fake_dragon_timedlife_counter
-				value = 0
-			}
-			start_lcluster_chain = yes
-			add_event_chain_counter = {
-				event_chain = l_cluster_chain
-				counter = clues
-				amount = 7
-			}
-			# increment variable
-			change_variable = {
-				which = num_lcluster_clues
-				value = 7
-			}
+			rg_event_effect_event1_cluster = yes
 		}
 	}
 }

@@ -2553,10 +2553,7 @@ rg_lcluster_spawn_effect = {
 		}
 	}
 	set_spawn_system_batch = end
-	country_event = {
-		id = rg_cluster.9
-		days = -1
-	}
+	rg_event_effect_lcluster_spawn_selecter = yes
 }
 RG_gray_mod1_effect = {
 	custom_tooltip = rg_levelup_2.tooltip
