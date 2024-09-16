@@ -68,7 +68,7 @@
  district_rg_industrial_plural: "工业区段"
  district_rg_industrial_desc: "这个区段中遍布着叮当作响的工厂与强劲的机械，为帝国提供了有力的工业基础。"
 
- rg_machine_maid_trait_effect_tooltip: "每个在线的人口产生0.1£nanites£$nanites$$Y维护费§!。\n在灰风国家工作时:$TABBED_NEW_LINE$$mod_planet_jobs_produces_mult$：§G+10%§!"
+ rg_machine_maid_trait_effect_tooltip: "每个在线的人口产生0.1£nanites£$nanites$§Y维护费§!。\n在灰风国家工作时:$TABBED_NEW_LINE$$mod_planet_jobs_produces_mult$：§G+10%§!"
 
  graytempest_storm: "灰蛊风暴"
  graytempest_storm_desc: "一群从L-星团中喷涌而出纳米机器对于整个星系的生命体都是威胁。它们数量巨大但尚未完全成型，形成严重的风暴席卷星系。由于纳米机器的自复制特性这种风暴能持续数十年之久。"
