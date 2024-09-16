@@ -12,7 +12,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		has_country_flag = gray_habitat_active
+		has_country_flag = rg_habitat_enabled
 		exists = event_target:rg_gray_habitat_target
 		event_target:rg_gray_habitat_target = {
 			is_under_colonization = no
@@ -55,8 +55,7 @@ planet_event = {
 		NOT = { is_planet_class = pc_cosmogenesis_world }
 		exists = owner
 		owner = {
-			is_fallen_empire = no
-			has_country_flag = gray_habitat_active
+			has_country_flag = rg_habitat_enabled
 		}
 		free_jobs > 0
 	}
@@ -79,8 +78,7 @@ planet_event = {
 		NOT = { is_planet_class = pc_cosmogenesis_world }
 		exists = owner
 		owner = {
-			is_fallen_empire = no
-			has_country_flag = gray_habitat_active
+			has_country_flag = rg_habitat_enabled
 		}
 		free_jobs > 0
 	}
@@ -94,9 +92,10 @@ planet_event = {
 		while = {
 			count = num_pops
 			create_pop = {
-				species = owner_main_species
+				species = event_target:rg_owner_main_maid_species
 			}
 		}
+
 		# Kill pops generated in excess (e.g. from forbidden jobs)
 		if = {
 			limit = {
@@ -124,8 +123,7 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_fallen_empire = no
-		has_country_flag = gray_habitat_active
+		has_country_flag = rg_habitat_enabled
 		event_target:rg_gray_habitat_target = {
 			any_owned_pop = {
 				is_unemployed = yes
@@ -159,8 +157,7 @@ planet_event = {
 	trigger = {
 		exists = owner
 		owner = {
-			is_fallen_empire = no
-			has_country_flag = gray_habitat_active
+			has_country_flag = rg_habitat_enabled
 		}
 		any_owned_pop = {
 			is_unemployed = yes

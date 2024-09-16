@@ -139,6 +139,44 @@ country_event = {
 		}
 	}
 	option = {
+		# 空间站
+		name = RG_graygoo.500.f
+		response_text = RG_graygoo.502.f.response
+		trigger = {
+			NOT = {
+				has_country_flag = rg_habitat_enabled
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = rg_habitat_enabled
+				}
+				rg_clear_harbitat = yes
+			}
+			else = {
+				rg_juggernaut_habitat_init = yes
+			}
+		}
+	}
+	option = {
+		# 空间站
+		name = RG_graygoo.500.g
+		response_text = RG_graygoo.502.g.response
+		trigger = {
+			has_country_flag = rg_habitat_enabled
+		}
+		allow = {
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			rg_clear_harbitat = yes
+		}
+	}
+	option = {
 		# help
 		name = rg_help
 		hidden_effect = {
@@ -346,6 +384,44 @@ country_event = {
 		}
 		hidden_effect = {
 			rg_create_gray_army = yes
+		}
+	}
+	option = {
+		# 空间站
+		name = RG_graygoo.500.f
+		response_text = RG_graygoo.502.f.response
+		trigger = {
+			NOT = {
+				has_country_flag = rg_habitat_enabled
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = rg_habitat_enabled
+				}
+				rg_clear_harbitat = yes
+			}
+			else = {
+				rg_juggernaut_habitat_init = yes
+			}
+		}
+	}
+	option = {
+		# 空间站
+		name = RG_graygoo.500.g
+		response_text = RG_graygoo.502.g.response
+		trigger = {
+			has_country_flag = rg_habitat_enabled
+		}
+		allow = {
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			rg_clear_harbitat = yes
 		}
 	}
 	option = {
@@ -667,6 +743,44 @@ country_event = {
 		custom_tooltip = rg_need_manual_toggle
 		hidden_effect = {
 			remove_country_flag = gray_warship_is_juggernaut
+		}
+	}
+	option = {
+		# 空间站
+		name = RG_graygoo.500.f
+		response_text = RG_graygoo.502.f.response
+		trigger = {
+			NOT = {
+				has_country_flag = rg_habitat_enabled
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = rg_habitat_enabled
+				}
+				rg_clear_harbitat = yes
+			}
+			else = {
+				rg_juggernaut_habitat_init = yes
+			}
+		}
+	}
+	option = {
+		# 空间站
+		name = RG_graygoo.500.g
+		response_text = RG_graygoo.502.g.response
+		trigger = {
+			has_country_flag = rg_habitat_enabled
+		}
+		allow = {
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			rg_clear_harbitat = yes
 		}
 	}
 	option = {
@@ -1065,6 +1179,44 @@ country_event = {
 		}
 	}
 	option = {
+		# 空间站
+		name = RG_graygoo.500.f
+		response_text = RG_graygoo.502.f.response
+		trigger = {
+			NOT = {
+				has_country_flag = rg_habitat_enabled
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = rg_habitat_enabled
+				}
+				rg_clear_harbitat = yes
+			}
+			else = {
+				rg_juggernaut_habitat_init = yes
+			}
+		}
+	}
+	option = {
+		# 空间站
+		name = RG_graygoo.500.g
+		response_text = RG_graygoo.502.g.response
+		trigger = {
+			has_country_flag = rg_habitat_enabled
+		}
+		allow = {
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			rg_clear_harbitat = yes
+		}
+	}
+	option = {
 		# 开启隐形
 		name = rg_graygoo.4.e
 		trigger = {
@@ -1417,6 +1569,44 @@ country_event = {
 		}
 	}
 	option = {
+		# 空间站
+		name = RG_graygoo.500.f
+		response_text = RG_graygoo.502.f.response
+		trigger = {
+			NOT = {
+				has_country_flag = rg_habitat_enabled
+			}
+		}
+		allow = {
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			if = {
+				limit = {
+					has_country_flag = rg_habitat_enabled
+				}
+				rg_clear_harbitat = yes
+			}
+			else = {
+				rg_juggernaut_habitat_init = yes
+			}
+		}
+	}
+	option = {
+		# 空间站
+		name = RG_graygoo.500.g
+		response_text = RG_graygoo.502.g.response
+		trigger = {
+			has_country_flag = rg_habitat_enabled
+		}
+		allow = {
+		}
+		custom_tooltip = rg_need_manual_toggle
+		hidden_effect = {
+			rg_clear_harbitat = yes
+		}
+	}
+	option = {
 		name = marry_gray
 		trigger = {
 			check_variable = {
@@ -1580,6 +1770,32 @@ country_event = {
 		}
 		hidden_effect = {
 			rg_create_gray_colony_1 = yes
+		}
+	}
+	option = {
+		# 购买巨像
+		name = rg_event.4.h
+		trigger = {
+			NOT = {
+				has_country_flag = gray_reforming
+			}
+		}
+		allow = {
+			resource_stockpile_compare = {
+				resource = energy
+				value >= 8000
+			}
+			resource_stockpile_compare = {
+				resource = alloys
+				value >= 8000
+			}
+		}
+		add_resource = {
+			energy = -8000
+			alloys = -8000
+		}
+		hidden_effect = {
+			rg_create_gray_planetkiller_testship_1 = yes
 		}
 	}
 	option = {

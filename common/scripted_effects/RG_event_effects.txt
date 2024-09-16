@@ -144,3 +144,29 @@ rg_event_effect_lcluster_open = {
 	}
 }
 
+#Species
+rg_event_effect_planet2027_spawn_maid_species = {
+	modify_species = {
+		effect = {
+			create_species = {
+				is_mod = yes
+				name = "RG_MACHINE"
+				plural = this
+				class = RG_MACHINE
+				portrait = "rg_machine_maid"
+				can_be_modified = this
+				homeworld = this
+				namelist = this
+				gender = this
+				traits = {
+					trait = trait_machine_unit
+					trait = rg_machine_maid_trait
+					trait = trait_robot_mass_produced
+				}
+				effect = {
+					save_event_target_as = rg_owner_main_maid_species
+				}
+			}
+		}
+	}
+}

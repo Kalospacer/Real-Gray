@@ -251,7 +251,7 @@ rg_create_gray_governor = {
 		remove_country_flag = rg_kac_grayfleet_active
 		remove_country_flag = gray_constship_active
 		remove_country_flag = gray_army_active
-		remove_country_flag = gray_habitat_active
+		
 		#等级导入，把存储的领袖等级赋予到领袖身上
 		random_owned_leader = {
 			limit = {
@@ -368,7 +368,7 @@ rg_create_gray_warship = {
 		remove_country_flag = gray_governor_active #旧版flag
 		remove_country_flag = gray_official_active
 		remove_country_flag = gray_army_active
-		remove_country_flag = gray_habitat_active
+		
 		random_owned_leader = {
 			limit = {
 				has_leader_flag = gray_admiral
@@ -483,7 +483,7 @@ rg_create_gray_army = {
 		remove_country_flag = gray_governor_active #旧版flag
 		remove_country_flag = gray_official_active
 		remove_country_flag = gray_constship_active
-		remove_country_flag = gray_habitat_active
+		
 		remove_ship_design = last_created_design
 		random_owned_leader = {
 			limit = {
@@ -606,7 +606,7 @@ rg_create_gray_const = {
 		remove_country_flag = rg_kac_grayfleet_active
 		remove_country_flag = gray_governor_active #旧版flag
 		remove_country_flag = gray_official_active
-		remove_country_flag = gray_habitat_active
+		
 		random_owned_leader = {
 			limit = {
 				has_leader_flag = gray_scientist
@@ -657,6 +657,38 @@ rg_juggernaut_habitat_init = {
 							owner = root
 							species = owner_main_species
 							ethos = owner
+						}
+						if = {
+							limit = {
+								NOT = {
+									exists = event_target:rg_owner_main_maid_species
+								}
+							}
+							every_owned_pop = {
+								modify_species = {
+									effect = {
+										create_species = {
+											is_mod = yes
+											name = "RG_MACHINE"
+											plural = this
+											class = RG_MACHINE
+											portrait = "rg_machine_maid"
+											can_be_modified = this
+											homeworld = this
+											namelist = this
+											gender = this
+											traits = {
+												trait = trait_machine_unit
+												trait = rg_machine_maid_trait
+												trait = trait_robot_mass_produced
+											}
+											effect = {
+												save_global_event_target_as = rg_owner_main_maid_species
+											}
+										}
+									}
+								}
+							}
 						}
 						set_name = "NAME_rg_gray_habitat_base"
 						

@@ -490,7 +490,7 @@ country_event = {
 	desc = "RG_graygoo.502.f.response"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:gray_leader_admiral
+		portrait = event_target:rg_gray_country_leader
 		room = "ethic_spaceship_room"
 	}
 	is_triggered_only = yes
@@ -527,7 +527,7 @@ country_event = {
 	desc = "RG_graygoo.502.g.response"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:gray_leader_admiral
+		portrait = event_target:rg_gray_country_leader
 		room = "ethic_spaceship_room"
 	}
 	is_triggered_only = yes
