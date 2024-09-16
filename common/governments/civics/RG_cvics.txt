@@ -4,7 +4,7 @@ civic_rg_gray_cluster = {
 		origin = { value = origin_rg_gray }
 	}
 	possible = {
-		ethics = { NOT = { value = civic_rg_gray_non_cluster } }
+		civics = { NOT = { value = civic_rg_gray_non_cluster } }
 		origin = { value = origin_rg_gray }
 	}
 	random_weight = {
@@ -23,7 +23,7 @@ civic_rg_gray_non_cluster = {
 		origin = { value = origin_rg_gray }
 	}
 	possible = {
-		ethics = { NOT = { value = civic_rg_gray_cluster } }
+		civics = { NOT = { value = civic_rg_gray_cluster } }
 		origin = { value = origin_rg_gray }
 	}
 	random_weight = {

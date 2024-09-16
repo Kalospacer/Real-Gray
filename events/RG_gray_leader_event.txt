@@ -314,13 +314,11 @@ country_event = {
 		name = RG_graygoo.500.f
 		response_text = RG_graygoo.502.f.response
 		trigger = {
-			has_country_flag = rg_juggernaut_fired
 			NOT = {
 				has_country_flag = rg_habitat_enabled
 			}
 		}
 		allow = {
-			has_country_flag = rg_juggernaut_fired	# To prevent exploit
 		}
 		custom_tooltip = rg_need_manual_toggle
 		hidden_effect = {
@@ -343,11 +341,9 @@ country_event = {
 		name = RG_graygoo.500.g
 		response_text = RG_graygoo.502.g.response
 		trigger = {
-			has_country_flag = rg_juggernaut_fired
 			has_country_flag = rg_habitat_enabled
 		}
 		allow = {
-			has_country_flag = rg_juggernaut_fired	# To prevent exploit
 		}
 		custom_tooltip = rg_need_manual_toggle
 		hidden_effect = {
@@ -506,13 +502,11 @@ country_event = {
 		name = RG_graygoo.500.f
 		response_text = RG_graygoo.502.f.response
 		trigger = {
-			has_country_flag = rg_juggernaut_fired
 			NOT = {
 				has_country_flag = rg_habitat_enabled
 			}
 		}
 		allow = {
-			has_country_flag = rg_juggernaut_fired	# To prevent exploit
 		}
 		custom_tooltip = rg_need_manual_toggle
 		hidden_effect = {
@@ -527,11 +521,9 @@ country_event = {
 		name = RG_graygoo.500.g
 		response_text = RG_graygoo.502.g.response
 		trigger = {
-			has_country_flag = rg_juggernaut_fired
 			has_country_flag = rg_habitat_enabled
 		}
 		allow = {
-			has_country_flag = rg_juggernaut_fired	# To prevent exploit
 		}
 		custom_tooltip = rg_need_manual_toggle
 		hidden_effect = {
@@ -800,13 +792,11 @@ country_event = {
 		name = RG_graygoo.500.f
 		response_text = RG_graygoo.502.f.response
 		trigger = {
-			has_country_flag = rg_juggernaut_fired
 			NOT = {
 				has_country_flag = rg_habitat_enabled
 			}
 		}
 		allow = {
-			has_country_flag = rg_juggernaut_fired	# To prevent exploit
 		}
 		custom_tooltip = rg_need_manual_toggle
 		hidden_effect = {
@@ -829,11 +819,9 @@ country_event = {
 		name = RG_graygoo.500.g
 		response_text = RG_graygoo.502.g.response
 		trigger = {
-			has_country_flag = rg_juggernaut_fired
 			has_country_flag = rg_habitat_enabled
 		}
 		allow = {
-			has_country_flag = rg_juggernaut_fired	# To prevent exploit
 		}
 		custom_tooltip = rg_need_manual_toggle
 		hidden_effect = {
@@ -1211,13 +1199,11 @@ country_event = {
 		name = RG_graygoo.500.f
 		response_text = RG_graygoo.502.f.response
 		trigger = {
-			has_country_flag = rg_juggernaut_fired
 			NOT = {
 				has_country_flag = rg_habitat_enabled
 			}
 		}
 		allow = {
-			has_country_flag = rg_juggernaut_fired	# To prevent exploit
 		}
 		custom_tooltip = rg_need_manual_toggle
 		hidden_effect = {
@@ -1524,13 +1510,11 @@ country_event = {
 		name = RG_graygoo.500.f
 		response_text = RG_graygoo.502.f.response
 		trigger = {
-			has_country_flag = rg_juggernaut_fired
 			NOT = {
 				has_country_flag = rg_habitat_enabled
 			}
 		}
 		allow = {
-			has_country_flag = rg_juggernaut_fired	# To prevent exploit
 		}
 		custom_tooltip = rg_need_manual_toggle
 		hidden_effect = {
@@ -1553,11 +1537,9 @@ country_event = {
 		name = RG_graygoo.500.g
 		response_text = RG_graygoo.502.g.response
 		trigger = {
-			has_country_flag = rg_juggernaut_fired
 			has_country_flag = rg_habitat_enabled
 		}
 		allow = {
-			has_country_flag = rg_juggernaut_fired	# To prevent exploit
 		}
 		custom_tooltip = rg_need_manual_toggle
 		hidden_effect = {
