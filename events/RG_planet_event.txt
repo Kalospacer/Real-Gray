@@ -27,6 +27,10 @@ country_event = {
 					category = bio_trophy
 					value >= 1
 				}
+				free_jobs_of_type = {
+					job = servant
+					value >= 1
+				}
 			}
 		}
 	}
