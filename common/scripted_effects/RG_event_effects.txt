@@ -173,7 +173,7 @@ rg_event_effect_planet2027_spawn_maid_species = {
 					trait = trait_robot_luxurious
 				}
 				effect = {
-					save_event_target_as = rg_owner_main_maid_species
+					save_global_event_target_as = rg_owner_main_maid_species
 				}
 			}
 		}
