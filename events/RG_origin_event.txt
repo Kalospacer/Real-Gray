@@ -37,7 +37,7 @@ country_event = {
 		if = {
 			limit = {
 				NOT = {
-					exist = event_target:rg_scion_fe
+					exists = event_target:rg_scion_fe
 				}
 			}
 			set_country_flag = rg_scion_needs_fe
@@ -100,7 +100,7 @@ country_event = {
 					overlord = {
 						add_opinion_modifier = {
 							modifier = opinion_scion
-							who = rg_scion_fe
+							who = event_target:rg_scion_fe
 						}
 					}
 					country_event = { id = rg_origin.10 days = 3 }

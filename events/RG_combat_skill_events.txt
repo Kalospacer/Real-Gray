@@ -1,5 +1,4 @@
 namespace = rg_skill
-
 # fleet_event = {
 #     id = rg_skill.1
 #     hide_window = yes
@@ -139,7 +138,7 @@ ship_event = {
 			limit = {
 				owner = {
 					NOT = {
-						is_same_value = origin_rg_gray_country
+						is_same_value = event_target:origin_rg_gray_country
 					}
 				}
 				solar_system = {
@@ -158,14 +157,14 @@ ship_event = {
 		else_if = {
 			limit = {
 				owner = {
-					is_same_value = origin_rg_gray_country
+					is_same_value = event_target:origin_rg_gray_country
 					NOT = {
 						has_global_flag = l_cluster_opened
 					}
 				}
 				solar_system = {
 					has_star_flag = lcluster
-					NOT = {	
+					NOT = {
 						any_fleet_in_system = {
 							exists = controller
 							controller = {
@@ -180,12 +179,12 @@ ship_event = {
 		else_if = {
 			limit = {
 				owner = {
-					is_same_value = origin_rg_gray_country					# 是小灰起源
+					is_same_value = event_target:origin_rg_gray_country					# 是小灰起源
 					has_global_flag = l_cluster_opened					# L星门已开启
 				}
 				solar_system = {
 					# has_star_flag = lcluster
-					NOT = {	
+					NOT = {
 						any_fleet_in_system = {
 							exists = controller
 							controller = {
@@ -382,23 +381,32 @@ planet_event = {
 			remove_planet_flag = checking_tempest_incoming
 		}
 		else = {
-			#planet
-			any_ground_combat_attacker = {
-				#army
-				exists = leader
-				leader = {
-					#leader
-					has_trait = RG_leader_trait_admiral_nanorebuild_gray
-					owner = {
-						#country
-						save_event_target_as = attacking_general_country
+			if = {
+				limit = {
+					#planet
+					any_ground_combat_attacker = {
+						#army
+						exists = leader
+						leader = {
+							#leader
+							has_trait = RG_leader_trait_admiral_nanorebuild_gray
+						}
+
 					}
+	
+				}
+				from = {
+					#country
+					save_event_target_as = attacking_general_country
 				}
 			}
-			# Do the same check again in X days
-			country_event = {
-				id = rg_skill.10
-			}			# NOTE: Update custom loc for effect when changing days
+			from = {
+				# Do the same check again in X days
+				country_event = {
+					id = rg_skill.10
+				}
+				# NOTE: Update custom loc for effect when changing days
+			}
 		}
 	}
 }
@@ -679,13 +687,11 @@ country_event = {
 # 		}
 # 	}
 # }
-
 # On destroying enemy ship.
 country_event = {
 	id = rg_skill.13
 	hide_window = yes
 	is_triggered_only = yes
-
 	trigger = {
 		FromFrom = {
 			is_in_combat = yes
@@ -695,11 +701,13 @@ country_event = {
 			has_trait = RG_leader_trait_admiral_nanorebuild_gray
 		}
 	}
-
 	immediate = {
-		FROMFROM = { # Winning ship.
+		FROMFROM = {
+			# Winning ship.
 			if = {
-				limit = { exists = fleet.leader }
+				limit = {
+					exists = fleet.leader
+				}
 				fleet.leader = {
 					if = {
 						limit = {
@@ -719,6 +727,7 @@ country_event = {
 		}
 	}
 }
+
 # This = owner of fleet 1 (winner)
 # From = owner of fleet 2 (loser)
 # FromFrom = fleet 1
@@ -751,6 +760,7 @@ country_event = {
 		}
 	}
 }
+
 # This = owner of fleet 1 (loser)
 # From = owner of fleet 2 (winner)
 # FromFrom = fleet 1

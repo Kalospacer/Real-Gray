@@ -854,7 +854,7 @@ country_event = {
 						has_star_flag = lgate_originating_system
 					}
 					any_system_megastructure = {
-						is_megastructure_type = l_gate_base
+						is_megastructure_type = lgate_base
 					}
 				}
 			}
@@ -865,10 +865,10 @@ country_event = {
 						has_star_flag = lgate_originating_system
 					}
 					any_system_megastructure = {
-						is_megastructure_type = l_gate_base
+						is_megastructure_type = lgate_base
 					}
 				}
-				save_event_target_as = candidate_gateway
+				save_global_event_target_as = candidate_gateway
 			}
 			country_event = {
 				id = distar.10905
@@ -989,7 +989,7 @@ country_event = {
 				limit = {
 					is_megastructure_type = lgate_base
 				}
-				save_event_target_as = candidate_gateway
+				save_global_event_target_as = candidate_gateway
 			}
 			country_event = {
 				id = distar.10905
@@ -1074,14 +1074,14 @@ country_event = {
 		hidden_effect = {
 			create_fleet = {
 				effect = {
-					set_owner = event_target:graygoo_country
+					set_owner = event_target:rg_graygoo_country
 					create_ship = {
 						name = random
 						design = "NAME_Gray_Warship"
 						graphical_culture = "pirate_01"
 					}
 					set_location = {
-						target = event_target:main_star
+						target = event_target:rg_main_star
 						distance = 55
 						angle = 270
 					}
@@ -1127,14 +1127,14 @@ country_event = {
 		hidden_effect = {
 			create_fleet = {
 				effect = {
-					set_owner = event_target:graygoo_country
+					set_owner = event_target:rg_graygoo_country
 					create_ship = {
 						name = random
 						design = "NAME_Gray_Warship"
 						graphical_culture = "pirate_01"
 					}
 					set_location = {
-						target = event_target:main_star
+						target = event_target:rg_main_star
 						distance = 55
 						angle = 270
 					}
@@ -1251,14 +1251,14 @@ country_event = {
 		hidden_effect = {
 			create_fleet = {
 				effect = {
-					set_owner = event_target:graygoo_country
+					set_owner = event_target:rg_graygoo_country
 					create_ship = {
 						name = random
 						design = "NAME_Gray_Warship"
 						graphical_culture = "pirate_01"
 					}
 					set_location = {
-						target = event_target:main_star
+						target = event_target:rg_main_star
 						distance = 55
 						angle = 270
 					}
@@ -1422,7 +1422,7 @@ country_event = {
 	immediate = {
 		every_owned_fleet = {
 			limit = {
-				any_ship = {
+				any_owned_ship = {
 					is_ship_size = graygoo_mothership
 				}
 			}
@@ -1718,7 +1718,7 @@ country_event = {
 					any_fleet_in_system = {
 						owner = {
 							NOT = {
-								is_country = event_target:graygoo_country
+								is_country = event_target:rg_graygoo_country
 							}
 						}
 					}
@@ -1726,7 +1726,7 @@ country_event = {
 			}
 			random_country = {
 				limit = {
-					is_country = event_target:graygoo_country
+					is_country = event_target:rg_graygoo_country
 				}
 				country_event = {
 					id = rg_event.405
@@ -1737,7 +1737,7 @@ country_event = {
 		}
 		else_if = {
 			limit = {
-				event_target:graygoo_country = {
+				event_target:rg_graygoo_country = {
 					num_fleets < 30
 				}
 			}
@@ -1748,12 +1748,12 @@ country_event = {
 						has_star_flag = lgate_originating_system
 					}
 					any_system_megastructure = {
-						is_megastructure_type = l_gate_base
+						is_megastructure_type = lgate_base
 					}
 				}
 				random_system_megastructure = {
 					limit = {
-						is_megastructure_type = l_gate_base
+						is_megastructure_type = lgate_base
 					}
 					create_ambient_object = {
 						type = "horror_spawn_object"
@@ -1764,7 +1764,7 @@ country_event = {
 					create_fleet = {
 						name = "NAME_Tempest_Fleet"
 						effect = {
-							set_owner = event_target:graygoo_country
+							set_owner = event_target:rg_graygoo_country
 							rg_create_graygoo_fleet_random = yes
 							set_formation_scale = 2
 							set_fleet_stance = aggressive
@@ -1819,7 +1819,7 @@ country_event = {
 					any_fleet_in_system = {
 						owner = {
 							NOT = {
-								is_country = event_target:graygoo_country
+								is_country = event_target:rg_graygoo_country
 							}
 						}
 					}
@@ -1827,7 +1827,7 @@ country_event = {
 			}
 			random_country = {
 				limit = {
-					is_country = event_target:graygoo_country
+					is_country = event_target:rg_graygoo_country
 				}
 				country_event = {
 					id = rg_event.405
@@ -1838,7 +1838,7 @@ country_event = {
 		}
 		if = {
 			limit = {
-				event_target:graygoo_country = {
+				event_target:rg_graygoo_country = {
 					num_fleets < 60
 				}
 			}
@@ -1849,12 +1849,12 @@ country_event = {
 						has_star_flag = lgate_originating_system
 					}
 					any_system_megastructure = {
-						is_megastructure_type = l_gate_base
+						is_megastructure_type = lgate_base
 					}
 				}
 				random_system_megastructure = {
 					limit = {
-						is_megastructure_type = l_gate_base
+						is_megastructure_type = lgate_base
 					}
 					create_ambient_object = {
 						type = "horror_spawn_object"
@@ -1867,7 +1867,7 @@ country_event = {
 						create_fleet = {
 							name = "NAME_Tempest_Fleet"
 							effect = {
-								set_owner = event_target:graygoo_country
+								set_owner = event_target:rg_graygoo_country
 								rg_create_graygoo_fleet_random = yes
 								set_formation_scale = 2
 								set_fleet_stance = aggressive

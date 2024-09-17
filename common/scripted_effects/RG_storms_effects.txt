@@ -31,9 +31,9 @@ graytempest_storm_apply_aftermath_modifier = {
 		storm_apply_aftermath_modifier = {
 			severity = {
 				modifier = "graytempest_storm_aftermath_modifier_severity_1"
-				days = @Severity1Duration
+				days = 1080
 				chance = {
-					base = @Severity1BaseChance
+					base = 33
 					modifier = {
 						factor = 0
 						OR = {
@@ -49,9 +49,9 @@ graytempest_storm_apply_aftermath_modifier = {
 
 			severity = {
 				modifier = "graytempest_storm_aftermath_modifier_severity_2"
-				days = @Severity2Duration
+				days = 1080
 				chance = {
-					base = @Severity2BaseChance
+					base = 3
 					modifier = {
 						factor = 0
 						has_modifier = "graytempest_storm_aftermath_modifier_severity_3"
@@ -64,9 +64,9 @@ graytempest_storm_apply_aftermath_modifier = {
 
 			severity = {
 				modifier = "graytempest_storm_aftermath_modifier_severity_3"
-				days = @Severity3Duration
+				days = 1080
 				chance = {
-					base = @Severity3BaseChance
+					base = 33
 					modifier = {
 						factor =  $FactorSev3|1$
 					}

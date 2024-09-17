@@ -10,7 +10,6 @@ rg_create_fallen_empire_species_effect = {
 			trait = trait_auto_mod_robotic
 			trait = trait_robot_streamlined_protocols
 			trait = trait_robot_luxurious
-			trait = ramdom_trait
 		}
 		extra_trait_points = 3
 		allow_negative_traits = no
@@ -88,7 +87,7 @@ rg_create_fallen_empire_country_effect = {
 			if = {
 				limit = {
 					NOT = {
-						exist = event_target:rg_gray_country_leader
+						exists = event_target:rg_gray_country_leader
 					}
 				}
 				rg_gray_country_leader_init = yes

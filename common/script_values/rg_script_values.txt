@@ -1,7 +1,7 @@
 rg_count_maid = {
 	base = 0
 	complex_trigger_modifier = {
-		trigger = count_traits
+		trigger = num_traits
 		trigger_scope = pop
 		parameters = {
 			limit = {

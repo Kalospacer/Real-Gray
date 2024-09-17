@@ -1,0 +1,10 @@
+RG_gray_juggernaut_ships_limit = {
+	ship_types = {
+		RG_gray_juggernaut
+	}
+	base = 2 # 1 * juggernaut's size_multiplier
+	show = {
+		is_scope_valid = yes
+		has_technology = tech_gray_juggernaut_8
+	}
+}

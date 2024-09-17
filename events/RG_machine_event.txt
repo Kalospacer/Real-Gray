@@ -7,7 +7,7 @@ country_event = {
 		if = {
 			limit = {
 				NOT = {
-					exist = event_target:rg_maid_species
+					exists = event_target:rg_maid_species
 				}
 			}
 			create_species = {

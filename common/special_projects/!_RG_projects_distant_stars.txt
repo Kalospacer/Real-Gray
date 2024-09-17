@@ -85,7 +85,7 @@ special_project = {
 	event_scope = ship_event
 	requirements = {
 		shipclass_military = 1
-		leader = admiral
+		leader = commander
 		has_trait = RG_leader_trait_admiral_gray
 	}
 	on_start = {

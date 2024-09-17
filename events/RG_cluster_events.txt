@@ -145,7 +145,7 @@ country_event = {
 				root = {
 					random_owned_leader = {
 						limit = {
-							leader_class = governor
+							leader_class = official
 						}
 						save_event_target_as = rg_cluster_sector_gov
 					}

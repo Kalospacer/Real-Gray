@@ -20,7 +20,7 @@ GRAY_SPECIES = {
 	playable = { always = no }
 	randomized = no
 
-	gender = female
+	gender = no
 
 	portraits = {
 		"Gray"
@@ -32,7 +32,6 @@ GRAY_SPECIES = {
 RG_MACHINE = {
 	archetype = MACHINE
 
-	playable = no
 	randomized = no
 	# possible = { always = yes }
 	# possible_secondary = { always = no text = SECONDARY_SPECIES_CLASS_INVALID }

@@ -162,9 +162,11 @@ planet_event = {
 	id = rg_story.6
 	title = "rg_story.6.title"
 	is_triggered_only = yes
-	fire_only_once = yes
 	trigger = {
 		NOT = {
+			any_country = {
+				has_country_flag = rg_story6_fired
+			}
 			# has_global_flag = has_wsg_mod
 		}
 	}
@@ -178,6 +180,10 @@ planet_event = {
 						has_ship_flag = rg_test_ship
 					}
 				}
+				prev = {
+					save_event_target_as = event_target_country
+					set_country_flag = rg_story6_fired
+				}
 				delete_fleet = this
 			}
 		}
@@ -188,8 +194,10 @@ planet_event = {
 	option = {
 		name = rg_story.6.a
 		hidden_effect = {
-			country_event = {
-				id = rg_story.7
+			event_target:event_target_country = {
+				country_event = {
+					id = rg_story.7
+				}
 			}
 		}
 		default_hide_option = yes
@@ -647,7 +655,9 @@ country_event = {
 			event_target:rg_fake_dragon_fleet = {
 				leader = {
 					OR = {
-						exists = NO
+						NOT = {
+							exists = leader
+						}
 						NOR = {
 							has_leader_flag = rg_fake_dragon
 							has_leader_flag = rg_fake_dragon_reborn
@@ -701,7 +711,7 @@ country_event = {
 # 龙噶了把所有卡住的的模拟龙扫描事件中止
 country_event = {
 	id = rg_story.22
-	hidden_window = yes
+	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
 		from = {
@@ -1026,8 +1036,7 @@ country_event = {
 			}
 		}
 		add_resource = {
-			resource = nanites
-			value = -150
+			nanites = -150
 		}
 		random_situation = {
 			limit = {
@@ -1120,12 +1129,10 @@ country_event = {
 			}
 		}
 		add_resource = {
-			resource = alloys
-			value = -1500
+			alloys = -1500
 		}
 		add_resource = {
-			resource = energy
-			value = -1500
+			energy = -1500
 		}
 		rg_create_gray_mod1_testship_2 = yes
 		random_situation = {
@@ -1169,12 +1176,10 @@ country_event = {
 			}
 		}
 		add_resource = {
-			resource = alloys
-			value = -1500
+			alloys = -1500
 		}
 		add_resource = {
-			resource = energy
-			value = -1500
+			energy = -1500
 		}
 		rg_create_gray_mod1_testship_2 = yes
 		random_situation = {
@@ -1218,12 +1223,10 @@ country_event = {
 			}
 		}
 		add_resource = {
-			resource = energy
-			value = -4000
+			alloys = -1500
 		}
 		add_resource = {
-			resource = minerals
-			value = -1500
+			energy = -1500
 		}
 		random_situation = {
 			limit = {
@@ -1262,8 +1265,7 @@ country_event = {
 			}
 		}
 		add_resource = {
-			resource = consumer_goods
-			value = -3000
+			consumer_goods = -3000
 		}
 		random_situation = {
 			limit = {
@@ -1306,12 +1308,10 @@ country_event = {
 			}
 		}
 		add_resource = {
-			resource = alloys
-			value = -1500
+			alloys = -1500
 		}
 		add_resource = {
-			resource = energy
-			value = -1500
+			energy = -1500
 		}
 		rg_create_gray_mod1_testship_2 = yes
 		random_situation = {
@@ -1351,8 +1351,7 @@ country_event = {
 			}
 		}
 		add_resource = {
-			resource = alloys
-			value = -3000
+			alloys = -3000
 		}
 		random_situation = {
 			limit = {
@@ -1391,8 +1390,7 @@ country_event = {
 			}
 		}
 		add_resource = {
-			resource = alloys
-			value = -500
+			alloys = -500
 		}
 		random_situation = {
 			limit = {

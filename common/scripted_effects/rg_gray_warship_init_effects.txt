@@ -19,7 +19,9 @@ rg_warship_init_mod1 = {
 				prefix = no
 				upgradable = yes
 				effect = {
-					set_fleet_flag = gray_fleet_ship
+					PREV = {
+						set_fleet_flag = gray_fleet_ship
+					}
 					save_global_event_target_as = gray_warship_ship
 				}
 			}
@@ -63,7 +65,9 @@ rg_warship_init_mod2 = {
 				prefix = no
 				upgradable = yes
 				effect = {
-					set_fleet_flag = gray_fleet_ship
+					PREV = {
+						set_fleet_flag = gray_fleet_ship
+					}
 					save_global_event_target_as = gray_warship_ship
 				}
 			}
@@ -108,7 +112,9 @@ rg_warship_init_mod3 = {
 				prefix = no
 				upgradable = yes
 				effect = {
-					set_fleet_flag = gray_fleet_ship
+					PREV = {
+						set_fleet_flag = gray_fleet_ship
+					}
 					save_global_event_target_as = gray_warship_ship
 				}
 			}
@@ -151,7 +157,9 @@ rg_warship_init_mod0 = {
 				prefix = no
 				upgradable = yes
 				effect = {
-					set_fleet_flag = gray_fleet_ship
+					PREV = {
+						set_fleet_flag = gray_fleet_ship
+					}
 					save_global_event_target_as = gray_warship_ship
 				}
 			}

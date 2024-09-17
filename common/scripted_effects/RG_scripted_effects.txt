@@ -1992,7 +1992,7 @@ RG_destroy_star_system = {
 				exists = event_target:gray_owner				#i.e. not final destruction of all matter
 				is_mobile = yes
 			}
-			set_mia = yes
+			set_mia = mia_emergency_ftl
 		}
 		else = {
 			destroy_fleet = this

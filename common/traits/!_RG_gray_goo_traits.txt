@@ -32,7 +32,6 @@
 # 	initial = no
 # 	randomized = no
 # }
-
 # RG_leader_trait_offical_gray = {
 # 	#唯一特质
 # 	cost = 0
@@ -105,7 +104,6 @@
 # 	initial = no
 # 	randomized = no
 # }
-
 RG_leader_trait_governor_gray = {
 	#总督特质
 	cost = 0
@@ -146,7 +144,9 @@ RG_leader_trait_governor_gray = {
 		starbase_shipyard_build_cost_mult = -0.25
 		starbase_shipyard_build_speed_mult = -0.3
 	}
-	leader_class = { official }
+	leader_class = {
+		official
+	}
 	initial = no
 	randomized = no
 }
@@ -270,7 +270,9 @@ RG_leader_trait_ruler_gray = {
 		country_base_influence_produces_add = 1
 		mult = trigger:has_skill
 	}
-	leader_class = { official }
+	leader_class = {
+		official
+	}
 	initial = no
 	randomized = no
 }
@@ -309,7 +311,9 @@ RG_leader_trait_admiral_gray_1 = {
 		army_disengage_chance_mult = 0.3
 		army_health = 0.15
 	}
-	leader_class = { commander }
+	leader_class = {
+		commander
+	}
 	initial = no
 	randomized = no
 }
@@ -348,7 +352,9 @@ RG_leader_trait_admiral_gray_2 = {
 		army_disengage_chance_mult = 0.4
 		army_health = 0.25
 	}
-	leader_class = { commander }
+	leader_class = {
+		commander
+	}
 	initial = no
 	randomized = no
 }
@@ -387,7 +393,9 @@ RG_leader_trait_admiral_gray = {
 		army_disengage_chance_mult = 0.5
 		army_health = 0.35
 	}
-	leader_class = { commander }
+	leader_class = {
+		commander
+	}
 	initial = no
 	randomized = no
 }
@@ -418,7 +426,9 @@ RG_leader_trait_admiral_nanorebuild_gray = {
 		army_health = 0.05
 		mult = owner.rg_general_skill_combat_daypassed_variable
 	}
-	leader_class = { commander }
+	leader_class = {
+		commander
+	}
 	initial = no
 	randomized = no
 }
@@ -455,7 +465,9 @@ RG_leader_trait_scientist_gray = {
 		# ship_speed_mult = 0.5
 		ship_anomaly_generation_chance_mult = -1
 	}
-	leader_class = { scientist }
+	leader_class = {
+		scientist
+	}
 	initial = no
 	randomized = no
 }
@@ -486,7 +498,6 @@ RG_leader_trait_scientist_gray = {
 # 	initial = no
 # 	randomized = no
 # }
-
 # 与舰长技能合并，弃用
 # RG_leader_trait_general_gray_skill = {
 # 	destiny_trait = yes
@@ -512,7 +523,6 @@ RG_leader_trait_scientist_gray = {
 # 	randomized = no
 # 	destiny_background_icon = "GFX_leader_background_destiny_1"
 # }
-
 RG_leader_trait_admiral_fake_dragon = {
 	cost = 0
 	inline_script = {
@@ -532,7 +542,9 @@ RG_leader_trait_admiral_fake_dragon = {
 		ship_hull_mult = 0.2
 		ship_weapon_damage = 0.2
 	}
-	leader_class = { commander }
+	leader_class = {
+		commander
+	}
 	initial = no
 	randomized = no
 }
@@ -573,9 +585,23 @@ RG_leader_trait_admiral_timed_life = {
 		ship_armor_mult = 10
 		ship_hull_mult = 10
 		ship_weapon_damage = 10
-		custom_tooltip_with_modifiers = rg_timed_life_millennium
 	}
-	leader_class = { commander }
+	triggered_desc = {
+		# Show key if trigger/exclusive_trigger is true.
+		trigger = {
+			owner = {
+				check_variable = {
+					which = rg_fake_dragon_timedlife_counter
+					value > 1000
+				}
+			}
+		}
+		# Trigger appends additional localization key to existing text. THIS = Leader
+		text = rg_timed_life_millennium_reborn
+	}
+	leader_class = {
+		commander
+	}
 	initial = no
 	randomized = no
 }
@@ -617,9 +643,23 @@ RG_leader_trait_admiral_born_tobe_dragon = {
 		ship_armor_mult = 0.01
 		ship_hull_mult = 0.01
 		ship_weapon_damage = 0.01
-		custom_tooltip_with_modifiers = rg_timed_life_millennium_reborn
 	}
-	leader_class = { commander }
+	triggered_desc = {
+		# Show key if trigger/exclusive_trigger is true.
+		trigger = {
+			owner = {
+				check_variable = {
+					which = rg_fake_dragon_timedlife_counter
+					value > 1000
+				}
+			}
+		}
+		# Trigger appends additional localization key to existing text. THIS = Leader
+		text = rg_timed_life_millennium_reborn
+	}
+	leader_class = {
+		commander
+	}
 	initial = no
 	randomized = no
 }

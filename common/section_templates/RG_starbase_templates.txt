@@ -164,7 +164,6 @@ ship_section_template = {
 	fits_on_slot = "core"
 	entity = "grey_tempesttw_starbase_starfortress_section_entity"
 	icon = "GFX_ship_part_core_mid"
-	hidden = yes
 	component_slot = {
 		name = "LARGE_GUN_01"
 		template = "invisible_large_turret"

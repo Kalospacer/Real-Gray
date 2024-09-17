@@ -2,16 +2,27 @@
 # BASIC SHIP COMPUTERS #
 ########################
 
+@cost1 = 5
+@cost2 = 10
+@cost3 = 15
+@cost4 = 20
+
+@power0 = -5
+@power1 = -10
+@power2 = -15
+@power3 = -20
+@power4 = -30
+
 utility_component_template = {
 	key = "RG_COMBAT_COMPUTER_SWARM_DEFAULT"
 	size = small
 	icon = "GFX_ship_part_computer_default"
 	icon_frame = 1
-	power = @power0
+	power = -5
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @cost0
+			alloys = 0
 		}
 	}
 	ship_behavior = "swarm"
@@ -40,11 +51,11 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_computer_default"
 	icon_frame = 1
-	power = @power0
+	power = -5
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @cost0
+			alloys = 0
 		}
 	}
 	ship_behavior = "picket"
@@ -75,11 +86,11 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_computer_default"
 	icon_frame = 1
-	power = @power0
+	power = -5
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @cost0
+			alloys = 0
 		}
 	}
 	ship_behavior = "line"
@@ -108,11 +119,11 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_computer_default"
 	icon_frame = 1
-	power = @power0
+	power = -5
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @cost0
+			alloys = 0
 		}
 	}
 	ship_behavior = "artillery"
@@ -141,11 +152,11 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_computer_default"
 	icon_frame = 1
-	power = @power0
+	power = -5
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @cost0
+			alloys = 0
 		}
 	}
 	ship_behavior = "torpedo"

@@ -11,7 +11,7 @@ rg_ap_nantiematter = {
 			can_research_technology = tech_lgate_activation
 		}
 		NOT = {
-			has_ascension_perk = rg_nantiematter
+			has_ascension_perk = rg_ap_nantiematter
 		}
 	}
 	potential = {

@@ -56,6 +56,7 @@ country_event = {
 				limit = {
 					has_planet_flag = main_star
 				}
+				save_global_event_target_as = rg_main_star
 				save_event_target_as = main_star
 			}
 			create_country = {
@@ -79,6 +80,7 @@ country_event = {
 					}
 				}
 				effect = {
+					save_global_event_target_as = rg_graygoo_country
 					save_event_target_as = graygoo_country
 					create_ship_design = {
 						design = "NAME_RG_armed_transport_ship"

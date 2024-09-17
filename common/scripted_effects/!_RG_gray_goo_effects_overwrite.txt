@@ -22,7 +22,7 @@ start_lcluster_chain = {
 	if = {
 		limit = {
 			NOR = {
-				is_same_value = origin_rg_gray_country
+				is_same_value = event_target:origin_rg_gray_country
 				has_country_flag = origin_rg_gray_1st
 			}
 		}

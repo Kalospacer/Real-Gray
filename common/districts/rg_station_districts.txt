@@ -341,6 +341,7 @@ district_rg_generator = {
 		}
 		produces = {
 			energy = 200
+			mult = country.rg_gray_level
 		}
 	}
 

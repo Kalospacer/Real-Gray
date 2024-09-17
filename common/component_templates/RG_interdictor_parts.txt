@@ -371,40 +371,40 @@ utility_component_template = {
 }
 
 utility_component_template = {
-	key = "RG_Mothership_DARK_MATTER_REACTOR"
-	size = small
-	icon = "GFX_ship_part_dark_matter_power_core"
-	icon_frame = 1
-	power = 
-	resources = {
-		category = ship_components
-		cost = {
-			alloys = 296
-			sr_dark_matter = 8
-		}
-		upkeep = {
-			energy = 2.98
-			alloys = 0.298
-		}
-	}
-	prerequisites = {
-		"tech_dark_matter_power_core"
-	}
-	component_set = "power_core"
-	size_restriction = {
-		RG_graygoo_mothership
-		RG_gray_juggernaut
-		RG_graygoo_capitalship
-	}
-	ai_weight = {
-		weight = 6
-		modifier = {
-			factor = 0
-			no_resource_for_component = {
-				RESOURCE = sr_dark_matter
-			}
-		}
-	}
+    key = "RG_Mothership_DARK_MATTER_REACTOR"
+    size = small
+    icon = "GFX_ship_part_dark_matter_power_core"
+    icon_frame = 1
+    power = 20
+    resources = {
+        category = ship_components
+        cost = {
+            alloys = 296
+            sr_dark_matter = 8
+        }
+        upkeep = {
+            energy = 2.98
+            alloys = 0.298
+        }
+    }
+    prerequisites = {
+        "tech_dark_matter_power_core"
+    }
+    component_set = "power_core"
+    size_restriction = {
+        RG_graygoo_mothership
+        RG_gray_juggernaut
+        RG_graygoo_capitalship
+    }
+    ai_weight = {
+        weight = 6
+        modifier = {
+            factor = 0
+            no_resource_for_component = {
+                RESOURCE = sr_dark_matter
+            }
+        }
+    }
 }
 
 utility_component_template = {
@@ -446,7 +446,7 @@ utility_component_template = {
 		category = ship_components
 		cost = {
 			alloys = 80
-			nanties = 2
+			nanites = 2
 		}
 		upkeep = {
 			energy = 0.8
@@ -473,7 +473,7 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_thruster_1"
 	icon_frame = 1
-	power = @battleship_power_1
+	power = -80
 	resources = {
 		category = ship_components
 		cost = {
@@ -508,7 +508,7 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_thruster_2"
 	icon_frame = 1
-	power = @battleship_power_2
+	power = -120
 	resources = {
 		category = ship_components
 		cost = {
@@ -545,7 +545,7 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_thruster_3"
 	icon_frame = 1
-	power = @battleship_power_3
+	power = -160
 	resources = {
 		category = ship_components
 		cost = {
@@ -582,7 +582,7 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_thruster_4"
 	icon_frame = 1
-	power = @battleship_power_4
+	power = -200
 	resources = {
 		category = ship_components
 		cost = {
@@ -619,7 +619,7 @@ utility_component_template = {
 	size = small
 	icon = "GFX_ship_part_thruster_5"
 	icon_frame = 1
-	power = @battleship_power_5
+	power = -240
 	resources = {
 		category = ship_components
 		cost = {
@@ -1183,7 +1183,7 @@ utility_component_template = {
 		"tech_cloaking_3"
 	}
 	component_set = "science_cloaking_components"
-	upgrades_to = "RG_CIENCE_CLOAKING_DARK_MATTER"
+	upgrades_to = "RG_SCIENCE_CLOAKING_DARK_MATTER"
 	ai_weight = {
 		weight = 15
 	}

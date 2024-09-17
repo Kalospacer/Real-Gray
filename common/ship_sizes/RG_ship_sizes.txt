@@ -257,8 +257,6 @@ RG_gray_juggernaut = {
 	required_component_set = "ship_aura_components"
 	required_component_set = "ship_aura_components"
 
-	empire_limit = 1
-
 	components_add_to_cost = no
 	resources = {
 		category = ships
@@ -811,8 +809,8 @@ RG_orbital_ring_tier_1 = {
 	required_component_set = "combat_computers"
 	required_component_set = "science_cloaking_components"
 	required_component_set = "ship_aura_components"
-	build_block_radius = @build_block_orbital_ring
-	formation_priority = @orbital_ring_formation_priority
+	build_block_radius = 20
+	formation_priority = 1
 	icon_frame = 7
 	scales_with_planet = yes
 	graphical_culture = yes

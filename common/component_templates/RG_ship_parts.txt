@@ -1,3 +1,5 @@
+@shipAuraRange = 80
+
 #混合装甲
 utility_component_template = {
 	key = "LARGE_GRAY_MIX_ARMOR"
@@ -988,7 +990,7 @@ strike_craft_component_template = {
 	speed = 225
 	rotation_speed = 0.25
 	acceleration = 0.6
-	size_damage_factor = 1
+	# size_damage_factor = 1
 	shield_damage = 1.2
 	armor_penetration = 1
 	weapon_type = instant
@@ -1050,7 +1052,7 @@ strike_craft_component_template = {
 	speed = 225
 	rotation_speed = 0.25
 	acceleration = 0.6
-	size_damage_factor = 1
+	# size_damage_factor = 1
 	shield_damage = 1.2
 	armor_penetration = 1
 	weapon_type = instant
@@ -1637,7 +1639,7 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @cost0
+			alloys = 0
 			nanites = 4
 		}
 	}
@@ -1661,11 +1663,11 @@ utility_component_template = {
 	icon = "GFX_ship_part_enigmatic_encoder"
 	icon_frame = 1
 	hidden = yes
-	power = @cost0
+	power = 0
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @cost0
+			alloys = 0
 			nanites = 4
 		}
 	}
@@ -1693,7 +1695,7 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @cost0
+			alloys = 0
 			nanites = 4
 		}
 	}
@@ -1721,11 +1723,11 @@ utility_component_template = {
 	icon = "GFX_ship_part_instrument_covenant_aux"
 	icon_frame = 1
 	hidden = yes
-	power = @cost0
+	power = 0
 	resources = {
 		category = ship_components
 		cost = {
-			alloys = @cost0
+			alloys = 0
 			nanites = 4
 		}
 	}
@@ -1963,15 +1965,15 @@ utility_component_template = {
 			id = friendly_BAKAHALO
 			priority = 233
 		}
-		damage_per_day = {
-			accuracy = 0.5
-			damage = {
-				min = 48
-				max = 96
-			}
-			shield_penetration = 1
-			armor_penetration = 1
-		}
+		# damage_per_day = {
+		# 	accuracy = 0.5
+		# 	damage = {
+		# 		min = 48
+		# 		max = 96
+		# 	}
+		# 	shield_penetration = 1
+		# 	armor_penetration = 1
+		# }
 		modifier = {
 			ship_shield_mult = -0.1
 			ship_speed_mult = -0.1
@@ -2036,43 +2038,43 @@ weapon_component_template = {
 	tags = {
 		weapon_type_rg_halo
 	}
-	friendly_aura = {
-		name = "RG_ANTIBAKAHALO"
-		radius = @shipAuraRange
-		apply_on = ships
-		stack_info = {
-			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
-			id = friendly_BAKAHALO
-			priority = 233
-		}
-		modifier = {
-			ship_shield_mult = -0.1
-			ship_speed_mult = -0.1
-			ship_armor_mult = -0.1
-			ship_hull_mult = -0.1
-			ship_shield_hardening_add = 1
-			ship_armor_hardening_add = 1
-			ship_shield_penetration_mult = 1
-			ship_armor_penetration_mult = 1
-			ship_weapon_range_mult = -0.1
-			ship_tracking_add = -10
-			ship_engagement_range_mult = -0.1
-			ship_disengage_chance_mult = -0.1
-			ship_ftl_jumpdrive_range_mult = -0.1
-			ship_windup_mult = 0.1
-			ship_jumpdrive_cooldown_mult = 0.1
-		}
-		graphics = {
-			area_effect = {
-				entity = "circle_area_entity"
-				dynamic_scale = yes
-			}
-			ship_effect = {
-				entity = "ship_aura_positive_entity"
-				dynamic_scale = no
-			}
-		}
-	}
+	# friendly_aura = {
+	# 	name = "RG_ANTIBAKAHALO"
+	# 	radius = @shipAuraRange
+	# 	apply_on = ships
+	# 	stack_info = {
+	# 		#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+	# 		id = friendly_BAKAHALO
+	# 		priority = 233
+	# 	}
+	# 	modifier = {
+	# 		ship_shield_mult = -0.1
+	# 		ship_speed_mult = -0.1
+	# 		ship_armor_mult = -0.1
+	# 		ship_hull_mult = -0.1
+	# 		ship_shield_hardening_add = 1
+	# 		ship_armor_hardening_add = 1
+	# 		ship_shield_penetration_mult = 1
+	# 		ship_armor_penetration_mult = 1
+	# 		ship_weapon_range_mult = -0.1
+	# 		ship_tracking_add = -10
+	# 		ship_engagement_range_mult = -0.1
+	# 		ship_disengage_chance_mult = -0.1
+	# 		ship_ftl_jumpdrive_range_mult = -0.1
+	# 		ship_windup_mult = 0.1
+	# 		ship_jumpdrive_cooldown_mult = 0.1
+	# 	}
+	# 	graphics = {
+	# 		area_effect = {
+	# 			entity = "circle_area_entity"
+	# 			dynamic_scale = yes
+	# 		}
+	# 		ship_effect = {
+	# 			entity = "ship_aura_positive_entity"
+	# 			dynamic_scale = no
+	# 		}
+	# 	}
+	# }
 	hull_damage = 0
 	shield_penetration = 0
 	shield_damage = 0
@@ -2122,51 +2124,51 @@ weapon_component_template = {
 	tags = {
 		weapon_type_rg_halo
 	}
-	hostile_aura = {
-		name = "RG_BAKAHALO"
-		radius = @shipAuraRange
-		apply_on = ships
-		stack_info = {
-			id = hostile_BAKAHALO
-			priority = 233
-		}
-		modifier = {
-			ship_shield_mult = -0.1
-			ship_speed_mult = -0.1
-			ship_armor_mult = -0.1
-			ship_hull_mult = -0.1
-			ship_shield_hardening_add = -1
-			ship_armor_hardening_add = -1
-			ship_shield_penetration_mult = -1
-			ship_armor_penetration_mult = -1
-			ship_weapon_range_mult = -0.1
-			ship_tracking_add = -10
-			ship_engagement_range_mult = -0.1
-			ship_disengage_chance_mult = -0.1
-			ship_ftl_jumpdrive_range_mult = -0.1
-			ship_windup_mult = 1
-			ship_jumpdrive_cooldown_mult = 1
-		}
-		damage_per_day = {
-			accuracy = 0.5
-			damage = {
-				min = 96
-				max = 192
-			}
-			shield_penetration = 1
-			armor_penetration = 1
-		}
-		graphics = {
-			area_effect = {
-				entity = "circle_area_entity"
-				dynamic_scale = yes
-			}
-			ship_effect = {
-				entity = "ship_aura_negative_entity"
-				dynamic_scale = no
-			}
-		}
-	}
+	# hostile_aura = {
+	# 	name = "RG_BAKAHALO"
+	# 	radius = @shipAuraRange
+	# 	apply_on = ships
+	# 	stack_info = {
+	# 		id = hostile_BAKAHALO
+	# 		priority = 233
+	# 	}
+	# 	modifier = {
+	# 		ship_shield_mult = -0.1
+	# 		ship_speed_mult = -0.1
+	# 		ship_armor_mult = -0.1
+	# 		ship_hull_mult = -0.1
+	# 		ship_shield_hardening_add = -1
+	# 		ship_armor_hardening_add = -1
+	# 		ship_shield_penetration_mult = -1
+	# 		ship_armor_penetration_mult = -1
+	# 		ship_weapon_range_mult = -0.1
+	# 		ship_tracking_add = -10
+	# 		ship_engagement_range_mult = -0.1
+	# 		ship_disengage_chance_mult = -0.1
+	# 		ship_ftl_jumpdrive_range_mult = -0.1
+	# 		ship_windup_mult = 1
+	# 		ship_jumpdrive_cooldown_mult = 1
+	# 	}
+	# 	damage_per_day = {
+	# 		accuracy = 0.5
+	# 		damage = {
+	# 			min = 96
+	# 			max = 192
+	# 		}
+	# 		shield_penetration = 1
+	# 		armor_penetration = 1
+	# 	}
+	# 	graphics = {
+	# 		area_effect = {
+	# 			entity = "circle_area_entity"
+	# 			dynamic_scale = yes
+	# 		}
+	# 		ship_effect = {
+	# 			entity = "ship_aura_negative_entity"
+	# 			dynamic_scale = no
+	# 		}
+	# 	}
+	# }
 	hull_damage = 0
 	shield_penetration = 0
 	shield_damage = 0
@@ -2198,7 +2200,7 @@ utility_component_template = {
 		category = ship_components
 		cost = {
 			alloys = 300
-			nanties = 10
+			nanites = 10
 		}
 	}
 	prerequisites = { "tech_gray_nano_boost_3" }
@@ -2230,7 +2232,7 @@ utility_component_template = {
 		category = ship_components
 		cost = {
 			alloys = 100
-			nanties = 5
+			nanites = 5
 		}
 	}
 	sensor_range = 15
@@ -2260,7 +2262,7 @@ utility_component_template = {
 		category = ship_components
 		cost = {
 			alloys = 200
-			nanties = 10
+			nanites = 10
 		}
 	}
 	prerequisites = { "tech_gray_nano_boost_3" }
@@ -2287,7 +2289,7 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			nanties = 12
+			nanites = 12
 			alloys = 120
 		}
 		upkeep = {
@@ -2322,7 +2324,7 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			nanties = 24
+			nanites = 24
 			alloys = 120
 		}
 		upkeep = {
@@ -2355,7 +2357,7 @@ utility_component_template = {
 	resources = {
 		category = ship_components
 		cost = {
-			nanties = 120
+			nanites = 120
 			alloys = 120
 		}
 		upkeep = {
@@ -2390,7 +2392,7 @@ utility_component_template = {
 		category = ship_components
 		cost = {
 			alloys = 200
-			nanties = 10
+			nanites = 10
 		}
 	}
 	modifier = {

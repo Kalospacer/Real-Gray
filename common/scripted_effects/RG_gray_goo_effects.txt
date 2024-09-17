@@ -693,9 +693,13 @@ rg_juggernaut_habitat_init = {
 						set_name = "NAME_rg_gray_habitat_base"
 						
 						if = {
-							OR = {
-								has_country_flag = gray_official_active
-								has_country_flag = gray_governor_active #旧版flag
+							limit = {
+								event_target:gray_owner = {
+									OR = {
+										has_country_flag = gray_official_active
+										has_country_flag = gray_governor_active #旧版flag
+									}
+								}
 							}
 							assign_leader = event_target:gray_governor
 						}

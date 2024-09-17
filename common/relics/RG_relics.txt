@@ -1,5 +1,5 @@
 rg_tempest_invocator = {
-	activation_duration = @triumph_duration
+	activation_duration = 3600
 	portrait = "GFX_relic_the_tempest_exsoulcillator"
 	sound = "relic_activation_vultaum_real_perforator"
 
@@ -53,7 +53,7 @@ rg_tempest_invocator = {
 				hidden_effect = {
 					add_modifier = {
 						modifier = "relic_activation_cooldown"
-						days = @triumph_duration
+						days = 3600
 					}
 					set_country_flag = used_tempest_invocator_relic_achievement
 				}
@@ -75,7 +75,7 @@ rg_tempest_invocator = {
 	possible = {
 		inline_script = {
 			script = relics/activation_checks
-			RELIC = r_the_tempest_invocator
+			RELIC = rg_tempest_invocator
 		}
 
 		custom_tooltip = {
