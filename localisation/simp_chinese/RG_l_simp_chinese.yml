@@ -16,7 +16,7 @@
  RG_leader_trait_offical_gray:0 "$RG_leader_trait_governor_gray$"
  RG_leader_trait_offical_gray_desc:0 "$RG_leader_trait_governor_gray_desc$"
  RG_leader_trait_ruler_gray:0 "§Y天选化身§!"
- RG_leader_trait_ruler_gray_desc:0 "§G$NAME_Gray$会随着领袖等级§!§Y[owner.rg_gray_level]§!§G提升而不断增强力量。§!\n§R当然也会越来越能吃。唔姆，你懂的。§!\n§R领袖等级大于10时纳米机器将超频工作，额外降低£stability£稳定度。§!\n\n§Y被全体国民所认可，可爱又可靠的化身。§!通过授予$NAME_Gray$越来越多的权力和与日俱增的资源倾斜，纳米机器人能够精细调配帝国各项资源产出。然而这种不可持续的发展模式并非没有代价。\n才不是想不出特质名字"
+ RG_leader_trait_ruler_gray_desc:0 "§G$NAME_Gray$会随着领袖等级§!(§Y[owner.rg_gray_level]§!)§G提升而不断增强力量。§!\n§R当然也会越来越能吃。唔姆，你懂的。§!\n§R领袖等级大于10时纳米机器将超频工作，额外降低£stability£稳定度。§!\n\n§Y被全体国民所认可，可爱又可靠的化身。§!通过授予$NAME_Gray$越来越多的权力和与日俱增的资源倾斜，纳米机器人能够精细调配帝国各项资源产出。然而这种不可持续的发展模式并非没有代价。\n才不是想不出特质名字"
  RG_leader_trait_scientist_gray:0 "§Y纳米机器个体§!"
  RG_leader_trait_scientist_gray_desc:0 "$NAME_Gray$本质上是由千千万万纳米机械所组成的个体，这让她可以辅助星域资源调度和研究资源调度。可不要让她做奇怪的事情哦？"
  RG_leader_trait_general_gray:0 "§Y纳米机器个体§!"
@@ -467,8 +467,8 @@
  rg_nothing_desc:0 ""
 
  pc_rg_grayhabitat: "纳米空间站点"
- pc_rg_grayhabitat_desc: "一座由纳米机械组成的深空居所，能提供仿佛行星一般的居住体验，具体而言是指行星上的城市区域。完全由纳米机器人组成使得建筑如梦幻般瞬间出现，由纳米机器组成的实体承担着空间站点的一切生产工作。"
-
+ pc_rg_grayhabitat_desc: "一座由纳米机械组成的深空居所，能提供仿佛行星一般的居住体验，具体而言是指行星上的城市区域。完全由纳米机器人组成使得建筑如梦幻般瞬间出现，由纳米机器组成的实体承担着空间站点的一切生产工作。\n§Y空间站点的$PLANET_SIZE$会随着$NAME_Gray$领袖等级(§Y[owner.rg_gray_level]§!)的提升而扩展。初始$PLANET_SIZE$为10，每级领袖等级提升2$PLANET_SIZE$。§!"
+扩大
  rg_ap_nantiematter:0 "§Y纳米物质构成工程§!"
  rg_ap_nantiematter_desc:0 "如果能够对L星门建造者的物质与科技进行一次彻底的构成研究，这些强力的纳米机器将极大的提升我们的军备水平。这需要我们获得足够的L星门认知。"
  rg_ap_nantiematter_tooltip:0 "§Y这表明了一切。§!"

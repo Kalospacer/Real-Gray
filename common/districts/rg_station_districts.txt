@@ -23,8 +23,8 @@ district_rg_city = {
 
 	conversion_ratio = 0.5
 	convert_to = {
-		district_rw_nexus
-		district_rw_hive
+		district_rg_nexus
+		district_rg_hive
 	}
 
 	resources = {
@@ -64,7 +64,8 @@ district_rg_city = {
 			}
 		}
 		modifier = {
-			job_culture_worker_add = 3
+			job_clerk_add = 2
+			job_culture_worker_add = 1
 		}
 	}
 
@@ -78,7 +79,8 @@ district_rg_city = {
 			}
 		}
 		modifier = {
-			job_culture_worker_add = 6
+			job_clerk_add = 4
+			job_culture_worker_add = 2
 		}
 	}
 
@@ -156,8 +158,8 @@ district_rg_hive = {
 
 	conversion_ratio = 0.5
 	convert_to = {
-		district_rw_nexus
-		district_rw_city
+		district_rg_nexus
+		district_rg_city
 	}
 
 	resources = {
@@ -239,8 +241,8 @@ district_rg_nexus = {
 
 	conversion_ratio = 0.5
 	convert_to = {
-		district_rw_hive
-		district_rw_city
+		district_rg_hive
+		district_rg_city
 	}
 
 	resources = {
@@ -336,11 +338,8 @@ district_rg_generator = {
 		cost = {
 			minerals = @rw_cost
 		}
-		upkeep = {
-			energy = 50
-		}
 		produces = {
-			energy = 200
+			energy = 50
 		}
 	}
 
@@ -373,10 +372,10 @@ district_rg_mining = {
 			minerals = @rw_cost
 		}
 		upkeep = {
-			energy = 50
+			energy = 5
 		}
 		produces = {
-			minerals = 200
+			minerals = 50
 		}
 	}
 
@@ -409,10 +408,10 @@ district_rg_farming = {
 			minerals = @rw_cost
 		}
 		upkeep = {
-			energy = 50
+			energy = 5
 		}
 		produces = {
-			food = 200
+			food = 50
 		}
 	}
 
@@ -468,9 +467,9 @@ district_rg_science = {
 			owner = { is_regular_empire = yes }
 		}
 		modifier = {
-			job_researcher_add = 10
+			job_researcher_add = 15
 		}
-	}
+	}4
 
 	triggered_planet_modifier = {
 		potential = {
@@ -478,7 +477,7 @@ district_rg_science = {
 			owner = { is_hive_empire = yes }
 		}
 		modifier = {
-			job_brain_drone_add = 10
+			job_brain_drone_add = 15
 		}
 	}
 
@@ -488,7 +487,7 @@ district_rg_science = {
 			owner = { is_machine_empire = yes }
 		}
 		modifier = {
-			job_calculator_add = 10
+			job_calculator_add = 15
 		}
 	}
 
@@ -587,12 +586,12 @@ district_rg_industrial = {
 
 	inline_script = {
 		script = jobs/industrial_districts_factory_add
-		AMOUNT = 5
+		AMOUNT = 10
 	}
 
 	inline_script = {
 		script = jobs/industrial_districts_foundry_add
-		AMOUNT = 5
+		AMOUNT = 10
 	}
 
 	triggered_planet_modifier = {
@@ -644,10 +643,11 @@ district_rg_nanites = {
 			minerals = @rw_cost
 		}
 		upkeep = {
-			energy = 50
+			energy = 5
+			minerals = 40
 		}
 		produces = {
-			nanites = 30
+			nanites = 40
 		}
 	}
 

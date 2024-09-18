@@ -488,6 +488,7 @@ country_event = {
 				clear_variable = rg_gray_level_temp
 			}
 		}
+		rg_harbitar_size_calculate = yes
 	}
 }
 
@@ -1035,6 +1036,29 @@ country_event = {
 # 		}
 # 	}
 # }
+
+
+country_event = { # Memorial Valuts Civic Paragon Level Tick / FROM = Leader
+	id = rg_event.23
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		is_same_value = event_target:gray_owner
+		FROM = {
+			has_leader_flag = rg_gray_leader
+		}
+		has_country_flag = rg_habitat_enabled
+	}
+
+	immediate = {
+		rg_harbitar_size_calculate = yes
+		event_target:rg_gray_habitat_target = {
+			set_planet_size = owner.rg_habitat_size
+		}
+	}
+}
 
 # 拆毁工厂小灰通讯
 country_event = {

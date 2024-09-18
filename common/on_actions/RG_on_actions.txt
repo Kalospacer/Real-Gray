@@ -98,6 +98,16 @@ on_planet_attackers_lose = {
 	}
 }
 
+# A leader leveled up.
+# Scope = Country
+# From = Leader
+on_leader_level_up = {
+	events = {
+		rg_event.23
+	}
+}
+
+
 # on_entering_battle = {
 # 	events = {
 # 		rg_skill.1

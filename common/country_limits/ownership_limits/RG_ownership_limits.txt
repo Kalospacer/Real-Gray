@@ -18,6 +18,7 @@
 
 default = {
 	ship_of_size_limits = {
+		RG_graygoo_capitalship_ships_limit
 		RG_gray_juggernaut_ships_limit
 	}
 }

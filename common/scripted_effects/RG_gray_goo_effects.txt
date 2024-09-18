@@ -616,6 +616,28 @@ rg_create_gray_const = {
 	}
 }
 
+rg_harbitar_size_calculate = {
+	set_variable = {
+		which = rg_habitat_size
+		value = 10
+	}
+	set_variable = {
+		which = rg_habitat_size_temp
+		value = rg_gray_level
+	}
+	multiply_variable = {
+		which = rg_habitat_size_temp
+		value = 2
+	}
+	change_variable = {
+		which = rg_habitat_size_temp
+		value = 10
+	}
+	set_variable = {
+		which = rg_habitat_size
+		value = rg_habitat_size_temp
+	}
+}
 
 rg_juggernaut_habitat_init = {
 	if = {
@@ -627,6 +649,7 @@ rg_juggernaut_habitat_init = {
 		optimize_memory
 		rg_global_gray_location_check = yes
 		set_country_flag = rg_habitat_enabled
+		rg_harbitar_size_calculate = yes
 		event_target:global_gray_location = {
 			solar_system = {
 				spawn_planet = {
@@ -637,10 +660,11 @@ rg_juggernaut_habitat_init = {
 					orbit_distance = 360
 					orbit_angle_offset = 45
 					orbit_distance_offset = 9.899
-					size = 40
+					size = 10
 					has_ring = no
 			
 					init_effect = {
+						prevent_anomaly = yes
 						set_planet_entity = {
 							entity = "grey_tempesttw_orbital_habitat_entity"
 						}
@@ -681,8 +705,56 @@ rg_juggernaut_habitat_init = {
 							}
 							assign_leader = event_target:gray_governor
 						}
+
+						set_planet_size = owner.rg_habitat_size
 						
 						generate_start_buildings_and_districts = yes
+						while = {
+							count = 1
+							add_district = district_rg_generator
+						}
+						while = {
+							count = 1
+							add_district = district_rg_mining
+						}
+						while = {
+							count = 1
+							add_district = district_rg_farming
+						}
+						while = {
+							count = 1
+							add_district = district_rg_industrial
+						}
+						if = {
+							limit = {
+								exists = owner
+								owner = { is_hive_empire = yes }
+							}
+							while = {
+								count = 1
+								add_district = district_rg_hive
+							}
+						}
+						if = {
+							limit = {
+								exists = owner
+								owner = { is_regular_empire = yes }
+							}
+							while = {
+								count = 1
+								add_district = district_rg_city
+							}
+						}
+						if = {
+							limit = {
+								exists = owner
+								from = { is_machine_empire = yes }
+							}
+							while = {
+								count = 1
+								add_district = district_rg_nexus
+							}
+						}
 			
 						while = {
 							count = 5
@@ -690,6 +762,7 @@ rg_juggernaut_habitat_init = {
 								species = owner_main_species
 							}
 						}
+						
 			
 						set_planet_flag = megastructure
 						set_planet_flag = habitat
@@ -710,3 +783,4 @@ rg_clear_harbitat = {
 		remove_planet = yes
 	}
 }
+
