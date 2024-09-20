@@ -33,7 +33,7 @@ RG_gray_mod1_allow_trigger = {
 		}
 	}
 	custom_tooltip = {
-		fail_text = requires_rg_graylevel_higherthan_25
+		fail_text = requires_rg_graylevel_higherthan_10
 		event_target:gray_leader_admiral = {
 			has_skill >= 10
 		}
@@ -86,13 +86,13 @@ RG_gray_mod2_allow_trigger = {
 	}
 	OR = {
 		custom_tooltip = {
-			fail_text = requires_rg_graylevel_higherthan_50
+			fail_text = requires_rg_has_tech_juggernaut
 			has_technology = tech_juggernaut
 		}
 		custom_tooltip = {
-			fail_text = requires_rg_graylevel_higherthan_20
+			fail_text = requires_rg_graylevel_higherthan_10
 			event_target:gray_leader_admiral = {
-				has_skill >= 20
+				has_skill >= 10
 			}
 		}
 	}
@@ -121,5 +121,8 @@ RG_gray_mod3_allow_trigger = {
 		resource = alloys
 		value >= 150000
 	}
-	has_technology = tech_juggernaut
+	custom_tooltip = {
+		fail_text = requires_rg_has_tech_juggernaut
+		has_technology = tech_juggernaut
+	}
 }

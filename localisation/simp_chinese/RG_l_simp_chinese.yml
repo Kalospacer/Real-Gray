@@ -460,9 +460,9 @@
  RG_AUTOCONST_HANGER:0 "自动工程子个体"
  RG_AUTOCONST_HANGER_desc:0 "预载的工蜂工程舰可以在星系调查完成后自动建造恒星基地。"
  RG_const_country:0 "$NAME_Gray$-自动工程队"
- requires_rg_graylevel_higherthan_25:0 "§Y$NAME_Gray$必须达到10级§!"
+ requires_rg_graylevel_higherthan_10:0 "§Y$NAME_Gray$必须达到10级§!"
  requires_rg_graylevel_higherthan_20:0 "§Y$NAME_Gray$必须达到20级§!"
- requires_rg_graylevel_higherthan_50:0 "§Y需要前置科技:§!$tech_juggernaut$"
+ requires_rg_has_tech_juggernaut:0 "§Y需要前置科技:§!$tech_juggernaut$"
  rg_nothing:0 ""
  rg_nothing_desc:0 ""
 
