@@ -1,0 +1,48 @@
+spawn_rg_habitat_effect = {
+	spawn_planet = {
+		class = "pc_rg_grayhabitat"
+		location = event_target:target_planet
+		orbit_location = yes
+		orbit_angle_offset = 135
+		orbit_distance_offset = $DISTANCE$
+		size = 15
+		has_ring = no
+
+		init_effect = {
+			set_name = {
+				key = HABITAT_PLANET_NAME
+				variable_string = "\\[FROM.from.solar_system.GetName]"
+			}
+			set_planet_entity = {
+				entity = "grey_tempesttw_orbital_habitat_entity"
+			}
+			set_surveyed = {
+				surveyed = yes
+				surveyor = FROM
+			}
+			set_all_comms_surveyed = yes
+			clear_blockers = yes
+
+			set_planet_flag = megastructure
+			set_planet_flag = habitat
+			set_planet_flag = rg_gray_habitat
+			set_planet_flag = habitat_level_1
+			save_event_target_as = target_habitat
+			add_deposit_if_missing = {
+				DEPOSIT = d_system_resources
+			}
+			add_deposit_if_missing = {
+				DEPOSIT = d_orbital_research
+			}
+			add_deposit_if_missing = {
+				DEPOSIT = d_orbital_energy
+			}
+			add_deposit_if_missing = {
+				DEPOSIT = d_orbital_mining
+			}
+			event_target:target_planet = {
+				set_planet_flag = habitat@PREV
+			}
+		}
+	}
+}

@@ -36,7 +36,7 @@
  tradition_rg_nanotech_desc: "生命的构成形式不是千篇一律，拥抱纳米机器使我们超维宇宙万物。"
  tr_rg_nanotech_adopt: "§Y纳米重构§!传统"
  tr_rg_nanotech_1: "物质再塑"
- tr_rg_nanotech_2: "献身精神"
+ tr_rg_nanotech_2: "精神献身"
  tr_rg_nanotech_3: "风暴洪流"
  tr_rg_nanotech_4: "无限远疆"
  tr_rg_nanotech_5: "纳米归一"
@@ -47,13 +47,13 @@
  tr_rg_nanotech_4_delayed: "我们是一股洪流，我们的存在需要力量作为根基。现在，§R我§!即是虫群。"
  tr_rg_nanotech_5_delayed: "物质和人之间的界限已经模糊，一切都只是我们集体意志的洪流中的一注。"
  tradition_rg_nanotech_delayed: "我们是一股永不停息的洪流，吞天食地、势不可挡。一切都将融入我们，我们将形成一切。"
- tr_rg_nanotech_adopt_modifier_desc: "§Y$AVAILABLE_BUILDINGS$§!$building_nanolab_1$\n§Y$AVAILABLE_STARBASE_BUILDINGS$§!$sm_nanite_harvester$"
- tr_rg_nanotech_1_modifier_desc: "§Y$AVAILABLE_BUILDINGS$§!$building_nanolab_2$"
- tr_rg_nanotech_2_modifier_desc: "§Y$AVAILABLE_BUILDINGS$§!$building_nanotech_cauldron$\n获得科技选项：§Y£engineering£$tech_nanite_transmutation$§!"
+ tr_rg_nanotech_adopt_modifier_desc: "§Y$AVAILABLE_BUILDINGS$§!$building_rg_nanolab_1$\n§Y$AVAILABLE_STARBASE_BUILDINGS$§!$sm_nanite_harvester$"
+ tr_rg_nanotech_1_modifier_desc: "§Y$AVAILABLE_BUILDINGS$§!$building_rg_nanolab_2$\n§Y$AVAILABLE_BUILDINGS$§!$building_rg_nanotech_cauldron$\n§Y$AVAILABLE_BUILDINGS$§!$building_rg_nanite_transmuter$\n"
+ tr_rg_nanotech_2_modifier_desc: "—§I解锁巨型结构：§!$RG_habitat_central_complex$\n"
  tr_rg_nanotech_3_modifier_desc: "§Y解锁行星决议：§!$decision_nanotech_swarm_consume_world$"
- tr_rg_nanotech_4_modifier_desc: "§Y解锁舰船：§!纳米虫群\n\n获得研究选项：$TABBED_NEW_LINE$—§Y£engineering£$tech_nanite_autocannon$§!$TABBED_NEW_LINE$—§Y£engineering£$tech_nanite_repair_system$§!$TABBED_NEW_LINE$—§Y£engineering£$tech_nanite_flak_batteries$§!"
+ tr_rg_nanotech_4_modifier_desc: "§Y解锁飞升：$rg_ap_nantiematter$解锁舰船：§!$RG_graygoo_destroyer$\n\n"
  tr_rg_nanotech_5_modifier_desc: "§Y解锁法令：§!$TABBED_NEW_LINE$—$edict_nanotech_naval_augmentation$$TABBED_NEW_LINE$—$edict_nanotech_alloy_augmentation$$TABBED_NEW_LINE$—$edict_nanotech_energy_augmentation$"
- tr_rg_nanotech_finish_modifier_desc: "§Y解锁舰船：§!纳米拦截舰\n每§Y5§!年§Y$sm_nanite_harvester_plural$§!都会提升，可能是增加$r_nanites$矿藏的规模，或是直接产出一笔纳米机器人资源。该效果受到矿藏所依附的行星尺寸的限制。"
+ tr_rg_nanotech_finish_modifier_desc: "§Y解锁舰船：§!$RG_graygoo_mothership$\n每§Y5§!年§Y$sm_nanite_harvester_plural$§!都会提升，可能是增加$r_nanites$矿藏的规模，或是直接产出一笔纳米机器人资源。该效果受到矿藏所依附的行星尺寸的限制。"
 
  civic_rg_gray_cluster: "§Y遥远约定-星团开局§!"
  civic_rg_gray_non_cluster: "§Y遥远约定-银河开局§!"
@@ -61,6 +61,25 @@
  civic_tooltip_rg_gray_non_cluster: "选择在§Y银河系§!中开启你的冒险。适合不希望在L-星团中开局的玩家。"
 
  rg_tempest_invocator: "灰蛊核心"
+ REQUIRES_lgate_or_gray: "$TRIGGER_FAIL$已发现§Y$NAME_Gray$§!或拥有科技§Y$tech_lgate_activation$§!"
+
+ RG_habitat_central_complex: "$pc_rg_grayhabitat$"
+ RG_habitat_central_complex_plural: "$pc_rg_grayhabitat$"
+ RG_habitat_central_complex_DESC: "一座§Y$pc_rg_grayhabitat$§!，可以容纳若干£pop£§Y人口§!并在非宜居行星的轨道上为£building£§Y建筑§!和£district£§Y区划§!提供空间。"
+ RG_habitat_central_complex_MEGASTRUCTURE_DETAILS: "§Y$pc_rg_grayhabitat$§!是完全由纳米机器组成的用于永久居住的自持空间站。"
+ RG_habitat_central_complex_CONSTRUCTION_INFO_DELAYED: "$REQUIREMENTS_HEADER$$major_orbital_requirements$\n\n$EFFECTS_HEADER$$NEW_LINE$—将创建一座可殖民的（规模：£planetsize£6）$pc_rg_grayhabitat$。$NEW_LINE$—$habitat_0_CONSTRUCTION_INFO_DELAYED$"
+ requires_RG_habitat_central_complex: "$TRIGGER_FAIL$§R需要恒星系中存在一座$habitat_central_complex$§!"
+ requires_not_RG_habitat_central_complex: "$TRIGGER_FAIL$§R恒星系内已存在$habitat_central_complex$，无法建造。§!"
+
+ building_rg_nanolab_1: "§Y纳米研究设施§!"
+ building_rg_nanolab_1_desc: "在纳观尺度上进行研究带来对宇宙的全新视角。"
+ building_rg_nanolab_2: "§Y纳米研究复合体§!"
+ building_rg_nanolab_2_desc: "无限小与无限大看起来是如此地相似，这是多么地奇妙啊。"
+ building_rg_nanotech_cauldron: "纳米熔炉"
+ building_rg_nanotech_cauldron_desc: "在分子水平上运作，虫群可以很容易地将矿物结构重新配置成坚固的合金晶格。"
+ building_rg_nanite_transmuter: "纳米变形器"
+ building_rg_nanite_transmuter_desc: "该工厂使用极为先进的纳米材料大量生产各种稀有资源。缺少纳米材料时生产将会暂停。"
+
  district_rg_farming: "农业区段"
  district_rg_farming_plural: "农业区段"
  district_rg_farming_desc: "无垠的农田之海充斥着这个区段，其中种满了大量的食物。"
@@ -492,7 +511,7 @@
 
  pc_rg_grayhabitat: "纳米空间站点"
  pc_rg_grayhabitat_desc: "一座由纳米机械组成的深空居所，能提供仿佛行星一般的居住体验，具体而言是指行星上的城市区域。完全由纳米机器人组成使得建筑如梦幻般瞬间出现，由纳米机器组成的实体承担着空间站点的一切生产工作。\n§Y空间站点的$PLANET_SIZE$会随着$NAME_Gray$领袖等级(§Y[owner.rg_gray_level]§!)的提升而扩展。初始$PLANET_SIZE$为10，每级领袖等级提升2$PLANET_SIZE$。§!"
-扩大
+
  rg_ap_nantiematter:0 "§Y纳米物质构成工程§!"
  rg_ap_nantiematter_desc:0 "如果能够对L星门建造者的物质与科技进行一次彻底的构成研究，这些强力的纳米机器将极大的提升我们的军备水平。这需要我们获得足够的L星门认知。"
  rg_ap_nantiematter_tooltip:0 "§Y这表明了一切。§!"

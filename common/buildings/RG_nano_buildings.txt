@@ -10,13 +10,15 @@ building_rg_nanolab_1 = {
 
 	potential = {
 		exists = owner
-		uses_district_set = rg_station
+		OR = {
+			uses_district_set = rg_station
+			owner = { has_tradition = tr_rg_nanotech_1 }
+		}
 		#owner = { has_tradition = tr_nanotech_adopt }
 	}
 
 	allow = {
-		exists = owner
-		uses_district_set = rg_station
+		always = yes
 		#owner = { has_tradition = tr_nanotech_adopt }
 	}
 
@@ -82,7 +84,7 @@ building_rg_nanolab_1 = {
 	}
 
 	upgrades = {
-		"building_nanolab_2"
+		"building_rg_nanolab_2"
 	}
 }
 
@@ -96,7 +98,10 @@ building_rg_nanolab_2 = {
 
 	potential = {
 		exists = owner
-		uses_district_set = rg_station
+		OR = {
+			uses_district_set = rg_station
+			owner = { has_tradition = tr_rg_nanotech_1 }
+		}
 		# owner = { has_tradition = tr_nanotech_1 }
 	}
 
@@ -175,8 +180,10 @@ building_rg_nanotech_cauldron = {
 
 	potential = {
 		exists = owner
-		uses_district_set = rg_station
-		# owner = { has_tradition = tr_nanotech_2 }
+		OR = {
+			uses_district_set = rg_station
+			owner = { has_tradition = tr_rg_nanotech_1 }
+		}
 		# NOT = { has_modifier = resort_colony }
 		# NOT = { has_modifier = slave_colony }
 	}
@@ -205,6 +212,60 @@ building_rg_nanotech_cauldron = {
 		}
 		produces = {
 			alloys = 15
+		}
+	}
+}
+
+building_rg_nanite_transmuter = {
+	base_buildtime = @b3_time
+	icon = building_nanite_transmuter
+
+	category = manufacturing
+
+	potential = {
+		exists = owner
+		OR = {
+			uses_district_set = rg_station
+			owner = { has_tradition = tr_rg_nanotech_1 }
+		}
+		# owner = { has_tradition = tr_nanotech_2 }
+		# NOT = { has_modifier = resort_colony }
+		# NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = 1000
+		}
+		produces = {
+			trigger = {
+				owner = {
+					NOT = {
+						has_deficit = nanites
+					}
+				}
+			}
+			rare_crystals = 2
+			volatile_motes = 2
+			exotic_gases = 2
+		}
+		upkeep = {
+			nanites = 1
+			energy = 5
+		}
+	}
+
+	ai_resource_production = {
+		rare_crystals = @b3_rare_upkeep
+		volatile_motes = @b3_rare_upkeep
+		exotic_gases = @b3_rare_upkeep
+		trigger = {
+			always = yes
 		}
 	}
 }

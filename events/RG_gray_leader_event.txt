@@ -1879,8 +1879,8 @@ country_event = {
 	desc = "rg_event.7.a.desc"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:gray_governor
-		room = "ethic_spaceship_room"
+		portrait = event_target:rg_gray_country_leader
+		planet_background = root.capital_scope
 	}
 	is_triggered_only = yes
 	immediate = {
@@ -1960,8 +1960,8 @@ country_event = {
 	desc = "rg_event.8.a.desc"
 	event_window_type = leader_recruit
 	picture_event_data = {
-		portrait = event_target:gray_governor
-		room = "ethic_spaceship_room"
+		portrait = event_target:rg_gray_country_leader
+		planet_background = root.capital_scope
 	}
 	is_triggered_only = yes
 	immediate = {
