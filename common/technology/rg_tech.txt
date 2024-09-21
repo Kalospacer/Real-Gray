@@ -385,6 +385,22 @@ tech_object_gray_6 = {
 	}
 }
 
+tech_object_gray_7 = {
+	cost = 2000
+	area = physics
+	tier = 5
+	is_rare = yes
+	is_reverse_engineerable = no
+	category = {
+		particles
+	}
+	weight = 0
+	## unlock 
+	ai_weight = {
+		factor = 0
+	}
+}
+
 
 tech_gray_machine = {
 	area = society

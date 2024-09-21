@@ -47,13 +47,28 @@
  tr_rg_nanotech_4_delayed: "我们是一股洪流，我们的存在需要力量作为根基。现在，§R我§!即是虫群。"
  tr_rg_nanotech_5_delayed: "物质和人之间的界限已经模糊，一切都只是我们集体意志的洪流中的一注。"
  tradition_rg_nanotech_delayed: "我们是一股永不停息的洪流，吞天食地、势不可挡。一切都将融入我们，我们将形成一切。"
- tr_rg_nanotech_adopt_modifier_desc: "§Y$AVAILABLE_BUILDINGS$§!$building_rg_nanolab_1$\n§Y$AVAILABLE_STARBASE_BUILDINGS$§!$sm_nanite_harvester$"
- tr_rg_nanotech_1_modifier_desc: "§Y$AVAILABLE_BUILDINGS$§!$building_rg_nanolab_2$\n§Y$AVAILABLE_BUILDINGS$§!$building_rg_nanotech_cauldron$\n§Y$AVAILABLE_BUILDINGS$§!$building_rg_nanite_transmuter$\n"
+ tr_rg_nanotech_adopt_modifier_desc: "§Y$AVAILABLE_STARBASE_BUILDINGS$§!$sm_nanite_harvester$"
+ tr_rg_nanotech_1_modifier_desc: "§Y$AVAILABLE_BUILDINGS$§!$building_rg_nanolab_1$\n§Y$AVAILABLE_BUILDINGS$§!$building_rg_nanolab_2$\n§Y$AVAILABLE_BUILDINGS$§!$building_rg_nanotech_cauldron$\n§Y$AVAILABLE_BUILDINGS$§!$building_rg_nanite_transmuter$\n"
  tr_rg_nanotech_2_modifier_desc: "—§I解锁巨型结构：§!$RG_habitat_central_complex$\n"
- tr_rg_nanotech_3_modifier_desc: "§Y解锁行星决议：§!$decision_nanotech_swarm_consume_world$"
- tr_rg_nanotech_4_modifier_desc: "§Y解锁飞升：$rg_ap_nantiematter$解锁舰船：§!$RG_graygoo_destroyer$\n\n"
- tr_rg_nanotech_5_modifier_desc: "§Y解锁法令：§!$TABBED_NEW_LINE$—$edict_nanotech_naval_augmentation$$TABBED_NEW_LINE$—$edict_nanotech_alloy_augmentation$$TABBED_NEW_LINE$—$edict_nanotech_energy_augmentation$"
+ tr_rg_nanotech_3_modifier_desc: "§Y解锁行星决议：§!$decision_rg_nanotech_swarm_consume_world$\n§Y解锁巨像武器：§!$tech_object_gray_7$，可将星球转变为可殖民的§Y$pc_nanotech$§!"
+ tr_rg_nanotech_4_modifier_desc: "§Y解锁飞升：$rg_ap_nantiematter$\n解锁舰船：§!$RG_graygoo_destroyer$\n§Y获得遗珍：§!$rg_tempest_invocator$,允许你召唤宇宙风暴：$graytempest_storm$"
+ tr_rg_nanotech_5_modifier_desc: "§Y解锁净化方式：$purge_nanophage$§!\n所有帝国人口将获得§Y纳米特质§!:人口需要$nanites$维护费。\n每个类型为§Y$pc_nanotech$§!或§Y$pc_rg_grayhabitat$§!的殖民地都将瞬间创建§Y纳米化人口$pops_with_icon$§!以填补§Y£building£建筑§!和§Y£district£区划§!的£job£岗位需求。"
  tr_rg_nanotech_finish_modifier_desc: "§Y解锁舰船：§!$RG_graygoo_mothership$\n每§Y5§!年§Y$sm_nanite_harvester_plural$§!都会提升，可能是增加$r_nanites$矿藏的规模，或是直接产出一笔纳米机器人资源。该效果受到矿藏所依附的行星尺寸的限制。"
+
+ decision_rg_server_shut_down: "§R核心关闭§!"
+ decision_rg_server_shut_down_desc: "§R将摧毁殖民地！§!\n\n这个殖民地已经失去了它的用途，关闭信号中继核心。"
+ decision_rg_nanotech_swarm_consume_world: "纳米化星球"
+ decision_rg_nanotech_swarm_consume_world_desc: "我们的行星将被转变，以喂养洪流、增长我们的存在。"
+ decision_rg_nanotech_swarm_consume_world_effect_desc: "改造这个星球，增加一个或多个障碍，减少这个星球的宜居性和区划，但会为我们的洪流提供更多的纳米机器人。"
+
+ situation_rg_nanotech_consume_planet: "从[Target.GetName]采收纳米机器人"
+ situation_rg_nanotech_consume_planet_type: "采收纳米机器人"
+ situation_rg_nanotech_consume_planet_monthly_change_tooltip: "纳米机器人提取进展"
+ situation_rg_nanotech_consume_planet_desc: "一切事物，包括所有星球，都注定要融入我们的集体，成为我们的一部分。"
+
+ purge_nanophage: "纳米同化"
+ purge_nanophage_tooltip: "受影响的人口会被逐渐裂解为[From.GetSpeciesAdj]物种，无论其自身的意志如何。"
+ purge_nanophage_tooltip_delayed: "§L不自由的形态只是阻碍我们发展的束缚。秉此之道，他们的事业将有[From.GetSpeciesNamePlural]继续践行。§!"
 
  civic_rg_gray_cluster: "§Y遥远约定-星团开局§!"
  civic_rg_gray_non_cluster: "§Y遥远约定-银河开局§!"
@@ -473,6 +488,10 @@
  tech_object_gray_6:0 "§Y$NAME_Gray$的不存在课题2§!"
  tech_object_gray_6_desc:0 "好像是一些奇怪的东西，还是不要管比较好吧。"
 
+
+ tech_object_gray_7:0 "§Y风暴浪潮§!"
+ tech_object_gray_7_desc:0 "好像是一些奇怪的东西，还是不要管比较好吧。"
+
  tech_gray_army_7:0 "§Y自演化纳米战体§!"
  tech_gray_army_7_desc:0 "通过植入一些低级自演化程序，结合对纳米物质的了解，我们能够小批量生产一些纳米战体作为陆军投放。"
 
@@ -497,8 +516,15 @@
  RG_PLANET_KILLER_SP_DESC:0 "§Y不知道发射后会发生什么的奇怪武器...被设定成只能对友军开火..?$NAME_Gray$要求我们帮忙试射来收集实验结果。这真的靠谱吗？§!"
  RG_PLANET_KILLER_SP_ACTION:0 "§H试验性开火§!"
  FLEETORDER_DESTROY_PLANET_WITH_RG_PLANET_KILLER_SP:0 "准备对$PLANET|Y$进行试射"
- MESSAGE_DESC_FOR_RG_PLANET_KILLER_SP:0 "被进行了物种改造"
+ MESSAGE_DESC_FOR_RG_PLANET_KILLER_SP:0 "被进行了混乱纳米化改造"
  message_RG_planet_killer_killed_planet_sp_desc:0 "$RG_target_planet|Y$被$RG_attacker|Y$的$RG_attacker_ship|Y$进行了一次非法武器试验。他们真是疯了。"
+
+ RG_PLANET_KILLER_NANO_SP:0 "§H风暴浪潮§!"
+ RG_PLANET_KILLER_NANO_SP_DESC:0 "§Y经过测试改进后的完全体实验武器。发射纳米风暴群将行星改造为可居住的$pc_nanotech$。§!"
+ RG_PLANET_KILLER_NANO_SP_ACTION:0 "§H纳米化改造§!"
+ FLEETORDER_DESTROY_PLANET_WITH_RG_PLANET_KILLER_NANO_SP:0 "准备对$PLANET|Y$进行改造"
+ MESSAGE_DESC_FOR_RG_PLANET_KILLER_NANO_SP:0 "被进行了纳米化改造"
+ message_RG_planet_killer_killed_planet_NANO_SP_desc:0 "$RG_target_planet|Y$被$RG_attacker|Y$的$RG_attacker_ship|Y$改造成了一颗可居住的$pc_nanotech$。"
 
  RG_AUTOCONST_HANGER:0 "自动工程子个体"
  RG_AUTOCONST_HANGER_desc:0 "预载的工蜂工程舰可以在星系调查完成后自动建造恒星基地。"

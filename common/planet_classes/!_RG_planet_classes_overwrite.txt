@@ -1,0 +1,31 @@
+# pc_nanotech = {
+# 	entity = "gray_goo_planet"
+# 	entity_scale = @planet_standard_scale
+# 	icon = GFX_planet_type_toxic
+# 
+# 	atmosphere_color		= hsv { 0.19 0.45 0.9 }		#DONE
+# 	atmosphere_intensity	= 0.1
+# 	atmosphere_width		= 1.2
+# 
+# 	city_color_lut = "gfx/portraits/misc/colorcorrection_neutral.dds"
+# 
+# 	min_distance_from_sun = @habitable_min_distance
+# 	max_distance_from_sun = @habitable_max_distance
+# 
+# 	spawn_odds = 0
+# 
+# 	extra_orbit_size = 0
+# 	extra_planet_count = 0
+# 
+# 	chance_of_ring = 0.2
+# 
+# 	planet_size = { min = 12 max = 25 }
+# 	moon_size = { min = 6 max = 10 }
+# 
+# 	can_be_invaded = yes
+# 	can_have_no_pop_colony = no
+# 	colonizable = yes
+# 	district_set = machine_world
+# 	starting_planet = no
+# 	show_city = no
+# }

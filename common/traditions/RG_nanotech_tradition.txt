@@ -69,6 +69,21 @@ tr_rg_nanotech_5 = {
 	}
 	custom_tooltip_with_modifiers = tr_rg_nanotech_5_modifier_desc
 	#Unlocks the nanite edicts
+	hidden_effect = {
+		every_owned_pop = {
+			limit = {
+				is_same_species = root
+				species = {
+					has_trait = rg_machine_maid_trait
+				}
+			}
+			modify_species = {
+				species = this
+				add_trait = rg_machine_maid_trait
+			}
+			species = { save_event_target_as = gray_owner_modded_species }
+		}
+	}
 	#Every 5 years, double the size of orbital nanite deposits that you're harvesting, up to a max of 50 OR spawns a number of nanite swarmers depending on the size of the deposit
 	ai_weight = {
 		factor = 1000
@@ -80,6 +95,12 @@ tr_rg_nanotech_3 = {
 		has_tradition = tr_rg_nanotech_5
 	}
 	custom_tooltip = tr_rg_nanotech_3_modifier_desc
+	on_enabled = {
+		give_technology = {
+			tech = tech_object_gray_7
+			message = no
+		}
+	}
 	#Unlocks Starbase Building and Make Nanite World Decision
 	ai_weight = {
 		factor = 1000
@@ -93,7 +114,7 @@ tr_rg_nanotech_4 = {
 	custom_tooltip = tr_rg_nanotech_4_modifier_desc
 	#Unlocks Nanite Swarmer ship and nanite ship component research options
 	on_enabled = {
-
+		rg_storm_relic_add = yes
 	}
 	ai_weight = {
 		factor = 1000

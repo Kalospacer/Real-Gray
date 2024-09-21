@@ -48,6 +48,19 @@ on_destroy_planet_with_RG_PLANET_KILLER_SP_queued = {
 
 on_destroy_planet_with_RG_PLANET_KILLER_SP_unqueued = {
 }
+
+on_destroy_planet_with_RG_PLANET_KILLER_NANO_SP = {
+	events = {
+		RG_planet_killer.4
+		# rg_story.6
+	}
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_NANO_SP_queued = {
+}
+
+on_destroy_planet_with_RG_PLANET_KILLER_NANO_SP_unqueued = {
+}
 # World Cracker
 on_destroy_planet_with_RG_PLANET_KILLER_CRACKER = {
 	events = {

@@ -262,3 +262,13 @@ on_district_demolished = {
 		rg_planet.2031 # Virtual Machine pop destruction
 	}
 }
+
+# A pop has finished purging
+# This = Planet scope
+# From = Country
+# FromFrom = Pop
+on_pop_purged = {
+	events = {
+		rg_event.24 # Necrophage Purge
+	}
+}

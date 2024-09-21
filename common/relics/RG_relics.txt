@@ -7,7 +7,7 @@ rg_tempest_invocator = {
 		category = relics
 		# Activation cost
 		cost = {
-			energy = 0
+			nanties = 5000
 		}
 	}
 

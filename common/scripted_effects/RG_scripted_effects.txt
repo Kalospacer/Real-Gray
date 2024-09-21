@@ -1909,6 +1909,403 @@ RG_destroy_planet_effect = {
 	}
 }
 
+RG_destroy_planet_effect_sp = {
+	#Dismantle observation post
+	if = {
+		limit = {
+			has_observation_outpost = yes
+		}
+		observation_outpost_owner = {
+			country_event = {
+				id = planet_destruction.1000
+				days = 1
+			}
+		}
+	}
+	# Contingency Machine World
+	if = {
+		limit = {
+			is_planet_class = pc_ai
+			NOT = {
+				has_planet_flag = machine_lair
+			}
+		}
+		set_planet_flag = destroyed_by_colossus
+		set_planet_flag = planet_cracked
+		planet_event = {
+			id = crisis.2040
+		}
+	}
+	# Contingency Final Machine World
+	if = {
+		limit = {
+			is_planet_class = pc_ai
+			has_planet_flag = machine_lair
+		}
+		set_planet_flag = destroyed_by_colossus
+		set_planet_flag = planet_cracked
+		from.owner = {
+			save_event_target_as = final_machine_world_destroyer
+		}
+		stop_crisis_sound = yes
+		planet_event = {
+			id = crisis.2046
+		}
+	}
+	# Swarm Situation Log counter
+	if = {
+		limit = {
+			exists = owner
+			owner = {
+				is_country_type = swarm
+			}
+		}
+		every_country = {
+			limit = {
+				has_event_chain = "prethoryn_scourge_chain"
+			}
+			add_event_chain_counter = {
+				event_chain = "prethoryn_scourge_chain"
+				counter = "infested_worlds"
+				amount = -1
+			}
+			add_event_chain_counter = {
+				event_chain = "prethoryn_scourge_chain"
+				counter = "infested_worlds_cleansed"
+				amount = 1
+			}
+		}
+	}
+	if = {
+		limit = {
+			OR = {
+				is_active_resolution = "resolution_rulesofwar_reverence_for_life"
+				is_active_resolution = "resolution_rulesofwar_independent_tribunals"
+				is_active_resolution = "resolution_rulesofwar_last_resort_doctrine"
+				is_active_resolution = "resolution_rulesofwar_demobilization_initiative"
+			}
+		}
+		from.owner = {
+			set_timed_country_flag = {
+				flag = resolution_breached_fired_cracker
+				days = 3600
+			}
+		}
+	}
+	# Exterminatus Achievement
+	if = {
+		limit = {
+			is_capital = yes
+		}
+		from.owner = {
+			set_country_flag = exterminatus
+		}
+	}
+	if = {
+		limit = {
+			exists = owner
+			owner = {
+				NOT = {
+					is_same_value = from.owner
+				}
+				OR = {
+					is_country_type = default
+					is_country_type = fallen_empire
+					is_country_type = awakened_fallen_empire
+				}
+			}
+		}
+		# Generate threat
+		if = {
+			limit = {
+				is_colony = yes
+			}
+			add_threat = {
+				who = from.owner
+				amount = 3
+			}
+			# modifier for allies + those upset by genocide
+			every_country = {
+				limit = {
+					NOR = {
+						is_same_value = from.owner
+						is_same_value = root.owner
+						AND = {
+							has_federation = yes
+							is_in_federation_with = from.owner
+						}
+					}
+					OR = {
+						has_communications = from.owner
+						has_communications = root.owner
+					}
+					OR = {
+						AND = {
+							has_federation = yes
+							is_in_federation_with = root.owner
+						}
+						has_ai_personality = awakened_fallen_empire_xenophile
+						AND = {
+							is_country_type = default
+							OR = {
+								is_egalitarian = yes
+								is_xenophile = yes
+							}
+						}
+					}
+				}
+				if = {
+					limit = {
+						root = {
+							is_colony = no
+						}
+					}
+					add_opinion_modifier = {
+						modifier = opinion_cracked_an_uninhabited_world
+						who = from.owner
+					}
+				}
+				else = {
+					add_opinion_modifier = {
+						modifier = opinion_cracked_a_world
+						who = from.owner
+					}
+				}
+			}
+		}
+		else = {
+			add_threat = {
+				who = from.owner
+				amount = 1
+			}
+		}
+		# modifiers for victim
+		owner = {
+			if = {
+				limit = {
+					root = {
+						is_colony = no
+					}
+				}
+				add_opinion_modifier = {
+					modifier = opinion_cracked_my_uninhabited_world
+					who = from.owner
+				}
+			}
+			else = {
+				add_opinion_modifier = {
+					modifier = opinion_cracked_my_world
+					who = from.owner
+				}
+			}
+			if = {
+				limit = {
+					NOT = {
+						has_ethic = ethic_gestalt_consciousness
+					}
+				}
+				add_modifier = {
+					modifier = colossus_victim
+					days = 10800					# 30 years
+				}
+			}
+		}
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					is_country_type = primitive
+				}
+			}
+			# modifier for allies + those upset by genocide
+			every_country = {
+				limit = {
+					NOT = {
+						is_same_value = from.owner
+					}
+					OR = {
+						has_communications = from.owner
+						has_communications = root.owner
+					}
+					OR = {
+						has_ai_personality = awakened_fallen_empire_xenophile
+						AND = {
+							is_country_type = default
+							NOR = {
+								is_xenophobe = yes
+								is_homicidal = yes
+								is_xenophile = yes
+							}
+						}
+					}
+				}
+				add_opinion_modifier = {
+					modifier = opinion_cracked_a_primitive_world
+					who = from.owner
+				}
+			}
+			every_country = {
+				limit = {
+					NOT = {
+						is_same_value = from.owner
+					}
+					OR = {
+						has_communications = from.owner
+						has_communications = root.owner
+					}
+					OR = {
+						has_ai_personality = awakened_fallen_empire_xenophile
+						AND = {
+							is_country_type = default
+							is_xenophile = yes
+						}
+					}
+				}
+				add_opinion_modifier = {
+					modifier = opinion_cracked_a_primitive_world_phile
+					who = from.owner
+				}
+			}
+		}
+	}
+	# Add war exhaustion to planet owner
+	if = {
+		limit = {
+			exists = owner
+		}
+		owner = {
+			if = {
+				limit = {
+					#isn't the case when the crisis bombards planets, for instance
+					is_at_war_with = from.fleet.owner
+				}
+				add_static_war_exhaustion = {
+					attacker = from.fleet.owner
+					location = root
+					value_for_planet_destruction = 1
+				}
+			}
+		}
+	}
+	if = {
+		limit = {
+			is_planet_class = pc_habitat
+		}		# uncolonized
+		spawn_habitat_cracker_effect = yes
+		change_pc = pc_nanotech
+	}
+	if = {
+		limit = {
+			is_colony = yes
+		}
+		if = {
+			limit = {
+				exists = owner
+				owner = {
+					is_same_value = event_target:gray_owner
+				}
+			}
+			# already owned
+		}
+		else = {
+			set_owner = event_target:gray_owner
+		}
+		every_owned_pop = {
+			modify_species = {
+				species = event_target:gray_owner.owner_species
+				add_trait = trait_cybernetic
+				add_traits_at_start_of_list = yes
+				change_scoped_species = yes
+			}
+		}
+		every_owned_pop = {
+			limit = {
+				has_modifier = pop_recently_conquered
+			}
+			remove_modifier = pop_recently_conquered
+		}
+		every_owned_pop = {
+			set_citizenship_type = {
+				type = citizenship_full_machine
+				cooldown = yes
+			}
+		}
+		# Special graphics for Habitats and Ring Worlds
+		if = {
+			limit = {
+				is_planet_class = pc_habitat
+			}
+			spawn_habitat_nanobot_effect = yes
+		}
+		else_if = {
+			limit = {
+				is_planet_class = pc_ringworld_habitable
+			}
+			spawn_ringworld_nanobot_effect = yes
+		}
+		if = {
+			limit = {
+				OR = {
+					is_planet_class = pc_habitat
+					is_planet_class = pc_ringworld_habitable
+				}
+			}
+			# nothing
+		}
+		else = {
+			change_pc = this
+		}
+	}
+	else_if = {
+		limit = {
+			is_ringworld = yes
+		}
+		spawn_ringworld_nanobot_effect = yes
+	}
+	else_if = {
+		limit = {
+			is_planet_class = pc_ringworld_tech
+		}
+		spawn_ringworld_nanobot_effect = yes
+	}
+	else_if = {
+		limit = {
+			is_planet_class = pc_ringworld_seam
+		}
+		spawn_ringworld_nanobot_effect = yes
+	}
+	else = {
+		change_pc = pc_nanotech
+		add_modifier = {
+			modifier = "terraforming_candidate"
+			days = -1
+		}
+		random_list = {
+			25 = {
+				while = {
+					count = 4
+					add_deposit = d_nanites_deposit
+				}
+			}
+			25 = {
+				while = {
+					count = 3
+					add_deposit = d_nanites_deposit
+				}
+			}
+			25 = {
+				while = {
+					count = 2
+					add_deposit = d_nanites_deposit
+				}
+			}
+			25 = {
+				add_deposit = d_nanites_deposit
+			}
+		}
+	}
+}
+
 RG_destroy_star_system = {
 	every_system_ambient_object = {
 		limit = {

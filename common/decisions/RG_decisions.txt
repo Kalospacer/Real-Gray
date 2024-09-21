@@ -1,0 +1,110 @@
+### turn off the lights
+decision_rg_server_shut_down = {
+	owned_planets_only = yes
+	sound = event_administrative_work
+	icon = decision_glitchy_matrix
+	enactment_time = 30
+
+	resources = {
+		category = decisions
+		cost = {
+			unity = 200
+		}
+	}
+
+	potential = {
+		exists = owner
+		owner = {
+			has_tradition = tr_virtuality_finish
+		}
+	}
+
+	allow = {
+		is_capital = no
+	}
+
+	effect = {
+		destroy_colony = yes
+	}
+
+	ai_weight = {
+		weight = 0
+	}
+}
+
+### Nanotech Slushify Planet
+decision_rg_nanotech_swarm_consume_world = {
+	icon = decision_tidal_lock_planet
+	sound = event_structural_collapse
+
+	#enactment_time = 360
+	resources = {
+		category = decisions
+	}
+	owned_planets_only = yes
+
+	potential = {
+		exists = owner
+		owner = {
+			has_tradition = tr_rg_nanotech_3
+		}
+		can_have_habitable_deposits = yes
+		is_capital = no
+		NOT = {
+			has_planet_flag = being_devoured
+		}
+		NOT = { has_designation = col_nanotech_world }
+	}
+
+	effect = {
+		custom_tooltip = decision_nanotech_swarm_consume_world_effect_desc
+		set_timed_planet_flag = {
+			days = 360
+			flag = recently_eaten_planet
+		}
+		hidden_effect = {
+			set_planet_flag = colony_event
+			set_planet_flag = being_devoured
+			add_modifier = {
+				modifier = being_devoured_modifier_nanotech
+				days = -1
+			}
+			export_trigger_value_to_variable = {
+				trigger = planet_size
+				variable = num_districts_terravore
+			}
+			export_trigger_value_to_variable = {
+				trigger = count_deposits
+				parameters = {
+					type = d_nanotech_devastation
+				}
+				variable = num_lithoid_blockers
+			}
+			if = {
+				limit = {
+					is_variable_set = num_lithoid_blockers
+				}
+				subtract_variable = {
+					which = num_districts_terravore
+					value = num_lithoid_blockers
+				}
+			}
+		}
+		owner = {
+			start_situation = {
+				type = situation_rg_nanotech_consume_planet
+				target = root
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 5
+
+		# don't wreck worlds you want to keep
+		modifier = {
+			factor = 0
+			is_lithoid_devouring_swarm_consumption_world = no
+		}
+	}
+}

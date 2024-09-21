@@ -12,11 +12,17 @@ country_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		has_country_flag = rg_habitat_enabled
-		exists = event_target:rg_gray_habitat_target
-		event_target:rg_gray_habitat_target = {
+		OR = {
+			has_country_flag = rg_habitat_enabled
+			has_active_tradition = tr_rg_nanotech_5
+		}
+		# exists = event_target:rg_gray_habitat_target
+		any_owned_planet = {
 			is_under_colonization = no
-			NOT = { is_planet_class = pc_cosmogenesis_world }
+			OR = {
+				is_planet_class = pc_rg_grayhabitat
+				is_planet_class = pc_nanotech
+			}
 			free_jobs > 0
 			NOR = {
 				free_jobs_of_type = {
@@ -27,20 +33,54 @@ country_event = {
 					category = bio_trophy
 					value >= 1
 				}
-				free_jobs_of_type = {
-					job = servant
-					value >= 1
-				}
 			}
 		}
 	}
+}
 
 	immediate = {
-		event_target:rg_gray_habitat_target = {
-			planet_event = { id = rg_planet.2027 days = 1 }
+		if = { 
+			limit = {
+				has_country_flag = rg_habitat_enabled
+				NOT = {
+					has_active_tradition = tr_rg_nanotech_5
+				}
+			}
+			event_target:rg_gray_habitat_target = {
+				planet_event = { id = rg_planet.2027 days = 1 }
+			}
 		}
-	}
+		else = {
+			random_owned_planet = {
+				limit = {
+					owner = {
+						has_country_flag = rg_habitat_enabled
+					}
+					# exists = event_target:rg_gray_habitat_target
+					any_owned_planet = {
+						is_under_colonization = no
+						OR = {
+							is_planet_class = pc_rg_grayhabitat
+							is_planet_class = pc_nanotech
+						}
+						free_jobs > 0
+						NOR = {
+							free_jobs_of_type = {
+								job = mortal_initiate
+								value >= 1
+							}
+							free_jobs_of_type = {
+								category = bio_trophy
+								value >= 1
+							}
+						}
+				}
+				planet_event = { id = rg_planet.2027 days = 1 }
+			}
+		}
+		}
 }
+
 
 ### Create the Unemployed
 ### Planet scope gatekeeper
@@ -54,12 +94,17 @@ planet_event = {
 	is_triggered_only = yes
 
 	trigger = {
-		is_same_value = event_target:rg_gray_habitat_target
 		is_under_colonization = no
-		NOT = { is_planet_class = pc_cosmogenesis_world }
+		OR = {
+			is_planet_class = pc_rg_grayhabitat
+			is_planet_class = pc_nanotech
+		}
 		exists = owner
 		owner = {
-			has_country_flag = rg_habitat_enabled
+			OR = {
+				has_country_flag = rg_habitat_enabled
+				has_active_tradition = tr_rg_nanotech_5
+			}
 		}
 		free_jobs > 0
 	}
@@ -77,12 +122,17 @@ planet_event = {
 
 	is_triggered_only = yes
 	trigger = {
-		is_same_value = event_target:rg_gray_habitat_target
 		is_under_colonization = no
-		NOT = { is_planet_class = pc_cosmogenesis_world }
+		OR = {
+			is_planet_class = pc_rg_grayhabitat
+			is_planet_class = pc_nanotech
+		}
 		exists = owner
 		owner = {
-			has_country_flag = rg_habitat_enabled
+			OR = {
+				has_country_flag = rg_habitat_enabled
+				has_active_tradition = tr_rg_nanotech_5
+			}
 		}
 		free_jobs > 0
 	}
@@ -93,10 +143,23 @@ planet_event = {
 			value = value:num_free_virtual_jobs
 		}
 		# Create pops for every free job
-		while = {
-			count = num_pops
-			create_pop = {
-				species = event_target:rg_owner_main_maid_species
+		if = {
+			owner = {
+				is_same_value = event_target:gray_owner
+			}
+			while = {
+				count = num_pops
+				create_pop = {
+					species = owner_main_species
+				}
+			}
+		}
+		else = {
+			while = {
+				count = num_pops
+				create_pop = {
+					species = event_target:rg_owner_main_maid_species
+				}
 			}
 		}
 

@@ -1,0 +1,39 @@
+purge_nanophage = {
+	pop_escape_chance = 0.25
+	pop_decline_rate = 20 # 1 pop per 5 months, overrides BASE_POP_DECLINE, will only work on purge types
+
+	pop_modifier = {
+		pop_happiness = -0.5
+	}
+
+	potential = {
+		exists = from
+		from = {
+			has_tradition = tr_rg_nanotech_5
+			# has_trait = trait_necrophage
+		}
+	}
+
+	allow = {
+		hidden_trigger = { exists = from }
+		# custom_tooltip = {
+		# 	fail_text = CANNOT_NECROPHAGE_MACHINES
+		# 	is_robotic = no
+		# }
+		# if = {
+		# 	limit = { is_lonely_hive_mind_pop = no }
+		# 	custom_tooltip = {
+		# 		fail_text = PURGES_ALLOWED
+		# 		from = {
+		# 			OR = {
+		# 				has_valid_civic = civic_fanatic_purifiers
+		# 				has_policy_flag = purge_allowed
+		# 			}
+		# 		}
+		# 	}
+		# }
+	}
+	ai_will_do = {
+		factor = 200
+	}
+}

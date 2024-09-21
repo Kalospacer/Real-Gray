@@ -1,4 +1,4 @@
-#歼星武器
+#歼星武器-试射武器
 weapon_component_template = {
 	key = "RG_PLANET_KILLER_SP"
 	size = planet_killer
@@ -45,6 +45,59 @@ weapon_component_template = {
 	}
 	component_set = "RG_PLANET_KILLER"
 	hidden = yes
+	ship_limit = 1
+	ai_weight = {
+		weight = 0
+	}
+}
+
+#歼星武器-风暴浪潮
+weapon_component_template = {
+	key = "RG_PLANET_KILLER_NANO_SP"
+	size = planet_killer
+	type = planet_killer
+	icon = GFX_ship_part_divine_enforcer
+	icon_frame = 1
+	projectile_gfx = "gatebuilder_planet_weapon_ex"
+	planet_destruction_gfx = "neutron_planet_gfx"
+	total_fire_time = 60	#开火时间
+	firing_arc = 25
+	resources = {
+		category = ship_components
+		cost = {
+			alloys = 2000
+			nanites = 50
+		}
+	}
+	power = -1000
+	damage = {
+		min = 35
+		max = 350
+	}	#伤害
+	windup = {
+		min = 32
+		max = 64
+	}	#冷却
+	size_damage_factor = 10
+	hull_damage = 10	#船体伤害
+	shield_damage = 10	#护盾伤害
+	armor_damage = 10	#装甲伤害
+	shield_penetration = 10	#护盾穿透
+	armor_penetration = 10	#装甲穿透                  
+	tracking = 1	#追踪
+	range = 800	#范围
+	accuracy = 1	#命中
+	tags = {
+		weapon_type_rg_main
+		weapon_type_energy
+	}
+	size_restriction = {
+		RG_gray_juggernaut
+		RG_graygoo_capitalship
+		RG_graygoo_mothership
+	}
+	component_set = "RG_PLANET_KILLER"
+	prerequisites = { "tech_object_gray_7" }
 	ship_limit = 1
 	ai_weight = {
 		weight = 0

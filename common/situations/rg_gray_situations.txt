@@ -547,3 +547,164 @@ situation_rg_gray_mod2 = {
 		destroy_situation = this 
 	}	
 }
+
+
+situation_rg_nanotech_consume_planet = {
+	complete_icon_frame = GFX_situation_outcome_frame_green
+	complete_icon = GFX_situation_exploding_planet
+	picture = {
+		trigger = {
+			target = { is_planet_class = pc_desert }
+		}
+		picture = GFX_evt_desert
+	}
+	picture = {
+		trigger = {
+			target = { is_planet_class = pc_tropical }
+		}
+		picture = GFX_evt_tropical
+	}
+	picture = {
+		trigger = {
+			target = { is_planet_class = pc_arid }
+		}
+		picture = GFX_evt_arid
+	}
+	picture = {
+		trigger = {
+			target = { is_planet_class = pc_continental }
+		}
+		picture = GFX_evt_continental
+	}
+	picture = {
+		trigger = {
+			target = { is_planet_class = pc_alpine }
+		}
+		picture = GFX_evt_alpine_city
+	}
+	picture = {
+		trigger = {
+			target = { is_planet_class = pc_savannah }
+		}
+		picture = GFX_evt_savannah
+	}
+	picture = {
+		trigger = {
+			target = { is_planet_class = pc_ocean }
+		}
+		picture = GFX_evt_ocean
+	}
+	picture = {
+		trigger = {
+			target = { is_planet_class = pc_tundra }
+		}
+		picture = GFX_evt_tundra
+	}
+	picture = {
+		trigger = {
+			target = { is_planet_class = pc_arctic }
+		}
+		picture = GFX_evt_arctic
+	}
+	picture = {
+		trigger = {
+			target = { is_planet_class = pc_gaia }
+		}
+		picture = GFX_evt_gaia
+	}
+	picture = {
+		trigger = {
+			target = { is_planet_class = pc_nuked }
+		}
+		picture = GFX_evt_tomb_world
+	}
+	picture = {
+		trigger = {
+			target = { is_planet_class = pc_hive }
+		}
+		picture = GFX_evt_infested
+	}
+	picture = {
+		trigger = {
+			target = { is_planet_class = pc_machine }
+		}
+		picture = GFX_evt_ai_planet
+	}
+	picture = {
+		trigger = {
+			target = { is_planet_class = pc_city }
+		}
+		picture = GFX_evt_city_planet
+	}
+
+	stages = {
+		stage_1 = {
+			icon = GFX_situation_stage_1
+			icon_background = GFX_situation_stage_frame_green
+			end = 1000
+			custom_tooltip = stage_slushify
+		}
+	}
+
+	category = positive
+	start_value = 0
+
+	on_progress_complete = {
+		custom_tooltip = nanotech_consume_finish_tooltip
+		hidden_effect = {
+			situation_event = { id = colony.200 }
+		}
+	}
+	on_monthly = {
+		events = {
+			colony.195 #Adds blockers and grants reward
+		}
+	}
+	on_abort = {
+		target = {
+			remove_planet_flag = being_devoured
+			remove_modifier = being_devoured_modifier
+		}
+	}
+	approach = {#Devour
+		name = approach_devour
+		on_select = {
+			custom_tooltip = nanotech_devour_effect
+		}
+		default = yes
+		icon = GFX_situation_approach_amenities
+		icon_background = GFX_situation_approach_bg_green
+		ai_weight = {
+			base = 10
+		}
+	}
+	approach = {#Restraint
+		name = approach_restraint
+		on_select = {
+			custom_tooltip = terravore_restraint_effect
+			owner = {
+				add_resource = { unity = -1000 }
+			}
+			abort_situation = this
+		}
+		icon = GFX_situation_approach_influence
+		icon_background = GFX_situation_approach_bg_yellow
+		ai_weight = {
+			base = 10
+		}
+	}
+	monthly_progress = {
+		base = 0
+		modifier = {
+			add = value:terravore_progress
+			desc = string_terravore_progress
+		}
+	}
+
+	abort_trigger = {
+		OR = {
+			NOT = { exists = target.owner }
+			target.owner = { NOT = { is_same_value = root.owner } }
+		}
+	}
+}
