@@ -1198,7 +1198,9 @@ country_event = { # Memorial Valuts Civic Paragon Level Tick / FROM = Leader
 			limit = {
 				is_same_species = root
 				species = {
-					has_trait = rg_machine_maid_trait
+					NOT = {
+						has_trait = rg_machine_maid_trait
+					}
 				}
 			}
 			modify_species = {

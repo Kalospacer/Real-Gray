@@ -51,6 +51,7 @@
  RG_Buff_interdictor:0 "纳米机器支援单元"
  RG_COLOSSUS_interdictor:0 "纳米机器碎星单元"
  RG_COLOSSUS_interdictor_SP:0 "纳米机器试验单元"
+ RG_COLOSSUS_interdictor_NANO_SP:0 "纳米机器改造单元"
  RG_Buff_interdictor_SP:0 "纳米机器折纸单元"
  RG_Arsenal_Interdictor:0 "纳米机器宏炮阵列"
  RG_aircruiser_Interdictor:0 "纳米机器航战单元"

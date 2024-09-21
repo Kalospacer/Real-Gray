@@ -103,6 +103,21 @@ can_destroy_planet_with_RG_PLANET_KILLER_SP = {
 	}
 }
 
+can_destroy_planet_with_RG_PLANET_KILLER_NANO_SP = {
+	custom_tooltip = {
+		fail_text = "RG_requires_a_star_star_killer"
+		NOR = {
+			is_star = yes
+			is_planet_class = pc_ag_void_star
+			is_planet_class = pc_ag_void_planet
+		}
+	}
+	custom_tooltip = {
+		fail_text = "RG_requires_inside_border_star_killer"
+		is_inside_border = from.owner
+	}
+}
+
 can_destroy_planet_with_RG_PLANET_KILLER_CRACKER = {
 	custom_tooltip = {
 		fail_text = is_not_a_standard_planet_or_megastructure

@@ -11,7 +11,7 @@ building_rg_nanolab_1 = {
 	potential = {
 		exists = owner
 		OR = {
-			uses_district_set = rg_station
+			#uses_district_set = rg_station
 			owner = { has_tradition = tr_rg_nanotech_1 }
 		}
 		#owner = { has_tradition = tr_nanotech_adopt }
@@ -101,7 +101,7 @@ building_rg_nanolab_2 = {
 	potential = {
 		exists = owner
 		OR = {
-			uses_district_set = rg_station
+			#uses_district_set = rg_station
 			owner = { has_tradition = tr_rg_nanotech_1 }
 		}
 		# owner = { has_tradition = tr_nanotech_1 }
@@ -185,7 +185,7 @@ building_rg_nanotech_cauldron = {
 	potential = {
 		exists = owner
 		OR = {
-			uses_district_set = rg_station
+			#uses_district_set = rg_station
 			owner = { has_tradition = tr_rg_nanotech_1 }
 		}
 		# NOT = { has_modifier = resort_colony }
@@ -236,7 +236,7 @@ building_rg_nanite_transmuter = {
 	potential = {
 		exists = owner
 		OR = {
-			uses_district_set = rg_station
+			#uses_district_set = rg_station
 			owner = { has_tradition = tr_rg_nanotech_1 }
 		}
 		# owner = { has_tradition = tr_nanotech_2 }
