@@ -129,10 +129,10 @@
 
  rg_event.7.a.desc:0 "这里可以给$NAME_Gray$换衣服。能选择的立绘选项取决于你开启的mod，如果没有任何选项说明你启用的mod尚未兼容或未启用兼容的mod。"
  
- rg_event.7.a:0 "§G美味女仆：肖像§!-$NAME_Gray$@Chougou"
- rg_event.7.b:0 "§H灰风扩展（动态灰风）/灰风肖像美化§!@NCSIMON"
- rg_event.7.c:0 "§Y灰风立绘替换§!@Earth Aeolian"
- rg_event.7.d:0 "§HWarship Girls R And MIST Species/KDC Story Pack§!@KDC Mod Group"
+ rg_event.7.a:0 "§G美味女仆：肖像§!-$NAME_Gray$-Chougou"
+ rg_event.7.b:0 "§H灰风扩展（动态灰风）/灰风肖像美化§!-NCSIMON"
+ rg_event.7.c:0 "§Y灰风立绘替换§!-Earth Aeolian"
+ rg_event.7.d:0 "§HWarship Girls R And MIST Species/KDC Story Pack§!-KDC Mod Group"
  rg_event.7.z:0 "§Y默认§!"
 
  rg_event.8.a:0 "§H执政官-$NAME_Gray$§!"
