@@ -43,42 +43,44 @@ building_rg_nanolab_1 = {
 		}
 	}
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_machine_empire = yes
-			}
-		}
-		job_nanotech_research_unit_add = 3
-	}
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		exists = owner
+	# 		owner = {
+	# 			is_machine_empire = yes
+	# 		}
+	# 	}
+	# 	job_nanotech_research_unit_add = 3
+	# }
 
 	triggered_planet_modifier = {
 		potential = {
-			exists = owner
-			owner = {
-				is_individual_machine = yes
-			}
+			always = yes
+			# exists = owner
+			# owner = {
+			# 	is_individual_machine = yes
+			# }
 		}
-		job_nanotech_researcher_add = 3
+		job_nanotech_researcher_add = 8
 	}
+
+	# triggered_desc = {
+	# 	trigger = {
+	# 		exists = owner
+	# 		owner = {
+	# 			is_machine_empire = yes
+	# 		}
+	# 	}
+	# 	text = job_nanotech_research_unit_effect_desc
+	# }
 
 	triggered_desc = {
 		trigger = {
-			exists = owner
-			owner = {
-				is_machine_empire = yes
-			}
-		}
-		text = job_nanotech_research_unit_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_individual_machine = yes
-			}
+			always = yes
+			#exists = owner
+			#owner = {
+			#	is_individual_machine = yes
+			#}
 		}
 		text = job_nanotech_researcher_effect_desc
 	}
@@ -131,42 +133,44 @@ building_rg_nanolab_2 = {
 	}
 
 
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_machine_empire = yes
-			}
-		}
-		job_nanotech_research_unit_add = 6
-	}
+	# triggered_planet_modifier = {
+	# 	potential = {
+	# 		exists = owner
+	# 		owner = {
+	# 			is_machine_empire = yes
+	# 		}
+	# 	}
+	# 	job_nanotech_research_unit_add = 6
+	# }
 
 	triggered_planet_modifier = {
 		potential = {
-			exists = owner
-			owner = {
-				is_individual_machine = yes
-			}
+			always = yes
+			# exists = owner
+			# owner = {
+			# 	is_individual_machine = yes
+			# }
 		}
-		job_nanotech_researcher_add = 6
+		job_nanotech_researcher_add = 15
 	}
+
+	# triggered_desc = {
+	# 	trigger = {
+	# 		exists = owner
+	# 		owner = {
+	# 			is_machine_empire = yes
+	# 		}
+	# 	}
+	# 	text = job_nanotech_research_unit_effect_desc
+	# }
 
 	triggered_desc = {
 		trigger = {
-			exists = owner
-			owner = {
-				is_machine_empire = yes
-			}
-		}
-		text = job_nanotech_research_unit_effect_desc
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_individual_machine = yes
-			}
+			always = yes
+			# exists = owner
+			# owner = {
+			# 	is_individual_machine = yes
+			# }
 		}
 		text = job_nanotech_researcher_effect_desc
 	}
@@ -204,14 +208,21 @@ building_rg_nanotech_cauldron = {
 	resources = {
 		category = planet_buildings
 		cost = {
-			alloys = @b3_minerals
-		}
-		upkeep = {
-			nanites = 3
-			energy = 30
+			minerals = 1000
 		}
 		produces = {
-			alloys = 15
+			trigger = {
+				owner = {
+					NOT = {
+						has_deficit = minerals
+					}
+				}
+			}
+			alloys = 60
+			consumer_goods = 40
+		}
+		upkeep = {
+			nanites = 25
 		}
 	}
 }
@@ -246,17 +257,17 @@ building_rg_nanite_transmuter = {
 			trigger = {
 				owner = {
 					NOT = {
-						has_deficit = nanites
+						has_deficit = minerals
 					}
 				}
 			}
+			nanites = 40
 			rare_crystals = 2
 			volatile_motes = 2
 			exotic_gases = 2
 		}
 		upkeep = {
-			nanites = 1
-			energy = 5
+			minerals = 50
 		}
 	}
 

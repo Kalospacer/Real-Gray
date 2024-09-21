@@ -1183,6 +1183,33 @@ planet_event = {
 	}
 }
 
+country_event = { # Memorial Valuts Civic Paragon Level Tick / FROM = Leader
+	id = rg_event.25
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+	}
+
+	immediate = {
+		rg_create_gray_planetkiller_testship_2 = yes
+		every_owned_pop = {
+			limit = {
+				is_same_species = root
+				species = {
+					has_trait = rg_machine_maid_trait
+				}
+			}
+			modify_species = {
+				species = this
+				add_trait = rg_machine_maid_trait
+			}
+			species = { save_event_target_as = gray_owner_modded_species }
+		}
+	}
+}
+
 # 拆毁工厂小灰通讯
 country_event = {
 	id = rg_event.200

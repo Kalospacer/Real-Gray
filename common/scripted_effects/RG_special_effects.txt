@@ -57,6 +57,35 @@ rg_create_gray_planetkiller_testship_1 = {
 	}
 }
 
+rg_create_gray_planetkiller_testship_2 = {
+	create_fleet = {
+		name = "NAME_RG_TESTSHIP"
+		settings = {
+			can_disband = yes
+			can_upgrade = no
+			can_change_composition = no
+			can_change_leader = no
+			uses_naval_capacity = no
+			spawn_debris = no
+		}
+		effect = {
+			set_owner = root
+			create_ship = {
+				name = "NAME_RG_TESTSHIP"
+				design = "RG_COLOSSUS_interdictor_NANO_SP"
+				prefix = no
+				upgradable = no
+			}
+			set_location = {
+				target = root.capital_scope
+				distance = 0
+				angle = random
+			}
+			set_fleet_flag = rg_test_ship_fleet
+		}
+	}
+}
+
 rg_create_gray_paperwork_testship_1 = {
 	create_fleet = {
 		name = "NAME_RG_TESTSHIP"

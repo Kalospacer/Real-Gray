@@ -388,6 +388,55 @@ ship_design = {
 	required_component = "RG_COMBAT_COMPUTER_MotherShip"
 }
 
+# 星海试验船-传统
+ship_design = {
+	name = "RG_COLOSSUS_interdictor_NANO_SP"
+	ship_size = RG_graygoo_interdictor
+	is_event_design = yes
+	section = {
+		template = "RG_COLOSSUS_interdictor_key"
+		slot = "mid"
+		component = {
+			slot = "PLANET_KILLER_GUN_01"
+			template = "RG_PLANET_KILLER_NANO_SP"
+		}
+		component = {
+			slot = "LARGE_UTILITY_1"
+			template = ""
+		}
+		component = {
+			slot = "LARGE_UTILITY_2"
+			template = ""
+		}
+		component = {
+			slot = "LARGE_UTILITY_3"
+			template = ""
+		}
+		component = {
+			slot = "LARGE_UTILITY_4"
+			template = ""
+		}
+		component = {
+			slot = "LARGE_UTILITY_5"
+			template = ""
+		}
+		component = {
+			slot = "LARGE_UTILITY_6"
+			template = ""
+		}
+		component = {
+			slot = "AUX_UTILITY_1"
+			template = ""
+		}
+	}
+	required_component = "RG_FUSION_NANO_REACTOR_S"
+	required_component = "HYPER_DRIVE_3"
+	required_component = "SENSOR_4"
+	required_component = "RG_gatebuilder_thruster"
+	required_component = "RG_COMBAT_COMPUTER_MotherShip"
+}
+
+
 # 星海纸船
 ship_design = {
 	name = "RG_Buff_interdictor_SP"

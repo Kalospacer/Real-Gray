@@ -69,19 +69,9 @@ tr_rg_nanotech_5 = {
 	}
 	custom_tooltip_with_modifiers = tr_rg_nanotech_5_modifier_desc
 	#Unlocks the nanite edicts
-	hidden_effect = {
-		every_owned_pop = {
-			limit = {
-				is_same_species = root
-				species = {
-					has_trait = rg_machine_maid_trait
-				}
-			}
-			modify_species = {
-				species = this
-				add_trait = rg_machine_maid_trait
-			}
-			species = { save_event_target_as = gray_owner_modded_species }
+	on_enabled = {
+		country_event = {
+			id = rg_event.25
 		}
 	}
 	#Every 5 years, double the size of orbital nanite deposits that you're harvesting, up to a max of 50 OR spawns a number of nanite swarmers depending on the size of the deposit
