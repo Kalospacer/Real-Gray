@@ -1,8 +1,9 @@
-@gray_portrait = Gray
 rg_set_gray_portrait = {
+	#美味女仆-小灰@chougou
 	if = {
 		limit = {
 			has_global_flag = ms_species_enabled
+			has_global_flag = rg_ms_gray_portrait_set
 			event_target:gray_owner = {
 				has_country_flag = mss_enable_gray_maid
 			}
@@ -12,12 +13,168 @@ rg_set_gray_portrait = {
 			ms_update_gray_portrait = yes
 		}
 	}
+	#动态灰风@NCSIMON
+	else_if = {
+		limit = {
+			has_global_flag = has_grayextend_mod
+			has_global_flag = rg_ge_gray_portrait_set
+		}
+		#手动选择立绘启用
+		if = {
+			limit = {
+				has_global_flag = rg_ge_gray_portrait_manual_toggle
+			}
+			if = {
+				limit = {
+					event_target:gray_owner = {
+						has_country_flag = rg_ge_governor_portrait_set
+					}
+				}
+				change_leader_portrait = GFX_gray_portrait_governor
+				event_target:rg_gray_country_leader = {
+					change_leader_portrait = GFX_gray_portrait_governor
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:gray_owner = {
+						has_country_flag = rg_ge_scientist_portrait_set
+					}
+					change_leader_portrait = GFX_gray_scientist_portrait
+					event_target:rg_gray_country_leader = {
+						change_leader_portrait = GFX_gray_scientist_portrait
+					}
+				}
+			}
+			else = {
+				change_leader_portrait = GFX_gray_portrait_governor
+				event_target:rg_gray_country_leader = {
+					change_leader_portrait = GFX_gray_portrait_governor
+				}
+			}
+		}
+		#默认自动选择立绘启用
+		else = {
+			if = {
+				limit = {
+					event_target:gray_owner = {
+						has_country_flag = gray_official_active
+					}
+
+					event_target:gray_official = {
+						change_leader_portrait = GFX_gray_portrait_governor
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:gray_owner = {
+						has_country_flag = gray_constship_active
+					}
+					event_target:gray_scientist = {
+						change_leader_portrait = GFX_gray_scientist_portrait
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					event_target:gray_owner = {
+						OR = {
+							has_country_flag = gray_warship_active
+							has_country_flag = gray_army_active
+						}
+						
+					}
+					event_target:gray_leader_general = {
+						change_leader_portrait = GFX_gray_portrait_governor
+					}
+				}
+			}
+			else = {
+				change_leader_portrait = GFX_gray_portrait_governor
+			}
+			event_target:rg_gray_country_leader = {
+				change_leader_portrait = GFX_gray_portrait_governor
+			}
+		}
+	}
+	#舰r/KDC
+	else_if = {
+		limit = {
+			OR = {
+				has_global_flag = has_wsg_mod
+				has_global_flag = kdc_event_mod_active
+			}
+			has_global_flag = rg_wg_gray_portrait_set
+		}
+		set_gray_portrait = yes
+	}
+	#默认
 	else = {
 		change_leader_portrait = @gray_portrait
 		event_target:rg_gray_country_leader = {
 			change_leader_portrait = @gray_portrait
 		}
 	}
+
+}
+
+# effect 留档3.13.0
+# # scope: leader
+# set_gray_portrait = {
+# 	optimize_memory
+# 	if = {
+# 		limit = { owner = { 
+# 			OR = {
+# 				has_wg_special_authority = yes
+# 				has_global_flag = wg_cheat_all_clothes
+# 			}
+# 			check_variable = { which = wg_gray_cloth value = 1 }
+# 		}}
+# 		change_leader_portrait = GrayTempest01
+# 	} else_if = {
+# 		limit = { owner = { 
+# 			check_variable = { which = wg_gray_cloth value = 2 }
+# 		}}
+# 		change_leader_portrait = GrayTempest02
+# 	} else_if = {
+# 		limit = { owner = { 
+# 			check_variable = { which = wg_gray_cloth value = 3 }
+# 		}}
+# 		change_leader_portrait = GrayTempest03
+# 	} else_if = {
+# 		limit = { owner = { 
+# 			check_variable = { which = wg_gray_cloth value = 4 }
+# 		}}
+# 		change_leader_portrait = GrayTempest04
+# 	} else_if = {
+# 		limit = { owner = { 
+# 			check_variable = { which = wg_gray_cloth value = 5 }
+# 		}}
+# 		change_leader_portrait = GrayTempest05
+# 	}else_if = {
+# 		limit = { owner = { 
+# 			check_variable = { which = wg_gray_cloth value = 6 }
+# 		}}
+# 		change_leader_portrait = GrayTempest06
+# 	} else_if = {
+# 		limit = { always = yes }
+# 		change_leader_portrait = GrayTempest06
+# 	}
+# }
+
+#scope country target:gray_owner
+rg_ge_clear_portrait_select = {
+	event_target:gray_owner = {
+	remove_country_flag = rg_ge_governor_portrait_set
+	remove_country_flag = rg_ge_scientist_portrait_set
+	}
+}
+
+rg_global_clear_portrait_select = {
+	remove_global_flag = rg_ms_gray_portrait_set
+	remove_global_flag = rg_ge_gray_portrait_set
+	remove_global_flag = rg_wg_gray_portrait_set
 }
 
 rg_create_gray_species = {
@@ -2259,6 +2416,10 @@ rg_gray_country_after_init = {
 	# 接受小灰建立通信
 	event_target:rg_gray_country = {
 		establish_communications_no_message = event_target:gray_owner
+	}
+	country_event = {
+		id = rg_grayleader.7
+		days = -1
 	}
 	rg_juggernaut_habitat_init = yes
 }

@@ -362,6 +362,15 @@ country_event = {
 		}
 	}
 	option = {
+		# 衣柜
+		name = rg_wardrobe
+		hidden_effect = {
+			country_event = {
+				id = rg_grayleader.7
+			}
+		}
+	}
+	option = {
 		name = graygoo.500.d
 		tag = hire_leader
 		default_hide_option = yes
@@ -537,6 +546,15 @@ country_event = {
 		hidden_effect = {
 			country_event = {
 				id = rg_grayleader.4
+			}
+		}
+	}
+	option = {
+		# 衣柜
+		name = rg_wardrobe
+		hidden_effect = {
+			country_event = {
+				id = rg_grayleader.7
 			}
 		}
 	}
@@ -1838,6 +1856,172 @@ country_event = {
 	option = {
 		# 诶嘿
 		name = rg_event.6.a
+	}
+	option = {
+		name = graygoo.500.d
+		tag = hire_leader
+		default_hide_option = yes
+	}
+	option = {
+		name = graygoo.500.prepage
+		tag = dismiss_leader
+		hidden_effect = {
+			country_event = {
+				id = rg_grayleader.1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = rg_grayleader.7
+	title = "graygoo.500.title"
+	desc = "rg_event.7.a.desc"
+	event_window_type = leader_recruit
+	picture_event_data = {
+		portrait = event_target:gray_governor
+		room = "ethic_spaceship_room"
+	}
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = gray_diplomacy_engaged
+	}
+	after = {
+		hidden_effect = {
+			remove_country_flag = gray_diplomacy_engaged
+		}
+	}
+	option = {
+		# 美味女仆
+		name = rg_event.7.a
+		trigger = {
+			has_global_flag = ms_species_enabled
+		}
+		hidden_effect = {
+			rg_global_clear_portrait_select = yes
+			set_global_flag = rg_ms_gray_portrait_set
+			event_target:gray_owner = {
+				set_country_flag = mss_enable_gray_maid
+			}
+			remove_global_flag = rg_ge_gray_portrait_set
+		}
+	}
+	option = {
+		# 动态灰风
+		name = rg_event.7.b
+		trigger = {
+			has_global_flag = has_grayextend_mod
+		}
+		hidden_effect = {
+			rg_global_clear_portrait_select = yes
+			set_global_flag = rg_ge_gray_portrait_set
+			country_event = {
+				id = rg_grayleader.8
+			}
+		}
+	}
+	option = {
+		# 舰r
+		name = rg_event.7.d
+		trigger = {
+			OR = {
+				has_global_flag = has_wsg_mod
+				has_global_flag = kdc_event_mod_active
+			}
+		}
+		hidden_effect = {
+			rg_global_clear_portrait_select = yes
+			set_global_flag = rg_wg_gray_portrait_set
+		}
+	}
+	option = {
+		# 默认
+		name = rg_event.7.z
+	}
+	option = {
+		name = graygoo.500.d
+		tag = hire_leader
+		default_hide_option = yes
+	}
+	option = {
+		name = graygoo.500.prepage
+		tag = dismiss_leader
+		hidden_effect = {
+			country_event = {
+				id = rg_grayleader.1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = rg_grayleader.8
+	title = "graygoo.500.title"
+	desc = "rg_event.8.a.desc"
+	event_window_type = leader_recruit
+	picture_event_data = {
+		portrait = event_target:gray_governor
+		room = "ethic_spaceship_room"
+	}
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = gray_diplomacy_engaged
+	}
+	after = {
+		hidden_effect = {
+			remove_country_flag = gray_diplomacy_engaged
+		}
+	}
+	option = {
+		# 执政官
+		name = rg_event.8.a
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = rg_ge_gray_portrait_manual_toggle
+					}
+					set_global_flag = rg_ge_gray_portrait_manual_toggle
+				}
+			}
+			rg_ge_clear_portrait_select = yes
+			event_target:gray_owner = {
+				set_country_flag = rg_ge_governor_portrait_set
+			}
+		}
+	}
+	option = {
+		# 科学家
+		name = rg_event.8.b
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = rg_ge_gray_portrait_manual_toggle
+					}
+					set_global_flag = rg_ge_gray_portrait_manual_toggle
+				}
+			}
+			rg_ge_clear_portrait_select = yes
+			event_target:gray_owner = {
+				set_country_flag = rg_ge_scientist_portrait_set
+			}
+		}
+	}
+	option = {
+		# 关闭手动选择
+		name = rg_event.8.c
+		trigger = {
+			has_global_flag = rg_ge_gray_portrait_manual_toggle
+		}
+		hidden_effect = {
+			rg_ge_clear_portrait_select = yes
+			remove_global_flag = rg_ge_gray_portrait_manual_toggle
+		}
+	}
+	option = {
+		# 算了
+		name = rg_event.8.d
 	}
 	option = {
 		name = graygoo.500.d

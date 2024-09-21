@@ -105,7 +105,7 @@ rg_gray_govener_init = {
 			# 	}
 			# 	add_trait_no_notify = leader_trait_governor_wg_the_loop
 			# }
-			set_gray_portrait = yes
+			rg_set_gray_portrait = yes
 			# add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = governor MARRIED_FLAG = married_gray }
 		}
 		else = {
@@ -222,7 +222,7 @@ rg_gray_commander_init = {
 			# 	}
 			# 	add_trait_no_notify = leader_trait_admiral_wg_the_loop
 			# }
-			set_gray_portrait = yes
+			rg_set_gray_portrait = yes
 			# add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = governor MARRIED_FLAG = married_gray }
 		}
 		else = {
@@ -542,7 +542,7 @@ rg_gray_scientist_init = {
 			# 	}
 			# 	add_trait_no_notify = leader_trait_admiral_wg_the_loop
 			# }
-			set_gray_portrait = yes
+			rg_set_gray_portrait = yes
 			# add_special_leader_affection_trait = { LEADER = gray LEADER_CLASS = governor MARRIED_FLAG = married_gray }
 		}
 		else = {

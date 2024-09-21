@@ -35,6 +35,9 @@
 		},
 		{
 			"path": "D:/SteamLibrary/steamapps/common/Stellaris/interface"
+		},
+		{
+			"path": "../gray_extend"
 		}
 	]
 }

@@ -186,6 +186,15 @@ country_event = {
 		}
 	}
 	option = {
+		# 衣柜
+		name = rg_wardrobe
+		hidden_effect = {
+			country_event = {
+				id = rg_grayleader.7
+			}
+		}
+	}
+	option = {
 		name = marry_gray
 		trigger = {
 			has_global_flag = has_wsg_mod
@@ -430,6 +439,15 @@ country_event = {
 		hidden_effect = {
 			country_event = {
 				id = rg_graygoo.4
+			}
+		}
+	}
+	option = {
+		# 衣柜
+		name = rg_wardrobe
+		hidden_effect = {
+			country_event = {
+				id = rg_grayleader.7
 			}
 		}
 	}

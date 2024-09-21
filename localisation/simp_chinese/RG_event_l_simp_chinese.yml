@@ -101,6 +101,7 @@
  rg_cluster.13.a:0 "他们是从哪里冒出来的？！"
  
  rg_help:0 "我需要一些帮助"
+ rg_wardrobe:0 "§Y$NAME_Gray$的衣柜§!"
 
  rg_event.4:0 "我需要一些帮助" 
  rg_event.4.a.desc:0 "我可以帮你建造一些舰队，或是一些其他我能帮得上的忙。你想让我做什么？" 
@@ -125,6 +126,19 @@
  rg_event.6.a.desc:0 "§Y什，什么嘛。不是刚刚才给过嘛..已经一滴都不剩了呜呜...这次就暂时没法帮忙了哦。§!\n\n§H<摸摸你的良心，十年后再来吧。>§!"
  rg_event.6.b.desc:0 "§Y呜呜呜...真的已经没有钱了..真的不要再来了...§!\n\n§H<厨圣啊！这次还请回吧。>§!"
  rg_event.6.a:0 "诶嘿。"
+
+ rg_event.7.a.desc:0 "这里可以给$NAME_Gray$换衣服。能选择的立绘选项取决于你开启的mod，如果没有任何选项说明你启用的mod尚未兼容或未启用兼容的mod。"
+ 
+ rg_event.7.a:0 "§G美味女仆：肖像§!-$NAME_Gray$@Chougou"
+ rg_event.7.b:0 "§H灰风扩展（动态灰风）/灰风肖像美化§!@NCSIMON"
+ rg_event.7.c:0 "§Y灰风立绘替换§!@Earth Aeolian"
+ rg_event.7.d:0 "§HWarship Girls R And MIST Species/KDC Story Pack§!@KDC Mod Group"
+ rg_event.7.z:0 "§Y默认§!"
+
+ rg_event.8.a:0 "§H执政官-$NAME_Gray$§!"
+ rg_event.8.b:0 "§B科学家-$NAME_Gray$§!"
+ rg_event.8.c:0 "§G关闭手动选择立绘§!"
+ rg_event.8.d:0 "§Y算了§!"
 
  rg_graygoo.4:0 "我需要一些帮助" 
  rg_graygoo.4.a.desc:0 "我可以帮你建造一些舰队，或是一些其他我能帮得上的忙。你想让我做什么？" 
