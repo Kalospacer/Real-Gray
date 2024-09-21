@@ -1,0 +1,210 @@
+#################
+#	Nanotech	#
+#################
+
+building_rg_nanolab_1 = {
+	base_buildtime = @b2_time
+	icon = building_nanolab_1
+
+	category = research
+
+	potential = {
+		exists = owner
+		uses_district_set = rg_station
+		#owner = { has_tradition = tr_nanotech_adopt }
+	}
+
+	allow = {
+		exists = owner
+		uses_district_set = rg_station
+		#owner = { has_tradition = tr_nanotech_adopt }
+	}
+
+	# destroy_trigger = {
+	# 	exists = owner
+	# 	OR = {
+	# 		NOT = { owner = { has_tradition = tr_nanotech_adopt } }
+	# 		has_modifier = slave_colony
+	# 		has_modifier = resort_colony
+	# 	}
+	# }
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b3_minerals
+			nanites = @b2_rare_cost
+		}
+		upkeep = {
+			energy = @b3_upkeep
+			nanites = @b2_rare_upkeep
+		}
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+		}
+		job_nanotech_research_unit_add = 3
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_individual_machine = yes
+			}
+		}
+		job_nanotech_researcher_add = 3
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+		}
+		text = job_nanotech_research_unit_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_individual_machine = yes
+			}
+		}
+		text = job_nanotech_researcher_effect_desc
+	}
+
+	upgrades = {
+		"building_nanolab_2"
+	}
+}
+
+building_rg_nanolab_2 = {
+	base_buildtime = @b3_time
+	icon = building_nanolab_2
+	can_build = no
+	
+
+	category = research
+
+	potential = {
+		exists = owner
+		uses_district_set = rg_station
+		# owner = { has_tradition = tr_nanotech_1 }
+	}
+
+	allow = {
+		has_upgraded_capital = yes
+	}
+
+	# destroy_trigger = {
+	# 	exists = owner
+	# 	OR = {
+	# 		NOT = { owner = { has_tradition = tr_nanotech_1 } }
+	# 		has_modifier = slave_colony
+	# 		has_modifier = resort_colony
+	# 	}
+	# }
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			minerals = @b4_minerals
+			nanites = @b3_rare_cost
+		}
+		upkeep = {
+			energy = @b4_upkeep
+			nanites = @b3_rare_upkeep
+		}
+	}
+
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+		}
+		job_nanotech_research_unit_add = 6
+	}
+
+	triggered_planet_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				is_individual_machine = yes
+			}
+		}
+		job_nanotech_researcher_add = 6
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_machine_empire = yes
+			}
+		}
+		text = job_nanotech_research_unit_effect_desc
+	}
+
+	triggered_desc = {
+		trigger = {
+			exists = owner
+			owner = {
+				is_individual_machine = yes
+			}
+		}
+		text = job_nanotech_researcher_effect_desc
+	}
+}
+
+building_rg_nanotech_cauldron = {
+	base_buildtime = @b2_time
+	icon = building_nanotech_cauldron
+
+	category = manufacturing
+
+	potential = {
+		exists = owner
+		uses_district_set = rg_station
+		# owner = { has_tradition = tr_nanotech_2 }
+		# NOT = { has_modifier = resort_colony }
+		# NOT = { has_modifier = slave_colony }
+	}
+
+	allow = {
+		always = yes
+	}
+
+	# destroy_trigger = {
+	# 	exists = owner
+	# 	OR = {
+	# 		NOT = { owner = { has_tradition = tr_nanotech_2 } }
+	# 		has_modifier = slave_colony
+	# 		has_modifier = resort_colony
+	# 	}
+	# }
+
+	resources = {
+		category = planet_buildings
+		cost = {
+			alloys = @b3_minerals
+		}
+		upkeep = {
+			nanites = 3
+			energy = 30
+		}
+		produces = {
+			alloys = 15
+		}
+	}
+}

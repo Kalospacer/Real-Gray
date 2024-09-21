@@ -1,0 +1,28 @@
+tradition_rg_nanotech = {
+	tree_template = "tree_21_12"
+	adoption_bonus = "tr_rg_nanotech_adopt"
+	finish_bonus = "tr_rg_nanotech_finish"
+
+	potential = {
+		OR = {
+			has_country_flag = origin_rg_gray
+			has_country_flag = gray_owner
+			AND = {
+				has_event_chain = l_cluster_chain
+				has_technology = tech_lgate_activation
+			}
+		}
+	}
+
+	traditions = {
+		"tr_rg_nanotech_1"
+		"tr_rg_nanotech_2"
+		"tr_rg_nanotech_5"
+		"tr_rg_nanotech_3"
+		"tr_rg_nanotech_4"
+	}
+
+	ai_weight = {
+		factor = 0
+	}
+}

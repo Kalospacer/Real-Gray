@@ -1,0 +1,44 @@
+spriteTypes = {
+	### NANITES ###
+
+	spriteType = {
+		name = "GFX_tr_rg_nanotech_1"
+		textureFile = "gfx/interface/icons/traditions/tradition_nanotech_1.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_rg_nanotech_2"
+		textureFile = "gfx/interface/icons/traditions/tradition_nanotech_2.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_rg_nanotech_3"
+		textureFile = "gfx/interface/icons/traditions/tradition_nanotech_3.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_rg_nanotech_4"
+		textureFile = "gfx/interface/icons/traditions/tradition_nanotech_4.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tr_rg_nanotech_5"
+		textureFile = "gfx/interface/icons/traditions/tradition_nanotech_5.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tradition_hex_bg_tradition_rg_nanotech"
+		textureFile = "gfx/interface/traditions/tradition_hex_bg_nanotech.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tradition_category_bg_tradition_rg_nanotech"
+		textureFile = "gfx/interface/tiles/tradition_category_tile_nanotech.dds"
+	}
+
+	spriteType = {
+		name = "GFX_tradition_rg_nanotech"
+		texturefile = "gfx/interface/icons/traditions/tree_icons/tradition_icon_nanotech.dds"
+	}
+
+}
