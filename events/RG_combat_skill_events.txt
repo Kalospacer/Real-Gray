@@ -97,14 +97,8 @@ ship_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		OR = {
-			AND = {
-				is_ship_size = RG_armed_science_ship
-				OR = {
-					has_component = RG_AUTOCONST_HANGER
-				}
-			}
-		}
+		is_ship_size = RG_armed_science_ship
+		has_component = RG_AUTOCONST_HANGER
 		solar_system = {
 			OR = {
 				NOT = {
@@ -136,54 +130,7 @@ ship_event = {
 	immediate = {
 		if = {
 			limit = {
-				owner = {
-					NOT = {
-						is_same_value = event_target:origin_rg_gray_country
-					}
-				}
 				solar_system = {
-					NOT = {
-						any_fleet_in_system = {
-							exists = controller
-							controller = {
-								is_hostile = root.controller
-							}
-						}
-					}
-				}
-			}
-			RG_const_auto_build_effect_event = yes
-		}
-		else_if = {
-			limit = {
-				owner = {
-					is_same_value = event_target:origin_rg_gray_country
-					NOT = {
-						has_global_flag = l_cluster_opened
-					}
-				}
-				solar_system = {
-					has_star_flag = lcluster
-					NOT = {
-						any_fleet_in_system = {
-							exists = controller
-							controller = {
-								is_hostile = root.controller
-							}
-						}
-					}
-				}
-			}
-			RG_const_auto_build_effect_event = yes
-		}
-		else_if = {
-			limit = {
-				owner = {
-					is_same_value = event_target:origin_rg_gray_country					# 是小灰起源
-					has_global_flag = l_cluster_opened					# L星门已开启
-				}
-				solar_system = {
-					# has_star_flag = lcluster
 					NOT = {
 						any_fleet_in_system = {
 							exists = controller
@@ -198,7 +145,7 @@ ship_event = {
 		}
 		ship_event = {
 			id = rg_skill.3
-			days = 10
+			days = 30
 		}
 	}
 }
