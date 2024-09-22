@@ -1,0 +1,37 @@
+option = {
+	name = marry_gray
+	trigger = {
+		has_global_flag = has_wsg_mod
+		check_variable = { which = wg_gray_affection value > @wg_gray_affection_to_lv4 }
+		NOT = { has_country_flag = married_gray }
+	}
+	allow = {
+		OR = {
+			AND = {
+				has_wg_special_authority = no
+				resource_stockpile_compare = {
+					resource = sr_living_metal
+					value >= 100
+				}
+				resource_stockpile_compare = {
+					resource = rare_crystals
+					value >= 1000
+				}
+			}
+			custom_tooltip = {
+				check_variable = { which = wsg_rings value >= 1 }
+				fail_text = not_enough_engagement_rings
+			}
+		}
+	}
+	if = {
+		limit = { has_wg_special_authority = yes }
+		subtract_variable = { which = wsg_rings value = 1 }
+	} else = {
+		add_resource = {
+			sr_living_metal = -100
+			rare_crystals = -1000
+		}
+	}
+	hidden_effect = { country_event = { id = wg_affection.30000 }}
+}
