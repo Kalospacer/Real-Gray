@@ -46,3 +46,23 @@ spawn_rg_habitat_effect = {
 		}
 	}
 }
+
+spawn_rg_oribital_ring_effect = {
+	From = {
+		create_ship_design = {
+			design = "RG_ORBITAL_RING_TIER_1_STARBASE"
+		}
+		add_ship_design = last_created_design
+	}
+	create_starbase = {
+		size = RG_orbital_ring_tier_1
+		owner = FROM
+		#module = <starbase_module>
+		#building = <starbase_building>
+		effect = {
+		}
+	}
+	From = {
+		remove_ship_design = last_created_design
+	}
+}

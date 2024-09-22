@@ -77,7 +77,10 @@
  civic_tooltip_rg_gray_non_cluster: "选择在§Y银河系§!中开启你的冒险。适合不希望在L-星团中开局的玩家。"
 
  rg_tempest_invocator: "灰蛊核心"
+ rg_tempest_invocator_desc: "尽管叫做$rg_tempest_invocator$但实际上和$NAME_Gray_Goo$没有任何关系。这件神奇的$relics$是我们的工程师完全自主研发的拥有独立知识产权的专利产品。"
  REQUIRES_lgate_or_gray: "$TRIGGER_FAIL$已发现§Y$NAME_Gray$§!或拥有科技§Y$tech_lgate_activation$§!"
+
+ rg_nanite_harvester
 
  RG_habitat_central_complex: "$pc_rg_grayhabitat$"
  RG_habitat_central_complex_plural: "$pc_rg_grayhabitat$"
@@ -92,9 +95,9 @@
  building_rg_nanolab_2: "§Y纳米研究复合体§!"
  building_rg_nanolab_2_desc: "无限小与无限大看起来是如此地相似，这是多么地奇妙啊。"
  building_rg_nanotech_cauldron: "§Y纳米熔炉§!"
- building_rg_nanotech_cauldron_desc: "在分子水平上运作，虫群可以很容易地将矿物结构重新配置成坚固的合金晶格。"
+ building_rg_nanotech_cauldron_desc: "在分子水平上运作，虫群可以很容易地将矿物结构重新配置成坚固的合金晶格。\n§R缺少£nanites£$nanites$时生产将会暂停。§!"
  building_rg_nanite_transmuter: "§Y纳米变形器§!"
- building_rg_nanite_transmuter_desc: "该工厂使用极为先进的纳米材料大量生产各种稀有资源。缺少纳米材料时生产将会暂停。"
+ building_rg_nanite_transmuter_desc: "该工厂使用极为先进的纳米材料大量生产各种稀有资源。\n§R缺少£minerals£$minerals$时生产将会暂停。§!"
 
  district_rg_farming: "农业区段"
  district_rg_farming_plural: "农业区段"
@@ -601,6 +604,12 @@
 
  RG_orbital_ring:0 "§Y纳米星环防御终端§!"
  RG_orbital_ring_desc:0 ""
+ RG_orbital_ring_MEGASTRUCTURE_DETAILS: ""
+ RG_orbital_ring_ruined: "废弃的$RG_orbital_ring$"
+ RG_orbital_ring_ruined_DESC: ""
+ RG_orbital_ring_restored: "$RG_orbital_ring$"
+ RG_orbital_ring_restored_DESC: ""
+
 
  RG_leader_trait_admiral_fake_dragon:0 "§Y龙的灵魂§!"
  RG_leader_trait_admiral_fake_dragon_desc:0 "迷途的灵魂虽然不是龙，却想要化身为龙。你也是龙，也好。"

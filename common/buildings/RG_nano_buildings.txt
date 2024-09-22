@@ -218,7 +218,7 @@ building_rg_nanotech_cauldron = {
 			trigger = {
 				owner = {
 					NOT = {
-						has_deficit = minerals
+						has_deficit = nanites
 					}
 				}
 			}
@@ -226,6 +226,13 @@ building_rg_nanotech_cauldron = {
 			consumer_goods = 40
 		}
 		upkeep = {
+			trigger = {
+				owner = {
+					NOT = {
+						has_deficit = nanites
+					}
+				}
+			}
 			nanites = 25
 		}
 	}
@@ -273,6 +280,13 @@ building_rg_nanite_transmuter = {
 			exotic_gases = 2
 		}
 		upkeep = {
+			trigger = {
+				owner = {
+					NOT = {
+						has_deficit = minerals
+					}
+				}
+			}
 			minerals = 50
 		}
 	}

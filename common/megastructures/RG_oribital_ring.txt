@@ -1,3 +1,5 @@
+@buildtime = 720
+
 RG_orbital_ring = {
 	entity = ""
 	construction_entity = "orbital_ring_construction_entity"
@@ -10,7 +12,7 @@ RG_orbital_ring = {
 	scales_with_planet = yes
 	show_galactic_map_icon = no
 	show_in_outliner = no
-	build_time = 720
+	build_time = 0
 	resources = {
 		category = megastructures
 		cost = {
@@ -20,7 +22,14 @@ RG_orbital_ring = {
 	}
 	construction_blocks_and_blocked_by = none
 	potential = {
-		has_technology = tech_gray_noway
+		always = no
+		has_tradition = tr_rg_nanotech_2
+		# OR = {
+		# 	has_technology = tech_habitat_1
+		# 	has_civic = civic_diadochi
+		# 	has_civic = civic_great_khans_legacy
+		# 	has_country_flag = democratic_khanate_flag
+		# }
 	}
 	possible = {
 		exists = starbase
@@ -104,41 +113,7 @@ RG_orbital_ring = {
 	# root = system
 	# from = country
 	ai_weight = {
-		factor = 5
-		modifier = {
-			factor = 3
-			solar_system = {
-				exists = owner
-				is_same_value = owner.capital_scope.solar_system
-			}
-		}
-		modifier = {
-			factor = 2
-			any_neighbor_system = {
-				exists = owner
-				is_same_value = owner.capital_scope.solar_system
-			}
-		}
-		modifier = {
-			factor = 0.1
-			any_neighbor_system = {
-				exists = owner
-				owner = {
-					NOT = {
-						is_same_value = from
-					}
-				}
-			}
-		}
-		modifier = {
-			factor = 3
-			any_system_colony = {
-				num_pops >= 50
-				NOT = {
-					exists = orbital_defence
-				}
-			}
-		}
+		factor = 0
 	}
 	on_build_start = {
 	}
@@ -156,14 +131,7 @@ RG_orbital_ring = {
 					dismantle = yes
 				}
 			}
-			create_starbase = {
-				size = orbital_ring_tier_1
-				owner = FROM
-				#module = <starbase_module>
-				#building = <starbase_building>
-				effect = {
-				}
-			}
+			spawn_rg_oribital_ring_effect = yes
 		}
 		remove_megastructure = fromfrom
 		from = {
@@ -174,7 +142,7 @@ RG_orbital_ring = {
 	}
 }
 
-orbital_ring_ruined = {
+RG_orbital_ring_ruined = {
 	entity = "orbital_ring_01_destroyed_entity"
 	construction_entity = "orbital_ring_construction_entity"
 	portrait = "GFX_megastructure_construction_background"
@@ -190,7 +158,7 @@ orbital_ring_ruined = {
 	is_ruined_orbital_ring = yes
 }
 
-orbital_ring_restored = {
+RG_orbital_ring_restored = {
 	entity = ""
 	construction_entity = "orbital_ring_construction_entity"
 	portrait = "GFX_megastructure_construction_background"
@@ -211,11 +179,11 @@ orbital_ring_restored = {
 		}
 	}
 	upgrade_from = {
-		orbital_ring_ruined
+		RG_orbital_ring_ruined
 	}
 	possible = {
 		from = {
-			has_technology = tech_orbital_ring_tier_1
+			has_tradition = tr_rg_nanotech_2
 		}
 		custom_tooltip = {
 			fail_text = "requires_outpost"
@@ -269,23 +237,7 @@ orbital_ring_restored = {
 					dismantle = yes
 				}
 			}
-			From = {
-				create_ship_design = {
-					design = "RG_ORBITAL_RING_TIER_1_STARBASE"
-				}
-				add_ship_design = last_created_design
-			}
-			create_starbase = {
-				size = RG_orbital_ring_tier_1
-				owner = FROM
-				#module = <starbase_module>
-				#building = <starbase_building>
-				effect = {
-				}
-			}
-			From = {
-				remove_ship_design = last_created_design
-			}
+			spawn_rg_oribital_ring_effect = yes
 		}
 		every_system_ambient_object = {
 			limit = {
