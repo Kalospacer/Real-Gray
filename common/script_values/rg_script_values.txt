@@ -1,17 +1,17 @@
-rg_count_maid = {
-	base = 0
-	complex_trigger_modifier = {
-		trigger = num_traits
-		trigger_scope = pop
-		parameters = {
-			limit = {
-				has_trait = rg_machine_maid_trait
-			}
-		}
-		mode = add
-	}
-	# max = 20
-}
+# rg_count_maid = {
+# 	base = 0
+# 	complex_trigger_modifier = {
+# 		trigger = num_traits
+# 		trigger_scope = pop
+# 		parameters = {
+# 			limit = {
+# 				has_trait = rg_machine_maid_trait
+# 			}
+# 		}
+# 		mode = add
+# 	}
+# 	# max = 20
+# }
 
 rg_maid_trait_mult = {
 	base = 3

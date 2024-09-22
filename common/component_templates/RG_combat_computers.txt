@@ -73,8 +73,6 @@ utility_component_template = {
 	ai_tags = { screen }
 	ai_tag_weight = 0
 	upgrades_to = "RG_COMBAT_COMPUTER_PICKET_BASIC"
-	ai_tags = { screen }
-	ai_tag_weight = 0
 
 	ai_weight = {
 		weight = 1

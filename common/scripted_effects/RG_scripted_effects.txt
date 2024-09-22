@@ -1359,7 +1359,9 @@ RG_const_auto_build_effect = {
 					prefix = no
 					design = "NAME_RG_GRAY_constructor"
 					effect = {
-						set_cloaking_active = yes
+						PREV = {
+							set_cloaking_active = yes
+						}
 					}
 				}
 			}

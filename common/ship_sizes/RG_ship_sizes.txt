@@ -337,7 +337,6 @@ RG_armed_constructor_ship = {
 	}
 
 	use_shipnames_from = constructor
-	icon = ship_size_constructor
 	base_buildtime = @construction_build_time
 	num_target_locators = 2
 	is_space_station = no

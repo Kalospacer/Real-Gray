@@ -2,3 +2,11 @@ concept_tradition_rg_nanotech = {
 	icon =  "gfx/interface/icons/traditions/tree_icons/tradition_icon_nanotech.dds"
 	tooltip_override = "tradition_category:tradition_rg_nanotech"
 }
+
+concept_rg_gray = {
+	alias = {  }
+}
+
+concept_rg_scion = {
+	alias = {  }
+}

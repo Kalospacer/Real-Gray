@@ -8,7 +8,7 @@ graytempest_storm_add = {
 
 	inline_script = {
 		script = cosmic_storms/StormVisuals
-		STORM_NAME = "graytempest_storm"
+		STORM_NAME = "particle_storm"
 	}
 }
 
@@ -94,7 +94,7 @@ graytempest_storm_apply_aftermath_modifier = {
 	}
 }
 
-graytempests_storm_apply_deposits = {
+graytempest_storm_apply_deposits = {
 	every_system_planet = {
 		limit = {
 			OR = {

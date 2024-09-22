@@ -7,7 +7,7 @@ rg_tempest_invocator = {
 		category = relics
 		# Activation cost
 		cost = {
-			nanties = 5000
+			nanites = 5000
 		}
 	}
 
@@ -25,7 +25,6 @@ rg_tempest_invocator = {
 		set_country_flag = "started_placing_storm"
 
 		start_storm_area_placing = {
-			sacrifice_leader_with_ui = no
 			cosmic_storm = graytempest_storm
 			immediate = yes
 

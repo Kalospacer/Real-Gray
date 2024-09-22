@@ -52,7 +52,7 @@
  GRAY_BEAM_STATIC_EX:0 "Gray Energy Arc"
  GRAY_BEAM_STATIC_EX_DESC:0 ""
  RG_GRAY_WEAPON_LANCE_X:0 "Gray Energy Lance"
- RG_GRAY_WEAPON_LANCE_X_DESC:0 Gray Energy Lance
+ RG_GRAY_WEAPON_LANCE_X_DESC:0 "Gray Energy Lance"
  RG_GRAY_WEAPON_LANCE:0 "Gray Energy Lance"
  RG_GRAY_WEAPON_LANCE_DESC:0 "Gray Energy Lance"
  LARGE_GRAY_MIX_ARMOR:0 "Nanite Armor"

@@ -73,25 +73,25 @@ rg_global_gray_location_check = {
 		if = {
 			limit = {
 				any_owned_planet = {
-					exists = sector.leader
-					sector.leader = {
-						has_leader_flag = gray_governor
+					exists = leader
+					leader = {
+						is_same_value = event_target:gray_official
 					}
 				}
 			}
 			random_owned_planet = {
 				limit = {
-					exists = sector.leader
-					sector.leader = {
-						has_leader_flag = gray_governor
+					exists = leader
+					leader = {
+						is_same_value = event_target:gray_official
 					}
 				}
-				save_global_event_target_as = global_gray_location
+				save_event_target_as = global_gray_location
 			}
 		}
 		else = {
 			capital_scope = {
-				save_global_event_target_as = global_gray_location
+				save_event_target_as = global_gray_location
 			}
 		}
 	}

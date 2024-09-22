@@ -88,6 +88,8 @@ building_rg_nanolab_1 = {
 	upgrades = {
 		"building_rg_nanolab_2"
 	}
+
+	custom_storm_ai_weight = {  }
 }
 
 building_rg_nanolab_2 = {
@@ -174,6 +176,8 @@ building_rg_nanolab_2 = {
 		}
 		text = job_nanotech_researcher_effect_desc
 	}
+
+	custom_storm_ai_weight = {  }
 }
 
 building_rg_nanotech_cauldron = {
@@ -225,6 +229,8 @@ building_rg_nanotech_cauldron = {
 			nanites = 25
 		}
 	}
+
+	custom_storm_ai_weight = {  }
 }
 
 building_rg_nanite_transmuter = {
@@ -279,4 +285,6 @@ building_rg_nanite_transmuter = {
 			always = yes
 		}
 	}
+
+	custom_storm_ai_weight = {  }
 }

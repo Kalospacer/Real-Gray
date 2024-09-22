@@ -54,21 +54,23 @@ country_event = {
 						has_country_flag = rg_habitat_enabled
 					}
 					# exists = event_target:rg_gray_habitat_target
-					any_owned_planet = {
-						is_under_colonization = no
-						OR = {
-							is_planet_class = pc_rg_grayhabitat
-							is_planet_class = pc_nanotech
-						}
-						free_jobs > 0
-						NOR = {
-							free_jobs_of_type = {
-								job = mortal_initiate
-								value >= 1
+					PREV = {
+						any_owned_planet = {
+							is_under_colonization = no
+							OR = {
+								is_planet_class = pc_rg_grayhabitat
+								is_planet_class = pc_nanotech
 							}
-							free_jobs_of_type = {
-								category = bio_trophy
-								value >= 1
+							free_jobs > 0
+							NOR = {
+								free_jobs_of_type = {
+									job = mortal_initiate
+									value >= 1
+								}
+								free_jobs_of_type = {
+									category = bio_trophy
+									value >= 1
+								}
 							}
 						}
 					}

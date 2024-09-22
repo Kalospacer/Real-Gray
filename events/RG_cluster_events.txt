@@ -130,25 +130,34 @@ country_event = {
 					orbit_distance = 30
 				}
 			}
-			if = {
-				limit = {
-					exists = sector
-				}
-				sector = {
-					leader = {
-						unassign_leader = this
-						save_event_target_as = rg_cluster_sector_gov
+			# if = {
+			# 	limit = {
+			# 		exists = sector
+			# 	}
+			# 	sector = {
+			# 		leader = {
+			# 			unassign_leader = this
+			# 			save_event_target_as = rg_cluster_sector_gov
+			# 		}
+			# 	}
+			# }
+			# else = {
+			# 	root = {
+			# 		random_owned_leader = {
+			# 			limit = {
+			# 				leader_class = official
+			# 			}
+			# 			save_event_target_as = rg_cluster_sector_gov
+			# 		}
+			# 	}
+			# }
+
+			root = {
+				random_owned_leader = {
+					limit = {
+						leader_class = official
 					}
-				}
-			}
-			else = {
-				root = {
-					random_owned_leader = {
-						limit = {
-							leader_class = official
-						}
-						save_event_target_as = rg_cluster_sector_gov
-					}
+					save_event_target_as = rg_cluster_sector_gov
 				}
 			}
 		}
@@ -191,9 +200,9 @@ country_event = {
 			set_controller = root
 			set_capital = yes
 			set_sector_capital = yes
-			sector = {
-				assign_leader = event_target:rg_cluster_sector_gov
-			}
+			# sector = {
+			# 	assign_leader = event_target:rg_cluster_sector_gov
+			# }
 			set_name = random
 			generate_start_buildings_and_districts = yes
 		}

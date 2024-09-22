@@ -328,7 +328,7 @@ rg_create_gray_destroyer_1 = {
 			set_owner = root
 			create_ship = {
 				name = "NAME_RG_base_destroyer"
-				design = "RG_base_destroyer_key"
+				design = "NAME_RG_base_destroyer"
 				prefix = no
 				upgradable = no
 			}

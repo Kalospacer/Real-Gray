@@ -159,7 +159,7 @@
  rg_nanite_leader:0"§Y纳米机器个体§!"
  rg_nanite_leader_plural:0"§Y纳米机器个体§!"
  rg_nanite_leader_description:0"§Y本质上是由千千万万纳米机械所组成的个体。因为能做到，所以将无所不能。§!"
- rg_nanite_leader_plural_with_icon:0"£offical£ $rg_nanite_leader_plural$"
+ rg_nanite_leader_plural_with_icon:0"£official£ $rg_nanite_leader_plural$"
 
  concept_rg_scion: "$preset_rg_scion$"
  concept_rg_scion_desc: "$preset_rg_scion_desc$"

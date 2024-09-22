@@ -19,6 +19,8 @@ special_project = {
 			rg_event_effect_lcluster_open = yes
 		}
 	}
+	fail_trigger = {
+	}
 	on_fail = {
 	}
 	on_start = {
@@ -48,6 +50,8 @@ special_project = {
 		shipclass_military = 1
 		leader = commander
 		has_trait = RG_leader_trait_admiral_gray
+	}
+	fail_trigger = {
 	}
 	on_start = {
 		owner = {
@@ -88,6 +92,8 @@ special_project = {
 		leader = commander
 		has_trait = RG_leader_trait_admiral_gray
 	}
+	fail_trigger = {
+	}
 	on_start = {
 		owner = {
 			country_event = {
@@ -124,6 +130,8 @@ special_project = {
 		shipclass_military = 1
 		leader = commander
 		has_trait = RG_leader_trait_admiral_gray
+	}
+	fail_trigger = {
 	}
 	on_start = {
 		owner = {

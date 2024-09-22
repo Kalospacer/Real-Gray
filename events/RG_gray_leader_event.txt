@@ -988,44 +988,27 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.a
-				any_owned_army = {
-					army_type = gray_army
-					if = {
-						limit = {
-							exists = planet
-						}
-						planet = {
-							has_ground_combat = no
-						}
-					}
-				}
-			}
-		}
-		allow = {
-			hidden_trigger = {
-				any_owned_army = {
-					army_type = gray_army
-					OR = {
-						exists = planet
-						AND = {
-							exists = fleet
-							fleet = {
-								num_ships > 0
+				OR = {
+					any_owned_army = {
+						army_type = gray_army
+						if = {
+							limit = {
+								exists = planet
+							}
+							planet = {
+								has_ground_combat = no
 							}
 						}
 					}
-				}
-			}
-			custom_tooltip = {
-				fail_text = graygoo.500.allow.a
-				any_owned_army = {
-					army_type = gray_army
-					if = {
-						limit = {
-							exists = fleet
-						}
-						fleet = {
-							is_in_combat = no
+					any_owned_army = {
+						army_type = gray_army
+						if = {
+							limit = {
+								exists = fleet
+							}
+							fleet = {
+								is_in_combat = no
+							}
 						}
 					}
 				}
@@ -1044,6 +1027,7 @@ country_event = {
 		response_text = graygoo.503.b.response
 		allow = {
 			hidden_trigger = {
+				# To prevent exploit
 				any_owned_army = {
 					army_type = gray_army
 					OR = {
@@ -1059,44 +1043,27 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.a
-				any_owned_army = {
-					army_type = gray_army
-					if = {
-						limit = {
-							exists = planet
-						}
-						planet = {
-							has_ground_combat = no
-						}
-					}
-				}
-			}
-		}
-		allow = {
-			hidden_trigger = {
-				any_owned_army = {
-					army_type = gray_army
-					OR = {
-						exists = planet
-						AND = {
-							exists = fleet
-							fleet = {
-								num_ships > 0
+				OR = {
+					any_owned_army = {
+						army_type = gray_army
+						if = {
+							limit = {
+								exists = planet
+							}
+							planet = {
+								has_ground_combat = no
 							}
 						}
 					}
-				}
-			}
-			custom_tooltip = {
-				fail_text = graygoo.500.allow.a
-				any_owned_army = {
-					army_type = gray_army
-					if = {
-						limit = {
-							exists = fleet
-						}
-						fleet = {
-							is_in_combat = no
+					any_owned_army = {
+						army_type = gray_army
+						if = {
+							limit = {
+								exists = fleet
+							}
+							fleet = {
+								is_in_combat = no
+							}
 						}
 					}
 				}
@@ -1115,6 +1082,7 @@ country_event = {
 		response_text = rg_const.503.response
 		allow = {
 			hidden_trigger = {
+				# To prevent exploit
 				any_owned_army = {
 					army_type = gray_army
 					OR = {
@@ -1130,44 +1098,27 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.a
-				any_owned_army = {
-					army_type = gray_army
-					if = {
-						limit = {
-							exists = planet
-						}
-						planet = {
-							has_ground_combat = no
-						}
-					}
-				}
-			}
-		}
-		allow = {
-			hidden_trigger = {
-				any_owned_army = {
-					army_type = gray_army
-					OR = {
-						exists = planet
-						AND = {
-							exists = fleet
-							fleet = {
-								num_ships > 0
+				OR = {
+					any_owned_army = {
+						army_type = gray_army
+						if = {
+							limit = {
+								exists = planet
+							}
+							planet = {
+								has_ground_combat = no
 							}
 						}
 					}
-				}
-			}
-			custom_tooltip = {
-				fail_text = graygoo.500.allow.a
-				any_owned_army = {
-					army_type = gray_army
-					if = {
-						limit = {
-							exists = fleet
-						}
-						fleet = {
-							is_in_combat = no
+					any_owned_army = {
+						army_type = gray_army
+						if = {
+							limit = {
+								exists = fleet
+							}
+							fleet = {
+								is_in_combat = no
+							}
 						}
 					}
 				}
@@ -1952,8 +1903,8 @@ country_event = {
 					NOT = {
 						has_global_flag = rg_ge_gray_portrait_manual_toggle
 					}
-					set_global_flag = rg_ge_gray_portrait_manual_toggle
 				}
+				set_global_flag = rg_ge_gray_portrait_manual_toggle
 			}
 			rg_ge_clear_portrait_select = yes
 			event_target:gray_owner = {
@@ -1970,8 +1921,8 @@ country_event = {
 					NOT = {
 						has_global_flag = rg_ge_gray_portrait_manual_toggle
 					}
-					set_global_flag = rg_ge_gray_portrait_manual_toggle
 				}
+				set_global_flag = rg_ge_gray_portrait_manual_toggle
 			}
 			rg_ge_clear_portrait_select = yes
 			event_target:gray_owner = {

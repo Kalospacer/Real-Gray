@@ -191,68 +191,7 @@ country_event = {
 			}
 		}
 	}
-	option = {
-		name = marry_gray
-		trigger = {
-			check_variable = {
-				which = wg_gray_affection
-				value > @wg_gray_affection_to_lv4
-			}
-			NOT = {
-				has_country_flag = married_gray
-			}
-		}
-		allow = {
-			OR = {
-				AND = {
-					has_wg_special_authority = no
-					resource_stockpile_compare = {
-						resource = sr_living_metal
-						value >= 100
-					}
-					resource_stockpile_compare = {
-						resource = rare_crystals
-						value >= 1000
-					}
-				}
-				custom_tooltip = {
-					check_variable = {
-						which = wsg_rings
-						value >= 1
-					}
-					fail_text = not_enough_engagement_rings
-				}
-			}
-			custom_tooltip = {
-				fail_text = gray_become_ruler
-				NOT = {
-					ruler = {
-						has_leader_flag = "gray_leader"
-					}
-				}
-			}
-		}
-		if = {
-			limit = {
-				has_wg_special_authority = yes
-			}
-			subtract_variable = {
-				which = wsg_rings
-				value = 1
-			}
-		}
-		else = {
-			add_resource = {
-				sr_living_metal = -100
-				rare_crystals = -1000
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = wg_affection.30000
-			}
-		}
-	}
+	inline_script = "events/rg_wsg_marry_gray_option_500_scripts"
 	option = {
 		name = graygoo.500.d
 		default_hide_option = yes
@@ -892,44 +831,27 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.a
-				any_owned_army = {
-					army_type = gray_army
-					if = {
-						limit = {
-							exists = planet
-						}
-						planet = {
-							has_ground_combat = no
-						}
-					}
-				}
-			}
-		}
-		allow = {
-			hidden_trigger = {
-				any_owned_army = {
-					army_type = gray_army
-					OR = {
-						exists = planet
-						AND = {
-							exists = fleet
-							fleet = {
-								num_ships > 0
+				OR = {
+					any_owned_army = {
+						army_type = gray_army
+						if = {
+							limit = {
+								exists = planet
+							}
+							planet = {
+								has_ground_combat = no
 							}
 						}
 					}
-				}
-			}
-			custom_tooltip = {
-				fail_text = graygoo.500.allow.a
-				any_owned_army = {
-					army_type = gray_army
-					if = {
-						limit = {
-							exists = fleet
-						}
-						fleet = {
-							is_in_combat = no
+					any_owned_army = {
+						army_type = gray_army
+						if = {
+							limit = {
+								exists = fleet
+							}
+							fleet = {
+								is_in_combat = no
+							}
 						}
 					}
 				}
@@ -945,6 +867,7 @@ country_event = {
 		response_text = graygoo.503.b.response
 		allow = {
 			hidden_trigger = {
+				# To prevent exploit
 				any_owned_army = {
 					army_type = gray_army
 					OR = {
@@ -960,44 +883,27 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.a
-				any_owned_army = {
-					army_type = gray_army
-					if = {
-						limit = {
-							exists = planet
-						}
-						planet = {
-							has_ground_combat = no
-						}
-					}
-				}
-			}
-		}
-		allow = {
-			hidden_trigger = {
-				any_owned_army = {
-					army_type = gray_army
-					OR = {
-						exists = planet
-						AND = {
-							exists = fleet
-							fleet = {
-								num_ships > 0
+				OR = {
+					any_owned_army = {
+						army_type = gray_army
+						if = {
+							limit = {
+								exists = planet
+							}
+							planet = {
+								has_ground_combat = no
 							}
 						}
 					}
-				}
-			}
-			custom_tooltip = {
-				fail_text = graygoo.500.allow.a
-				any_owned_army = {
-					army_type = gray_army
-					if = {
-						limit = {
-							exists = fleet
-						}
-						fleet = {
-							is_in_combat = no
+					any_owned_army = {
+						army_type = gray_army
+						if = {
+							limit = {
+								exists = fleet
+							}
+							fleet = {
+								is_in_combat = no
+							}
 						}
 					}
 				}
@@ -1013,6 +919,7 @@ country_event = {
 		response_text = rg_const.503.response
 		allow = {
 			hidden_trigger = {
+				# To prevent exploit
 				any_owned_army = {
 					army_type = gray_army
 					OR = {
@@ -1028,44 +935,27 @@ country_event = {
 			}
 			custom_tooltip = {
 				fail_text = graygoo.500.allow.a
-				any_owned_army = {
-					army_type = gray_army
-					if = {
-						limit = {
-							exists = planet
-						}
-						planet = {
-							has_ground_combat = no
-						}
-					}
-				}
-			}
-		}
-		allow = {
-			hidden_trigger = {
-				any_owned_army = {
-					army_type = gray_army
-					OR = {
-						exists = planet
-						AND = {
-							exists = fleet
-							fleet = {
-								num_ships > 0
+				OR = {
+					any_owned_army = {
+						army_type = gray_army
+						if = {
+							limit = {
+								exists = planet
+							}
+							planet = {
+								has_ground_combat = no
 							}
 						}
 					}
-				}
-			}
-			custom_tooltip = {
-				fail_text = graygoo.500.allow.a
-				any_owned_army = {
-					army_type = gray_army
-					if = {
-						limit = {
-							exists = fleet
-						}
-						fleet = {
-							is_in_combat = no
+					any_owned_army = {
+						army_type = gray_army
+						if = {
+							limit = {
+								exists = fleet
+							}
+							fleet = {
+								is_in_combat = no
+							}
 						}
 					}
 				}

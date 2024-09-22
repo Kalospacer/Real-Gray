@@ -7,7 +7,6 @@ utility_component_template = {
 	component_set = "LARGE_GRAY_MIX_ARMOR"
 	icon = "GFX_ship_part_gray_armor"
 	icon_frame = 1
-	power = 0
 	power = -180
 	modifier = {
 		ship_armor_add = 3840
@@ -58,7 +57,6 @@ utility_component_template = {
 	component_set = "HUGE_GRAY_MIX_ARMOR"
 	icon = "GFX_ship_part_gray_armor"
 	icon_frame = 1
-	power = 0
 	power = -180
 	modifier = {
 		ship_armor_add = 7680
@@ -119,6 +117,7 @@ weapon_component_template = {
 	}
 	tags = {
 		weapon_type_rg_secondary
+		weapon_type_energy
 	}
 	armor_damage = 1.2
 	shield_penetration = 1
@@ -134,9 +133,6 @@ weapon_component_template = {
 		}
 	}
 	projectile_gfx = "gatebuilder_lance_weapon"
-	tags = {
-		weapon_type_energy
-	}
 	ai_weight = {
 		weight = 0
 	}
@@ -169,6 +165,7 @@ weapon_component_template = {
 	}
 	tags = {
 		weapon_type_rg_secondary
+		weapon_type_energy
 	}
 	armor_damage = 1.2
 	shield_penetration = 1
@@ -183,9 +180,6 @@ weapon_component_template = {
 		}
 	}
 	projectile_gfx = "gatebuilder_lance_weapon"
-	tags = {
-		weapon_type_energy
-	}
 	ai_weight = {
 		weight = 0
 	}
@@ -218,6 +212,7 @@ weapon_component_template = {
 	}
 	tags = {
 		weapon_type_rg_secondary
+		weapon_type_energy
 	}
 	armor_damage = 1.2
 	shield_penetration = 1
@@ -232,9 +227,6 @@ weapon_component_template = {
 		}
 	}
 	projectile_gfx = "gatebuilder_lance_weapon"
-	tags = {
-		weapon_type_energy
-	}
 	ai_weight = {
 		weight = 0
 	}
@@ -272,6 +264,7 @@ weapon_component_template = {
 	upgrades_to = "GRAY_BEAM_STATIC_X"
 	tags = {
 		weapon_type_rg_main
+		weapon_type_energy
 	}
 	resources = {
 		category = ship_components
@@ -282,9 +275,6 @@ weapon_component_template = {
 			energy = 3.6
 			alloys = 4
 		}
-	}
-	tags = {
-		weapon_type_energy
 	}
 	projectile_gfx = "gatebuilder_lance_weapon"
 	ai_weight = {
@@ -323,6 +313,7 @@ weapon_component_template = {
 	}
 	tags = {
 		weapon_type_rg_main
+		weapon_type_energy
 	}
 	resources = {
 		category = ship_components
@@ -334,9 +325,6 @@ weapon_component_template = {
 			energy = 3.6
 			alloys = 4
 		}
-	}
-	tags = {
-		weapon_type_energy
 	}
 	projectile_gfx = "gatebuilder_lance_weapon"
 	ai_weight = {
@@ -492,6 +480,7 @@ weapon_component_template = {
 	}
 	tags = {
 		weapon_type_rg_main
+		weapon_type_energy
 	}
 	resources = {
 		category = ship_components
@@ -503,9 +492,6 @@ weapon_component_template = {
 			energy = 1.2
 			alloys = 2
 		}
-	}
-	tags = {
-		weapon_type_energy
 	}
 	projectile_gfx = "gatebuilder_titan_weapon_ex"
 	ai_weight = {
@@ -658,6 +644,7 @@ weapon_component_template = {
 	}
 	tags = {
 		weapon_type_rg_secondary
+		weapon_type_kinetic
 	}
 	armor_damage = 1.2
 	shield_penetration = 1
@@ -672,9 +659,6 @@ weapon_component_template = {
 		}
 	}
 	projectile_gfx = "adv_kinetic_artillery"
-	tags = {
-		weapon_type_kinetic
-	}
 	ai_weight = {
 		weight = 0
 	}
@@ -714,6 +698,7 @@ weapon_component_template = {
 	}
 	tags = {
 		weapon_type_rg_secondary
+		weapon_type_kinetic
 	}
 	armor_damage = 1.2
 	shield_penetration = 1
@@ -728,9 +713,6 @@ weapon_component_template = {
 		}
 	}
 	projectile_gfx = "adv_kinetic_artillery"
-	tags = {
-		weapon_type_kinetic
-	}
 	ai_weight = {
 		weight = 0
 	}
@@ -1765,7 +1747,6 @@ weapon_component_template = {
 	icon = "GFX_ship_part_space_whale_weapon_1"
 	icon_frame = 1
 	use_ship_kill_target = no
-	firing_arc = 15
 	min_range = 30
 	firing_arc = 25
 	damage = {

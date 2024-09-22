@@ -10,6 +10,8 @@ special_project = {
 		shipclass_science_ship = 1
 		leader = scientist
 	}
+	fail_trigger = {
+	}
 	on_start = {
 		owner = {
 			country_event = {
@@ -45,6 +47,8 @@ special_project = {
 	picture = GFX_evt_l-gateway
 	event_scope = country_event
 	requirements = {
+	}
+	fail_trigger = {
 	}
 	on_start = {
 		owner = {
@@ -85,6 +89,8 @@ special_project = {
 	picture = GFX_evt_l-gateway
 	event_scope = country_event
 	requirements = {
+	}
+	fail_trigger = {
 	}
 	on_start = {
 		owner = {
