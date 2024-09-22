@@ -1,0 +1,138 @@
+produces = {
+    trigger = {
+        OR = {
+            has_trait = rg_machine_maid_trait
+        }
+    }
+    nanites = -0.1
+    multiplier = value:rg_maid_trait_mult
+}
+
+# vanilla
+
+produces = {
+    trigger = {
+        OR = {
+            has_trait = trait_lithoid_scintillating
+            has_trait = trait_advanced_scintillating
+        }
+    }
+    rare_crystals = @lithoid_trait_resource_production
+    multiplier = value:lithoid_trait_mult
+}
+
+produces = {
+    trigger = {
+        OR = {
+            has_trait = trait_lithoid_gaseous_byproducts
+            has_trait = trait_advanced_gaseous_byproducts
+        }
+    }
+    exotic_gases = @lithoid_trait_resource_production
+    multiplier = value:lithoid_trait_mult
+}
+
+produces = {
+    trigger = {
+        OR = {
+            has_trait = trait_lithoid_volatile_excretions
+            has_trait = trait_advanced_volatile_excretions
+        }
+    }
+    volatile_motes = @lithoid_trait_resource_production
+    multiplier = value:lithoid_trait_mult
+}
+
+produces = {
+    trigger = {
+        OR = {
+            has_trait = trait_notofthisworld
+            has_trait = trait_robot_notofthisworld
+            has_trait = trait_exd
+        }
+    }
+    physics_research = 0.5
+}
+
+produces = {
+    trigger = {
+        exists = planet
+        planet = {
+            has_modifier = astralnomical_interest_modifier
+        }
+        is_enslaved = no
+        is_robot_pop = no
+    }
+    physics_research = 1
+}
+
+produces = {
+    trigger = {
+        has_trait = trait_cybernetic
+        exists = owner
+        owner = {
+            has_country_flag = driven_neural_chorus
+        }
+    }
+    unity = 0.1
+}
+
+produces = {
+    trigger = {
+        exists = planet
+        planet = {
+            has_modifier = particle_storm_aftermath_modifier_severity_1
+        }
+    }
+    volatile_motes = 0.02
+}
+
+produces = {
+    trigger = {
+        exists = planet
+        planet = {
+            has_modifier = particle_storm_aftermath_modifier_severity_2
+        }
+    }
+    volatile_motes = 0.04
+}
+
+produces = {
+    trigger = {
+        exists = planet
+        planet = {
+            has_modifier = particle_storm_aftermath_modifier_severity_3
+        }
+    }
+    volatile_motes = 0.06
+}
+
+produces = {
+    trigger = {
+        exists = planet
+        planet = {
+            has_modifier = celestial_storm_aftermath_modifier_severity_1
+        }
+    }
+    rare_crystals = 0.02
+}
+
+produces = {
+    trigger = {
+        exists = planet
+        planet = {
+            has_modifier = celestial_storm_aftermath_modifier_severity_2
+        }
+    }
+    rare_crystals = 0.04
+}
+
+produces = {
+    trigger = {
+        exists = planet
+        planet = {
+            has_modifier = celestial_storm_aftermath_modifier_severity_3
+        }
+    }
+    rare_crystals = 0.06
+}
