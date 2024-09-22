@@ -2038,43 +2038,43 @@ weapon_component_template = {
 	tags = {
 		weapon_type_rg_halo
 	}
-	# friendly_aura = {
-	# 	name = "RG_ANTIBAKAHALO"
-	# 	radius = @shipAuraRange
-	# 	apply_on = ships
-	# 	stack_info = {
-	# 		#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
-	# 		id = friendly_BAKAHALO
-	# 		priority = 233
-	# 	}
-	# 	modifier = {
-	# 		ship_shield_mult = -0.1
-	# 		ship_speed_mult = -0.1
-	# 		ship_armor_mult = -0.1
-	# 		ship_hull_mult = -0.1
-	# 		ship_shield_hardening_add = 1
-	# 		ship_armor_hardening_add = 1
-	# 		ship_shield_penetration_mult = 1
-	# 		ship_armor_penetration_mult = 1
-	# 		ship_weapon_range_mult = -0.1
-	# 		ship_tracking_add = -10
-	# 		ship_engagement_range_mult = -0.1
-	# 		ship_disengage_chance_mult = -0.1
-	# 		ship_ftl_jumpdrive_range_mult = -0.1
-	# 		ship_windup_mult = 0.1
-	# 		ship_jumpdrive_cooldown_mult = 0.1
-	# 	}
-	# 	graphics = {
-	# 		area_effect = {
-	# 			entity = "circle_area_entity"
-	# 			dynamic_scale = yes
-	# 		}
-	# 		ship_effect = {
-	# 			entity = "ship_aura_positive_entity"
-	# 			dynamic_scale = no
-	# 		}
-	# 	}
-	# }
+	friendly_aura = {
+		name = "RG_ANTIBAKAHALO"
+		radius = @shipAuraRange
+		apply_on = ships
+		stack_info = {
+			#A ship can only be affected by one aura of a certain id. If multiple auras have the same ID the one with the highest priority will be applied.
+			id = friendly_BAKAHALO
+			priority = 233
+		}
+		modifier = {
+			ship_shield_mult = -0.1
+			ship_speed_mult = -0.1
+			ship_armor_mult = -0.1
+			ship_hull_mult = -0.1
+			ship_shield_hardening_add = 1
+			ship_armor_hardening_add = 1
+			ship_shield_penetration_mult = 1
+			ship_armor_penetration_mult = 1
+			ship_weapon_range_mult = -0.1
+			ship_tracking_add = -10
+			ship_engagement_range_mult = -0.1
+			ship_disengage_chance_mult = -0.1
+			ship_ftl_jumpdrive_range_mult = -0.1
+			ship_windup_mult = 0.1
+			ship_jumpdrive_cooldown_mult = 0.1
+		}
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_positive_entity"
+				dynamic_scale = no
+			}
+		}
+	}
 	hull_damage = 0
 	shield_penetration = 0
 	shield_damage = 0
@@ -2124,51 +2124,51 @@ weapon_component_template = {
 	tags = {
 		weapon_type_rg_halo
 	}
-	# hostile_aura = {
-	# 	name = "RG_BAKAHALO"
-	# 	radius = @shipAuraRange
-	# 	apply_on = ships
-	# 	stack_info = {
-	# 		id = hostile_BAKAHALO
-	# 		priority = 233
-	# 	}
-	# 	modifier = {
-	# 		ship_shield_mult = -0.1
-	# 		ship_speed_mult = -0.1
-	# 		ship_armor_mult = -0.1
-	# 		ship_hull_mult = -0.1
-	# 		ship_shield_hardening_add = -1
-	# 		ship_armor_hardening_add = -1
-	# 		ship_shield_penetration_mult = -1
-	# 		ship_armor_penetration_mult = -1
-	# 		ship_weapon_range_mult = -0.1
-	# 		ship_tracking_add = -10
-	# 		ship_engagement_range_mult = -0.1
-	# 		ship_disengage_chance_mult = -0.1
-	# 		ship_ftl_jumpdrive_range_mult = -0.1
-	# 		ship_windup_mult = 1
-	# 		ship_jumpdrive_cooldown_mult = 1
-	# 	}
-	# 	damage_per_day = {
-	# 		accuracy = 0.5
-	# 		damage = {
-	# 			min = 96
-	# 			max = 192
-	# 		}
-	# 		shield_penetration = 1
-	# 		armor_penetration = 1
-	# 	}
-	# 	graphics = {
-	# 		area_effect = {
-	# 			entity = "circle_area_entity"
-	# 			dynamic_scale = yes
-	# 		}
-	# 		ship_effect = {
-	# 			entity = "ship_aura_negative_entity"
-	# 			dynamic_scale = no
-	# 		}
-	# 	}
-	# }
+	hostile_aura = {
+		name = "RG_BAKAHALO"
+		radius = @shipAuraRange
+		apply_on = ships
+		stack_info = {
+			id = hostile_BAKAHALO
+			priority = 233
+		}
+		modifier = {
+			ship_shield_mult = -0.1
+			ship_speed_mult = -0.1
+			ship_armor_mult = -0.1
+			ship_hull_mult = -0.1
+			ship_shield_hardening_add = -1
+			ship_armor_hardening_add = -1
+			ship_shield_penetration_mult = -1
+			ship_armor_penetration_mult = -1
+			ship_weapon_range_mult = -0.1
+			ship_tracking_add = -10
+			ship_engagement_range_mult = -0.1
+			ship_disengage_chance_mult = -0.1
+			ship_ftl_jumpdrive_range_mult = -0.1
+			ship_windup_mult = 1
+			ship_jumpdrive_cooldown_mult = 1
+		}
+		damage_per_day = {
+			accuracy = 0.5
+			damage = {
+				min = 96
+				max = 192
+			}
+			shield_penetration = 1
+			armor_penetration = 1
+		}
+		graphics = {
+			area_effect = {
+				entity = "circle_area_entity"
+				dynamic_scale = yes
+			}
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
 	hull_damage = 0
 	shield_penetration = 0
 	shield_damage = 0

@@ -12,3 +12,14 @@ rg_count_maid = {
 	}
 	# max = 20
 }
+
+rg_maid_trait_mult = {
+	base = 3
+	# modifier = {
+	# 	add = 0.5
+	# 	planet = {
+	# 		has_deposit = d_lithoid_crater
+	# 	}
+	# }
+}
+

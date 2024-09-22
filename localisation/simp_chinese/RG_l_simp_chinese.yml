@@ -52,7 +52,7 @@
  tr_rg_nanotech_2_modifier_desc: "—§I解锁巨型结构：§!§Y$RG_habitat_central_complex$§!\n"
  tr_rg_nanotech_3_modifier_desc: "§Y解锁行星决议：§!$decision_rg_nanotech_swarm_consume_world$\n§Y解锁巨像武器：§!$tech_object_gray_7$：可将星球转变为可殖民的§Y$pc_nanotech$§!"
  tr_rg_nanotech_4_modifier_desc: "§Y解锁飞升：$rg_ap_nantiematter$\n解锁舰船：§!$RG_graygoo_destroyer$\n§Y获得遗珍：§!§Y$rg_tempest_invocator$§!：允许你召唤宇宙风暴：§Y$graytempest_storm$§!"
- tr_rg_nanotech_5_modifier_desc: "§Y解锁净化方式：$purge_nanophage$§!：将非帝国主体人口同化为我们的一部分。\n所有帝国人口将获得§Y纳米特质§!：人口需要£nanites£§Y$nanites$§!维护费。\n每个类型为§Y$pc_nanotech$§!或§Y$pc_rg_grayhabitat$§!的殖民地都将瞬间创建§Y纳米化人口$pops_with_icon$§!以填补§Y£building£建筑§!和§Y£district£区划§!的£job£岗位需求。"
+ tr_rg_nanotech_5_modifier_desc: "§Y解锁净化方式：$purge_nanophage$§!：将非帝国主体人口同化为我们的一部分。\n所有帝国人口将获得§Y纳米特质§!：人口需要£nanites£§Y$nanites$§!维护费。\n每个类型为§Y$pc_nanotech$§!或§Y$pc_rg_grayhabitat$§!的殖民地都将瞬间创建§Y纳米化$pops_with_icon$§!以填补§Y£building£建筑§!和§Y£district£区划§!的£job£岗位需求。"
  tr_rg_nanotech_finish_modifier_desc: "§Y解锁舰船：§!$RG_graygoo_mothership$\n每§Y5§!年§Y$sm_nanite_harvester_plural$§!都会提升，可能是增加$r_nanites$矿藏的规模，或是直接产出一笔纳米机器人资源。该效果受到矿藏所依附的行星尺寸的限制。"
 
  decision_rg_server_shut_down: "§R核心关闭§!"
@@ -126,7 +126,7 @@
  district_rg_industrial_plural: "工业区段"
  district_rg_industrial_desc: "这个区段中遍布着叮当作响的工厂与强劲的机械，为帝国提供了有力的工业基础。"
 
- rg_machine_maid_trait_effect_tooltip: "每个在线的人口产生0.1£nanites£$nanites$§Y维护费§!。\n在灰风国家工作时:$TABBED_NEW_LINE$$mod_planet_jobs_produces_mult$：§G+10%§!"
+ rg_machine_maid_trait_effect_tooltip: "每个在线的$pops_with_icon$§!产生0.3£nanites£$nanites$§Y维护费§!。\n在$NAME_Gray$国家工作时:$TABBED_NEW_LINE$$mod_planet_jobs_produces_mult$：§G+10%§!"
 
  graytempest_storm: "灰蛊风暴"
  graytempest_storm_desc: "一群从L-星团中喷涌而出纳米机器对于整个星系的生命体都是威胁。它们数量巨大但尚未完全成型，形成严重的风暴席卷星系。由于纳米机器的自复制特性这种风暴能持续数十年之久。"
