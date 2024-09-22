@@ -139,6 +139,7 @@
  rg_event.8.b:0 "§B科学家-$NAME_Gray$§!"
  rg_event.8.c:0 "§G关闭手动选择立绘§!"
  rg_event.8.d:0 "§Y算了§!"
+ rg_event.8.a.desc: "§H灰风扩展（动态灰风）/灰风肖像美化§!\n\n立绘选择页面。选择你想要的$NAME_Gray$立绘。"
 
  rg_graygoo.4:0 "我需要一些帮助" 
  rg_graygoo.4.a.desc:0 "我可以帮你建造一些舰队，或是一些其他我能帮得上的忙。你想让我做什么？" 

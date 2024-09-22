@@ -1,5 +1,5 @@
 ﻿l_simp_chinese:
- NAME_Gray:0 "灰风"
+ NAME_Gray:0 "小灰"
  GRAY_SPECIES:0 "$NAME_Gray$"
  RG_MACHINE:0 "§Y纳米构造体§!"
  gray_army_desc:0 "$NAME_Gray$和她的纳米作战母舰，可以轻易扫平一颗星球"
@@ -30,6 +30,7 @@
 
  preset_rg_scion: "§Y誓约计划国§!"
  preset_rg_scion_desc: "出于某种不可告人的目的，远古堕落帝国将其视若己出。他们的远古宗主不会允许其誓约国受到任何外部干扰。"
+ gray_become_ruler: "$NAME_Gray$不能是统治者"
 
  ### NANOTECH
  tradition_rg_nanotech: "§Y纳米重构§!"

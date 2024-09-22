@@ -23,3 +23,17 @@ RG_planet_can_auto_build = {
 		has_planet_flag = RG_work_bees_built
 	}
 }
+
+RG_NOR_has_wsg_mod_trigger = {
+	NOR = {
+		has_global_flag = has_wsg_mod
+		has_global_flag = kdc_event_mod_active
+	}
+}
+
+RG_OR_has_wsg_mod_trigger = {
+	OR = {
+		has_global_flag = has_wsg_mod
+		has_global_flag = kdc_event_mod_active
+	}
+}

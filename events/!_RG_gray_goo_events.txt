@@ -314,7 +314,7 @@ country_event = {
 			rg_gray_country_init = yes			#创建国家
 		}
 		rg_gray_country_after_init = yes
-		set_country_flag = machine_age_nanites_studied 
+		set_country_flag = machine_age_nanites_studied
 		create_message = {
 			type = MESSAGE_RECRUITED_LEADER
 			localization = "rg_event.2.desc"
@@ -346,7 +346,7 @@ country_event = {
 			has_country_flag = gray_constship_active
 			OR = {
 				has_country_flag = gray_official_active
-				has_country_flag = gray_governor_active #旧版flag
+				has_country_flag = gray_governor_active				#旧版flag
 			}
 			has_country_flag = gray_warship_active
 			has_country_flag = gray_army_active
@@ -357,10 +357,7 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				OR = {
-					has_global_flag = has_wsg_mod
-					has_global_flag = kdc_event_mod_active
-				}
+				RG_OR_has_wsg_mod_trigger = yes
 			}
 			country_event = {
 				id = rg_graygoo.500
@@ -389,7 +386,7 @@ country_event = {
 		is_same_value = event_target:gray_owner
 		OR = {
 			has_country_flag = gray_official_active
-			has_country_flag = gray_governor_active #旧版flag
+			has_country_flag = gray_governor_active			#旧版flag
 		}
 		NOR = {
 			has_country_flag = gray_reforming
@@ -400,10 +397,7 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				OR = {
-					has_global_flag = has_wsg_mod
-					has_global_flag = kdc_event_mod_active
-				}
+				RG_OR_has_wsg_mod_trigger = yes
 			}
 			country_event = {
 				id = rg_graygoo.501
@@ -446,10 +440,7 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				OR = {
-					has_global_flag = has_wsg_mod
-					has_global_flag = kdc_event_mod_active
-				}
+				RG_OR_has_wsg_mod_trigger = yes
 			}
 			country_event = {
 				id = rg_graygoo.502
@@ -497,10 +488,7 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				OR = {
-					has_global_flag = has_wsg_mod
-					has_global_flag = kdc_event_mod_active
-				}
+				RG_OR_has_wsg_mod_trigger = yes
 			}
 			country_event = {
 				id = rg_graygoo.503
@@ -532,10 +520,7 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				OR = {
-					has_global_flag = has_wsg_mod
-					has_global_flag = kdc_event_mod_active
-				}
+				RG_OR_has_wsg_mod_trigger = yes
 			}
 			country_event = {
 				id = rg_graygoo.504
@@ -578,10 +563,7 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				OR = {
-					has_global_flag = has_wsg_mod
-					has_global_flag = kdc_event_mod_active
-				}
+				RG_OR_has_wsg_mod_trigger = yes
 			}
 			country_event = {
 				id = rg_graygoo.505
@@ -638,8 +620,8 @@ event = {
 	}
 	immediate = {
 		event_target:gray_owner = {
-			remove_country_flag = gray_official_active #新版flag
-			remove_country_flag = gray_governor_active #旧版flag	#总督
+			remove_country_flag = gray_official_active			#新版flag
+			remove_country_flag = gray_governor_active			#旧版flag	#总督
 			remove_country_flag = gray_warship_active			#旗舰
 			remove_country_flag = gray_army_active			#陆军
 			remove_country_flag = gray_constship_active			#科舰
@@ -648,8 +630,13 @@ event = {
 				modifier = "gray_scattered"
 				days = 3600
 			}
-			country_event = { id = graygoo.511 }
-			country_event = { id = graygoo.512 days = 3600 }
+			country_event = {
+				id = graygoo.511
+			}
+			country_event = {
+				id = graygoo.512
+				days = 3600
+			}
 		}
 	}
 }
@@ -674,20 +661,16 @@ country_event = {
 	desc = "graygoo.512.a.desc"
 	desc = "graygoo.512.b.desc"
 	desc = "graygoo.512.c.desc"
-
 	event_window_type = leader_story
 	picture = GFX_evt_gray_gooed_planet
 	picture_event_data = {
 		portrait = event_target:rg_gray_country_leader
 		room = root
 	}
-
 	is_triggered_only = yes
-
 	immediate = {
 		remove_country_flag = gray_reforming
 	}
-
 	option = {
 		name = graygoo.512.a
 	}

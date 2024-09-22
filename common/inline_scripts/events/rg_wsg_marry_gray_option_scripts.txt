@@ -1,6 +1,7 @@
 option = {
 	name = marry_gray
 	trigger = {
+		RG_OR_has_wsg_mod_trigger = yes
 		check_variable = { which = wg_gray_affection value > @wg_gray_affection_to_lv4 }
 		NOT = { has_country_flag = married_gray }
 	}

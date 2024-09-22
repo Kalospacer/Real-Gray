@@ -23,10 +23,7 @@ country_event = {
 		}
 	}
 	trigger = {
-		OR = {
-			has_global_flag = has_wsg_mod
-			has_global_flag = kdc_event_mod_active
-		}
+		RG_OR_has_wsg_mod_trigger = yes
 		fromfrom = {
 			OR = {
 				is_country_type = gray
@@ -37,7 +34,7 @@ country_event = {
 		NOR = {
 			has_country_flag = gray_constship_active
 			has_country_flag = gray_official_active
-			has_country_flag = gray_governor_active #旧版flag
+			has_country_flag = gray_governor_active			#旧版flag
 			has_country_flag = gray_warship_active
 			has_country_flag = gray_army_active
 			has_country_flag = gray_reforming
@@ -52,7 +49,7 @@ country_event = {
 		trigger = {
 			NOR = {
 				has_country_flag = gray_official_active
-				has_country_flag = gray_governor_active #旧版flag
+				has_country_flag = gray_governor_active				#旧版flag
 			}
 		}
 		allow = {
@@ -197,10 +194,9 @@ country_event = {
 	option = {
 		name = marry_gray
 		trigger = {
-			has_global_flag = has_wsg_mod
 			check_variable = {
-				which = gray_affection_level
-				value >= 4
+				which = wg_gray_affection
+				value > @wg_gray_affection_to_lv4
 			}
 			NOT = {
 				has_country_flag = married_gray
@@ -276,10 +272,7 @@ country_event = {
 	custom_gui_option = wg_new_commu_option
 	is_triggered_only = yes
 	trigger = {
-		OR = {
-			has_global_flag = has_wsg_mod
-			has_global_flag = kdc_event_mod_active
-		}
+		RG_OR_has_wsg_mod_trigger = yes
 		fromfrom = {
 			OR = {
 				is_country_type = gray
@@ -289,7 +282,7 @@ country_event = {
 		is_same_value = event_target:gray_owner
 		OR = {
 			has_country_flag = gray_official_active
-			has_country_flag = gray_governor_active #旧版flag
+			has_country_flag = gray_governor_active			#旧版flag
 		}
 		NOR = {
 			has_country_flag = gray_reforming
@@ -303,25 +296,25 @@ country_event = {
 		if = {
 			limit = {
 				any_owned_planet = {
-					exists = sector.leader
-					sector.leader = {
-						is_same_value = event_target:gray_governor
+					exists = leader
+					leader = {
+						is_same_value = event_target:gray_official
 					}
 				}
 			}
 			random_owned_planet = {
 				limit = {
-					exists = sector.leader
-					sector.leader = {
-						is_same_value = event_target:gray_governor
+					exists = leader
+					leader = {
+						is_same_value = event_target:gray_official
 					}
 				}
-				save_event_target_as = gray_governor_planet
+				save_event_target_as = gray_official_planet
 			}
 		}
 		else = {
 			capital_scope = {
-				save_event_target_as = gray_governor_planet
+				save_event_target_as = gray_official_planet
 			}
 		}
 	}
@@ -451,61 +444,7 @@ country_event = {
 			}
 		}
 	}
-	option = {
-		name = marry_gray
-		trigger = {
-			has_global_flag = has_wsg_mod
-			check_variable = {
-				which = gray_affection_level
-				value >= 4
-			}
-			NOT = {
-				has_country_flag = married_gray
-			}
-		}
-		allow = {
-			OR = {
-				AND = {
-					has_wg_special_authority = no
-					resource_stockpile_compare = {
-						resource = sr_living_metal
-						value >= 100
-					}
-					resource_stockpile_compare = {
-						resource = rare_crystals
-						value >= 1000
-					}
-				}
-				custom_tooltip = {
-					check_variable = {
-						which = wsg_rings
-						value >= 1
-					}
-					fail_text = not_enough_engagement_rings
-				}
-			}
-		}
-		if = {
-			limit = {
-				has_wg_special_authority = yes
-			}
-			subtract_variable = {
-				which = wsg_rings
-				value = 1
-			}
-		}
-		else = {
-			add_resource = {
-				sr_living_metal = -100
-				rare_crystals = -1000
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = wg_affection.30000
-			}
-		}
-	}
+	inline_script = "events/rg_wsg_marry_gray_option_scripts"
 	option = {
 		name = graygoo.500.d
 		default_hide_option = yes
@@ -525,10 +464,7 @@ country_event = {
 	custom_gui_option = wg_new_commu_option
 	is_triggered_only = yes
 	trigger = {
-		OR = {
-			has_global_flag = has_wsg_mod
-			has_global_flag = kdc_event_mod_active
-		}
+		RG_OR_has_wsg_mod_trigger = yes
 		fromfrom = {
 			OR = {
 				is_country_type = gray
@@ -878,61 +814,7 @@ country_event = {
 			}
 		}
 	}
-	option = {
-		name = marry_gray
-		trigger = {
-			has_global_flag = has_wsg_mod
-			check_variable = {
-				which = gray_affection_level
-				value >= 4
-			}
-			NOT = {
-				has_country_flag = married_gray
-			}
-		}
-		allow = {
-			OR = {
-				AND = {
-					has_wg_special_authority = no
-					resource_stockpile_compare = {
-						resource = sr_living_metal
-						value >= 100
-					}
-					resource_stockpile_compare = {
-						resource = rare_crystals
-						value >= 1000
-					}
-				}
-				custom_tooltip = {
-					check_variable = {
-						which = wsg_rings
-						value >= 1
-					}
-					fail_text = not_enough_engagement_rings
-				}
-			}
-		}
-		if = {
-			limit = {
-				has_wg_special_authority = yes
-			}
-			subtract_variable = {
-				which = wsg_rings
-				value = 1
-			}
-		}
-		else = {
-			add_resource = {
-				sr_living_metal = -100
-				rare_crystals = -1000
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = wg_affection.30000
-			}
-		}
-	}
+	inline_script = "events/rg_wsg_marry_gray_option_scripts"
 	option = {
 		name = graygoo.500.d
 		default_hide_option = yes
@@ -952,10 +834,7 @@ country_event = {
 	custom_gui_option = wg_new_commu_option
 	is_triggered_only = yes
 	trigger = {
-		OR = {
-			has_global_flag = has_wsg_mod
-			has_global_flag = kdc_event_mod_active
-		}
+		RG_OR_has_wsg_mod_trigger = yes
 		fromfrom = {
 			OR = {
 				is_country_type = gray
@@ -1278,60 +1157,7 @@ country_event = {
 			}
 		}
 	}
-	option = {
-		name = marry_gray
-		trigger = {
-			check_variable = {
-				which = gray_affection_level
-				value >= 4
-			}
-			NOT = {
-				has_country_flag = married_gray
-			}
-		}
-		allow = {
-			OR = {
-				AND = {
-					has_wg_special_authority = no
-					resource_stockpile_compare = {
-						resource = sr_living_metal
-						value >= 100
-					}
-					resource_stockpile_compare = {
-						resource = rare_crystals
-						value >= 1000
-					}
-				}
-				custom_tooltip = {
-					check_variable = {
-						which = wsg_rings
-						value >= 1
-					}
-					fail_text = not_enough_engagement_rings
-				}
-			}
-		}
-		if = {
-			limit = {
-				has_wg_special_authority = yes
-			}
-			subtract_variable = {
-				which = wsg_rings
-				value = 1
-			}
-		}
-		else = {
-			add_resource = {
-				sr_living_metal = -100
-				rare_crystals = -1000
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = wg_affection.30000
-			}
-		}
-	}
+	inline_script = "events/rg_wsg_marry_gray_option_scripts"
 	option = {
 		name = graygoo.500.d
 		default_hide_option = yes
@@ -1361,40 +1187,7 @@ country_event = {
 	option = {
 		name = OK
 	}
-	option = {
-		name = marry_gray
-		trigger = {
-			has_global_flag = has_wsg_mod
-			check_variable = {
-				which = gray_affection_level
-				value >= 4
-			}
-			NOT = {
-				has_country_flag = married_gray
-			}
-		}
-		allow = {
-			OR = {
-				has_wg_special_authority = no
-				custom_tooltip = {
-					check_variable = {
-						which = wsg_rings
-						value >= 1
-					}
-					fail_text = not_enough_engagement_rings
-				}
-			}
-		}
-		subtract_variable = {
-			which = wsg_rings
-			value = 1
-		}
-		hidden_effect = {
-			country_event = {
-				id = wg_affection.30000
-			}
-		}
-	}
+	inline_script = "events/rg_wsg_marry_gray_option_504_scripts"
 	# option = {
 	# 	name = rg_graygoo.504.a
 	# 	allow = {
@@ -1432,10 +1225,7 @@ country_event = {
 	custom_gui_option = wg_new_commu_option
 	is_triggered_only = yes
 	trigger = {
-		OR = {
-			has_global_flag = has_wsg_mod
-			has_global_flag = kdc_event_mod_active
-		}
+		RG_OR_has_wsg_mod_trigger = yes
 		fromfrom = {
 			OR = {
 				is_country_type = gray
@@ -1624,60 +1414,7 @@ country_event = {
 			rg_clear_harbitat = yes
 		}
 	}
-	option = {
-		name = marry_gray
-		trigger = {
-			check_variable = {
-				which = gray_affection_level
-				value >= 4
-			}
-			NOT = {
-				has_country_flag = married_gray
-			}
-		}
-		allow = {
-			OR = {
-				AND = {
-					has_wg_special_authority = no
-					resource_stockpile_compare = {
-						resource = sr_living_metal
-						value >= 100
-					}
-					resource_stockpile_compare = {
-						resource = rare_crystals
-						value >= 1000
-					}
-				}
-				custom_tooltip = {
-					check_variable = {
-						which = wsg_rings
-						value >= 1
-					}
-					fail_text = not_enough_engagement_rings
-				}
-			}
-		}
-		if = {
-			limit = {
-				has_wg_special_authority = yes
-			}
-			subtract_variable = {
-				which = wsg_rings
-				value = 1
-			}
-		}
-		else = {
-			add_resource = {
-				sr_living_metal = -100
-				rare_crystals = -1000
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = wg_affection.30000
-			}
-		}
-	}
+	inline_script = "events/rg_wsg_marry_gray_option_scripts"
 	option = {
 		name = graygoo.500.d
 		default_hide_option = yes

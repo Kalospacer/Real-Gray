@@ -6,10 +6,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		NOR = {
-			has_global_flag = has_wsg_mod
-			has_global_flag = kdc_event_mod_active
-		}
+		RG_NOR_has_wsg_mod_trigger = yes
 		fromfrom = {
 			OR = {
 				is_country_type = gray
@@ -22,10 +19,7 @@ country_event = {
 		if = {
 			limit = {
 				#500.initial
-				NOR = {
-					has_global_flag = has_wsg_mod
-					has_global_flag = kdc_event_mod_active
-				}
+				RG_NOR_has_wsg_mod_trigger = yes
 				fromfrom = {
 					OR = {
 						is_country_type = gray
@@ -36,7 +30,7 @@ country_event = {
 				NOR = {
 					has_country_flag = gray_constship_active
 					has_country_flag = gray_official_active
-					has_country_flag = gray_governor_active #旧版flag
+					has_country_flag = gray_governor_active					#旧版flag
 					has_country_flag = gray_warship_active
 					has_country_flag = gray_army_active
 					has_country_flag = gray_reforming
@@ -50,10 +44,7 @@ country_event = {
 		else_if = {
 			#501.governor
 			limit = {
-				NOR = {
-					has_global_flag = has_wsg_mod
-					has_global_flag = kdc_event_mod_active
-				}
+				RG_NOR_has_wsg_mod_trigger = yes
 				fromfrom = {
 					OR = {
 						is_country_type = gray
@@ -63,7 +54,7 @@ country_event = {
 				is_same_value = event_target:gray_owner
 				OR = {
 					has_country_flag = gray_official_active
-					has_country_flag = gray_governor_active #旧版flag
+					has_country_flag = gray_governor_active					#旧版flag
 				}
 				NOR = {
 					has_country_flag = gray_reforming
@@ -78,10 +69,7 @@ country_event = {
 		else_if = {
 			#502.warship
 			limit = {
-				NOR = {
-					has_global_flag = has_wsg_mod
-					has_global_flag = kdc_event_mod_active
-				}
+				RG_NOR_has_wsg_mod_trigger = yes
 				fromfrom = {
 					OR = {
 						is_country_type = gray
@@ -109,10 +97,7 @@ country_event = {
 		else_if = {
 			#503.army
 			limit = {
-				NOR = {
-					has_global_flag = has_wsg_mod
-					has_global_flag = kdc_event_mod_active
-				}
+				RG_NOR_has_wsg_mod_trigger = yes
 				fromfrom = {
 					OR = {
 						is_country_type = gray
@@ -145,10 +130,7 @@ country_event = {
 		else_if = {
 			#505.scienceship
 			limit = {
-				NOR = {
-					has_global_flag = has_wsg_mod
-					has_global_flag = kdc_event_mod_active
-				}
+				RG_NOR_has_wsg_mod_trigger = yes
 				fromfrom = {
 					OR = {
 						is_country_type = gray
@@ -176,10 +158,7 @@ country_event = {
 		else_if = {
 			#504.gale
 			limit = {
-				NOR = {
-					has_global_flag = has_wsg_mod
-					has_global_flag = kdc_event_mod_active
-				}
+				RG_NOR_has_wsg_mod_trigger = yes
 				fromfrom = {
 					OR = {
 						is_country_type = gray
@@ -223,10 +202,7 @@ country_event = {
 		}
 	}
 	trigger = {
-		NOR = {
-			has_global_flag = has_wsg_mod
-			has_global_flag = kdc_event_mod_active
-		}
+		RG_NOR_has_wsg_mod_trigger = yes
 		fromfrom = {
 			OR = {
 				is_country_type = gray
@@ -237,7 +213,7 @@ country_event = {
 		NOR = {
 			has_country_flag = gray_constship_active
 			has_country_flag = gray_official_active
-			has_country_flag = gray_governor_active #旧版flag
+			has_country_flag = gray_governor_active			#旧版flag
 			has_country_flag = gray_warship_active
 			has_country_flag = gray_army_active
 			has_country_flag = gray_reforming
@@ -251,7 +227,7 @@ country_event = {
 		trigger = {
 			NOR = {
 				has_country_flag = gray_official_active
-				has_country_flag = gray_governor_active #旧版flag
+				has_country_flag = gray_governor_active				#旧版flag
 			}
 		}
 		hidden_effect = {
@@ -370,6 +346,7 @@ country_event = {
 			}
 		}
 	}
+	inline_script = "events/rg_wsg_marry_gray_option_500_scripts"
 	option = {
 		name = graygoo.500.d
 		tag = hire_leader
@@ -398,15 +375,12 @@ country_event = {
 	event_window_type = leader_recruit
 	picture_event_data = {
 		portrait = event_target:gray_governor
-		planet_background = event_target:gray_governor_planet
+		planet_background = event_target:gray_official_planet
 		room = root
 	}
 	is_triggered_only = yes
 	trigger = {
-		NOR = {
-			has_global_flag = has_wsg_mod
-			has_global_flag = kdc_event_mod_active
-		}
+		RG_NOR_has_wsg_mod_trigger = yes
 		fromfrom = {
 			OR = {
 				is_country_type = gray
@@ -416,7 +390,7 @@ country_event = {
 		is_same_value = event_target:gray_owner
 		OR = {
 			has_country_flag = gray_official_active
-			has_country_flag = gray_governor_active #旧版flag
+			has_country_flag = gray_governor_active			#旧版flag
 		}
 		NOR = {
 			has_country_flag = gray_reforming
@@ -429,25 +403,25 @@ country_event = {
 		if = {
 			limit = {
 				any_owned_planet = {
-					exists = sector.leader
-					sector.leader = {
-						is_same_value = event_target:gray_governor
+					exists = leader
+					leader = {
+						is_same_value = event_target:gray_official
 					}
 				}
 			}
 			random_owned_planet = {
 				limit = {
-					exists = sector.leader
-					sector.leader = {
-						is_same_value = event_target:gray_governor
+					exists = leader
+					leader = {
+						is_same_value = event_target:gray_official
 					}
 				}
-				save_event_target_as = gray_governor_planet
+				save_event_target_as = gray_official_planet
 			}
 		}
 		else = {
 			capital_scope = {
-				save_event_target_as = gray_governor_planet
+				save_event_target_as = gray_official_planet
 			}
 		}
 	}
@@ -464,7 +438,8 @@ country_event = {
 		allow = {
 			hidden_trigger = {
 				exists = event_target:gray_governor
-			}			# To prevent exploit
+			}
+			# To prevent exploit
 		}
 		hidden_effect = {
 			rg_create_gray_warship = yes
@@ -558,6 +533,7 @@ country_event = {
 			}
 		}
 	}
+	inline_script = "events/rg_wsg_marry_gray_option_scripts"
 	option = {
 		name = graygoo.500.d
 		tag = hire_leader
@@ -590,10 +566,7 @@ country_event = {
 	}
 	is_triggered_only = yes
 	trigger = {
-		NOR = {
-			has_global_flag = has_wsg_mod
-			has_global_flag = kdc_event_mod_active
-		}
+		RG_NOR_has_wsg_mod_trigger = yes
 		fromfrom = {
 			OR = {
 				is_country_type = gray
@@ -925,6 +898,7 @@ country_event = {
 			}
 		}
 	}
+	inline_script = "events/rg_wsg_marry_gray_option_scripts"
 	option = {
 		name = graygoo.500.d
 		tag = hire_leader
@@ -957,10 +931,7 @@ country_event = {
 	}
 	is_triggered_only = yes
 	trigger = {
-		NOR = {
-			has_global_flag = has_wsg_mod
-			has_global_flag = kdc_event_mod_active
-		}
+		RG_NOR_has_wsg_mod_trigger = yes
 		fromfrom = {
 			OR = {
 				is_country_type = gray
@@ -1245,7 +1216,7 @@ country_event = {
 			has_country_flag = rg_habitat_enabled
 		}
 		allow = {
-			has_country_flag = rg_juggernaut_fired	# To prevent exploit
+			has_country_flag = rg_juggernaut_fired			# To prevent exploit
 		}
 		custom_tooltip = rg_need_manual_toggle
 		hidden_effect = {
@@ -1300,6 +1271,7 @@ country_event = {
 			}
 		}
 	}
+	inline_script = "events/rg_wsg_marry_gray_option_scripts"
 	option = {
 		name = graygoo.500.d
 		tag = hire_leader
@@ -1324,10 +1296,7 @@ country_event = {
 	diplomatic = yes
 	is_triggered_only = yes
 	trigger = {
-		NOR = {
-			has_global_flag = has_wsg_mod
-			has_global_flag = kdc_event_mod_active
-		}
+		RG_NOR_has_wsg_mod_trigger = yes
 		from = {
 			OR = {
 				is_country_type = gray
@@ -1340,6 +1309,7 @@ country_event = {
 	option = {
 		name = OK
 	}
+	inline_script = "events/rg_wsg_marry_gray_option_504_scripts"
 	# option = {
 	# 	name = rg_graygoo.504.a
 	# 	allow = {
@@ -1380,10 +1350,7 @@ country_event = {
 	}
 	is_triggered_only = yes
 	trigger = {
-		NOR = {
-			has_global_flag = has_wsg_mod
-			has_global_flag = kdc_event_mod_active
-		}
+		RG_NOR_has_wsg_mod_trigger = yes
 		fromfrom = {
 			OR = {
 				is_country_type = gray
@@ -1562,6 +1529,7 @@ country_event = {
 			}
 		}
 	}
+	inline_script = "events/rg_wsg_marry_gray_option_scripts"
 	#	option = { # 开启建造中继器
 	#		name = rg_event.5.e
 	#		trigger = {
@@ -1834,6 +1802,7 @@ country_event = {
 	}
 }
 
+# 私房钱榨干了
 country_event = {
 	id = rg_grayleader.6
 	title = "graygoo.500.title"
@@ -1873,6 +1842,7 @@ country_event = {
 	}
 }
 
+# 衣柜事件
 country_event = {
 	id = rg_grayleader.7
 	title = "graygoo.500.title"
@@ -1954,6 +1924,7 @@ country_event = {
 	}
 }
 
+#动态灰风-立绘选择
 country_event = {
 	id = rg_grayleader.8
 	title = "graygoo.500.title"
