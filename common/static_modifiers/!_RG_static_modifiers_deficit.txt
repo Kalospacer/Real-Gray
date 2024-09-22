@@ -1,0 +1,4 @@
+nanites_deficit = {
+	planet_jobs_produces_mult = -0.5
+	custom_tooltip = nanites_deficit_tooltip
+}
