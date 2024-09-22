@@ -15,7 +15,7 @@ decision_rg_server_shut_down = {
 	potential = {
 		exists = owner
 		owner = {
-			has_tradition = tr_virtuality_finish
+			has_tradition = tr_rg_nanotech_5
 		}
 	}
 
