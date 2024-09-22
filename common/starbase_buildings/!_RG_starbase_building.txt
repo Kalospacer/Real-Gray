@@ -1,0 +1,66 @@
+nanite_harvester = {
+    icon = "GFX_starbase_nanite_harvester"
+    construction_days = 360
+
+    potential = {
+        exists = owner
+        owner = {
+            OR = {
+                has_tradition = tr_nanotech_adopt
+                has_tradition = tr_rg_nanotech_adopt
+            }
+        }
+        is_normal_starbase = yes
+    }
+
+    possible = {
+        custom_tooltip = {
+            fail_text = "requires_starport"
+            has_starbase_size >= starbase_starport
+        }
+
+        custom_tooltip = {
+            fail_text = requires_planetoids_for_nanites
+            solar_system = {
+                any_system_planet = {
+                    can_have_mineral_deposits = yes
+                    NOT = { has_deposit = d_nanite_harvester_deposit }
+                }
+            }
+        }
+    }
+
+    resources = {
+        category = starbase_buildings
+        cost = {
+            alloys = 500
+        }
+        upkeep = {
+            energy = 4
+            mult = value:nanotech_harvester_deposit_num
+        }
+    }
+
+    on_finished = {
+        solar_system = {
+            system_event = {
+                id = cybernetics.5050
+            }
+        }
+    }
+
+    on_destroyed = {
+        solar_system = {
+            system_event = {
+                id = cybernetics.5051
+            }
+        }
+    }
+
+    custom_tooltip = nanite_harvester_tooltip
+
+    ai_weight = {
+        weight = 100 #use same weight here - ai weighting is done in starbase_types.txt
+        modifier = {}
+    }
+}
