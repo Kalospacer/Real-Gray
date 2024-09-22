@@ -4,43 +4,10 @@
 			"path": "."
 		},
 		{
-			"path": "D:/SteamLibrary/steamapps/common/Stellaris/common"
+			"path": "../../../../../../../Steam/steamapps/common/Stellaris"
 		},
 		{
-			"path": "D:/SteamLibrary/steamapps/common/Stellaris/events"
-		},
-		{
-			"path": "D:/SteamLibrary/steamapps/common/Stellaris/gfx"
-		},
-		{
-			"path": "D:/SteamLibrary/steamapps/common/Stellaris/localisation"
-		},
-		{
-			"path": "D:/SteamLibrary/steamapps/workshop/content/281990/3330088804"
-		},
-		{
-			"path": "D:/SteamLibrary/steamapps/workshop/content/281990/1747099270"
-		},
-		{
-			"path": "D:/SteamLibrary/steamapps/workshop/content/281990/2293827000"
-		},
-		{
-			"path": "../遥远故事纳米居住站"
-		},
-		{
-			"path": "../wsk"
-		},
-		{
-			"path": "D:/SteamLibrary/steamapps/workshop/content/281990/3193493385"
-		},
-		{
-			"path": "D:/SteamLibrary/steamapps/common/Stellaris/interface"
-		},
-		{
-			"path": "../gray_extend"
-		},
-		{
-			"path": "D:/SteamLibrary/steamapps/workshop/content/281990"
+			"path": "../../../../../../../Steam/steamapps/workshop/content/281990"
 		}
 	]
 }

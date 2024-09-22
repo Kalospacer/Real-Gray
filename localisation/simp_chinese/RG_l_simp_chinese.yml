@@ -50,11 +50,11 @@
  tradition_rg_nanotech_delayed: "我们是一股永不停息的洪流，吞天食地、势不可挡。一切都将融入我们，我们将形成一切。"
  tr_rg_nanotech_adopt_modifier_desc: "§Y$AVAILABLE_STARBASE_BUILDINGS$§!$sm_nanite_harvester$"
  tr_rg_nanotech_1_modifier_desc: "§Y$AVAILABLE_BUILDINGS$§!$building_rg_nanolab_1$\n§Y$AVAILABLE_BUILDINGS$§!$building_rg_nanolab_2$\n§Y$AVAILABLE_BUILDINGS$§!$building_rg_nanotech_cauldron$\n§Y$AVAILABLE_BUILDINGS$§!$building_rg_nanite_transmuter$\n"
- tr_rg_nanotech_2_modifier_desc: "—§I解锁巨型结构：§!§Y$RG_habitat_central_complex$§!\n"
+ tr_rg_nanotech_2_modifier_desc: "§I解锁巨型结构：§!§Y$RG_habitat_central_complex$§!\n"
  tr_rg_nanotech_3_modifier_desc: "§Y解锁行星决议：§!$decision_rg_nanotech_swarm_consume_world$\n§Y解锁巨像武器：§!$tech_object_gray_7$：可将星球转变为可殖民的§Y$pc_nanotech$§!"
  tr_rg_nanotech_4_modifier_desc: "§Y解锁飞升：$rg_ap_nantiematter$\n解锁舰船：§!$RG_graygoo_destroyer$\n§Y获得遗珍：§!§Y$rg_tempest_invocator$§!：允许你召唤宇宙风暴：§Y$graytempest_storm$§!"
  tr_rg_nanotech_5_modifier_desc: "§Y解锁净化方式：$purge_nanophage$§!：将非帝国主体人口同化为我们的一部分。\n所有帝国人口将获得§Y纳米特质§!：人口需要£nanites£§Y$nanites$§!维护费。\n每个类型为§Y$pc_nanotech$§!或§Y$pc_rg_grayhabitat$§!的殖民地都将瞬间创建§Y纳米化$pops_with_icon$§!以填补§Y£building£建筑§!和§Y£district£区划§!的£job£岗位需求。"
- tr_rg_nanotech_finish_modifier_desc: "§Y解锁舰船：§!$RG_graygoo_mothership$\n每§Y5§!年§Y$sm_nanite_harvester_plural$§!都会提升，可能是增加$r_nanites$矿藏的规模，或是直接产出一笔纳米机器人资源。该效果受到矿藏所依附的行星尺寸的限制。"
+ tr_rg_nanotech_finish_modifier_desc: "§Y解锁舰船：§!$RG_graygoo_mothership$\n所有境内恒星基地自动获得内置§Y$sm_nanite_harvester$§!。每§Y5§!年§Y$sm_nanite_harvester_plural$§!都会提升，可能是增加$r_nanites$矿藏的规模，或是直接产出一笔$r_nanites$资源。该效果受到矿藏所依附的行星尺寸的限制。"
 
  decision_rg_server_shut_down: "§R核心关闭§!"
  decision_rg_server_shut_down_desc: "§R将摧毁殖民地！§!\n\n这个殖民地已经失去了它的用途，关闭信号中继核心。"
@@ -80,7 +80,7 @@
  rg_tempest_invocator_desc: "尽管叫做$rg_tempest_invocator$但实际上和$NAME_Gray_Goo$没有任何关系。这件神奇的$relics$是我们的工程师完全自主研发的拥有独立知识产权的专利产品。"
  REQUIRES_lgate_or_gray: "$TRIGGER_FAIL$已发现§Y$NAME_Gray$§!或拥有科技§Y$tech_lgate_activation$§!"
 
- rg_nanite_harvester
+ rg_nanite_harvester: "$nanite_harvester$"
 
  RG_habitat_central_complex: "$pc_rg_grayhabitat$"
  RG_habitat_central_complex_plural: "$pc_rg_grayhabitat$"

@@ -30,6 +30,7 @@ tr_rg_nanotech_finish = {
 	modifier = {
 		empire_size_colonies_mult = -0.5
 		ascension_perks_add = 1
+		shipsize_mining_station_upkeep_mult = -1
 	}
 }
 

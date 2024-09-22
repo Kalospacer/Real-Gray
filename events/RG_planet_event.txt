@@ -238,3 +238,217 @@ planet_event = {
 		}
 	}
 }
+
+event = {
+	id = rg_planet.5053
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	immediate = {
+		every_system = {
+			limit = {
+				exists = owner
+				owner = {
+					has_tradition = tr_rg_nanotech_finish
+				}
+				exists = starbase
+				# starbase = {
+				# 	has_starbase_building = nanite_harvester
+				# }
+			}
+			system_event = { id = rg_planet.5054 }
+		}
+	}
+}
+
+system_event = {
+	id = rg_planet.5054
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		exists = owner
+		owner = {
+			has_tradition = tr_rg_nanotech_finish
+		}
+		# starbase = {
+		# 	has_starbase_building = nanite_harvester
+		# }
+	}
+
+	immediate = {
+		owner = {
+			save_event_target_as = nanotech_country
+		}
+		every_system_planet = {
+			limit = {
+				OR = {
+					has_deposit = d_nanite_harvester_deposit
+					has_planet_flag = nanites_doubled_1
+					has_planet_flag = nanites_doubled_2
+					has_planet_flag = nanites_doubled_3
+					has_planet_flag = nanites_doubled_4
+					has_planet_flag = nanites_doubled_5
+					has_planet_flag = nanites_doubled_6
+					has_planet_flag = nanites_doubled_7
+					has_planet_flag = nanites_doubled_8
+					has_planet_flag = nanites_doubled_9
+				}
+				has_mining_station = yes
+			}
+			if = {
+				limit = {
+					NOR = {
+						has_planet_flag = nanites_doubled_1
+						has_planet_flag = nanites_doubled_2
+						has_planet_flag = nanites_doubled_3
+						has_planet_flag = nanites_doubled_4
+						has_planet_flag = nanites_doubled_5
+						has_planet_flag = nanites_doubled_6
+						has_planet_flag = nanites_doubled_7
+						has_planet_flag = nanites_doubled_8
+						has_planet_flag = nanites_doubled_9
+					}
+				}
+				add_deposit = d_nanite_harvester_deposit
+				set_planet_flag = nanites_doubled_1
+			}
+			else_if = {
+				limit = {
+					has_planet_flag = nanites_doubled_1
+					planet_size >= 3
+				}
+				add_deposit = d_nanite_harvester_deposit
+				add_deposit = d_nanite_harvester_deposit
+				set_planet_flag = nanites_doubled_2
+				remove_planet_flag = nanites_doubled_1
+			}
+			else_if = {
+				limit = {
+					has_planet_flag = nanites_doubled_2
+					planet_size > 6
+				}
+				add_deposit = d_nanite_harvester_deposit
+				add_deposit = d_nanite_harvester_deposit
+				add_deposit = d_nanite_harvester_deposit
+				add_deposit = d_nanite_harvester_deposit
+				set_planet_flag = nanites_doubled_3
+				remove_planet_flag = nanites_doubled_2
+			}
+			else_if = {
+				limit = {
+					has_planet_flag = nanites_doubled_3
+					planet_size >= 9
+				}
+				every_deposit = {
+					limit = {
+						is_deposit_type = d_nanite_harvester_deposit
+					}
+					remove_deposit = yes
+				}
+				add_deposit = d_nanite_harvester_deposit_regular
+				set_planet_flag = nanites_doubled_4
+				remove_planet_flag = nanites_doubled_3
+			}
+			else_if = {
+				limit = {
+					has_planet_flag = nanites_doubled_4
+					planet_size >= 12
+				}
+				random_list = {
+					50 = {
+						nanotech_deposit_nanite_generation = yes
+					}
+					50 = {
+						add_deposit = d_nanite_harvester_deposit_regular
+						set_planet_flag = nanites_doubled_5
+						remove_planet_flag = nanites_doubled_4
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_planet_flag = nanites_doubled_5
+					planet_size >= 15
+				}
+				random_list = {
+					50 = {
+						nanotech_deposit_nanite_generation = yes
+					}
+					50 = {
+						add_deposit = d_nanite_harvester_deposit_regular
+						add_deposit = d_nanite_harvester_deposit_regular
+						set_planet_flag = nanites_doubled_6
+						remove_planet_flag = nanites_doubled_5
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_planet_flag = nanites_doubled_6
+					planet_size >= 18
+				}
+				random_list = {
+					50 = {
+						nanotech_deposit_nanite_generation = yes
+					}
+					50 = {
+						add_deposit = d_nanite_harvester_deposit_regular
+						add_deposit = d_nanite_harvester_deposit_regular
+						add_deposit = d_nanite_harvester_deposit_regular
+						add_deposit = d_nanite_harvester_deposit_regular
+						set_planet_flag = nanites_doubled_7
+						remove_planet_flag = nanites_doubled_6
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_planet_flag = nanites_doubled_7
+					planet_size >= 21
+				}
+				random_list = {
+					50 = {
+						nanotech_deposit_nanite_generation = yes
+					}
+					50 = {
+						every_deposit = {
+							limit = {
+								is_deposit_type = d_nanite_harvester_deposit_regular
+							}
+							remove_deposit = yes
+						}
+						add_deposit = d_nanite_harvester_deposit_large
+						set_planet_flag = nanites_doubled_8
+						remove_planet_flag = nanites_doubled_7
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_planet_flag = nanites_doubled_8
+					planet_size >= 25
+				}
+				random_list = {
+					50 = {
+						nanotech_deposit_nanite_generation = yes
+					}
+					50 = {
+						add_deposit = d_nanite_harvester_deposit_large
+						set_planet_flag = nanites_doubled_9
+						remove_planet_flag = nanites_doubled_8
+					}
+				}
+			}
+			else_if = {
+				limit = {
+					has_planet_flag = nanites_doubled_9
+				}
+				nanotech_deposit_nanite_generation = yes
+			}
+		}
+	}
+}
+

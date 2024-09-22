@@ -71,6 +71,13 @@ on_mid_game_pulse_country = {
 	}
 }
 
+# No scope, like on_game_start
+on_five_year_pulse = {
+	events = {
+		rg_planet.5053 #Nanite ascension - orbital deposit handler
+	}
+}
+
 # Triggers country_event for the attacker upon victory
 # (Before controller is switched)
 # This = country, leader attacker
