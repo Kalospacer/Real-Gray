@@ -82,11 +82,10 @@ rg_nano_ripper_1 = {
 	}
 
 	prerequisites = {
-		has_tradition = tr_rg_nanotech_2
 	}
 
 	potential = {
-		always = yes
+		has_tradition = tr_rg_nanotech_2
 	}
 
 	possible = {
@@ -318,11 +317,10 @@ rg_nano_ripper_2 = {
 	}
 
 	prerequisites = {
-		has_tradition = tr_rg_nanotech_2
 	}
 
 	potential = {
-		always = yes
+		has_tradition = tr_rg_nanotech_2
 	}
 
 
@@ -429,11 +427,10 @@ rg_nano_ripper_3 = {
 	}
 
 	prerequisites = {
-		has_tradition = tr_rg_nanotech_2
 	}
 
 	potential = {
-		always = yes
+		has_tradition = tr_rg_nanotech_2
 	}
 
 
@@ -540,11 +537,10 @@ rg_nano_ripper_4 = {
 	}
 
 	prerequisites = {
-		has_tradition = tr_rg_nanotech_2
 	}
 
 	potential = {
-		always = yes
+		has_tradition = tr_rg_nanotech_2
 	}
 
 
@@ -622,11 +618,10 @@ rg_nano_ripper_restored = {
 	}
 
 	prerequisites = {
-		has_tradition = tr_rg_nanotech_2
 	}
 
 	potential = {
-		always = yes
+		has_tradition = tr_rg_nanotech_2
 	}
 
 	country_modifier = {

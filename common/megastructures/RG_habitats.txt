@@ -31,13 +31,12 @@ RG_habitat_central_complex = {
 	}
 
 	prerequisites = {
-		has_tradition = tr_rg_nanotech_2
 	}
 
 	construction_blocks_and_blocked_by = self_type
 
 	potential = {
-		always = yes
+		has_tradition = tr_rg_nanotech_2
 		# OR = {
 		# 	has_technology = tech_habitat_1
 		# 	has_civic = civic_diadochi
