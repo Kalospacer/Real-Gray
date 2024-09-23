@@ -37,3 +37,10 @@ RG_OR_has_wsg_mod_trigger = {
 		has_global_flag = kdc_event_mod_active
 	}
 }
+
+RG_has_gray_cluster_origin_trigger = {
+	OR = {
+		has_country_flag = origin_rg_gray				#遥远约定
+		has_country_flag = origin_gray_country				#远星之歌
+	}
+}

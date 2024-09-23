@@ -2794,10 +2794,7 @@ rg_gray_country_after_init = {
 	# 初始化小灰领袖等级
 	if = {
 		limit = {
-			OR = {
-				has_country_flag = origin_rg_gray				#遥远约定
-				has_country_flag = origin_gray_country				#远星之歌
-			}
+			RG_has_gray_cluster_origin_trigger = yes
 		}
 		set_variable = {
 			which = rg_gray_level

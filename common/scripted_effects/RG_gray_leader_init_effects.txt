@@ -13,7 +13,7 @@ rg_gray_govener_init = {
 			custom_description = gray_backstory
 			background_ethic = ethic_gestalt_consciousness
 			hide_age = yes
-			skill = 10
+			skill = 1
 			set_age = 18
 			traits = {
 				0 = RG_leader_trait_governor_gray
@@ -63,6 +63,7 @@ rg_gray_govener_init = {
 					add_trait_no_notify = trait_ruler_architectural_sense_3
 					add_trait_no_notify = leader_trait_distribution_lines_2
 				}
+				rg_gray_leader_experience_jar = yes
 			}
 		}
 		last_created_leader = {
@@ -130,7 +131,7 @@ rg_gray_commander_init = {
 			background_ethic = ethic_gestalt_consciousness
 			hide_age = yes
 			gender = female
-			skill = 10
+			skill = 1
 			set_age = 18
 			traits = {
 				0 = RG_leader_trait_admiral_gray
@@ -179,6 +180,7 @@ rg_gray_commander_init = {
 				add_trait_no_notify = leader_trait_carrier_specialization
 				add_trait_no_notify = leader_trait_juryrigger_2
 				add_trait_no_notify = leader_trait_reinforcer_2
+				rg_gray_leader_experience_jar = yes
 			}
 		}
 		last_created_leader = {
@@ -471,7 +473,7 @@ rg_gray_scientist_init = {
 			background_ethic = ethic_gestalt_consciousness
 			hide_age = yes
 			gender = female
-			skill = 10
+			skill = 1
 			set_age = 18
 			traits = {
 				0 = RG_leader_trait_scientist_gray
@@ -501,6 +503,7 @@ rg_gray_scientist_init = {
 					set_leader_flag = "gray_leader"					# "gray_leader"==rg_gray_leader
 					set_leader_flag = gray_leader
 				}
+				rg_gray_leader_experience_jar = yes
 			}
 		}
 		last_created_leader = {
@@ -567,7 +570,7 @@ rg_gray_country_leader_init = {
 		custom_description = gray_backstory
 		background_ethic = ethic_gestalt_consciousness
 		hide_age = yes
-		skill = 10
+		skill = 1
 		set_age = 18
 		traits = {
 			0 = RG_leader_trait_governor_gray
@@ -603,9 +606,28 @@ rg_gray_country_leader_init = {
 				add_trait_no_notify = trait_ruler_architectural_sense_3
 				add_trait_no_notify = leader_trait_distribution_lines_2
 			}
+			rg_gray_leader_experience_jar = yes
 		}
 	}
 	last_created_leader = {
 		rg_set_gray_portrait = yes
+	}
+}
+
+rg_gray_leader_experience_jar = {
+	if = {
+		limit = {
+			NOT = {
+				RG_has_gray_cluster_origin_trigger = yes
+			}
+			has_skill <= 10
+		}
+		while = {
+			count = 20 #安全限位-遇到20次加经验还没到10级的魔怔人紧急制动
+			limit = {
+				has_skill <= 10
+			}
+		}
+		add_experience = 5400
 	}
 }
