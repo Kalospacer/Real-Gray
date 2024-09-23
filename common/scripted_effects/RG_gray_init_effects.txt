@@ -1,3 +1,4 @@
+#Country event_target:gray_owner
 #灰风舰船刷新位置检测
 rg_global_gray_location_check = {
 	if = {
@@ -145,6 +146,49 @@ rg_global_gray_location_check = {
 	}
 }
 
+#Country event_target:gray_owner
+#存储当前领袖等级
+rg_save_gray_leader_level_effect = {
+	every_owned_leader = {
+		if = {
+			###等级检测
+			limit = {
+				has_leader_flag = rg_gray_leader
+				NOT = {
+					has_leader_flag = rg_gray_leader_temp
+				}
+			}
+			#导出等级到暂存
+			export_trigger_value_to_variable = {
+				trigger = has_skill
+				variable = rg_gray_level_temp
+			}
+			#导入变量
+			owner = {
+				set_variable = {
+					which = rg_gray_level
+					value = prev.rg_gray_level_temp
+				}
+			}
+			#清理暂存区
+			clear_variable = rg_gray_level_temp
+		}
+	}
+}
+
+#Country event_target:gray_owner
+#把所有种类的小灰领袖都送回娘家
+rg_sent_gray_back_to_home_effect = {
+	every_owned_leader = {
+		limit = {
+			has_leader_flag = rg_gray_leader
+		}
+		set_owner = event_target:rg_gray_country
+		set_leader_flag = rg_gray_leader_temp
+		# kill_leader = { show_notification = no }
+	}
+}
+
 #创造灰风总督
 rg_create_gray_governor = {
 	if = {
@@ -195,31 +239,7 @@ rg_create_gray_governor = {
 		}
 
 		#存储当前领袖等级
-		every_owned_leader = {
-			if = {
-				###等级检测
-				limit = {
-					has_leader_flag = rg_gray_leader
-					NOT = {
-						has_leader_flag = rg_gray_leader_temp
-					}
-				}
-				#导出等级到暂存
-				export_trigger_value_to_variable = {
-					trigger = has_skill
-					variable = rg_gray_level_temp
-				}
-				#导入变量
-				owner = {
-					set_variable = {
-						which = rg_gray_level
-						value = prev.rg_gray_level_temp
-					}
-				}
-				#清理暂存区
-				clear_variable = rg_gray_level_temp
-			}
-		}
+		rg_save_gray_leader_level_effect = yes
 		#把所有种类的小灰领袖都送回娘家
 		every_owned_leader = {
 			limit = {
@@ -274,28 +294,7 @@ rg_create_gray_warship = {
 		#舰船刷新位置检测
 		rg_global_gray_location_check = yes
 		# 存储当前领袖等级
-		every_owned_leader = {
-			if = {
-				###等级检测
-				limit = {
-					has_leader_flag = rg_gray_leader
-					NOT = {
-						has_leader_flag = rg_gray_leader_temp
-					}
-				}
-				export_trigger_value_to_variable = {
-					trigger = has_skill
-					variable = rg_gray_level_temp
-				}
-				owner = {
-					set_variable = {
-						which = rg_gray_level
-						value = prev.rg_gray_level_temp
-					}
-				}
-				clear_variable = rg_gray_level_temp
-			}
-		}
+		rg_save_gray_leader_level_effect = yes
 		every_owned_leader = {
 			limit = {
 				has_leader_flag = rg_gray_leader
@@ -389,28 +388,7 @@ rg_create_gray_army = {
 		optimize_memory
 		#舰船刷新位置检测
 		rg_global_gray_location_check = yes
-		every_owned_leader = {
-			if = {
-				###等级检测
-				limit = {
-					has_leader_flag = rg_gray_leader
-					NOT = {
-						has_leader_flag = rg_gray_leader_temp
-					}
-				}
-				export_trigger_value_to_variable = {
-					trigger = has_skill
-					variable = rg_gray_level_temp
-				}
-				owner = {
-					set_variable = {
-						which = rg_gray_level
-						value = prev.rg_gray_level_temp
-					}
-				}
-				clear_variable = rg_gray_level_temp
-			}
-		}
+		rg_save_gray_leader_level_effect = yes
 		every_owned_leader = {
 			limit = {
 				has_leader_flag = rg_gray_leader
@@ -505,28 +483,7 @@ rg_create_gray_const = {
 		optimize_memory
 		#舰船刷新位置检测
 		rg_global_gray_location_check = yes
-		every_owned_leader = {
-			if = {
-				###等级检测
-				limit = {
-					has_leader_flag = rg_gray_leader
-					NOT = {
-						has_leader_flag = rg_gray_leader_temp
-					}
-				}
-				export_trigger_value_to_variable = {
-					trigger = has_skill
-					variable = rg_gray_level_temp
-				}
-				owner = {
-					set_variable = {
-						which = rg_gray_level
-						value = prev.rg_gray_level_temp
-					}
-				}
-				clear_variable = rg_gray_level_temp
-			}
-		}
+		rg_save_gray_leader_level_effect = yes
 		every_owned_leader = {
 			limit = {
 				has_leader_flag = rg_gray_leader
