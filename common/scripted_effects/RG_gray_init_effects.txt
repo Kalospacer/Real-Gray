@@ -598,10 +598,7 @@ rg_juggernaut_habitat_init = {
 						if = {
 							limit = {
 								event_target:gray_owner = {
-									OR = {
-										has_country_flag = gray_official_active
-										has_country_flag = gray_governor_active										#旧版flag
-									}
+									RG_gray_official_active_trigger = yes
 								}
 							}
 							assign_leader = event_target:gray_governor

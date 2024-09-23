@@ -19,30 +19,3 @@ gray_army = {
 		always = no
 	}
 }
-
-# Gray Nanite Army
-rg_gray_army_base = {
-	damage = 10
-	health = 18
-	has_morale = no
-	morale_damage = 6
-	collateral_damage = 5
-	war_exhaustion = 4
-	prerequisites = {
-		"tech_gray_army_7"
-	}
-	time = 180
-	resources = {
-		category = armies
-		cost = {
-			alloys = 800
-		}
-		produces = {
-			energy = 1
-		}
-	}
-	has_species = no
-	icon = GFX_army_type_machine_assault
-	potential_country = {
-	}
-}
