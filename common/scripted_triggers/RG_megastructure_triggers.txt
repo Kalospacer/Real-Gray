@@ -1,0 +1,21 @@
+rg_is_pc_nano = {
+    OR = {
+        is_planet_class = pc_nanotech
+        is_planet_class = pc_gray_goo
+    }
+}
+
+rg_system_has_nano_ripper = {
+    solar_system = {
+        any_system_megastructure = {
+            OR = {
+                is_megastructure_type = rg_nano_ripper_1
+                is_megastructure_type = rg_nano_ripper_2
+                is_megastructure_type = rg_nano_ripper_3
+                is_megastructure_type = rg_nano_ripper_4
+                is_megastructure_type = rg_nano_ripper_destroyed
+                is_megastructure_type = rg_nano_ripper_restored
+            }
+        }
+    }
+}

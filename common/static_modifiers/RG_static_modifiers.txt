@@ -121,3 +121,25 @@ skill_rg_nanite_leader_background_planet_governor = {
 	planet_stability_add = 0.5
 	planet_jobs_upkeep_mult = -0.01
 }
+
+# Arc Furnace
+
+rg_nano_ripper_1_mod = {
+	station_gatherers_produces_mult = @arc_furnace_1_mod_value
+	icon = "gfx/interface/icons/planet_modifiers/pm_arc_furnace.dds"
+}
+
+rg_nano_ripper_2_mod = {
+	station_gatherers_produces_mult = @arc_furnace_2_mod_value
+	icon = "gfx/interface/icons/planet_modifiers/pm_arc_furnace.dds"
+}
+
+rg_nano_ripper_3_mod = {
+	station_gatherers_produces_mult = @arc_furnace_3_mod_value
+	icon = "gfx/interface/icons/planet_modifiers/pm_arc_furnace.dds"
+}
+
+rg_nano_ripper_4_mod = {
+	station_gatherers_produces_mult = @arc_furnace_4_mod_value
+	icon = "gfx/interface/icons/planet_modifiers/pm_arc_furnace.dds"
+}

@@ -1,4 +1,241 @@
 namespace = rg_planet
+# Furnace Lvl 1
+country_event = {
+	id = rg_planet.1000
+	hide_window = yes
+	location = FROM
+
+	is_triggered_only = yes
+
+	after = {
+		fromfromfrom = {
+			solar_system = {
+				every_system_planet = {
+					limit = {
+						NOT = { has_deposit_for = shipclass_research_station }
+						is_star = no
+						is_astral_scar = no
+						colonizable_planet = no
+					}
+					save_event_target_as = target_planet
+					remove_trade_deposits = yes
+					add_deposit = d_nanite_ripper_deposit_1
+					rg_nano_ripper_update_orbital_effect = yes
+					add_modifier = {
+						modifier = rg_nano_ripper_1_mod
+						days = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+# Furnace Lvl 2
+country_event = {
+	id = rg_planet.1005
+	hide_window = yes
+	location = FROM
+
+	is_triggered_only = yes
+
+	after = {
+		fromfromfrom = {
+			solar_system = {
+				every_system_planet = {
+					limit = {
+						NOT = { has_deposit_for = shipclass_research_station }
+						is_star = no
+						is_astral_scar = no
+						colonizable_planet = no
+					}
+					save_event_target_as = target_planet
+					remove_trade_deposits = yes
+					add_deposit = d_nanite_ripper_deposit_2
+					rg_nano_ripper_update_orbital_effect = yes
+					remove_modifier = rg_nano_ripper_1_mod
+					add_modifier = {
+						modifier = rg_nano_ripper_2_mod
+						days = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+# Furnace Lvl 3
+country_event = {
+	id = rg_planet.1010
+	hide_window = yes
+	location = FROM
+
+	is_triggered_only = yes
+
+	after = {
+		fromfromfrom = {
+			solar_system = {
+				every_system_planet = {
+					limit = {
+						NOT = { has_deposit_for = shipclass_research_station }
+						is_star = no
+						is_astral_scar = no
+						colonizable_planet = no
+					}
+					save_event_target_as = target_planet
+					remove_trade_deposits = yes
+					add_deposit = d_nanite_ripper_deposit_3
+					rg_nano_ripper_update_orbital_effect = yes
+					remove_modifier = rg_nano_ripper_2_mod
+					add_modifier = {
+						modifier = rg_nano_ripper_3_mod
+						days = -1
+					}
+				}
+			}
+		}
+	}
+}
+# Furnace Lvl 4
+country_event = {
+	id = rg_planet.1015
+	hide_window = yes
+	location = FROM
+
+	is_triggered_only = yes
+
+	after = {
+		fromfromfrom = {
+			solar_system = {
+				every_system_planet = {
+					limit = {
+						NOT = { has_deposit_for = shipclass_research_station }
+						is_star = no
+						is_astral_scar = no
+						colonizable_planet = no
+					}
+					save_event_target_as = target_planet
+					remove_trade_deposits = yes
+					add_deposit = d_nanite_ripper_deposit_4
+					rg_nano_ripper_update_orbital_effect = yes
+					remove_modifier = rg_nano_ripper_3_mod
+					add_modifier = {
+						modifier = rg_nano_ripper_4_mod
+						days = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+# Furnace Restored
+country_event = {
+	id = rg_planet.1016
+	hide_window = yes
+	location = FROM
+
+	is_triggered_only = yes
+
+	after = {
+		fromfromfrom = {
+			solar_system = {
+				every_system_planet = {
+					limit = {
+						NOT = { has_deposit_for = shipclass_research_station }
+						is_star = no
+						is_astral_scar = no
+						colonizable_planet = no
+					}
+					save_event_target_as = target_planet
+					remove_trade_deposits = yes
+					add_deposit = d_nanite_ripper_deposit_1
+					rg_nano_ripper_update_orbital_effect = yes
+					add_deposit = d_nanite_ripper_deposit_2
+					rg_nano_ripper_update_orbital_effect = yes
+					add_deposit = d_nanite_ripper_deposit_3
+					rg_nano_ripper_update_orbital_effect = yes
+					add_deposit = d_nanite_ripper_deposit_4
+					rg_nano_ripper_update_orbital_effect = yes
+					remove_modifier = rg_nano_ripper_3_mod
+					add_modifier = {
+						modifier = rg_nano_ripper_4_mod
+						days = -1
+					}
+				}
+			}
+		}
+	}
+}
+
+ship_event = {
+	id = rg_planet.1017
+	hide_window = yes
+
+	is_triggered_only = yes
+
+	trigger = {
+		from = {
+			OR = {
+				has_modifier = rg_nano_ripper_1_mod
+				has_modifier = rg_nano_ripper_2_mod
+				has_modifier = rg_nano_ripper_3_mod
+				has_modifier = rg_nano_ripper_4_mod
+			}
+		}
+	}
+
+	immediate = {
+		from = {
+			if = {
+				limit = {
+					NOT = { has_deposit_for = shipclass_research_station }
+					is_star = no
+					is_astral_scar = no
+					colonizable_planet = no
+				}
+				remove_trade_deposits = yes
+				switch = {
+					trigger = has_modifier
+					rg_nano_ripper_1_mod = {
+						add_deposit = d_nanite_ripper_deposit_1
+						rg_nano_ripper_update_orbital_effect = yes
+					}
+					rg_nano_ripper_2_mod = {
+						add_deposit = d_nanite_ripper_deposit_1
+						rg_nano_ripper_update_orbital_effect = yes
+						add_deposit = d_nanite_ripper_deposit_2
+						rg_nano_ripper_update_orbital_effect = yes
+					}
+					rg_nano_ripper_3_mod = {
+						add_deposit = d_nanite_ripper_deposit_1
+						rg_nano_ripper_update_orbital_effect = yes
+						add_deposit = d_nanite_ripper_deposit_2
+						rg_nano_ripper_update_orbital_effect = yes
+						add_deposit = d_nanite_ripper_deposit_3
+						rg_nano_ripper_update_orbital_effect = yes
+					}
+					rg_nano_ripper_4_mod = {
+						add_deposit = d_nanite_ripper_deposit_1
+						rg_nano_ripper_update_orbital_effect = yes
+						add_deposit = d_nanite_ripper_deposit_2
+						rg_nano_ripper_update_orbital_effect = yes
+						add_deposit = d_nanite_ripper_deposit_3
+						rg_nano_ripper_update_orbital_effect = yes
+						add_deposit = d_nanite_ripper_deposit_4
+						rg_nano_ripper_update_orbital_effect = yes
+					}
+				}
+			}
+			else = {
+				remove_modifier = rg_nano_ripper_1_mod
+				remove_modifier = rg_nano_ripper_2_mod
+				remove_modifier = rg_nano_ripper_3_mod
+				remove_modifier = rg_nano_ripper_4_mod
+			}
+		}
+	}
+}
 ##### Virtual Ascension Events
 ### Create the Unemployed
 ### Country scope gatekeeper

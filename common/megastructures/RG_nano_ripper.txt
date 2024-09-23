@@ -1,0 +1,659 @@
+# orbital Arc Furnace First Stage
+rg_nano_ripper_1 = {
+	entity = "arc_crucible_stage_1_entity"
+	construction_entity = "arc_crucible_stage_1_entity"
+	construction_scale = 1.02 #to avoid z-fighting of consrucion entity with the base entity
+	portrait = "GFX_megastructure_arc_furnace_background"
+	place_entity_on_planet_plane = yes
+	entity_offset = { x = 0 y = 0 }
+	rotate_to_center = no
+	scale_offset = yes
+	#show_in_outliner = no
+	use_planet_resource = yes
+	scales_with_planet = yes
+	build_time = 360 # 1 year
+	resources = {
+		category = megastructures
+		cost = {
+			nanites = 500
+			unity = 500
+		}
+
+		upkeep = {
+			energy = 20
+		}
+	}
+
+	construction_blocks_and_blocked_by = self_type
+	build_system_tooltip = arc_furnace_tooltip
+
+	dismantle_cost = {
+		category = megastructures
+		cost = {
+			energy = 500
+		}
+	}
+
+	dismantle_time = 360
+
+	dismantle_potential = {
+		always = yes
+	}
+
+	dismantle_possible = {
+		can_dismantle_megastructure = {
+			TECH = tech_orbital_arc_furnace
+		}
+	}
+
+	on_dismantle_complete = {
+		every_system_planet = {
+			limit = {
+				has_modifier = rg_nano_ripper_1_mod
+			}
+			rg_dismantle_nano_ripper_effect = yes
+		}
+		random_system_planet = {
+			limit = {
+				has_planet_flag = rg_has_nano_ripper
+			}
+			set_planet_entity = { entity = pc_gray_goo }
+			remove_planet_flag = has_megastructure
+			remove_planet_flag = rg_has_nano_ripper
+		}
+		from = {
+			add_resource = {
+				nanites = 500
+				mult = modifier:megastructure_dismantle_refund_mult
+			}
+			# if = {
+			# 	limit = {
+			# 		check_variable = {
+			# 			which = arc_furnace_counter
+			# 			value >= 1
+			# 		}
+			# 	}
+			# 	change_variable = {
+			# 		which = arc_furnace_counter
+			# 		value = -1
+			# 	}
+			# }
+		}
+	}
+
+	prerequisites = {
+		has_tradition = tr_rg_nanotech_2
+	}
+
+	potential = {
+		always = yes
+	}
+
+	possible = {
+		hidden_trigger = {
+			exists = starbase
+		}
+		custom_tooltip = {
+			fail_text = "requires_inside_border"
+			is_inside_border = from
+		}
+		custom_tooltip = {
+			fail_text = "requires_surveyed_system"
+			NOT = {
+				any_system_planet = {
+					is_surveyed = {
+						who = prev.from
+						status = no
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_dyson_sphere"
+			system_has_dyson_sphere = no
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_dyson_sphere_construction"
+			if = {
+				limit = {
+					system_has_dyson_sphere = no
+				}
+				NOT = {
+					solar_system = {
+						has_star_flag = dyson_sphere_construction
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = "requires_no_arc_furnace"
+			system_has_arc_furnace = no
+		}
+		custom_tooltip = {
+			fail_text = "rg_requires_no_nano_ripper"
+			rg_system_has_nano_ripper = no
+		}
+		# custom_tooltip = {
+		# 	fail_text = "requires_less_than_x_arc_furnaces"
+		# 	from = {
+		# 		check_variable = {
+		# 			which = arc_furnace_counter
+		# 			value <= value:arc_furnace_limit
+		# 		}
+		# 	}
+		# }
+	}
+
+	placement_rules = {
+		planet_possible = {
+			custom_tooltip = {
+				fail_text = "requires_no_anomaly"
+				NOT = { has_anomaly = yes }
+			}
+			rg_is_pc_nano = yes
+			custom_tooltip = {
+				fail_text = "requires_no_existing_megastructure"
+				NOR = {
+					has_planet_flag = megastructure
+					has_planet_flag = has_megastructure
+				}
+			}
+			if = {
+				limit = {
+					from = { is_ai = yes }
+				}
+				solar_system = {
+					count_system_planet = {
+						count >= 8
+						limit = {
+							NOT = { has_deposit_for = shipclass_research_station }
+							is_star = no
+							is_astral_scar = no
+							colonizable_planet = no
+						}
+					}
+				}
+			}
+		}
+	}
+
+	country_modifier = {
+		custom_tooltip = rg_nano_ripper_1_mod_tooltip
+	}
+
+	# root = system
+	# from = country
+	ai_weight = {
+		factor = 5
+
+		modifier = {
+			factor = 0.1
+			starbase = { NOT = { has_starbase_size >= starbase_starfortress } }
+		}
+
+		modifier = {
+			factor = 0.1
+			any_neighbor_system = {
+				exists = owner
+				NOT = {
+					owner = { is_same_value = from }
+				}
+			}
+		}
+	}
+
+	on_build_start = {
+		set_star_flag = arc_furnace_construction
+	}
+	on_build_cancel = {
+		remove_star_flag = arc_furnace_construction
+	}
+	on_build_complete = {
+		remove_star_flag = arc_furnace_construction
+		fromfrom.planet = {
+			set_planet_flag = has_megastructure
+			set_planet_flag = rg_has_nano_ripper
+			if = {
+				limit = { has_orbital_station = yes }
+				orbital_station = {
+					dismantle = yes
+				}
+			}
+			set_planet_entity = { entity = invisible_turret_entity }
+		}
+		from = {
+			country_event = {
+				id = rg_planet.1000
+			}
+			# country_event = {
+			# 	id = machine_age.3405 #2nd Arc Furnace built
+			# }
+		}
+	}
+}
+
+# orbital Arc Furnace Second Stage
+rg_nano_ripper_2 = {
+	entity = "arc_crucible_stage_2_entity"
+	construction_entity = "arc_crucible_stage_2_entity"
+	construction_scale = 1.02 #to avoid z-fighting of consrucion entity with the base entity
+	portrait = "GFX_megastructure_arc_furnace_background"
+	entity_offset = { x = 0 y = 0 }
+	rotate_to_center = no
+	scale_offset = yes
+	#show_in_outliner = no
+	use_planet_resource = yes
+	scales_with_planet = yes
+	build_time = 1080 # 3 years
+	resources = {
+		category = megastructures
+		cost = {
+			nanites = 1000
+			unity = 1000
+		}
+
+		upkeep = {
+			energy = 40
+		}
+	}
+
+	construction_blocks_and_blocked_by = none
+
+	dismantle_cost = {
+		category = megastructures
+		cost = {
+			energy = 1000
+		}
+	}
+
+	dismantle_time = 360
+
+	dismantle_potential = {
+		always = yes
+	}
+
+	dismantle_possible = {
+		can_dismantle_megastructure = {
+			TECH = tech_orbital_arc_furnace
+		}
+	}
+
+	on_dismantle_complete = {
+		every_system_planet = {
+			limit = {
+				has_modifier = rg_nano_ripper_2_mod
+			}
+			rg_dismantle_nano_ripper_effect = yes
+		}
+		random_system_planet = {
+			limit = {
+				has_planet_flag = rg_has_nano_ripper
+			}
+			set_planet_entity = { entity = pc_gray_goo }
+			remove_planet_flag = has_megastructure
+			remove_planet_flag = rg_has_nano_ripper
+		}
+		from = {
+			add_resource = {
+				nanites = 1000
+				mult = modifier:megastructure_dismantle_refund_mult
+			}
+			# if = {
+			# 	limit = {
+			# 		check_variable = {
+			# 			which = arc_furnace_counter
+			# 			value >= 1
+			# 		}
+			# 	}
+			# 	change_variable = {
+			# 		which = arc_furnace_counter
+			# 		value = -1
+			# 	}
+			# }
+		}
+	}
+
+	upgrade_from = {
+		rg_nano_ripper_1
+	}
+
+	prerequisites = {
+		has_tradition = tr_rg_nanotech_2
+	}
+
+	potential = {
+		always = yes
+	}
+
+
+	country_modifier = {
+		custom_tooltip = rg_nano_ripper_2_mod_tooltip
+	}
+
+	on_build_start = {
+		set_star_flag = arc_furnace_construction
+	}
+	on_build_cancel = {
+		remove_star_flag = arc_furnace_construction
+	}
+	on_build_complete = {
+		remove_star_flag = arc_furnace_construction
+		from = { country_event = { id = rg_planet.1005 } }
+	}
+}
+
+# Orbital arc furnace Third Stage
+rg_nano_ripper_3 = {
+	entity = "arc_crucible_stage_3_entity"
+	construction_entity = "arc_crucible_stage_3_entity"
+	construction_scale = 1.02 #to avoid z-fighting of consrucion entity with the base entity
+	portrait = "GFX_megastructure_arc_furnace_background"
+	entity_offset = { x = 0 y = 0 }
+	rotate_to_center = no
+	scale_offset = yes
+	place_entity_on_planet_plane = yes
+	#show_in_outliner = no
+	use_planet_resource = yes
+	scales_with_planet = yes
+	build_time = 1080 # 3 years
+	resources = {
+		category = megastructures
+		cost = {
+			nanites = 1500
+			unity = 2000
+		}
+
+		upkeep = {
+			energy = 80
+		}
+	}
+
+	construction_blocks_and_blocked_by = none
+
+	dismantle_cost = {
+		category = megastructures
+		cost = {
+			energy = 1500
+		}
+	}
+
+	dismantle_time = 360
+
+	dismantle_potential = {
+		always = yes
+	}
+
+	dismantle_possible = {
+		can_dismantle_megastructure = {
+			TECH = tech_orbital_arc_furnace
+		}
+	}
+
+	on_dismantle_complete = {
+		every_system_planet = {
+			limit = {
+				has_modifier = rg_nano_ripper_3_mod
+			}
+			rg_dismantle_nano_ripper_effect = yes
+		}
+		random_system_planet = {
+			limit = {
+				has_planet_flag = rg_has_nano_ripper
+			}
+			set_planet_entity = { entity = pc_gray_goo }
+			remove_planet_flag = has_megastructure
+			remove_planet_flag = rg_has_nano_ripper
+		}
+		from = {
+			add_resource = {
+				nanites = 1500
+				mult = modifier:megastructure_dismantle_refund_mult
+			}
+			# if = {
+			# 	limit = {
+			# 		check_variable = {
+			# 			which = arc_furnace_counter
+			# 			value >= 1
+			# 		}
+			# 	}
+			# 	change_variable = {
+			# 		which = arc_furnace_counter
+			# 		value = -1
+			# 	}
+			# }
+		}
+	}
+
+	upgrade_from = {
+		rg_nano_ripper_2
+	}
+
+	prerequisites = {
+		has_tradition = tr_rg_nanotech_2
+	}
+
+	potential = {
+		always = yes
+	}
+
+
+	country_modifier = {
+		custom_tooltip = rg_nano_ripper_3_mod_tooltip
+	}
+
+	on_build_start = {
+		set_star_flag = arc_furnace_construction
+	}
+	on_build_cancel = {
+		remove_star_flag = arc_furnace_construction
+	}
+	on_build_complete = {
+		remove_star_flag = arc_furnace_construction
+		from = { country_event = { id = rg_planet.1010 } }
+	}
+}
+
+# Orbital arc furnace Final Stage
+rg_nano_ripper_4 = {
+	entity = "arc_crucible_stage_4_entity"
+	construction_entity = "arc_crucible_stage_4_entity"
+	construction_scale = 1.02 #to avoid z-fighting of consrucion entity with the base entity
+	portrait = "GFX_megastructure_arc_furnace_background"
+	entity_offset = { x = 0 y = 0 }
+	rotate_to_center = no
+	scale_offset = yes
+	place_entity_on_planet_plane = yes
+	show_in_outliner = no
+	use_planet_resource = yes
+	scales_with_planet = yes
+	build_time = 1080 # 3 years
+	resources = {
+		category = megastructures
+		cost = {
+			nanites = 2000
+			unity = 4000
+		}
+
+		upkeep = {
+			energy = 100
+		}
+	}
+
+	construction_blocks_and_blocked_by = none
+
+	dismantle_cost = {
+		category = megastructures
+		cost = {
+			energy = 2000
+		}
+	}
+
+	dismantle_time = 360
+
+	dismantle_potential = {
+		always = yes
+	}
+
+	dismantle_possible = {
+		can_dismantle_megastructure = {
+			TECH = tech_orbital_arc_furnace
+		}
+	}
+
+	on_dismantle_complete = {
+		every_system_planet = {
+			limit = {
+				has_modifier = rg_nano_ripper_4_mod
+			}
+			rg_dismantle_nano_ripper_effect = yes
+		}
+		random_system_planet = {
+			limit = {
+				has_planet_flag = rg_has_nano_ripper
+			}
+			set_planet_entity = { entity = pc_gray_goo }
+			remove_planet_flag = has_megastructure
+			remove_planet_flag = rg_has_nano_ripper
+		}
+		from = {
+			add_resource = {
+				nanites = 2000
+				mult = modifier:megastructure_dismantle_refund_mult
+			}
+			# if = {
+			# 	limit = {
+			# 		check_variable = {
+			# 			which = arc_furnace_counter
+			# 			value >= 1
+			# 		}
+			# 	}
+			# 	change_variable = {
+			# 		which = arc_furnace_counter
+			# 		value = -1
+			# 	}
+			# }
+		}
+	}
+
+	upgrade_from = {
+		rg_nano_ripper_3
+	}
+
+	prerequisites = {
+		has_tradition = tr_rg_nanotech_2
+	}
+
+	potential = {
+		always = yes
+	}
+
+
+	country_modifier = {
+		custom_tooltip = rg_nano_ripper_4_mod_tooltip
+	}
+
+	on_build_start = {
+		set_star_flag = arc_furnace_construction
+	}
+	on_build_cancel = {
+		remove_star_flag = arc_furnace_construction
+	}
+	on_build_complete = {
+		remove_star_flag = arc_furnace_construction
+		from = { country_event = { id = rg_planet.1015 } }
+		# if = {
+		# 	limit = {
+		# 		any_system_megastructure = {
+		# 			is_megastructure_type = dyson_swarm_3
+		# 		}
+		# 	}
+		# 	from = {
+		# 		set_country_flag = burning_brightly_achievement
+		# 	}
+		# }
+	}
+}
+# Orbital Arc Furnace Destroyed
+rg_nano_ripper_destroyed = {
+	entity = "arc_crucible_destroyed_entity"
+	portrait = "GFX_megastructure_construction_background"
+	entity_offset = { x = 0 y = 0 }
+	rotate_to_center = no
+	scale_offset = yes
+	place_entity_on_planet_plane = yes
+	show_in_outliner = no
+	scales_with_planet = yes
+
+	potential = {
+		always = no
+	}
+}
+
+# Orbital arc furnace Restored Stage
+rg_nano_ripper_restored = {
+	entity = "arc_crucible_stage_4_entity"
+	construction_entity = "arc_crucible_stage_4_entity"
+	construction_scale = 1.02 #to avoid z-fighting of consrucion entity with the base entity
+	portrait = "GFX_megastructure_arc_furnace_background"
+	entity_offset = { x = 0 y = 0 }
+	rotate_to_center = no
+	scale_offset = yes
+	place_entity_on_planet_plane = yes
+	show_in_outliner = no
+	use_planet_resource = yes
+	scales_with_planet = yes
+	build_time = 720 # 2 years
+	resources = {
+		category = megastructures
+		cost = {
+			nanites = 3000
+			unity = 2000
+		}
+
+		upkeep = {
+			energy = 100
+		}
+	}
+
+	construction_blocks_and_blocked_by = none
+
+	upgrade_from = {
+		rg_nano_ripper_destroyed
+	}
+
+	prerequisites = {
+		has_tradition = tr_rg_nanotech_2
+	}
+
+	potential = {
+		always = yes
+	}
+
+	country_modifier = {
+		custom_tooltip = rg_nano_ripper_4_mod_tooltip
+	}
+
+	on_build_start = {
+		set_star_flag = arc_furnace_construction
+	}
+	on_build_cancel = {
+		remove_star_flag = arc_furnace_construction
+	}
+	on_build_complete = {
+		remove_star_flag = arc_furnace_construction
+		from = { country_event = { id = rg_planet.1016 } }
+		fromfrom.planet = {
+			set_planet_entity = { entity = invisible_turret_entity }
+		}
+		# if = {
+		# 	limit = {
+		# 		any_system_megastructure = {
+		# 			is_megastructure_type = dyson_swarm_3
+		# 		}
+		# 	}
+		# 	from = {
+		# 		set_country_flag = burning_brightly_achievement
+		# 	}
+		# }
+	}
+}

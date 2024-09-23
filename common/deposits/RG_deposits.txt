@@ -1,0 +1,79 @@
+
+# Nanite Harvester Deposits
+d_nanite_ripper_deposit_1 = {
+    resources = {
+        category = orbital_mining_deposits
+        produces = {
+            nanites = 0.1
+        }
+    }
+    station = shipclass_mining_station
+    is_for_colonizable = no
+
+    potential = {
+        can_have_mineral_deposits = yes
+    }
+
+    drop_weight = {
+        weight = 0
+    }
+}
+
+d_nanite_ripper_deposit_2 = {
+    resources = {
+        category = orbital_mining_deposits
+        produces = {
+            nanites = 1.6
+        }
+    }
+    station = shipclass_mining_station
+    is_for_colonizable = no
+
+    potential = {
+        can_have_mineral_deposits = yes
+    }
+
+    drop_weight = {
+        weight = 0
+    }
+}
+
+# Nanite Harvester Deposits
+d_nanite_ripper_deposit_3 = {
+    resources = {
+        category = orbital_mining_deposits
+        produces = {
+            nanites = 5.8
+        }
+    }
+    station = shipclass_mining_station
+    is_for_colonizable = no
+
+    potential = {
+        can_have_mineral_deposits = yes
+    }
+
+    drop_weight = {
+        weight = 0
+    }
+}
+
+
+d_nanite_ripper_deposit_4 = {
+    resources = {
+        category = orbital_mining_deposits
+        produces = {
+            nanites = 25.6
+        }
+    }
+    station = shipclass_mining_station
+    is_for_colonizable = no
+
+    potential = {
+        can_have_mineral_deposits = yes
+    }
+
+    drop_weight = {
+        weight = 0
+    }
+}

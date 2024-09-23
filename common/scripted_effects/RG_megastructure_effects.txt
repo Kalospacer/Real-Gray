@@ -66,3 +66,163 @@ spawn_rg_oribital_ring_effect = {
 		remove_ship_design = last_created_design
 	}
 }
+
+rg_nano_ripper_update_orbital_effect = {
+	# Find the orbital and habitat complex and save them as event targets
+	if = {
+		limit = {
+			any_fleet_in_orbit = {
+				OR = {
+					is_ship_size = major_orbital_resource
+					is_ship_size = minor_orbital_resource
+				}
+			}
+		}
+
+		random_fleet_in_orbit = {
+			limit = {
+				OR = {
+					is_ship_size = major_orbital_resource
+					is_ship_size = minor_orbital_resource
+				}
+			}
+			save_event_target_as = target_orbital
+		}
+
+		# solar_system = {
+		# 	random_system_planet = {
+		# 		limit = {
+		# 			has_planet_flag = habitat
+		# 		}
+		# 		save_event_target_as = target_habitat
+		# 	}
+		# }
+
+		last_added_deposit = {
+			event_target:target_orbital = {
+				set_fleet_flag = mining_orbital
+			}
+			#switch = {
+			#	trigger = is_deposit_type
+			#	# Minerals
+			#	d_minerals_1 = {
+			#		event_target:target_orbital = {
+			#			set_fleet_flag = mining_orbital
+			#		}
+			#	}
+			#	Alloys
+			#	d_alloys_1 = {
+			#		event_target:target_orbital = {
+			#			set_fleet_flag = mining_orbital
+			#		}
+			#		event_target:target_habitat = {
+			#			add_deposit = d_hab_alloy_1
+			#			last_added_deposit = {
+			#				set_deposit_flag = planet@event_target:target_planet
+			#			}
+			#		}
+			#	}
+			#}
+		}
+	}
+}
+
+rg_dismantle_nano_ripper_effect = {
+	# Find the orbital and habitat complex and save them as event targets
+	if = {
+		limit = {
+			any_fleet_in_orbit = {
+				OR = {
+					is_ship_size = major_orbital_resource
+					is_ship_size = minor_orbital_resource
+				}
+			}
+		}
+
+		random_fleet_in_orbit = {
+			limit = {
+				OR = {
+					is_ship_size = major_orbital_resource
+					is_ship_size = minor_orbital_resource
+				}
+			}
+			save_event_target_as = target_orbital
+		}
+
+		# solar_system = {
+		# 	random_system_planet = {
+		# 		limit = {
+		# 			has_planet_flag = habitat
+		# 		}
+		# 		save_event_target_as = target_habitat
+		# 	}
+		# }
+	}
+
+	switch = {
+		trigger = has_modifier
+		rg_nano_ripper_1_mod = {
+			remove_deposit = d_nanite_ripper_deposit_1
+			remove_modifier = rg_nano_ripper_1_mod
+		}
+		rg_nano_ripper_2_mod = {
+			remove_deposit = d_nanite_ripper_deposit_1
+			remove_deposit = d_nanite_ripper_deposit_2
+			remove_modifier = rg_nano_ripper_2_mod
+		}
+		rg_nano_ripper_3_mod = {
+			remove_deposit = d_nanite_ripper_deposit_1
+			remove_deposit = d_nanite_ripper_deposit_2
+			remove_deposit = d_nanite_ripper_deposit_3
+			remove_modifier = rg_nano_ripper_3_mod
+			# if = {
+			# 	limit = {
+			# 		exists = event_target:target_orbital
+			# 	}
+			# 	event_target:target_habitat = {
+			# 		random_deposit = {
+			# 			limit = {
+			# 				is_deposit_type = d_hab_alloy_1
+			# 				has_deposit_flag = planet@event_target:target_planet
+			# 			}
+			# 			remove_deposit = yes
+			# 		}
+			# 	}
+			# }
+		}
+		rg_nano_ripper_4_mod = {
+			remove_deposit = d_nanite_ripper_deposit_1
+			remove_deposit = d_nanite_ripper_deposit_2
+			remove_deposit = d_nanite_ripper_deposit_3
+			remove_deposit = d_nanite_ripper_deposit_4
+			remove_modifier = rg_nano_ripper_4_mod
+			# if = {
+			# 	limit = {
+			# 		exists = event_target:target_orbital
+			# 	}
+			# 	event_target:target_habitat = {
+			# 		while = {
+			# 			count = 2
+			# 			random_deposit = {
+			# 				limit = {
+			# 					is_deposit_type = d_hab_alloy_1
+			# 					has_deposit_flag = planet@event_target:target_planet
+			# 				}
+			# 				remove_deposit = yes
+			# 			}
+			# 		}
+			# 	}
+			# }
+		}
+	}
+
+	if = {
+		limit = {
+			has_orbital_mining_deposit = no
+			exists = event_target:target_orbital
+		}
+		event_target:target_orbital = {
+			remove_fleet_flag = mining_orbital
+		}
+	}
+}

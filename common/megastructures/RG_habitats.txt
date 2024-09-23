@@ -20,7 +20,7 @@ RG_habitat_central_complex = {
 	hide_name = yes
 	show_in_outliner = no
 	entity_offset = { x = 7 y = -7 }
-	build_time = 360
+	build_time = @central_orbital_build_time
 
 	resources = {
 		category = megastructures_habitat
@@ -30,10 +30,14 @@ RG_habitat_central_complex = {
 		}
 	}
 
+	prerequisites = {
+		has_tradition = tr_rg_nanotech_2
+	}
+
 	construction_blocks_and_blocked_by = self_type
 
 	potential = {
-		has_tradition = tr_rg_nanotech_2
+		always = yes
 		# OR = {
 		# 	has_technology = tech_habitat_1
 		# 	has_civic = civic_diadochi
