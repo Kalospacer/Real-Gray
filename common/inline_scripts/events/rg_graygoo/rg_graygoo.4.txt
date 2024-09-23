@@ -1,0 +1,152 @@
+immediate = {
+	set_country_flag = gray_diplomacy_engaged
+}
+after = {
+	hidden_effect = {
+		remove_country_flag = gray_diplomacy_engaged
+	}
+}
+option = {
+	# 购买灰风母舰
+	name = rg_event.4.a
+	trigger = {
+		NOT = {
+			has_country_flag = gray_reforming
+		}
+	}
+	allow = {
+		NOR = {
+			has_country_flag = rg_gray_level_1
+		}
+		resource_stockpile_compare = {
+			resource = energy
+			value >= 40000
+		}
+		resource_stockpile_compare = {
+			resource = alloys
+			value >= 40000
+		}
+	}
+	if = {
+		limit = {
+			has_country_flag = gray_begging
+		}
+		remove_country_flag = gray_begging
+	}
+	else = {
+		add_resource = {
+			energy = -40000
+			alloys = -40000
+		}
+	}
+	hidden_effect = {
+		rg_create_gray_warship_1 = yes
+	}
+}
+option = {
+	# 购买工程船
+	name = rg_event.4.b
+	trigger = {
+		NOT = {
+			has_country_flag = gray_reforming
+		}
+	}
+	allow = {
+		resource_stockpile_compare = {
+			resource = energy
+			value >= 2000
+		}
+		resource_stockpile_compare = {
+			resource = alloys
+			value >= 2000
+		}
+	}
+	add_resource = {
+		energy = -2000
+		alloys = -2000
+	}
+	hidden_effect = {
+		rg_create_gray_constship_1 = yes
+	}
+}
+option = {
+	# 购买殖民船
+	name = rg_event.4.g
+	trigger = {
+		NOT = {
+			has_country_flag = gray_reforming
+		}
+	}
+	allow = {
+		resource_stockpile_compare = {
+			resource = food
+			value >= 2000
+		}
+		resource_stockpile_compare = {
+			resource = energy
+			value >= 2000
+		}
+	}
+	add_resource = {
+		food = -2000
+		energy = -2000
+	}
+	hidden_effect = {
+		rg_create_gray_colony_1 = yes
+	}
+}
+option = {
+	# 购买巨像
+	name = rg_event.4.h
+	trigger = {
+		NOT = {
+			has_country_flag = gray_reforming
+		}
+	}
+	allow = {
+		resource_stockpile_compare = {
+			resource = energy
+			value >= 8000
+		}
+		resource_stockpile_compare = {
+			resource = alloys
+			value >= 8000
+		}
+	}
+	add_resource = {
+		energy = -8000
+		alloys = -8000
+	}
+	hidden_effect = {
+		rg_create_gray_planetkiller_testship_1 = yes
+	}
+}
+option = {
+	# 没钱了，救救
+	name = rg_event.4.c
+	trigger = {
+		NOT = {
+			has_country_flag = gray_reforming
+		}
+	}
+	hidden_effect = {
+		if = {
+			limit = {
+				has_country_flag = gray_alreadybegged
+			}
+			country_event = {
+				id = rg_grayleader.6
+			}
+		}
+		else = {
+			country_event = {
+				id = rg_grayleader.5
+			}
+		}
+	}
+}
+option = {
+	name = graygoo.500.d
+	tag = hire_leader
+	default_hide_option = yes
+}

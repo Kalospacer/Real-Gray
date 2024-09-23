@@ -1,0 +1,212 @@
+trigger = {
+	fromfrom = {
+		OR = {
+			is_country_type = gray
+			is_same_value = ROOT
+		}
+	}
+	is_same_value = event_target:gray_owner
+	RG_gray_scientist_active_trigger = yes
+	NOR = {
+		has_country_flag = gray_reforming
+		has_country_flag = gray_diplomacy_engaged
+	}
+	exists = event_target:global_gray_constship
+	any_owned_fleet = {
+		is_same_value = event_target:global_gray_constship
+	}
+	event_target:global_gray_constship = {
+		num_ships > 0
+	}
+}
+immediate = {
+	set_country_flag = gray_diplomacy_engaged
+}
+after = {
+	hidden_effect = {
+		remove_country_flag = gray_diplomacy_engaged
+	}
+}
+option = {
+	# Governor
+	name = graygoo.500.a
+	response_text = graygoo.505.a.response
+	allow = {
+		hidden_trigger = {
+			# To prevent exploit
+			event_target:global_gray_constship = {
+				num_ships > 0
+			}
+		}
+		custom_tooltip = {
+			fail_text = graygoo.500.allow.a
+			event_target:global_gray_constship = {
+				is_in_combat = no
+			}
+		}
+		custom_tooltip = {
+			fail_text = graygoo.500.allow.b
+			event_target:global_gray_constship = {
+				NOT = {
+					has_hp_percentage < 0.97
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = gray_become_ruler
+			NOT = {
+				ruler = {
+					has_leader_flag = "gray_leader"
+				}
+			}
+		}
+	}
+	hidden_effect = {
+		rg_create_gray_governor = yes
+		country_event = {
+			id = rg_grayleader_dialog.5051
+		}
+	}
+}
+option = {
+	# Warship
+	name = graygoo.500.b
+	response_text = graygoo.505.b.response
+	allow = {
+		hidden_trigger = {
+			# To prevent exploit
+			event_target:global_gray_constship = {
+				num_ships > 0
+			}
+		}
+		custom_tooltip = {
+			fail_text = graygoo.500.allow.a
+			event_target:global_gray_constship = {
+				is_in_combat = no
+			}
+		}
+		custom_tooltip = {
+			fail_text = graygoo.500.allow.b
+			event_target:global_gray_constship = {
+				NOT = {
+					has_hp_percentage < 0.97
+				}
+			}
+		}
+	}
+	hidden_effect = {
+		rg_create_gray_warship = yes
+		country_event = {
+			id = rg_grayleader_dialog.5052
+		}
+	}
+}
+option = {
+	# Army
+	name = graygoo.500.c
+	response_text = graygoo.505.c.response
+	allow = {
+		hidden_trigger = {
+			# To prevent exploit
+			event_target:global_gray_constship = {
+				num_ships > 0
+			}
+		}
+		custom_tooltip = {
+			fail_text = graygoo.500.allow.a
+			event_target:global_gray_constship = {
+				is_in_combat = no
+			}
+		}
+		custom_tooltip = {
+			fail_text = graygoo.500.allow.b
+			event_target:global_gray_constship = {
+				NOT = {
+					has_hp_percentage < 0.97
+				}
+			}
+		}
+	}
+	hidden_effect = {
+		rg_create_gray_army = yes
+		country_event = {
+			id = rg_grayleader_dialog.5053
+		}
+	}
+}
+option = {
+	# 空间站
+	name = RG_graygoo.500.f
+	response_text = RG_graygoo.502.f.response
+	trigger = {
+		NOT = {
+			RG_gray_harbitat_active_trigger = yes
+		}
+	}
+	allow = {
+	}
+	custom_tooltip = rg_need_manual_toggle
+	hidden_effect = {
+		if = {
+			limit = {
+				RG_gray_harbitat_active_trigger = yes
+			}
+			rg_clear_harbitat = yes
+		}
+		else = {
+			rg_juggernaut_habitat_init = yes
+		}
+		country_event = {
+			id = rg_grayleader_dialog.5026
+		}
+	}
+}
+option = {
+	# 空间站
+	name = RG_graygoo.500.g
+	response_text = RG_graygoo.502.g.response
+	trigger = {
+		RG_gray_harbitat_active_trigger = yes
+	}
+	allow = {
+	}
+	custom_tooltip = rg_need_manual_toggle
+	hidden_effect = {
+		country_event = {
+			id = rg_grayleader_dialog.5028
+		}
+	}
+}
+inline_script = "events/rg_wsg_marry_gray_option_scripts"
+#	option = { # 开启建造中继器
+#		name = rg_event.5.e
+#		trigger = {
+#			has_country_flag = rg_can_const_hyper_relay
+#		}
+#
+#		hidden_effect = {
+#			remove_country_flag = rg_can_const_hyper_relay
+#		}
+#
+#	}
+#
+#	option = { # 关闭建造中继器
+#		name = rg_event.5.f
+#		trigger = {
+#			NOT = {
+#				has_country_flag = rg_can_const_hyper_relay
+#			}
+#		}
+#
+#		hidden_effect = {
+#			hidden_effect = {
+#				set_country_flag = rg_can_const_hyper_relay
+#			}
+#		}
+#
+#	}
+option = {
+	name = graygoo.500.d
+	tag = hire_leader
+	default_hide_option = yes
+}

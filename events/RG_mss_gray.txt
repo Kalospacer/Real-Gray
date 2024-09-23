@@ -1,0 +1,84 @@
+namespace = rg_mss_gray
+country_event = {
+    id = rg_mss_gray.10
+    title = mss_gray.10.t
+    desc = mss_gray.10.d
+    trigger = {
+        exists = event_target:gray_owner
+        is_same_value = event_target:gray_owner
+    }
+    diplomatic = yes
+    is_triggered_only = yes
+    # fire_only_once = yes
+    immediate = {
+        event_target:gray_country = {
+            create_leader = {
+                class = official
+                species = event_target:gray_owner
+                effect = {
+                    change_leader_portrait = ms_ldr_gray_default
+                    save_event_target_as = mss_temp_gray
+                    set_leader_flag = ms_temp_gray
+                }
+            }
+        }
+        ms_set_gray_portrait = { P = ms_ldr_gray_default }
+    }
+    picture = GFX_evt_gray_goo_ships
+    picture_event_data = {
+        portrait = event_target:mss_temp_gray
+        room = specialist_bulwark_room
+        planet_background = pc_gray_goo
+    }
+    show_sound = event_faceoff_in_space
+    option = {
+        name = mss_gray.portrait.random
+        is_dialog_only = yes response_text = mss_gray.portrait.response.random
+        ms_set_gray_portrait = { P = ms_ldr_gray_random }
+    }
+    option = {
+        name = mss_gray.portrait.random.wingless
+        is_dialog_only = yes response_text = mss_gray.portrait.response.random
+        ms_set_gray_portrait = { P = ms_ldr_gray_random_wingless }
+    }
+    option = {
+        name = mss_gray.portrait.default
+        is_dialog_only = yes response_text = mss_gray.portrait.response.default
+        ms_set_gray_portrait = { P = ms_ldr_gray_default }
+    }
+    option = {
+        name = mss_gray.portrait.default.wingless
+        is_dialog_only = yes response_text = mss_gray.portrait.response.default
+        ms_set_gray_portrait = { P = ms_ldr_gray_default_wingless }
+    }
+    option = {
+        name = mss_gray.portrait.classic
+        is_dialog_only = yes response_text = mss_gray.portrait.response.classic
+        ms_set_gray_portrait = { P = ms_ldr_gray_classic }
+    }
+    option = {
+        name = mss_gray.portrait.classic.wingless
+        is_dialog_only = yes response_text = mss_gray.portrait.response.classic
+        ms_set_gray_portrait = { P = ms_ldr_gray_classic_wingless }
+    }
+    option = {
+        name = mss_gray.10.yes
+        custom_tooltip = mss_gray.10.yes.tt
+        hidden_effect = {
+            set_country_flag = mss_enable_gray_maid
+            country_event = { id = mss_gray.20 }
+        }
+    }
+    option = {
+        name = mss_gray.10.no
+        custom_tooltip = mss_gray.10.no.tt
+    }
+    after = {
+        custom_tooltip = MS_LABEL_SPECIES
+        hidden_effect = {
+            event_target:mss_temp_gray = {
+                kill_leader = { show_notification = no }
+            }
+        }
+    }
+}

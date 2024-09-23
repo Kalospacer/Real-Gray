@@ -1,0 +1,36 @@
+trigger = {
+	from = {
+		OR = {
+			is_country_type = gray
+			is_same_value = ROOT
+		}
+	}
+	is_same_value = event_target:gray_owner
+	has_country_flag = gray_reforming
+}
+option = {
+	name = OK
+}
+inline_script = "events/rg_wsg_marry_gray_option_504_scripts"
+# option = {
+# 	name = rg_graygoo.504.a
+# 	allow = {
+# 		has_country_flag = gray_reforming
+# 		resource_stockpile_compare = {
+# 			resource = nanites
+# 			value >= 1000
+# 		}
+# 		resource_stockpile_compare = {
+# 			resource = alloys
+# 			value >= 50000
+# 		}
+# 	}
+# 	add_resource = {
+# 		nanites = -1000
+# 		alloys = -50000
+# 	}
+# 	remove_modifier = "gray_scattered"
+# 	country_event = {
+# 		id = graygoo.512
+# 	}
+# }

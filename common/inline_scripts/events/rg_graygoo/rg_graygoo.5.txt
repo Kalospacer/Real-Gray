@@ -1,0 +1,32 @@
+immediate = {
+	set_country_flag = gray_diplomacy_engaged
+}
+after = {
+	hidden_effect = {
+		remove_country_flag = gray_diplomacy_engaged
+	}
+}
+option = {
+	# 没钱了，救救
+	name = rg_event.5.a
+	hidden_effect = {
+		set_country_flag = gray_begging
+		set_timed_country_flag = {
+			flag = gray_alreadybegged
+			days = 3600
+		}
+		tooltip = {
+			add_resource = {
+				energy = 400
+				alloys = 200
+				consumer_goods = 200
+				mult = owner.rg_gray_level
+			}
+		}
+	}
+}
+option = {
+	name = graygoo.500.d
+	tag = hire_leader
+	default_hide_option = yes
+}

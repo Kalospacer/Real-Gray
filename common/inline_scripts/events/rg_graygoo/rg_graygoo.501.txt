@@ -1,0 +1,159 @@
+trigger = {
+	fromfrom = {
+		OR = {
+			is_country_type = gray
+			is_same_value = ROOT
+		}
+	}
+	is_same_value = event_target:gray_owner
+	OR = {
+		has_country_flag = gray_official_active
+		has_country_flag = gray_governor_active			#旧版flag
+	}
+	NOR = {
+		has_country_flag = gray_reforming
+		has_country_flag = gray_diplomacy_engaged
+	}
+	exists = event_target:gray_governor
+}
+immediate = {
+	set_country_flag = gray_diplomacy_engaged
+	if = {
+		limit = {
+			any_owned_planet = {
+				exists = leader
+				leader = {
+					is_same_value = event_target:gray_official
+				}
+			}
+		}
+		random_owned_planet = {
+			limit = {
+				exists = leader
+				leader = {
+					is_same_value = event_target:gray_official
+				}
+			}
+			save_event_target_as = gray_official_planet
+		}
+	}
+	else = {
+		capital_scope = {
+			save_event_target_as = gray_official_planet
+		}
+	}
+}
+after = {
+	hidden_effect = {
+		remove_country_flag = gray_diplomacy_engaged
+		reset_gray_cloth = yes
+	}
+}
+option = {
+	# Warship
+	name = graygoo.500.b
+	response_text = graygoo.501.b.response
+	allow = {
+		hidden_trigger = {
+			exists = event_target:gray_governor
+		}
+		# To prevent exploit
+	}
+	hidden_effect = {
+		rg_create_gray_warship = yes
+		country_event = {
+			id = rg_grayleader_dialog.5011
+		}
+	}
+}
+option = {
+	# Army
+	name = graygoo.500.c
+	response_text = graygoo.501.c.response
+	allow = {
+		hidden_trigger = {
+			exists = event_target:gray_governor
+		}
+	}
+	hidden_effect = {
+		rg_create_gray_army = yes
+		country_event = {
+			id = rg_grayleader_dialog.5012
+		}
+	}
+}
+option = {
+	# const
+	name = rg_const
+	response_text = rg_const.501.response
+	allow = {
+		hidden_trigger = {
+			exists = event_target:gray_governor
+		}
+	}
+	hidden_effect = {
+		rg_create_gray_const = yes
+		country_event = {
+			id = rg_grayleader_dialog.5013
+		}
+	}
+}
+option = {
+	# 空间站
+	name = RG_graygoo.500.f
+	response_text = RG_graygoo.502.f.response
+	trigger = {
+		NOT = {
+			RG_gray_harbitat_active_trigger = yes
+		}
+	}
+	allow = {
+	}
+	custom_tooltip = rg_need_manual_toggle
+	hidden_effect = {
+		rg_juggernaut_habitat_init = yes
+		country_event = {
+			id = rg_grayleader_dialog.5026
+		}
+	}
+}
+option = {
+	# 空间站
+	name = RG_graygoo.500.g
+	response_text = RG_graygoo.502.g.response
+	trigger = {
+		RG_gray_harbitat_active_trigger = yes
+	}
+	allow = {
+	}
+	custom_tooltip = rg_need_manual_toggle
+	hidden_effect = {
+		country_event = {
+			id = rg_grayleader_dialog.5028
+		}
+	}
+}
+option = {
+	# help
+	name = rg_help
+	hidden_effect = {
+		country_event = {
+			id = rg_grayleader.4
+		}
+	}
+}
+option = {
+	# 衣柜
+	name = rg_wardrobe
+	hidden_effect = {
+		country_event = {
+			id = rg_grayleader.7
+		}
+	}
+}
+inline_script = "events/rg_wsg_marry_gray_option_scripts"
+option = {
+	name = graygoo.500.d
+	tag = hire_leader
+	default_hide_option = yes
+}

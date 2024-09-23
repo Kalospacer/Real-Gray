@@ -1,0 +1,297 @@
+trigger = {
+	fromfrom = {
+		OR = {
+			is_country_type = gray
+			is_same_value = ROOT
+		}
+	}
+	RG_gray_army_active_trigger = yes
+	NOR = {
+		has_country_flag = gray_reforming
+		has_country_flag = gray_diplomacy_engaged
+	}
+	is_same_value = event_target:gray_owner
+	any_owned_army = {
+		army_type = gray_army
+		OR = {
+			exists = planet
+			AND = {
+				exists = fleet
+				fleet = {
+					num_ships > 0
+				}
+			}
+		}
+	}
+}
+immediate = {
+	set_country_flag = gray_diplomacy_engaged
+}
+after = {
+	hidden_effect = {
+		remove_country_flag = gray_diplomacy_engaged
+		reset_gray_cloth = yes
+	}
+}
+option = {
+	# Governor
+	name = graygoo.500.a
+	response_text = graygoo.503.a.response
+	allow = {
+		hidden_trigger = {
+			# To prevent exploit
+			any_owned_army = {
+				army_type = gray_army
+				OR = {
+					exists = planet
+					AND = {
+						exists = fleet
+						fleet = {
+							num_ships > 0
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = graygoo.500.allow.a
+			OR = {
+				any_owned_army = {
+					army_type = gray_army
+					if = {
+						limit = {
+							exists = planet
+						}
+						planet = {
+							has_ground_combat = no
+						}
+					}
+				}
+				any_owned_army = {
+					army_type = gray_army
+					if = {
+						limit = {
+							exists = fleet
+						}
+						fleet = {
+							is_in_combat = no
+						}
+					}
+				}
+			}
+		}
+	}
+	hidden_effect = {
+		rg_create_gray_governor = yes
+		country_event = {
+			id = rg_grayleader_dialog.5031
+		}
+	}
+}
+option = {
+	# Warship
+	name = graygoo.500.b
+	response_text = graygoo.503.b.response
+	allow = {
+		hidden_trigger = {
+			# To prevent exploit
+			any_owned_army = {
+				army_type = gray_army
+				OR = {
+					exists = planet
+					AND = {
+						exists = fleet
+						fleet = {
+							num_ships > 0
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = graygoo.500.allow.a
+			OR = {
+				any_owned_army = {
+					army_type = gray_army
+					if = {
+						limit = {
+							exists = planet
+						}
+						planet = {
+							has_ground_combat = no
+						}
+					}
+				}
+				any_owned_army = {
+					army_type = gray_army
+					if = {
+						limit = {
+							exists = fleet
+						}
+						fleet = {
+							is_in_combat = no
+						}
+					}
+				}
+			}
+		}
+	}
+	hidden_effect = {
+		rg_create_gray_warship = yes
+		country_event = {
+			id = rg_grayleader_dialog.5032
+		}
+	}
+}
+option = {
+	# const
+	name = rg_const
+	response_text = rg_const.503.response
+	allow = {
+		hidden_trigger = {
+			# To prevent exploit
+			any_owned_army = {
+				army_type = gray_army
+				OR = {
+					exists = planet
+					AND = {
+						exists = fleet
+						fleet = {
+							num_ships > 0
+						}
+					}
+				}
+			}
+		}
+		custom_tooltip = {
+			fail_text = graygoo.500.allow.a
+			OR = {
+				any_owned_army = {
+					army_type = gray_army
+					if = {
+						limit = {
+							exists = planet
+						}
+						planet = {
+							has_ground_combat = no
+						}
+					}
+				}
+				any_owned_army = {
+					army_type = gray_army
+					if = {
+						limit = {
+							exists = fleet
+						}
+						fleet = {
+							is_in_combat = no
+						}
+					}
+				}
+			}
+		}
+	}
+	hidden_effect = {
+		rg_create_gray_const = yes
+		country_event = {
+			id = rg_grayleader_dialog.5033
+		}
+	}
+}
+option = {
+	# 空间站
+	name = RG_graygoo.500.f
+	response_text = RG_graygoo.502.f.response
+	trigger = {
+		NOT = {
+			RG_gray_harbitat_active_trigger = yes
+		}
+	}
+	allow = {
+	}
+	custom_tooltip = rg_need_manual_toggle
+	hidden_effect = {
+		if = {
+			limit = {
+				RG_gray_harbitat_active_trigger = yes
+			}
+			rg_clear_harbitat = yes
+		}
+		else = {
+			rg_juggernaut_habitat_init = yes
+		}
+		country_event = {
+			id = rg_grayleader_dialog.5026
+		}
+	}
+}
+option = {
+	# 空间站
+	name = RG_graygoo.500.g
+	response_text = RG_graygoo.502.g.response
+	trigger = {
+		has_country_flag = rg_juggernaut_fired
+		RG_gray_harbitat_active_trigger = yes
+	}
+	allow = {
+		has_country_flag = rg_juggernaut_fired			# To prevent exploit
+	}
+	custom_tooltip = rg_need_manual_toggle
+	hidden_effect = {
+		country_event = {
+			id = rg_grayleader_dialog.5028
+		}
+	}
+}
+option = {
+	# 开启隐形
+	name = rg_event.4.e
+	response_text = rg_cloak.a.response
+	trigger = {
+		any_owned_fleet = {
+			AND = {
+				is_ship_size = RG_armed_transport_ship
+				is_cloaked = no
+			}
+		}
+	}
+	hidden_effect = {
+		every_owned_fleet = {
+			limit = {
+				any_owned_ship = {
+					is_ship_size = RG_armed_transport_ship
+				}
+			}
+			set_cloaking_active = yes
+		}
+	}
+}
+option = {
+	# 关闭隐形
+	name = rg_event.4.f
+	response_text = rg_cloak_off.a.response
+	trigger = {
+		any_owned_fleet = {
+			AND = {
+				is_ship_size = RG_armed_transport_ship
+				is_cloaked = yes
+			}
+		}
+	}
+	hidden_effect = {
+		every_owned_fleet = {
+			limit = {
+				any_owned_ship = {
+					is_ship_size = RG_armed_transport_ship
+				}
+			}
+			set_cloaking_active = no
+		}
+	}
+}
+inline_script = "events/rg_wsg_marry_gray_option_scripts"
+option = {
+	name = graygoo.500.d
+	tag = hire_leader
+	default_hide_option = yes
+}

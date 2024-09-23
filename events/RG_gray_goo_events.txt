@@ -1,0 +1,575 @@
+namespace = rg_grayleader
+# Check list (Initial)
+# 快速返回首页的按钮。
+country_event = {
+	id = rg_grayleader.1
+	hide_window = yes
+	is_triggered_only = yes
+	trigger = {
+		fromfrom = {
+			OR = {
+				is_country_type = gray
+				is_same_value = ROOT
+			}
+		}
+		is_same_value = event_target:gray_owner
+	}
+	immediate = {
+		if = {
+			limit = {
+				#500.initial
+				fromfrom = {
+					OR = {
+						is_country_type = gray
+						is_same_value = ROOT
+					}
+				}
+				is_same_value = event_target:gray_owner
+				NOR = {
+					RG_gray_scientist_active_trigger = yes
+					has_country_flag = gray_official_active
+					has_country_flag = gray_governor_active					#旧版flag
+					has_country_flag = gray_warship_active
+					RG_gray_army_active_trigger = yes
+					has_country_flag = gray_reforming
+					has_country_flag = gray_diplomacy_engaged
+				}
+			}
+			country_event = {
+				id = rg_grayleader.500
+			}
+		}
+		else_if = {
+			#501.governor
+			limit = {
+				fromfrom = {
+					OR = {
+						is_country_type = gray
+						is_same_value = ROOT
+					}
+				}
+				is_same_value = event_target:gray_owner
+				OR = {
+					has_country_flag = gray_official_active
+					has_country_flag = gray_governor_active					#旧版flag
+				}
+				NOR = {
+					has_country_flag = gray_reforming
+					has_country_flag = gray_diplomacy_engaged
+				}
+				exists = event_target:gray_governor
+			}
+			country_event = {
+				id = rg_grayleader.501
+			}
+		}
+		else_if = {
+			#502.warship
+			limit = {
+				fromfrom = {
+					OR = {
+						is_country_type = gray
+						is_same_value = ROOT
+					}
+				}
+				is_same_value = event_target:gray_owner
+				has_country_flag = gray_warship_active
+				NOR = {
+					has_country_flag = gray_reforming
+					has_country_flag = gray_diplomacy_engaged
+				}
+				exists = event_target:gray_warship
+				any_owned_fleet = {
+					is_same_value = event_target:gray_warship
+				}
+				event_target:gray_warship = {
+					num_ships > 0
+				}
+			}
+			country_event = {
+				id = rg_grayleader.502
+			}
+		}
+		else_if = {
+			#503.army
+			limit = {
+				fromfrom = {
+					OR = {
+						is_country_type = gray
+						is_same_value = ROOT
+					}
+				}
+				RG_gray_army_active_trigger = yes
+				NOR = {
+					has_country_flag = gray_reforming
+					has_country_flag = gray_diplomacy_engaged
+				}
+				is_same_value = event_target:gray_owner
+				any_owned_army = {
+					army_type = gray_army
+					OR = {
+						exists = planet
+						AND = {
+							exists = fleet
+							fleet = {
+								num_ships > 0
+							}
+						}
+					}
+				}
+			}
+			country_event = {
+				id = rg_grayleader.503
+			}
+		}
+		else_if = {
+			#505.scienceship
+			limit = {
+				fromfrom = {
+					OR = {
+						is_country_type = gray
+						is_same_value = ROOT
+					}
+				}
+				is_same_value = event_target:gray_owner
+				RG_gray_scientist_active_trigger = yes
+				NOR = {
+					has_country_flag = gray_reforming
+					has_country_flag = gray_diplomacy_engaged
+				}
+				exists = event_target:global_gray_constship
+				any_owned_fleet = {
+					is_same_value = event_target:global_gray_constship
+				}
+				event_target:global_gray_constship = {
+					num_ships > 0
+				}
+			}
+			country_event = {
+				id = rg_grayleader.505
+			}
+		}
+		else_if = {
+			#504.gale
+			limit = {
+				fromfrom = {
+					OR = {
+						is_country_type = gray
+						is_same_value = ROOT
+					}
+				}
+				is_same_value = event_target:gray_owner
+				has_country_flag = gray_reforming
+			}
+			country_event = {
+				id = graygoo.504
+			}
+		}
+	}
+}
+
+# Main Menu (Initial)
+country_event = {
+	id = rg_grayleader.500
+	title = "graygoo.500.title"
+	desc = "graygoo.500.a.desc"
+	desc = "graygoo.500.b.desc"
+	desc = "graygoo.500.c.desc"
+	desc = "graygoo.500.d.desc"
+	diplomatic = yes
+	event_window_type = leader_recruit
+	picture_event_data = {
+		portrait = event_target:rg_gray_country_leader
+		planet_background = root.capital_scope
+		room = "ethic_spaceship_room"
+	}
+	is_triggered_only = yes
+	inline_script = {
+		script = events/rg_graygoo/rg_graygoo.500
+	}
+	option = {
+		name = graygoo.500.prepage
+		tag = dismiss_leader
+		hidden_effect = {
+			country_event = {
+				id = rg_grayleader.1
+			}
+		}
+	}
+}
+
+# Main Menu (Governor)
+country_event = {
+	id = rg_grayleader.501
+	title = "graygoo.500.title"
+	desc = "graygoo.501.a.desc"
+	desc = "graygoo.501.b.desc"
+	desc = "graygoo.501.c.desc"
+	desc = "graygoo.501.d.desc"
+	diplomatic = yes
+	event_window_type = leader_recruit
+	picture_event_data = {
+		portrait = event_target:gray_governor
+		planet_background = event_target:gray_official_planet
+		room = root
+	}
+	is_triggered_only = yes
+	inline_script = {
+		script = events/rg_graygoo/rg_graygoo.501
+	}
+	option = {
+		name = graygoo.500.prepage
+		tag = dismiss_leader
+		hidden_effect = {
+			country_event = {
+				id = rg_grayleader.1
+			}
+		}
+	}
+}
+
+# Main Menu (Warship)
+country_event = {
+	id = rg_grayleader.502
+	title = "graygoo.500.title"
+	desc = "graygoo.502.a.desc"
+	desc = "graygoo.502.b.desc"
+	desc = "graygoo.502.c.desc"
+	desc = "graygoo.502.d.desc"
+	diplomatic = yes
+	event_window_type = leader_recruit
+	picture_event_data = {
+		portrait = event_target:gray_leader_admiral
+		room = "ethic_spaceship_room"
+	}
+	is_triggered_only = yes
+	inline_script = {
+		script = events/rg_graygoo/rg_graygoo.502
+	}
+	option = {
+		name = graygoo.500.prepage
+		tag = dismiss_leader
+		hidden_effect = {
+			country_event = {
+				id = rg_grayleader.1
+			}
+		}
+	}
+}
+
+# Main Menu (Army)
+country_event = {
+	id = rg_grayleader.503
+	title = "graygoo.500.title"
+	desc = "graygoo.503.a.desc"
+	desc = "graygoo.503.b.desc"
+	desc = "graygoo.503.c.desc"
+	desc = "graygoo.503.d.desc"
+	diplomatic = yes
+	event_window_type = leader_recruit
+	picture_event_data = {
+		portrait = event_target:gray_leader_general
+		room = "ethic_spaceship_room"
+	}
+	is_triggered_only = yes
+	inline_script = {
+		script = events/rg_graygoo/rg_graygoo.503
+	}
+	option = {
+		name = graygoo.500.prepage
+		tag = dismiss_leader
+		hidden_effect = {
+			country_event = {
+				id = rg_grayleader.1
+			}
+		}
+	}
+}
+
+# Main Menu (Gray Reforming)
+country_event = {
+	id = rg_grayleader.504
+	title = "graygoo.500.title"
+	desc = "graygoo.504.desc"
+	diplomatic = yes
+	is_triggered_only = yes
+	inline_script = {
+		script = events/rg_graygoo/rg_graygoo.504
+	}
+}
+
+# Main Menu (const)
+country_event = {
+	id = rg_grayleader.505
+	title = "graygoo.500.title"
+	desc = "graygoo.505.a.desc"
+	desc = "graygoo.505.b.desc"
+	desc = "graygoo.505.c.desc"
+	desc = "graygoo.505.d.desc"
+	diplomatic = yes
+	event_window_type = leader_recruit
+	picture_event_data = {
+		portrait = event_target:gray_leader_scientist
+		room = "ethic_spaceship_room"
+	}
+	is_triggered_only = yes
+	inline_script = {
+		script = events/rg_graygoo/rg_graygoo.505
+	}
+	option = {
+		name = graygoo.500.prepage
+		tag = dismiss_leader
+		hidden_effect = {
+			country_event = {
+				id = rg_grayleader.1
+			}
+		}
+	}
+}
+
+# help Menu (Initial)
+country_event = {
+	id = rg_grayleader.4
+	title = "graygoo.500.title"
+	desc = "rg_event.4.a.desc"
+	event_window_type = leader_recruit
+	picture_event_data = {
+		portrait = event_target:gray_governor
+		room = "ethic_spaceship_room"
+	}
+	is_triggered_only = yes
+	inline_script = {
+		script = events/rg_graygoo/rg_graygoo.4
+	}
+	option = {
+		name = graygoo.500.prepage
+		tag = dismiss_leader
+		hidden_effect = {
+			country_event = {
+				id = rg_grayleader.1
+			}
+		}
+	}
+}
+
+country_event = {
+	id = rg_grayleader.5
+	title = "graygoo.500.title"
+	desc = "rg_event.5.a.desc"
+	desc = "rg_event.5.b.desc"
+	desc = "rg_event.5.c.desc"
+	event_window_type = leader_recruit
+	picture_event_data = {
+		portrait = event_target:gray_governor
+		room = "ethic_spaceship_room"
+	}
+	is_triggered_only = yes
+	inline_script = {
+		script = events/rg_graygoo/rg_graygoo.5
+	}
+	option = {
+		name = graygoo.500.prepage
+		tag = dismiss_leader
+		hidden_effect = {
+			country_event = {
+				id = rg_grayleader.1
+			}
+		}
+	}
+}
+
+# 私房钱榨干了
+country_event = {
+	id = rg_grayleader.6
+	title = "graygoo.500.title"
+	desc = "rg_event.6.a.desc"
+	desc = "rg_event.6.b.desc"
+	event_window_type = leader_recruit
+	picture_event_data = {
+		portrait = event_target:gray_governor
+		room = "ethic_spaceship_room"
+	}
+	is_triggered_only = yes
+	inline_script = {
+		script = events/rg_graygoo/rg_graygoo.6
+	}
+	option = {
+		name = graygoo.500.prepage
+		tag = dismiss_leader
+		hidden_effect = {
+			country_event = {
+				id = rg_grayleader.1
+			}
+		}
+	}
+}
+
+# 衣柜事件
+country_event = {
+	id = rg_grayleader.7
+	title = "graygoo.500.title"
+	desc = "rg_event.7.a.desc"
+	event_window_type = leader_recruit
+	picture_event_data = {
+		portrait = event_target:rg_gray_country_leader
+		planet_background = root.capital_scope
+	}
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = gray_diplomacy_engaged
+	}
+	after = {
+		hidden_effect = {
+			remove_country_flag = gray_diplomacy_engaged
+		}
+	}
+	option = {
+		# 美味女仆
+		name = rg_event.7.a
+		trigger = {
+			has_global_flag = ms_species_enabled
+		}
+		hidden_effect = {
+			rg_global_clear_portrait_select = yes
+			set_global_flag = rg_ms_gray_portrait_set
+			event_target:gray_owner = {
+				set_country_flag = mss_enable_gray_maid
+			}
+			country_event = {
+				id = rg_mss_gray.10
+			}
+		}
+	}
+	option = {
+		# 动态灰风
+		name = rg_event.7.b
+		trigger = {
+			has_global_flag = has_grayextend_mod
+		}
+		hidden_effect = {
+			rg_global_clear_portrait_select = yes
+			set_global_flag = rg_ge_gray_portrait_set
+			country_event = {
+				id = rg_grayleader.8
+			}
+		}
+	}
+	option = {
+		# 舰r
+		name = rg_event.7.d
+		trigger = {
+			OR = {
+				has_global_flag = has_wsg_mod
+				has_global_flag = kdc_event_mod_active
+			}
+		}
+		hidden_effect = {
+			rg_global_clear_portrait_select = yes
+			set_global_flag = rg_wg_gray_portrait_set
+		}
+	}
+	option = {
+		# 默认
+		name = rg_event.7.z
+	}
+	option = {
+		name = graygoo.500.d
+		tag = hire_leader
+		default_hide_option = yes
+	}
+	option = {
+		name = graygoo.500.prepage
+		tag = dismiss_leader
+		hidden_effect = {
+			country_event = {
+				id = rg_grayleader.1
+			}
+		}
+	}
+}
+
+#动态灰风-立绘选择
+country_event = {
+	id = rg_grayleader.8
+	title = "graygoo.500.title"
+	desc = "rg_event.8.a.desc"
+	event_window_type = leader_recruit
+	picture_event_data = {
+		portrait = event_target:rg_gray_country_leader
+		planet_background = root.capital_scope
+	}
+	is_triggered_only = yes
+	immediate = {
+		set_country_flag = gray_diplomacy_engaged
+	}
+	after = {
+		hidden_effect = {
+			remove_country_flag = gray_diplomacy_engaged
+		}
+	}
+	option = {
+		# 执政官
+		name = rg_event.8.a
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = rg_ge_gray_portrait_manual_toggle
+					}
+				}
+				set_global_flag = rg_ge_gray_portrait_manual_toggle
+			}
+			rg_ge_clear_portrait_select = yes
+			event_target:gray_owner = {
+				set_country_flag = rg_ge_governor_portrait_set
+			}
+		}
+	}
+	option = {
+		# 科学家
+		name = rg_event.8.b
+		hidden_effect = {
+			if = {
+				limit = {
+					NOT = {
+						has_global_flag = rg_ge_gray_portrait_manual_toggle
+					}
+				}
+				set_global_flag = rg_ge_gray_portrait_manual_toggle
+			}
+			rg_ge_clear_portrait_select = yes
+			event_target:gray_owner = {
+				set_country_flag = rg_ge_scientist_portrait_set
+			}
+		}
+	}
+	option = {
+		# 关闭手动选择
+		name = rg_event.8.c
+		trigger = {
+			has_global_flag = rg_ge_gray_portrait_manual_toggle
+		}
+		hidden_effect = {
+			rg_ge_clear_portrait_select = yes
+			remove_global_flag = rg_ge_gray_portrait_manual_toggle
+		}
+	}
+	option = {
+		# 算了
+		name = rg_event.8.d
+	}
+	option = {
+		name = graygoo.500.d
+		tag = hire_leader
+		default_hide_option = yes
+	}
+	option = {
+		name = graygoo.500.prepage
+		tag = dismiss_leader
+		hidden_effect = {
+			country_event = {
+				id = rg_grayleader.1
+			}
+		}
+	}
+}

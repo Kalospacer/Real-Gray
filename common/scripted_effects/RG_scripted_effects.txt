@@ -168,6 +168,7 @@ rg_ge_clear_portrait_select = {
 	event_target:gray_owner = {
 	remove_country_flag = rg_ge_governor_portrait_set
 	remove_country_flag = rg_ge_scientist_portrait_set
+	remove_country_flag = mss_enable_gray_maid
 	}
 }
 

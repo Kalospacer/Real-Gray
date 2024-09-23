@@ -1,0 +1,338 @@
+trigger = {
+	fromfrom = {
+		OR = {
+			is_country_type = gray
+			is_same_value = ROOT
+		}
+	}
+	is_same_value = event_target:gray_owner
+	has_country_flag = gray_warship_active
+	NOR = {
+		has_country_flag = gray_reforming
+		has_country_flag = gray_diplomacy_engaged
+	}
+	exists = event_target:gray_warship
+	any_owned_fleet = {
+		is_same_value = event_target:gray_warship
+	}
+	event_target:gray_warship = {
+		num_ships > 0
+	}
+}
+immediate = {
+	set_country_flag = gray_diplomacy_engaged
+	capital_scope = {
+		solar_system = {
+			starbase = {
+				save_global_event_target_as = gray_owner_capital_starbase
+			}
+		}
+	}
+}
+after = {
+	hidden_effect = {
+		remove_country_flag = gray_diplomacy_engaged
+		reset_gray_cloth = yes
+	}
+}
+option = {
+	# Governor
+	name = graygoo.500.a
+	response_text = graygoo.502.a.response
+	allow = {
+		hidden_trigger = {
+			# To prevent exploit
+			event_target:gray_warship = {
+				num_ships > 0
+			}
+		}
+		custom_tooltip = {
+			fail_text = graygoo.500.allow.a
+			event_target:gray_warship = {
+				is_in_combat = no
+			}
+		}
+		custom_tooltip = {
+			fail_text = graygoo.500.allow.b
+			event_target:gray_warship = {
+				NOT = {
+					has_hp_percentage < 0.97
+				}
+			}
+		}
+	}
+	hidden_effect = {
+		rg_create_gray_governor = yes
+		country_event = {
+			id = rg_grayleader_dialog.5021
+		}
+	}
+}
+option = {
+	# Army
+	name = graygoo.500.c
+	response_text = graygoo.502.c.response
+	allow = {
+		hidden_trigger = {
+			event_target:gray_warship = {
+				num_ships > 0
+			}
+		}
+		custom_tooltip = {
+			fail_text = graygoo.500.allow.a
+			event_target:gray_warship = {
+				is_in_combat = no
+			}
+		}
+		custom_tooltip = {
+			fail_text = graygoo.500.allow.b
+			event_target:gray_warship = {
+				NOT = {
+					has_hp_percentage < 0.97
+				}
+			}
+		}
+	}
+	hidden_effect = {
+		rg_create_gray_army = yes
+		country_event = {
+			id = rg_grayleader_dialog.5022
+		}
+	}
+}
+option = {
+	# Juggernaut
+	name = RG_graygoo.500.d
+	response_text = RG_graygoo.502.d.response
+	trigger = {
+		has_country_flag = rg_juggernaut_fired
+		NOT = {
+			has_country_flag = gray_warship_is_juggernaut
+		}
+	}
+	allow = {
+		hidden_trigger = {
+			event_target:gray_warship = {
+				num_ships > 0
+			}
+		}
+		custom_tooltip = {
+			fail_text = graygoo.500.allow.a
+			event_target:gray_warship = {
+				is_in_combat = no
+			}
+		}
+		custom_tooltip = {
+			fail_text = graygoo.500.allow.b
+			event_target:gray_warship = {
+				NOT = {
+					has_hp_percentage < 0.97
+				}
+			}
+		}
+	}
+	custom_tooltip = rg_need_manual_toggle
+	hidden_effect = {
+		set_country_flag = gray_warship_is_juggernaut
+		country_event = {
+			id = rg_grayleader_dialog.5023
+		}
+	}
+}
+option = {
+	# Warship
+	name = RG_graygoo.500.e
+	response_text = RG_graygoo.502.e.response
+	trigger = {
+		has_country_flag = rg_juggernaut_fired
+		has_country_flag = gray_warship_is_juggernaut
+	}
+	allow = {
+		hidden_trigger = {
+			event_target:gray_warship = {
+				num_ships > 0
+			}
+		}
+		custom_tooltip = {
+			fail_text = graygoo.500.allow.a
+			event_target:gray_warship = {
+				is_in_combat = no
+			}
+		}
+		custom_tooltip = {
+			fail_text = graygoo.500.allow.b
+			event_target:gray_warship = {
+				NOT = {
+					has_hp_percentage < 0.97
+				}
+			}
+		}
+	}
+	custom_tooltip = rg_need_manual_toggle
+	hidden_effect = {
+		remove_country_flag = gray_warship_is_juggernaut
+		country_event = {
+			id = rg_grayleader_dialog.5024
+		}
+	}
+}
+option = {
+	# const
+	name = rg_const
+	response_text = rg_const.502.response
+	allow = {
+		hidden_trigger = {
+			event_target:gray_warship = {
+				num_ships > 0
+			}
+		}
+		custom_tooltip = {
+			fail_text = graygoo.500.allow.a
+			event_target:gray_warship = {
+				is_in_combat = no
+			}
+		}
+		custom_tooltip = {
+			fail_text = graygoo.500.allow.b
+			event_target:gray_warship = {
+				NOT = {
+					has_hp_percentage < 0.97
+				}
+			}
+		}
+	}
+	hidden_effect = {
+		rg_create_gray_const = yes
+		country_event = {
+			id = rg_grayleader_dialog.5025
+		}
+	}
+}
+option = {
+	# 空间站
+	name = RG_graygoo.500.f
+	response_text = RG_graygoo.502.f.response
+	trigger = {
+		NOT = {
+			RG_gray_harbitat_active_trigger = yes
+		}
+	}
+	allow = {
+	}
+	custom_tooltip = rg_need_manual_toggle
+	hidden_effect = {
+		if = {
+			limit = {
+				RG_gray_harbitat_active_trigger = yes
+			}
+			rg_clear_harbitat = yes
+		}
+		else = {
+			rg_juggernaut_habitat_init = yes
+		}
+		country_event = {
+			id = rg_grayleader_dialog.5026
+		}
+	}
+}
+option = {
+	# 空间站
+	name = RG_graygoo.500.g
+	response_text = RG_graygoo.502.g.response
+	trigger = {
+		RG_gray_harbitat_active_trigger = yes
+	}
+	allow = {
+	}
+	custom_tooltip = rg_need_manual_toggle
+	hidden_effect = {
+		country_event = {
+			id = rg_grayleader_dialog.5028
+		}
+	}
+}
+option = {
+	#升级-2
+	name = rg_levelup_2
+	trigger = {
+		RG_gray_mod1_trigger = yes
+	}
+	allow = {
+		RG_gray_mod1_allow_trigger = yes
+	}
+	RG_gray_mod1_effect = yes
+}
+option = {
+	#升级-3
+	name = rg_levelup_3
+	trigger = {
+		RG_gray_mod2_trigger = yes
+	}
+	allow = {
+		RG_gray_mod2_allow_trigger = yes
+	}
+	RG_gray_mod2_effect = yes
+}
+option = {
+	#升级-4
+	name = rg_event.4.d
+	trigger = {
+		RG_gray_mod3_trigger = yes
+	}
+	allow = {
+		RG_gray_mod3_allow_trigger = yes
+	}
+	RG_gray_mod3_effect = yes
+}
+option = {
+	# 开启隐形
+	name = rg_event.4.e
+	response_text = rg_cloak.a.response
+	trigger = {
+		any_owned_fleet = {
+			AND = {
+				is_ship_size = RG_gray_juggernaut
+				is_cloaked = no
+			}
+		}
+	}
+	hidden_effect = {
+		every_owned_fleet = {
+			limit = {
+				any_owned_ship = {
+					is_ship_size = RG_gray_juggernaut
+				}
+			}
+			set_cloaking_active = yes
+		}
+	}
+}
+option = {
+	# 关闭隐形
+	name = rg_event.4.f
+	response_text = rg_cloak_off.a.response
+	trigger = {
+		any_owned_fleet = {
+			AND = {
+				is_ship_size = RG_gray_juggernaut
+				is_cloaked = yes
+			}
+		}
+	}
+	hidden_effect = {
+		every_owned_fleet = {
+			limit = {
+				any_owned_ship = {
+					is_ship_size = RG_gray_juggernaut
+				}
+			}
+			set_cloaking_active = no
+		}
+	}
+}
+inline_script = "events/rg_wsg_marry_gray_option_scripts"
+option = {
+	name = graygoo.500.d
+	tag = hire_leader
+	default_hide_option = yes
+}

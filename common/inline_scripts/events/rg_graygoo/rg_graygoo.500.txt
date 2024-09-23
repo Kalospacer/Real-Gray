@@ -1,0 +1,183 @@
+immediate = {
+	set_country_flag = gray_diplomacy_engaged
+}
+after = {
+	hidden_effect = {
+		remove_country_flag = gray_diplomacy_engaged
+		#初始化衣柜
+		reset_gray_cloth = yes
+	}
+}
+trigger = {
+	fromfrom = {
+		OR = {
+			is_country_type = gray
+			is_same_value = ROOT
+		}
+	}
+	is_same_value = event_target:gray_owner
+	NOR = {
+		RG_gray_scientist_active_trigger = yes
+		has_country_flag = gray_official_active
+		has_country_flag = gray_governor_active			#旧版flag
+		RG_gray_warship_active_trigger = yes
+		RG_gray_army_active_trigger = yes
+		has_country_flag = gray_reforming
+		has_country_flag = gray_diplomacy_engaged
+		has_country_flag = ban_commu_with_gray
+	}
+}
+option = {
+	# Governor
+	name = graygoo.500.a
+	response_text = graygoo.500.a.response
+	trigger = {
+		NOR = {
+			has_country_flag = gray_official_active
+			has_country_flag = gray_governor_active				#旧版flag
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = gray_become_ruler
+			NOT = {
+				ruler = {
+					has_leader_flag = "gray_leader"
+				}
+			}
+		}
+	}
+	hidden_effect = {
+		rg_create_gray_governor = yes
+	}
+}
+option = {
+	# Warship
+	name = graygoo.500.b
+	response_text = graygoo.500.b.response
+	trigger = {
+		NOT = {
+			RG_gray_warship_active_trigger = yes
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = gray_become_ruler
+			NOT = {
+				ruler = {
+					has_leader_flag = "gray_leader"
+				}
+			}
+		}
+	}
+	hidden_effect = {
+		rg_create_gray_warship = yes
+	}
+}
+option = {
+	# Army
+	name = graygoo.500.c
+	response_text = graygoo.500.c.response
+	trigger = {
+		NOT = {
+			RG_gray_army_active_trigger = yes
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = gray_become_ruler
+			NOT = {
+				ruler = {
+					has_leader_flag = "gray_leader"
+				}
+			}
+		}
+	}
+	hidden_effect = {
+		rg_create_gray_army = yes
+	}
+}
+option = {
+	# const
+	name = rg_const
+	response_text = rg_const.500.response
+	trigger = {
+		NOT = {
+			has_country_flag = gray_const_active
+		}
+	}
+	allow = {
+		custom_tooltip = {
+			fail_text = gray_become_ruler
+			NOT = {
+				ruler = {
+					has_leader_flag = "gray_leader"
+				}
+			}
+		}
+	}
+	hidden_effect = {
+		rg_create_gray_const = yes
+	}
+}
+option = {
+	# 空间站
+	name = RG_graygoo.500.f
+	response_text = RG_graygoo.502.f.response
+	trigger = {
+		NOT = {
+			RG_gray_harbitat_active_trigger = yes
+		}
+	}
+	allow = {
+	}
+	custom_tooltip = rg_need_manual_toggle
+	hidden_effect = {
+		if = {
+			limit = {
+				RG_gray_harbitat_active_trigger = yes
+			}
+			rg_clear_harbitat = yes
+		}
+		else = {
+			rg_juggernaut_habitat_init = yes
+		}
+	}
+}
+option = {
+	# 空间站
+	name = RG_graygoo.500.g
+	response_text = RG_graygoo.502.g.response
+	trigger = {
+		RG_gray_harbitat_active_trigger = yes
+	}
+	allow = {
+	}
+	custom_tooltip = rg_need_manual_toggle
+	hidden_effect = {
+		rg_clear_harbitat = yes
+	}
+}
+option = {
+	# help
+	name = rg_help
+	hidden_effect = {
+		country_event = {
+			id = rg_graygoo.4
+		}
+	}
+}
+option = {
+	# 衣柜
+	name = rg_wardrobe
+	hidden_effect = {
+		country_event = {
+			id = rg_grayleader.7
+		}
+	}
+}
+inline_script = "events/rg_wsg_marry_gray_option_500_scripts"
+option = {
+	name = graygoo.500.d
+	default_hide_option = yes
+}
