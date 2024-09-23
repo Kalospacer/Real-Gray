@@ -449,10 +449,7 @@ country_event = {
 		# 舰r
 		name = rg_event.7.d
 		trigger = {
-			OR = {
-				has_global_flag = has_wsg_mod
-				has_global_flag = kdc_event_mod_active
-			}
+			RG_OR_has_wsg_mod_trigger = yes
 		}
 		hidden_effect = {
 			rg_global_clear_portrait_select = yes
