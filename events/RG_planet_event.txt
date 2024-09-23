@@ -9,7 +9,7 @@ country_event = {
 	is_triggered_only = yes
 	trigger = {
 		OR = {
-			has_country_flag = rg_habitat_enabled
+			RG_gray_harbitat_active_trigger = yes
 			has_active_tradition = tr_rg_nanotech_5
 		}
 		# exists = event_target:rg_gray_habitat_target
@@ -35,7 +35,7 @@ country_event = {
 	immediate = {
 		if = {
 			limit = {
-				has_country_flag = rg_habitat_enabled
+				RG_gray_harbitat_active_trigger = yes
 				NOT = {
 					has_active_tradition = tr_rg_nanotech_5
 				}
@@ -51,7 +51,7 @@ country_event = {
 			random_owned_planet = {
 				limit = {
 					owner = {
-						has_country_flag = rg_habitat_enabled
+						RG_gray_harbitat_active_trigger = yes
 					}
 					# exists = event_target:rg_gray_habitat_target
 					PREV = {
@@ -105,7 +105,7 @@ planet_event = {
 		exists = owner
 		owner = {
 			OR = {
-				has_country_flag = rg_habitat_enabled
+				RG_gray_harbitat_active_trigger = yes
 				has_active_tradition = tr_rg_nanotech_5
 			}
 		}
@@ -134,7 +134,7 @@ planet_event = {
 		exists = owner
 		owner = {
 			OR = {
-				has_country_flag = rg_habitat_enabled
+				RG_gray_harbitat_active_trigger = yes
 				has_active_tradition = tr_rg_nanotech_5
 			}
 		}
@@ -192,7 +192,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		has_country_flag = rg_habitat_enabled
+		RG_gray_harbitat_active_trigger = yes
 		event_target:rg_gray_habitat_target = {
 			any_owned_pop = {
 				is_unemployed = yes
@@ -223,7 +223,7 @@ planet_event = {
 	trigger = {
 		exists = owner
 		owner = {
-			has_country_flag = rg_habitat_enabled
+			RG_gray_harbitat_active_trigger = yes
 		}
 		any_owned_pop = {
 			is_unemployed = yes

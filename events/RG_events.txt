@@ -722,7 +722,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
-		has_country_flag = gray_army_active
+		RG_gray_army_active_trigger = yes
 		any_owned_army = {
 			army_type = gray_army
 			fleet = {
@@ -1049,7 +1049,7 @@ country_event = { # Memorial Valuts Civic Paragon Level Tick / FROM = Leader
 		FROM = {
 			has_leader_flag = rg_gray_leader
 		}
-		has_country_flag = rg_habitat_enabled
+		RG_gray_harbitat_active_trigger = yes
 	}
 
 	immediate = {

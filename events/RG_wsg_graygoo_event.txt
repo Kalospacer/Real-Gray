@@ -32,11 +32,11 @@ country_event = {
 		}
 		is_same_value = event_target:gray_owner
 		NOR = {
-			has_country_flag = gray_constship_active
+			RG_gray_scientist_active_trigger = yes
 			has_country_flag = gray_official_active
 			has_country_flag = gray_governor_active			#旧版flag
-			has_country_flag = gray_warship_active
-			has_country_flag = gray_army_active
+			RG_gray_warship_active_trigger = yes
+			RG_gray_army_active_trigger = yes
 			has_country_flag = gray_reforming
 			has_country_flag = gray_diplomacy_engaged
 			has_country_flag = ban_commu_with_gray
@@ -72,7 +72,7 @@ country_event = {
 		response_text = graygoo.500.b.response
 		trigger = {
 			NOT = {
-				has_country_flag = gray_warship_active
+				RG_gray_warship_active_trigger = yes
 			}
 		}
 		allow = {
@@ -95,7 +95,7 @@ country_event = {
 		response_text = graygoo.500.c.response
 		trigger = {
 			NOT = {
-				has_country_flag = gray_army_active
+				RG_gray_army_active_trigger = yes
 			}
 		}
 		allow = {
@@ -141,7 +141,7 @@ country_event = {
 		response_text = RG_graygoo.502.f.response
 		trigger = {
 			NOT = {
-				has_country_flag = rg_habitat_enabled
+				RG_gray_harbitat_active_trigger = yes
 			}
 		}
 		allow = {
@@ -150,7 +150,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					has_country_flag = rg_habitat_enabled
+					RG_gray_harbitat_active_trigger = yes
 				}
 				rg_clear_harbitat = yes
 			}
@@ -164,7 +164,7 @@ country_event = {
 		name = RG_graygoo.500.g
 		response_text = RG_graygoo.502.g.response
 		trigger = {
-			has_country_flag = rg_habitat_enabled
+			RG_gray_harbitat_active_trigger = yes
 		}
 		allow = {
 		}
@@ -333,7 +333,7 @@ country_event = {
 		response_text = RG_graygoo.502.f.response
 		trigger = {
 			NOT = {
-				has_country_flag = rg_habitat_enabled
+				RG_gray_harbitat_active_trigger = yes
 			}
 		}
 		allow = {
@@ -342,7 +342,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					has_country_flag = rg_habitat_enabled
+					RG_gray_harbitat_active_trigger = yes
 				}
 				rg_clear_harbitat = yes
 			}
@@ -356,7 +356,7 @@ country_event = {
 		name = RG_graygoo.500.g
 		response_text = RG_graygoo.502.g.response
 		trigger = {
-			has_country_flag = rg_habitat_enabled
+			RG_gray_harbitat_active_trigger = yes
 		}
 		allow = {
 		}
@@ -411,7 +411,7 @@ country_event = {
 			}
 		}
 		is_same_value = event_target:gray_owner
-		has_country_flag = gray_warship_active
+		RG_gray_warship_active_trigger = yes
 		NOR = {
 			has_country_flag = gray_reforming
 			has_country_flag = gray_diplomacy_engaged
@@ -644,7 +644,7 @@ country_event = {
 		response_text = RG_graygoo.502.f.response
 		trigger = {
 			NOT = {
-				has_country_flag = rg_habitat_enabled
+				RG_gray_harbitat_active_trigger = yes
 			}
 		}
 		allow = {
@@ -653,7 +653,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					has_country_flag = rg_habitat_enabled
+					RG_gray_harbitat_active_trigger = yes
 				}
 				rg_clear_harbitat = yes
 			}
@@ -667,7 +667,7 @@ country_event = {
 		name = RG_graygoo.500.g
 		response_text = RG_graygoo.502.g.response
 		trigger = {
-			has_country_flag = rg_habitat_enabled
+			RG_gray_harbitat_active_trigger = yes
 		}
 		allow = {
 		}
@@ -780,7 +780,7 @@ country_event = {
 				is_same_value = ROOT
 			}
 		}
-		has_country_flag = gray_army_active
+		RG_gray_army_active_trigger = yes
 		NOR = {
 			has_country_flag = gray_reforming
 			has_country_flag = gray_diplomacy_engaged
@@ -971,7 +971,7 @@ country_event = {
 		response_text = RG_graygoo.502.f.response
 		trigger = {
 			NOT = {
-				has_country_flag = rg_habitat_enabled
+				RG_gray_harbitat_active_trigger = yes
 			}
 		}
 		allow = {
@@ -980,7 +980,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					has_country_flag = rg_habitat_enabled
+					RG_gray_harbitat_active_trigger = yes
 				}
 				rg_clear_harbitat = yes
 			}
@@ -994,7 +994,7 @@ country_event = {
 		name = RG_graygoo.500.g
 		response_text = RG_graygoo.502.g.response
 		trigger = {
-			has_country_flag = rg_habitat_enabled
+			RG_gray_harbitat_active_trigger = yes
 		}
 		allow = {
 		}
@@ -1123,7 +1123,7 @@ country_event = {
 			}
 		}
 		is_same_value = event_target:gray_owner
-		has_country_flag = gray_constship_active
+		RG_gray_scientist_active_trigger = yes
 		NOR = {
 			has_country_flag = gray_reforming
 			has_country_flag = gray_diplomacy_engaged
@@ -1272,7 +1272,7 @@ country_event = {
 		response_text = RG_graygoo.502.f.response
 		trigger = {
 			NOT = {
-				has_country_flag = rg_habitat_enabled
+				RG_gray_harbitat_active_trigger = yes
 			}
 		}
 		allow = {
@@ -1281,7 +1281,7 @@ country_event = {
 		hidden_effect = {
 			if = {
 				limit = {
-					has_country_flag = rg_habitat_enabled
+					RG_gray_harbitat_active_trigger = yes
 				}
 				rg_clear_harbitat = yes
 			}
@@ -1295,7 +1295,7 @@ country_event = {
 		name = RG_graygoo.500.g
 		response_text = RG_graygoo.502.g.response
 		trigger = {
-			has_country_flag = rg_habitat_enabled
+			RG_gray_harbitat_active_trigger = yes
 		}
 		allow = {
 		}

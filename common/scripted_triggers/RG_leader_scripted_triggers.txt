@@ -11,7 +11,6 @@ RG_gray_mod1_trigger = {
 		}
 	}
 }
-
 RG_gray_mod1_allow_trigger = {
 	hidden_trigger = {
 		event_target:gray_warship = {
@@ -47,7 +46,6 @@ RG_gray_mod1_allow_trigger = {
 		value >= 15000
 	}
 }
-
 RG_gray_mod2_trigger = {
 	AND = {
 		event_target:gray_leader_admiral = {
@@ -126,3 +124,25 @@ RG_gray_mod3_allow_trigger = {
 		has_technology = tech_juggernaut
 	}
 }
+RG_gray_official_active_trigger = {
+	OR = {
+		has_country_flag = gray_official_active
+		has_country_flag = gray_governor_active #旧版flag
+	}
+}
+RG_gray_warship_active_trigger = {
+	has_country_flag = gray_warship_active
+}
+RG_gray_army_active_trigger = {
+	has_country_flag = gray_army_active
+}
+
+RG_gray_scientist_active_trigger = {
+	has_country_flag = gray_constship_active
+}
+
+RG_gray_harbitat_active_trigger = {
+	has_country_flag = rg_habitat_enabled
+}
+
+

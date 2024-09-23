@@ -1,8 +1,8 @@
-has_budding_trait = {
-	OR = {
-		has_trait = trait_plantoid_budding
-		has_trait = trait_lithoid_budding
-		has_trait = trait_advanced_budding
-		has_trait = rg_machine_maid_trait
-	}
-}
+# has_budding_trait = {
+# 	OR = {
+# 		has_trait = trait_plantoid_budding
+# 		has_trait = trait_lithoid_budding
+# 		has_trait = trait_advanced_budding
+# 		has_trait = rg_machine_maid_trait
+# 	}
+# }

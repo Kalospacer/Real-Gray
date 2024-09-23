@@ -183,3 +183,63 @@ rg_warship_init_mod0 = {
 		}
 	}
 }
+rg_army_transport_ship_init = {
+	create_ship_design = {
+		design = "NAME_RG_armed_transport_ship"
+	}
+	add_ship_design = last_created_design
+	create_fleet = {
+		name = "NAME_Gray"
+		effect = {
+			set_owner = prev
+			create_army_transport = {
+				ship_name = "NAME_Gray"
+				army_name = "NAME_Gray"
+				army_type = "gray_army"
+			}
+			set_location = {
+				target = event_target:global_gray_location
+				distance = 0
+				angle = random
+			}
+			# set_cloaking_active = yes
+			set_fleet_stance = aggressive
+		}
+	}
+	last_created_army = {
+		assign_leader = event_target:gray_leader_general
+	}
+	remove_ship_design = last_created_design
+}
+rg_scientist_ship_init = {
+	create_fleet = {
+		name = "NAME_Gray"
+		settings = {
+			can_upgrade = no
+			can_disband = no
+			can_change_composition = no
+			can_change_leader = yes
+			uses_naval_capacity = no
+			spawn_debris = no
+		}
+		effect = {
+			set_owner = prev
+			create_ship = {
+				name = "NAME_Gray"
+				design = "NAME_RG_GRAY_scienceship"
+				prefix = no
+				upgradable = yes
+			}
+			set_fleet_stance = evasive
+			set_location = {
+				target = event_target:global_gray_location
+				distance = 0
+				angle = random
+			}
+			set_fleet_flag = gray_constship
+			save_global_event_target_as = global_gray_constship
+			set_cloaking_active = yes
+			assign_leader = event_target:gray_leader_scientist
+		}
+	}
+}

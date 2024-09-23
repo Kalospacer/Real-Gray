@@ -3,7 +3,7 @@
 rg_global_gray_location_check = {
 	if = {
 		limit = {
-			has_country_flag = gray_constship_active
+			RG_gray_scientist_active_trigger = yes
 		}
 		if = {
 			limit = {
@@ -24,7 +24,7 @@ rg_global_gray_location_check = {
 	}
 	else_if = {
 		limit = {
-			has_country_flag = gray_warship_active
+			RG_gray_warship_active_trigger = yes
 		}
 		if = {
 			limit = {
@@ -66,10 +66,7 @@ rg_global_gray_location_check = {
 	}
 	else_if = {
 		limit = {
-			OR = {
-				has_country_flag = gray_official_active
-				has_country_flag = gray_governor_active #旧版flag
-			}
+			RG_gray_official_active_trigger = yes
 		}
 		if = {
 			limit = {
@@ -98,7 +95,7 @@ rg_global_gray_location_check = {
 	}
 	else_if = {
 		limit = {
-			has_country_flag = gray_army_active
+			RG_gray_army_active_trigger = yes
 		}
 		if = {
 			limit = {
@@ -129,7 +126,7 @@ rg_global_gray_location_check = {
 	}
 	else_if = {
 		limit = {
-			has_country_flag = rg_habitat_enabled
+			RG_gray_harbitat_active_trigger = yes
 		}
 		if = {
 			limit = {exists = event_target:rg_gray_habitat_target}
@@ -189,14 +186,120 @@ rg_sent_gray_back_to_home_effect = {
 	}
 }
 
+#Country event_target:gray_owner
+#小灰领袖标识清理
+rg_clear_gray_active_flag_effect = {
+	remove_country_flag = gray_warship_active
+	remove_country_flag = gray_constship_active
+	remove_country_flag = gray_army_active
+	remove_country_flag = gray_official_active
+	remove_country_flag = gray_governor_active #旧版flag
+}
+
+#Country event_target:gray_owner
+#小灰总督启用标识
+rg_set_gray_official_active_effect = {
+	set_country_flag = gray_official_active #新版flag
+	set_country_flag = gray_governor_active #旧版flag
+}
+
+#Country event_target:gray_owner
+#小灰战舰启用标识
+rg_set_gray_warship_active_effect = {
+	set_country_flag = gray_warship_active
+}
+
+#Country event_target:gray_owner
+#小灰科学家启用标识
+rg_set_gray_scientist_active_effect = {
+	set_country_flag = gray_official_active #新版flag
+	set_country_flag = gray_governor_active #旧版flag
+}
+
+#Country event_target:gray_owner
+#小灰陆军启用标识
+rg_set_gray_army_active_effect = {
+	set_country_flag = gray_army_active
+}
+#Country event_target:gray_owner
+#小灰科学家启用标识
+rg_set_gray_scientist_active_effect = {
+	set_country_flag = gray_constship_active
+}
+#Country event_target:gray_owner
+#小灰纳米空间站启用标识
+rg_set_gray_harbitat_active_effect = {
+	set_country_flag = rg_habitat_enabled
+}
+#Country event_target:gray_owner
+#删除小灰科学家
+rg_clear_gray_science_ship_effect = {
+	every_owned_fleet = {
+		limit = {
+			has_fleet_flag = gray_constship
+		}
+		delete_fleet = {
+			target = this
+			kill_leader = no
+			destroy_template = yes
+		}
+	}
+}
+#Country event_target:gray_owner
+#删除小灰陆军
+rg_clear_gray_army_effect = {
+	every_owned_army = {
+		limit = {
+			army_type = gray_army
+		}
+		if = {
+			limit = {
+				exists = leader
+			}
+			unassign_leader = leader
+		}
+		remove_army = yes
+	}
+}
+#Country event_target:gray_owner
+#删除小灰战舰
+rg_clear_gray_warship_effect = {
+	every_owned_fleet = {
+		limit = {
+			has_fleet_flag = gray_fleet
+		}
+		delete_fleet = {
+			target = this
+			kill_leader = no
+			destroy_template = yes
+		}
+	}
+}
+#Country event_target:gray_owner
+#删除小灰纳米空间站
+rg_clear_harbitat = {
+	remove_country_flag = rg_habitat_enabled
+	event_target:rg_gray_habitat_target = {
+		remove_planet = yes
+	}
+}
+#Country event_target:gray_owner
+#等级导入，把存储的领袖等级赋予到领袖身上
+rg_set_varible_as_leader_level_effect = {
+	random_owned_leader = {
+		limit = {
+			has_leader_flag = rg_gray_leader
+		}
+		set_skill = owner.rg_gray_level
+	}
+}
+
+#Country event_target:gray_owner
 #创造灰风总督
 rg_create_gray_governor = {
 	if = {
 		limit = {
-			OR = {
-				has_country_flag = gray_official_active
-				has_country_flag = gray_governor_active #旧版flag
-			}
+			RG_gray_official_active_trigger = yes
 		}
 	}
 	else = {
@@ -241,14 +344,7 @@ rg_create_gray_governor = {
 		#存储当前领袖等级
 		rg_save_gray_leader_level_effect = yes
 		#把所有种类的小灰领袖都送回娘家
-		every_owned_leader = {
-			limit = {
-				has_leader_flag = rg_gray_leader
-			}
-			set_owner = event_target:rg_gray_country
-			set_leader_flag = rg_gray_leader_temp
-			# kill_leader = { show_notification = no }
-		}
+		rg_sent_gray_back_to_home_effect = yes
 		#把娘家的总督领袖接回来
 		if = {
 			limit = {
@@ -263,46 +359,33 @@ rg_create_gray_governor = {
 		else = {
 			rg_gray_govener_init = yes
 		}
-		#设置总督已启用标识
-		set_country_flag = gray_official_active #新版flag
-		set_country_flag = gray_governor_active #旧版flag
 		#更新灰风形态
-		remove_country_flag = gray_warship_active
-		remove_country_flag = rg_kac_grayfleet_active
-		remove_country_flag = gray_constship_active
-		remove_country_flag = gray_army_active
+		rg_clear_gray_active_flag_effect = yes
+		#设置总督已启用标识
+		rg_set_gray_official_active_effect = yes
 		
 		#等级导入，把存储的领袖等级赋予到领袖身上
-		random_owned_leader = {
-			limit = {
-				has_leader_flag = gray_governor
-			}
-			set_skill = owner.rg_gray_level
-		}
+		rg_set_varible_as_leader_level_effect = yes
 	}
 }
 
+#Country event_target:gray_owner
 #创造灰风战舰
 rg_create_gray_warship = {
 	if = {
 		limit = {
-			has_country_flag = gray_warship_active
+			RG_gray_warship_active_trigger = yes
 		}
 	}
 	else = {
 		optimize_memory
 		#舰船刷新位置检测
 		rg_global_gray_location_check = yes
-		# 存储当前领袖等级
+		#存储当前领袖等级
 		rg_save_gray_leader_level_effect = yes
-		every_owned_leader = {
-			limit = {
-				has_leader_flag = rg_gray_leader
-			}
-			set_owner = event_target:rg_gray_country
-			set_leader_flag = rg_gray_leader_temp
-			# kill_leader = { show_notification = no }
-		}
+		#把所有种类的小灰领袖都送回娘家
+		rg_sent_gray_back_to_home_effect = yes
+		#把娘家的指挥官领袖接回来
 		if = {
 			limit = {
 				exists = event_target:gray_leader_admiral
@@ -315,7 +398,7 @@ rg_create_gray_warship = {
 		else = {
 			rg_gray_commander_init = yes
 		}
-		set_country_flag = gray_warship_active
+
 		if = {
 			limit = {
 				has_country_flag = rg_gray_level_2
@@ -340,63 +423,36 @@ rg_create_gray_warship = {
 		else = {
 			rg_warship_init_mod0 = yes
 		}
-		every_owned_army = {
-			limit = {
-				army_type = gray_army
-			}
-			if = {
-				limit = {
-					exists = leader
-				}
-				unassign_leader = leader
-			}
-			remove_army = yes
-		}
-		every_owned_fleet = {
-			limit = {
-				has_fleet_flag = gray_constship
-			}
-			delete_fleet = {
-				target = this
-				kill_leader = no
-				destroy_template = yes
-			}
-		}
-
-		remove_country_flag = gray_constship_active
-		remove_country_flag = gray_governor_active #旧版flag
-		remove_country_flag = gray_official_active
-		remove_country_flag = gray_army_active
-		
-		random_owned_leader = {
-			limit = {
-				has_leader_flag = gray_admiral
-			}
-			set_skill = owner.rg_gray_level
-		}
+		#删除科学舰
+		rg_clear_gray_science_ship_effect = yes
+		#删除陆军
+		rg_clear_gray_army_effect = yes
+		#更新灰风形态
+		rg_clear_gray_active_flag_effect = yes
+		#设置战舰已启用标识
+		rg_set_gray_warship_active_effect = yes
+		#导入变量到等级
+		rg_set_varible_as_leader_level_effect = yes
 	}
 }
 
+#Country event_target:gray_owner
 #创造灰风地面单位
 rg_create_gray_army = {
 	if = {
 		limit = {
-			has_country_flag = gray_army_active
+			RG_gray_army_active_trigger = yes
 		}
 	}
 	else = {
 		optimize_memory
 		#舰船刷新位置检测
 		rg_global_gray_location_check = yes
+		#存储当前领袖等级
 		rg_save_gray_leader_level_effect = yes
-		every_owned_leader = {
-			limit = {
-				has_leader_flag = rg_gray_leader
-			}
-			set_owner = event_target:rg_gray_country
-			set_leader_flag = rg_gray_leader_temp
-			# kill_leader = { show_notification = no }
-		}
+		#把所有种类的小灰领袖都送回娘家
+		rg_sent_gray_back_to_home_effect = yes
+		#把娘家的指挥官领袖接回来
 		if = {
 			limit = {
 				exists = event_target:gray_leader_general
@@ -409,89 +465,32 @@ rg_create_gray_army = {
 		else = {
 			rg_gray_commander_init = yes
 		}
-		create_ship_design = {
-			design = "NAME_RG_armed_transport_ship"
-		}
-		add_ship_design = last_created_design
-		set_country_flag = gray_army_active
-		create_fleet = {
-			name = "NAME_Gray"
-			effect = {
-				set_owner = prev
-				create_army_transport = {
-					ship_name = "NAME_Gray"
-					army_name = "NAME_Gray"
-					army_type = "gray_army"
-				}
-				set_location = {
-					target = event_target:global_gray_location
-					distance = 0
-					angle = random
-				}
-				# set_cloaking_active = yes
-				set_fleet_stance = aggressive
-			}
-		}
-		last_created_army = {
-			assign_leader = event_target:gray_leader_general
-		}
-		every_owned_fleet = {
-			limit = {
-				has_fleet_flag = gray_fleet
-			}
-			delete_fleet = {
-				target = this
-				kill_leader = no
-				destroy_template = yes
-			}
-		}
-		every_owned_fleet = {
-			limit = {
-				has_fleet_flag = gray_constship
-			}
-			delete_fleet = {
-				target = this
-				kill_leader = no
-				destroy_template = yes
-			}
-		}
-
-		remove_country_flag = gray_warship_active
-		remove_country_flag = rg_kac_grayfleet_active
-		remove_country_flag = gray_governor_active #旧版flag
-		remove_country_flag = gray_official_active
-		remove_country_flag = gray_constship_active
-		
-		remove_ship_design = last_created_design
-		random_owned_leader = {
-			limit = {
-				has_leader_flag = gray_general
-			}
-			set_skill = owner.rg_gray_level
-		}
+		rg_army_transport_ship_init = yes
+		rg_clear_gray_warship_effect = yes
+		rg_clear_gray_science_ship_effect = yes
+		rg_clear_gray_active_flag_effect = yes
+		rg_set_gray_army_active_effect = yes
+		rg_set_varible_as_leader_level_effect = yes
 	}
 }
 
+#Country event_target:gray_owner
 #创造灰风科学舰
 rg_create_gray_const = {
 	if = {
 		limit = {
-			has_country_flag = gray_constship_active
+			RG_gray_scientist_active_trigger = yes
 		}
 	}
 	else = {
 		optimize_memory
 		#舰船刷新位置检测
 		rg_global_gray_location_check = yes
+		#存储当前领袖等级
 		rg_save_gray_leader_level_effect = yes
-		every_owned_leader = {
-			limit = {
-				has_leader_flag = rg_gray_leader
-			}
-			set_owner = event_target:rg_gray_country
-			set_leader_flag = rg_gray_leader_temp
-			# kill_leader = { show_notification = no }
-		}
+		#把所有种类的小灰领袖都送回娘家
+		rg_sent_gray_back_to_home_effect = yes
+		#把娘家的科学家领袖接回来
 		if = {
 			limit = {
 				exists = event_target:gray_leader_scientist
@@ -504,75 +503,21 @@ rg_create_gray_const = {
 		else = {
 			rg_gray_scientist_init = yes
 		}
-		set_country_flag = gray_constship_active
-		create_fleet = {
-			name = "NAME_Gray"
-			settings = {
-				can_upgrade = no
-				can_disband = no
-				can_change_composition = no
-				can_change_leader = yes
-				uses_naval_capacity = no
-				spawn_debris = no
-			}
-			effect = {
-				set_owner = prev
-				create_ship = {
-					name = "NAME_Gray"
-					design = "NAME_RG_GRAY_scienceship"
-					prefix = no
-					upgradable = yes
-				}
-				set_fleet_stance = evasive
-				set_location = {
-					target = event_target:global_gray_location
-					distance = 0
-					angle = random
-				}
-				set_fleet_flag = gray_constship
-				save_global_event_target_as = global_gray_constship
-				set_cloaking_active = yes
-				assign_leader = event_target:gray_leader_scientist
-			}
-		}
-		every_owned_fleet = {
-			limit = {
-				has_fleet_flag = gray_fleet
-			}
-			delete_fleet = {
-				target = this
-				kill_leader = no
-				destroy_template = yes
-			}
-		}
-		every_owned_army = {
-			limit = {
-				army_type = gray_army
-			}
-			if = {
-				limit = {
-					exists = leader
-				}
-				unassign_leader = leader
-			}
-			remove_army = yes
-		}
 
-		remove_country_flag = gray_army_active
-		remove_country_flag = gray_warship_active
-		remove_country_flag = rg_kac_grayfleet_active
-		remove_country_flag = gray_governor_active #旧版flag
-		remove_country_flag = gray_official_active
-		
-		random_owned_leader = {
-			limit = {
-				has_leader_flag = gray_scientist
-			}
-			set_skill = owner.rg_gray_level
-		}
+		rg_scientist_ship_init = yes
+		rg_clear_gray_warship_effect = yes
+		rg_clear_gray_army_effect = yes
+
+		rg_clear_gray_active_flag_effect = yes
+
+		rg_set_gray_scientist_active_effect = yes
+
+		rg_set_varible_as_leader_level_effect = yes
 	}
 }
 
+#Country event_target:gray_owner
+#计算纳米空间站行星规模 基本10+（小灰领袖等级rg_gray_level*2）
 rg_harbitar_size_calculate = {
 	set_variable = {
 		which = rg_habitat_size
@@ -596,16 +541,17 @@ rg_harbitar_size_calculate = {
 	}
 }
 
+#Country event_target:gray_owner
+#创造灰风纳米空间站
 rg_juggernaut_habitat_init = {
 	if = {
 		limit = {
-			has_country_flag = rg_habitat_enabled
+			RG_gray_harbitat_active_trigger = yes
 		}
 	}
 	else = {
 		optimize_memory
 		rg_global_gray_location_check = yes
-		set_country_flag = rg_habitat_enabled
 		rg_harbitar_size_calculate = yes
 		event_target:global_gray_location = {
 			solar_system = {
@@ -731,13 +677,9 @@ rg_juggernaut_habitat_init = {
 				}
 			}
 		}
+		rg_set_gray_harbitat_active_effect = yes
 	}
 }
 
-rg_clear_harbitat = {
-	remove_country_flag = rg_habitat_enabled
-	event_target:rg_gray_habitat_target = {
-		remove_planet = yes
-	}
-}
+
 

@@ -69,7 +69,7 @@ rg_set_gray_portrait = {
 			else_if = {
 				limit = {
 					event_target:gray_owner = {
-						has_country_flag = gray_constship_active
+						RG_gray_scientist_active_trigger = yes
 					}
 					event_target:gray_scientist = {
 						change_leader_portrait = GFX_gray_scientist_portrait
@@ -80,8 +80,8 @@ rg_set_gray_portrait = {
 				limit = {
 					event_target:gray_owner = {
 						OR = {
-							has_country_flag = gray_warship_active
-							has_country_flag = gray_army_active
+							RG_gray_warship_active_trigger = yes
+							RG_gray_army_active_trigger = yes
 						}
 						
 					}
@@ -2792,21 +2792,25 @@ rg_gray_country_after_init = {
 	# 默认关闭自动建造中继器
 	# set_country_flag = rg_can_const_hyper_relay
 	# 初始化小灰领袖等级
-	if = {
-		limit = {
-			RG_has_gray_cluster_origin_trigger = yes
-		}
-		set_variable = {
-			which = rg_gray_level
-			value = 1
-		}
+	set_variable = {
+		which = rg_gray_level
+		value = 1
 	}
-	else = {
-		set_variable = {
-			which = rg_gray_level
-			value = 10
-		}
-	}
+	# if = {
+	# 	limit = {
+	# 		RG_has_gray_cluster_origin_trigger = yes
+	# 	}
+	# 	set_variable = {
+	# 		which = rg_gray_level
+	# 		value = 1
+	# 	}
+	# }
+	# else = {
+	# 	set_variable = {
+	# 		which = rg_gray_level
+	# 		value = 10
+	# 	}
+	# }
 	# 启动开局故事事件链
 	rg_storyline_trigger = yes
 	# 接受小灰建立通信

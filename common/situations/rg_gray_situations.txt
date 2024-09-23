@@ -214,7 +214,7 @@ situation_rg_gray_mod1 = {
 			NOT = { exists = event_target:gray_warship }
 			owner = {
 				NOT = {
-					has_country_flag = gray_warship_active
+					RG_gray_warship_active_trigger = yes
 				}
 			}
 		}

@@ -63,7 +63,6 @@ rg_gray_govener_init = {
 					add_trait_no_notify = trait_ruler_architectural_sense_3
 					add_trait_no_notify = leader_trait_distribution_lines_2
 				}
-				rg_gray_leader_experience_jar = yes
 			}
 		}
 		last_created_leader = {
@@ -72,6 +71,7 @@ rg_gray_govener_init = {
 	}
 	last_created_leader = {
 		set_leader_flag = has_gained_level_trait
+		rg_gray_leader_experience_jar = yes
 	}
 	random_owned_leader = {
 		limit = {
@@ -180,7 +180,6 @@ rg_gray_commander_init = {
 				add_trait_no_notify = leader_trait_carrier_specialization
 				add_trait_no_notify = leader_trait_juryrigger_2
 				add_trait_no_notify = leader_trait_reinforcer_2
-				rg_gray_leader_experience_jar = yes
 			}
 		}
 		last_created_leader = {
@@ -189,6 +188,7 @@ rg_gray_commander_init = {
 	}
 	last_created_leader = {
 		set_leader_flag = has_gained_level_trait
+		rg_gray_leader_experience_jar = yes
 	}
 	random_owned_leader = {
 		limit = {
@@ -503,7 +503,6 @@ rg_gray_scientist_init = {
 					set_leader_flag = "gray_leader"					# "gray_leader"==rg_gray_leader
 					set_leader_flag = gray_leader
 				}
-				rg_gray_leader_experience_jar = yes
 			}
 		}
 		last_created_leader = {
@@ -512,6 +511,7 @@ rg_gray_scientist_init = {
 	}
 	last_created_leader = {
 		set_leader_flag = has_gained_level_trait
+		rg_gray_leader_experience_jar = yes
 	}
 	random_owned_leader = {
 		limit = {
@@ -606,11 +606,11 @@ rg_gray_country_leader_init = {
 				add_trait_no_notify = trait_ruler_architectural_sense_3
 				add_trait_no_notify = leader_trait_distribution_lines_2
 			}
-			rg_gray_leader_experience_jar = yes
 		}
 	}
 	last_created_leader = {
 		rg_set_gray_portrait = yes
+		rg_gray_leader_experience_jar = yes
 	}
 }
 
@@ -620,14 +620,16 @@ rg_gray_leader_experience_jar = {
 			NOT = {
 				RG_has_gray_cluster_origin_trigger = yes
 			}
-			has_skill <= 10
+			has_skill < 10
 		}
 		while = {
-			count = 20 #安全限位-遇到20次加经验还没到10级的魔怔人紧急制动
 			limit = {
-				has_skill <= 10
+				has_skill < 10
 			}
 		}
-		add_experience = 5400
+		add_experience = 54000
+		event_target:gray_owner = {
+			rg_save_gray_leader_level_effect = yes
+		}
 	}
 }

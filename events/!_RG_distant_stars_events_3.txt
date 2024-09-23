@@ -73,7 +73,6 @@ country_event = {
 				save_event_target_as = candidate_gateway_system
 			}
 		}
-		set_global_flag = rg_kac_lcluster_project
 	}
 	option = {
 		name = "distar.10905.a"

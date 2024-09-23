@@ -18,6 +18,7 @@ create_gray_const = {
 	rg_create_gray_const = yes
 }
 
+#开启L-星团事件链
 start_lcluster_chain = {
 	if = {
 		limit = {
