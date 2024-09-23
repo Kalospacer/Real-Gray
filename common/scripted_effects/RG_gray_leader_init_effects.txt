@@ -617,15 +617,12 @@ rg_gray_country_leader_init = {
 rg_gray_leader_experience_jar = {
 	if = {
 		limit = {
-			NOT = {
-				RG_has_gray_cluster_origin_trigger = yes
+			owner = {
+				NOT = {
+					RG_has_gray_cluster_origin_trigger = yes
+				}
 			}
 			has_skill < 10
-		}
-		while = {
-			limit = {
-				has_skill < 10
-			}
 		}
 		add_experience = 54000
 		event_target:gray_owner = {

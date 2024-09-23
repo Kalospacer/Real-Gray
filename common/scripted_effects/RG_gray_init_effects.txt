@@ -129,12 +129,13 @@ rg_global_gray_location_check = {
 			RG_gray_harbitat_active_trigger = yes
 		}
 		if = {
-			limit = {exists = event_target:rg_gray_habitat_target}
+			limit = {
+				exists = event_target:rg_gray_habitat_target
+			}
 			event_target:rg_gray_habitat_target = {
 				save_global_event_target_as = global_gray_location
 			}
 		}
-
 	}
 	else = {
 		capital_scope = {
@@ -193,14 +194,14 @@ rg_clear_gray_active_flag_effect = {
 	remove_country_flag = gray_constship_active
 	remove_country_flag = gray_army_active
 	remove_country_flag = gray_official_active
-	remove_country_flag = gray_governor_active #旧版flag
+	remove_country_flag = gray_governor_active	#旧版flag
 }
 
 #Country event_target:gray_owner
 #小灰总督启用标识
 rg_set_gray_official_active_effect = {
-	set_country_flag = gray_official_active #新版flag
-	set_country_flag = gray_governor_active #旧版flag
+	set_country_flag = gray_official_active	#新版flag
+	set_country_flag = gray_governor_active	#旧版flag
 }
 
 #Country event_target:gray_owner
@@ -212,8 +213,8 @@ rg_set_gray_warship_active_effect = {
 #Country event_target:gray_owner
 #小灰科学家启用标识
 rg_set_gray_scientist_active_effect = {
-	set_country_flag = gray_official_active #新版flag
-	set_country_flag = gray_governor_active #旧版flag
+	set_country_flag = gray_official_active	#新版flag
+	set_country_flag = gray_governor_active	#旧版flag
 }
 
 #Country event_target:gray_owner
@@ -221,16 +222,19 @@ rg_set_gray_scientist_active_effect = {
 rg_set_gray_army_active_effect = {
 	set_country_flag = gray_army_active
 }
+
 #Country event_target:gray_owner
 #小灰科学家启用标识
 rg_set_gray_scientist_active_effect = {
 	set_country_flag = gray_constship_active
 }
+
 #Country event_target:gray_owner
 #小灰纳米空间站启用标识
 rg_set_gray_harbitat_active_effect = {
 	set_country_flag = rg_habitat_enabled
 }
+
 #Country event_target:gray_owner
 #删除小灰科学家
 rg_clear_gray_science_ship_effect = {
@@ -245,6 +249,7 @@ rg_clear_gray_science_ship_effect = {
 		}
 	}
 }
+
 #Country event_target:gray_owner
 #删除小灰陆军
 rg_clear_gray_army_effect = {
@@ -261,6 +266,7 @@ rg_clear_gray_army_effect = {
 		remove_army = yes
 	}
 }
+
 #Country event_target:gray_owner
 #删除小灰战舰
 rg_clear_gray_warship_effect = {
@@ -275,6 +281,7 @@ rg_clear_gray_warship_effect = {
 		}
 	}
 }
+
 #Country event_target:gray_owner
 #删除小灰纳米空间站
 rg_clear_harbitat = {
@@ -283,6 +290,7 @@ rg_clear_harbitat = {
 		remove_planet = yes
 	}
 }
+
 #Country event_target:gray_owner
 #等级导入，把存储的领袖等级赋予到领袖身上
 rg_set_varible_as_leader_level_effect = {
@@ -340,7 +348,6 @@ rg_create_gray_governor = {
 			}
 			remove_army = yes
 		}
-
 		#存储当前领袖等级
 		rg_save_gray_leader_level_effect = yes
 		#把所有种类的小灰领袖都送回娘家
@@ -363,7 +370,6 @@ rg_create_gray_governor = {
 		rg_clear_gray_active_flag_effect = yes
 		#设置总督已启用标识
 		rg_set_gray_official_active_effect = yes
-		
 		#等级导入，把存储的领袖等级赋予到领袖身上
 		rg_set_varible_as_leader_level_effect = yes
 	}
@@ -398,7 +404,6 @@ rg_create_gray_warship = {
 		else = {
 			rg_gray_commander_init = yes
 		}
-
 		if = {
 			limit = {
 				has_country_flag = rg_gray_level_2
@@ -503,15 +508,11 @@ rg_create_gray_const = {
 		else = {
 			rg_gray_scientist_init = yes
 		}
-
 		rg_scientist_ship_init = yes
 		rg_clear_gray_warship_effect = yes
 		rg_clear_gray_army_effect = yes
-
 		rg_clear_gray_active_flag_effect = yes
-
 		rg_set_gray_scientist_active_effect = yes
-
 		rg_set_varible_as_leader_level_effect = yes
 	}
 }
@@ -565,7 +566,6 @@ rg_juggernaut_habitat_init = {
 					orbit_distance_offset = 9.899
 					size = 10
 					has_ring = no
-			
 					init_effect = {
 						prevent_anomaly = yes
 						set_planet_entity = {
@@ -577,7 +577,6 @@ rg_juggernaut_habitat_init = {
 						}
 						set_all_comms_surveyed = yes
 						clear_blockers = yes
-		
 						set_owner = root
 						set_controller = root
 						create_colony = {
@@ -596,21 +595,18 @@ rg_juggernaut_habitat_init = {
 							}
 						}
 						set_name = "NAME_rg_gray_habitat_base"
-						
 						if = {
 							limit = {
 								event_target:gray_owner = {
 									OR = {
 										has_country_flag = gray_official_active
-										has_country_flag = gray_governor_active #旧版flag
+										has_country_flag = gray_governor_active										#旧版flag
 									}
 								}
 							}
 							assign_leader = event_target:gray_governor
 						}
-
 						set_planet_size = owner.rg_habitat_size
-						
 						generate_start_buildings_and_districts = yes
 						while = {
 							count = 1
@@ -631,7 +627,9 @@ rg_juggernaut_habitat_init = {
 						if = {
 							limit = {
 								exists = owner
-								owner = { is_hive_empire = yes }
+								owner = {
+									is_hive_empire = yes
+								}
 							}
 							while = {
 								count = 1
@@ -641,7 +639,9 @@ rg_juggernaut_habitat_init = {
 						if = {
 							limit = {
 								exists = owner
-								owner = { is_regular_empire = yes }
+								owner = {
+									is_regular_empire = yes
+								}
 							}
 							while = {
 								count = 1
@@ -651,22 +651,21 @@ rg_juggernaut_habitat_init = {
 						if = {
 							limit = {
 								exists = owner
-								from = { is_machine_empire = yes }
+								from = {
+									is_machine_empire = yes
+								}
 							}
 							while = {
 								count = 1
 								add_district = district_rg_nexus
 							}
 						}
-			
 						while = {
 							count = 5
 							create_pop = {
 								species = owner_main_species
 							}
 						}
-						
-			
 						set_planet_flag = megastructure
 						set_planet_flag = habitat
 						set_planet_flag = advanced_habitat
@@ -680,6 +679,3 @@ rg_juggernaut_habitat_init = {
 		rg_set_gray_harbitat_active_effect = yes
 	}
 }
-
-
-
