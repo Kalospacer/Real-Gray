@@ -27,12 +27,10 @@ country_event = {
 				is_same_value = event_target:gray_owner
 				NOR = {
 					RG_gray_scientist_active_trigger = yes
-					has_country_flag = gray_official_active
-					has_country_flag = gray_governor_active					#旧版flag
-					has_country_flag = gray_warship_active
+					RG_gray_official_active_trigger = yes
+					RG_gray_warship_active_trigger = yes
 					RG_gray_army_active_trigger = yes
-					has_country_flag = gray_reforming
-					has_country_flag = gray_diplomacy_engaged
+					RG_gray_not_avaliable_trigger = yes
 				}
 			}
 			country_event = {
@@ -49,13 +47,9 @@ country_event = {
 					}
 				}
 				is_same_value = event_target:gray_owner
-				OR = {
-					has_country_flag = gray_official_active
-					has_country_flag = gray_governor_active					#旧版flag
-				}
-				NOR = {
-					has_country_flag = gray_reforming
-					has_country_flag = gray_diplomacy_engaged
+				RG_gray_official_active_trigger = yes
+				NOT = {
+					RG_gray_not_avaliable_trigger = yes
 				}
 				exists = event_target:gray_governor
 			}
@@ -73,10 +67,9 @@ country_event = {
 					}
 				}
 				is_same_value = event_target:gray_owner
-				has_country_flag = gray_warship_active
-				NOR = {
-					has_country_flag = gray_reforming
-					has_country_flag = gray_diplomacy_engaged
+				RG_gray_warship_active_trigger = yes
+				NOT = {
+					RG_gray_not_avaliable_trigger = yes
 				}
 				exists = event_target:gray_warship
 				any_owned_fleet = {
@@ -100,9 +93,8 @@ country_event = {
 					}
 				}
 				RG_gray_army_active_trigger = yes
-				NOR = {
-					has_country_flag = gray_reforming
-					has_country_flag = gray_diplomacy_engaged
+				NOT = {
+					RG_gray_not_avaliable_trigger = yes
 				}
 				is_same_value = event_target:gray_owner
 				any_owned_army = {
@@ -133,9 +125,8 @@ country_event = {
 				}
 				is_same_value = event_target:gray_owner
 				RG_gray_scientist_active_trigger = yes
-				NOR = {
-					has_country_flag = gray_reforming
-					has_country_flag = gray_diplomacy_engaged
+				NOT = {
+					RG_gray_not_avaliable_trigger = yes
 				}
 				exists = event_target:global_gray_constship
 				any_owned_fleet = {
@@ -159,7 +150,7 @@ country_event = {
 					}
 				}
 				is_same_value = event_target:gray_owner
-				has_country_flag = gray_reforming
+				RG_gray_is_reforming_trigger = yes
 			}
 			country_event = {
 				id = graygoo.504

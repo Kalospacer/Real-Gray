@@ -8,8 +8,7 @@ trigger = {
 	is_same_value = event_target:gray_owner
 	has_country_flag = gray_warship_active
 	NOR = {
-		has_country_flag = gray_reforming
-		has_country_flag = gray_diplomacy_engaged
+		RG_gray_not_avaliable_trigger = yes
 	}
 	exists = event_target:gray_warship
 	any_owned_fleet = {

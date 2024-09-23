@@ -7,8 +7,7 @@ trigger = {
 	}
 	RG_gray_army_active_trigger = yes
 	NOR = {
-		has_country_flag = gray_reforming
-		has_country_flag = gray_diplomacy_engaged
+		RG_gray_not_avaliable_trigger = yes
 	}
 	is_same_value = event_target:gray_owner
 	any_owned_army = {

@@ -18,12 +18,10 @@ trigger = {
 	is_same_value = event_target:gray_owner
 	NOR = {
 		RG_gray_scientist_active_trigger = yes
-		has_country_flag = gray_official_active
-		has_country_flag = gray_governor_active			#旧版flag
+		RG_gray_official_active_trigger = yes		#旧版flag
 		RG_gray_warship_active_trigger = yes
 		RG_gray_army_active_trigger = yes
-		has_country_flag = gray_reforming
-		has_country_flag = gray_diplomacy_engaged
+		RG_gray_not_avaliable_trigger = yes
 		has_country_flag = ban_commu_with_gray
 	}
 }
@@ -33,8 +31,7 @@ option = {
 	response_text = graygoo.500.a.response
 	trigger = {
 		NOR = {
-			has_country_flag = gray_official_active
-			has_country_flag = gray_governor_active				#旧版flag
+			RG_gray_official_active_trigger = yes		#旧版flag
 		}
 	}
 	allow = {

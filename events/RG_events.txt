@@ -1014,7 +1014,7 @@ country_event = {
 # 	is_triggered_only = yes
 # 	trigger = {
 # 		is_same_value = event_target:gray_owner
-# 		has_country_flag = gray_reforming
+# 		RG_gray_is_reforming_trigger = yes
 # 	}
 # 	immediate = {
 # 		if = {

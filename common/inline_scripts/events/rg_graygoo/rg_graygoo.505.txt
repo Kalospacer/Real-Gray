@@ -8,8 +8,7 @@ trigger = {
 	is_same_value = event_target:gray_owner
 	RG_gray_scientist_active_trigger = yes
 	NOR = {
-		has_country_flag = gray_reforming
-		has_country_flag = gray_diplomacy_engaged
+		RG_gray_not_avaliable_trigger = yes
 	}
 	exists = event_target:global_gray_constship
 	any_owned_fleet = {

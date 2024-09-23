@@ -105,7 +105,7 @@ RG_gray_mod2_allow_trigger = {
 }
 RG_gray_mod3_trigger = {
 	NOR = {
-		has_country_flag = gray_reforming
+		RG_gray_is_reforming_trigger = yes
 		has_country_flag = rg_juggernaut_fired
 	}
 	has_country_flag = rg_gray_level_3
@@ -143,6 +143,16 @@ RG_gray_scientist_active_trigger = {
 
 RG_gray_harbitat_active_trigger = {
 	has_country_flag = rg_habitat_enabled
+}
+RG_gray_not_avaliable_trigger = {
+	OR = {
+		RG_gray_is_reforming_trigger = yes
+		has_country_flag = gray_diplomacy_engaged
+	}
+}
+#小灰噶了
+RG_gray_is_reforming_trigger = {
+	has_country_flag = gray_reforming
 }
 
 

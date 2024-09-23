@@ -11,7 +11,7 @@ option = {
 	name = rg_event.4.a
 	trigger = {
 		NOT = {
-			has_country_flag = gray_reforming
+			RG_gray_is_reforming_trigger = yes
 		}
 	}
 	allow = {
@@ -48,7 +48,7 @@ option = {
 	name = rg_event.4.b
 	trigger = {
 		NOT = {
-			has_country_flag = gray_reforming
+			RG_gray_is_reforming_trigger = yes
 		}
 	}
 	allow = {
@@ -74,7 +74,7 @@ option = {
 	name = rg_event.4.g
 	trigger = {
 		NOT = {
-			has_country_flag = gray_reforming
+			RG_gray_is_reforming_trigger = yes
 		}
 	}
 	allow = {
@@ -100,7 +100,7 @@ option = {
 	name = rg_event.4.h
 	trigger = {
 		NOT = {
-			has_country_flag = gray_reforming
+			RG_gray_is_reforming_trigger = yes
 		}
 	}
 	allow = {
@@ -126,7 +126,7 @@ option = {
 	name = rg_event.4.c
 	trigger = {
 		NOT = {
-			has_country_flag = gray_reforming
+			RG_gray_is_reforming_trigger = yes
 		}
 	}
 	hidden_effect = {

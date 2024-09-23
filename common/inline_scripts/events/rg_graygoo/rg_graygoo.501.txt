@@ -6,13 +6,9 @@ trigger = {
 		}
 	}
 	is_same_value = event_target:gray_owner
-	OR = {
-		has_country_flag = gray_official_active
-		has_country_flag = gray_governor_active			#旧版flag
-	}
+	RG_gray_official_active_trigger = yes
 	NOR = {
-		has_country_flag = gray_reforming
-		has_country_flag = gray_diplomacy_engaged
+		RG_gray_not_avaliable_trigger = yes
 	}
 	exists = event_target:gray_governor
 }
