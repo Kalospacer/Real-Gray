@@ -15,7 +15,7 @@ rg_nano_ripper_1 = {
 	resources = {
 		category = megastructures
 		cost = {
-			nanites = 500
+			nanites = 5000
 			unity = 500
 		}
 
@@ -63,7 +63,7 @@ rg_nano_ripper_1 = {
 		}
 		from = {
 			add_resource = {
-				nanites = 500
+				nanites = 5000
 				mult = modifier:megastructure_dismantle_refund_mult
 			}
 			# if = {
@@ -247,7 +247,7 @@ rg_nano_ripper_2 = {
 	resources = {
 		category = megastructures
 		cost = {
-			nanites = 1000
+			nanites = 10000
 			unity = 1000
 		}
 
@@ -294,7 +294,7 @@ rg_nano_ripper_2 = {
 		}
 		from = {
 			add_resource = {
-				nanites = 1000
+				nanites = 10000
 				mult = modifier:megastructure_dismantle_refund_mult
 			}
 			# if = {
@@ -357,7 +357,7 @@ rg_nano_ripper_3 = {
 	resources = {
 		category = megastructures
 		cost = {
-			nanites = 1500
+			nanites = 15000
 			unity = 2000
 		}
 
@@ -404,7 +404,7 @@ rg_nano_ripper_3 = {
 		}
 		from = {
 			add_resource = {
-				nanites = 1500
+				nanites = 15000
 				mult = modifier:megastructure_dismantle_refund_mult
 			}
 			# if = {
@@ -467,7 +467,7 @@ rg_nano_ripper_4 = {
 	resources = {
 		category = megastructures
 		cost = {
-			nanites = 2000
+			nanites = 20000
 			unity = 4000
 		}
 
@@ -514,7 +514,7 @@ rg_nano_ripper_4 = {
 		}
 		from = {
 			add_resource = {
-				nanites = 2000
+				nanites = 20000
 				mult = modifier:megastructure_dismantle_refund_mult
 			}
 			# if = {
@@ -602,7 +602,7 @@ rg_nano_ripper_restored = {
 	resources = {
 		category = megastructures
 		cost = {
-			nanites = 3000
+			nanites = 30000
 			unity = 2000
 		}
 

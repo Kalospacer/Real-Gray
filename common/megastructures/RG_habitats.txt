@@ -25,7 +25,7 @@ RG_habitat_central_complex = {
 	resources = {
 		category = megastructures_habitat
 		cost = {
-			nanites = 4500
+			nanites = 7500
 			influence = 200
 		}
 	}
