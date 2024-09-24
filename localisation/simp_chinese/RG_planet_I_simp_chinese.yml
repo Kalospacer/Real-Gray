@@ -1,4 +1,7 @@
 ﻿l_simp_chinese:
+ pc_rg_grayhabitat: "纳米空间站点"
+ pc_rg_grayhabitat_desc: "一座由纳米机械组成的深空居所，能提供仿佛行星一般的居住体验，具体而言是指行星上的城市区域。完全由纳米机器人组成使得建筑如梦幻般瞬间出现，由纳米机器组成的实体承担着空间站点的一切生产工作。\n§Y空间站点的$PLANET_SIZE$会随着$NAME_Gray$领袖等级(§Y[owner.rg_gray_level]§!)的提升而扩展。初始$PLANET_SIZE$为10，每级领袖等级提升2$PLANET_SIZE$。§!"
+
  building_rg_nanolab_1: "§Y纳米研究设施§!"
  building_rg_nanolab_1_desc: "在纳观尺度上进行研究带来对宇宙的全新视角。"
  building_rg_nanolab_2: "§Y纳米研究复合体§!"
