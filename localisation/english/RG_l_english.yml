@@ -1,5 +1,4 @@
 ﻿l_english:
- # NAME_Gray:0 "小灰"
  GRAY_SPECIES:0 "$NAME_Gray$"
  RG_MACHINE:0 "§YNanite Reconstructed Doll§!"
  gray_army_desc:0 "$NAME_Gray$With her nano-combat mothership, it can easily sweep away a planet"
