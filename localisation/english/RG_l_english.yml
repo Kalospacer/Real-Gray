@@ -36,15 +36,15 @@
  RG_sim_dragon_species:0 "Dragons in disguise"
  RG_SIMULATION_DRAGON_SPECIES:0 "Dragons in disguise"
 
- situation_rg_gray_mod1:0 "§Y$NAME_Gray$Renovation Project§!"
+ situation_rg_gray_mod1:0 "§Y$NAME_Gray$ Upgrade Project§!"
  situation_rg_gray_mod1_desc:0 "Due to the lack of resources in the L-Cluster, the hull of $NAME_Gray$ has not been maintained for a long time. By mobilizing enough resources, $NAME_Gray$ can be used to restore the mothership to its full state. In order to execute this initiative, $NAME_Gray$ needed the help of our engineering team. \n§RSwitching the $NAME_Gray$ pattern will cause the plan to fail. §!"
 
- situation_rg_gray_mod1_stage_1:0 "§Y Stage 1: Basic Hull Repair Stage§!"
- situation_rg_gray_mod1_stage_2:0 "§Y Stage 2: Weapon Point Reconstruction Stage§!"
- situation_rg_gray_mod1_stage_3:0 "§Y Stage 3: Feasibility Verification Stage§!"
- situation_rg_gray_mod1_stage_4:0 "§Y Stage 4: Star Destroyer Weapon Design Stage§!"
- situation_rg_gray_mod1_stage_5:0 "§Y Stage 5: Ship-wide Nanodesign Stage§!"
- situation_rg_gray_mod1_stage_6:0 "§Y Stage 6: Final Sea Trial Stage§!"
+ situation_rg_gray_mod1_stage_1:0 "§YStage 1: Basic Hull Repair Stage§!"
+ situation_rg_gray_mod1_stage_2:0 "§YStage 2: Weapon Point Reconstruction Stage§!"
+ situation_rg_gray_mod1_stage_3:0 "§YStage 3: Feasibility Verification Stage§!"
+ situation_rg_gray_mod1_stage_4:0 "§YStage 4: Star Destroyer Weapon Design Stage§!"
+ situation_rg_gray_mod1_stage_5:0 "§YStage 5: Ship-wide Nanodesign Stage§!"
+ situation_rg_gray_mod1_stage_6:0 "§YStage 6: Final Sea Trial Stage§!"
 
  situation_rg_gray_mod1_stage_1_tooltip:0 "$rg_story.23.desc$"
  situation_rg_gray_mod1_stage_2_tooltip:0 "$rg_story.24.desc$"
@@ -76,7 +76,7 @@
  situation_rg_gray_mod2_stage_2_booster_tooltip:0 "§GOur project gets an extra budget§!"
  situation_rg_gray_mod2_stage_3_booster_tooltip:0 "§GOur project has been approved for the construction of a test ship§!"
 
- situation_rg_gray_mod2:0 "§Y$NAME_Gray$ Capitalship Renovation Project§!"
+ situation_rg_gray_mod2:0 "§Y$NAME_Gray$ Capitalship Upgrade Project§!"
  situation_rg_gray_mod2_desc:0 "Our scientists believe that with the accumulation of our research on the $NAME_Gray$ hull and technology, we will be able to design a giant flagship hull. If successful, the $NAME_Gray$ mothership will gain enough combat power to rival the Fallen Empire. For this great project, we need to mobilize huge resources. Once the resources are ready, the project can start immediately\n§H This is a long-term project, so switching $NAME_Gray$ patterns will not cause the plan to fail. §!"
 
  situation_rg_gray_mod2_stage_1:0 "§YStage 1: Fundamental Mechanics Verification Stage§!"

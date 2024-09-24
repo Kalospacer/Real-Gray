@@ -1,0 +1,54 @@
+﻿l_english:
+ tech_gray_weapon_lance_1:0 "§YNanite energy manipulation§!"
+ tech_gray_weapon_lance_1_desc:0 "By studying the weapons used by the Gray Tempest ship in the L-Gate, we were able to partially restore this technology using nanites."
+
+ tech_gray_matter_remix_2:0 "§YNanite hybrid engineering§!"
+ tech_gray_matter_remix_2_desc:0 "By applying nanites to special materials, we are able to give these materials new properties."
+
+ tech_gray_nano_fusion_3:0 "§YNanite energy production§!"
+ tech_gray_nano_fusion_3_desc:0"By use nanites properties to greatly compress traditional reactors greatly improves the efficiency of energy production."
+
+ tech_gray_nano_boost_3:0 "§YNanite propulsion engineering§!"
+ tech_gray_nano_boost_3_desc:0 "By refining the new materials, we were able to create materials that could generate their own thrust, enabling more sophisticated engineering."
+
+ tech_gray_interdictor_4:0 "§YNanite Interdictor§!"
+ tech_gray_interdictor_4_desc:0 "Through technological reversal and accumulation, we were able to reproduce the Gray Tempest ships in these L-Gates, galloping under our flag."
+
+ tech_gray_matter_spray_5:0 "§YProject Splatoon§!"
+ tech_gray_matter_spray_5_desc:0 "The invention of nanomachine materials has allowed us to recreate this bizarre design, which is occupied by a dense number of disposable launchers designed to launch giant warheads, and can eject more than half of the ship's mass in a single launch. Disposable, of course."
+
+ tech_gray_buffnut_6:0 "§YNanite Support-Colossus project§!"
+ tech_gray_buffnut_6_desc:0 "With Colossus technology, we can use L-Gate technology to design new support ships, and they have great potential."
+
+ tech_gray_cloaking_3:0 "§YNanite Ray-Tracing field§!"
+ tech_gray_cloaking_3_desc:0 "By reversely calculating the illumination path of the rays, the shield force field is finely adjusted so that the hull is not visible in part of the light spectrum. Obviously, this is an expensive technology. "
+
+ tech_gray_repair_system_1:0 "§Y$NAME_Gray$ Nano Repair System§!"
+ tech_gray_repair_system_1_desc:0 "An efficient automated hull repair system consisting of billions of micro-nanobots has been found in the wreckage of the Grey Storm, which has been adapted to work for us."
+
+ tech_object_gray_5:0 "§Y$NAME_Gray$ Mothership Reconstruction§!"
+ tech_object_gray_5_desc:0 "Through routine maintenance of the $NAME_Gray$ hull as well as ... With a little reverse engineering, we were able to partially replicate the design of the $NAME_Gray$ mothership, all with the consent of $NAME_Gray$ himself. "
+
+ tech_minilaser_gray_1:0 "§Y$NAME_Gray$ Weapon Miniaturization§!"
+ tech_minilaser_gray_1_desc:0 "A strange box has dropped from a shelf containing a feasibility verification plan for the miniaturization of nanoweapons."
+
+ tech_gray_noway:0 "The 404 problem of §Y$NAME_Gray$§!"
+ tech_gray_noway_desc:0 "It seems like something strange, so it's better to leave it alone."
+
+ tech_object_gray_6:0 "The 404 problem of §Y$NAME_Gray$§!2"
+ tech_object_gray_6_desc:0 "It seems like something strange, so it's better to leave it alone."
+
+ tech_object_gray_7:0 "§YStorm waves§!"
+ tech_object_gray_7_desc:0 "It seems like something strange, so it's better to leave it alone."
+
+ tech_gray_army_7:0 "§Yself-evolving $gray_army$§!"
+ tech_gray_army_7_desc:0 "By implanting some low-level self-evolving programs, combined with the understanding of nanomaterials, we are able to produce some nano combat bodies in small batches for the army to deliver."
+
+ tech_gray_juggernaut_8:0 "§YNanite SuperShip System§!"
+ tech_gray_juggernaut_8_desc:0 "The self-constituted nature of nanomatter allows them to be used to build projects of unparalleled scale. And we're going to take the first step. "
+
+ TECH_UNLOCK_RG_CLOAKING_3_TITLE: "§H$UNLOCKS_COMPONENT$§!$RG_CORVETTE_CLOAKING_3$"
+ TECH_UNLOCK_RG_CLOAKING_3_DESC: "§H$RG_CORVETTE_CLOAKING_3$§!\n$tech_gray_cloaking_3_desc$"
+
+ tech_rg_rg_nano_ripper: "$rg_nano_ripper_4$"
+ tech_rg_rg_nano_ripper_desc: "$rg_nano_ripper_4_DESC$"
