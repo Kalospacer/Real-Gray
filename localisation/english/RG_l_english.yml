@@ -1,0 +1,116 @@
+﻿l_simp_chinese:
+ NAME_Gray:0 "小灰"
+ GRAY_SPECIES:0 "$NAME_Gray$"
+ RG_MACHINE:0 "§Y纳米构造体§!"
+ gray_army_desc:0 "$NAME_Gray$和她的纳米作战母舰，可以轻易扫平一颗星球"
+
+ rg_tempest_invocator: "灰蛊核心"
+ rg_tempest_invocator_desc: "尽管叫做$rg_tempest_invocator$但实际上和$NAME_Gray_Goo$没有任何关系。这件神奇的$relics$是我们的工程师完全自主研发的拥有独立知识产权的专利产品。"
+
+ d_nanite_ripper_deposit_1: "£nanites£ +0.1"
+ d_nanite_ripper_deposit_2: "£nanites£ +1.6"
+ d_nanite_ripper_deposit_3: "£nanites£ +5.8"
+ d_nanite_ripper_deposit_4: "£nanites£ +25.6"
+
+ rg_nanite_leader:0"§Y纳米机器个体§!"
+ rg_nanite_leader_plural:0"§Y纳米机器个体§!"
+ rg_nanite_leader_description:0"§Y本质上是由千千万万纳米机械所组成的个体。因为能做到，所以将无所不能。§!"
+ rg_nanite_leader_plural_with_icon:0"£official£ $rg_nanite_leader_plural$"
+
+ RG_AUTOCONST_HANGER:0 "自动工程子个体"
+ RG_AUTOCONST_HANGER_desc:0 "预载的工蜂工程舰可以在星系调查完成后自动建造恒星基地。"
+ RG_const_country:0 "$NAME_Gray$-自动工程队"
+
+ rg_nothing:0 ""
+ rg_nothing_desc:0 ""
+
+ rg_distant_stars_modifier:0 "§H遥远繁星§!"
+ rg_distant_stars_modifier_desc:0 "L-星团是一群距离我们所熟知的银河系相距极远的星系组成的星团。从内部几乎没有可能启动跃迁引擎回到银河系。\n§H当然你执意要出去...那我也没办法嘛。L-星门开启后自动移除该修正。§!"
+
+ rg_gray_army_base:0 "§Y自走纳米机器战体§!"
+ rg_gray_army_base_desc:0 "经过逆向工程制造出的纳米作战体复制品，只拥有有限的作战决策能力。不过仍具有巨大的威力。"
+
+ rg_fake_dragon_desc:0 "模拟龙是在$NAME_Gray$的神秘实验中诞生的模拟生命。虽然由纳米机器组成但却无法自主控制这些纳米机器。随着纳米机器失去维护能力，模拟龙的未来也变得愈加扑朔迷离。"
+ rg_timed_life_millennium:0 "§R千年魂环§!:模拟龙已经一千岁了~恭喜你。然而什么都没有发生！"
+ rg_timed_life_millennium_reborn:0 "§Y发光的§!§R千年魂环§!:模拟龙已经一千岁了~§R你是怎么做到的？难道一千年真的如此短暂吗？§!\n你获得了§R废物认证§!~"
+ RG_sim_dragon_species:0 "伪装的龙"
+ RG_SIMULATION_DRAGON_SPECIES:0 "伪装的龙"
+
+ situation_rg_gray_mod1:0 "§Y$NAME_Gray$改造工程§!"
+ situation_rg_gray_mod1_desc:0 "由于L星团资源太缺乏，$NAME_Gray$的舰体已经很久没有维护了。通过调集足够的资源$NAME_Gray$能够将母舰状态恢复到完全体。为了执行这项计划，$NAME_Gray$需要我们的工程团队的帮助。\n§R切换$NAME_Gray$形态将会导致计划失败。§!"
+
+ situation_rg_gray_mod1_stage_1:0 "§Y第一阶段:基本舰体修复阶段§!"
+ situation_rg_gray_mod1_stage_2:0 "§Y第二阶段:武器载点重构阶段§!"
+ situation_rg_gray_mod1_stage_3:0 "§Y第三阶段:可行性验证阶段§!"
+ situation_rg_gray_mod1_stage_4:0 "§Y第四阶段:歼星武器设计阶段§!"
+ situation_rg_gray_mod1_stage_5:0 "§Y第五阶段:全舰纳米化设计阶段§!"
+ situation_rg_gray_mod1_stage_6:0 "§Y第六阶段:最终试航阶段§!"
+
+ situation_rg_gray_mod1_stage_1_tooltip:0 "$rg_story.23.desc$"
+ situation_rg_gray_mod1_stage_2_tooltip:0 "$rg_story.24.desc$"
+ situation_rg_gray_mod1_stage_3_tooltip:0 "$rg_story.25.desc$"
+ situation_rg_gray_mod1_stage_4_tooltip:0 "$rg_story.26.desc$"
+ situation_rg_gray_mod1_stage_5_tooltip:0 "$rg_story.27.desc$"
+ situation_rg_gray_mod1_stage_6_tooltip:0 "$rg_story.28.desc$"
+
+ situation_rg_gray_mod1_monthly_change_tooltip:0 "§Y我们正在稳步推进改造项目。§!"
+ situation_rg_gray_mod1_finish_tooltip:0 "§Y我们的计划按部就班地顺利完成。§!"
+
+ situation_rg_gray_mod2_monthly_change_tooltip:0 "§Y我们正在稳步推进改造项目。§!"
+ situation_rg_gray_mod2_finish_tooltip:0 "§Y我们的计划按部就班地顺利完成。§!"
+
+ situation_rg_gray_mod1_approach_1:0 "按计划执行"
+ situation_rg_gray_mod1_approach_2:0 "暂停执行计划"
+ situation_rg_gray_mod1_approach_3:0 "放弃执行计划"
+ situation_rg_gray_mod1_approach_1_tooltip:0 "§G我们的项目将会按计划按部就班执行。§!"
+ situation_rg_gray_mod1_approach_2_tooltip:0 "§Y迫于外部压力，我们需要暂缓执行改造项目。§!"
+ situation_rg_gray_mod1_approach_3_tooltip:0 "§R我们遇到了使计划难以为继的困难，不得不暂时中止计划等待下一个时机。§!"
+
+ situation_rg_gray_mod1_stage_1_booster_tooltip:0 "§G我们的项目获得了额外预算§!"
+ situation_rg_gray_mod1_stage_2_booster_tooltip:0 "§G我们的工程团队被指派帮助改造项目§!"
+ situation_rg_gray_mod1_stage_3_booster_tooltip:0 "§R由于我们的计划缺少预算，项目团队只能用想象力来弥补不足§!"
+ situation_rg_gray_mod1_stage_5_booster_tooltip:0 "§G我们的物理团队被指派帮助改造项目§!"
+ situation_rg_gray_mod1_stage_6_booster_tooltip:0 "§Y我们需要实际开始执行改造项目§!"
+
+ situation_rg_gray_mod2_stage_1_booster_tooltip:0 "§G我们的科研团队被指派帮助改造项目§!"
+ situation_rg_gray_mod2_stage_2_booster_tooltip:0 "§G我们的项目获得了额外预算§!"
+ situation_rg_gray_mod2_stage_3_booster_tooltip:0 "§G我们的项目被批准建造试验船§!"
+
+ situation_rg_gray_mod2:0 "§Y$NAME_Gray$旗舰改造工程§!"
+ situation_rg_gray_mod2_desc:0 "我们的科学家相信，随着我们对$NAME_Gray$舰体和科技的研究成果的积累，我们能够设计一种巨型的旗舰舰体。如果取得成功，$NAME_Gray$母舰将获得足以匹敌堕落帝国的战斗力。为了这项伟大的项目，我们需要调集巨量的资源。一旦资源准备妥当，项目可以立即开始\n§H这是一项长期工程，因此切换$NAME_Gray$形态不会导致计划失败。§!"
+
+ situation_rg_gray_mod2_stage_1:0 "§Y第一阶段:基本力学验证阶段§!"
+ situation_rg_gray_mod2_stage_2:0 "§Y第二阶段:纳米构成研究阶段§!"
+ situation_rg_gray_mod2_stage_3:0 "§Y第三阶段:工程场地建设阶段§!"
+ situation_rg_gray_mod2_stage_4:0 "§Y第四阶段:反应堆稳定研究阶段§!"
+ situation_rg_gray_mod2_stage_5:0 "§Y第五阶段:主武器载点设计阶段§!"
+ situation_rg_gray_mod2_stage_6:0 "§Y第六阶段:舱室布局设计阶段§!"
+ situation_rg_gray_mod2_stage_7:0 "§Y第七阶段:舰体龙骨铺设阶段§!"
+ situation_rg_gray_mod2_stage_8:0 "§Y第八阶段:舰体主结构铺设阶段§!"
+ situation_rg_gray_mod2_stage_9:0 "§Y第九阶段:超空间引擎验证阶段§!"
+ situation_rg_gray_mod2_stage_10:0 "§Y第十阶段:子系统吊装阶段§!"
+ situation_rg_gray_mod2_stage_11:0 "§Y第十一阶段:全舰纳米化设计阶段§!"
+ situation_rg_gray_mod2_stage_12:0 "§Y第十二阶段:最终试航阶段§!"
+ situation_rg_gray_mod2_stage_13:0 "§Y第十三阶段:居住区划设计阶段§!"
+ situation_rg_gray_mod2_stage_14:0 "§Y第十四阶段:主宰船坞铺设阶段§!"
+
+ situation_rg_gray_mod2_stage_1_tooltip:0 "$rg_story.30.desc$"
+ situation_rg_gray_mod2_stage_2_tooltip:0 "$rg_story.31.desc$"
+ situation_rg_gray_mod2_stage_3_tooltip:0 "$rg_story.32.desc$"
+ situation_rg_gray_mod2_stage_4_tooltip:0 "$rg_story.33.desc$"
+ situation_rg_gray_mod2_stage_5_tooltip:0 "$rg_story.34.desc$"
+ situation_rg_gray_mod2_stage_6_tooltip:0 "$rg_story.35.desc$"
+ situation_rg_gray_mod2_stage_7_tooltip:0 "$rg_story.36.desc$"
+ situation_rg_gray_mod2_stage_8_tooltip:0 "$rg_story.37.desc$"
+ situation_rg_gray_mod2_stage_9_tooltip:0 "$rg_story.38.desc$"
+ situation_rg_gray_mod2_stage_10_tooltip:0 "$rg_story.39.desc$"
+ situation_rg_gray_mod2_stage_11_tooltip:0 "$rg_story.40.desc$"
+ situation_rg_gray_mod2_stage_12_tooltip:0 "$rg_story.41.desc$"
+ situation_rg_gray_mod2_stage_13_tooltip:0 "$rg_story.42.desc$"
+ situation_rg_gray_mod2_stage_14_tooltip:0 "$rg_story.43.desc$"
+
+ rg_gray_mod2_stage1_project:0 "§Y指派首席科学家帮助改造项目§!"
+ rg_gray_mod2_stage1_project_desc:0 "为了加快$NAME_Gray$改造项目进度，我们需要指派我们的科学家研究这个项目。嗯，就是这样。" 
+
+ rg_gray_mod2_stage4_project:0 "$rg_gray_mod2_stage1_project$"
+ rg_gray_mod2_stage4_project_desc:0 "$rg_gray_mod2_stage1_project_desc$"
