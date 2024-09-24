@@ -91,6 +91,7 @@ tr_rg_nanotech_3 = {
 			tech = tech_object_gray_7
 			message = no
 		}
+		rg_create_gray_planetkiller_testship_2 = yes
 	}
 	#Unlocks Starbase Building and Make Nanite World Decision
 	ai_weight = {

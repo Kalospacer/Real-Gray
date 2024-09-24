@@ -37,3 +37,11 @@ RG_has_gray_cluster_origin_trigger = {
 		has_country_flag = origin_gray_country				#远星之歌
 	}
 }
+
+rg_is_main_species_with_maid_trait_trigger = {
+	has_trait = rg_machine_maid_trait
+	OR = {
+		is_same_species = owner_main_species
+		is_subspecies = owner_main_species
+	}
+}

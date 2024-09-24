@@ -1423,7 +1423,7 @@ RG_const_auto_build_effect = {
 					#建造空间站
 					find_closest_planet = {
 						trigger = {
-							id = RG_work_bees_trigger.1
+							id = RG_work_bees_trigger.11
 							RG_planet_can_auto_build = yes
 						}
 						found_planet = {
@@ -1433,7 +1433,7 @@ RG_const_auto_build_effect = {
 								duration = $station_time$
 							}
 							effect = {
-								id = RG_work_bees_effect.2
+								id = RG_work_bees_effect.22
 								#若星系属于母国，则自动建造
 								if = {
 									limit = {

@@ -684,6 +684,7 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
+		exists = fromfrom.leader
 		OR = {
 			fromfrom.leader = {
 				has_trait = RG_leader_trait_admiral_nanorebuild_gray
@@ -717,8 +718,9 @@ country_event = {
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
+		exists = fromfromfrom.leader
 		OR = {
-			fromfrom.leader = {
+			fromfromfrom.leader = {
 				has_trait = RG_leader_trait_admiral_nanorebuild_gray
 			}
 		}

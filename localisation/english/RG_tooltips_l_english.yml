@@ -6,7 +6,7 @@
  rg_requires_no_nano_ripper: "$TRIGGER_FAIL$Cannot construct in the same system as an existing §Y$rg_nano_ripper_4$§!"
  rg_requires_no_nano_ripper_construction: "$TRIGGER_FAIL$Cannot construct in the same system as an ongoing §Y$rg_nano_ripper_4$ construction§!"
  allow_rg_nano_ripper: "§HUnlock megastructures：§!$rg_nano_ripper_4$"
- rg_machine_maid_trait_effect_tooltip: "Each online $pops_with_icon$§! require 0.3 £nanites£$nanites$§Y upkeep§!.\nOn $NAME_Gray$ Owner Country:$TABBED_NEW_LINE$$mod_planet_jobs_produces_mult$：§G+10%§!"
+ rg_machine_maid_trait_effect_tooltip: "Each online $pops_with_icon$§! require 0.3 £nanites£$nanites$§Y upkeep§!.\nPop Housing Usage: §G-90%§!\nSpecies Minimum Habitability: §G+25%§!\nOn $NAME_Gray$ Owner Country:$TABBED_NEW_LINE$$mod_planet_jobs_produces_mult$：§G+10%§!"
  concept_rg_scion: "$preset_rg_scion$"
  concept_rg_scion_desc: "$preset_rg_scion_desc$"
  concept_rg_gray: "$NAME_Gray$"

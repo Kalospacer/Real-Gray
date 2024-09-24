@@ -1193,16 +1193,10 @@ country_event = { # Memorial Valuts Civic Paragon Level Tick / FROM = Leader
 	}
 
 	immediate = {
-		random_owned_pop = {
-			limit = {
-				is_same_species = root
-				species = {
-					NOT = {
-						has_trait = rg_machine_maid_trait
-					}
-				}
-			}
-			rg_event_effect_planet2027_spawn_maid_species_non_gray = yes
+		rg_create_gray_planetkiller_testship_2 = yes
+		modify_species = {
+			species = root.species
+			add_trait = rg_machine_maid_trait
 		}
 	}
 }

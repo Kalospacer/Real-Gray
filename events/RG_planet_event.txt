@@ -289,30 +289,23 @@ country_event = {
 		else = {
 			random_owned_planet = {
 				limit = {
-					owner = {
-						RG_gray_harbitat_active_trigger = yes
+					is_under_colonization = no
+					OR = {
+						is_planet_class = pc_rg_grayhabitat
+						is_planet_class = pc_nanotech
 					}
-					# exists = event_target:rg_gray_habitat_target
-					PREV = {
-						any_owned_planet = {
-							is_under_colonization = no
-							OR = {
-								is_planet_class = pc_rg_grayhabitat
-								is_planet_class = pc_nanotech
-							}
-							free_jobs > 0
-							NOR = {
-								free_jobs_of_type = {
-									job = mortal_initiate
-									value >= 1
-								}
-								free_jobs_of_type = {
-									category = bio_trophy
-									value >= 1
-								}
-							}
+					free_jobs > 0
+					NOR = {
+						free_jobs_of_type = {
+							job = mortal_initiate
+							value >= 1
+						}
+						free_jobs_of_type = {
+							category = bio_trophy
+							value >= 1
 						}
 					}
+					# exists = event_target:rg_gray_habitat_target
 				}
 				planet_event = {
 					id = rg_planet.2027
@@ -388,6 +381,7 @@ planet_event = {
 		if = {
 			limit = {
 				owner = {
+					exists = event_target:gray_owner
 					is_same_value = event_target:gray_owner
 					exists = event_target:rg_owner_main_maid_species
 				}
@@ -402,18 +396,16 @@ planet_event = {
 		else = {
 			if = {
 				limit = {
-					owner= {
+					owner = {
 						any_owned_species = {
-							has_trait = rg_machine_maid_trait
-							is_subspecies = owner_main_species
+							rg_is_main_species_with_maid_trait_trigger = yes
 						}
 					}
 				}
 				owner = {
 					random_owned_species = {
 						limit = {
-							has_trait = rg_machine_maid_trait
-							is_subspecies = owner_main_species
+							rg_is_main_species_with_maid_trait_trigger = yes
 						}
 						save_event_target_as = rg_maid_species
 					}
@@ -421,8 +413,22 @@ planet_event = {
 				while = {
 					count = num_pops
 					create_pop = {
-						species = rg_maid_species
+						species = event_target:rg_maid_species
 					}
+				}
+			}
+			else_if = {
+				limit = {
+					owner = {
+						NOT = {
+							any_owned_species = {
+								rg_is_main_species_with_maid_trait_trigger = yes
+							}
+						}
+					}
+				}
+				every_owned_pop = {
+					rg_event_effect_planet2027_spawn_maid_species_non_gray = yes
 				}
 			}
 		}

@@ -180,6 +180,16 @@ on_space_battle_won = {
 	}
 }
 
+# This = owner of fleet 1 (winner)
+# From = owner of fleet 2 (loser)
+# FromFrom = fleet 1
+# FromFromFrom = fleet 2
+# Fires when a combat is finished from a lack of enemies
+on_space_battle_over = {
+	events = {
+	}
+}
+
 # This = owner of fleet 1 (loser)
 # From = owner of fleet 2 (winner)
 # FromFrom = fleet 1

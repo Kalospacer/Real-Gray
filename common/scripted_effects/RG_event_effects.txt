@@ -200,9 +200,6 @@ rg_event_effect_planet2027_spawn_maid_species_non_gray = {
 					trait = trait_robot_streamlined_protocols
 					trait = trait_robot_luxurious
 				}
-				effect = {
-					save_event_target_as = rg_maid_species
-				}
 			}
 		}
 	}
