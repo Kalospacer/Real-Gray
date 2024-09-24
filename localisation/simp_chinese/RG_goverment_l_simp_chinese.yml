@@ -37,6 +37,13 @@
  situation_rg_nanotech_consume_planet_monthly_change_tooltip: "纳米机器人提取进展"
  situation_rg_nanotech_consume_planet_desc: "一切事物，包括所有星球，都注定要融入我们的集体，成为我们的一部分。"
 
+ situation_nanites_deficit: "$nanites$短缺"
+ situation_nanites_deficit_type: "$situation_nanites_deficit$"
+ deficit_approach_cut_nanite_usage: "$nanites$配给"
+ string_expenditures_greater_than_income_nanites: "$nanites$发生赤字"
+ string_not_in_deficit_nanites: "$nanites$月度结余为正"
+ string_resource_reserves_nanites: "$nanites$能量币储备"
+
  purge_nanophage: "纳米同化"
  purge_nanophage_tooltip: "受影响的人口会被逐渐裂解为[From.GetSpeciesAdj]物种，无论其自身的意志如何。"
  purge_nanophage_tooltip_delayed: "§L不自由的形态只是阻碍我们发展的束缚。秉此之道，他们的事业将有[From.GetSpeciesNamePlural]继续践行。§!"

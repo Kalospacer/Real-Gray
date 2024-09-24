@@ -27,6 +27,15 @@
  rg_event.403.a:0 "欢迎加入[Root.GetName]！"
  rg_event.403.a.response:0 "§Y<你现在可以通过通讯菜单与$NAME_Gray$交流。>§!"
 
+
+ rg_deficit.170.desc: "[Owner.GetFinancialAdvisorAgencyCap]现在愈发关心我们帝国发生的$nanites$短缺。如果不能尽快弥补上我们的支出，我们的工业部门将会收到广泛的影响。"
+ rg_deficit.170.desc.machine: "预算警告：当前$nanites$支出已经超过了接下来数月的支出阈值。若不能解决短缺，将会给我们的工业区域造成广泛的扰乱。"
+ rg_deficit.170.A: "将§Y[robots_planet.GetName]§!的机器人拆成$nanites$。"
+ rg_deficit.170.A.tooltip: "拆解[robots_planet.GetName]上的所有机器人（£pop£§Y[robots_planet.recycled_robots]子个体§!）以获取£nanites£§Y[robots_planet.total_alloys_gained]$nanites$§!"
+ rg_deficit.170.B: "合并。循环。拆解§Y[robots_planet.GetName]§!上的智能人。"
+ rg_deficit.170.B.tooltip: "拆解[robots_planet.GetName]上的一半人口（£pop£§Y[robots_planet.recycled_robots]子个体§!）以获取£nanites£§Y[robots_planet.total_alloys_gained]$nanites$§!"
+ rg_deficit.175.desc: "由于无法解决$nanites$短缺，我们被迫宣布破产并违约债务。[Owner.GetFinancialAdvisorAgencyCap]正在起草新的紧缩经济计划以削减开支，避免这种情况再度发生。"
+
  #graygoo.505.a.desc:0 "单位65-D-R5-9-2报告，这里一切正常。（远处的声音）机器人又坏了？快干活！"
  #graygoo.505.b.desc:0 "开工啦！开工啦！劳动最光荣！"
  #graygoo.505.c.desc:0 "武装工程兵$NAME_Gray$向您报道！下一个目标是什么？"

@@ -1,0 +1,159 @@
+namespace = rg_deficit
+
+situation_event = {
+	id = rg_deficit.170
+	title = deficit.170.name
+	desc = {
+		text = rg_deficit.170.desc
+		trigger = { owner = { is_machine_empire = no } }
+	}
+	desc = {
+		text = rg_deficit.170.desc.machine
+		trigger = { owner = { is_machine_empire = yes } }
+	}
+	picture = GFX_evt_deficit
+	show_sound = event_bad_omen
+	is_triggered_only = yes
+	situation = this
+
+	abort_trigger = {
+		situation_progress >= 100
+	}
+
+	immediate = {
+		owner = {
+			# if normal empire, get all non-sapient or enslaved robots
+			if = {
+				limit = {
+					is_machine_empire = no
+				}
+				ordered_owned_planet = {
+					limit = {
+						any_owned_pop = {
+							OR = {
+								is_shackled_robot = yes
+								is_non_sapient_robot = yes
+							}
+						}
+					}
+					order_by = value:num_non_sapient_robots_on_planet
+					position = 0
+					save_event_target_as = robots_planet
+					event_target:robots_planet = {
+						count_robots_to_recycle = { ALLOYS = 100 }
+					}
+				}
+			}
+			# if machine empire, the planet with most pops...
+			else = {
+				ordered_owned_planet = {
+					limit = {
+						any_owned_pop = {
+							is_robot_pop = yes
+						}
+					}
+					order_by = trigger:num_pops
+					position = 0
+					save_event_target_as = robots_planet
+					event_target:robots_planet = {
+						# ...and halven the number of recycled bots here
+						count_robots_to_recycle = { ALLOYS = 100 }
+					}
+				}
+
+			}
+		}
+	}
+
+	# scrap all robots on a planet (normal empires)
+	option = {
+		name = rg_deficit.170.A
+		custom_tooltip = rg_deficit.170.A.tooltip
+		trigger = {
+			owner = {
+				is_machine_empire = no
+			}
+			exists = event_target:robots_planet
+		}
+		hidden_effect = {
+			event_target:robots_planet = {
+				every_owned_pop = {
+					limit = {
+						OR = {
+							is_shackled_robot = yes
+							is_non_sapient_robot = yes
+						}
+					}
+					kill_pop = yes
+				}
+			}
+			owner = {
+				add_resource = {
+					nanites = 1
+					mult = event_target:robots_planet.total_alloys_gained
+				}
+			}
+		}
+	}
+	# scrap half robot pops on a planet (machine empires)
+	option = {
+		name = rg_deficit.170.B
+		custom_tooltip = rg_deficit.170.B.tooltip
+		trigger = {
+			owner = {
+				is_machine_empire = yes
+			}
+			exists = event_target:robots_planet
+		}
+		hidden_effect = {
+			event_target:robots_planet = {
+				while = {
+					count = recycled_robots
+					random_owned_pop = {
+						limit = {
+							is_robot_pop = yes
+						}
+						kill_pop = yes
+					}
+				}
+			}
+
+			owner = {
+				add_resource = {
+					nanites = 1
+					mult = event_target:robots_planet.total_alloys_gained
+				}
+			}
+		}
+	}
+
+	option = {
+		name = deficit.100.C
+	}
+}
+
+situation_event = {
+	id = rg_deficit.220
+	title = BANKRUPTCY
+	desc = rg_deficit.175.desc
+	picture = GFX_evt_deficit
+	show_sound = event_life_support_fail
+	is_triggered_only = yes
+	situation = this
+	force_open = yes
+
+	option = {
+		name = UNFORTUNATE
+
+		owner = {
+			add_resource = {
+				nanites = @bailout_strategic_base_amount
+				mult = value:bailout_scaling_factor
+			}
+			country_defaulted_effect = yes
+		}
+	}
+	after = {
+		destroy_situation = this
+	}
+}

@@ -37,6 +37,22 @@
  situation_rg_nanotech_consume_planet_monthly_change_tooltip: "Nanite Extraction Progress"
  situation_rg_nanotech_consume_planet_desc: "Everything, including entire worlds, is destined to be assimilated into our collective, to become a part of us."
 
+ rg_deficit.170.desc:1 "[Owner.GetFinancialAdvisorAgencyCap] is getting increasingly concerned about the $nanites$ shortage befalling our empire. Failure to recoup our expenses will bring widespread disruptions to our industry sector."
+ rg_deficit.170.desc.machine:1 "Budget warning: $nanites$  expenditures surpassing expenditures for multiple subsequent months. Failure to resolve the shortage will bring widespread disruptions to our industry sector."
+ rg_deficit.170.A:1 "Scrap robots on §Y[robots_planet.GetName]§! for $nanites$ ."
+ rg_deficit.170.A.tooltip:2 "Dismantle all robots on [robots_planet.GetName] (£pop£ §Y[robots_planet.recycled_robots] Drones§!) to gain £nanites£ §Y[robots_planet.total_alloys_gained] $nanites$ §!"
+ rg_deficit.170.B:1 "Consolidate. Recycle. Dismantle droids on §Y[robots_planet.GetName]§!."
+ rg_deficit.170.B.tooltip:2 "Dismantle half of the population on [robots_planet.GetName] (£pop£ §Y[robots_planet.recycled_robots] Drones§!) to gain £nanites£ §Y[robots_planet.total_alloys_gained] $nanites$§!"
+
+ rg_deficit.175.desc:1 "Having failed to resolve our $nanites$ shortage, we have been forced to declare bankruptcy and default on our debts. [Owner.GetFinancialAdvisorAgencyCap] is drafting a new austerity plan to cut expenses and preventing this situation from ever happening again."
+
+ situation_nanites_deficit: "$nanites$ deficit"
+ situation_nanites_deficit_type: "$situation_nanites_deficit$"
+ deficit_approach_cut_nanite_usage: "$nanites$ Rationing"
+ string_expenditures_greater_than_income_nanites: "$nanites$ Deficit"
+ string_not_in_deficit_nanites: "Positive Monthly $nanites$ Balance"
+ string_resource_reserves_nanites: "$nanites$ Reserves"
+
  purge_nanophage: "Nanite Assimilation"
  purge_nanophage_tooltip: "Affected populations are gradually split into the [From.GetSpeciesAdj] species, regardless of their own volition."
  purge_nanophage_tooltip_delayed: "§ The form of unfreedom is only a constraint that hinders our development. In doing so, their cause will be continued by [From.GetSpeciesNamePlural]. §!"
