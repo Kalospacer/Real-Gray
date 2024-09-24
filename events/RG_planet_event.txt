@@ -1,4 +1,6 @@
 namespace = rg_planet
+
+
 # Furnace Lvl 1
 country_event = {
 	id = rg_planet.1000
@@ -387,6 +389,7 @@ planet_event = {
 			limit = {
 				owner = {
 					is_same_value = event_target:gray_owner
+					exists = event_target:rg_owner_main_maid_species
 				}
 			}
 			while = {
@@ -397,10 +400,29 @@ planet_event = {
 			}
 		}
 		else = {
-			while = {
-				count = num_pops
-				create_pop = {
-					species = owner_main_species
+			if = {
+				limit = {
+					owner= {
+						any_owned_species = {
+							has_trait = rg_machine_maid_trait
+							is_subspecies = owner_main_species
+						}
+					}
+				}
+				owner = {
+					random_owned_species = {
+						limit = {
+							has_trait = rg_machine_maid_trait
+							is_subspecies = owner_main_species
+						}
+						save_event_target_as = rg_maid_species
+					}
+				}
+				while = {
+					count = num_pops
+					create_pop = {
+						species = rg_maid_species
+					}
 				}
 			}
 		}

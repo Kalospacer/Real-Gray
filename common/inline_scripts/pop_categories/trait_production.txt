@@ -1,5 +1,11 @@
 produces = {
     trigger = {
+        # exists = planet
+        # planet = {
+        #     OR = {
+        #         rg_is_pc_nano = yes
+        #     }
+        # }
         OR = {
             has_trait = rg_machine_maid_trait
         }
