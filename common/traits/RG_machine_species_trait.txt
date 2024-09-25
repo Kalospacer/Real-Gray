@@ -31,7 +31,7 @@ rg_machine_maid_trait = {
 			exists = planet
 			planet = {
 				exists = owner
-				owner = { is_same_value = event_target:gray_owner }
+				owner = { has_country_flag = gray_owner }
 			}
 		}
 		planet_jobs_produces_mult = 0.1

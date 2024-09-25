@@ -6,7 +6,6 @@
  rg_requires_no_nano_ripper: "$TRIGGER_FAIL$无法与现存的§Y$rg_nano_ripper_4$§!在同一个恒星系建造"
  rg_requires_no_nano_ripper_construction: "$TRIGGER_FAIL$无法与§Y在建的$rg_nano_ripper_4$§!在同一星系建造"
  allow_rg_nano_ripper: "§H解锁巨型结构：§!$rg_nano_ripper_4$"
- rg_machine_maid_trait_effect_tooltip: "每个在线的$pops_with_icon$§!产生0.3£nanites£$nanites$§Y维护费§!。\n人口住房使用：§G-90%§!\n物种最低宜居性：§G+25%§!\n在$NAME_Gray$国家工作时:$TABBED_NEW_LINE$$mod_planet_jobs_produces_mult$：§G+10%§!"
  concept_rg_scion: "$preset_rg_scion$"
  concept_rg_scion_desc: "$preset_rg_scion_desc$"
  concept_rg_gray: "$NAME_Gray$"

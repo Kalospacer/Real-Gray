@@ -23,7 +23,7 @@
  tr_rg_nanotech_2_modifier_desc: "§I解锁巨型结构：§!§Y$RG_habitat_central_complex$§!\n§I解锁巨型结构：§!§Y$rg_nano_ripper_4$§!：可从恒星系内所有行星、卫星和小行星上产出大量的£nanites£§Y$nanites$§!"
  tr_rg_nanotech_3_modifier_desc: "§Y解锁行星决议：§!$decision_rg_nanotech_swarm_consume_world$\n§Y解锁巨像武器：§!$tech_object_gray_7$：可将星球转变为可殖民的§Y$pc_nanotech$§!"
  tr_rg_nanotech_4_modifier_desc: "§Y解锁飞升：$rg_ap_nantiematter$\n解锁舰船：§!$RG_graygoo_destroyer$\n§Y获得遗珍：§!§Y$rg_tempest_invocator$§!：允许你召唤宇宙风暴：§Y$graytempest_storm$§!"
- tr_rg_nanotech_5_modifier_desc: "§Y解锁净化方式：$purge_nanophage$§!：将非帝国主体人口同化为我们的一部分。\n所有帝国人口将获得§Y纳米特质§!：人口需要£nanites£§Y$nanites$§!维护费。\n每个类型为§Y$pc_nanotech$§!或§Y$pc_rg_grayhabitat$§!的殖民地都将瞬间创建§Y纳米化$pops_with_icon$§!以填补§Y£building£建筑§!和§Y£district£区划§!的£job£岗位需求。"
+ tr_rg_nanotech_5_modifier_desc: "§Y解锁净化方式：$purge_nanophage$§!：将非帝国主体人口同化为我们的一部分。\n所有帝国人口将获得§Y纳米特质§!：\n每个类型为§Y$pc_nanotech$§!或§Y$pc_rg_grayhabitat$§!的殖民地都将瞬间创建§Y纳米化$pops_with_icon$§!以填补§Y£building£建筑§!和§Y£district£区划§!的£job£岗位需求。§Y纳米化$pops_with_icon$§!§!需要£nanites£§Y$nanites$§!维护费。"
  tr_rg_nanotech_finish_modifier_desc: "§Y解锁舰船：§!$RG_graygoo_mothership$\n所有境内恒星基地自动获得内置§Y$sm_nanite_harvester$§!。每§Y5§!年§Y$sm_nanite_harvester_plural$§!都会提升，可能是增加$r_nanites$矿藏的规模，或是直接产出一笔$r_nanites$资源。该效果受到矿藏所依附的行星尺寸的限制。"
 
  decision_rg_server_shut_down: "§R核心关闭§!"

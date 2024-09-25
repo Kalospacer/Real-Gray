@@ -1,11 +1,15 @@
 produces = {
     trigger = {
-        # exists = planet
-        # planet = {
-        #     OR = {
-        #         rg_is_pc_nano = yes
-        #     }
-        # }
+        exists = planet
+        planet = {
+            owner = {
+                OR = {
+                    RG_gray_harbitat_active_trigger = yes
+                    has_active_tradition = tr_rg_nanotech_5
+                }
+            }
+            rg_is_pc_nano = yes
+        }
         OR = {
             has_trait = rg_machine_maid_trait
         }

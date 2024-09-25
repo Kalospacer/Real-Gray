@@ -65,10 +65,7 @@ rg_event_effect_event1_gray_cluster = {
 	set_country_flag = origin_rg_gray_cluster
 	set_country_flag = origin_rg_gray_1st
 	set_country_flag = rg_gray_level_1
-	country_event = {
-		id = rg_event.2
-		days = 30
-	}
+	rg_event_effect_event1_to_event2_effect = yes
 	add_resource = {
 		energy = 1000
 		minerals = 1000
@@ -92,12 +89,24 @@ rg_event_effect_event1_gray_galaxy = {
 	set_country_flag = origin_rg_gray_galaxy
 	set_country_flag = origin_rg_gray_1st
 	set_country_flag = rg_gray_level_1
-	country_event = {
-		id = rg_event.2
-		days = 30
-	}
+	rg_event_effect_event1_to_event2_effect = yes
 	save_global_event_target_as = origin_rg_gray_country
 	rg_lcluster_spawn_effect = yes
+}
+
+rg_event_effect_event1_to_event2_effect = {
+	if = {
+		limit = {
+			RG_AG_has_gray_master_trigger = yes
+		}
+		#do nothing
+	}
+	else = {
+		country_event = {
+			id = rg_event.2
+			days = 30
+		}
+	}
 }
 rg_event_effect_lcluster_spawn_selecter = {
 	if = {
@@ -202,5 +211,20 @@ rg_event_effect_planet2027_spawn_maid_species_non_gray = {
 				}
 			}
 		}
+	}
+}
+
+rg_event_effect_event2_gray_origin_init = {
+	rg_gray_country_init = yes
+	country_event = {
+		id = graygoo.499
+	}
+	give_technology = {
+		tech = tech_minilaser_gray_1
+		message = no
+	}
+	give_technology = {
+		tech = tech_object_gray_5
+		message = no
 	}
 }

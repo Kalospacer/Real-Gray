@@ -31,6 +31,10 @@ RG_OR_has_wsg_mod_trigger = {
 	}
 }
 
+RG_AG_has_gray_master_trigger = {
+	has_civic = civic_AG_gray_master
+}
+
 RG_has_gray_cluster_origin_trigger = {
 	OR = {
 		has_country_flag = origin_rg_gray				#遥远约定

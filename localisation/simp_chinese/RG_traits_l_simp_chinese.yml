@@ -1,6 +1,7 @@
 ﻿l_simp_chinese:
  rg_machine_maid_trait:0 "§Y菠萝包网络§!"
  rg_machine_maid_trait_desc:0 "这种机械体似乎是由纳米机械所构造的。她们只有有限的个体智能，但每个个体似乎都将心智互相链接组成了一个强大的意识网络。个体的数量越多她们的意识就越强大。"
+ rg_machine_maid_trait_effect_tooltip: "§Y行星类型§!为§Y$pc_nanotech$§!或§Y$pc_rg_grayhabitat$§!时：$TABBED_NEW_LINE$每个在线的$pops_with_icon$§!产生0.3£nanites£$nanites$§Y维护费§!。\n人口住房使用：§G-90%§!\n物种最低宜居性：§G+25%§!\n在$NAME_Gray$$TRIGGER_OWNER$国家工作时:$TABBED_NEW_LINE$$mod_planet_jobs_produces_mult$：§G+10%§!"
  RG_leader_trait_admiral_gray:0 "$rg_nanite_leader$"
  RG_leader_trait_admiral_gray_desc:0 "$NAME_Gray$本质上是由千千万万纳米机械所组成的个体，这让她可以自由变换形态重组或快速修复自身。"
  RG_leader_trait_admiral_gray_1:0 "$rg_nanite_leader$"

@@ -41,18 +41,7 @@ country_event = {
 	}
 	is_triggered_only = yes
 	immediate = {
-		rg_gray_country_init = yes
-		country_event = {
-			id = graygoo.499
-		}
-		give_technology = {
-			tech = tech_minilaser_gray_1
-			message = no
-		}
-		give_technology = {
-			tech = tech_object_gray_5
-			message = no
-		}
+		rg_event_effect_event2_gray_origin_init = yes
 	}
 	option = {
 		name = rg_event.2.a
