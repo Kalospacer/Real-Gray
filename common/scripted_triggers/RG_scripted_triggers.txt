@@ -70,15 +70,14 @@ rg_is_main_species_with_maid_trait_trigger = {
 	}
 }
 
-<<<<<<< HEAD
 RG_tradition5_or_gray_owner_trigger = {
 	OR = {
 		RG_gray_harbitat_active_trigger = yes
 		has_active_tradition = tr_rg_nanotech_5
-=======
+	}
+}
 rg_has_ag_origin_trigger = {
 	any_country = {
 		has_origin = origin_Asgray
->>>>>>> RG_AG_TEST
 	}
 }
