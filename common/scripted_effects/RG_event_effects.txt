@@ -95,17 +95,9 @@ rg_event_effect_event1_gray_galaxy = {
 }
 
 rg_event_effect_event1_to_event2_effect = {
-	if = {
-		limit = {
-			RG_AG_has_gray_master_trigger = yes
-		}
-		#do nothing
-	}
-	else = {
-		country_event = {
-			id = rg_event.2
-			days = 30
-		}
+	country_event = {
+		id = rg_event.2
+		days = 30
 	}
 }
 rg_event_effect_lcluster_spawn_selecter = {
