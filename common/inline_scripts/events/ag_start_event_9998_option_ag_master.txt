@@ -16,6 +16,9 @@ option = {
                     has_civic = civic_AG_gray
                 }
             }
+            any_country = {
+                has_civic = origin_rg_gray
+            }
             has_global_flag = has_rg_mod
         }
         force_remove_civic = civic_AG_gray_master
@@ -24,3 +27,4 @@ option = {
         country_event = { id = graygoo.499 }
     }
 }
+

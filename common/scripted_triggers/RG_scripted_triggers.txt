@@ -1,3 +1,23 @@
+rg_all_cluster_mod_check = {
+	OR = {
+		has_global_flag = l_cluster_origin						# l-cluster plus
+		has_global_flag = rg_origin_l_cluster						# 遥远约定
+		has_global_flag = gray_origin_activate						# 远星之歌
+		has_global_flag = rg_origin_scion_l_cluster					# 未来追迹
+		rg_has_ag_origin_trigger = yes	# 遥远的故事
+	}
+}
+
+rg_all_cluster_mod_check_for_scion = {
+	OR = {
+		has_global_flag = l_cluster_origin						# l-cluster plus
+		# has_global_flag = rg_origin_l_cluster						# 遥远约定
+		has_global_flag = gray_origin_activate						# 远星之歌
+		# has_global_flag = rg_origin_scion_l_cluster					# 未来追迹
+		rg_has_ag_origin_trigger = yes	# 遥远的故事
+	}
+}
+
 RG_planet_can_auto_build = {
 	OR = {
 		AND = {
@@ -47,5 +67,11 @@ rg_is_main_species_with_maid_trait_trigger = {
 	OR = {
 		is_same_species = owner_main_species
 		is_subspecies = owner_main_species
+	}
+}
+
+rg_has_ag_origin_trigger = {
+	any_country = {
+		has_origin = origin_Asgray
 	}
 }

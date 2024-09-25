@@ -49,7 +49,7 @@ rg_event_effect_event1_cluster_galaxy = {
 	if = {
 		limit = {
 			OR = {
-				has_global_flag = AG_start_event_mod_active
+				rg_has_ag_origin_trigger = yes
 				NOT = {
 					has_global_flag = origin_rg_gray_1st_global
 				}
@@ -96,7 +96,7 @@ rg_event_effect_event1_gray_galaxy = {
 	save_global_event_target_as = origin_rg_gray_country
 	if = {
 		limit = {
-			has_global_flag = AG_start_event_mod_active
+			rg_has_ag_origin_trigger = yes
 		}
 	}
 	else = {
@@ -148,7 +148,9 @@ rg_event_effect_lcluster_open = {
 				has_global_flag = rg_origin_l_cluster						# 遥远约定
 				has_global_flag = gray_origin_activate						# 远星之歌
 				has_global_flag = rg_origin_scion_l_cluster					# 未来追迹
+				rg_has_ag_origin_trigger = yes	# 遥远的故事
 			}
+
 		}
 		country_event = {
 			id = rg_cluster.2
