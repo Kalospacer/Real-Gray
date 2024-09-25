@@ -49,3 +49,10 @@ rg_is_main_species_with_maid_trait_trigger = {
 		is_subspecies = owner_main_species
 	}
 }
+
+RG_tradition5_or_gray_owner_trigger = {
+	OR = {
+		RG_gray_harbitat_active_trigger = yes
+		has_active_tradition = tr_rg_nanotech_5
+	}
+}

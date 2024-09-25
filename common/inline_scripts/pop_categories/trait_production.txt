@@ -3,10 +3,7 @@ produces = {
         exists = planet
         planet = {
             owner = {
-                OR = {
-                    RG_gray_harbitat_active_trigger = yes
-                    has_active_tradition = tr_rg_nanotech_5
-                }
+                RG_tradition5_or_gray_owner_trigger = yes
             }
             rg_is_pc_nano = yes
         }

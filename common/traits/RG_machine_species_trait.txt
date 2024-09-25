@@ -4,12 +4,24 @@ rg_machine_maid_trait = {
 	}
 	custom_tooltip = rg_machine_maid_trait_effect_tooltip
 	initial = no
-	species_potential_add = { always = no }
+	species_potential_add = {
+		FROM = {
+			RG_tradition5_or_gray_owner_trigger = yes
+		}
+	}
 	species_possible_remove = { always = no }
-	species_possible_merge_add = { always = no }
-	species_possible_merge_remove = { always = no }
+	species_possible_merge_add = {
+		FROM = {
+			RG_tradition5_or_gray_owner_trigger = yes
+		}
+	}
+	species_possible_merge_remove = {
+		FROM = {
+			RG_tradition5_or_gray_owner_trigger = yes
+		}
+	}
 	randomized = no
-	allowed_archetypes = { MACHINE }
+	allowed_archetypes = { ROBOT MACHINE BIOLOGICAL LITHOID   }
 	sorting_priority = 20
 	potential_crossbreeding_chance = 1.0
 

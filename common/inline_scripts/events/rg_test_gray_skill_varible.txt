@@ -1,0 +1,48 @@
+# event:graygoo.499
+# 初始化小灰领袖等级
+set_variable = {
+    which = rg_gray_level
+    value = 1
+}
+
+#Country event_target:gray_owner
+#存储当前领袖等级
+rg_save_gray_leader_level_effect = {
+    every_owned_leader = {
+        if = {
+            ###等级检测
+            limit = {
+                has_leader_flag = rg_gray_leader
+            }
+			#由于目前是leader域，所以不能直接导出等级
+            #导出等级到暂存
+            export_trigger_value_to_variable = {
+                trigger = has_skill
+                variable = rg_gray_level_temp
+            }
+			#把leader域中的变量存到country域中
+            #导入变量
+            owner = {
+                set_variable = {
+                    which = rg_gray_level
+                    value = prev.rg_gray_level_temp
+                }
+            }
+            #清理暂存区
+            clear_variable = rg_gray_level_temp
+        }
+    }
+}
+
+#Country event_target:gray_owner
+#等级导入，把存储的领袖等级赋予到领袖身上
+rg_set_varible_as_leader_level_effect = {
+    random_owned_leader = {
+        limit = {
+            has_leader_flag = rg_gray_leader
+        }
+        set_skill = owner.rg_gray_level
+    }
+}
+
+
