@@ -48,8 +48,11 @@ rg_event_effect_event1_cluster = {
 rg_event_effect_event1_cluster_galaxy = {
 	if = {
 		limit = {
-			NOT = {
-				has_global_flag = origin_rg_gray_1st_global
+			OR = {
+				has_global_flag = AG_start_event_mod_active
+				NOT = {
+					has_global_flag = origin_rg_gray_1st_global
+				}
 			}
 		}
 		rg_event_effect_event1_gray_galaxy = yes
@@ -91,21 +94,20 @@ rg_event_effect_event1_gray_galaxy = {
 	set_country_flag = rg_gray_level_1
 	rg_event_effect_event1_to_event2_effect = yes
 	save_global_event_target_as = origin_rg_gray_country
-	rg_lcluster_spawn_effect = yes
+	if = {
+		limit = {
+			has_global_flag = AG_start_event_mod_active
+		}
+	}
+	else = {
+		rg_lcluster_spawn_effect = yes
+	}
 }
 
 rg_event_effect_event1_to_event2_effect = {
-	if = {
-		limit = {
-			RG_AG_has_gray_master_trigger = yes
-		}
-		#do nothing
-	}
-	else = {
-		country_event = {
-			id = rg_event.2
-			days = 30
-		}
+	country_event = {
+		id = rg_event.2
+		days = 30
 	}
 }
 rg_event_effect_lcluster_spawn_selecter = {
