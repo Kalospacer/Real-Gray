@@ -1,0 +1,30 @@
+option = {
+    trigger = { has_civic = civic_AG_gray_master }
+    name = AG_dooropen_master.option
+    if = {
+        limit = {
+            any_country = {
+                has_civic = civic_AG_gray
+            }
+        }
+        #do nothing
+    }
+    else_if = {
+        limit = {
+            NOT = {
+                any_country = {
+                    has_civic = civic_AG_gray
+                }
+            }
+            any_country = {
+                has_civic = origin_rg_gray
+            }
+            has_global_flag = has_rg_mod
+        }
+        force_remove_civic = civic_AG_gray_master
+    }
+    else = {
+        country_event = { id = graygoo.499 }
+    }
+}
+

@@ -43,10 +43,10 @@ country_event = {
 			set_country_flag = rg_scion_needs_fe
 			if = {
 				limit ={
-					any_playable_country = {
-						AND = {
+					OR = {
+						rg_all_cluster_mod_check_for_scion = yes
+						any_playable_country = {
 							has_origin = origin_rg_gray
-							# NOT = { has_global_flag = rg_origin_l_cluster }
 						}
 					}
 				}
