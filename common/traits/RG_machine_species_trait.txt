@@ -21,7 +21,7 @@ rg_machine_maid_trait = {
 		}
 	}
 	randomized = no
-	allowed_archetypes = { ROBOT MACHINE BIOLOGICAL LITHOID   }
+	allowed_archetypes = { ROBOT MACHINE BIOLOGICAL LITHOID RG_MACHINE }
 	sorting_priority = 20
 	potential_crossbreeding_chance = 1.0
 
@@ -66,11 +66,51 @@ rg_machine_maid_trait = {
 				}
 			}
 		}
-	
-	
 	}
 	
 	slave_cost = {
 		energy = 1000
 	}
+}
+
+trait_rg_machine_unit = {
+	cost = 0
+	sorting_priority = 20
+	initial = no
+	randomized = no
+	species_potential_add = {
+		always = no
+	}
+	species_possible_remove = {
+		always = no
+	}
+
+	icon = "gfx/interface/icons/traits/trait_machine_unit.dds"
+	allowed_archetypes = { RG_MACHINE }
+
+	immortal_leaders = no
+
+	modifier = {
+		pc_machine_habitability = 1
+		leader_lifespan_add = 10
+		habitability_floor_add = 0.5
+	}
+
+	triggered_planet_growth_habitability_modifier = {
+		potential = {
+			exists = owner
+			owner = {
+				OR = {
+					has_active_tradition = tr_nanotech_adopt
+					has_active_tradition = tr_rg_nanotech_adopt
+				}
+			}
+		}
+		pc_nanotech_habitability = 1
+	}
+
+	leader_age_min = 5
+	leader_age_max = 10
+
+	custom_tooltip_with_modifiers = TRAIT_MACHINE_UNIT_EFFECT
 }

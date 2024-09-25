@@ -30,3 +30,5 @@
  RG_leader_trait_admiral_timed_life_desc:0 "\n§G模拟龙的属性会随着年龄增长。\n$t$§Y每增长一岁提供§!:\n$tt$§G  额外舰船武器伤害 +1%§!\n§G  额外装甲生命值 +1%§!\n§G  额外船体生命值 +1%§!$t$\n当前§!§R[owner.rg_fake_dragon_timedlife_counter]§!§G岁§!\n她是从一次实验中诞生的模拟生命。时间每流逝一个月，她就老去一岁。倘若无法找到永生的方法，脆弱的灵魂就将落叶归根。"
  RG_leader_trait_admiral_born_tobe_dragon:0 "§Y羽化成龙§!"
  RG_leader_trait_admiral_born_tobe_dragon_desc:0 "\n§G模拟龙的属性会随着年龄增长。\n$t$§Y每增长一岁提供§!:\n$tt$§G  额外舰船武器伤害 +1%§!\n§G  额外装甲生命值 +1%§!\n§G  额外船体生命值 +1%§!$t$\n当前§!§R[owner.rg_fake_dragon_timedlife_counter]§!§G岁§!\n梦想中的龙终于变成了梦想中的样子。传说她一拳打开了壳化身为龙。"
+ trait_rg_machine_unit: "$RG_MACHINE$"
+ trait_rg_machine_unit_desc: "这个物种由高度先进的仿生纳米机械组成，纳米机器的完美模拟仿真使得他们和有机体并无区别。"

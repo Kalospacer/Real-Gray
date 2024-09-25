@@ -101,6 +101,20 @@ rg_event_effect_event1_gray_galaxy = {
 	}
 	else = {
 		rg_lcluster_spawn_effect = yes
+		capital_scope = {
+			solar_system = {
+				random_neighbor_system = {
+					solar_system = {
+						set_star_flag = lgate
+						spawn_megastructure = {
+							type = lgate_base
+							orbit_angle = 225
+							orbit_distance = 30
+						}
+					}
+				}
+			}
+		}
 	}
 }
 
@@ -173,12 +187,12 @@ rg_event_effect_planet2027_spawn_maid_species = {
 				plural = this
 				class = RG_MACHINE
 				portrait = "rg_machine_maid"
-				can_be_modified = no
+				can_be_modified = yes
 				homeworld = this
 				namelist = this
 				gender = this
 				traits = {
-					trait = trait_machine_unit
+					trait = trait_rg_machine_unit
 					trait = rg_machine_maid_trait
 					trait = trait_auto_mod_robotic
 					trait = trait_robot_streamlined_protocols
@@ -202,12 +216,12 @@ rg_event_effect_planet2027_spawn_maid_species_non_gray = {
 				plural = this
 				class = RG_MACHINE
 				portrait = "rg_machine_maid"
-				can_be_modified = no
+				can_be_modified = yes
 				homeworld = this
 				namelist = this
 				gender = this
 				traits = {
-					trait = trait_machine_unit
+					trait = trait_rg_machine_unit
 					trait = rg_machine_maid_trait
 					trait = trait_auto_mod_robotic
 					trait = trait_robot_streamlined_protocols
