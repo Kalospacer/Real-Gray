@@ -20,3 +20,4 @@
  rg_kogasa_exterminated_desc:0 "The daemon has detected that the integrity of the $NAME_Gray$ personality has been tampered with, and the contamination target has been decontaminated, and the treatment plan is to be rendered harmless."
  rg_levelup_2.tooltip:0 "§YIf we abort the renovation project in the middle of the project, we will not be able to get a refund! §!"
  rg_need_manual_toggle:0 "§YNote, you need to manually switch the form of $NAME_Gray$ once after changing the ship type§!"
+ RG_MACHINE_SPECIES_NOT_MACHINE: "$TRIGGER_FAIL$Species must be §Y$trait_rg_machine_unit$§!."

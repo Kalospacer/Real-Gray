@@ -20,6 +20,10 @@
  RG_AUTOCONST_HANGER_desc:0 "Preloaded worker ships can automatically build star bases after a system survey is completed."
  RG_const_country:0 "$NAME_Gray$-automatic engineering team"
 
+ citizenship_full_rg_maid: "$RG_MACHINE$"
+ citizenship_full_rg_maid_tooltip: "The species population is fully customized artificial life used for industrial production."
+ citizenship_full_rg_maid_tooltip_delayed: "§LDirect Control Mode§!"
+
  rg_nothing:0 ""
  rg_nothing_desc:0 ""
 
