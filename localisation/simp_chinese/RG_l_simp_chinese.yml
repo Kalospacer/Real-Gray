@@ -21,6 +21,10 @@
  RG_AUTOCONST_HANGER_desc:0 "预载的工蜂工程舰可以在星系调查完成后自动建造恒星基地。"
  RG_const_country:0 "$NAME_Gray$-自动工程队"
 
+ citizenship_full_rg_maid: "$RG_MACHINE$"
+ citizenship_full_rg_maid_tooltip: "该物种人口是完全自定义化用于工业生产的人工生命。"
+ citizenship_full_rg_maid_tooltip_delayed: "§L进行直接控制。§!"
+
  rg_nothing:0 ""
  rg_nothing_desc:0 ""
 

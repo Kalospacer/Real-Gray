@@ -2802,7 +2802,7 @@ rg_gray_country_after_init = {
 		id = rg_grayleader.7
 		days = -1
 	}
-	rg_juggernaut_habitat_init = yes
+	# rg_juggernaut_habitat_init = yes
 }
 
 rg_timeline_attract_field_init = {

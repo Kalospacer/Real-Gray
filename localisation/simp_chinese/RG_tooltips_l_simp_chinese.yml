@@ -19,3 +19,4 @@
  rg_kogasa_exterminated_desc:0 "守护进程检测到$NAME_Gray$人格完整性遭到篡改，污染目标已被净化，处理方案:无害化处理。"
  rg_levelup_2.tooltip:0 "§Y如果我们中途中止改造项目，将无法得到退款！§!"
  rg_need_manual_toggle:0 "§Y注意，更改舰种后你需要手动切换一次$NAME_Gray$的形态§!"
+ RG_MACHINE_SPECIES_NOT_MACHINE: "$TRIGGER_FAIL$物种必须是§Y$trait_rg_machine_unit$§!。"

@@ -200,6 +200,10 @@ rg_event_effect_planet2027_spawn_maid_species = {
 				}
 				effect = {
 					save_global_event_target_as = rg_owner_main_maid_species
+					set_citizenship_type = {
+						type = citizenship_full_rg_maid
+						country = event_target:gray_owner
+					}
 				}
 			}
 		}
@@ -226,6 +230,12 @@ rg_event_effect_planet2027_spawn_maid_species_non_gray = {
 					trait = trait_auto_mod_robotic
 					trait = trait_robot_streamlined_protocols
 					trait = trait_robot_luxurious
+				}
+				effect = {
+					set_citizenship_type = {
+						type = citizenship_full_rg_maid
+						country = event_target:gray_owner
+					}
 				}
 			}
 		}

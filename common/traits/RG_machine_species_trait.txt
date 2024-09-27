@@ -102,7 +102,7 @@ trait_rg_machine_unit = {
 	}
 
 	icon = "gfx/interface/icons/traits/trait_machine_unit.dds"
-	allowed_archetypes = { RG_MACHINE }
+	allowed_archetypes = { ROBOT MACHINE BIOLOGICAL LITHOID RG_MACHINE }
 
 	immortal_leaders = no
 

@@ -18,4 +18,5 @@ RG_MACHINE = {
 	species_trait_points = 10
 	species_max_traits = 6
 	robotic = yes
+	inherit_traits_from = { BIOLOGICAL ROBOT MACHINE }
 }

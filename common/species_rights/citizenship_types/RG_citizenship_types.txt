@@ -1,0 +1,21 @@
+citizenship_full_rg_maid = {
+	is_full_citizenship = yes
+
+	potential = {
+		exists = from
+		from = { is_same_value = event_target:gray_owner }
+	}
+
+	allow = {
+		hidden_trigger = { exists = from }
+		custom_tooltip = {
+			fail_text = RG_MACHINE_SPECIES_NOT_MACHINE
+			OR = {
+				has_trait = trait_rg_machine_unit
+			}
+		}
+	}
+	ai_will_do = {
+		factor = 100
+	}
+}
