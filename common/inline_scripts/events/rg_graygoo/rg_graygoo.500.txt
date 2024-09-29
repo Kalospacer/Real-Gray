@@ -156,15 +156,6 @@ option = {
 	}
 }
 option = {
-	# help
-	name = rg_help
-	hidden_effect = {
-		country_event = {
-			id = rg_graygoo.4
-		}
-	}
-}
-option = {
 	# 衣柜
 	name = rg_wardrobe
 	hidden_effect = {
