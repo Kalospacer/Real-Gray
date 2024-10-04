@@ -125,6 +125,7 @@ option = {
 		NOT = {
 			RG_gray_harbitat_active_trigger = yes
 		}
+		has_country_flag = rg_gray_level_3
 	}
 	allow = {
 	}
