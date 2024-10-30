@@ -1988,6 +1988,47 @@ utility_component_template = {
 	}
 }
 
+utility_component_template = {
+	key = "RG_STARBASE_AURA_FTL_INHIBITOR"
+	size = medium
+	icon = "GFX_ship_part_aura_snare"
+	icon_frame = 1
+	power = 0
+
+	size_restriction = {
+		RG_gray_juggernaut
+	}
+	prerequisites = { "tech_ftl_inhibitor" }
+	component_set = "ftl_inhibitor"
+
+	ftl_inhibitor = yes
+
+	hostile_aura = {
+		name = "aura_starbase_ftl_inhibitor"
+		system_wide = yes
+
+		stack_info = {
+			id = hostile_flt_inhibitor_aura
+			priority = 10
+		}
+
+		modifier = {
+			ship_emergency_ftl_min_days_mult = 1
+		}
+
+		graphics = {
+			ship_effect = {
+				entity = "ship_aura_negative_entity"
+				dynamic_scale = no
+			}
+		}
+	}
+
+	ai_weight = {
+		weight = 2
+	}
+}
+
 #笨蛋雷达
 weapon_component_template = {
 	key = "RG_ANTIBAKAHALO_RADAR"

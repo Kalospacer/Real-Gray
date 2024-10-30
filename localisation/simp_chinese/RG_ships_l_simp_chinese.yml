@@ -59,6 +59,13 @@
  RG_FUSION_NANO_REACTOR_L:0 "$RG_FUSION_NANO_REACTOR$"
  RG_FUSION_NANO_REACTOR_L_DESC:0 "$RG_FUSION_NANO_REACTOR_DESC$"
 
+ rg_ship_aura_components_empty: "空槽"
+ rg_power_core_empty: "空槽"
+ rg_ftl_components_empty: "空槽"
+ rg_thruster_components_empty: "空槽"
+ rg_sensor_component_empty: "空槽"
+ rg_combat_computers_empty: "空槽"
+
  SMALL_GRAY_MIX_ARMOR:0 "§Y「梦想领域」§!"
  MEDIUM_GRAY_MIX_ARMOR:0 "§Y「梦想领域」§!"
  RG_gatebuilder_jump:0 "§Y「终抵群星」§!"
@@ -116,6 +123,8 @@
  HUGE_GRAY_MIX_ARMOR_DESC:0 "§Y在这里一切愿望都能成真。§!\n高度集成化的装甲，密度远超于灰色风暴舰船中发现的装甲，作用原理不明。"
  RG_FLAK_PHOENIX:0 "§R「起源」§!"
  RG_FLAK_PHOENIX_DESC:0 "§Y创造与解构。§!\n没有什么比一个拥抱更能消除隔阂。"
+
+ RG_STARBASE_AURA_FTL_INHIBITOR: "$sm_ftl_inhibitor$"
 
  RG_Interdictor_FISSION_REACTOR:0 "$FISSION_REACTOR$"
  RG_Interdictor_FISSION_REACTOR_DESC:0 "$FISSION_REACTOR_DESC$"

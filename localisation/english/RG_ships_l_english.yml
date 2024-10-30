@@ -48,6 +48,13 @@
  weapon_type_rg_armor:0 "§YArmor§!"
  weapon_type_rg_reactor:0 "§YPower Core§!"
 
+ rg_ship_aura_components_empty: "Empty Slot"
+ rg_power_core_empty: "Empty Slot"
+ rg_ftl_components_empty: "Empty Slot"
+ rg_thruster_components_empty: "Empty Slot"
+ rg_sensor_component_empty: "Empty Slot"
+ rg_combat_computers_empty: "Empty Slot"
+
  RG_FUSION_NANO_REACTOR:0 "§Y「'FUSION NANO REACTOR'」§!"
  RG_FUSION_NANO_REACTOR_DESC:0 "The energy conduction characteristics of nanomaterials are used to greatly compress traditional reactors and increase density."
 
@@ -59,6 +66,8 @@
 
  RG_FUSION_NANO_REACTOR_L:0 "$RG_FUSION_NANO_REACTOR$"
  RG_FUSION_NANO_REACTOR_L_DESC:0 "$RG_FUSION_NANO_REACTOR_DESC$"
+
+ RG_STARBASE_AURA_FTL_INHIBITOR: "$sm_ftl_inhibitor$"
 
  SMALL_GRAY_MIX_ARMOR:0 "§Y「'NANITE MIX ARMOR'」§!"
  MEDIUM_GRAY_MIX_ARMOR:0 "$SMALL_GRAY_MIX_ARMOR$"

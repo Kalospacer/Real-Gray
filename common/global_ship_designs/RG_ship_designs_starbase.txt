@@ -162,7 +162,7 @@ ship_design = {
 	required_component = "RG_FUSION_NANO_REACTOR_L"
 	required_component = "RG_COMBAT_COMPUTER_COLOSSUS"
 	required_component = "RG_CORVETTE_CLOAKING_3"
-	required_component = "STARBASE_AURA_FTL_INHIBITOR"
+	required_component = "RG_STARBASE_AURA_FTL_INHIBITOR"
 }
 
 # Factory
@@ -338,5 +338,5 @@ ship_design = {
 	required_component = "RG_FUSION_NANO_REACTOR_L"
 	required_component = "COMBAT_COMPUTER_PLATFORM_ADVANCED"
 	required_component = "RG_CORVETTE_CLOAKING_3"
-	required_component = "STARBASE_AURA_FTL_INHIBITOR"
+	required_component = "RG_STARBASE_AURA_FTL_INHIBITOR"
 }

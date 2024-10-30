@@ -847,8 +847,6 @@ ship_design = {
 	required_component = "RG_gatebuilder_thruster"
 	required_component = "RG_COMBAT_COMPUTER_MotherShip"
 	required_component = "RG_CORVETTE_CLOAKING_3"
-	required_component = "RG_BAKAHALO"
-	required_component = "RG_ANTIBAKAHALO"
 	required_component = "RG_SHIP_AURA_NANOBOT_CLOUD"
 }
 
@@ -1439,10 +1437,8 @@ ship_design = {
 	required_component = "RG_gatebuilder_thruster"
 	required_component = "RG_COMBAT_COMPUTER_MotherShip"
 	required_component = "RG_CORVETTE_CLOAKING_3"
-	required_component = "RG_BAKAHALO"
-	required_component = "RG_ANTIBAKAHALO"
 	required_component = "RG_SHIP_AURA_NANOBOT_CLOUD"
-	required_component = "STARBASE_AURA_FTL_INHIBITOR"
+	required_component = "RG_STARBASE_AURA_FTL_INHIBITOR"
 }
 
 # 航母 1
