@@ -1,0 +1,36 @@
+namespace = rg_fe
+
+# Gray 2
+country_event = {
+    id = rg_fe.2
+    title = "TRANSMISSION"
+    desc = {
+        trigger = {
+            NOT = {
+                has_authority = auth_machine_intelligence
+            }
+        }
+        text = "graygoo.402.a.desc"
+    }
+    desc = {
+        trigger = {
+            has_authority = auth_machine_intelligence
+        }
+        text = "graygoo.402.b.desc"
+    }
+    diplomatic = yes
+    picture_event_data = {
+        portrait = event_target:rg_gray_country_leader
+        planet_background = event_target:gray_homeworld
+        room = "ethic_spaceship_room"
+    }
+    is_triggered_only = yes
+    option = {
+        name = graygoo.402.a
+        hidden_effect = {
+            country_event = {
+                id = graygoo.403
+            }
+        }
+    }
+}
