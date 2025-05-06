@@ -9,6 +9,13 @@ district_rg_city = {
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
 
+	# TODO_CD: change to real slots
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
+
 	show_on_uncolonized = {
 		exists = from
 		from = { is_regular_empire = yes }
@@ -38,9 +45,9 @@ district_rg_city = {
 	}
 
 	planet_modifier = {
-		planet_housing_add = 25
-		job_enforcer_add = 2
-		planet_max_buildings_add = 2
+		planet_housing_add = 2500
+		job_enforcer_add = @base_district_jobs
+		zone_building_slots_add = 2
 	}
 
 	triggered_planet_modifier = {
@@ -51,7 +58,7 @@ district_rg_city = {
 			}
 		}
 		modifier = {
-			planet_housing_add = -5
+			planet_housing_add = -500
 		}
 	}
 
@@ -64,8 +71,7 @@ district_rg_city = {
 			}
 		}
 		modifier = {
-			job_clerk_add = 2
-			job_culture_worker_add = 1
+			job_clerk_add = 300
 		}
 	}
 
@@ -79,8 +85,7 @@ district_rg_city = {
 			}
 		}
 		modifier = {
-			job_clerk_add = 4
-			job_culture_worker_add = 2
+			job_clerk_add = 600
 		}
 	}
 
@@ -90,7 +95,7 @@ district_rg_city = {
 			owner = { has_active_tradition = tr_prosperity_public_works }
 		}
 		modifier = {
-			planet_housing_add = 5
+			planet_housing_add = 500
 		}
 	}
 
@@ -102,7 +107,7 @@ district_rg_city = {
 			}
 		}
 		modifier = {
-			planet_housing_add = 5
+			planet_housing_add = 500
 		}
 	}
 
@@ -115,7 +120,7 @@ district_rg_city = {
 			}
 		}
 		modifier = {
-			planet_housing_add = 5
+			planet_housing_add = 500
 		}
 	}
 
@@ -143,6 +148,13 @@ district_rg_hive = {
 	base_buildtime = 30
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
+
+	# TODO_CD: change to real slots
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
 
 	show_on_uncolonized = {
 		exists = from
@@ -173,10 +185,9 @@ district_rg_hive = {
 	}
 
 	planet_modifier = {
-		planet_housing_add = 30
-		job_maintenance_drone_add = 15
-		job_synapse_drone_add = 2
-		planet_max_buildings_add = 2
+		planet_housing_add = 3000
+		# job_synapse_drone_add = 2
+		zone_building_slots_add = 2
 	}
 
 	triggered_planet_modifier = {
@@ -185,7 +196,7 @@ district_rg_hive = {
 			owner = { has_technology = tech_housing_1 }
 		}
 		modifier = {
-			planet_housing_add = 5
+			planet_housing_add = 500
 		}
 	}
 
@@ -195,8 +206,8 @@ district_rg_hive = {
 			owner = { has_technology = tech_housing_2 }
 		}
 		modifier = {
-			planet_housing_add = 5
-			job_maintenance_drone_add = 5
+			planet_housing_add = 500
+			job_coordinator_add = @base_district_jobs
 		}
 	}
 
@@ -206,7 +217,7 @@ district_rg_hive = {
 			owner = { has_active_tradition = tr_prosperity_extended_hives }
 		}
 		modifier = {
-			planet_housing_add = 5
+			planet_housing_add = 500
 		}
 	}
 
@@ -226,6 +237,13 @@ district_rg_nexus = {
 	base_buildtime = 30
 	is_capped_by_modifier = no
 	exempt_from_ai_planet_specialization = yes
+
+	# TODO_CD: change to real slots
+	zone_slots = {
+		slot_city_government
+		slot_city_01
+		slot_city_02
+	}
 
 	show_on_uncolonized = {
 		exists = from
@@ -256,10 +274,9 @@ district_rg_nexus = {
 	}
 
 	planet_modifier = {
-		planet_housing_add = 25
-		job_maintenance_drone_add = 10
-		job_coordinator_add = 2
-		planet_max_buildings_add = 2
+		planet_housing_add = 2500
+		job_technician_drone_add = @base_district_jobs
+		zone_building_slots_add = 2
 	}
 
 	triggered_planet_modifier = {
@@ -268,7 +285,7 @@ district_rg_nexus = {
 			owner = { has_technology = tech_housing_1 }
 		}
 		modifier = {
-			planet_housing_add = 5
+			planet_housing_add = 500
 		}
 	}
 
@@ -278,18 +295,7 @@ district_rg_nexus = {
 			owner = { has_technology = tech_housing_2 }
 		}
 		modifier = {
-			planet_housing_add = 5
-			job_maintenance_drone_add = 5
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { has_active_tradition = tr_virtuality_4 }
-		}
-		modifier = {
-			job_maintenance_drone_add = 10
+			planet_housing_add = 500
 		}
 	}
 
@@ -299,7 +305,7 @@ district_rg_nexus = {
 			owner = { has_active_tradition = tr_prosperity_optimized_nexus }
 		}
 		modifier = {
-			planet_housing_add = 5
+			planet_housing_add = 500
 		}
 	}
 
@@ -318,6 +324,11 @@ district_rg_generator = {
 	icon = district_rw_generator
 	base_buildtime = 30
 	is_capped_by_modifier = no
+
+	# TODO_CD: change to real slots
+	zone_slots = {
+		slot_energy
+	}
 
 	show_on_uncolonized = {
 		uses_district_set = rg_station
@@ -344,7 +355,7 @@ district_rg_generator = {
 	}
 
 	triggered_planet_modifier = {
-		planet_housing_add = 10
+		planet_housing_add = 1000
 	}
 }
 
@@ -352,6 +363,10 @@ district_rg_mining = {
 	icon = district_hab_mining
 	base_buildtime = 30
 	is_capped_by_modifier = no
+
+	zone_slots = {
+		slot_minerals
+	}
 
 	show_on_uncolonized = {
 		uses_district_set = rg_station
@@ -380,7 +395,7 @@ district_rg_mining = {
 	}
 
 	triggered_planet_modifier = {
-		planet_housing_add = 10
+		planet_housing_add = 1000
 	}
 }
 
@@ -388,6 +403,11 @@ district_rg_farming = {
 	icon = district_rw_farming
 	base_buildtime = 30
 	is_capped_by_modifier = no
+
+	# TODO_CD: change to real slots
+	zone_slots = {
+		slot_food
+	}
 
 	show_on_uncolonized = { uses_district_set = rg_station }
 
@@ -418,7 +438,7 @@ district_rg_farming = {
 	# triggered for tooltip formatting purposes
 	triggered_planet_modifier = {
 		modifier = {
-			planet_housing_add = 10
+			planet_housing_add = 1000
 		}
 	}
 }
@@ -427,6 +447,11 @@ district_rg_science = {
 	icon = district_rw_science
 	base_buildtime = 30
 	is_capped_by_modifier = no
+
+	# TODO_CD: change to real slots
+	zone_slots = {
+		slot_city_01
+	}
 
 	show_on_uncolonized = { uses_district_set = rg_station }
 
@@ -458,7 +483,7 @@ district_rg_science = {
 	}
 
 	triggered_planet_modifier = {
-		planet_housing_add = 10
+		planet_housing_add = 1000
 	}
 
 	triggered_planet_modifier = {
@@ -467,9 +492,11 @@ district_rg_science = {
 			owner = { is_regular_empire = yes }
 		}
 		modifier = {
-			job_researcher_add = 15
+			job_physicist_add = 1000
+			job_biologist_add = 1000
+			job_engineer_add = 1000
 		}
-	}4
+	}
 
 	triggered_planet_modifier = {
 		potential = {
@@ -477,7 +504,9 @@ district_rg_science = {
 			owner = { is_hive_empire = yes }
 		}
 		modifier = {
-			job_brain_drone_add = 15
+			job_calculator_physicist_add = 1000
+			job_calculator_biologist_add = 1000
+			job_calculator_engineer_add = 1000
 		}
 	}
 
@@ -487,7 +516,9 @@ district_rg_science = {
 			owner = { is_machine_empire = yes }
 		}
 		modifier = {
-			job_calculator_add = 15
+			job_calculator_physicist_add = 1000
+			job_calculator_biologist_add = 1000
+			job_calculator_engineer_add = 1000
 		}
 	}
 
@@ -501,7 +532,9 @@ district_rg_science = {
 				has_active_tradition = tr_virtuality_4
 			}
 		}
-		job_researcher_add = 5
+		job_physicist_add = 500
+		job_biologist_add = 500
+		job_engineer_add = 500
 	}
 
 	triggered_planet_modifier = {
@@ -512,7 +545,9 @@ district_rg_science = {
 				has_active_tradition = tr_virtuality_4
 			}
 		}
-		job_calculator_add = 5
+		job_calculator_physicist_add = 500
+		job_calculator_biologist_add = 500
+		job_calculator_engineer_add = 500
 	}
 
 	triggered_desc = {
@@ -555,6 +590,11 @@ district_rg_industrial = {
 	base_buildtime = 30
 	is_capped_by_modifier = no
 
+	# TODO_CD: change to real slots
+	zone_slots = {
+		slot_city_01
+	}
+
 	show_on_uncolonized = { uses_district_set = rg_station }
 
 	potential = {
@@ -581,41 +621,17 @@ district_rg_industrial = {
 	}
 
 	triggered_planet_modifier = {
-		planet_housing_add = 10
+		planet_housing_add = 1000
 	}
 
 	inline_script = {
 		script = jobs/industrial_districts_factory_add
-		AMOUNT = 10
+		AMOUNT = 500
 	}
 
 	inline_script = {
 		script = jobs/industrial_districts_foundry_add
-		AMOUNT = 10
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = {
-				is_machine_empire = yes
-				has_edict = industrial_maintenance
-			}
-		}
-		modifier = {
-			job_maintenance_drone_add = 2
-		}
-	}
-
-	triggered_desc = {
-		trigger = {
-			exists = owner
-			owner = {
-				is_machine_empire = yes
-				has_edict = industrial_maintenance
-			}
-		}
-		text = job_maintenance_drone_effect_desc
+		AMOUNT = 500
 	}
 }
 
@@ -623,6 +639,11 @@ district_rg_nanites = {
 	icon = district_rg_nanites
 	base_buildtime = 30
 	is_capped_by_modifier = no
+
+	# TODO_CD: change to real slots
+	zone_slots = {
+		slot_city_01
+	}
 
 	show_on_uncolonized = {
 		uses_district_set = rg_station
@@ -652,7 +673,7 @@ district_rg_nanites = {
 	}
 
 	triggered_planet_modifier = {
-		planet_housing_add = 10
+		planet_housing_add = 1000
 	}
 }
 

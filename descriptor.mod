@@ -1,4 +1,4 @@
-version="d4a22820b3"
+version="v4.0.2"
 tags={
 	"Military"
 	"Balance"
@@ -6,7 +6,7 @@ tags={
 	"Events"
 	"Leaders"
 }
-name="Real Gray"
 picture="thumbnail.png"
+name="Real Gray"
 supported_version="v4.0.*"
-remote_file_id="2136166095"--
+remote_file_id="2136166095"
