@@ -49,7 +49,7 @@
 # 			always = yes
 # 		}
 # 		leader_skill_levels = 1
-# 		mult = trigger:has_skill
+# 		mult = trigger:has_base_skill
 # 	}
 # 	self_modifier = {
 # 		species_leader_exp_gain = 1
@@ -121,7 +121,7 @@ RG_leader_trait_governor_gray = {
 			always = yes
 		}
 		leader_skill_levels = 1
-		mult = trigger:has_skill
+		mult = trigger:has_base_skill
 	}
 	self_modifier = {
 		species_leader_exp_gain = 1
@@ -175,7 +175,7 @@ RG_leader_trait_ruler_gray = {
 		}
 		# leader_skill_levels = 1
 		leaders_upkeep_mult = 0.1
-		mult = trigger:has_skill
+		mult = trigger:has_base_skill
 	}
 	triggered_self_modifier = {
 		potential = {
@@ -193,7 +193,7 @@ RG_leader_trait_ruler_gray = {
 		}
 		# leader_skill_levels = 1
 		leaders_upkeep_mult = 0.15
-		mult = trigger:has_skill
+		mult = trigger:has_base_skill
 	}
 	triggered_self_modifier = {
 		potential = {
@@ -207,7 +207,7 @@ RG_leader_trait_ruler_gray = {
 		}
 		# leader_skill_levels = 1
 		leaders_upkeep_mult = 0.2
-		mult = trigger:has_skill
+		mult = trigger:has_base_skill
 	}
 	triggered_councilor_modifier = {
 		potential = {
@@ -221,7 +221,7 @@ RG_leader_trait_ruler_gray = {
 		}
 		# country_energy_produces_mult = -0.02
 		planet_stability_add = -1
-		mult = trigger:has_skill
+		mult = trigger:has_base_skill
 	}
 	triggered_councilor_modifier = {
 		potential = {
@@ -239,7 +239,7 @@ RG_leader_trait_ruler_gray = {
 		}
 		# country_energy_produces_mult = -0.03
 		planet_stability_add = -1.5
-		mult = trigger:has_skill
+		mult = trigger:has_base_skill
 	}
 	triggered_councilor_modifier = {
 		potential = {
@@ -253,7 +253,7 @@ RG_leader_trait_ruler_gray = {
 		}
 		# country_energy_produces_mult = -0.04
 		planet_stability_add = -2
-		mult = trigger:has_skill
+		mult = trigger:has_base_skill
 	}
 	triggered_councilor_modifier = {
 		potential = {
@@ -268,7 +268,7 @@ RG_leader_trait_ruler_gray = {
 		megastructure_build_speed_mult = 0.1
 		country_unity_produces_mult = 0.05
 		country_base_influence_produces_add = 1
-		mult = trigger:has_skill
+		mult = trigger:has_base_skill
 	}
 	leader_class = {
 		official
@@ -293,7 +293,7 @@ RG_leader_trait_admiral_gray_1 = {
 			always = yes
 		}
 		leader_skill_levels = 1
-		mult = trigger:has_skill
+		mult = trigger:has_base_skill
 	}
 	self_modifier = {
 		species_leader_exp_gain = 1
@@ -334,7 +334,7 @@ RG_leader_trait_admiral_gray_2 = {
 			always = yes
 		}
 		leader_skill_levels = 1
-		mult = trigger:has_skill
+		mult = trigger:has_base_skill
 	}
 	self_modifier = {
 		species_leader_exp_gain = 1
@@ -375,7 +375,7 @@ RG_leader_trait_admiral_gray = {
 			always = yes
 		}
 		leader_skill_levels = 1
-		mult = trigger:has_skill
+		mult = trigger:has_base_skill
 	}
 	self_modifier = {
 		species_leader_exp_gain = 1
@@ -449,7 +449,7 @@ RG_leader_trait_scientist_gray = {
 			always = yes
 		}
 		leader_skill_levels = 1
-		mult = trigger:has_skill
+		mult = trigger:has_base_skill
 	}
 	self_modifier = {
 		species_leader_exp_gain = 1

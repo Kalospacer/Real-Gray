@@ -1,6 +1,6 @@
 RG_gray_mod1_trigger = {
 	event_target:gray_leader_admiral = {
-		has_skill >= 10
+		has_base_skill >= 10
 	}
 	NOR = {
 		has_country_flag = rg_gray_level_2
@@ -35,7 +35,7 @@ RG_gray_mod1_allow_trigger = {
 	custom_tooltip = {
 		fail_text = requires_rg_graylevel_higherthan_10
 		event_target:gray_leader_admiral = {
-			has_skill >= 10
+			has_base_skill >= 10
 		}
 	}
 	resource_stockpile_compare = {
@@ -51,7 +51,7 @@ RG_gray_mod1_allow_trigger = {
 RG_gray_mod2_trigger = {
 	AND = {
 		event_target:gray_leader_admiral = {
-			has_skill >= 10
+			has_base_skill >= 10
 		}
 		has_country_flag = rg_gray_level_2
 	}
@@ -93,7 +93,7 @@ RG_gray_mod2_allow_trigger = {
 		custom_tooltip = {
 			fail_text = requires_rg_graylevel_higherthan_10
 			event_target:gray_leader_admiral = {
-				has_skill >= 10
+				has_base_skill >= 10
 			}
 		}
 	}

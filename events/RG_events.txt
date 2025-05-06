@@ -465,7 +465,7 @@ country_event = {
 					has_leader_flag = rg_gray_leader
 				}
 				export_trigger_value_to_variable = {
-					trigger = has_skill
+					trigger = has_base_skill
 					variable = rg_gray_level_temp
 				}
 				owner = {

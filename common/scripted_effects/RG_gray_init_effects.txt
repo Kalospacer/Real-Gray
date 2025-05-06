@@ -158,7 +158,7 @@ rg_save_gray_leader_level_effect = {
 			}
 			#导出等级到暂存
 			export_trigger_value_to_variable = {
-				trigger = has_skill
+				trigger = has_base_skill
 				variable = rg_gray_level_temp
 			}
 			#导入变量

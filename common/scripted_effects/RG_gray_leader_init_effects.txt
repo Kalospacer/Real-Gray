@@ -622,7 +622,7 @@ rg_gray_leader_experience_jar = {
 					RG_has_gray_cluster_origin_trigger = yes
 				}
 			}
-			has_skill < 10
+			has_base_skill < 10
 		}
 		add_experience = 54000
 		event_target:gray_owner = {
