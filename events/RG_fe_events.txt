@@ -7,14 +7,14 @@ country_event = {
     desc = {
         trigger = {
             NOT = {
-                has_authority = auth_machine_intelligence
+                is_machine_empire = yes
             }
         }
         text = "graygoo.402.a.desc"
     }
     desc = {
         trigger = {
-            has_authority = auth_machine_intelligence
+            is_machine_empire = yes
         }
         text = "graygoo.402.b.desc"
     }

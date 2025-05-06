@@ -850,14 +850,14 @@ country_event = {
 	desc = {
 		trigger = {
 			NOT = {
-				has_authority = auth_machine_intelligence
+				is_machine_empire = yes
 			}
 		}
 		text = "graygoo.401.a.desc"
 	}
 	desc = {
 		trigger = {
-			has_authority = auth_machine_intelligence
+			is_machine_empire = yes
 		}
 		text = "graygoo.401.b.desc"
 	}
@@ -876,8 +876,8 @@ country_event = {
 		name = graygoo.401.a
 		trigger = {
 			NOR = {
-				has_authority = auth_machine_intelligence
-				has_authority = auth_hive_mind
+				is_machine_empire = yes
+				is_hive_empire = yes
 			}
 		}
 		hidden_effect = {
@@ -889,7 +889,7 @@ country_event = {
 	option = {
 		name = graygoo.401.b
 		trigger = {
-			has_authority = auth_machine_intelligence
+			is_machine_empire = yes
 		}
 		hidden_effect = {
 			country_event = {
@@ -900,7 +900,7 @@ country_event = {
 	option = {
 		name = graygoo.401.c
 		trigger = {
-			has_authority = auth_hive_mind
+			is_hive_empire = yes
 		}
 		hidden_effect = {
 			country_event = {
@@ -917,14 +917,14 @@ country_event = {
 	desc = {
 		trigger = {
 			NOT = {
-				has_authority = auth_machine_intelligence
+				is_machine_empire = yes
 			}
 		}
 		text = "graygoo.402.a.desc"
 	}
 	desc = {
 		trigger = {
-			has_authority = auth_machine_intelligence
+			is_machine_empire = yes
 		}
 		text = "graygoo.402.b.desc"
 	}

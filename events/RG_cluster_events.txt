@@ -212,7 +212,7 @@ country_event = {
 					is_machine_empire = no
 				}
 			}
-			every_owned_pop = {
+			every_owned_pop_group = {
 				modify_species = {
 					species = this
 					ideal_planet_class = pc_nuked
@@ -249,18 +249,20 @@ country_event = {
 			set_location = event_target:rg_cluster_home_system_loc
 		}
 		event_target:rg_cluster_previous_home_planet = {
+
 			# move pops
-			every_owned_pop = {
-				resettle_pop = {
-					pop = this
-					planet = event_target:rg_cluster_home_planet
+			every_owned_pop_group = {
+				resettle_pop_group = {
+					POP_GROUP = this
+					PLANET = event_target:rg_cluster_home_planet
+					PERCENTAGE = 1
 				}
 				unemploy_pop = yes
 			}
 			remove_planet = yes
 		}
 		event_target:rg_cluster_home_planet = {
-			every_owned_pop = {
+			every_owned_pop_group  = {
 				unemploy_pop = yes
 				clear_pop_category = yes
 			}
@@ -416,10 +418,12 @@ country_event = {
 		}
 	}
 	option = {
+		trigger = {
+			always = yes
+		}
 		name = "rg_cluster.11.a"
 	}
 }
-
 # Inform other empires of the L-Cluster being open (has project or event chain)
 country_event = {
 	id = rg_cluster.12
@@ -446,10 +450,12 @@ country_event = {
 		}
 	}
 	option = {
+		trigger = {
+			always = yes
+		}
 		name = "rg_cluster.12.a"
 	}
 }
-
 # Inform other empires of the L-Cluster being open (has nothing)
 country_event = {
 	id = rg_cluster.13
@@ -459,6 +465,9 @@ country_event = {
 	picture = GFX_evt_l-gateway
 	show_sound = event_mystic_reveal
 	option = {
+		trigger = {
+			always = yes
+		}
 		name = "rg_cluster.13.a"
 	}
 }

@@ -1796,7 +1796,7 @@ RG_destroy_planet_effect = {
 		else = {
 			set_owner = event_target:gray_owner
 		}
-		every_owned_pop = {
+		every_owned_pop_group = {
 			modify_species = {
 				species = event_target:gray_owner.owner_species
 				add_trait = trait_cybernetic
@@ -1804,13 +1804,13 @@ RG_destroy_planet_effect = {
 				change_scoped_species = yes
 			}
 		}
-		every_owned_pop = {
+		every_owned_pop_group = {
 			limit = {
 				has_modifier = pop_recently_conquered
 			}
 			remove_modifier = pop_recently_conquered
 		}
-		every_owned_pop = {
+		every_owned_pop_group = {
 			set_citizenship_type = {
 				type = citizenship_full_machine
 				cooldown = yes
@@ -2193,7 +2193,7 @@ RG_destroy_planet_effect_sp = {
 		else = {
 			set_owner = event_target:gray_owner
 		}
-		every_owned_pop = {
+		every_owned_pop_group = {
 			modify_species = {
 				species = event_target:gray_owner.owner_species
 				add_trait = trait_cybernetic
@@ -2201,13 +2201,13 @@ RG_destroy_planet_effect_sp = {
 				change_scoped_species = yes
 			}
 		}
-		every_owned_pop = {
+		every_owned_pop_group = {
 			limit = {
 				has_modifier = pop_recently_conquered
 			}
 			remove_modifier = pop_recently_conquered
 		}
-		every_owned_pop = {
+		every_owned_pop_group = {
 			set_citizenship_type = {
 				type = citizenship_full_machine
 				cooldown = yes
@@ -2397,7 +2397,7 @@ RG_destroy_star_system = {
 			else = {
 				set_owner = event_target:gray_owner
 			}
-			every_owned_pop = {
+			every_owned_pop_group = {
 				modify_species = {
 					species = event_target:gray_owner.owner_species
 					add_trait = trait_cybernetic
@@ -2405,13 +2405,13 @@ RG_destroy_star_system = {
 					change_scoped_species = yes
 				}
 			}
-			every_owned_pop = {
+			every_owned_pop_group = {
 				limit = {
 					has_modifier = pop_recently_conquered
 				}
 				remove_modifier = pop_recently_conquered
 			}
-			every_owned_pop = {
+			every_owned_pop_group = {
 				set_citizenship_type = {
 					type = citizenship_full_machine
 					cooldown = yes

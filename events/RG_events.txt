@@ -1070,7 +1070,7 @@ planet_event = {
 	}
 
 	immediate = {
-		random_owned_pop = {
+		weighted_random_owned_pop_group = {
 			limit = {
 				is_same_species = owner_species
 			}
@@ -1080,18 +1080,26 @@ planet_event = {
 			limit = {
 				exists = event_target:necrophage_pop_species
 			}
-			create_pop = {
+			create_pop_group = {
 				species = event_target:necrophage_pop_species
+				size = 0
+				effect = {
+					save_event_target_as = last_created_pop_group
+				}
 			}
 		}
 		else = {
-			create_pop = {
+			create_pop_group = {
 				species = owner_species
+				size = 0
+				effect = {
+					save_event_target_as = last_created_pop_group
+				}
 			}
 		}
 		if = {
 			limit = {
-				last_created_pop = {
+				event_target:last_created_pop_group = {
 					NOT = { ideal_planet_class = root }
 				}
 				NOR = {
@@ -1108,27 +1116,33 @@ planet_event = {
 					NOT = { ideal_planet_class = root }
 				}
 			}
-			last_created_pop = {
+			event_target:last_created_pop_group = {
 				modify_species = {
 					ideal_planet_class = root
 				}
 			}
 		}
-		if = {
-			limit = {
-				from = {
-					OR = {
-						has_active_tradition = tr_harmony_unity_of_self
-						has_active_tradition = tr_synchronicity_unity_of_mind
+		event_target:last_created_pop_group = {
+			add_pop_amount = local_pop_amount
+		}
+		while = {
+			count = local_pop_amount
+			if = {
+				limit = {
+					from = {
+						OR = {
+							has_active_tradition = tr_harmony_unity_of_self
+							has_active_tradition = tr_synchronicity_unity_of_mind
+						}
 					}
 				}
-			}
-			from = {
-				add_monthly_resource_mult = {
-					resource = unity
-					value = 1.5
-					min = 5
-					max = 100
+				from = {
+					add_monthly_resource_mult = {
+						resource = unity
+						value = 1.5
+						min = 5
+						max = 100
+					}
 				}
 			}
 		}
@@ -1154,7 +1168,10 @@ planet_event = {
 					level >= 2
 				}
 			}
-			add_opinion_modifier = { who = FROM modifier = opinion_necrophage }
+			while = {
+				count = local_pop_amount
+				add_opinion_modifier = { who = FROM modifier = opinion_nanophage }
+			}
 		}
 		every_country = {
 			limit = {
@@ -1167,7 +1184,10 @@ planet_event = {
 					level >= 1 #lower because you'd hear from a friend of a friend
 				}
 			}
-			add_opinion_modifier = { who = FROM modifier = opinion_necrophage_our_species }
+			while = {
+				count = local_pop_amount
+				add_opinion_modifier = { who = FROM modifier = opinion_nanophage_our_species }
+			}
 		}
 	}
 }
@@ -1310,81 +1330,82 @@ country_event = {
 }
 
 # 灰色风暴线小灰通讯
-country_event = {
-	id = rg_event.400
-	title = "TRANSMISSION"
-	trigger = {
-		NOT = {
-			any_playable_country = {
-				has_country_flag = gray_owner
-			}
-		}
-	}
-	desc = {
-		trigger = {
-			NOT = {
-				has_authority = auth_machine_intelligence
-			}
-		}
-		text = "rg_event.400.a.desc"
-	}
-	desc = {
-		trigger = {
-			has_authority = auth_machine_intelligence
-		}
-		text = "rg_event.400.b.desc"
-	}
-	diplomatic = yes
-	picture_event_data = {
-		portrait = root.species
-		room = "ethic_spaceship_room"
-	}
-	is_triggered_only = yes
-	option = {
-		name = rg_event.400.a
-		trigger = {
-			NOR = {
-				has_authority = auth_machine_intelligence
-				has_authority = auth_hive_mind
-			}
-		}
-		hidden_effect = {
-			country_event = {
-				id = graygoo.406
-			}
-		}
-	}
-	option = {
-		name = rg_event.400.b
-		trigger = {
-			has_authority = auth_machine_intelligence
-		}
-		hidden_effect = {
-			country_event = {
-				id = graygoo.406
-			}
-		}
-	}
-	option = {
-		name = rg_event.400.c
-		trigger = {
-			has_authority = auth_hive_mind
-		}
-		hidden_effect = {
-			country_event = {
-				id = graygoo.406
-			}
-		}
-	}
-	option = {
-		name = rg_event.400.d
-		hidden_effect = {
-			country_event = {
-				id = rg_event.401
-			}
-		}
-	}
-}
+# country_event = {
+# 	id = rg_event.400
+# 	title = "TRANSMISSION"
+# 	is_triggered_only = yes
+# 	trigger = {
+# 		NOT = {
+# 			any_playable_country = {
+# 				has_country_flag = gray_owner
+# 			}
+# 		}
+# 	}
+# 	desc = {
+# 		trigger = {
+# 			NOT = {
+# 				is_machine_empire = yes
+# 			}
+# 		}
+# 		text = "rg_event.400.a.desc"
+# 	}
+# 	desc = {
+# 		trigger = {
+# 			is_machine_empire = yes
+# 		}
+# 		text = "rg_event.400.b.desc"
+# 	}
+# 	diplomatic = yes
+# 	picture_event_data = {
+# 		portrait = root.species
+# 		room = "ethic_spaceship_room"
+# 	}
+#
+# 	option = {
+# 		name = rg_event.400.a
+# 		trigger = {
+# 			NOR = {
+# 				is_machine_empire = yes
+# 				is_hive_empire = yes
+# 			}
+# 		}
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = graygoo.406
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = rg_event.400.b
+# 		trigger = {
+# 			is_machine_empire = yes
+# 		}
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = graygoo.406
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = rg_event.400.c
+# 		trigger = {
+# 			is_hive_empire = yes
+# 		}
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = graygoo.406
+# 			}
+# 		}
+# 	}
+# 	option = {
+# 		name = rg_event.400.d
+# 		hidden_effect = {
+# 			country_event = {
+# 				id = rg_event.401
+# 			}
+# 		}
+# 	}
+# }
 
 country_event = {
 	id = rg_event.401

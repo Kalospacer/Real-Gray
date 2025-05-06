@@ -79,18 +79,13 @@ rg_fallen_machine = {
 				count = 5
 				add_district = district_rw_nexus
 			}
-			while = {
-				count = 105
-				create_pop = {
-					species = owner_main_species
-				}
+			create_pop_group = {
+				species = owner_main_species
+				size = 105
 			}
-
-			while = {
-				count = 94
-				create_pop = {
-					species = event_target:rg_scion_slave.species
-				}
+			create_pop_group = {
+				species = event_target:rg_scion_slave.species
+				size = 94
 			}
 
 			rg_create_fallen_empire_starting_navy = yes
@@ -159,17 +154,13 @@ rg_fallen_machine = {
 				count = 5
 				add_district = district_rw_nexus
 			}
-			while = {
-				count = 50
-				create_pop = {
-					species = owner_main_species
-				}
+			create_pop_group = {
+				species = owner_main_species
+				size = 50
 			}
-			while = {
-				count = 20
-				create_pop = {
-					species = event_target:rg_scion_slave.species
-				}
+			create_pop_group = {
+				species = event_target:rg_scion_slave.species
+				size = 20
 			}
 			while = {
 				count = 20
@@ -225,17 +216,13 @@ rg_fallen_machine = {
 				count = 5
 				add_district = district_rw_generator
 			}
-			while = {
-				count = 22
-				create_pop = {
-					species = owner_main_species
-				}
+			create_pop_group = {
+				species = owner_main_species
+				size = 22
 			}
-			while = {
-				count = 10
-				create_pop = {
-					species = event_target:rg_scion_slave.species
-				}
+			create_pop_group = {
+				species = event_target:rg_scion_slave.species
+				size = 10
 			}
 			while = {
 				count = 10
@@ -333,18 +320,14 @@ rg_fallen_machine_1 = {
 				count = 5
 				add_district = district_rw_nexus
 			}
-			while = {
-				count = 105
-				create_pop = {
-					species = owner_main_species
-				}
+			create_pop_group = {
+				species = owner_main_species
+				size = 105
 			}
 
-			while = {
-				count = 94
-				create_pop = {
-					species = event_target:rg_scion_slave.species
-				}
+			create_pop_group = {
+				species = event_target:rg_scion_slave.species
+				size = 94
 			}
 
 			rg_create_fallen_empire_starting_navy = yes
@@ -421,17 +404,13 @@ rg_fallen_machine_1 = {
 				count = 5
 				add_district = district_rw_nexus
 			}
-			while = {
-				count = 50
-				create_pop = {
-					species = owner_main_species
-				}
+			create_pop_group = {
+				species = owner_main_species
+				size = 50
 			}
-			while = {
-				count = 20
-				create_pop = {
-					species = event_target:rg_scion_slave.species
-				}
+			create_pop_group = {
+				species = event_target:rg_scion_slave.species
+				size = 20
 			}
 			while = {
 				count = 20
@@ -487,17 +466,13 @@ rg_fallen_machine_1 = {
 				count = 5
 				add_district = district_rw_generator
 			}
-			while = {
-				count = 22
-				create_pop = {
-					species = owner_main_species
-				}
+			create_pop_group = {
+				species = owner_main_species
+				size = 22
 			}
-			while = {
-				count = 10
-				create_pop = {
-					species = event_target:rg_scion_slave.species
-				}
+			create_pop_group = {
+				species = event_target:rg_scion_slave.species
+				size = 10
 			}
 			while = {
 				count = 10

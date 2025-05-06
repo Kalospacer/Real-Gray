@@ -338,7 +338,7 @@ can_destroy_planet_with_RG_PLANET_KILLER_NEUTRON = {
 	custom_tooltip = {
 		fail_text = is_unpopulated
 		OR = {
-			num_pops > 0
+			pop_amount > 0
 			is_planet_class = pc_infested
 		}
 	}
@@ -472,7 +472,7 @@ can_destroy_planet_with_RG_PLANET_KILLER_NANOBOTS = {
 	}
 	custom_tooltip = {
 		fail_text = no_assimilatable_pops
-		any_owned_pop = {
+		any_owned_pop_group = {
 			is_valid_pop_for_PLANET_KILLER_NANOBOTS = yes
 		}
 	}

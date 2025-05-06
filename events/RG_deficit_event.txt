@@ -29,7 +29,7 @@ situation_event = {
 				}
 				ordered_owned_planet = {
 					limit = {
-						any_owned_pop = {
+						any_owned_pop_group = {
 							OR = {
 								is_shackled_robot = yes
 								is_non_sapient_robot = yes
@@ -48,11 +48,11 @@ situation_event = {
 			else = {
 				ordered_owned_planet = {
 					limit = {
-						any_owned_pop = {
+						any_owned_pop_group = {
 							is_robot_pop = yes
 						}
 					}
-					order_by = trigger:num_pops
+					order_by = trigger:pop_amount
 					position = 0
 					save_event_target_as = robots_planet
 					event_target:robots_planet = {
@@ -77,14 +77,14 @@ situation_event = {
 		}
 		hidden_effect = {
 			event_target:robots_planet = {
-				every_owned_pop = {
+				every_owned_pop_group = {
 					limit = {
 						OR = {
 							is_shackled_robot = yes
 							is_non_sapient_robot = yes
 						}
 					}
-					kill_pop = yes
+					kill_single_pop = yes
 				}
 			}
 			owner = {
@@ -108,12 +108,12 @@ situation_event = {
 		hidden_effect = {
 			event_target:robots_planet = {
 				while = {
-					count = recycled_robots
-					random_owned_pop = {
+					count = recycled_robots_100
+					random_owned_pop_group = {
 						limit = {
-							is_robot_pop = yes
+							is_robot_pop_group = yes
 						}
-						kill_pop = yes
+						kill_single_pop = yes
 					}
 				}
 			}

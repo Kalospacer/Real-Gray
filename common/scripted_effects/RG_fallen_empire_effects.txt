@@ -284,7 +284,7 @@ rg_create_fallen_empire_starting_navy = {
 rg_create_fallen_empire_platform = {
 	if = {
 		limit = {
-			owner = { has_authority = auth_machine_intelligence }
+			owner = { is_machine_empire = yes }
 		}
 		create_ship = {
 			name = random
@@ -297,7 +297,7 @@ rg_create_fallen_empire_platform = {
 rg_create_fallen_empire_colossus = {
 	if = {
 		limit = {
-			owner = { has_authority = auth_machine_intelligence }
+			owner = { is_machine_empire = yes }
 		}
 		create_ship = {
 			name = random
@@ -310,7 +310,7 @@ rg_create_fallen_empire_colossus = {
 rg_create_fallen_empire_titan = {
 	if = {
 		limit = {
-			owner = { has_authority = auth_machine_intelligence }
+			owner = { is_machine_empire = yes }
 		}
 		create_ship = {
 			name = random
@@ -323,7 +323,7 @@ rg_create_fallen_empire_titan = {
 rg_create_fallen_empire_large_ship = {
 	if = {
 		limit = {
-			owner = { has_authority = auth_machine_intelligence }
+			owner = { is_machine_empire = yes }
 		}
 		create_ship = {
 			name = random
@@ -336,7 +336,7 @@ rg_create_fallen_empire_large_ship = {
 rg_create_fallen_empire_small_ship = {
 	if = {
 		limit = {
-			owner = { has_authority = auth_machine_intelligence }
+			owner = { is_machine_empire = yes }
 		}
 		create_ship = {
 			name = random
@@ -349,7 +349,7 @@ rg_create_fallen_empire_small_ship = {
 rg_create_fallen_empire_construction_ship = {
 	if = {
 		limit = {
-			owner = { has_authority = auth_machine_intelligence }
+			owner = { is_machine_empire = yes }
 		}
 		create_ship = {
 			name = random

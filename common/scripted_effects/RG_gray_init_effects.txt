@@ -590,7 +590,7 @@ rg_juggernaut_habitat_init = {
 									exists = event_target:rg_owner_main_maid_species
 								}
 							}
-							every_owned_pop = {
+							every_owned_pop_group = {
 								rg_event_effect_planet2027_spawn_maid_species = yes
 							}
 						}
@@ -657,11 +657,9 @@ rg_juggernaut_habitat_init = {
 								add_district = district_rg_nexus
 							}
 						}
-						while = {
-							count = 5
-							create_pop = {
-								species = owner_main_species
-							}
+						create_pop_group = {
+							species = owner_main_species
+							size = 5
 						}
 						set_planet_flag = megastructure
 						set_planet_flag = habitat

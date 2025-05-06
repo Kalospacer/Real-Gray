@@ -27,11 +27,9 @@ country_event = {
 			}
 		}
 		capital_scope = {
-			while = {
-				count = 5
-				create_pop = {
-					species = event_target:rg_maid_species
-				}
+			create_pop_group = {
+				species = event_target:rg_maid_species
+				size = 5
 			}
 		}
 	}

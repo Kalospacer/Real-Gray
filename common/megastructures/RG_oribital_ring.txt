@@ -100,14 +100,6 @@ RG_orbital_ring = {
 					has_planet_flag = has_orbital_debris
 				}
 			}
-			if = {
-				limit = {
-					from = {
-						is_ai = yes
-					}
-				}
-				num_pops >= 25
-			}
 		}
 	}
 	# root = system

@@ -118,3 +118,6 @@
 
  rg_gray_mod2_stage4_project:0 "$rg_gray_mod2_stage1_project$"
  rg_gray_mod2_stage4_project_desc:0 "$rg_gray_mod2_stage1_project_desc$"
+
+ opinion_nanophage: "神秘失踪"
+ opinion_nanophage_our_species: "纳米同化我们的物种"
