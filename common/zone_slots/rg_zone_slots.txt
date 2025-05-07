@@ -1,0 +1,63 @@
+# Planet District Zone Slots
+
+# slot_test_01 = {
+# 	start = zone_default                    # A zone of this type is immediately placed in a new district slot.
+# 
+# 	include = {                             # A list of zone types that are available to be built in the slot. The key 'all' can be used to include all existing zone types.
+# 		all
+# 	}
+# 
+# 	exclude = {                             # A list of zone types that aren't available to be built in the slot.
+# 		zone_test_05
+# 	}
+#
+#    potential = {                          
+#        always = yes                       # Trigger that defines whether the slot is available on the planet at all. Scope = Planet.
+#    }
+# 
+# 	unlock = {                              # Trigger that defines whether the slot is unlocked on the planet. Scope = Planet.
+# 		always = yes
+# 	}
+# }
+slot_rg_city_01 = {
+	include = {
+		zone_rg_city_housing
+		zone_rg_city_foundry
+		zone_rg_city_alloys
+		zone_rg_city_science
+	}
+	exclude = {
+		zone_default
+	}
+	unlock = { # planet scope
+		uses_district_set = rg_station
+	}
+}
+slot_rg_city_02 = {
+	include = {
+		zone_rg_city_housing
+		zone_rg_city_foundry
+		zone_rg_city_alloys
+		zone_rg_city_science
+	}
+	exclude = {
+		zone_default
+	}
+	unlock = { # planet scope
+		uses_district_set = rg_station
+	}
+}
+slot_rg_city_03 = {
+	include = {
+		zone_rg_city_housing
+		zone_rg_city_foundry
+		zone_rg_city_alloys
+		zone_rg_city_science
+	}
+	exclude = {
+		zone_default
+	}
+	unlock = { # planet scope
+		uses_district_set = rg_station
+	}
+}

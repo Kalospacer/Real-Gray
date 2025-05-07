@@ -262,11 +262,11 @@ country_event = {
 			NOR = {
 				free_jobs_of_type = {
 					job = mortal_initiate
-					value >= 1
+					value >= 100
 				}
 				free_jobs_of_type = {
 					category = bio_trophy
-					value >= 1
+					value >= 100
 				}
 			}
 		}
@@ -298,11 +298,11 @@ country_event = {
 					NOR = {
 						free_jobs_of_type = {
 							job = mortal_initiate
-							value >= 1
+							value >= 100
 						}
 						free_jobs_of_type = {
 							category = bio_trophy
-							value >= 1
+							value >= 100
 						}
 					}
 					# exists = event_target:rg_gray_habitat_target

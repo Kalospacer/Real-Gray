@@ -12,8 +12,8 @@ district_rg_city = {
 	# TODO_CD: change to real slots
 	zone_slots = {
 		slot_city_government
-		slot_city_01
-		slot_city_02
+		slot_rg_city_01
+		slot_rg_city_02
 	}
 
 	show_on_uncolonized = {
@@ -152,8 +152,8 @@ district_rg_hive = {
 	# TODO_CD: change to real slots
 	zone_slots = {
 		slot_city_government
-		slot_city_01
-		slot_city_02
+		slot_rg_city_01
+		slot_rg_city_02
 	}
 
 	show_on_uncolonized = {
@@ -241,8 +241,8 @@ district_rg_nexus = {
 	# TODO_CD: change to real slots
 	zone_slots = {
 		slot_city_government
-		slot_city_01
-		slot_city_02
+		slot_rg_city_01
+		slot_rg_city_02
 	}
 
 	show_on_uncolonized = {
@@ -327,7 +327,7 @@ district_rg_generator = {
 
 	# TODO_CD: change to real slots
 	zone_slots = {
-		slot_energy
+		slot_rg_city_01
 	}
 
 	show_on_uncolonized = {
@@ -351,46 +351,8 @@ district_rg_generator = {
 		}
 		produces = {
 			energy = 50
-		}
-	}
-
-	triggered_planet_modifier = {
-		planet_housing_add = 1000
-	}
-}
-
-district_rg_mining = {
-	icon = district_hab_mining
-	base_buildtime = 30
-	is_capped_by_modifier = no
-
-	zone_slots = {
-		slot_minerals
-	}
-
-	show_on_uncolonized = {
-		uses_district_set = rg_station
-		exists = from
-	}
-
-	potential = {
-		exists = owner
-		uses_district_set = rg_station
-	}
-
-	convert_to = {
-	}
-
-	resources = {
-		category = planet_districts
-		cost = {
-			minerals = @rw_cost
-		}
-		upkeep = {
-			energy = 5
-		}
-		produces = {
 			minerals = 50
+			food = 50
 		}
 	}
 
@@ -399,27 +361,104 @@ district_rg_mining = {
 	}
 }
 
-district_rg_farming = {
-	icon = district_rw_farming
+# district_rg_mining = {
+# 	icon = district_hab_mining
+# 	base_buildtime = 30
+# 	is_capped_by_modifier = no
+# 
+# 	zone_slots = {
+# 		slot_minerals
+# 	}
+# 
+# 	show_on_uncolonized = {
+# 		uses_district_set = rg_station
+# 		exists = from
+# 	}
+# 
+# 	potential = {
+# 		exists = owner
+# 		uses_district_set = rg_station
+# 	}
+# 
+# 	convert_to = {
+# 	}
+# 
+# 	resources = {
+# 		category = planet_districts
+# 		cost = {
+# 			minerals = @rw_cost
+# 		}
+# 		upkeep = {
+# 			energy = 5
+# 		}
+# 		produces = {
+# 			minerals = 50
+# 		}
+# 	}
+# 
+# 	triggered_planet_modifier = {
+# 		planet_housing_add = 1000
+# 	}
+# }
+
+#district_rg_farming = {
+#	icon = district_rw_farming
+#	base_buildtime = 30
+#	is_capped_by_modifier = no
+#
+#	# TODO_CD: change to real slots
+#	zone_slots = {
+#		slot_food
+#	}
+#
+#	show_on_uncolonized = { uses_district_set = rg_station }
+#
+#	potential = {
+#		uses_district_set = rg_station
+#		exists = owner
+#		NOT = {
+#			AND = {
+#				owner = { is_ai = yes }
+#				owner = { country_uses_food = no }
+#			}
+#		}
+#	}
+#
+#	resources = {
+#		category = planet_districts
+#		cost = {
+#			minerals = @rw_cost
+#		}
+#		upkeep = {
+#			energy = 5
+#		}
+#		produces = {
+#			food = 50
+#		}
+#	}
+#
+#	# triggered for tooltip formatting purposes
+#	triggered_planet_modifier = {
+#		modifier = {
+#			planet_housing_add = 1000
+#		}
+#	}
+#}
+
+district_rg_industrial = {
+	icon = district_rw_industrial
 	base_buildtime = 30
 	is_capped_by_modifier = no
 
 	# TODO_CD: change to real slots
 	zone_slots = {
-		slot_food
+		slot_city_02
 	}
 
 	show_on_uncolonized = { uses_district_set = rg_station }
 
 	potential = {
 		uses_district_set = rg_station
-		exists = owner
-		NOT = {
-			AND = {
-				owner = { is_ai = yes }
-				owner = { country_uses_food = no }
-			}
-		}
 	}
 
 	resources = {
@@ -429,17 +468,20 @@ district_rg_farming = {
 		}
 		upkeep = {
 			energy = 5
+			minerals = 40
 		}
 		produces = {
-			food = 50
+			nanites = 40
 		}
 	}
 
-	# triggered for tooltip formatting purposes
 	triggered_planet_modifier = {
-		modifier = {
-			planet_housing_add = 1000
-		}
+		planet_housing_add = 1000
+	}
+
+	inline_script = {
+		script = jobs/industrial_districts_factory_add
+		AMOUNT = 500
 	}
 }
 
@@ -450,7 +492,7 @@ district_rg_science = {
 
 	# TODO_CD: change to real slots
 	zone_slots = {
-		slot_city_01
+		slot_city_03
 	}
 
 	show_on_uncolonized = { uses_district_set = rg_station }
@@ -478,7 +520,7 @@ district_rg_science = {
 			minerals = @rw_cost
 		}
 		upkeep = {
-			energy = @rw_maintenance
+			energy = 5
 		}
 	}
 
@@ -585,97 +627,47 @@ district_rg_science = {
 	}
 }
 
-district_rg_industrial = {
-	icon = district_rw_industrial
-	base_buildtime = 30
-	is_capped_by_modifier = no
-
-	# TODO_CD: change to real slots
-	zone_slots = {
-		slot_city_01
-	}
-
-	show_on_uncolonized = { uses_district_set = rg_station }
-
-	potential = {
-		uses_district_set = rg_station
-	}
-
-	resources = {
-		category = planet_districts
-		cost = {
-			minerals = @rw_cost
-		}
-		upkeep = {
-			energy = @rw_maintenance
-		}
-		upkeep = {
-			trigger = {
-				exists = owner
-				owner = {
-					has_edict = industrial_maintenance
-				}
-			}
-			energy = 4
-		}
-	}
-
-	triggered_planet_modifier = {
-		planet_housing_add = 1000
-	}
-
-	inline_script = {
-		script = jobs/industrial_districts_factory_add
-		AMOUNT = 500
-	}
-
-	inline_script = {
-		script = jobs/industrial_districts_foundry_add
-		AMOUNT = 500
-	}
-}
-
-district_rg_nanites = {
-	icon = district_rg_nanites
-	base_buildtime = 30
-	is_capped_by_modifier = no
-
-	# TODO_CD: change to real slots
-	zone_slots = {
-		slot_city_01
-	}
-
-	show_on_uncolonized = {
-		uses_district_set = rg_station
-		exists = from
-	}
-
-	potential = {
-		exists = owner
-		uses_district_set = rg_station
-	}
-
-	convert_to = {
-	}
-
-	resources = {
-		category = planet_districts
-		cost = {
-			minerals = @rw_cost
-		}
-		upkeep = {
-			energy = 5
-			minerals = 40
-		}
-		produces = {
-			nanites = 40
-		}
-	}
-
-	triggered_planet_modifier = {
-		planet_housing_add = 1000
-	}
-}
+# district_rg_nanites = {
+# 	icon = district_rg_nanites
+# 	base_buildtime = 30
+# 	is_capped_by_modifier = no
+# 
+# 	# TODO_CD: change to real slots
+# 	zone_slots = {
+# 		slot_city_01
+# 	}
+# 
+# 	show_on_uncolonized = {
+# 		uses_district_set = rg_station
+# 		exists = from
+# 	}
+# 
+# 	potential = {
+# 		exists = owner
+# 		uses_district_set = rg_station
+# 	}
+# 
+# 	convert_to = {
+# 	}
+# 
+# 	resources = {
+# 		category = planet_districts
+# 		cost = {
+# 			minerals = @rw_cost
+# 		}
+# 		upkeep = {
+# 			energy = 5
+# 			minerals = 40
+# 		}
+# 		produces = {
+# 			nanites = 40
+# 		}
+# 	}
+# 
+# 	triggered_planet_modifier = {
+# 		planet_housing_add = 1000
+# 	}
+# }
 
 # district_rg_commercial = {
 # 	icon = district_rw_commercial
