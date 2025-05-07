@@ -45,7 +45,7 @@ district_rg_city = {
 	}
 
 	planet_modifier = {
-		planet_housing_add = 2500
+		planet_housing_add = 3000
 		job_enforcer_add = @base_district_jobs
 		zone_building_slots_add = 2
 	}
@@ -274,7 +274,7 @@ district_rg_nexus = {
 	}
 
 	planet_modifier = {
-		planet_housing_add = 2500
+		planet_housing_add = 3000
 		job_technician_drone_add = @base_district_jobs
 		zone_building_slots_add = 2
 	}
@@ -452,7 +452,7 @@ district_rg_industrial = {
 
 	# TODO_CD: change to real slots
 	zone_slots = {
-		slot_city_02
+		slot_rg_city_02
 	}
 
 	show_on_uncolonized = { uses_district_set = rg_station }
@@ -468,10 +468,10 @@ district_rg_industrial = {
 		}
 		upkeep = {
 			energy = 5
-			minerals = 40
+			minerals = 50
 		}
 		produces = {
-			nanites = 40
+			nanites = 50
 		}
 	}
 
@@ -483,6 +483,10 @@ district_rg_industrial = {
 		script = jobs/industrial_districts_factory_add
 		AMOUNT = 500
 	}
+	inline_script = {
+		script = jobs/industrial_districts_foundry_add
+		AMOUNT = 500
+	}
 }
 
 district_rg_science = {
@@ -492,7 +496,7 @@ district_rg_science = {
 
 	# TODO_CD: change to real slots
 	zone_slots = {
-		slot_city_03
+		slot_rg_city_03
 	}
 
 	show_on_uncolonized = { uses_district_set = rg_station }

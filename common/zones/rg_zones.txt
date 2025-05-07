@@ -88,7 +88,7 @@ zone_rg_city_housing = {
 		potential = {
 			exists = owner
 		}
-		planet_housing_add = 1000
+		planet_housing_add = 3000
 		planet_crime_add = -10
 		planet_amenities_add = 1000
 	}
@@ -160,14 +160,19 @@ zone_rg_city_alloys = {
 	included_building_sets = {
 	}
 	inline_script = {
+		script = jobs/zone_factory_add
+		AMOUNT = 500
+	}
+	inline_script = {
 		script = jobs/zone_foundry_add
-		AMOUNT = 1000
+		AMOUNT = 500
 	}
 	
 	planet_modifier = {
 		zone_building_slots_add = 3
 	}
 }
+
 zone_rg_city_science = {
 	icon = GFX_colony_type_research
 	base_buildtime = 120
@@ -187,40 +192,9 @@ zone_rg_city_science = {
 	}
 	included_building_sets = {
 	}
-	triggered_district_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_regular_empire = yes }
-		}
-		modifier = {
-			job_physicist_add = 1000
-			job_biologist_add = 1000
-			job_engineer_add = 1000
-		}
-	}
-
-	triggered_district_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_hive_empire = yes }
-		}
-		modifier = {
-			job_calculator_physicist_add = 1000
-			job_calculator_biologist_add = 1000
-			job_calculator_engineer_add = 1000
-		}
-	}
-
-	triggered_planet_modifier = {
-		potential = {
-			exists = owner
-			owner = { is_machine_empire = yes }
-		}
-		modifier = {
-			job_calculator_physicist_add = 1000
-			job_calculator_biologist_add = 1000
-			job_calculator_engineer_add = 1000
-		}
+	inline_script = {
+		script = jobs/zone_researchers_add
+		AMOUNT = 1000
 	}
 	planet_modifier = {
 		zone_building_slots_add = 3
