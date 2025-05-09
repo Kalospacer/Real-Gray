@@ -61,7 +61,7 @@ building_rg_nanolab_1 = {
 			# 	is_individual_machine = yes
 			# }
 		}
-		job_nanotech_researcher_add = 8
+		job_nanotech_researcher_add = 800
 	}
 
 	# triggered_desc = {
@@ -153,7 +153,7 @@ building_rg_nanolab_2 = {
 			# 	is_individual_machine = yes
 			# }
 		}
-		job_nanotech_researcher_add = 15
+		job_nanotech_researcher_add = 1500
 	}
 
 	# triggered_desc = {
