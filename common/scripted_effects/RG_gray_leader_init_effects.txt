@@ -33,18 +33,33 @@ rg_gray_govener_init = {
 				}
 				if = {
 					limit = {
-							OR = {
-								has_global_flag = has_wsg_mod
-								has_global_flag = kdc_event_mod_active
-							}
+						OR = {
+							has_global_flag = has_wsg_mod
+							has_global_flag = kdc_event_mod_active
+						}
 					}
 					set_leader_flag = "gray_leader"
 					set_leader_flag = gray_leader
-					add_trait_no_notify = leader_trait_governor_gray
-					add_trait_no_notify = RG_leader_trait_ruler_gray
-					add_trait_no_notify = subclass_official_governor
-					add_trait_no_notify = trait_ruler_architectural_sense_3
-					add_trait_no_notify = leader_trait_distribution_lines_2
+					add_trait = {
+						trait = leader_trait_governor_gray
+						show_message = no
+					}
+					add_trait = {
+						trait = RG_leader_trait_ruler_gray
+						show_message = no
+					}
+					add_trait = {
+						trait = subclass_official_governor
+						show_message = no
+					}
+					add_trait = {
+						trait = trait_ruler_architectural_sense_3
+						show_message = no
+					}
+					add_trait = {
+						trait = leader_trait_distribution_lines_2
+						show_message = no
+					}
 					if = {
 						limit = {
 							owner = {
@@ -53,15 +68,33 @@ rg_gray_govener_init = {
 							}
 						}
 						remove_trait = leader_trait_governor_gray
-						add_trait_no_notify = leader_trait_governor_gray_weak
+						add_trait = {
+							trait = leader_trait_governor_gray_weak
+							show_message = no
+						}
 					}
 				}
 				else = {
-					add_trait_no_notify = RG_leader_trait_governor_gray
-					add_trait_no_notify = RG_leader_trait_ruler_gray
-					add_trait_no_notify = subclass_official_governor
-					add_trait_no_notify = trait_ruler_architectural_sense_3
-					add_trait_no_notify = leader_trait_distribution_lines_2
+					add_trait = {
+						trait = RG_leader_trait_governor_gray
+						show_message = no
+					}
+					add_trait = {
+						trait = RG_leader_trait_ruler_gray
+						show_message = no
+					}
+					add_trait = {
+						trait = subclass_official_governor
+						show_message = no
+					}
+					add_trait = {
+						trait = trait_ruler_architectural_sense_3
+						show_message = no
+					}
+					add_trait = {
+						trait = leader_trait_distribution_lines_2
+						show_message = no
+					}
 				}
 			}
 		}
@@ -92,11 +125,16 @@ rg_gray_govener_init = {
 				}
 				if = {
 					limit = {
-						owner = { has_country_flag = married_gray }
+						owner = {
+							has_country_flag = married_gray
+						}
 					}
 					set_leader_flag = married
 				}
-				set_variable = { which = affection value = owner.wg_gray_affection }
+				set_variable = {
+					which = affection
+					value = owner.wg_gray_affection
+				}
 			}
 			# if = {
 			# 	limit = {
@@ -113,7 +151,6 @@ rg_gray_govener_init = {
 			rg_set_gray_portrait = yes
 		}
 	}
-	
 }
 
 rg_gray_commander_init = {
@@ -151,14 +188,17 @@ rg_gray_commander_init = {
 				}
 				if = {
 					limit = {
-							OR = {
-								has_global_flag = has_wsg_mod
-								has_global_flag = kdc_event_mod_active
-							}
+						OR = {
+							has_global_flag = has_wsg_mod
+							has_global_flag = kdc_event_mod_active
+						}
 					}
 					set_leader_flag = "gray_leader"					# "gray_leader"==rg_gray_leader
 					set_leader_flag = gray_leader
-					add_trait_no_notify = gray_admiral
+					add_trait = {
+						trait = gray_admiral
+						show_message = no
+					}
 					if = {
 						limit = {
 							owner = {
@@ -167,19 +207,40 @@ rg_gray_commander_init = {
 							}
 						}
 						remove_trait = gray_admiral
-						add_trait_no_notify = leader_trait_admiral_gray_weak
+						add_trait = {
+							trait = leader_trait_admiral_gray_weak
+							show_message = no
+						}
 						# 缺少特质leader_trait_admiral_gray_weak将导致KDC故事包远星之歌起源研究纳米星球特殊项目无法完成
 					}
 				}
 				set_leader_flag = rg_gray_leader
-				add_trait_no_notify = RG_leader_trait_admiral_gray
-				add_trait_no_notify = RG_leader_trait_admiral_nanorebuild_gray
+				add_trait = {
+					trait = RG_leader_trait_admiral_gray
+					show_message = no
+				}
+				add_trait = {
+					trait = RG_leader_trait_admiral_nanorebuild_gray
+					show_message = no
+				}
 				# add_trait_no_notify = RG_leader_trait_general_gray_skill
 				# 缺少特质RG_leader_trait_admiral_gray将导致小灰改造项目无法完成
-				add_trait_no_notify = subclass_commander_councilor
-				add_trait_no_notify = leader_trait_carrier_specialization
-				add_trait_no_notify = leader_trait_juryrigger_2
-				add_trait_no_notify = leader_trait_reinforcer_2
+				add_trait = {
+					trait = subclass_commander_councilor
+					show_message = no
+				}
+				add_trait = {
+					trait = leader_trait_carrier_specialization
+					show_message = no
+				}
+				add_trait = {
+					trait = leader_trait_juryrigger_2
+					show_message = no
+				}
+				add_trait = {
+					trait = leader_trait_reinforcer_2
+					show_message = no
+				}
 			}
 		}
 		last_created_leader = {
@@ -209,11 +270,16 @@ rg_gray_commander_init = {
 				}
 				if = {
 					limit = {
-						owner = { has_country_flag = married_gray }
+						owner = {
+							has_country_flag = married_gray
+						}
 					}
 					set_leader_flag = married
 				}
-				set_variable = { which = affection value = owner.wg_gray_affection }
+				set_variable = {
+					which = affection
+					value = owner.wg_gray_affection
+				}
 			}
 			# add_trait_no_notify = leader_trait_admiral_wg_gray_affection
 			# if = {
@@ -234,6 +300,7 @@ rg_gray_commander_init = {
 	RG_leader_trait_admiral_nanorebuild_gray_counter_init_effect = yes
 	RG_leader_trait_general_tempest_incoming_counter_init_effect = yes
 }
+
 # 
 # rg_gray_admiral_init = {
 # 	event_target:rg_gray_country = {
@@ -457,7 +524,6 @@ rg_gray_commander_init = {
 # 	}
 # 	
 # }
-
 rg_gray_scientist_init = {
 	event_target:rg_gray_country = {
 		create_leader = {
@@ -530,11 +596,16 @@ rg_gray_scientist_init = {
 				}
 				if = {
 					limit = {
-						owner = { has_country_flag = married_gray }
+						owner = {
+							has_country_flag = married_gray
+						}
 					}
 					set_leader_flag = married
 				}
-				set_variable = { which = affection value = owner.wg_gray_affection }
+				set_variable = {
+					which = affection
+					value = owner.wg_gray_affection
+				}
 			}
 			# add_trait_no_notify = leader_trait_admiral_wg_gray_affection
 			# if = {
@@ -552,7 +623,6 @@ rg_gray_scientist_init = {
 			rg_set_gray_portrait = yes
 		}
 	}
-	
 }
 
 rg_gray_country_leader_init = {
@@ -593,18 +663,48 @@ rg_gray_country_leader_init = {
 				# 暂时和小灰网络断开连接
 				# set_leader_flag = "gray_leader"
 				# set_leader_flag = gray_leader
-				add_trait_no_notify = leader_trait_governor_gray
-				add_trait_no_notify = RG_leader_trait_ruler_gray
-				add_trait_no_notify = subclass_official_governor
-				add_trait_no_notify = trait_ruler_architectural_sense_3
-				add_trait_no_notify = leader_trait_distribution_lines_2
+				add_trait = {
+					trait = leader_trait_governor_gray
+					show_message = no
+				}
+				add_trait = {
+					trait = RG_leader_trait_ruler_gray
+					show_message = no
+				}
+				add_trait = {
+					trait = subclass_official_governor
+					show_message = no
+				}
+				add_trait = {
+					trait = trait_ruler_architectural_sense_3
+					show_message = no
+				}
+				add_trait = {
+					trait = leader_trait_distribution_lines_2
+					show_message = no
+				}
 			}
 			else = {
-				add_trait_no_notify = RG_leader_trait_governor_gray
-				add_trait_no_notify = RG_leader_trait_ruler_gray
-				add_trait_no_notify = subclass_official_governor
-				add_trait_no_notify = trait_ruler_architectural_sense_3
-				add_trait_no_notify = leader_trait_distribution_lines_2
+				add_trait = {
+					trait = RG_leader_trait_governor_gray
+					show_message = no
+				}
+				add_trait = {
+					trait = RG_leader_trait_ruler_gray
+					show_message = no
+				}
+				add_trait = {
+					trait = subclass_official_governor
+					show_message = no
+				}
+				add_trait = {
+					trait = trait_ruler_architectural_sense_3
+					show_message = no
+				}
+				add_trait = {
+					trait = leader_trait_distribution_lines_2
+					show_message = no
+				}
 			}
 		}
 	}

@@ -11,7 +11,7 @@ situation_rg_gray_mod1 = {
 				}
 			}
 		}
-		destroy_situation = this 
+		destroy_situation = this
 	}
 
 	on_start = {

@@ -14,7 +14,7 @@ tr_rg_nanotech_adopt = {
 		}
 	}
 	custom_tooltip = tr_rg_nanotech_adopt_modifier_desc
-	unlocks_agenda = agenda_nanotech_unstoppable_swarm
+	unlocks_agenda = rg_agenda_nanotech_unstoppable_swarm
 	#Unlocks nanolab 1 and Starbase building
 }
 
