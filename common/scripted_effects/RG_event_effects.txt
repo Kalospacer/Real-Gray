@@ -7,7 +7,10 @@ rg_event_effect_event1_dragon = {
 			has_leader_flag = rg_fake_dragon
 		}
 		remove_trait = RG_leader_trait_admiral_timed_life
-		add_trait = RG_leader_trait_admiral_born_tobe_dragon
+		add_trait = {
+			trait = RG_leader_trait_admiral_born_tobe_dragon
+			show_message = no
+		}
 		set_leader_flag = rg_fake_dragon_reborn
 		set_age = 0
 	}
@@ -29,36 +32,87 @@ rg_event_effect_event1_dragon = {
 	}
 }
 
-
-
+#fired from rg_event.1
 rg_event_effect_event1_cluster = {
+	#第一个遥远约定起源的全局标记
+	set_global_flag = origin_rg_gray_1st_global
+	#第一个遥远约定起源的国家标记
+	set_country_flag = origin_rg_gray_1st
+	#遥远约定星团起源的国家标记
+	set_country_flag = origin_rg_gray_cluster
+	#设置小灰改造等级初始为1
+	set_country_flag = rg_gray_level_1
+	#给点初始资源免得开局饿死
+	add_resource = {
+		energy = 1000
+		minerals = 1000
+		alloys = 1000
+		consumer_goods = 1000
+	}
+	#给遥远群星modifier减跃迁范围防止跳出去
+	add_modifier = {
+		modifier = rg_distant_stars_modifier
+	}
+	#保存成遥远约定起源国家全局target
+	save_global_event_target_as = origin_rg_gray_country
+	#调用小灰打招呼事件
+	country_event = {
+		id = rg_event.2
+		days = 30
+	}
+	# 生成L星团 还没做TODO
+	# rg_lcluster_spawn_effect = yes
+	#计时器十年自动开门事件 还没做TODO
+	# country_event = {
+	# 	id = rg_event.18
+	# 	days = 3600
+	# 	random = 12800
+	# }
+}
+#fired from rg_event.1
+rg_event_effect_event1_galaxy = {
+	#第一个遥远约定起源的全局标记
+	set_global_flag = origin_rg_gray_1st_global
+	#第一个遥远约定起源的国家标记
+	set_country_flag = origin_rg_gray_1st
+	#遥远约定银河起源的国家标记
+	set_country_flag = origin_rg_gray_galaxy
+	#设置小灰改造等级初始为1
+	set_country_flag = rg_gray_level_1
+	#由于这里用的是玩家自己选的开局星球所以不送资
+	
+	#保存成遥远约定起源国家全局target
+	save_global_event_target_as = origin_rg_gray_country
 	if = {
 		limit = {
-			NOT = {
-				has_global_flag = origin_rg_gray_1st_global
+			#有遥远的故事起源国家,这个条件为什么在这我忘了
+			any_country = {
+				has_origin = origin_Asgray
 			}
 		}
-		rg_event_effect_event1_gray_cluster = yes
 	}
+	#调用小灰打招呼事件
+	country_event = {
+		id = rg_event.2
+		days = 30
+	}
+	#立刻开门，防止玩家再次进L星团再刨一个小灰出来
 	else = {
-		rg_event_effect_event1_dragon = yes
-	}
-}
-
-rg_event_effect_event1_cluster_galaxy = {
-	if = {
-		limit = {
-			OR = {
-				rg_has_ag_origin_trigger = yes
-				NOT = {
-					has_global_flag = origin_rg_gray_1st_global
+		rg_lcluster_spawn_effect = yes
+		capital_scope = {
+			solar_system = {
+				random_neighbor_system = {
+					solar_system = {
+						set_star_flag = lgate
+						spawn_megastructure = {
+							type = lgate_base
+							orbit_angle = 225
+							orbit_distance = 30
+						}
+					}
 				}
 			}
 		}
-		rg_event_effect_event1_gray_galaxy = yes
-	}
-	else = {
-		rg_event_effect_event1_dragon = yes
 	}
 }
 
@@ -118,12 +172,6 @@ rg_event_effect_event1_gray_galaxy = {
 	}
 }
 
-rg_event_effect_event1_to_event2_effect = {
-	country_event = {
-		id = rg_event.2
-		days = 30
-	}
-}
 rg_event_effect_lcluster_spawn_selecter = {
 	if = {
 		limit = {
@@ -239,20 +287,5 @@ rg_event_effect_planet2027_spawn_maid_species_non_gray = {
 				}
 			}
 		}
-	}
-}
-
-rg_event_effect_event2_gray_origin_init = {
-	rg_gray_country_init = yes
-	country_event = {
-		id = graygoo.499
-	}
-	give_technology = {
-		tech = tech_minilaser_gray_1
-		message = no
-	}
-	give_technology = {
-		tech = tech_object_gray_5
-		message = no
 	}
 }

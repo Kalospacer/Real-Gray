@@ -1,35 +1,75 @@
 namespace = rg_event
 # 灰风起源创建灰风事件
-# Spawn L-Cluster
+# Fired from on_game_start_country
+# Scope = Country
 country_event = {
 	id = rg_event.1
 	hide_window = yes
 	is_triggered_only = yes
 	trigger = {
+		#有遥远约定起源
 		AND = {
 			has_origin = origin_rg_gray
 			# NOT = { has_global_flag = rg_origin_l_cluster }
 		}
 	}
 	immediate = {
+		#星团起源
 		if = {
 			limit = {
+				#有星团起源标记
 				has_civic = civic_rg_gray_cluster
 			}
-			rg_event_effect_event1_cluster = yes
+			if = {
+				#前提是没有已经存在的第一个遥远约定起源的全局标记
+				limit = {
+					NOT = {
+						has_global_flag = origin_rg_gray_1st_global
+					}
+				}
+				rg_event_effect_event1_cluster = yes
+			}
+			else = {
+				#不是第一个选了遥远约定起源的国家，怎么办？
+				rg_event_effect_event1_dragon = yes
+			}
 		}
+		#银河起源
 		else_if = {
 			limit = {
+				#有银河起源标记
 				has_civic = civic_rg_gray_non_cluster
 			}
-			rg_event_effect_event1_cluster_galaxy = yes
+			if = {
+				limit = {
+					OR = {
+						#有遥远的故事起源国家,这个条件为什么在这我忘了
+						any_country = {
+							has_origin = origin_Asgray
+						}
+						#前提是没有已经存在的第一个遥远约定起源的全局标记
+						NOT = {
+							has_global_flag = origin_rg_gray_1st_global
+						}
+					}
+				}
+				rg_event_effect_event1_galaxy = yes
+			}
+			else = {
+				#不是第一个选了遥远约定起源的国家，怎么办？
+				rg_event_effect_event1_dragon = yes
+			}
 		}
+		#两个标记都没有默认扔进星团
 		else = {
 			rg_event_effect_event1_cluster = yes
 		}
 	}
 }
 
+#小灰打招呼事件
+# Fired from rg_event.1
+# Scope = Country
 country_event = {
 	id = rg_event.2
 	title = graygoo.500.title
@@ -41,14 +81,26 @@ country_event = {
 	}
 	is_triggered_only = yes
 	immediate = {
-		rg_event_effect_event2_gray_origin_init = yes
+		rg_gray_country_init = yes
+		#真正送小灰的事件调用499
+		country_event = {
+			id = graygoo.499
+		}
+		#给开局小科技
+		give_technology = {
+			tech = tech_minilaser_gray_1
+			message = no
+		}
+		give_technology = {
+			tech = tech_object_gray_5
+			message = no
+		}
 	}
 	option = {
 		name = rg_event.2.a
 		default_hide_option = yes
 	}
 }
-
 country_event = {
 	id = rg_event.3
 	title = "graygoo.500.title"

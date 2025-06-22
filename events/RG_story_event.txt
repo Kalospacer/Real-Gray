@@ -621,7 +621,10 @@ country_event = {
 				has_leader_flag = rg_fake_dragon
 			}
 			remove_trait = RG_leader_trait_admiral_timed_life
-			add_trait = RG_leader_trait_admiral_born_tobe_dragon
+			add_trait = {
+				trait = RG_leader_trait_admiral_born_tobe_dragon
+				show_message = no
+			}
 			set_leader_flag = rg_fake_dragon_reborn
 			set_age = 0
 		}
