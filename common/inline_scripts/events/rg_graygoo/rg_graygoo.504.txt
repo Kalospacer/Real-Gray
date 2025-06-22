@@ -11,7 +11,6 @@ trigger = {
 option = {
 	name = OK
 }
-inline_script = "events/rg_wsg_marry_gray_option_504_scripts"
 # option = {
 # 	name = rg_graygoo.504.a
 # 	allow = {
