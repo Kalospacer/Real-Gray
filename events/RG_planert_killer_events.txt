@@ -42,31 +42,6 @@ planet_event = {
 		}
 		set_update_modifiers_batch = end
 	}
-}	option = {
-	trigger = { has_civic = civic_AG_gray_master }
-	name = AG_dooropen_master.option
-	if = {
-		limit = {
-			any_country = {
-				has_civic = civic_AG_gray
-			}
-		}
-		#do nothing
-	}
-	else_if = {
-		limit = {
-			NOT = {
-				any_country = {
-					has_civic = civic_AG_gray
-				}
-			}
-			has_global_flag = has_rg_mod
-		}
-		force_remove_civic = civic_AG_gray_master
-	}
-	else = {
-		country_event = { id = graygoo.499 }
-	}
 }
 
 # Cracked

@@ -1,3 +1,0 @@
-# NGameplay = {
-# 	GOVERNMENT_CIVIC_POINTS_BASE		= 3		# Base amount of civic points (to "pay" for government civic costs)
-# }

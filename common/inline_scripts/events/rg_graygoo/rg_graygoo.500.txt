@@ -4,8 +4,7 @@ immediate = {
 after = {
 	hidden_effect = {
 		remove_country_flag = gray_diplomacy_engaged
-		#初始化衣柜
-		reset_gray_cloth = yes
+
 	}
 }
 trigger = {
@@ -165,7 +164,6 @@ option = {
 		}
 	}
 }
-inline_script = "events/rg_wsg_marry_gray_option_500_scripts"
 option = {
 	name = graygoo.500.d
 	default_hide_option = yes

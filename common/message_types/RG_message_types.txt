@@ -1,0 +1,33 @@
+#message_type = {
+#	key = "CONSTRUCTION_MESSAGE_TYPE"				# Message key, used from code.
+#	icon = "GFX_message_other_construction"			# Sprite to use for gui item "message_icon_button"
+#	icon_frame = 1									# Frame index to use for gui item "message_frame"
+#
+#	name = "MESSAGE_DECLARE_WAR_TITLE"				# Localization key to use for title, if empty it will use "MESSAGE_<key>_TITLE" instead.
+#	sound = "advisor_notification_construction_complete"	# Sound to play on message creation
+#
+#	sound_is_advisor = yes							# Deprecated and does nothing.
+#	ping = "ping_notification_green"				# Ping map to use for map visualization.
+#
+#	hidden_in_message_settings = yes				# If yes, the message type is not shown in the message settings UI (default: no).
+#	category = diplomacy							# Filter category in message settings, valid: 'diplomacy', 'military', 'economy', 'government', 'science', 'fleets', 'planets', 'leaders', 'other' (default: 'other').
+#	message_setting_key = "MESSAGE_DECLARE_WAR_SETTING"	# Localization key to use in message settings, if empty it will use name instead.
+#	default_notification = no						# Is notification enabled by default (default: yes).
+#	default_toast = yes								# Is toast enabled by default (default: no).
+#	default_popup = yes								# Is popup enabled by default (default: no).
+#	default_autopause = yes							# Is auto-pause enabled by default (default: no).
+#}
+
+
+message_type = {
+	key = "MESSAGE_TYPE_RG_GRAY_GOO_LEADER_CHAT"
+	icon = "GFX_toast_leader_acquired"
+
+	name = "MESSAGE_RG_GRAY_GOO_LEADER_CHAT_TITLE"
+	sound = "notification"
+	ping = "ping_notification_red"
+
+	default_toast = yes
+
+	category = leaders
+}

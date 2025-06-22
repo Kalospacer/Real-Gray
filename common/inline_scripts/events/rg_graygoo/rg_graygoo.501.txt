@@ -42,7 +42,6 @@ immediate = {
 after = {
 	hidden_effect = {
 		remove_country_flag = gray_diplomacy_engaged
-		reset_gray_cloth = yes
 	}
 }
 option = {
@@ -139,7 +138,6 @@ option = {
 		}
 	}
 }
-inline_script = "events/rg_wsg_marry_gray_option_scripts"
 option = {
 	name = graygoo.500.d
 	tag = hire_leader
