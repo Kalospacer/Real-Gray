@@ -1,10 +1,6 @@
 {
 	"folders": [
 		{
-			"name": "real_gray",
-			"path": "."
-		},
-		{
 			"name": "playasgray",
 			"path": "../playasgray"
 		},
@@ -17,6 +13,7 @@
 			"path": "../../../../../../../Steam/steamapps/workshop/content/281990/2293827000"
 		},
 		{
+			"name": "3412303559",
 			"path": "../../../../../../../Steam/steamapps/workshop/content/281990/3412303559"
 		}
 	]
